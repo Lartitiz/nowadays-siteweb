@@ -1,116 +1,59 @@
-# Migration Nowadays Agency → Lovable
+## 1. Ajustements typo globaux (`src/styles.css`)
 
-## Ce que j'ai vu sur le site actuel
+- IBM Plex Mono : passer le poids du body de `300` → `400`.
+- Nouvelle couleur texte : ajouter `--ink: #1a050d` (noir chaud teinté bordeaux) et remapper `--foreground: var(--ink)`.
+- Les titres (Libre Baskerville 400) restent en `--ink` pour le texte courant ; les italiques restent en `--rose-dark` (#fb3d80).
+- Mettre à jour `mem://index.md` : "IBM Plex Mono 400, couleur #1a050d (noir chaud bordeaux). Italiques en rose-dark."
 
-**Site :** nowadaysagency.com — agence de communication éthique pour projets engagés.
+## 2. Refonte complète du Hero (`src/components/site/Hero.tsx`)
 
-**Pages détectées (depuis la nav + liens internes) :**
+Passer d'un hero centré à un **split layout 2 colonnes** inspiré de la référence (le header existant ne change pas).
 
-- Accueil (`/`)
-- Solutions de communication (menu)
-- Accompagnement communication (`/accompagnement-communication`) — offre solopreneur·es à 290€/mois
-- Coopérative & Asso (`/cooperative-asso`) — offre structures à partir de 1 500€
-- Panier (`/cart`) — boutique Squarespace (probablement lead magnets / produits) - il n'y a pas de panier 
-- regarde dans le footer il y a aussi un blog et les pages lead magnet
+### Colonne gauche (~55%)
 
-**Sections de la homepage :**
+- Petit chip "AGENCE DE COMMUNICATION ENGAGÉE" : pill rose-soft, texte mono uppercase, tracking large.
+- Gros titre Libre Baskerville, très grand (text-6xl/7xl/8xl), serré (leading-[1.0]) :  
+non ici je veux garder mon titre actuel et mon sous titre  
+Les mots "lifestyle et éthiques." en italique rose-dark.
+- Paragraphe mono court (max-w ~520px) : repris du contenu actuel reformulé pour matcher le ton de la ref (stratégie, branding, réseaux sociaux, site web, SEO & emailing…).
+- CTA pill bordeaux pleine largeur auto avec flèche dans cercle blanc à droite ("DÉCOUVRIR NOS SERVICES →"). Lien Calendly conservé.
+- Bandeau stats sous le CTA (intégré au hero, 4 colonnes) : +10 ANS / +1200 PROJETS / 100% ENGAGÉS / 0% BULLSHIT. Cela remplace le `StatBand` séparé (à retirer de `index.tsx`).
 
-1. Header (logo nowadays, menu, CTA rose "Appel découverte")
-2. Hero — "Gagnez en *visibilité* sans vendre votre âme"
-3. Stat +100 projets accompagnés
-4. "Fatiguée du marketing agressif..."
-5. "Une communication engagée comme outil d'émancipation"
-6. Deux offres côte à côte (Binôme / Agency)
-7. "3 étapes pour transformer votre communication"
-8. "Ce qui nous rend différentes" (3 cartes : prix, com qui donne envie, +100 projets)
-9. Présentation Laetitia (fondatrice)
-10. Expertises (Référencement, Branding, Contenu, Instagram, Influence…)
-11. "Pourquoi Nowadays ?"
-12. Témoignages (Abigail Sia, Emmanuelle Riboud, Laurent Okahina)
-13. Bandeaux défilants (Communication responsable / Stratégies durables / Influence éthique)
-14. CTA final "Prête à communiquer autrement ?"
-15. "Vu dans la presse" (LeBonbon, e-marketing, ladn.eu)
-16. Footer
+### Colonne droite (~45%)
 
-**Identité visuelle :**
+- Photo de Laetitia (à récupérer depuis nowadaysagency.com — silhouette détourée, chemise rayée).
+- Blob rose-mid (SVG forme organique) derrière la photo.
+- Tampon circulaire "COMMUNICATION ENGAGÉE" avec petit cœur au centre (SVG texte sur cercle, en rose-dark outline).
+- Stack vertical de pills services à gauche de la photo : BRANDING / RÉSEAUX SOCIAUX / SITE WEB / SEO / EMAILING (pills outlined rose-soft, mono uppercase).
+- Stickers décoratifs SVG :
+  - Petite couronne noire dessinée à la main en haut à droite
+  - Flèche bouclée rose-dark en haut-centre (du chip vers la photo)
+  - Grappe de cœurs rose-mid en bas à droite
+  - Pointillés rose-mid en bas à droite
 
-- Couleurs : rose vif (#EC4899-ish), corail/orange, vert menthe accent, fond crème/blanc, texte aubergine très foncé
-- Typo : serif éditoriale pour les titres avec mots en italique, sans-serif pour le corps
-- Style : organique, illustrations rondes (disco ball, fraise, tasse), beaucoup de gros titres
+### Stickers
 
-**Fonctionnalités identifiées :**
+Reprendre le style "dessiné main" : SVG strokés (pas remplis pleins) pour la couronne, la flèche bouclée, les cœurs. Remplace les stickers ronds pleins actuels (Heart/Leaf/Star/Dot).
 
-- Bouton CTA → Calendly (lien externe, facile à brancher)
-- Boutique Squarespace (lead magnets payants ou gratuits ?)
-- Formulaires de téléchargement de lead magnets → Zapier → CRM (à voir plus tard)
-- reCAPTCHA sur les formulaires
+## 3. Image de Laetitia
 
-## Découpage proposé (très progressif)
+Récupérer la photo depuis le site Squarespace existant (fetch + sauvegarde via `lovable-assets create`), import en JSON asset dans le Hero.
 
-Comme tu l'as demandé, on découpe finement. Chaque étape ci-dessous = un seul échange/build.
+## 4. Nettoyage `src/routes/index.tsx`
 
-**Étape 1 — Squelette + design system** (cette étape uniquement pour commencer)
+Retirer `<StatBand />` du flux (intégré au Hero). `TiredSection` et `ManifestoSection` restent inchangés en dessous.
 
-- Créer la palette (rose, corail, menthe, crème, aubergine) dans `src/styles.css voici les couleurs` Rose :
-  #91014b bordeaux
-  #fb3d80 foncé
-  #fd9ebf moyen
-  #ffd6e8
-  #feedf0 clair
-  Fond : 
-  #fff7f5 
-  &nbsp;
-  #f19700 Orange
-- Choisir les polices (serif éditoriale + sans-serif) et les ajouter voici les polices : Libre baskerville titre (mais jamais gras) ibm plex mono corps de texte
-- Header avec logo "nowadays" + menu + bouton CTA Calendly
-- Footer minimal
-- Page d'accueil **vide** (juste un hero placeholder) pour valider le look
-- Routes vides pour `/accompagnement`, `/agency`, `/contact` (juste un titre)
+## 5. Responsive
 
-**Étape 2 — Hero de la homepage**
+- Desktop ≥ md : split 2 colonnes.
+- Mobile : stack vertical — chip, titre, paragraphe, CTA, puis photo + pills empilés, stats en grille 2×2 en bas.
 
-- Titre, sous-titre, CTA Calendly, visuels décoratifs (cercles colorés)
+---
 
-**Étape 3 — Sections "problème" + "manifeste"**
+### Détails techniques
 
-- "Fatiguée du marketing agressif" + "Communication engagée comme outil d'émancipation"
-
-**Étape 4 — Les deux offres**
-
-- Cartes "Ta binôme de com" et "Ton agency de com" avec liens vers les pages détaillées
-
-**Étape 5 — "3 étapes" + "Ce qui nous rend différentes"**
-
-**Étape 6 — Laetitia + expertises + "Pourquoi Nowadays"**
-
-**Étape 7 — Témoignages + bandeaux défilants + CTA final + presse**
-
-**Étape 8 — Page `/accompagnement-communication**` (offre solopreneur)
-
-**Étape 9 — Page `/cooperative-asso**` (offre structures)
-
-**Étape 10 — Lead magnets**
-On verra à ce moment-là : page de téléchargement + formulaire (nom + email) → on rebranche Zapier via un webhook depuis Lovable Cloud, ou alternative native (email auto + stockage de la liste).
-
-**Étape 11 — SEO**
-
-- Meta par route, sitemap, robots.txt, alt sur images, redirections 301 depuis les anciennes URLs Squarespace
-
-**Étape 12 — Domaine + lancement**
-
-- Brancher `nowadaysagency.com` sur Lovable
-
-## Détails techniques (pour info, tu n'as pas à les valider)
-
-- TanStack Start (React 19), Tailwind v4, design tokens dans `src/styles.css` (oklch)
-- Une route par page (pas d'ancres `#`), `head()` SEO par route
-- Images Squarespace : on les télécharge dans `src/assets/` au fur et à mesure des sections (ou on garde les URLs Squarespace temporairement pour aller vite, puis on rapatrie avant le lancement)
-- Lead magnets / Zapier : webhook depuis un server function TanStack Start vers ton workflow Zapier existant — ça marchera sans rien changer côté Zapier
-
-## On démarre par quoi ?
-
-Je propose qu'on lance **l'Étape 1 uniquement** (squelette + design system + header/footer + page d'accueil vide). Ça nous donne une base saine avant d'attaquer le contenu section par section.
-
-OK pour démarrer l'Étape 1 ? pour l'instant je veux vraiment la copie colle du site donc faire bien attention aux hallucinations
-
-&nbsp;
+- Aucune modif des autres sections ni du Header.
+- Les couleurs restent en tokens (`var(--ink)`, `var(--rose-dark)`, etc.).
+- Pills services : composant inline simple `<span class="rounded-full border border-rose-soft px-4 py-2 font-mono text-xs uppercase tracking-[0.15em]">`.
+- Blob et tampon : SVG inline pour rester cohérent avec le reste.
+- Photo : `<img>` avec `alt="Laetitia Mattioli, fondatrice de Nowadays"`.
