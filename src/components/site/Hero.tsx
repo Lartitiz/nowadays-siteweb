@@ -168,8 +168,8 @@ export function Hero() {
 
           <p className="mt-8 max-w-xl font-mono text-base text-ink md:text-[15px]">
             Vous portez un projet plus doux pour le monde ? Votre com' mérite
-            mieux que «&nbsp;je posterai lundi&nbsp;"{" "}
-            <em>(on est jeudi)</em>. On s'en occupe.
+            mieux que «&nbsp;je posterai lundi&nbsp;» <em>(on est jeudi)</em>.
+            On s'en occupe.
           </p>
 
           <p className="mt-4 max-w-xl font-mono text-sm text-ink">
