@@ -1,10 +1,7 @@
 import { ArrowRight } from "lucide-react";
-import laetitiaAsset from "@/assets/laetitia-hero.png.asset.json";
 
 const CALENDLY_URL =
   "https://calendly.com/laetitia-mattioli/30-min-de-diagnostic-offert";
-
-
 
 const STATS: Array<{ value: string; label: string }> = [
   { value: "+10 ans", label: "d'expérience" },
@@ -13,7 +10,64 @@ const STATS: Array<{ value: string; label: string }> = [
   { value: "0%", label: "bullshit" },
 ];
 
-/* — Stickers dessinés "à la main" (style stroke) — */
+type Bubble = {
+  label: string;
+  bg: string;
+  fg: string;
+  border?: string;
+  /** position relative to the centered hero column */
+  className: string;
+  rotate: string;
+};
+
+const SERVICES: Bubble[] = [
+  {
+    label: "branding",
+    bg: "var(--rose-soft)",
+    fg: "var(--ink)",
+    className: "left-[2%] top-[8%] md:left-[6%] md:top-[12%]",
+    rotate: "-rotate-6",
+  },
+  {
+    label: "story telling",
+    bg: "var(--cream)",
+    fg: "var(--bordeaux)",
+    border: "var(--rose-dark)",
+    className: "right-[4%] top-[6%] md:right-[8%] md:top-[10%]",
+    rotate: "rotate-3",
+  },
+  {
+    label: "réseaux sociaux",
+    bg: "var(--yellow)",
+    fg: "var(--ink)",
+    className: "left-[-1%] top-[44%] md:left-[2%] md:top-[46%]",
+    rotate: "-rotate-3",
+  },
+  {
+    label: "SEO",
+    bg: "var(--bordeaux)",
+    fg: "var(--cream)",
+    className: "right-[2%] top-[40%] md:right-[4%] md:top-[42%]",
+    rotate: "rotate-6",
+  },
+  {
+    label: "emailing",
+    bg: "var(--rose-light)",
+    fg: "var(--rose-dark)",
+    border: "var(--rose-dark)",
+    className: "left-[6%] bottom-[8%] md:left-[10%] md:bottom-[12%]",
+    rotate: "rotate-3",
+  },
+  {
+    label: "site web",
+    bg: "var(--orange)",
+    fg: "var(--ink)",
+    className: "right-[6%] bottom-[10%] md:right-[12%] md:bottom-[14%]",
+    rotate: "-rotate-6",
+  },
+];
+
+/* — Stickers — */
 
 function CrownSticker() {
   return (
@@ -36,65 +90,6 @@ function CrownSticker() {
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-    </svg>
-  );
-}
-
-function CurlyArrow() {
-  return (
-    <svg viewBox="0 0 140 120" className="h-full w-full" aria-hidden>
-      <path
-        d="M20 20 C 60 10, 100 30, 70 55 C 50 70, 35 50, 60 40 C 90 28, 115 60, 100 90"
-        fill="none"
-        stroke="var(--rose-dark)"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M100 90 L92 82 M100 90 L108 82"
-        fill="none"
-        stroke="var(--rose-dark)"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function HeartsCluster() {
-  const heart = (
-    <path
-      d="M20 32 C 6 22, 2 12, 10 7 C 16 4, 20 8, 20 12 C 20 8, 24 4, 30 7 C 38 12, 34 22, 20 32 Z"
-      fill="var(--rose-mid)"
-    />
-  );
-  return (
-    <svg viewBox="0 0 120 100" className="h-full w-full" aria-hidden>
-      <g transform="translate(0,30)">{heart}</g>
-      <g transform="translate(30,10) scale(1.4)">{heart}</g>
-      <g transform="translate(70,40) scale(1.1)">{heart}</g>
-    </svg>
-  );
-}
-
-function DotsGrid() {
-  const dots = [];
-  for (let r = 0; r < 5; r++) {
-    for (let c = 0; c < 5; c++) {
-      dots.push(
-        <circle
-          key={`${r}-${c}`}
-          cx={c * 10 + 4}
-          cy={r * 10 + 4}
-          r="1.6"
-          fill="var(--rose-mid)"
-        />,
-      );
-    }
-  }
-  return (
-    <svg viewBox="0 0 60 60" className="h-full w-full" aria-hidden>
-      {dots}
     </svg>
   );
 }
@@ -146,14 +141,46 @@ function EngageStamp() {
   );
 }
 
+function ServiceBubble({ b }: { b: Bubble }) {
+  return (
+    <div
+      className={`pointer-events-none absolute z-20 ${b.className} ${b.rotate}`}
+    >
+      <span
+        className="inline-flex items-center rounded-full px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] shadow-[0_8px_20px_rgba(145,1,75,0.10)] md:text-xs"
+        style={{
+          backgroundColor: b.bg,
+          color: b.fg,
+          border: b.border ? `1.5px solid ${b.border}` : undefined,
+        }}
+      >
+        {b.label}
+      </span>
+    </div>
+  );
+}
+
 /* — Hero — */
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-background">
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 md:grid-cols-12 md:gap-8 md:py-20">
-        {/* Colonne gauche */}
-        <div className="relative md:col-span-7">
+      <div className="relative mx-auto max-w-6xl px-6 py-20 md:py-28">
+        {/* Stickers décoratifs */}
+        <div className="pointer-events-none absolute left-6 top-10 z-20 h-12 w-12 md:left-10 md:top-12 md:h-14 md:w-14">
+          <CrownSticker />
+        </div>
+        <div className="pointer-events-none absolute right-4 top-4 z-20 hidden h-24 w-24 md:block md:h-28 md:w-28">
+          <EngageStamp />
+        </div>
+
+        {/* Bulles de services flottantes */}
+        {SERVICES.map((b) => (
+          <ServiceBubble key={b.label} b={b} />
+        ))}
+
+        {/* Contenu centré */}
+        <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center">
           <div className="inline-flex items-center rounded-full bg-rose-light px-4 py-2">
             <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-rose-dark">
               Agence de communication éthique
@@ -190,7 +217,7 @@ export function Hero() {
           </a>
 
           {/* Bandeau stats */}
-          <dl className="mt-16 grid grid-cols-2 gap-x-8 gap-y-8 md:grid-cols-4">
+          <dl className="mt-16 grid w-full grid-cols-2 gap-x-8 gap-y-8 md:grid-cols-4">
             {STATS.map((s) => (
               <div key={s.label}>
                 <dt className="font-serif text-3xl text-ink md:text-4xl">
@@ -202,27 +229,6 @@ export function Hero() {
               </div>
             ))}
           </dl>
-        </div>
-
-        {/* Colonne droite */}
-        <div className="relative md:col-span-5">
-          {/* Photo (inclut déjà les pills services et le blob rose) */}
-          <div className="relative z-10 mx-auto w-full max-w-md">
-            <img
-              src={laetitiaAsset.url}
-              alt="Laetitia Mattioli, fondatrice de Nowadays — agence de communication engagée et éthique"
-              className="h-auto w-full object-contain"
-              loading="eager"
-            />
-          </div>
-
-          {/* Stickers décoratifs conservés autour de la photo */}
-          <div className="pointer-events-none absolute -right-2 -top-2 z-20 h-14 w-14 md:h-16 md:w-16">
-            <CrownSticker />
-          </div>
-          <div className="pointer-events-none absolute right-0 top-1/3 z-20 hidden h-24 w-24 md:block md:h-28 md:w-28">
-            <EngageStamp />
-          </div>
         </div>
       </div>
     </section>
