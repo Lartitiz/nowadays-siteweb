@@ -113,10 +113,10 @@ export function TiredSection() {
           <h2 className="font-serif text-4xl leading-[1.1] text-ink md:text-6xl">
             Fatiguée du <em>marketing</em>
             <br />
-            <span className="relative inline-block">
+            <span className="relative inline-block leading-none">
               <span
                 aria-hidden
-                className="absolute inset-x-[-6px] top-[55%] bottom-[8%] -rotate-1 rounded-sm"
+                className="absolute inset-x-[-10px] top-[12%] bottom-[14%] -rotate-1 rounded-[4px]"
                 style={{ backgroundColor: "var(--yellow)" }}
               />
               <em className="relative">agressif et des injonctions ?</em>
