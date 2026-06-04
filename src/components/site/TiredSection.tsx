@@ -1,4 +1,4 @@
-function Squiggle({ color = "var(--rose-dark)" }: { color?: string }) {
+import type { ReactNode } from "react";
   return (
     <svg
       viewBox="0 0 80 12"
