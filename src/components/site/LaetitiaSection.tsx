@@ -19,12 +19,10 @@ export function LaetitiaSection() {
 
           {/* Texte */}
           <div className="lg:col-span-7 flex flex-col gap-8 md:gap-10 lg:pt-6">
-            <div className="rounded-[2rem] bg-[var(--rose-soft)] px-8 md:px-12 py-10 md:py-14">
-              <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-[var(--ink)]">
-                Enchantée, moi c'est{" "}
-                <em className="not-italic italic text-[var(--rose-dark)]">Laetitia</em>
-              </h2>
-            </div>
+            <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-[var(--ink)]">
+              Enchantée, moi c'est{" "}
+              <em className="not-italic italic text-[var(--rose-dark)]">Laetitia</em>
+            </h2>
 
             <div className="space-y-5 md:space-y-6 max-w-[58ch] px-2 md:px-4">
               <p className="font-mono text-[14px] md:text-[15px] leading-[1.85] text-[var(--ink)]">
