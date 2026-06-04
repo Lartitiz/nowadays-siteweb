@@ -55,6 +55,7 @@
   --color-cream: var(--cream);
   --color-orange: var(--orange);
   --color-ink: var(--ink);
+  --color-yellow: var(--yellow);
 }
 
 :root {
