@@ -108,10 +108,6 @@ export function TiredSection() {
 
         {/* Colonne droite */}
         <div className="relative md:col-span-5">
-          {/* Astérisque */}
-          <div className="absolute right-0 top-0 h-10 w-10 md:-top-6 md:h-12 md:w-12">
-            <AsteriskSticker />
-          </div>
           {/* Blob organique */}
           <div
             aria-hidden
