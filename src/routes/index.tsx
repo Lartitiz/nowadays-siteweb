@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Hero } from "@/components/site/Hero";
 import { TiredSection } from "@/components/site/TiredSection";
 import { ManifestoSection } from "@/components/site/ManifestoSection";
+import { OffersSection } from "@/components/site/OffersSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,9 +33,9 @@ function Index() {
   return (
     <SiteLayout>
       <Hero />
-      
       <TiredSection />
       <ManifestoSection />
+      <OffersSection />
     </SiteLayout>
   );
 }
