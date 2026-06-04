@@ -106,10 +106,6 @@ export function TiredSection() {
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 md:grid-cols-12 md:gap-12">
         {/* Colonne gauche */}
         <div className="relative md:col-span-7">
-          {/* Sticker cœur */}
-          <div className="absolute -left-2 -top-6 h-10 w-10 md:-left-4 md:-top-10 md:h-12 md:w-12">
-            <HeartOutline />
-          </div>
 
           <h2 className="font-serif text-4xl leading-[1.1] text-ink md:text-6xl">
             Fatiguée du <em>marketing</em>
