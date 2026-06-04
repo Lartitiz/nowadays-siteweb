@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Hero } from "@/components/site/Hero";
-import { StatBand } from "@/components/site/StatBand";
 import { TiredSection } from "@/components/site/TiredSection";
 import { ManifestoSection } from "@/components/site/ManifestoSection";
 
