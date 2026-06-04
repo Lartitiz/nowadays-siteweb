@@ -38,8 +38,8 @@ function Index() {
       <TiredSection />
       <VisibilityBanner />
       <ManifestoSection />
-      <ProcessSection />
       <OffersSection />
+      <ProcessSection />
     </SiteLayout>
   );
 }
