@@ -19,25 +19,6 @@ function Squiggle({ color = "var(--rose-dark)" }: { color?: string }) {
   );
 }
 
-function HeartOutline() {
-  return (
-    <svg viewBox="0 0 40 40" className="h-full w-full" aria-hidden>
-      <path
-        d="M20 34 C 6 24, 2 14, 10 8 C 16 4, 20 10, 20 14 C 20 10, 24 4, 30 8 C 38 14, 34 24, 20 34 Z"
-        fill="none"
-        stroke="var(--bordeaux)"
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M4 4 L8 8 M2 12 L7 12"
-        stroke="var(--bordeaux)"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
 
 function AsteriskSticker() {
   return (
