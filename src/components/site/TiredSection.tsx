@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import phoneAsset from "@/assets/tired-phone.webp.asset.json";
+import teamAsset from "@/assets/tired-team.jpg.asset.json";
 
 function Squiggle({ color = "var(--rose-dark)" }: { color?: string }) {
   return (
@@ -18,7 +20,6 @@ function Squiggle({ color = "var(--rose-dark)" }: { color?: string }) {
     </svg>
   );
 }
-
 
 function AsteriskSticker() {
   return (
@@ -53,24 +54,46 @@ function CircleRing({ color = "var(--rose-mid)" }: { color?: string }) {
   );
 }
 
-function QuoteCard({
-  bg,
+function PhotoBubble({
+  image,
+  alt,
+  frameColor,
   squiggleColor,
-  className = "",
+  align,
   children,
 }: {
-  bg: string;
+  image: string;
+  alt: string;
+  frameColor: string;
   squiggleColor: string;
-  className?: string;
+  align: "left" | "right";
   children: ReactNode;
 }) {
+  const photoOnLeft = align === "left";
   return (
-    <div
-      className={`relative rounded-[28px] p-6 md:p-7 ${className}`}
-      style={{ backgroundColor: bg }}
-    >
-      <div className="relative rounded-2xl bg-cream p-5 shadow-[0_8px_24px_rgba(145,1,75,0.06)] md:p-6">
-        <p className="font-mono text-sm leading-[1.7] text-ink md:text-[15px]">
+    <div className="relative">
+      {/* Cadre photo couleur */}
+      <div
+        className={`relative w-[68%] overflow-hidden rounded-[32px] ${
+          photoOnLeft ? "mr-auto" : "ml-auto"
+        }`}
+        style={{ backgroundColor: frameColor, aspectRatio: "4 / 4.3" }}
+      >
+        <img
+          src={image}
+          alt={alt}
+          className="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+
+      {/* Bulle de dialogue chevauchant */}
+      <div
+        className={`absolute bottom-4 z-10 w-[58%] rounded-[22px] bg-cream p-5 shadow-[0_12px_28px_rgba(145,1,75,0.10)] md:p-6 ${
+          photoOnLeft ? "right-0" : "left-0"
+        }`}
+      >
+        <p className="font-mono text-[13px] leading-[1.65] text-ink md:text-sm">
           {children}
         </p>
         <div className="mt-3">
@@ -87,7 +110,6 @@ export function TiredSection() {
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 md:grid-cols-12 md:gap-12">
         {/* Colonne gauche */}
         <div className="relative md:col-span-7">
-
           <h2 className="font-serif text-4xl leading-[1.1] text-ink md:text-6xl">
             Fatiguée du <em>marketing</em>
             <br />
@@ -128,36 +150,44 @@ export function TiredSection() {
           <div className="absolute right-0 top-0 h-10 w-10 md:-top-6 md:h-12 md:w-12">
             <AsteriskSticker />
           </div>
-          {/* Cercles */}
-          <div className="absolute left-0 top-1/2 hidden h-5 w-5 md:block">
-            <CircleRing />
-          </div>
-          <div className="absolute -left-2 top-1/3 hidden h-3 w-3 md:block">
+          {/* Cercles décoratifs */}
+          <div className="absolute -left-2 top-[42%] hidden h-4 w-4 md:block">
             <CircleRing color="var(--orange)" />
           </div>
-          {/* Blob organique côté droit */}
+          <div className="absolute right-2 top-[58%] hidden h-3 w-3 md:block">
+            <CircleRing color="var(--rose-dark)" />
+          </div>
+          {/* Blob organique */}
           <div
             aria-hidden
-            className="absolute -right-12 top-1/4 -z-0 hidden h-48 w-48 rounded-[60%_40%_55%_45%/50%_60%_40%_50%] md:block"
-            style={{ backgroundColor: "var(--rose-soft)", opacity: 0.55 }}
+            className="absolute -right-16 top-1/3 -z-0 hidden h-52 w-52 rounded-[60%_40%_55%_45%/50%_60%_40%_50%] md:block"
+            style={{ backgroundColor: "var(--rose-soft)", opacity: 0.4 }}
           />
 
-          <QuoteCard
-            bg="var(--rose-soft)"
-            squiggleColor="var(--rose-dark)"
-            className="relative z-10 md:mr-12"
-          >
-            Peut-être que vous postez quand vous pouvez, entre deux urgences.
-          </QuoteCard>
+          <div className="relative z-10">
+            <PhotoBubble
+              image={phoneAsset.url}
+              alt="Personne au téléphone, l'air las"
+              frameColor="var(--rose-soft)"
+              squiggleColor="var(--rose-dark)"
+              align="left"
+            >
+              Peut-être que vous postez quand vous pouvez, entre deux urgences.
+            </PhotoBubble>
+          </div>
 
-          <QuoteCard
-            bg="var(--yellow)"
-            squiggleColor="var(--bordeaux)"
-            className="relative z-10 mt-6 md:ml-12 md:mt-8"
-          >
-            Peut-être que personne dans l'équipe n'a vraiment le temps (ni les
-            compétences) de s'en occuper.
-          </QuoteCard>
+          <div className="relative z-10 mt-10 md:mt-14">
+            <PhotoBubble
+              image={teamAsset.url}
+              alt="Équipe devant un écran, perplexe"
+              frameColor="var(--yellow)"
+              squiggleColor="var(--bordeaux)"
+              align="right"
+            >
+              Peut-être que personne dans l'équipe n'a vraiment le temps (ni les
+              compétences) de s'en occuper.
+            </PhotoBubble>
+          </div>
         </div>
       </div>
     </section>
