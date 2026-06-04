@@ -1,110 +1,257 @@
 import { ArrowRight } from "lucide-react";
+import laetitiaAsset from "@/assets/laetitia.png.asset.json";
 
 const CALENDLY_URL =
   "https://calendly.com/laetitia-mattioli/30-min-de-diagnostic-offert";
 
-function HeartSticker() {
-  return (
-    <svg viewBox="0 0 100 100" className="h-full w-full" aria-hidden>
-      <circle cx="50" cy="50" r="48" fill="var(--rose-soft)" />
-      <path
-        d="M50 72 C 30 58, 24 44, 34 36 C 42 30, 50 38, 50 44 C 50 38, 58 30, 66 36 C 76 44, 70 58, 50 72 Z"
-        fill="var(--bordeaux)"
-      />
-    </svg>
-  );
-}
+const SERVICES = ["Branding", "Réseaux sociaux", "Site web", "SEO", "Emailing"];
 
-function LeafSticker() {
+const STATS: Array<{ value: string; label: string }> = [
+  { value: "+10 ans", label: "d'expérience" },
+  { value: "+1200", label: "projets accompagnés" },
+  { value: "100%", label: "engagés" },
+  { value: "0%", label: "bullshit" },
+];
+
+/* — Stickers dessinés "à la main" (style stroke) — */
+
+function CrownSticker() {
   return (
-    <svg viewBox="0 0 100 100" className="h-full w-full" aria-hidden>
-      <circle cx="50" cy="50" r="48" fill="var(--rose-dark)" />
+    <svg viewBox="0 0 80 70" className="h-full w-full" aria-hidden>
       <path
-        d="M50 18 C 72 28, 78 48, 50 82 C 22 48, 28 28, 50 18 Z"
-        fill="var(--cream)"
-      />
-      <path
-        d="M50 82 L50 45"
-        stroke="var(--cream)"
-        strokeWidth="3"
-        strokeLinecap="round"
+        d="M10 55 L15 20 L28 38 L40 14 L52 38 L65 20 L70 55 Z"
         fill="none"
+        stroke="var(--ink)"
+        strokeWidth="2.5"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+      />
+      <circle cx="40" cy="8" r="2.5" fill="var(--ink)" />
+      <line
+        x1="10"
+        y1="62"
+        x2="70"
+        y2="62"
+        stroke="var(--ink)"
+        strokeWidth="2.5"
+        strokeLinecap="round"
       />
     </svg>
   );
 }
 
-function StarSticker() {
+function CurlyArrow() {
   return (
-    <svg viewBox="0 0 100 100" className="h-full w-full" aria-hidden>
-      <circle cx="50" cy="50" r="48" fill="var(--orange)" />
+    <svg viewBox="0 0 140 120" className="h-full w-full" aria-hidden>
       <path
-        d="M50 18 L56 44 L82 50 L56 56 L50 82 L44 56 L18 50 L44 44 Z"
-        fill="var(--cream)"
+        d="M20 20 C 60 10, 100 30, 70 55 C 50 70, 35 50, 60 40 C 90 28, 115 60, 100 90"
+        fill="none"
+        stroke="var(--rose-dark)"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M100 90 L92 82 M100 90 L108 82"
+        fill="none"
+        stroke="var(--rose-dark)"
+        strokeWidth="2.5"
+        strokeLinecap="round"
       />
     </svg>
   );
 }
 
-function DotSticker() {
+function HeartsCluster() {
+  const heart = (
+    <path
+      d="M20 32 C 6 22, 2 12, 10 7 C 16 4, 20 8, 20 12 C 20 8, 24 4, 30 7 C 38 12, 34 22, 20 32 Z"
+      fill="var(--rose-mid)"
+    />
+  );
   return (
-    <svg viewBox="0 0 100 100" className="h-full w-full" aria-hidden>
-      <circle cx="50" cy="50" r="48" fill="var(--rose-mid)" />
+    <svg viewBox="0 0 120 100" className="h-full w-full" aria-hidden>
+      <g transform="translate(0,30)">{heart}</g>
+      <g transform="translate(30,10) scale(1.4)">{heart}</g>
+      <g transform="translate(70,40) scale(1.1)">{heart}</g>
     </svg>
   );
 }
+
+function DotsGrid() {
+  const dots = [];
+  for (let r = 0; r < 5; r++) {
+    for (let c = 0; c < 5; c++) {
+      dots.push(
+        <circle
+          key={`${r}-${c}`}
+          cx={c * 10 + 4}
+          cy={r * 10 + 4}
+          r="1.6"
+          fill="var(--rose-mid)"
+        />,
+      );
+    }
+  }
+  return (
+    <svg viewBox="0 0 60 60" className="h-full w-full" aria-hidden>
+      {dots}
+    </svg>
+  );
+}
+
+function EngageStamp() {
+  return (
+    <svg viewBox="0 0 140 140" className="h-full w-full" aria-hidden>
+      <defs>
+        <path
+          id="stamp-circle"
+          d="M70,70 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"
+        />
+      </defs>
+      <circle
+        cx="70"
+        cy="70"
+        r="62"
+        fill="none"
+        stroke="var(--rose-dark)"
+        strokeWidth="1.5"
+      />
+      <circle
+        cx="70"
+        cy="70"
+        r="52"
+        fill="none"
+        stroke="var(--rose-dark)"
+        strokeWidth="1"
+        strokeDasharray="2 4"
+      />
+      <text
+        fill="var(--rose-dark)"
+        style={{
+          fontFamily: "IBM Plex Mono, monospace",
+          fontSize: "11px",
+          letterSpacing: "3px",
+          textTransform: "uppercase",
+        }}
+      >
+        <textPath href="#stamp-circle" startOffset="0">
+          Communication · Engagée · Éthique ·{" "}
+        </textPath>
+      </text>
+      <path
+        d="M70 84 C 56 74, 52 64, 60 58 C 66 54, 70 60, 70 64 C 70 60, 74 54, 80 58 C 88 64, 84 74, 70 84 Z"
+        fill="var(--rose-dark)"
+      />
+    </svg>
+  );
+}
+
+/* — Hero — */
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-background">
-      {/* Stickers décoratifs */}
-      <div className="pointer-events-none absolute left-4 top-10 h-16 w-16 md:left-16 md:top-20 md:h-24 md:w-24">
-        <HeartSticker />
-      </div>
-      <div className="pointer-events-none absolute right-6 top-24 h-14 w-14 md:right-24 md:top-16 md:h-20 md:w-20">
-        <LeafSticker />
-      </div>
-      <div className="pointer-events-none absolute bottom-24 left-8 hidden h-16 w-16 md:bottom-32 md:left-32 md:block md:h-20 md:w-20">
-        <DotSticker />
-      </div>
-      <div className="pointer-events-none absolute bottom-16 right-6 h-16 w-16 md:bottom-24 md:right-28 md:h-24 md:w-24">
-        <StarSticker />
-      </div>
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 md:grid-cols-12 md:gap-8 md:py-20">
+        {/* Colonne gauche */}
+        <div className="relative md:col-span-7">
+          <div className="inline-flex items-center rounded-full bg-rose-light px-4 py-2">
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-rose-dark">
+              Agence de communication éthique
+            </span>
+          </div>
 
-      <div className="relative mx-auto flex max-w-4xl flex-col items-center px-6 py-24 text-center md:py-32">
-        <p className="mb-8 font-mono text-xs uppercase tracking-[0.2em] text-foreground">
-          Agence de communication éthique
-        </p>
+          <h1 className="mt-8 text-5xl leading-[1.02] text-ink md:text-6xl lg:text-7xl">
+            Gagnez en <em>visibilité</em>
+            <br />
+            sans vendre votre âme.
+          </h1>
 
-        <h1 className="text-4xl leading-[1.05] text-foreground md:text-6xl lg:text-7xl">
-          Gagnez en <em>visibilité</em>
-          <br />
-          sans vendre votre âme.
-        </h1>
+          <p className="mt-8 max-w-xl font-mono text-base text-ink md:text-[15px]">
+            Vous portez un projet plus doux pour le monde ? Votre com' mérite
+            mieux que «&nbsp;je posterai lundi&nbsp;"{" "}
+            <em>(on est jeudi)</em>. On s'en occupe.
+          </p>
 
-        <p className="mt-10 max-w-2xl font-mono text-base text-foreground md:text-lg">
-          Vous portez un projet plus doux pour le monde ? Votre com' mérite
-          mieux que «&nbsp;je posterai lundi&nbsp;»{" "}
-          <em className="not-italic">
-            <span className="italic">(on est jeudi)</span>
-          </em>
-          . On s'en occupe.
-        </p>
+          <p className="mt-4 max-w-xl font-mono text-sm text-ink">
+            Pour les solopreneur·es, créateur·ices, artisan·es, assos,
+            coopératives et PME à impact.
+          </p>
 
-        <p className="mt-6 max-w-xl font-mono text-sm text-foreground md:text-base">
-          Pour les solopreneur·es, créateur·ices, artisan·es, assos,
-          coopératives et PME à impact.
-        </p>
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mt-10 inline-flex items-center gap-3 rounded-full bg-primary py-3 pl-7 pr-3 font-mono text-sm uppercase tracking-[0.18em] text-primary-foreground transition-colors hover:bg-[color:var(--bordeaux)]"
+          >
+            Réserver un appel découverte
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-cream text-ink transition-transform group-hover:translate-x-1">
+              <ArrowRight className="h-4 w-4" />
+            </span>
+          </a>
 
-        <a
-          href={CALENDLY_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-12 inline-flex items-center gap-3 rounded-full bg-primary px-8 py-5 font-mono text-sm uppercase tracking-[0.15em] text-primary-foreground transition-colors hover:bg-[color:var(--bordeaux)] md:text-base"
-        >
-          Réserver un appel découverte
-          <ArrowRight className="h-4 w-4" />
-        </a>
+          {/* Bandeau stats */}
+          <dl className="mt-16 grid grid-cols-2 gap-x-8 gap-y-8 md:grid-cols-4">
+            {STATS.map((s) => (
+              <div key={s.label}>
+                <dt className="font-serif text-3xl text-ink md:text-4xl">
+                  {s.value}
+                </dt>
+                <dd className="mt-2 font-mono text-[11px] uppercase tracking-[0.15em] text-ink/70">
+                  {s.label}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        {/* Colonne droite */}
+        <div className="relative md:col-span-5">
+          {/* Blob rose */}
+          <div
+            aria-hidden
+            className="absolute inset-x-0 top-4 -z-0 mx-auto h-[90%] w-[88%] rounded-[55%_45%_60%_40%/55%_45%_55%_45%]"
+            style={{ backgroundColor: "var(--rose-soft)" }}
+          />
+
+          {/* Pills services */}
+          <ul className="absolute left-0 top-1/4 z-20 hidden flex-col gap-3 md:flex">
+            {SERVICES.map((s) => (
+              <li
+                key={s}
+                className="rounded-full border border-rose-soft bg-cream px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ink shadow-sm"
+              >
+                {s}
+              </li>
+            ))}
+          </ul>
+
+          {/* Photo */}
+          <div className="relative z-10 mx-auto aspect-[4/5] w-full max-w-md overflow-hidden">
+            <img
+              src={laetitiaAsset.url}
+              alt="Laetitia Mattioli, fondatrice de Nowadays — agence de communication engagée et éthique"
+              className="h-full w-full object-cover object-top"
+              loading="eager"
+            />
+          </div>
+
+          {/* Stickers */}
+          <div className="pointer-events-none absolute right-2 top-0 z-20 h-14 w-14 md:h-16 md:w-16">
+            <CrownSticker />
+          </div>
+          <div className="pointer-events-none absolute -left-4 -top-6 z-20 hidden h-28 w-28 md:block">
+            <CurlyArrow />
+          </div>
+          <div className="pointer-events-none absolute right-0 top-1/3 z-20 h-24 w-24 md:h-28 md:w-28">
+            <EngageStamp />
+          </div>
+          <div className="pointer-events-none absolute -bottom-4 right-0 z-20 h-20 w-24 md:h-24 md:w-28">
+            <HeartsCluster />
+          </div>
+          <div className="pointer-events-none absolute bottom-2 right-20 z-20 h-12 w-12">
+            <DotsGrid />
+          </div>
+        </div>
       </div>
     </section>
   );
