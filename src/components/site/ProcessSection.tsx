@@ -49,7 +49,7 @@ export function ProcessSection() {
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-[var(--rose-dark)]">
             Comment ça marche
           </p>
-          <h2 className="font-serif text-3xl leading-[1.2] text-[var(--ink)] md:text-[2.5rem]">
+          <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-[var(--ink)]">
             3 étapes pour transformer votre communication.{" "}
             <em className="italic text-[var(--rose-dark)]">Zéro prise de tête.</em>
           </h2>
