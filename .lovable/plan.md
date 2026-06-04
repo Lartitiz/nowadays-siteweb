@@ -1,9 +1,7 @@
-## Plan: Remove "site web" card from Hero
+## Changement
 
-### Context
-The Hero section contains a single floating service bubble labeled "site web" positioned in the bottom-right of the hero. The user wants it removed.
+Supprimer le blob organique rond dans `src/components/site/TiredSection.tsx` (lignes 111-116), conformément à la règle mémoire « jamais de cercles/ronds décoratifs ».
 
-### Change
-In `src/components/site/Hero.tsx`, remove the "site web" bubble from the `SERVICES` array (currently the only item). Since the array will be empty, also remove the `{SERVICES.map(...)}` rendering block in the JSX to avoid rendering an empty loop.
-
-No other sections or components are affected.
+- Retrait du `<div>` aria-hidden avec `rounded-[60%_40%_55%_45%/50%_60%_40%_50%]` et `var(--rose-soft)`.
+- Aucun autre changement de layout (la colonne droite garde ses deux PhotoBubble).
+- Vérification rapide des autres sections pour s'assurer qu'aucun autre élément rond décoratif n'a été réintroduit.
