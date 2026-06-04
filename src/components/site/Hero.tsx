@@ -1,10 +1,10 @@
 import { ArrowRight } from "lucide-react";
-import laetitiaAsset from "@/assets/laetitia.png.asset.json";
+import laetitiaAsset from "@/assets/laetitia-hero.png.asset.json";
 
 const CALENDLY_URL =
   "https://calendly.com/laetitia-mattioli/30-min-de-diagnostic-offert";
 
-const SERVICES = ["Branding", "Réseaux sociaux", "Site web", "SEO", "Emailing"];
+
 
 const STATS: Array<{ value: string; label: string }> = [
   { value: "+10 ans", label: "d'expérience" },
@@ -206,50 +206,22 @@ export function Hero() {
 
         {/* Colonne droite */}
         <div className="relative md:col-span-5">
-          {/* Blob rose */}
-          <div
-            aria-hidden
-            className="absolute inset-x-0 top-4 -z-0 mx-auto h-[90%] w-[88%] rounded-[55%_45%_60%_40%/55%_45%_55%_45%]"
-            style={{ backgroundColor: "var(--rose-soft)" }}
-          />
-
-          {/* Pills services */}
-          <ul className="absolute left-0 top-1/4 z-20 hidden flex-col gap-3 md:flex">
-            {SERVICES.map((s) => (
-              <li
-                key={s}
-                className="rounded-full border border-rose-soft bg-cream px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ink shadow-sm"
-              >
-                {s}
-              </li>
-            ))}
-          </ul>
-
-          {/* Photo */}
-          <div className="relative z-10 mx-auto aspect-[4/5] w-full max-w-md overflow-hidden">
+          {/* Photo (inclut déjà les pills services et le blob rose) */}
+          <div className="relative z-10 mx-auto w-full max-w-md">
             <img
               src={laetitiaAsset.url}
               alt="Laetitia Mattioli, fondatrice de Nowadays — agence de communication engagée et éthique"
-              className="h-full w-full object-cover object-top"
+              className="h-auto w-full object-contain"
               loading="eager"
             />
           </div>
 
-          {/* Stickers */}
-          <div className="pointer-events-none absolute right-2 top-0 z-20 h-14 w-14 md:h-16 md:w-16">
+          {/* Stickers décoratifs conservés autour de la photo */}
+          <div className="pointer-events-none absolute -right-2 -top-2 z-20 h-14 w-14 md:h-16 md:w-16">
             <CrownSticker />
           </div>
-          <div className="pointer-events-none absolute -left-4 -top-6 z-20 hidden h-28 w-28 md:block">
-            <CurlyArrow />
-          </div>
-          <div className="pointer-events-none absolute right-0 top-1/3 z-20 h-24 w-24 md:h-28 md:w-28">
+          <div className="pointer-events-none absolute right-0 top-1/3 z-20 hidden h-24 w-24 md:block md:h-28 md:w-28">
             <EngageStamp />
-          </div>
-          <div className="pointer-events-none absolute -bottom-4 right-0 z-20 h-20 w-24 md:h-24 md:w-28">
-            <HeartsCluster />
-          </div>
-          <div className="pointer-events-none absolute bottom-2 right-20 z-20 h-12 w-12">
-            <DotsGrid />
           </div>
         </div>
       </div>
