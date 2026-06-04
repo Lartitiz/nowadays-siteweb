@@ -134,7 +134,7 @@ export function Hero() {
           </a>
 
           {/* Bandeau stats */}
-          <dl className="mt-16 grid w-full grid-cols-2 gap-x-8 gap-y-8 md:grid-cols-4">
+          <dl className="mt-16 grid w-full grid-cols-2 gap-x-8 gap-y-8 md:grid-cols-2">
             {STATS.map((s) => (
               <div key={s.label}>
                 <dt className="font-serif text-3xl text-ink md:text-4xl">
