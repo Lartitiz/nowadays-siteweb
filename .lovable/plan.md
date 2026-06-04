@@ -1,7 +1,11 @@
-## Changement
+## Fond rose clair sur la section Offres
 
-Supprimer le blob organique rond dans `src/components/site/TiredSection.tsx` (lignes 111-116), conformément à la règle mémoire « jamais de cercles/ronds décoratifs ».
+**Objectif** : Faire ressortir la section des offres en lui appliquant un fond rose clair, tout en gardant la cohérence visuelle du site.
 
-- Retrait du `<div>` aria-hidden avec `rounded-[60%_40%_55%_45%/50%_60%_40%_50%]` et `var(--rose-soft)`.
-- Aucun autre changement de layout (la colonne droite garde ses deux PhotoBubble).
-- Vérification rapide des autres sections pour s'assurer qu'aucun autre élément rond décoratif n'a été réintroduit.
+**Changement** :
+- Dans `src/components/site/OffersSection.tsx`, remplacer la classe `bg-background` par `bg-rose-light` sur le `<section>` principal (ligne 132).
+
+**Pourquoi ce choix** :
+- La couleur `rose-light` (#feedf0) est définie dans le design system et s'harmonise avec la palette du site.
+- Elle est suffisamment claire pour ne pas écraser le contenu, tout en différenciant cette section du reste de la page.
+- Les cartes internes conservent leur fond `bg-cream`, ce qui maintient la hiérarchie visuelle.
