@@ -39,20 +39,6 @@ function AsteriskSticker() {
   );
 }
 
-function CircleRing({ color = "var(--rose-mid)" }: { color?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className="h-full w-full" aria-hidden>
-      <circle
-        cx="12"
-        cy="12"
-        r="9"
-        fill="none"
-        stroke={color}
-        strokeWidth="1.8"
-      />
-    </svg>
-  );
-}
 
 function PhotoBubble({
   image,
@@ -142,13 +128,6 @@ export function TiredSection() {
           {/* Astérisque */}
           <div className="absolute right-0 top-0 h-10 w-10 md:-top-6 md:h-12 md:w-12">
             <AsteriskSticker />
-          </div>
-          {/* Cercles décoratifs */}
-          <div className="absolute -left-2 top-[42%] hidden h-4 w-4 md:block">
-            <CircleRing color="var(--orange)" />
-          </div>
-          <div className="absolute right-2 top-[58%] hidden h-3 w-3 md:block">
-            <CircleRing color="var(--rose-dark)" />
           </div>
           {/* Blob organique */}
           <div
