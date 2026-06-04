@@ -62,7 +62,7 @@ export function Hero() {
         <HeartSticker />
       </div>
       <div className="pointer-events-none absolute right-6 top-24 h-14 w-14 md:right-24 md:top-16 md:h-20 md:w-20">
-        <SpiralSticker />
+        <LeafSticker />
       </div>
       <div className="pointer-events-none absolute bottom-24 left-8 hidden h-16 w-16 md:bottom-32 md:left-32 md:block md:h-20 md:w-20">
         <DotSticker />
