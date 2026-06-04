@@ -108,12 +108,8 @@ export function TiredSection() {
 
         {/* Colonne droite */}
         <div className="relative md:col-span-5">
-          {/* Blob organique */}
-          <div
-            aria-hidden
-            className="absolute -right-16 top-1/3 -z-0 hidden h-52 w-52 rounded-[60%_40%_55%_45%/50%_60%_40%_50%] md:block"
-            style={{ backgroundColor: "var(--rose-soft)", opacity: 0.4 }}
-          />
+
+
 
           <div className="relative z-10">
             <PhotoBubble
