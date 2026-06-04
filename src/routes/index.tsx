@@ -5,6 +5,7 @@ import { TiredSection } from "@/components/site/TiredSection";
 import { VisibilityBanner } from "@/components/site/VisibilityBanner";
 import { ManifestoSection } from "@/components/site/ManifestoSection";
 import { OffersSection } from "@/components/site/OffersSection";
+import { ProcessSection } from "@/components/site/ProcessSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,6 +38,7 @@ function Index() {
       <TiredSection />
       <VisibilityBanner />
       <ManifestoSection />
+      <ProcessSection />
       <OffersSection />
     </SiteLayout>
   );
