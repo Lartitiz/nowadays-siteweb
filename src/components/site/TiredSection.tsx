@@ -39,20 +39,6 @@ function AsteriskSticker() {
   );
 }
 
-function CircleRing({ color = "var(--rose-mid)" }: { color?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className="h-full w-full" aria-hidden>
-      <circle
-        cx="12"
-        cy="12"
-        r="9"
-        fill="none"
-        stroke={color}
-        strokeWidth="1.8"
-      />
-    </svg>
-  );
-}
 
 function PhotoBubble({
   image,
