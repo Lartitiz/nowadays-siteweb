@@ -9,8 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as CooperativeAssoRouteImport } from './routes/cooperative-asso'
+import { Route as AccompagnementCommunicationRouteImport } from './routes/accompagnement-communication'
 import { Route as IndexRouteImport } from './routes/index'
 
+const CooperativeAssoRoute = CooperativeAssoRouteImport.update({
+  id: '/cooperative-asso',
+  path: '/cooperative-asso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccompagnementCommunicationRoute =
+  AccompagnementCommunicationRouteImport.update({
+    id: '/accompagnement-communication',
+    path: '/accompagnement-communication',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +32,50 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/accompagnement-communication': typeof AccompagnementCommunicationRoute
+  '/cooperative-asso': typeof CooperativeAssoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/accompagnement-communication': typeof AccompagnementCommunicationRoute
+  '/cooperative-asso': typeof CooperativeAssoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/accompagnement-communication': typeof AccompagnementCommunicationRoute
+  '/cooperative-asso': typeof CooperativeAssoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/accompagnement-communication' | '/cooperative-asso'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/accompagnement-communication' | '/cooperative-asso'
+  id: '__root__' | '/' | '/accompagnement-communication' | '/cooperative-asso'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccompagnementCommunicationRoute: typeof AccompagnementCommunicationRoute
+  CooperativeAssoRoute: typeof CooperativeAssoRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/cooperative-asso': {
+      id: '/cooperative-asso'
+      path: '/cooperative-asso'
+      fullPath: '/cooperative-asso'
+      preLoaderRoute: typeof CooperativeAssoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accompagnement-communication': {
+      id: '/accompagnement-communication'
+      path: '/accompagnement-communication'
+      fullPath: '/accompagnement-communication'
+      preLoaderRoute: typeof AccompagnementCommunicationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +88,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccompagnementCommunicationRoute: AccompagnementCommunicationRoute,
+  CooperativeAssoRoute: CooperativeAssoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
