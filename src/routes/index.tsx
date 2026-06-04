@@ -33,9 +33,9 @@ function Index() {
   return (
     <SiteLayout>
       <Hero />
-      
       <TiredSection />
       <ManifestoSection />
+      <OffersSection />
     </SiteLayout>
   );
 }
