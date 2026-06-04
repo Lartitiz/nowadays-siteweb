@@ -1,77 +1,53 @@
 ## Objectif
 
-Refondre `TiredSection` en split layout 2 colonnes inspiré de la référence — sans copier les photos/illustrations bariolées : on traduit la composition dans la DA Nowadays (cream/bordeaux/rose, IBM Plex 400, Libre Baskerville).
+Remplacer les 2 `QuoteCard` (rose-soft + jaune) de la colonne droite de `TiredSection` par un collage type "photo polaroïd + bulle de dialogue" inspiré du visuel de référence — avec la DA Nowadays (palette + typos existantes, pas de violet ni de noir pur).
 
-Le `ManifestoSection` actuel garde son contenu mais devient le bandeau qui suit (point 3).
+## Composition d'une card (réutilisable)
 
-## 1. Refonte `TiredSection.tsx` — split 2 colonnes
+Chaque card devient un bloc relatif ~280–320px de haut composé de 2 éléments qui se chevauchent :
 
-### Colonne gauche (~55%)
-- Gros titre Libre Baskerville en deux blocs :  
-  "Fatiguée du *marketing*" — italique rose-dark sur le mot "marketing"  
-  Sous-ligne en script italique : "*agressif et des injonctions ?*" surligné par un **bandeau jaune** (yellow token déjà ajouté), façon stabilo. Implémenté en `<span class="relative">` avec un `::before` jaune absolu derrière le texte.
-- Chip pleine "Nous aussi." : pill bordeaux pleine, texte cream, taille moyenne (font-mono semibold).
-- Paragraphe mono : "Vous portez un projet qui a du sens. Que vous soyez créateur·ice, freelance ou à la tête d'une structure engagée, vous y mettez tout : de l'attention, de l'éthique, du soin."
-- Petit squiggle SVG jaune sous le paragraphe (trait ondulé décoratif).
-- Tagline rose-dark en serif italique : "Mais côté communication, c'est une autre histoire…"
-
-### Colonne droite (~45%) — pas de photos réelles
-À la place des photos people (qu'on n'a pas), deux **cards-citations empilées en décalage** :
-- Card 1 (haut) : fond rose-soft, coins arrondis 24px, contient une **bulle blanche** avec :  
-  "Peut-être que vous postez quand vous pouvez, entre deux urgences."  
-  Petit squiggle rose-dark sous la bulle.
-- Card 2 (bas, légèrement décalée à droite) : fond yellow, contient bulle blanche :  
-  "Peut-être que personne dans l'équipe n'a vraiment le temps (ni les compétences) de s'en occuper."  
-  Squiggle bordeaux sous la bulle.
-
-Stickers décoratifs SVG autour (style stroke, comme dans le Hero) :
-- Petit cœur outline bordeaux en haut à gauche du titre
-- Étoile/astérisque rose-dark en haut à droite
-- Cercles outline rose-mid entre les deux cards
-- Blob organique rose-soft en bordure droite, partiellement coupé
-
-### Layout
-- `grid md:grid-cols-12` ; gauche `md:col-span-7`, droite `md:col-span-5`
-- Mobile : stack vertical, cards centrées en-dessous du texte
-- Fond `bg-background` (cream), `overflow-hidden`
-
-## 2. Bandeau "Chez Nowadays" — nouveau composant intercalaire
-
-Petit bandeau plein-largeur entre `TiredSection` et `ManifestoSection`, inspiré du bloc violet du bas de la référence :
-- Fond **rose-light** ou **rose-soft**, coins arrondis 32px, contained dans `max-w-6xl`
-- Layout horizontal : à gauche un médaillon circulaire jaune avec petits stickers (étoile, cœur outline) ; à droite le texte
-- Texte mixé sérif/italic : "Chez Nowadays, **nous vous accompagnons à** *vous rendre visible* grâce à une communication *joyeuse*, *éthique* et *efficace*."
-- Surlignages :
-  - "vous rendre visible" : surligné en rose-mid (chip arrondi)
-  - "joyeuse / éthique / efficace" : italique rose-dark avec squiggle souligné SVG sous chaque mot
-- À droite, sticker "mains qui tiennent un cœur" en outline rose-dark (SVG inline)
-
-Ce bloc reprend le contenu actuel de fin de `TiredSection` ("Chez Nowadays, nous vous accompagnons…") qui est donc retiré de `TiredSection`.
-
-Nom du fichier : `src/components/site/VisibilityBanner.tsx`.
-
-## 3. Inclusion dans la home
-
-Mise à jour de `src/routes/index.tsx` :
-```
-<Hero />
-<TiredSection />        ← nouvelle version split
-<VisibilityBanner />    ← nouveau bandeau
-<ManifestoSection />    ← inchangé
-<OffersSection />
+```text
++------------------------+
+|  [PHOTO]               |
+|  fond coloré arrondi   |
+|  photo détourée/cadrée |
+|        +---------------+----+
+|        |  BULLE BLANCHE     |
+|        |  texte mono ink    |
+|        |  ~ squiggle dessous|
++--------+--------------------+
 ```
 
-## 4. Respect de la DA
+- **Photo** : conteneur `rounded-[32px]` avec `background-color` (rose-soft pour card 1, yellow pour card 2), padding inégal pour laisser dépasser la photo en haut comme dans la réf. Photo en `object-cover`, coins arrondis hérités, ratio ~4/5.
+- **Bulle** : `rounded-[24px]` cream/blanc, padding 5/6, ombre douce bordeaux 6%, posée en `absolute` chevauchant ~30% la photo (bas-droit pour card 1, bas-gauche pour card 2 pour créer l'alternance vue dans la réf).
+- **Texte bulle** : `font-mono text-[14px] leading-[1.7] text-ink`, max 3-4 lignes.
+- **Squiggle** sous le texte (rose-dark / bordeaux selon la card).
 
-- IBM Plex Mono 400, couleur `--ink` partout (jamais d'opacité ni rose-mid sur fond clair).
-- Libre Baskerville 400 pour titres ; italiques en rose-dark.
-- Le jaune (`--yellow` déjà défini) est utilisé en accent : stabilo derrière l'italique du titre + card 2 de la colonne droite + médaillon du bandeau.
-- Bordeaux pour le chip "Nous aussi." et certains accents.
-- Pas de photos réelles : on s'inspire de la composition (split + bulles + stickers) mais on traduit en illustration graphique cohérente avec le Hero.
+## Layout de la colonne droite
 
-## 5. Détails techniques
+- Card 1 (haut) : photo à **gauche**, bulle qui sort en **bas-droite**.
+- Card 2 (bas, décalée) : photo à **droite**, bulle qui sort en **bas-gauche** (effet zigzag comme la réf).
+- Garder les stickers existants (`AsteriskSticker`, `CircleRing` orange/rose-mid, blob rose-soft) repositionnés autour pour ne pas chevaucher les bulles.
 
-- Surlignage stabilo jaune : `<span class="relative inline-block"><span class="absolute inset-x-[-4px] bottom-[10%] top-[40%] -rotate-1 bg-yellow z-0" aria-hidden /><span class="relative">texte</span></span>`
-- Squiggles : SVG inline réutilisables (composant `Squiggle({color})`)
-- Bulle citation : `rounded-2xl bg-cream p-5 shadow-[0_8px_24px_rgba(145,1,75,0.06)]`
-- Aucune modification de `Header`, `Footer`, `Hero`, `OffersSection`, `ManifestoSection`.
+## Images
+
+Uploader les 2 images fournies via `lovable-assets` :
+- `user-uploads://v2-7f9430c7b852f880f6a39363805547bb_720w-1.webp` → card 1 ("postez quand vous pouvez")
+- `user-uploads://pexels-yankrukov-8837271.jpg` → card 2 ("équipe")
+
+Pointeurs JSON dans `src/assets/`, importés dans `TiredSection`.
+
+## Détails DA
+
+- Couleurs : uniquement `--rose-soft`, `--yellow`, `--cream`, `--ink`, `--rose-dark`, `--bordeaux`, `--orange` (déjà dans `styles.css`).
+- Typo : titre/bulle inchangés (Libre Baskerville + IBM Plex Mono 400, couleur `--ink`).
+- Pas d'opacité sur le texte, pas de rose-mid sur fond clair (règles mémoire).
+- Ombres légères : `0_10px_30px_rgba(145,1,75,0.08)` sur les bulles.
+
+## Fichiers touchés
+
+- `src/components/site/TiredSection.tsx` — supprimer l'ancien `QuoteCard`, ajouter un nouveau composant `PhotoBubble` (photo + bulle), restructurer la colonne droite.
+- `src/assets/tired-phone.webp.asset.json` (nouveau)
+- `src/assets/tired-team.jpg.asset.json` (nouveau)
+
+Aucun changement de logique, uniquement présentation.
