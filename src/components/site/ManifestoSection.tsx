@@ -6,7 +6,7 @@ export function ManifestoSection() {
           Notre manifeste
         </p>
 
-        <h2 className="text-3xl leading-tight md:text-5xl">
+        <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
           Une communication engagée
           <br />
           comme outil <em>d'émancipation</em>.
