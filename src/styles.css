@@ -67,10 +67,11 @@
   --rose-light: oklch(0.96 0.025 5);      /* #feedf0 */
   --cream: oklch(0.985 0.012 30);         /* #fff7f5 */
   --orange: oklch(0.74 0.17 60);          /* #f19700 */
+  --ink: oklch(0.18 0.04 5);              /* #1a050d — noir chaud teinté bordeaux */
 
   /* Mapping sémantique shadcn */
   --background: var(--cream);
-  --foreground: var(--bordeaux);
+  --foreground: var(--ink);
   --card: oklch(1 0 0);
   --card-foreground: var(--bordeaux);
   --popover: oklch(1 0 0);
