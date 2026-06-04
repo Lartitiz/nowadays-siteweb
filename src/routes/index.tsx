@@ -7,6 +7,9 @@ import { ManifestoSection } from "@/components/site/ManifestoSection";
 import { OffersSection } from "@/components/site/OffersSection";
 import { ProcessSection } from "@/components/site/ProcessSection";
 import { DifferencesSection } from "@/components/site/DifferencesSection";
+import { ExpertiseSection } from "@/components/site/ExpertiseSection";
+import { LaetitiaSection } from "@/components/site/LaetitiaSection";
+import { PourquoiNowadaysSection } from "@/components/site/PourquoiNowadaysSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -42,6 +45,9 @@ function Index() {
       <OffersSection />
       <ProcessSection />
       <DifferencesSection />
+      <ExpertiseSection />
+      <LaetitiaSection />
+      <PourquoiNowadaysSection />
     </SiteLayout>
   );
 }
