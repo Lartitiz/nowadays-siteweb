@@ -70,6 +70,7 @@
   --cream: oklch(0.985 0.012 30);         /* #fff7f5 */
   --orange: oklch(0.74 0.17 60);          /* #f19700 */
   --ink: oklch(0.18 0.04 5);              /* #1a050d — noir chaud teinté bordeaux */
+  --yellow: oklch(0.93 0.16 95);          /* #FFE561 — jaune badge "ou" */
 
   /* Mapping sémantique shadcn */
   --background: var(--cream);
