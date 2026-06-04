@@ -81,7 +81,7 @@ function QuoteCard({
   bg: string;
   squiggleColor: string;
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <div
