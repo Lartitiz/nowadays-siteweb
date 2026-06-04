@@ -31,7 +31,7 @@ export function PourquoiNowadaysSection() {
           {/* Paragraphe */}
           <div className="lg:col-span-6">
             <p className="font-mono text-[14px] md:text-[15px] leading-[1.85] text-[var(--ink)] max-w-[60ch]">
-              Parce que Nowadays signifie « de nos jours ». Pas pour coller à une tendance, pas pour surfer sur un effet de mode, mais pour affirmer ce qui compte vraiment. Ce qui est nécessaire ici et maintenant : construire des projets engagés avec éthique, qui respectent le vivant, qui participent à un avenir plus juste.
+              Parce que Nowadays signifie « de nos jours ». Pas pour coller à une tendance ni pour surfer sur un effet de mode, mais pour affirmer ce qui compte vraiment : construire des projets engagés avec éthique, qui respectent le vivant et participent à un avenir plus juste.
             </p>
           </div>
         </div>
