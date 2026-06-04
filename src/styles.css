@@ -100,14 +100,14 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-mono);
-    font-weight: 300;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
     font-weight: 400; /* jamais bold */
-    color: var(--bordeaux);
+    color: var(--ink);
     line-height: 1.1;
   }
 
