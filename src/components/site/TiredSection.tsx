@@ -113,14 +113,7 @@ export function TiredSection() {
           <h2 className="font-serif text-4xl leading-[1.1] text-ink md:text-6xl">
             Fatiguée du <em>marketing</em>
             <br />
-            <span className="relative inline-block leading-none">
-              <span
-                aria-hidden
-                className="absolute inset-x-[-10px] top-[12%] bottom-[14%] -rotate-1 rounded-[4px]"
-                style={{ backgroundColor: "var(--yellow)" }}
-              />
-              <em className="relative">agressif et des injonctions ?</em>
-            </span>
+            <em>agressif et des injonctions ?</em>
           </h2>
 
           <div className="mt-8 inline-flex items-center rounded-full bg-[color:var(--bordeaux)] px-5 py-2.5">
