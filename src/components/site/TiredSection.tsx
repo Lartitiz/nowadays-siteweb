@@ -129,13 +129,6 @@ export function TiredSection() {
           <div className="absolute right-0 top-0 h-10 w-10 md:-top-6 md:h-12 md:w-12">
             <AsteriskSticker />
           </div>
-          {/* Cercles décoratifs */}
-          <div className="absolute -left-2 top-[42%] hidden h-4 w-4 md:block">
-            <CircleRing color="var(--orange)" />
-          </div>
-          <div className="absolute right-2 top-[58%] hidden h-3 w-3 md:block">
-            <CircleRing color="var(--rose-dark)" />
-          </div>
           {/* Blob organique */}
           <div
             aria-hidden
