@@ -19,15 +19,7 @@ type Bubble = {
   rotate: string;
 };
 
-const SERVICES: Bubble[] = [
-  {
-    label: "site web",
-    bg: "var(--orange)",
-    fg: "var(--ink)",
-    className: "right-[6%] bottom-[10%] md:right-[12%] md:bottom-[14%]",
-    rotate: "-rotate-6",
-  },
-];
+const SERVICES: Bubble[] = [];
 
 function ServiceBubble({ b }: { b: Bubble }) {
   return (
