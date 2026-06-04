@@ -6,9 +6,8 @@ const CALENDLY_URL =
 const STATS: Array<{ value: string; label: string }> = [
   { value: "+10 ans", label: "d'expérience" },
   { value: "+1200", label: "projets accompagnés" },
-  { value: "100%", label: "engagés" },
-  { value: "0%", label: "bullshit" },
 ];
+
 
 type Bubble = {
   label: string;
@@ -67,80 +66,6 @@ const SERVICES: Bubble[] = [
   },
 ];
 
-/* — Stickers — */
-
-function CrownSticker() {
-  return (
-    <svg viewBox="0 0 80 70" className="h-full w-full" aria-hidden>
-      <path
-        d="M10 55 L15 20 L28 38 L40 14 L52 38 L65 20 L70 55 Z"
-        fill="none"
-        stroke="var(--ink)"
-        strokeWidth="2.5"
-        strokeLinejoin="round"
-        strokeLinecap="round"
-      />
-      <circle cx="40" cy="8" r="2.5" fill="var(--ink)" />
-      <line
-        x1="10"
-        y1="62"
-        x2="70"
-        y2="62"
-        stroke="var(--ink)"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function EngageStamp() {
-  return (
-    <svg viewBox="0 0 140 140" className="h-full w-full" aria-hidden>
-      <defs>
-        <path
-          id="stamp-circle"
-          d="M70,70 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"
-        />
-      </defs>
-      <circle
-        cx="70"
-        cy="70"
-        r="62"
-        fill="none"
-        stroke="var(--rose-dark)"
-        strokeWidth="1.5"
-      />
-      <circle
-        cx="70"
-        cy="70"
-        r="52"
-        fill="none"
-        stroke="var(--rose-dark)"
-        strokeWidth="1"
-        strokeDasharray="2 4"
-      />
-      <text
-        fill="var(--rose-dark)"
-        style={{
-          fontFamily: "IBM Plex Mono, monospace",
-          fontSize: "11px",
-          letterSpacing: "3px",
-          textTransform: "uppercase",
-        }}
-      >
-        <textPath href="#stamp-circle" startOffset="0">
-          Communication · Engagée · Éthique ·{" "}
-        </textPath>
-      </text>
-      <path
-        d="M70 84 C 56 74, 52 64, 60 58 C 66 54, 70 60, 70 64 C 70 60, 74 54, 80 58 C 88 64, 84 74, 70 84 Z"
-        fill="var(--rose-dark)"
-      />
-    </svg>
-  );
-}
-
 function ServiceBubble({ b }: { b: Bubble }) {
   return (
     <div
@@ -166,14 +91,6 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-background">
       <div className="relative mx-auto max-w-6xl px-6 py-20 md:py-28">
-        {/* Stickers décoratifs */}
-        <div className="pointer-events-none absolute left-6 top-10 z-20 h-12 w-12 md:left-10 md:top-12 md:h-14 md:w-14">
-          <CrownSticker />
-        </div>
-        <div className="pointer-events-none absolute right-4 top-4 z-20 hidden h-24 w-24 md:block md:h-28 md:w-28">
-          <EngageStamp />
-        </div>
-
         {/* Bulles de services flottantes */}
         {SERVICES.map((b) => (
           <ServiceBubble key={b.label} b={b} />
