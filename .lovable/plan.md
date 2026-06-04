@@ -1,79 +1,92 @@
-# Fin de page homepage — pixel perfect
+# Prochaines étapes de la migration pixel-perfect
 
-Quatre blocs à ajouter en bas de la homepage, dans l'ordre des captures, en respectant strictement les règles de typo/couleurs déjà en place (Libre Baskerville 400 pour les titres en `text-ink`, italiques en `rose-dark` ; corps en IBM Plex Mono `text-ink` ; CTA `rose-dark` arrondi avec libellé `font-mono uppercase tracking`).
+## Vue d'ensemble (état actuel)
 
-## 1. `CtaWaveSection` (capture 1)
+✅ Faits : Homepage complète (Hero, Tired, Visibility, Manifesto, Offers, Process, Differences, Expertise, Laetitia, Pourquoi, CtaWave, Press, FinalCta, Footer enrichi).
 
-Nouveau composant `src/components/site/CtaWaveSection.tsx`, inséré entre `PourquoiNowadaysSection` et le footer.
+🟡 À faire (par ordre de priorité) :
 
-- Fond `rose-soft` (#ffd6e8) avec deux vagues SVG (haut et bas) en `cream` qui font la transition douce vers les sections blanches voisines.
-- Contenu centré, padding vertical généreux :
-  - H2 : `Prête à communiquer autrement ?` — règle H2 standard.
-  - Sous-titre : `NOWADAYS, VOTRE AGENCE DE COMMUNICATION ENGAGÉE AU SERVICE DE PROJETS ÉTHIQUES` en `font-mono uppercase tracking-[0.2em] text-ink`.
-  - CTA bouton `rose-dark` arrondi pill : `RÉSERVER UN APPEL DÉCOUVERTE`, lien `mailto:` (placeholder) ou ancre `#contact`.
+1. `**/accompagnement-communication**` (cette étape — détaillée ci-dessous)
+2. `**/cooperative-asso**` (page jumelle, structure proche)
+3. **Sous-pages ressources** linkées dans le footer : `/blog`, `/calendrier-editorial`, `/formation-instagram`, `/template-plan-com` (placeholders ou contenus si fournis)
+4. **Page `/notre-demarche-ethique**` (lien footer)
+5. **Branchements** : Calendly (CTA "Réserver…") + soumission newsletter
+6. **SEO/OG** : og:image par page, sitemap, robots.txt
+7. **Polish responsive** : pass mobile sur toutes les sections (≤ 390px)
 
-## 2. `PressSection` (capture 2)
+---
 
-Nouveau composant `src/components/site/PressSection.tsx`, fond `cream`/blanc.
+## Étape en cours — `/accompagnement-communication`
 
-- H2 centré : `Vu dans la` + `<em>presse</em>` (italique en `rose-dark`, soulignement décoratif sous le mot via `border-b-2 border-rose-dark` ou trait SVG).
-- Grille 3 colonnes (1 colonne en mobile) :
-  - Le Bonbon → titre `Le marché écolo Nowadays Market s'installe au Jardin 21`
-  - emarketing.fr → `Interview : Laetitia Mattioli, Fondatrice de Nowadays Agency`
-  - L'ADN Business → `Comment réussir un programme d'ambassadeurs de marque ?`
-- Logos générés via `imagegen--generate_image` (transparent_background, premium pour la lisibilité du texte/marques) puis importés depuis `src/assets/`.
-- Légende sous chaque logo en `font-mono text-sm text-ink` centré, sans graisse forte (poids 400).
+Refonte complète de `src/routes/accompagnement-communication.tsx` qui n'a aujourd'hui qu'un H1 placeholder. On reprend la structure de la page source en respectant toutes les règles du design system (Libre Baskerville 400, IBM Plex Mono, palette imposée, H2 = `font-serif text-4xl md:text-6xl leading-[1.05] text-ink`, pas de cercle décoratif).
 
-## 3. `FinalCtaSection` (capture 3)
+### Sections à créer (composants dans `src/components/accompagnement/`)
 
-Nouveau composant `src/components/site/FinalCtaSection.tsx`, fond blanc/`cream`.
+1. **HeroAccompagnement**
+  - H1 : `Tu fais un travail <em>magnifique</em>. Mais personne ne le voit.`
+  - Sous-titre serif : `Deviens <em>visible</em> sans vendre ton âme.`
+  - Accroche mono : `Ta com' te prend la tête ? On la fait ensemble.`
+  - Mention prix italique mono : `290€/mois pendant 6 mois. Soit moins de 9€ par jour…`
+  - CTA pill `rose-dark` : `Prends rdv pour discuter de ton projet` → `https://calendly.com/laetitia-mattioli/appel-decouverte`
+  - Ligne de réassurance mono : `✨ Appel gratuit • 30 minutes • Sans engagement`
+2. **ClientsBand** — fond `rose-light`
+  - Sur-titre italique serif : `Elles m'ont fait confiance`
+  - Rangée de 6 logos de clients (placeholders textuels stylisés en attendant les vrais logos)
+  - Note : génération de wordmarks SVG simples (Atelier Tiket, Ikigai, Boom Boom Dance, Hopla, Napperon, SLF) — ne pas reproduire les logos exacts (droits)
+3. **ProblemSection** — H2 `Ce que tu proposes est beau et responsable. Il est temps qu'on le voie.` + 3 paragraphes corps mono
+4. **LaetitiaIntroSection** — H2 `Enchantée, je suis Laetitia, et je crois que la communication n'est pas de la manipulation, mais un outil <em>d'émancipation</em>.` + paragraphe « safe place » + portrait (placeholder image générée → `src/assets/laetitia-portrait.jpg`)
+5. **TransformationGrid** — H2 `Dans 6 mois, ta com' <em>tourne</em>. Et tu n'es plus seule.` + 5 cartes (emoji + titre + texte) sur fond `cream`
+  - 🤝 Tu n'es plus seule…
+  - 🗺️ Tu as un plan clair…
+  - ⚡ Quelqu'un fait pour toi…
+  - 📈 Tu vois enfin des résultats
+  - 💜 Tu communiques sans trahir tes valeurs
+6. **ContrasteSection** — H2 `Imagine avoir quelqu'un qui bosse sur ta com' avec toi.` + liste 3 lignes `coach / formation / plan` → `→ Ici, on…`
+7. **TimelineSection** — sous-titre `6 mois pour tout mettre en place` + 3 colonnes (Mois 1→2 « On pose ta stratégie », Mois 3→6 « On applique ensemble », Au quotidien « Un doute ? Je suis là. »)
+8. **PrixSection** — fond `rose-soft`
+  - H2 `Pour 290 € / mois pendant 6 mois`
+  - Sous-texte + encart `Je te rembourse entièrement`
+  - CTA Calendly
+9. **ComparaisonAgenceSection** — H2 `Parce que déléguer à une agence est souvent hors de prix…`
+  - 2 colonnes side-by-side (Agence classique 16 000€ vs Ta binôme de com 1 740€) en tableau stylisé
+  - Ligne d'économie : `Soit 91% d'économie par rapport à une agence classique`
+10. **LivrablesGrid** — H2 `Concrètement tu repars avec :` + 6 cartes (🎨 branding, 📱 réseaux, 💻 site, ✉️ newsletter, ✨ presse, 🛠️ boîte à outils)
+11. **TemoignagesSection** — 2 témoignages texte (Pelin, Sarah/Mazeh) avec citation italique serif et nom mono
+12. **PourquoiCreeSection** — H2 `Pourquoi j'ai créé cet accompagnement ?` + bloc texte + liste à puces des préjugés + bio Laetitia (10 ans marketing, +150 projets, écoles) + portrait
+13. **ProjetsAccompagnesGrid** — H2 `Elles sont passées par mon accompagnement` + grille 3 col × N (Napperon, Boom Boom Dance, Mazeh Paris, Atelier Tiket, Hopla Studio, La Slow Fashionitude, Yza Handmade, L'école des femmes de Massoba, Sophie Brillouet, Péline, Comme un ruban d'étoile) — placeholder image grise + nom serif + courte description mono
+14. **InclusSection** — fond `rose-light`
+  - Titre récap prix
+    - Deux blocs liste : `👋 Toi + moi, concrètement` et `🛠️ Ce qu'on construit ensemble`
+    - Bloc garantie remboursement
+    - CTA Calendly
+15. **PourToiSection** — 2 colonnes : `Pour toi si…` (✓ × 5) et `Pas pour toi si…` (✕ × 4)
+16. **FaqSection** — H2 `Tu as des <em>questions</em> ?` + accordéon (composant `accordion` de shadcn déjà dispo) avec les 9 Q/R
+17. **CtaFinalAccompagnement** — réutiliser `FinalCtaSection` ou variante locale ; CTA vers Calendly
 
-- H2 centré : `Prêt·es à <em>avancer</em> ?` (italique `rose-dark`).
-- Paragraphe centré max-width ~62ch en `font-mono text-ink` :
-  > Réservez un appel découverte de 30 minutes. On fait le point sur votre projet, vos besoins, et je vous dis honnêtement si je peux vous aider (et comment).
-- Gros CTA pill `rose-dark` : `RÉSERVER MON APPEL DÉCOUVERTE (GRATUIT)`.
+### Détails techniques
 
-## 4. Footer enrichi (capture 4)
+- Tous les CTA "Réserver" pointent vers la même URL Calendly (`https://calendly.com/laetitia-mattioli/appel-decouverte`), ouvre dans un nouvel onglet (`target="_blank" rel="noopener noreferrer"`).
+- Header : passe la nav vers la page si pas déjà fait — vérifier le composant `Header.tsx`.
+- Réutiliser tokens couleur (`bg-rose-light`, `bg-rose-soft`, `bg-cream`, `text-ink`, `text-rose-dark`, etc.) — aucune couleur en dur.
+- Aucun cercle décoratif (règle mémoire).
+- Toutes les images sont des placeholders gris (cards avec fond `rose-soft` + emoji) — pas de génération d'images cette étape (à faire plus tard une fois la structure validée).
+- Découpage en sous-composants dans `src/components/accompagnement/` pour garder le route file court et permettre la réutilisation.
+- Mise à jour de `head()` : titre + description spécifiques + og:title/og:description ; canonical déjà en place.
 
-Remplacer le contenu de `src/components/site/Footer.tsx` (fond passe en `cream`/blanc).
+### Fichiers touchés
 
-- Bandeau supérieur avec H2 pleine largeur : `Votre agence de communication pop & <em>engagée</em>` (italique `rose-dark`).
-- Sous-grille 3 colonnes (1 colonne en mobile) :
-  1. **Colonne liens** (sans titre) — liens soulignés `text-ink`, `font-mono` :
-     - `Notre démarche éthique`
-     - `Nos études de cas (solopreneures)`
-     - `Nos études de cas (PME & Asso)`
-     - Puis sous-titre `NOUS RENDRE VISITE` (font-mono uppercase tracking) + adresse :
-       `La Prochaine Aire - Maison éclusière, Les Petits Pâtis, 89300 Saint-Aubin-sur-Yonne`
-  2. **Colonne RESSOURCES GRATUITES** — sous-titre + liste à puces soulignée :
-     - `Le blog`, `Outil Calendrier éditorial`, `Formation gratuite Instagram`, `Template Plan de com'`
-  3. **Colonne newsletter** :
-     - Texte : `Rejoins les +1 200 projets éthiques qui reçoivent chaque semaine mes conseils en com' engagée`
-     - Champ `Ton doux prénom (obligatoire)` (label + input arrondi pill `rose-light`)
-     - Champ `Ton e-mail (obligatoire)` (idem)
-     - Bouton pill `rose-mid` : `Recevoir les conseils secrets`
-     - Form purement décoratif (pas de backend) — `onSubmit` `preventDefault`.
-- Sous-pied existant `© Nowadays Agency` conservé en bas.
+- Édité : `src/routes/accompagnement-communication.tsx` (remplacement complet du `Page()` actuel)
+- Nouveaux : 17 composants sous `src/components/accompagnement/` (un par section ci-dessus)
 
-## Détails techniques
+---
 
-- Tous les H2 utilisent la règle standard : `font-serif text-4xl md:text-6xl leading-[1.05] text-ink`.
-- Italiques `<em>` colorés via classe utilitaire existante (CSS global déjà en place : `em` en `rose-dark`).
-- Aucun cercle décoratif, aucune couronne, aucun tampon (règles mémoire).
-- Vagues SVG inline dans `CtaWaveSection` — pas d'image externe.
-- Logos presse : 3 PNG transparents générés en `imagegen--generate_image` (premium pour lisibilité typographique).
-- Insertion dans `src/routes/index.tsx` :
-  ```
-  <PourquoiNowadaysSection />
-  <CtaWaveSection />
-  <PressSection />
-  <FinalCtaSection />
-  ```
-  puis `<Footer />` (rendu par `SiteLayout`) prend la version enrichie.
-- Liens du footer pointent vers `#` pour l'instant (placeholders) sauf `Notre démarche éthique` → ancre vers `ManifestoSection` (`#manifesto`), `Nos études de cas (PME & Asso)` → route `/cooperative-asso`, `Nos études de cas (solopreneures)` → route `/accompagnement-communication`.
+## Question rapide avant de me lancer
 
-## Fichiers touchés
+Veux-tu que je :
 
-- nouveaux : `src/components/site/CtaWaveSection.tsx`, `src/components/site/PressSection.tsx`, `src/components/site/FinalCtaSection.tsx`
-- nouveaux assets : `src/assets/press-bonbon.png`, `src/assets/press-emarketing.png`, `src/assets/press-ladn.png`
-- édités : `src/components/site/Footer.tsx`, `src/routes/index.tsx`
+- **(a)** construis cette page complète en une seule passe (toutes les 17 sections), ou oui c'est partie mais vraiment pixel perfect 
+- **(b)** procède par lot (par ex. d'abord Hero + Clients + Problème + Laetitia + Transformation + Timeline, puis seconde passe pour le reste) ?
+
+Et confirmes-tu l'URL Calendly `https://calendly.com/laetitia-mattioli/appel-decouverte` pour tous les CTA ? oui
+
+&nbsp;
