@@ -50,7 +50,7 @@ export function ManifestoSection() {
           comme outil <em>d'émancipation</em>.
         </h2>
 
-        <div className="mt-10 space-y-6 font-mono text-base text-foreground/90 md:text-lg">
+        <div className="mt-10 space-y-6 font-mono text-base text-foreground md:text-lg">
           <p>
             Nowadays est née d'une conviction : on peut communiquer autrement.
             Avec <em>éthique</em>, <em>beauté</em>, <em>respect</em> et{" "}

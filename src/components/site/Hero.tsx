@@ -72,7 +72,7 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto flex max-w-4xl flex-col items-center px-6 py-24 text-center md:py-32">
-        <p className="mb-8 font-mono text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--bordeaux)]">
+        <p className="mb-8 font-mono text-xs uppercase tracking-[0.2em] text-foreground">
           Agence de communication éthique
         </p>
 
@@ -82,16 +82,16 @@ export function Hero() {
           sans vendre votre âme.
         </h1>
 
-        <p className="mt-10 max-w-2xl font-mono text-base font-medium text-foreground/80 md:text-lg">
+        <p className="mt-10 max-w-2xl font-mono text-base text-foreground md:text-lg">
           Vous portez un projet plus doux pour le monde ? Votre com' mérite
           mieux que «&nbsp;je posterai lundi&nbsp;»{" "}
-          <em className="not-italic text-foreground/80">
+          <em className="not-italic">
             <span className="italic">(on est jeudi)</span>
           </em>
           . On s'en occupe.
         </p>
 
-        <p className="mt-6 max-w-xl font-mono text-sm font-medium text-[color:var(--bordeaux)] md:text-base">
+        <p className="mt-6 max-w-xl font-mono text-sm text-foreground md:text-base">
           Pour les solopreneur·es, créateur·ices, artisan·es, assos,
           coopératives et PME à impact.
         </p>

@@ -28,7 +28,7 @@ export function TiredSection() {
           Nous aussi.
         </p>
 
-        <div className="mt-8 space-y-6 font-mono text-base text-foreground/90 md:text-lg">
+        <div className="mt-8 space-y-6 font-mono text-base text-foreground md:text-lg">
           <p>
             Vous portez un projet qui a du sens. Que vous soyez créateur·ice,
             freelance ou à la tête d'une structure engagée, vous y mettez tout
