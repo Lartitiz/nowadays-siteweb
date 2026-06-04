@@ -6,6 +6,7 @@ import { VisibilityBanner } from "@/components/site/VisibilityBanner";
 import { ManifestoSection } from "@/components/site/ManifestoSection";
 import { OffersSection } from "@/components/site/OffersSection";
 import { ProcessSection } from "@/components/site/ProcessSection";
+import { DifferencesSection } from "@/components/site/DifferencesSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,6 +41,7 @@ function Index() {
       <ManifestoSection />
       <OffersSection />
       <ProcessSection />
+      <DifferencesSection />
     </SiteLayout>
   );
 }
