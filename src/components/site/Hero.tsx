@@ -15,21 +15,21 @@ function HeartSticker() {
   );
 }
 
-function SpiralSticker() {
+function LeafSticker() {
   return (
     <svg viewBox="0 0 100 100" className="h-full w-full" aria-hidden>
       <circle cx="50" cy="50" r="48" fill="var(--rose-dark)" />
-      <text
-        x="50"
-        y="68"
-        textAnchor="middle"
-        fontFamily="Libre Baskerville, serif"
-        fontStyle="italic"
-        fontSize="56"
+      <path
+        d="M50 18 C 72 28, 78 48, 50 82 C 22 48, 28 28, 50 18 Z"
         fill="var(--cream)"
-      >
-        e
-      </text>
+      />
+      <path
+        d="M50 82 L50 45"
+        stroke="var(--cream)"
+        strokeWidth="3"
+        strokeLinecap="round"
+        fill="none"
+      />
     </svg>
   );
 }
@@ -62,7 +62,7 @@ export function Hero() {
         <HeartSticker />
       </div>
       <div className="pointer-events-none absolute right-6 top-24 h-14 w-14 md:right-24 md:top-16 md:h-20 md:w-20">
-        <SpiralSticker />
+        <LeafSticker />
       </div>
       <div className="pointer-events-none absolute bottom-24 left-8 hidden h-16 w-16 md:bottom-32 md:left-32 md:block md:h-20 md:w-20">
         <DotSticker />
