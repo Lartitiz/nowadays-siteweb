@@ -32,7 +32,7 @@ function Index() {
   return (
     <SiteLayout>
       <Hero />
-      <StatBand />
+      
       <TiredSection />
       <ManifestoSection />
     </SiteLayout>
