@@ -5,7 +5,7 @@ const CALENDLY_URL =
 
 const STATS: Array<{ value: string; label: string }> = [
   { value: "+10 ans", label: "d'expérience" },
-  { value: "+1200", label: "projets accompagnés" },
+  { value: "+100", label: "projets accompagnés" },
 ];
 
 
