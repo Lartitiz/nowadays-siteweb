@@ -21,43 +21,6 @@ type Bubble = {
 
 const SERVICES: Bubble[] = [
   {
-    label: "branding",
-    bg: "var(--rose-soft)",
-    fg: "var(--ink)",
-    className: "left-[2%] top-[8%] md:left-[6%] md:top-[12%]",
-    rotate: "-rotate-6",
-  },
-  {
-    label: "story telling",
-    bg: "var(--cream)",
-    fg: "var(--bordeaux)",
-    border: "var(--rose-dark)",
-    className: "right-[4%] top-[6%] md:right-[8%] md:top-[10%]",
-    rotate: "rotate-3",
-  },
-  {
-    label: "réseaux sociaux",
-    bg: "var(--yellow)",
-    fg: "var(--ink)",
-    className: "left-[-1%] top-[44%] md:left-[2%] md:top-[46%]",
-    rotate: "-rotate-3",
-  },
-  {
-    label: "SEO",
-    bg: "var(--bordeaux)",
-    fg: "var(--cream)",
-    className: "right-[2%] top-[40%] md:right-[4%] md:top-[42%]",
-    rotate: "rotate-6",
-  },
-  {
-    label: "emailing",
-    bg: "var(--rose-light)",
-    fg: "var(--rose-dark)",
-    border: "var(--rose-dark)",
-    className: "left-[6%] bottom-[8%] md:left-[10%] md:bottom-[12%]",
-    rotate: "rotate-3",
-  },
-  {
     label: "site web",
     bg: "var(--orange)",
     fg: "var(--ink)",
