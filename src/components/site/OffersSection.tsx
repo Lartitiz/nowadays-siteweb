@@ -129,7 +129,7 @@ function OfferCard({ offer }: { offer: Offer }) {
 
 export function OffersSection() {
   return (
-    <section className="bg-background">
+    <section className="bg-rose-light">
       <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
         {/* Header */}
         <header className="mx-auto mb-16 max-w-3xl text-center">
