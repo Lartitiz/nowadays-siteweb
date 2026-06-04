@@ -10,7 +10,7 @@ type Offer = {
   title: string;
   highlight: string;
   promise: string;
-  body: React.ReactNode;
+  body: ReactNode;
   price: string;
   priceDetail: string;
   cta: string;
