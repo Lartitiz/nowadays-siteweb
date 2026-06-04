@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import phoneAsset from "@/assets/tired-phone.webp.asset.json";
+import phoneAsset from "@/assets/tired-phone-instagram.jpg.asset.json";
 import teamAsset from "@/assets/tired-team.jpg.asset.json";
 
 function Squiggle({ color = "var(--rose-dark)" }: { color?: string }) {
