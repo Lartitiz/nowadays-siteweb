@@ -21,23 +21,6 @@ function Squiggle({ color = "var(--rose-dark)" }: { color?: string }) {
   );
 }
 
-function AsteriskSticker() {
-  return (
-    <svg viewBox="0 0 40 40" className="h-full w-full" aria-hidden>
-      <g
-        stroke="var(--rose-dark)"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        fill="none"
-      >
-        <line x1="20" y1="6" x2="20" y2="34" />
-        <line x1="6" y1="20" x2="34" y2="20" />
-        <line x1="10" y1="10" x2="30" y2="30" />
-        <line x1="30" y1="10" x2="10" y2="30" />
-      </g>
-    </svg>
-  );
-}
 
 
 function PhotoBubble({
