@@ -35,6 +35,7 @@ function Index() {
     <SiteLayout>
       <Hero />
       <TiredSection />
+      <VisibilityBanner />
       <ManifestoSection />
       <OffersSection />
     </SiteLayout>
