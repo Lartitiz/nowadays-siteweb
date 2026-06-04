@@ -26,7 +26,7 @@ function Page() {
   return (
     <SiteLayout>
       <section className="mx-auto max-w-4xl px-6 py-24">
-        <h1 className="text-4xl md:text-6xl">Ton agency de com</h1>
+        <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">Ton agency de com</h1>
         <p className="mt-6 text-foreground/70">
           Contenu de cette page à migrer à l'étape 9.
         </p>
