@@ -75,48 +75,58 @@ const testimonials: Testimonial[] = [
   },
 ];
 
+const offsets = ["md:translate-y-0", "md:translate-y-16", "md:-translate-y-2"];
+
 export function TestimonialsSection() {
   return (
     <section className="bg-[var(--cream)] py-20 md:py-32">
       <div className="mx-auto max-w-6xl px-6 md:px-10">
-        <div className="text-center mb-16 md:mb-20">
-          <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+        <div className="text-center mb-16 md:mb-24">
+          <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink max-w-4xl mx-auto">
             Elles nous font confiance pour leur{" "}
             <em className="italic text-[var(--rose-dark)]">
               communication engagée
             </em>
           </h2>
-          <p className="mt-6 font-mono text-[14px] md:text-[15px] text-ink">
-            <em className="italic">Plus de 150 projets accompagnés.</em>
+          <p className="mt-8 font-mono text-[12px] md:text-[13px] uppercase tracking-[0.18em] text-ink">
+            Plus de 150 projets accompagnés
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-          {testimonials.map((t) => (
-            <figure key={t.name} className="flex flex-col">
-              <div className="aspect-square w-full overflow-hidden bg-[var(--rose-soft)]">
-                <img
-                  src={t.photo}
-                  alt={t.alt}
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10 lg:gap-14 items-start">
+          {testimonials.map((t, i) => (
+            <article
+              key={t.name}
+              className={`flex flex-col gap-7 ${offsets[i] ?? ""}`}
+            >
+              <div className="mx-auto w-full max-w-[240px] border border-[color:color-mix(in_oklab,var(--ink)_20%,transparent)] p-1 bg-white shadow-sm">
+                <div className="aspect-[4/5] overflow-hidden bg-[var(--rose-light)]">
+                  <img
+                    src={t.photo}
+                    alt={t.alt}
+                    loading="lazy"
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  />
+                </div>
               </div>
-              <figcaption className="mt-6">
-                <p className="font-mono text-[14px] leading-[1.6] text-ink">
-                  <strong className="font-mono font-normal text-ink">
+              <figcaption className="space-y-5 px-1">
+                <div>
+                  <h3 className="font-serif text-xl text-ink leading-tight">
                     {t.name}
-                  </strong>{" "}
-                  — <span className="italic">{t.role}</span>
-                </p>
-                <blockquote className="mt-4 font-mono text-[14px] md:text-[15px] leading-[1.85] text-ink italic">
+                  </h3>
+                  <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.12em] text-[var(--rose-dark)]">
+                    {t.role}
+                  </p>
+                </div>
+                <blockquote className="font-mono text-[14px] leading-[1.75] text-ink">
                   « {t.quote} »
                 </blockquote>
               </figcaption>
-            </figure>
+            </article>
           ))}
         </div>
       </div>
     </section>
   );
 }
+
