@@ -16,7 +16,7 @@ export function CaseStudy({
   blocks: Block[];
 }) {
   // First block is the H1 (question), then optional first image as cover
-  const h1 = blocks.find((b) => b.type === "h1");
+  const h1 = blocks.find((b): b is Extract<Block, { type: "h1" }> => b.type === "h1");
   const firstImgIdx = blocks.findIndex((b) => b.type === "img");
   const cover =
     firstImgIdx >= 0 ? (blocks[firstImgIdx] as Extract<Block, { type: "img" }>) : null;
