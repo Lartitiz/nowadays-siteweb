@@ -1,25 +1,19 @@
-## Remplacer les photos des témoignages
+## Objectif
+Supprimer toutes les petites lignes SVG décoratives ("squiggles") présentes sur le site.
 
-Trois nouveaux portraits fournis pour la section témoignages.
+## Fichiers concernés
+1. **`src/components/site/TiredSection.tsx`**
+   - Supprimer le composant `Squiggle` et ses 3 utilisations :
+     - Ligne 101 : `<Squiggle color="var(--yellow)" />` dans le texte
+     - Lignes 68-70 : `<Squiggle color={squiggleColor} />` dans les bulles `PhotoBubble`
+     - Nettoyer la prop `squiggleColor` de `PhotoBubble` (plus utilisée)
 
-### Mapping
+2. **`src/components/site/VisibilityBanner.tsx`**
+   - Supprimer le composant `Squiggle` et le composant `Underlined` qui l'utilise
+   - Supprimer les 2 utilisations de `<Underlined>` dans le titre
 
-| Témoignage | Nouvelle photo |
-|---|---|
-| Abigail Sia | `user-uploads://abi.png` |
-| Emmanuelle Riboud | `user-uploads://emmanuel.png` |
-| Laurent (Okahina Wave) | `user-uploads://laurent.png` |
+3. **`src/components/site/PourquoiNowadaysSection.tsx`**
+   - Supprimer le `<svg>` inline sous le mot "Nowadays" (lignes 12-26)
 
-### Étapes
-
-1. Upload chaque image via `lovable-assets create` depuis `/mnt/user-uploads/` vers des pointeurs CDN :
-   - `src/assets/testimonials/abigail-sia.png.asset.json`
-   - `src/assets/testimonials/emmanuelle-riboud.png.asset.json`
-   - `src/assets/testimonials/laurent-okahina.png.asset.json`
-2. Supprimer les anciens PNG locaux dans `src/assets/testimonials/`.
-3. Mettre à jour `src/components/site/TestimonialsSection.tsx` : remplacer les 3 imports par les pointeurs `.asset.json` et utiliser `.url`.
-
-### Hors scope
-
-- Aucun changement de copy, layout, ou design des polaroïds (cadre, offsets, filtre grayscale → couleur au hover restent identiques).
-- Les fonds colorés baked-in dans les photos (beige, rose, jaune) sont conservés tels que fournis.
+## Résultat attendu
+Plus aucune ligne ondulée SVG sur le site.
