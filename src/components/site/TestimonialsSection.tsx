@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
-import abigailImg from "@/assets/testimonials/abigail-sia.png";
-import emmanuelleImg from "@/assets/testimonials/emmanuelle-riboud.png";
-import laurentImg from "@/assets/testimonials/laurent-okahina.png";
+import abigailImg from "@/assets/testimonials/abigail-sia.png.asset.json";
+import emmanuelleImg from "@/assets/testimonials/emmanuelle-riboud.png.asset.json";
+import laurentImg from "@/assets/testimonials/laurent-okahina.png.asset.json";
 
 type Testimonial = {
   photo: string;
@@ -13,7 +13,7 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    photo: abigailImg,
+    photo: abigailImg.url,
     alt: "Abigail Sia, styliste et art director",
     name: "Abigail Sia",
     role: (
@@ -33,7 +33,7 @@ const testimonials: Testimonial[] = [
       "Une vraie expertise et un savoir-faire qui fait la différence pour développer son réseau de clients. Les actions mises en place se sont rapidement traduites par une prise de confiance en moi, et donc de mes tarifs. Le suivi est au top et les conseils pertinents. Ne pas hésiter pour booster son activité.",
   },
   {
-    photo: emmanuelleImg,
+    photo: emmanuelleImg.url,
     alt: "Emmanuelle Riboud, cheffe écoresponsable et fondatrice de Ressources",
     name: "Emmanuelle Riboud",
     role: (
@@ -53,7 +53,7 @@ const testimonials: Testimonial[] = [
       "Laetitia et son équipe ont une grande capacité d'écoute qui leur permet de concevoir des stratégies de marque et de communication pertinentes et très efficientes.",
   },
   {
-    photo: laurentImg,
+    photo: laurentImg.url,
     alt: "Laurent, fondateur d'Okahina Wave",
     name: "Laurent",
     role: (
