@@ -283,8 +283,7 @@ function EtudesGrid() {
             return p.slug ? (
               <Link
                 key={p.name}
-                to="/etudes/$slug"
-                params={{ slug: p.slug }}
+                to={`/etudes/${p.slug}`}
                 className="group flex flex-col"
               >
                 {inner}
