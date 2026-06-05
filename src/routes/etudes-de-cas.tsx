@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { FinalCtaSection } from "@/components/site/FinalCtaSection";
 
@@ -42,6 +42,7 @@ type Project = {
   name: string;
   description: string;
   image?: string;
+  slug?: string;
 };
 
 const PROJECTS: Project[] = [
