@@ -74,7 +74,7 @@ const PROJECTS: Project[] = [
     alt: "Bâtiment moderne avec un grand panneau blanc affichant le nom 'École Nationale Supérieure des Arts Décoratifs' à Paris.",
     description:
       "Pour attirer du monde à l’exposition de Gérard Baudoin, on a coordonné réseaux sociaux, emailing ciblé et micro-influence : 700 visiteurs en une semaine, 5 articles et plus de 100 clics vers l’événement.",
-    external: "https://www.nowadaysagency.com/ensad",
+    internal: "ensad",
   },
   {
     name: "Sea Shepherd x Racines de Demain",
@@ -82,7 +82,7 @@ const PROJECTS: Project[] = [
     alt: "Un bateau de la mission Sea Shepherd naviguant en mer agitée sous un ciel gris, avec le logo crâne et trident et la mention « SEA SHEPHERD ».",
     description:
       "Campagne #PlutôtQue pour corriger la perception et mobiliser les dons : un plan en 4 actes, des images d’archives pour limiter l’impact et des actions ciblées sur Twitter, Instagram et via des leaders d’opinion.",
-    external: "https://www.nowadaysagency.com/sea-shepherd",
+    internal: "sea-shepherd",
   },
   {
     name: "Decathlon x Quechua",
@@ -97,7 +97,7 @@ const PROJECTS: Project[] = [
     alt: "Brocante avec des meubles anciens et modernes, canapés, fauteuils et objets décoratifs dans un espace lumineux.",
     description:
       "Un atelier de personal branding d’une demi-journée pour humaniser la marque : 3 fois plus de contenus personnalisés et des équipes désormais à l’aise pour raconter leur histoire.",
-    external: "https://www.nowadaysagency.com/emmaus-defi",
+    internal: "emmaus-defi",
   },
   {
     name: "Clip It",
@@ -113,7 +113,7 @@ const PROJECTS: Project[] = [
     alt: "Une femme avec des lunettes tient un microphone et parle lors d’une manifestation en plein air contre la ferme des 1000 vaches.",
     description:
       "Un camion immersif et 50 micro-influenceur·ses pour dénoncer l’élevage intensif et pousser LDC à signer l’European Chicken Commitment : 500 000 vues et plus de 10 000 signatures.",
-    external: "https://www.nowadaysagency.com/l214",
+    internal: "l214",
   },
   {
     name: "Coopérative Oasis",
@@ -129,7 +129,7 @@ const PROJECTS: Project[] = [
     alt: "Vue aérienne d’une structure flottante avec piscine à vagues, plateforme centrale arborée et zones de détente, sur une rivière.",
     description:
       "Gestion des comptes Twitter et LinkedIn, blog et interviews d’influenceurs surf : 1 500 personnes atteintes chaque semaine, 2 000 visiteurs uniques sur le blog et 50 000 fans via 10 influenceurs.",
-    external: "https://www.nowadaysagency.com/okahina-wave",
+    internal: "okahina-wave",
   },
   {
     name: "Study & Co",
@@ -202,7 +202,7 @@ const PROJECTS: Project[] = [
     alt: "Groupe de sept jeunes adultes posant ensemble dans une pièce avec des étagères à lunettes en arrière-plan.",
     description:
       "Boutique de lunettes de créateurs qui voulait franchir un cap. Nous avons renforcé sa présence sur Instagram, Facebook et LinkedIn, refondu son site web et rédigé un manifeste pour mettre en lumière ses valeurs. Résultat ? +46 % de reach social, première page SEO et +2 000 followers.",
-    external: "https://www.nowadaysagency.com/atelier-des-lunettes",
+    internal: "atelier-des-lunettes",
   },
   {
     name: "My Pilates World",
