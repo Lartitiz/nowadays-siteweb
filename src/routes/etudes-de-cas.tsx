@@ -48,30 +48,35 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     name: "Black Stallion Trading",
+    slug: "black-stallion-trading",
     image: blackStallion.url,
     description:
       "Une marque-showroom qui revendique le luxe conscient. Stratégie digitale complète, identité visuelle et influence pour fédérer une communauté engagée.",
   },
   {
     name: "Fat Moose",
+    slug: "fat-moose",
     image: fatMoose.url,
     description:
       "Marque danoise outdoor au design minimaliste. Stratégie de contenu, direction artistique et campagnes d'influence pour ancrer un univers entre aventure et élégance nordique.",
   },
   {
     name: "Ressources Emmanuelle Riboud",
+    slug: "ressources",
     image: ressources.url,
     description:
       "Changer la cantine pour changer le monde. Pose des bases d'une stratégie de marque et de communication autour d'une alimentation scolaire pleine de sens.",
   },
   {
     name: "Jean Belgueule",
+    slug: "jean-belgueule",
     image: jeanBelgueule.url,
     description:
       "Soins pour hommes simples et éco-responsables. Structuration de la présence digitale : storytelling, identité visuelle et calendrier social media.",
   },
   {
     name: "Religion Clothing",
+    slug: "religion-clothing",
     image: religionClothing.url,
     description:
       "Marque britannique née dans les années 90, inspirée par la scène musicale. Campagnes d'influence et événements pour porter un univers audacieux et décalé.",
@@ -90,6 +95,7 @@ const PROJECTS: Project[] = [
   },
   {
     name: "Still Nordic",
+    slug: "still-nordic",
     image: stillNordic.url,
     description:
       "Minimalisme scandinave et cuir d'exception. Présence digitale cohérente et élégante : réseaux, e-commerce et influence.",
@@ -253,26 +259,42 @@ function EtudesGrid() {
     <section className="bg-background">
       <div className="mx-auto max-w-7xl px-6 pb-24">
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS.map((p) => (
-            <article key={p.name} className="flex flex-col">
-              <div className="aspect-[16/10] w-full overflow-hidden rounded-sm bg-rose-soft">
-                {p.image && (
-                  <img
-                    src={p.image}
-                    alt={p.name}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
-                )}
-              </div>
-              <h2 className="mt-5 font-serif text-2xl leading-tight text-ink">
-                {p.name}
-              </h2>
-              <p className="mt-3 font-mono text-sm leading-relaxed text-ink">
-                {p.description}
-              </p>
-            </article>
-          ))}
+          {PROJECTS.map((p) => {
+            const inner = (
+              <>
+                <div className="aspect-[16/10] w-full overflow-hidden rounded-sm bg-rose-soft">
+                  {p.image && (
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                  )}
+                </div>
+                <h2 className="mt-5 font-serif text-2xl leading-tight text-ink">
+                  {p.name}
+                </h2>
+                <p className="mt-3 font-mono text-sm leading-relaxed text-ink">
+                  {p.description}
+                </p>
+              </>
+            );
+            return p.slug ? (
+              <Link
+                key={p.name}
+                to="/etudes/$slug"
+                params={{ slug: p.slug }}
+                className="group flex flex-col"
+              >
+                {inner}
+              </Link>
+            ) : (
+              <article key={p.name} className="flex flex-col">
+                {inner}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
