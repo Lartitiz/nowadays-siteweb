@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { type FormEvent } from "react";
+import nowadaysLogoV2 from "@/assets/nowadays-logo-v2.webp.asset.json";
 
 export function Footer() {
   function onSubmit(e: FormEvent<HTMLFormElement>) {
