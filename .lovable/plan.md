@@ -1,70 +1,44 @@
-## Objectif
+# Section témoignages clients homepage
 
-Faire en sorte que le formulaire `/contact` :
-1. enregistre le message en base (déjà OK),
-2. **envoie une notification interne** à `laetitia@nowadaysagency.com`,
-3. **envoie un accusé de réception** à la personne qui a écrit,
-4. s'appuie sur des **mentions légales** à jour côté RGPD/formulaire.
+Reprise pixel-perfect des 3 témoignages du site d'origine, placés entre `PourquoiNowadaysSection` et `PressSection` (même ordre que sur nowadaysagency.com).
 
-## 1. Mise en place de l'infrastructure e-mail (Lovable Emails)
+## Contenu repris à l'identique
 
-Aucun domaine d'envoi n'est encore configuré dans le workspace. Étapes :
+**Titre** : « Elles nous font confiance pour leur *communication engagée* » (italique rose-dark sur "communication engagée")
+**Sous-titre** : *Plus de 150 projets accompagnés.*
 
-1. Ouvrir la **boîte de configuration du domaine d'envoi** (sous-domaine type `notify.nowadaysagency.com`) — la propagation DNS peut prendre jusqu'à 72 h, mais le code peut être posé avant.
-2. Initialiser l'infrastructure e-mail (files d'attente, table de logs, suppressions, cron de traitement).
-3. Scaffold des **app emails** (templates React Email + route `/lovable/email/transactional/send`).
+**3 témoignages** (photos déjà téléchargées dans `src/assets/testimonials/`) :
 
-Tant que le DNS n'est pas vert, les e-mails s'empilent en file et partent dès vérification. Tu pourras suivre l'état dans Cloud → Emails.
+1. **Abigail Sia** — Styliste & [Art Director](https://theanimalshadow.com/project/work-w-abigail/)
+   > Une vraie expertise et un savoir-faire qui fait la différence pour développer son réseau de clients. Les actions mises en place se sont rapidement traduites par une prise de confiance en moi, et donc de mes tarifs. Le suivi est au top et les conseils pertinents. Ne pas hésiter pour booster son activité.
 
-## 2. Templates e-mail
+2. **Emmanuelle Riboud** — Cheffe écoresponsable et Fondatrice de [Ressources](https://www.ressources.green/)
+   > Laetitia et son équipe ont une grande capacité d'écoute qui leur permet de concevoir des stratégies de marque et de communication pertinentes et très efficientes.
 
-Deux templates React Email dans `src/lib/email-templates/`, brandés Nowadays (cream/ink/rose-dark, Libre Baskerville pour les titres) :
+3. **Laurent** — Fondateur d'[Okahina Wave](https://www.okahinawave.com/), vague de surf artificielle écologique
+   > Lorsque j'ai contacté Nowadays Agency pour gérer mes réseaux sociaux, j'étais au pied du mur. J'ai découvert leurs qualités de rigueur, de suivi, de propositions créatives et pertinentes. Mais surtout un excellent état d'esprit, très positif. À la question : « Est-ce que je les recommanderais à d'autres chefs d'entreprise ? ». Je répondrais : « SANS AUCUN DOUTE ».
 
-- **`contact-notification.tsx`** → envoyé à `laetitia@nowadaysagency.com`
-  Sujet : « Nouveau message via le site — {prénom} ({type de besoin}) »
-  Contenu : nom, email, structure, type de besoin, message complet, date.
-  `reply_to` = e-mail de l'expéditeur pour répondre en un clic.
+## Fichiers
 
-- **`contact-confirmation.tsx`** → envoyé à l'expéditeur
-  Sujet : « Bien reçu — on revient vers vous sous 24 h ouvrées »
-  Contenu : merci personnalisé, rappel du délai, liens vers les études de cas et un créneau Calendly, signature Laetitia.
+- **Créer** `src/components/site/TestimonialsSection.tsx`
+  - Section `bg-cream`, padding `py-20 md:py-32`
+  - H2 conforme à la règle Core : `font-serif text-4xl md:text-6xl leading-[1.05] text-ink` avec "communication engagée" en italique rose-dark
+  - Sous-titre IBM Plex Mono italique
+  - Grille 3 colonnes (1 col mobile), photo carrée + nom/rôle + citation italique
+  - Liens externes (Art Director, Ressources, Okahina Wave) avec `underline decoration-rose-dark` et `target="_blank" rel="noopener noreferrer"`
 
-Enregistrement des deux dans `src/lib/email-templates/registry.ts`.
+- **Éditer** `src/routes/index.tsx`
+  - Importer `TestimonialsSection`
+  - L'insérer entre `<PourquoiNowadaysSection />` et `<PressSection />`
 
-## 3. Route d'envoi côté serveur
+## Conformité design system
 
-Le formulaire est public (pas d'auth requise), donc on ne peut pas appeler directement la route d'envoi authentifiée. Approche :
+- Typo : Libre Baskerville pour H2 (en `--ink`), IBM Plex Mono 400 pour le corps et citations (en `--ink`)
+- Italiques `<em>` colorées en `--rose-dark`
+- Palette : fond `--cream`, placeholder image `--rose-soft`
+- Aucun cercle décoratif, aucun CrownSticker, aucun EngageStamp
+- H2 à la taille canonique `text-4xl md:text-6xl`
 
-- Modifier `src/lib/contact.functions.ts` (`submitContact`) pour, après l'insert en base, appeler en interne `/lovable/email/transactional/send` avec les credentials service-role pour les deux templates.
-- `idempotencyKey` dérivé de l'`id` de la ligne `contact_messages` pour éviter les doublons en cas de retry.
-- Si l'envoi échoue, on log mais on ne casse pas l'UX (le message est déjà sauvegardé).
+## Assets
 
-## 4. Mentions légales (compléter `src/routes/mentions-legales.tsx`)
-
-Sections à ajouter / mettre à jour pour couvrir le formulaire de contact :
-
-- **Données collectées via le formulaire** : nom, email, structure, type de besoin, message, consentement, date.
-- **Finalité** : répondre à la demande, qualifier le projet.
-- **Base légale** : consentement (case à cocher) + intérêt légitime (réponse commerciale).
-- **Durée de conservation** : 3 ans après le dernier contact pour les prospects non clients, 5 ans pour les clients.
-- **Destinataires** : Laetitia Mattioli (Nowadays Agency). Aucun transfert hors UE.
-- **Sous-traitants** : hébergeur backend (Supabase, UE) + prestataire e-mail (Lovable Emails / Mailgun, UE).
-- **Droits RGPD** : accès, rectification, effacement, opposition, portabilité, retrait du consentement, réclamation CNIL — adresse de contact `laetitia@nowadaysagency.com`.
-- **Cookies / mesure d'audience** : préciser ce qui est posé (ou « aucun cookie tiers » si c'est le cas).
-
-Mise à jour de la date `LAST_UPDATE`.
-
-## 5. Côté page Contact
-
-- Reformuler la phrase de consentement pour pointer vers `/mentions-legales` (lien) et mentionner explicitement la durée de conservation.
-- Garder le honeypot existant.
-- Conserver l'écran de succès actuel ; ajouter une petite mention « Un accusé de réception vient de vous être envoyé par e-mail. »
-
-## Ce qui ne change pas
-
-- Schéma de la table `contact_messages`, RLS, design tokens, structure du site.
-- Aucune nouvelle dépendance hors packages e-mail standard installés par le scaffold.
-
-## Action côté toi avant que je code
-
-J'ai besoin que tu valides le **sous-domaine d'envoi** (ex. `notify.nowadaysagency.com`) au moment où la boîte de configuration s'ouvrira, et que tu ajoutes les enregistrements NS chez ton registrar. Sans ça, les e-mails partent en file mais n'arrivent pas tant que le DNS n'est pas vert.
+3 photos déjà téléchargées depuis le CDN Squarespace dans `src/assets/testimonials/` (abigail-sia.png, emmanuelle-riboud.png, laurent-okahina.png).
