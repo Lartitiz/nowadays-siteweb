@@ -5,7 +5,7 @@ import { FinalCtaSection } from "@/components/site/FinalCtaSection";
 export const Route = createFileRoute("/creatrices-ethiques")({
   head: () => ({
     meta: [
-      { title: "Études de cas — Créateur·ices éthiques | Nowadays" },
+      { title: "Créatrices éthiques — Études de cas | Nowadays" },
       {
         name: "description",
         content:
@@ -13,15 +13,16 @@ export const Route = createFileRoute("/creatrices-ethiques")({
       },
       {
         property: "og:title",
-        content: "Études de cas — Créateur·ices éthiques | Nowadays",
+        content: "Créatrices éthiques — Études de cas | Nowadays",
       },
       {
         property: "og:description",
         content:
           "Marques engagées, artisanes et créatrices : découvrez les projets que nous avons accompagnés.",
       },
+      { property: "og:url", content: "/creatrices-ethiques" },
     ],
-    links: [{ rel: "canonical", href: "/etudes-de-cas" }],
+    links: [{ rel: "canonical", href: "/creatrices-ethiques" }],
   }),
   component: Page,
 });
