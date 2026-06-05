@@ -1,58 +1,68 @@
-## Objectif
+## Suite de la migration
 
-Migrer la page https://www.nowadaysagency.com/formation-gratuite-instagram dans la nouvelle route `/formation-gratuite-instagram`, en gardant tout le contenu (hero, bénéfices, audience, programme 5 modules, preuve sociale) mais en repensant le design pour coller à la charte éditoriale du site (Libre Baskerville + IBM Plex Mono, palette ink/bordeaux/rose/cream, arrondis légers, pas de cercles déco, pas de gros boutons rose flashy arrondis "pilule").
+État vs sitemap officiel : il reste **8 pages** à migrer. On commence par la page Contact, puis les 6 études de cas pro manquantes. Les deux lead magnets restants (`/guide-storytelling`, `/creatrices-ethiques`) seront traités après.
 
-## Améliorations design proposées
+---
 
-L'original Squarespace est faible : hero centré générique, gros CTA pilule rose vif, blocs texte plats, peu de hiérarchie, visuels sur fonds rose pastel sans cohérence. On garde l'esprit "lead magnet vivant" mais on monte en gamme.
+### 1. Page `/contact`
 
-1. **Hero éditorial split** (au lieu du centré générique)
-   - Gauche : eyebrow mono `· FORMATION GRATUITE ·`, H1 serif `Formation Instagram` avec `gratuite` en italique rose-dark, sous-titre mono, CTA principal (bordeaux/ink, arrondi `rounded-sm` léger, pas de pilule), petite ligne de réassurance "Guide PDF · 5 modules · ~90 min".
-   - Droite : visuel du lead magnet (le "Lead Magnet visuel.png") posé légèrement en biais, `rounded-sm`, ombre douce, sur fond cream.
-   - Pas de CrownSticker, pas d'EngageStamp, pas de stats "100%".
+La version actuelle de Squarespace est minimaliste (titre + formulaire + reCAPTCHA). On en fait une vraie page de conversion alignée sur le ton du site.
 
-2. **Bandeau preuve sociale discret** sous le hero : `+200 créatrices et projets engagés ont téléchargé le guide` en mono, séparateurs typographiques `·`.
+**Route** : `src/routes/contact.tsx`
 
-3. **Section "Pourquoi ce guide"** : H2 serif standard du projet (`font-serif text-4xl md:text-6xl text-ink`), intro courte, une citation/témoignage typographiée en serif italique rose-dark avec barre verticale bordeaux à gauche (pas de carte arrondie).
+**Structure** :
+- **Hero éditorial** : titre serif "Discutons de _votre projet_." + sous-titre court ("Réponse sous 24 h ouvrées, sans script de vente.")
+- **Layout 2 colonnes** (desktop) / empilé (mobile) :
+  - **Gauche — Formulaire de contact** :
+    - Champs : Nom & prénom, Email (requis), Structure / projet (optionnel), Type de besoin (select : accompagnement com', coopérative/asso, formation, autre), Message (requis), case RGPD.
+    - Validation Zod (trim, longueurs min/max, email valide).
+    - Soumission via **server function** `createServerFn` (`src/lib/contact.functions.ts`) qui enregistre dans une table `contact_messages` (Lovable Cloud) + envoi d'un email de notification via l'infra Email Lovable.
+    - États : idle / sending / success (message de remerciement) / error.
+  - **Droite — Carte "Autres façons de nous joindre"** :
+    - CTA Calendly (réutilise `CALENDLY_URL`) : "Réserver un appel découverte de 30 min".
+    - Email direct (mailto).
+    - Réseaux : Instagram, LinkedIn (récupérés du Footer existant).
+    - Mini-bloc "Pour qui ?" rappelant freelances / assos / PME engagées.
+- **Section "Ce qui se passe ensuite"** : 3 étapes numérotées (Vous écrivez → On échange en visio 30 min → Devis sur-mesure sous 5 j).
+- **FAQ courte** (3-4 questions) : délais, tarifs, zones géographiques, type de structures accompagnées.
+- **Footer CTA existant** réutilisé.
 
-4. **Section bénéfices (4 items)** : grille 2x2, chaque item = numéro mono `01 → 04` en rose-dark, titre serif court, description mono. Pas de checkmarks emoji ✅, on remplace par les numéros.
+**SEO** : `head()` avec title, description, og:title, og:description, canonical `/contact`.
 
-5. **Section "Pour qui ?"** : 3 colonnes minimalistes avec icône SVG line discrète (créatrice, agenda, boussole) + label serif court + 1 ligne mono.
+**Lien header/footer** : le header pointe déjà vers Calendly ; on ajoute un lien "Contact" dans la nav principale + on remplace l'un des `href="#"` du footer.
 
-6. **Programme (5 modules)** : timeline verticale éditoriale.
-   - Chaque module = ligne horizontale avec à gauche un numéro géant serif `01` en rose-dark/transparent, au centre titre + durée en mono, à droite contenu + livrable mis en valeur dans un encart cream avec bordure ink fine.
-   - Pas d'accordéon (tout visible, SEO friendly).
-   - Séparateurs fins ink/10.
+---
 
-7. **Visuels du guide** : 2 mockups intégrés en mid-page en collage léger (rotation -2deg / +1deg), `rounded-sm`, ombres soft. Pas de fond rose flashy.
+### 2. Six études de cas pro manquantes
 
-8. **CTA final pleine largeur** : bande bordeaux, H2 serif cream `Reçois ton guide maintenant`, mini-formulaire (email + bouton "Envoyer le guide") inline, mention RGPD en mono petit.
+Pages détaillées pour : **Atelier des Lunettes, Emmaüs Défi, ENSAD, L214, Okahina Wave, Sea Shepherd**.
 
-9. **Signature** : "Bonne planification, ♡ Laetitia" en serif italique, alignée droite, après le CTA.
+Routes : `src/routes/etudes.<slug>.tsx` (même convention que les 6 existantes : `etudes.fat-moose.tsx`, etc.).
 
-## Implémentation technique
+**Approche** :
+1. Scrape des 6 pages source pour récupérer : titre, contexte, mission, livrables, résultats, visuels, témoignage éventuel.
+2. Réutilisation du composant existant `src/components/site/CaseStudy.tsx` (pattern identique aux études déjà migrées). Vérifier qu'il accepte bien les variantes "asso/ONG" (L214, Sea Shepherd, Emmaüs Défi, ENSAD) vs "marque" (Atelier des Lunettes, Okahina Wave) — sinon ajout d'une prop `type` pour adapter le label de section ("Mission", "Campagne", "Programme").
+3. Génération des assets : cover + 1-2 visuels mockup par étude (12-18 images au total) via imagegen, stockés dans `src/assets/etudes/<slug>/`.
+4. Mise à jour de la liste sur `/etudes-de-cas-pro.tsx` pour activer le lien "Voir l'étude de cas →" sur les 6 cartes concernées (le CTA conditionnel sur `p.slug` existe déjà).
 
-- **Nouvelle route** `src/routes/formation-gratuite-instagram.tsx` avec `createFileRoute("/formation-gratuite-instagram")`, `head()` SEO :
-  - title : `Formation Instagram gratuite — Guide PDF | Nowadays Agency`
-  - description (~155 char) axée "stratégie Instagram, créatrices engagées, gratuit"
-  - og:title, og:description, og:image (le visuel du lead magnet), canonical.
-- **Header + Footer** existants réutilisés, fond `bg-cream`.
-- **Composants locaux** dans le fichier route (pas de fragmentation prématurée) : `Hero`, `Benefits`, `Audience`, `Program`, `FinalCTA`.
-- **Assets à scraper** via `lovable-assets` depuis les URLs Squarespace :
-  - logo guide `35.png` → `src/assets/formation-ig/logo-guide.png`
-  - visuel lead magnet `Lead Magnet visuel.png` → `src/assets/formation-ig/cover.png`
-  - mockup optimisation `formation+instagram+gratuite+optimisation+du+compte.png` → `src/assets/formation-ig/mockup-optimisation.png`
-  - (les visuels `2.png` disco / `3.png` fraise / `4.png` stabilo sont écartés : trop "Squarespace decorative", on s'en passe pour respecter la charte sans cercles/déco gratuites)
-- **Form** : champ email + bouton, soumission gérée par un simple `mailto:` ou un placeholder `onSubmit` (pas de backend dans ce ticket — à confirmer ci-dessous).
-- **Lien depuis le site** : ajouter une entrée discrète dans le Footer (colonne ressources) "Formation Instagram gratuite" → `/formation-gratuite-instagram`. Pas d'ajout dans le header principal.
+**SEO** : chaque page a son propre `head()` (title, description, og:title/description, og:image = cover de l'étude, canonical, JSON-LD `Article` ou `CreativeWork`).
 
-## Hors scope
+---
 
-- Pas de captcha / reCAPTCHA.
-- Pas d'envoi automatique du PDF par email (pas de backend mail configuré ici).
-- Pas de modification du PDF lui-même.
+### Détails techniques
 
-## À confirmer avant de builder
+**Backend Contact** :
+- Migration SQL : table `public.contact_messages` (id uuid pk, created_at timestamptz default now(), name text, email text, organization text, need_type text, message text, consent boolean). GRANTS : `INSERT` pour `anon` (formulaire public), `SELECT/ALL` pour `service_role`. RLS activée, policy `INSERT` ouverte à `anon`, lecture admin uniquement.
+- Server function `submitContactForm` (Zod validation côté serveur + côté client).
+- Email de notification : `email_domain--check_email_domain_status` d'abord ; si pas de domaine, on propose le setup avant d'activer l'envoi.
 
-1. **Soumission du formulaire** : on branche un vrai backend (Lovable Cloud + table `leads` + envoi email via un provider) **ou** on met un simple `mailto:laetitia@…` / un placeholder à brancher plus tard ?
-2. **Le visuel "logo guide" coloré** (sticker `ton guide Instagram` jaune/orange/violet) est très Squarespace — on le **garde** dans le hero pour le côté lead magnet, ou on le **remplace** par un traitement typographique sobre cohérent avec la charte ?
+**Mémoires respectées** : H2 `font-serif text-4xl md:text-6xl leading-[1.05] text-ink`, body IBM Plex Mono, palette ink/bordeaux/rose-dark/cream, pas de CrownSticker, EngageStamp, stats hero, pas de cercles décoratifs, arrondis légers (3-22px déjà fixés dans `styles.css`).
+
+---
+
+### Reste après ce lot
+
+- `/guide-storytelling` (second lead magnet, calque sur formation-gratuite-instagram)
+- `/creatrices-ethiques` (à scraper pour clarifier le format)
+
+À traiter dans un prochain lot une fois Contact + études validés.
