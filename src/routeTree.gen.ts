@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TemplateCalendrierEditorialRouteImport } from './routes/template-calendrier-editorial'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PlanCommunicationRouteImport } from './routes/plan-communication'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as GuideStorytellingRouteImport } from './routes/guide-storytelling'
@@ -44,6 +45,11 @@ const TemplateCalendrierEditorialRoute =
     path: '/template-calendrier-editorial',
     getParentRoute: () => rootRouteImport,
   } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PlanCommunicationRoute = PlanCommunicationRouteImport.update({
   id: '/plan-communication',
   path: '/plan-communication',
@@ -196,6 +202,7 @@ export interface FileRoutesByFullPath {
   '/guide-storytelling': typeof GuideStorytellingRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/plan-communication': typeof PlanCommunicationRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
@@ -226,6 +233,7 @@ export interface FileRoutesByTo {
   '/guide-storytelling': typeof GuideStorytellingRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/plan-communication': typeof PlanCommunicationRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
@@ -257,6 +265,7 @@ export interface FileRoutesById {
   '/guide-storytelling': typeof GuideStorytellingRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/plan-communication': typeof PlanCommunicationRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
@@ -289,6 +298,7 @@ export interface FileRouteTypes {
     | '/guide-storytelling'
     | '/mentions-legales'
     | '/plan-communication'
+    | '/sitemap.xml'
     | '/template-calendrier-editorial'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
@@ -319,6 +329,7 @@ export interface FileRouteTypes {
     | '/guide-storytelling'
     | '/mentions-legales'
     | '/plan-communication'
+    | '/sitemap.xml'
     | '/template-calendrier-editorial'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
@@ -349,6 +360,7 @@ export interface FileRouteTypes {
     | '/guide-storytelling'
     | '/mentions-legales'
     | '/plan-communication'
+    | '/sitemap.xml'
     | '/template-calendrier-editorial'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
@@ -380,6 +392,7 @@ export interface RootRouteChildren {
   GuideStorytellingRoute: typeof GuideStorytellingRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   PlanCommunicationRoute: typeof PlanCommunicationRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TemplateCalendrierEditorialRoute: typeof TemplateCalendrierEditorialRoute
   EtudesAtelierDesLunettesRoute: typeof EtudesAtelierDesLunettesRoute
   EtudesBlackStallionTradingRoute: typeof EtudesBlackStallionTradingRoute
@@ -405,6 +418,13 @@ declare module '@tanstack/react-router' {
       path: '/template-calendrier-editorial'
       fullPath: '/template-calendrier-editorial'
       preLoaderRoute: typeof TemplateCalendrierEditorialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/plan-communication': {
@@ -621,6 +641,7 @@ const rootRouteChildren: RootRouteChildren = {
   GuideStorytellingRoute: GuideStorytellingRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   PlanCommunicationRoute: PlanCommunicationRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TemplateCalendrierEditorialRoute: TemplateCalendrierEditorialRoute,
   EtudesAtelierDesLunettesRoute: EtudesAtelierDesLunettesRoute,
   EtudesBlackStallionTradingRoute: EtudesBlackStallionTradingRoute,

@@ -24,8 +24,27 @@ export const Route = createFileRoute("/etudes-de-cas-pro")({
         content:
           "Associations, ONG, coopératives, PME et start-up engagées : découvrez les projets que nous avons accompagnés.",
       },
+      { property: "og:url", content: "/etudes-de-cas-pro" },
     ],
     links: [{ rel: "canonical", href: "/etudes-de-cas-pro" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Accueil", item: "/" },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Études de cas",
+              item: "/etudes-de-cas-pro",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: Page,
 });
