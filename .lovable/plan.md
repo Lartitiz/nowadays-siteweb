@@ -1,97 +1,58 @@
-## Constat
-
-Les 6 études de cas actuelles (`/etudes/black-stallion-trading`, `fat-moose`, `jean-belgueule`, `religion-clothing`, `ressources`, `still-nordic`) ont été scrapées partiellement :
-- titres approximatifs (ex. BST a une question générique au lieu de « Développer la notoriété d'un showroom à NYC… »)
-- sous-titre + CTA hero manquants
-- sections « Contexte / Solutions / Résultats » abrégées en listes plates de paragraphes
-- pas de bloc influenceurs façon grille (BST)
-- pas de bloc statistiques résultats
-- design générique (pas de logo client en hero, pas de marquee « Les solutions apportées 〰️ »)
-
-Le `CaseStudy` actuel n'est qu'un empilement vertical de h1/h2/img/p. On va le refondre pour matcher le gabarit Squarespace source.
-
 ## Objectif
 
-Reproduire **pixel-perfect** la structure visuelle des pages source `nowadaysagency.com/<slug>` pour les 6 études existantes, en gardant la charte du site (Libre Baskerville, IBM Plex Mono, palette ink/bordeaux/rose).
+Migrer la page https://www.nowadaysagency.com/formation-gratuite-instagram dans la nouvelle route `/formation-gratuite-instagram`, en gardant tout le contenu (hero, bénéfices, audience, programme 5 modules, preuve sociale) mais en repensant le design pour coller à la charte éditoriale du site (Libre Baskerville + IBM Plex Mono, palette ink/bordeaux/rose/cream, arrondis légers, pas de cercles déco, pas de gros boutons rose flashy arrondis "pilule").
 
-## Gabarit `CaseStudy` cible
+## Améliorations design proposées
 
-Sections, dans l'ordre :
+L'original Squarespace est faible : hero centré générique, gros CTA pilule rose vif, blocs texte plats, peu de hiérarchie, visuels sur fonds rose pastel sans cohérence. On garde l'esprit "lead magnet vivant" mais on monte en gamme.
 
-1. **Hero centré** (fond `bg-background` dégradé léger vers `rose-light`)
-   - Logo client (image ronde ou carrée), 120 px
-   - H1 serif `text-ink` taille 4xl→6xl, centré, max 4xl
-   - Sous-titre mono petit, centré
-   - Bouton rose-dark arrondi (rounded-full) : « Prendre rendez-vous pour discuter de votre projet » → Calendly
-2. **« Un peu de contexte »** (H2 charte) + paragraphes mono + image pleine largeur
-3. **Marquee « Les solutions apportées 〰️ »** (bandeau qui défile, fond cream)
-4. **Sous-sections solutions** : pour chaque solution, H3 serif + paragraphe + image (alternance gauche/droite si plusieurs images)
-5. **Bloc Résultats** (fond `rose-light`) : grille 4 colonnes, chiffre serif géant + label mono
-6. **Grille influenceurs** (BST uniquement) : avatars ronds + handle + rôle + followers
-7. **Final CTA** : H2 + bouton Calendly (réutilise `FinalCtaSection` existant)
+1. **Hero éditorial split** (au lieu du centré générique)
+   - Gauche : eyebrow mono `· FORMATION GRATUITE ·`, H1 serif `Formation Instagram` avec `gratuite` en italique rose-dark, sous-titre mono, CTA principal (bordeaux/ink, arrondi `rounded-sm` léger, pas de pilule), petite ligne de réassurance "Guide PDF · 5 modules · ~90 min".
+   - Droite : visuel du lead magnet (le "Lead Magnet visuel.png") posé légèrement en biais, `rounded-sm`, ombre douce, sur fond cream.
+   - Pas de CrownSticker, pas d'EngageStamp, pas de stats "100%".
 
-Le composant `CaseStudy` actuel devient un wrapper qui consomme un schéma plus riche :
+2. **Bandeau preuve sociale discret** sous le hero : `+200 créatrices et projets engagés ont téléchargé le guide` en mono, séparateurs typographiques `·`.
 
-```ts
-type CaseStudyData = {
-  brand: string;
-  logoSrc?: string;
-  title: string;
-  subtitle?: string;
-  ctaLabel?: string; // défaut: "Prendre rendez-vous pour discuter de votre projet"
-  context?: { title?: string; paragraphs: string[]; image?: { src: string; alt: string } };
-  solutionsTitle?: string; // défaut: "Les solutions apportées"
-  solutions: { title: string; paragraphs: string[]; images?: { src: string; alt: string }[] }[];
-  results?: { value: string; label: string }[];
-  influencers?: { avatar: string; handle: string; role?: string; followers?: string; link?: string }[];
-};
-```
+3. **Section "Pourquoi ce guide"** : H2 serif standard du projet (`font-serif text-4xl md:text-6xl text-ink`), intro courte, une citation/témoignage typographiée en serif italique rose-dark avec barre verticale bordeaux à gauche (pas de carte arrondie).
 
-Le bloc `Block[]` actuel est supprimé au profit de ce schéma typé. Le marquee est un composant local au `CaseStudy` (animation CSS `@keyframes scroll-x`).
+4. **Section bénéfices (4 items)** : grille 2x2, chaque item = numéro mono `01 → 04` en rose-dark, titre serif court, description mono. Pas de checkmarks emoji ✅, on remplace par les numéros.
 
-## Scraping
+5. **Section "Pour qui ?"** : 3 colonnes minimalistes avec icône SVG line discrète (créatrice, agenda, boussole) + label serif court + 1 ligne mono.
 
-Pour les 6 études de cas, on rescrape les pages source :
-- `nowadaysagency.com/black-stallion-trading`
-- `nowadaysagency.com/fat-moose`
-- `nowadaysagency.com/jean-belgueule`
-- `nowadaysagency.com/religion-clothing`
-- `nowadaysagency.com/ressources`
-- `nowadaysagency.com/still-nordic`
+6. **Programme (5 modules)** : timeline verticale éditoriale.
+   - Chaque module = ligne horizontale avec à gauche un numéro géant serif `01` en rose-dark/transparent, au centre titre + durée en mono, à droite contenu + livrable mis en valeur dans un encart cream avec bordure ink fine.
+   - Pas d'accordéon (tout visible, SEO friendly).
+   - Séparateurs fins ink/10.
 
-Pour chacune :
-- récupérer le logo (premier visuel rond/carré du hero) + l'uploader en asset
-- récupérer le H1 exact + sous-titre exact
-- extraire les sous-sections (H2/H3 + paragraphes + images) dans l'ordre source
-- extraire le bloc « Résultats » sous forme de stats (les chiffres apparaissent en gras dans le markdown source : `**1k visiteurs uniques**`, etc.)
-- pour BST : extraire la grille influenceurs (handle, rôle, followers, lien Instagram)
-- vérifier les alts des images (déjà bien décrits côté Squarespace pour l'accessibilité)
+7. **Visuels du guide** : 2 mockups intégrés en mid-page en collage léger (rotation -2deg / +1deg), `rounded-sm`, ombres soft. Pas de fond rose flashy.
 
-Les visuels déjà uploadés dans `src/assets/etudes/<slug>/` sont réutilisés quand ils existent (ils sont déjà nommés d'après le nom de fichier source). On ajoute uniquement les logos manquants et les éventuelles images oubliées.
+8. **CTA final pleine largeur** : bande bordeaux, H2 serif cream `Reçois ton guide maintenant`, mini-formulaire (email + bouton "Envoyer le guide") inline, mention RGPD en mono petit.
 
-## Données
+9. **Signature** : "Bonne planification, ♡ Laetitia" en serif italique, alignée droite, après le CTA.
 
-Chaque route `etudes.<slug>.tsx` exporte un objet `caseStudyData: CaseStudyData` et appelle `<CaseStudy data={caseStudyData} />`. Plus de `Block[]` ad-hoc.
+## Implémentation technique
+
+- **Nouvelle route** `src/routes/formation-gratuite-instagram.tsx` avec `createFileRoute("/formation-gratuite-instagram")`, `head()` SEO :
+  - title : `Formation Instagram gratuite — Guide PDF | Nowadays Agency`
+  - description (~155 char) axée "stratégie Instagram, créatrices engagées, gratuit"
+  - og:title, og:description, og:image (le visuel du lead magnet), canonical.
+- **Header + Footer** existants réutilisés, fond `bg-cream`.
+- **Composants locaux** dans le fichier route (pas de fragmentation prématurée) : `Hero`, `Benefits`, `Audience`, `Program`, `FinalCTA`.
+- **Assets à scraper** via `lovable-assets` depuis les URLs Squarespace :
+  - logo guide `35.png` → `src/assets/formation-ig/logo-guide.png`
+  - visuel lead magnet `Lead Magnet visuel.png` → `src/assets/formation-ig/cover.png`
+  - mockup optimisation `formation+instagram+gratuite+optimisation+du+compte.png` → `src/assets/formation-ig/mockup-optimisation.png`
+  - (les visuels `2.png` disco / `3.png` fraise / `4.png` stabilo sont écartés : trop "Squarespace decorative", on s'en passe pour respecter la charte sans cercles/déco gratuites)
+- **Form** : champ email + bouton, soumission gérée par un simple `mailto:` ou un placeholder `onSubmit` (pas de backend dans ce ticket — à confirmer ci-dessous).
+- **Lien depuis le site** : ajouter une entrée discrète dans le Footer (colonne ressources) "Formation Instagram gratuite" → `/formation-gratuite-instagram`. Pas d'ajout dans le header principal.
 
 ## Hors scope
 
-- Pas de nouvelles études de cas (l'utilisateur a déjà demandé une autre page pour les autres projets — `/etudes-de-cas-pro` les liste vers la source).
-- Pas de refonte du design global (couleurs, typo) — on reste sur la charte mémorisée.
-- Pas de système d'admin / CMS ; les données restent en dur dans chaque fichier route.
+- Pas de captcha / reCAPTCHA.
+- Pas d'envoi automatique du PDF par email (pas de backend mail configuré ici).
+- Pas de modification du PDF lui-même.
 
-## Détails techniques
+## À confirmer avant de builder
 
-- **`src/components/site/CaseStudy.tsx`** : réécriture complète selon le schéma `CaseStudyData`.
-- **Marquee** : animation CSS pure (`transform: translateX`) en boucle, durée 30s, accessible (`aria-hidden`).
-- **CTA hero** : `<a href={CALENDLY_URL} target="_blank">` style `rounded-full bg-rose-dark text-white px-8 py-4 font-mono uppercase`.
-- **Stats** : `grid-cols-2 md:grid-cols-4`, chiffre `font-serif text-5xl md:text-7xl text-rose-dark`, label `font-mono text-sm text-ink mt-2`.
-- **Influenceurs** : `grid-cols-2 md:grid-cols-3`, avatar `aspect-square rounded-full overflow-hidden`.
-- **Logos** : nouveau dossier `src/assets/etudes/<slug>/logo.<ext>.asset.json`.
-- 6 fichiers `etudes.<slug>.tsx` réécrits ; tous les imports d'assets déjà présents sont conservés.
-
-## Plan d'exécution
-
-1. Refondre `CaseStudy.tsx` (nouveau schéma + marquee + stats + influenceurs).
-2. Scraper + uploader les 6 logos manquants.
-3. Pour chaque slug, regénérer les données depuis la source et réécrire la route.
-4. Vérification visuelle en preview (1 page suffit pour valider le gabarit, puis check rapide des 5 autres).
+1. **Soumission du formulaire** : on branche un vrai backend (Lovable Cloud + table `leads` + envoi email via un provider) **ou** on met un simple `mailto:laetitia@…` / un placeholder à brancher plus tard ?
+2. **Le visuel "logo guide" coloré** (sticker `ton guide Instagram` jaune/orange/violet) est très Squarespace — on le **garde** dans le hero pour le côté lead magnet, ou on le **remplace** par un traitement typographique sobre cohérent avec la charte ?
