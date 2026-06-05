@@ -14,6 +14,7 @@ import { Route as FormationGratuiteInstagramRouteImport } from './routes/formati
 import { Route as EtudesDeCasProRouteImport } from './routes/etudes-de-cas-pro'
 import { Route as EtudesDeCasRouteImport } from './routes/etudes-de-cas'
 import { Route as CooperativeAssoRouteImport } from './routes/cooperative-asso'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AccompagnementCommunicationRouteImport } from './routes/accompagnement-communication'
 import { Route as IndexRouteImport } from './routes/index'
@@ -49,6 +50,11 @@ const EtudesDeCasRoute = EtudesDeCasRouteImport.update({
 const CooperativeAssoRoute = CooperativeAssoRouteImport.update({
   id: '/cooperative-asso',
   path: '/cooperative-asso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogRoute = BlogRouteImport.update({
@@ -108,6 +114,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
   '/blog': typeof BlogRouteWithChildren
+  '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/etudes-de-cas': typeof EtudesDeCasRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
@@ -125,6 +132,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
   '/blog': typeof BlogRouteWithChildren
+  '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/etudes-de-cas': typeof EtudesDeCasRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
@@ -143,6 +151,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
   '/blog': typeof BlogRouteWithChildren
+  '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/etudes-de-cas': typeof EtudesDeCasRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
@@ -162,6 +171,7 @@ export interface FileRouteTypes {
     | '/'
     | '/accompagnement-communication'
     | '/blog'
+    | '/contact'
     | '/cooperative-asso'
     | '/etudes-de-cas'
     | '/etudes-de-cas-pro'
@@ -179,6 +189,7 @@ export interface FileRouteTypes {
     | '/'
     | '/accompagnement-communication'
     | '/blog'
+    | '/contact'
     | '/cooperative-asso'
     | '/etudes-de-cas'
     | '/etudes-de-cas-pro'
@@ -196,6 +207,7 @@ export interface FileRouteTypes {
     | '/'
     | '/accompagnement-communication'
     | '/blog'
+    | '/contact'
     | '/cooperative-asso'
     | '/etudes-de-cas'
     | '/etudes-de-cas-pro'
@@ -214,6 +226,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AccompagnementCommunicationRoute: typeof AccompagnementCommunicationRoute
   BlogRoute: typeof BlogRouteWithChildren
+  ContactRoute: typeof ContactRoute
   CooperativeAssoRoute: typeof CooperativeAssoRoute
   EtudesDeCasRoute: typeof EtudesDeCasRoute
   EtudesDeCasProRoute: typeof EtudesDeCasProRoute
@@ -262,6 +275,13 @@ declare module '@tanstack/react-router' {
       path: '/cooperative-asso'
       fullPath: '/cooperative-asso'
       preLoaderRoute: typeof CooperativeAssoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog': {
@@ -351,6 +371,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AccompagnementCommunicationRoute: AccompagnementCommunicationRoute,
   BlogRoute: BlogRouteWithChildren,
+  ContactRoute: ContactRoute,
   CooperativeAssoRoute: CooperativeAssoRoute,
   EtudesDeCasRoute: EtudesDeCasRoute,
   EtudesDeCasProRoute: EtudesDeCasProRoute,
@@ -366,3 +387,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
