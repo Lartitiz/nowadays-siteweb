@@ -1,69 +1,52 @@
-# Migration du blog Nowadays
+## Objectif
 
-Objectif : reproduire `/blog` (13 articles) et toutes les pages détail sur le nouveau site, en utilisant la charte Nowadays (Libre Baskerville + IBM Plex Mono + palette ink/bordeaux/rose) et un back-office Lovable Cloud pour éditer/ajouter sans redéploiement.
+Récupérer les 13 articles complets de `nowadaysagency.com/blog` et les insérer dans la table `articles` déjà en place, pour que les routes `/blog` et `/blog/$slug` les affichent immédiatement, avec rendu pixel-perfect (titres, sous-titres, citations, images inline, gras/italiques, liens).
 
-## Phase A — Lovable Cloud (backend)
+## Articles à importer (13)
 
-1. Activer Lovable Cloud (création projet Supabase managée).
-2. Migration SQL : table `articles`
-   - `id uuid pk`, `slug text unique`, `title text`, `excerpt text`, `cover_url text`, `cover_alt text`, `author text default 'Laetitia Mattioli'`, `published_at date`, `content jsonb` (blocks scrapés : h2/h3/p/quote/img/list, même format que `CaseStudy.tsx`), `seo_title text`, `seo_description text`, `created_at`, `updated_at`.
-   - GRANT `SELECT` to `anon, authenticated`, `ALL` to `service_role`.
-   - RLS ON, policy `SELECT` ouverte (contenu public).
-3. Seed des 13 articles via INSERTs (slugs, titres, dates, excerpts pris de la liste scrapée ; `content` rempli après scrape pixel perfect ; images uploadées sur le CDN Lovable et URLs stockées dans `cover_url` / blocks `img`).
+1. agence-communication-engagee — 29/09/2025
+2. brand-content — 20/08/2025
+3. vocabulaire-marketing-responsable — 09/07/2025
+4. exemples-communication-mode — 30/04/2025
+5. influence-ethique — 20/02/2025
+6. communication-ethique — 20/02/2025
+7. packagings-eco-responsable-mode — 21/11/2024
+8. influence-recit-ecologie — 11/03/2023
+9. creatrice-ethique-communication — 06/02/2022
+10. influenceur-virtuel — 18/02/2021
+11. communication-influence — 10/10/2020
+12. visibilite-presse-partenariat — 10/09/2020
+13. communication-durable — 25/03/2019
 
-## Phase B — Scraping des 13 articles
+## Approche
 
-En 3 lots de 4-5 articles (limite d'appels parallèles) :
-- Fetch `nowadaysagency.com/blog/{slug}` pour chaque article.
-- Parser titre H1, sous-titre, paragraphes, sous-titres H2/H3, citations, listes, images inline.
-- Télécharger toutes les images (cover + inline) → upload Lovable CDN → URLs stables.
-- Construire le `content` jsonb (tableau de blocks).
-- Insérer en base via outil insert.
+Pour chaque article :
+1. **Fetch** la page Squarespace en HTML brut.
+2. **Parse** le corps de l'article (`.sqs-block-html`, `.sqs-block-image`) en blocs structurés respectant le schéma déjà utilisé par `/blog/$slug` :
+   - `{ type: 'p', text }` — paragraphe (avec markdown inline `**gras**`, `*italique*`, `[texte](url)` conservé pour `RichText`)
+   - `{ type: 'h2', text }` / `{ type: 'h3', text }` — sous-titres
+   - `{ type: 'quote', text }` — citations
+   - `{ type: 'img', src, alt }` — images inline (URL Squarespace CDN, conservée telle quelle)
+3. **Extraire** : titre, excerpt (premier paragraphe court ou meta description), `cover_url` (image hero), `cover_alt`, `seo_title`, `seo_description`, `published_at`.
+4. **Insérer** chaque article dans `public.articles` via la commande INSERT (upsert sur `slug` pour ré-exécution sûre).
 
-## Phase C — Routes TanStack
+## Choix techniques
 
-Toutes les lectures passent par `createServerFn` (admin client lu dans le handler — RLS publique mais on évite l'import client.server côté client).
+- **Cover & images inline** : on garde les URLs Squarespace CDN directes (déjà publiques, stables, optimisées). Pas de re-upload Storage — plus rapide, pas de perte qualité, et la table accepte déjà `cover_url text`.
+- **Contrainte unique sur slug** : ajout d'un `UNIQUE` sur `articles.slug` (manque actuellement) pour permettre l'upsert et garantir l'unicité — micro-migration de schéma.
+- **Script de scraping** : exécuté en local via `code--exec` (Node + cheerio), produit un gros `INSERT ... ON CONFLICT (slug) DO UPDATE` que j'exécute via l'outil `supabase--insert`.
+- **Charte respectée** : aucun ajout de couronne, tampon, stats hero — uniquement de la donnée injectée dans le rendu existant qui suit déjà la charte Nowadays.
 
-1. `src/lib/articles.functions.ts`
-   - `listArticles()` : tous les articles triés par `published_at DESC` (champs : slug/title/excerpt/cover/published_at).
-   - `getArticleBySlug(slug)` : article complet avec `content`.
+## Étapes
 
-2. `src/routes/blog.tsx` (`/blog`)
-   - `loader` via `queryOptions` + `ensureQueryData`.
-   - Header section : H1 Libre Baskerville `text-6xl md:text-8xl` "Le blog", sous-titre IBM Plex Mono ("Des conseils pratiques pour te faire connaître tout en respectant ton éthique" — repris de la source).
-   - Grille 2 colonnes desktop / 1 colonne mobile, gap généreux.
-   - Card article : image cover (ratio 4/3, `object-cover`), date IBM Plex Mono + auteur, titre Libre Baskerville `text-3xl md:text-4xl`, excerpt IBM Plex Mono, lien "Lire la suite →" rose-dark. Toute la card cliquable vers `/blog/$slug`.
-   - SEO `head()` complet.
-   - Bandeau CTA final (FinalCtaSection existant) en bas.
+1. Migration : ajouter `UNIQUE (slug)` sur `public.articles`.
+2. Écrire `scripts/scrape-blog.mjs` (Node, fetch + cheerio) qui télécharge les 13 URLs, parse en blocs, et émet un fichier JSON `scripts/articles.json`.
+3. Exécuter le script, vérifier visuellement quelques articles (longueurs, présence d'images, gras conservé).
+4. Générer le SQL `INSERT ... ON CONFLICT` à partir du JSON et l'exécuter via `supabase--insert`.
+5. Vérifier en visitant `/blog` puis 2-3 fiches articles dans la preview.
 
-3. `src/routes/blog.$slug.tsx` (`/blog/{slug}`)
-   - `loader` charge l'article via le serverFn ; `notFoundComponent` + `errorComponent` obligatoires.
-   - Hero : cover full-width (ratio 16/9, ink overlay subtil), date + auteur, H1 Libre Baskerville `text-5xl md:text-7xl text-ink`, excerpt en italique rose-dark.
-   - Corps : conteneur `max-w-3xl mx-auto`, rendu des blocks (réutilise/adapte le pattern de `CaseStudy.tsx`) :
-     - p : IBM Plex Mono `text-base md:text-lg leading-relaxed text-ink`
-     - h2 : `font-serif text-4xl md:text-6xl leading-[1.05] text-ink mt-16 mb-6` (règle Core)
-     - h3 : `font-serif text-2xl md:text-3xl text-ink mt-10 mb-4`
-     - quote : bloc bordure rose-dark à gauche, IBM Plex Mono italique
-     - img : full-width avec légende
-     - list : puces rose-dark
-   - Footer article : "Articles récents" (3 autres articles aléatoires) puis `FinalCtaSection`.
-   - SEO `head()` dérivé de `seo_title`/`seo_description`/`cover_url` (og:image = cover).
+## Hors périmètre
 
-## Phase D — Navigation & SEO
-
-- Header : ajouter le lien "Blog" (`<Link to="/blog">`) à la nav principale.
-- `sitemap.xml.ts` : ajouter `/blog` + les 13 entrées dynamiques (loader interroge la table articles).
-- `robots.txt` : déjà ouvert, rien à changer.
-
-## Livrables
-
-- 1 migration SQL (table + RLS + grants).
-- 13 INSERTs (seed) + ~30 images uploadées sur le CDN.
-- 1 fichier server functions, 2 routes (`blog.tsx`, `blog.$slug.tsx`), lien header, sitemap mis à jour.
-- Aucun code business hors lecture publique ; pas d'admin UI dans cette phase (édition directe en base ou via console Lovable Cloud).
-
-## Hors périmètre (à confirmer si tu veux les ajouter ensuite)
-
-- Back-office d'édition WYSIWYG des articles.
-- Newsletter "recevoir nos conseils secrets" (formulaire existant à brancher).
-- Pagination / catégories / recherche.
+- Pas de re-hébergement des images sur Lovable Cloud (URLs Squarespace conservées).
+- Pas de gestion d'auteurs multiples (`author` reste 'Laetitia Mattioli' par défaut).
+- Pas de commentaires, tags ou catégories — la table actuelle ne les contient pas.
