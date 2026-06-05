@@ -1,6 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import l214Logo from "@/assets/coop-logos/l214.png.asset.json";
+import cooperativeOasisLogo from "@/assets/coop-logos/cooperative-oasis.png.asset.json";
+import ensadPslLogo from "@/assets/coop-logos/ensad-psl.jpg.asset.json";
+import emmausDefiLogo from "@/assets/coop-logos/emmaus-defi.png.asset.json";
+import seaShepherdLogo from "@/assets/coop-logos/sea-shepherd.png.asset.json";
 
 const CALENDLY_URL =
   "https://calendly.com/laetitia-mattioli/appel-decouverte-atelier";
