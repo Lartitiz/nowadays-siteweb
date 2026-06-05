@@ -1,73 +1,70 @@
+## Objectif
 
-# Suite de la migration
+Faire en sorte que le formulaire `/contact` :
+1. enregistre le message en base (déjà OK),
+2. **envoie une notification interne** à `laetitia@nowadaysagency.com`,
+3. **envoie un accusé de réception** à la personne qui a écrit,
+4. s'appuie sur des **mentions légales** à jour côté RGPD/formulaire.
 
-Travail organisé en 4 chantiers parallèles. Tous les changements restent côté frontend (routes + composants), sauf un éventuel re-scraping d'articles si on découvre qu'il en manque ou que le contenu est dégradé.
+## 1. Mise en place de l'infrastructure e-mail (Lovable Emails)
 
----
+Aucun domaine d'envoi n'est encore configuré dans le workspace. Étapes :
 
-## 1. URLs et liens internes
+1. Ouvrir la **boîte de configuration du domaine d'envoi** (sous-domaine type `notify.nowadaysagency.com`) — la propagation DNS peut prendre jusqu'à 72 h, mais le code peut être posé avant.
+2. Initialiser l'infrastructure e-mail (files d'attente, table de logs, suppressions, cron de traitement).
+3. Scaffold des **app emails** (templates React Email + route `/lovable/email/transactional/send`).
 
-**Renommer la route Créatrices éthiques**
-- `src/routes/etudes-de-cas.tsx` → `src/routes/creatrices-ethiques.tsx`
-- Mettre à jour `createFileRoute("/etudes-de-cas")` → `createFileRoute("/creatrices-ethiques")`
-- Mettre à jour la balise `<link rel="canonical">` et `og:url`
-- Mettre à jour les liens dans :
-  - `src/components/site/Header.tsx` (nav "Créatrices éthiques")
-  - `src/components/site/Footer.tsx` (lien "Nos études de cas (solopreneures)")
-  - Tout autre `Link to="/etudes-de-cas"` retrouvé via `rg` (CTAs homepage, sections, etc.)
-- Garder `/etudes-de-cas-pro` tel quel (URL conservée côté site source).
+Tant que le DNS n'est pas vert, les e-mails s'empilent en file et partent dès vérification. Tu pourras suivre l'état dans Cloud → Emails.
 
-**Audit des liens morts**
-- Le footer contient encore `href="#"` sur "Le blog" → remplacer par `<Link to="/blog">`.
-- Le footer pointe `/accompagnement-communication` et `/cooperative-asso` pour "études de cas" : à conserver, c'est volontaire.
-- Vérifier que la homepage et toutes les sections (`Hero`, `OffersSection`, `ProcessSection`, `FinalCtaSection`, etc.) n'ont aucun `href="#"` orphelin ni `<Link to="/etudes-de-cas">` après renommage.
+## 2. Templates e-mail
 
----
+Deux templates React Email dans `src/lib/email-templates/`, brandés Nowadays (cream/ink/rose-dark, Libre Baskerville pour les titres) :
 
-## 2. Pages outils gratuits
+- **`contact-notification.tsx`** → envoyé à `laetitia@nowadaysagency.com`
+  Sujet : « Nouveau message via le site — {prénom} ({type de besoin}) »
+  Contenu : nom, email, structure, type de besoin, message complet, date.
+  `reply_to` = e-mail de l'expéditeur pour répondre en un clic.
 
-Deux pages à créer, sur le modèle de `formation-gratuite-instagram.tsx` (Hero + bénéfices + formulaire de récupération par email + signature). Scraper le contenu depuis le site source pour rester fidèle.
+- **`contact-confirmation.tsx`** → envoyé à l'expéditeur
+  Sujet : « Bien reçu — on revient vers vous sous 24 h ouvrées »
+  Contenu : merci personnalisé, rappel du délai, liens vers les études de cas et un créneau Calendly, signature Laetitia.
 
-**`src/routes/template-calendrier-editorial.tsx`** → `/template-calendrier-editorial`
-- Source : `https://www.nowadaysagency.com/template-calendrier-editorial`
-- Visuel : générer un cover + un mockup dans `src/assets/calendrier-editorial/`
-- `head()` dédié : titre, description, og:image = cover
+Enregistrement des deux dans `src/lib/email-templates/registry.ts`.
 
-**`src/routes/plan-communication.tsx`** → `/plan-communication`
-- Source : `https://www.nowadaysagency.com/plan-communication`
-- Visuel : cover + mockup dans `src/assets/plan-communication/`
-- `head()` dédié
+## 3. Route d'envoi côté serveur
 
-**Footer**
-- Remplacer `href="#"` "Outil Calendrier éditorial" par `<Link to="/template-calendrier-editorial">`
-- Remplacer `href="#"` "Template Plan de com'" par `<Link to="/plan-communication">`
+Le formulaire est public (pas d'auth requise), donc on ne peut pas appeler directement la route d'envoi authentifiée. Approche :
 
----
+- Modifier `src/lib/contact.functions.ts` (`submitContact`) pour, après l'insert en base, appeler en interne `/lovable/email/transactional/send` avec les credentials service-role pour les deux templates.
+- `idempotencyKey` dérivé de l'`id` de la ligne `contact_messages` pour éviter les doublons en cas de retry.
+- Si l'envoi échoue, on log mais on ne casse pas l'UX (le message est déjà sauvegardé).
 
-## 3. Blog — audit et complément
+## 4. Mentions légales (compléter `src/routes/mentions-legales.tsx`)
 
-État actuel en base : les **13 articles existent déjà** (slugs et contenus, entre 5 700 et 33 400 caractères chacun). Donc pas besoin de tout ré-extraire.
+Sections à ajouter / mettre à jour pour couvrir le formulaire de contact :
 
-À faire :
-- Visiter rapidement chacun des 13 articles en preview (`/blog/<slug>`) pour vérifier qu'ils s'affichent correctement (cover, contenu RichText, dates).
-- Pour les éventuels articles dont le contenu est dégradé ou dont la cover manque (`cover_url IS NULL`), re-scraper la page source correspondante sur `nowadaysagency.com/blog/<slug>` et faire un `UPDATE` ciblé via l'outil insert.
-- Vérifier que l'ordre du listing `/blog` correspond bien au site source (tri par `published_at DESC` — déjà OK).
+- **Données collectées via le formulaire** : nom, email, structure, type de besoin, message, consentement, date.
+- **Finalité** : répondre à la demande, qualifier le projet.
+- **Base légale** : consentement (case à cocher) + intérêt légitime (réponse commerciale).
+- **Durée de conservation** : 3 ans après le dernier contact pour les prospects non clients, 5 ans pour les clients.
+- **Destinataires** : Laetitia Mattioli (Nowadays Agency). Aucun transfert hors UE.
+- **Sous-traitants** : hébergeur backend (Supabase, UE) + prestataire e-mail (Lovable Emails / Mailgun, UE).
+- **Droits RGPD** : accès, rectification, effacement, opposition, portabilité, retrait du consentement, réclamation CNIL — adresse de contact `laetitia@nowadaysagency.com`.
+- **Cookies / mesure d'audience** : préciser ce qui est posé (ou « aucun cookie tiers » si c'est le cas).
 
-Pas de migration de schéma nécessaire ; la table `articles` est déjà bonne.
+Mise à jour de la date `LAST_UPDATE`.
 
----
+## 5. Côté page Contact
 
-## 4. Vérifications finales
+- Reformuler la phrase de consentement pour pointer vers `/mentions-legales` (lien) et mentionner explicitement la durée de conservation.
+- Garder le honeypot existant.
+- Conserver l'écran de succès actuel ; ajouter une petite mention « Un accusé de réception vient de vous être envoyé par e-mail. »
 
-- `rg "etudes-de-cas[^-]"` après renommage → 0 résultat (hors `etudes-de-cas-pro`).
-- `rg 'href="#"'` dans `src/` → seul `#manifesto` du footer doit subsister (ancre intra-page valide).
-- Toutes les nouvelles routes ont un `head()` complet (title, description, og:title, og:description, canonical).
-- Préserver les règles design (typo, palette, H2 = `font-serif text-4xl md:text-6xl leading-[1.05] text-ink`).
+## Ce qui ne change pas
 
----
+- Schéma de la table `contact_messages`, RLS, design tokens, structure du site.
+- Aucune nouvelle dépendance hors packages e-mail standard installés par le scaffold.
 
-## Détails techniques
+## Action côté toi avant que je code
 
-- TanStack Router régénère `routeTree.gen.ts` automatiquement après création/renommage des fichiers `src/routes/*`.
-- Les nouvelles pages ressources réutilisent `SiteLayout` + `FinalCtaSection`.
-- Le scraping côté chantier 2 et 3 (si besoin) se fait via `code--fetch_website`, le contenu est ensuite collé directement dans les composants (chantier 2) ou poussé via `supabase--insert` (chantier 3).
+J'ai besoin que tu valides le **sous-domaine d'envoi** (ex. `notify.nowadaysagency.com`) au moment où la boîte de configuration s'ouvrira, et que tu ajoutes les enregistrements NS chez ton registrar. Sans ça, les e-mails partent en file mais n'arrivent pas tant que le DNS n'est pas vert.
