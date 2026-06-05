@@ -324,7 +324,14 @@ function EtudesGrid() {
                 <p className="mt-3 font-mono text-sm leading-relaxed text-ink">
                   {p.description}
                 </p>
+                {p.slug && (
+                  <span className="mt-4 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-rose-dark transition-all group-hover:gap-3">
+                    Voir l'étude de cas
+                    <span aria-hidden="true">→</span>
+                  </span>
+                )}
               </>
+
             );
             return p.slug ? (
               <Link
