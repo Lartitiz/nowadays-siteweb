@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Phone } from "lucide-react";
+import nowadaysLogo from "@/assets/nowadays-logo.webp.asset.json";
 
 const CALENDLY_URL =
   "https://calendly.com/laetitia-mattioli/30-min-de-diagnostic-offert";
@@ -8,19 +9,12 @@ export function Header() {
   return (
     <header className="w-full bg-background">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-        <Link to="/" className="flex items-center gap-1">
-          <span className="font-serif text-2xl tracking-tight text-foreground">
-            now
-          </span>
-          <span className="font-serif text-2xl tracking-tight text-foreground">
-            a
-          </span>
-          <span
-            className="font-serif text-2xl tracking-tight"
-            style={{ color: "var(--orange)" }}
-          >
-            days
-          </span>
+        <Link to="/" className="flex items-center" aria-label="Nowadays Agency">
+          <img
+            src={nowadaysLogo.url}
+            alt="Nowadays Agency"
+            className="h-7 w-auto"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
