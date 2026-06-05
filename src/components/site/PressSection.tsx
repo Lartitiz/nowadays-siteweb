@@ -1,6 +1,6 @@
-import lebonbonLogo from "@/assets/press/lebonbon.png.asset.json";
-import emarketingLogo from "@/assets/press/emarketing.png.asset.json";
-import ladnLogo from "@/assets/press/ladn.png.asset.json";
+import lebonbonLogo from "@/assets/press/lebonbon-cutout.png.asset.json";
+import emarketingLogo from "@/assets/press/emarketing-cutout.png.asset.json";
+import ladnLogo from "@/assets/press/ladn-cutout.png.asset.json";
 
 type PressItem = {
   logo: string;
