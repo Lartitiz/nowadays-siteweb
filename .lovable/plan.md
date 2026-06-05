@@ -1,52 +1,97 @@
 ## Objectif
 
-Récupérer les 13 articles complets de `nowadaysagency.com/blog` et les insérer dans la table `articles` déjà en place, pour que les routes `/blog` et `/blog/$slug` les affichent immédiatement, avec rendu pixel-perfect (titres, sous-titres, citations, images inline, gras/italiques, liens).
+Scraper https://www.nowadaysagency.com/etude-de-cas-ethique (22 projets : associations, ONG, coopératives, PME engagées) et créer une nouvelle page sur le site, distincte de l'actuelle `/etudes-de-cas` (qui reste dédiée aux créatrices éthiques).
 
-## Articles à importer (13)
+## Nouvelle route
 
-1. agence-communication-engagee — 29/09/2025
-2. brand-content — 20/08/2025
-3. vocabulaire-marketing-responsable — 09/07/2025
-4. exemples-communication-mode — 30/04/2025
-5. influence-ethique — 20/02/2025
-6. communication-ethique — 20/02/2025
-7. packagings-eco-responsable-mode — 21/11/2024
-8. influence-recit-ecologie — 11/03/2023
-9. creatrice-ethique-communication — 06/02/2022
-10. influenceur-virtuel — 18/02/2021
-11. communication-influence — 10/10/2020
-12. visibilite-presse-partenariat — 10/09/2020
-13. communication-durable — 25/03/2019
+`src/routes/etudes-de-cas-pro.tsx` (slug : `/etudes-de-cas-pro`)
 
-## Approche
+Titre : « Ils nous ont fait confiance — Associations, ONG & marques engagées »
+Sous-titre repris du site source : « Une sélection de projets créatifs et engagés (Associations, ONG, start-up et entreprises responsables et éthiques) que nous avons accompagnés avec passion. »
 
-Pour chaque article :
-1. **Fetch** la page Squarespace en HTML brut.
-2. **Parse** le corps de l'article (`.sqs-block-html`, `.sqs-block-image`) en blocs structurés respectant le schéma déjà utilisé par `/blog/$slug` :
-   - `{ type: 'p', text }` — paragraphe (avec markdown inline `**gras**`, `*italique*`, `[texte](url)` conservé pour `RichText`)
-   - `{ type: 'h2', text }` / `{ type: 'h3', text }` — sous-titres
-   - `{ type: 'quote', text }` — citations
-   - `{ type: 'img', src, alt }` — images inline (URL Squarespace CDN, conservée telle quelle)
-3. **Extraire** : titre, excerpt (premier paragraphe court ou meta description), `cover_url` (image hero), `cover_alt`, `seo_title`, `seo_description`, `published_at`.
-4. **Insérer** chaque article dans `public.articles` via la commande INSERT (upsert sur `slug` pour ré-exécution sûre).
+Même mise en page visuelle que `/etudes-de-cas` (grille charte respectée : serif Libre Baskerville, IBM Plex Mono, palette ink/bordeaux/rose), pour cohérence pixel-perfect.
 
-## Choix techniques
+## Liste des 22 projets à intégrer
 
-- **Cover & images inline** : on garde les URLs Squarespace CDN directes (déjà publiques, stables, optimisées). Pas de re-upload Storage — plus rapide, pas de perte qualité, et la table accepte déjà `cover_url text`.
-- **Contrainte unique sur slug** : ajout d'un `UNIQUE` sur `articles.slug` (manque actuellement) pour permettre l'upsert et garantir l'unicité — micro-migration de schéma.
-- **Script de scraping** : exécuté en local via `code--exec` (Node + cheerio), produit un gros `INSERT ... ON CONFLICT (slug) DO UPDATE` que j'exécute via l'outil `supabase--insert`.
-- **Charte respectée** : aucun ajout de couronne, tampon, stats hero — uniquement de la donnée injectée dans le rendu existant qui suit déjà la charte Nowadays.
+1. École des Arts Décoratifs (ENSAD) — lien interne `/ensad`
+2. Sea Shepherd x Racines de Demain — `/sea-shepherd`
+3. Decathlon x Quechua — pas de page projet (image seule)
+4. Emmaüs Défi — `/emmaus-defi`
+5. Clip It — `/clip-it`
+6. L214 — `/l214`
+7. Coopérative Oasis — `/cooperative-oasis`
+8. Okahina Wave — `/okahina-wave`
+9. Study & Co — externe https://studynco.com
+10. Mira — externe https://mymira.fr
+11. Black Stallion Trading — `/etudes/black-stallion-trading` (déjà existant)
+12. Ressources Emmanuelle Riboud — `/etudes/ressources` (déjà existant)
+13. We Slow — externe Instagram
+14. Jean Belgueule — `/etudes/jean-belgueule` (déjà existant)
+15. Essential Oil Supplies — externe
+16. Bruno Zana — externe
+17. Atelier des lunettes — pas encore de page
+18. My Pilates World — pas encore de page
+19. Belle. — externe Instagram
+20. Rose Donald — externe Instagram
+21. Elvezia — pas encore de page
+22. La prochaine aire — externe linktree
 
-## Étapes
+Les liens « Voir le projet » pointent vers la cible exacte du site source (page interne quand elle existe, sinon URL externe avec `target="_blank"`).
 
-1. Migration : ajouter `UNIQUE (slug)` sur `public.articles`.
-2. Écrire `scripts/scrape-blog.mjs` (Node, fetch + cheerio) qui télécharge les 13 URLs, parse en blocs, et émet un fichier JSON `scripts/articles.json`.
-3. Exécuter le script, vérifier visuellement quelques articles (longueurs, présence d'images, gras conservé).
-4. Générer le SQL `INSERT ... ON CONFLICT` à partir du JSON et l'exécuter via `supabase--insert`.
-5. Vérifier en visitant `/blog` puis 2-3 fiches articles dans la preview.
+## Visuels
 
-## Hors périmètre
+Scraper les 22 images depuis `images.squarespace-cdn.com` et les sauvegarder via le système d'assets (`.asset.json`) sous `src/assets/etudes-pro/`, comme pour la page créatrices. Réutiliser les `.asset.json` déjà présents quand le projet est commun (`black-stallion-trading.webp`, `ressources.png`, `jean-belgueule.jpg`, `belle.jpg`, `rose-donald.jpg`, `my-pilates-world.jpg`).
 
-- Pas de re-hébergement des images sur Lovable Cloud (URLs Squarespace conservées).
-- Pas de gestion d'auteurs multiples (`author` reste 'Laetitia Mattioli' par défaut).
-- Pas de commentaires, tags ou catégories — la table actuelle ne les contient pas.
+Texte alternatif : description Squarespace existante (déjà très détaillée et accessible).
+
+## Navigation
+
+Ajouter une entrée dans la nav principale du `SiteLayout` (Header) :
+- conserver « Études de cas » → renommer en « Créatrices éthiques » (URL `/etudes-de-cas`)
+- ajouter « Assos & marques engagées » (URL `/etudes-de-cas-pro`)
+
+Idem dans le footer si la nav y est dupliquée.
+
+## SEO
+
+`head()` dédié :
+- title : « Études de cas — Associations, ONG & marques engagées | Nowadays »
+- description : reprise du sous-titre
+- og:title / og:description identiques
+- canonical `/etudes-de-cas-pro`
+
+## Hors scope
+
+- Pas de création des pages projet manquantes (Atelier des lunettes, My Pilates World, Elvezia, etc.) — uniquement liens externes ou vers le site source si l'utilisateur le demandera plus tard.
+- Pas de modification de `/etudes-de-cas` existant (sauf renommage du label de nav).
+- Pas de stockage DB : projets statiques dans le code (comme la page créatrices), pas dans `articles`.
+
+## Détails techniques
+
+```text
+src/
+  routes/
+    etudes-de-cas-pro.tsx        ← nouvelle route
+  assets/
+    etudes-pro/
+      ensad.jpg.asset.json
+      sea-shepherd.jpg.asset.json
+      decathlon-quechua.jpg.asset.json
+      emmaus-defi.jpg.asset.json
+      clip-it.jpg.asset.json
+      l214.jpg.asset.json
+      cooperative-oasis.jpg.asset.json
+      okahina-wave.jpg.asset.json
+      study-co.webp.asset.json
+      mira.jpg.asset.json
+      we-slow.jpg.asset.json      ← réutiliser src/assets/etudes/we-slow.jpg si identique
+      essential-oil-supplies.jpg.asset.json ← idem réutiliser si présent
+      bruno-zana.jpg.asset.json
+      atelier-des-lunettes.webp.asset.json
+      elvezia.jpg.asset.json
+      la-prochaine-aire.jpg.asset.json
+```
+
+Composant `Project` identique à celui de `/etudes-de-cas` : image carrée, nom en serif `text-ink`, paragraphe descriptif, lien « Voir le projet » avec icône, support de l'attribut `external` pour ouvrir dans nouvel onglet.
+
+Section finale : réutiliser `<FinalCtaSection />` comme sur la page créatrices.
