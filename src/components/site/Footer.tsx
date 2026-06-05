@@ -139,7 +139,13 @@ export function Footer() {
             </span>
           </div>
           <p className="font-mono text-xs text-ink/60">
-            © {new Date().getFullYear()} Nowadays Agency
+            © {new Date().getFullYear()} Nowadays Agency ·{" "}
+            <Link
+              to="/mentions-legales"
+              className="underline underline-offset-4 hover:text-rose-dark"
+            >
+              Mentions légales
+            </Link>
           </p>
         </div>
       </div>
