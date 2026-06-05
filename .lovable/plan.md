@@ -1,92 +1,72 @@
-# Prochaines étapes de la migration pixel-perfect
+# Migration pixel-perfect de `/cooperative-asso`
 
-## Vue d'ensemble (état actuel)
+Refonte complète de `src/routes/cooperative-asso.tsx` (actuellement placeholder H1) en suivant la même grammaire que `/accompagnement-communication` et la homepage : Libre Baskerville 400 pour les titres, IBM Plex Mono pour le corps, palette imposée, H2 = `font-serif text-4xl md:text-6xl leading-[1.05] text-ink`, aucun cercle décoratif, aucun "100% engagés / 0% bullshit", pas de couronne ni de tampon "Communication · Engagée · Éthique".
 
-✅ Faits : Homepage complète (Hero, Tired, Visibility, Manifesto, Offers, Process, Differences, Expertise, Laetitia, Pourquoi, CtaWave, Press, FinalCta, Footer enrichi).
+CTA Calendly utilisé pour tous les boutons : `https://calendly.com/laetitia-mattioli/appel-decouverte-atelier` (URL utilisée sur la page source).
 
-🟡 À faire (par ordre de priorité) :
+## Sections à construire (dans l'ordre)
 
-1. `**/accompagnement-communication**` (cette étape — détaillée ci-dessous)
-2. `**/cooperative-asso**` (page jumelle, structure proche)
-3. **Sous-pages ressources** linkées dans le footer : `/blog`, `/calendrier-editorial`, `/formation-instagram`, `/template-plan-com` (placeholders ou contenus si fournis)
-4. **Page `/notre-demarche-ethique**` (lien footer)
-5. **Branchements** : Calendly (CTA "Réserver…") + soumission newsletter
-6. **SEO/OG** : og:image par page, sitemap, robots.txt
-7. **Polish responsive** : pass mobile sur toutes les sections (≤ 390px)
+1. **HeroCooperative**
+   - H1 : `Déléguez <em>votre com'</em> et concentrez-vous sur l'essentiel.`
+   - Sous-titre mono : `Une communication pro, réactive et stylée pour les structures qui ont mieux à faire que de galérer sur Instagram.`
+   - CTA pill rose-dark : `Réservez votre appel découverte`
+   - Mention mono : `✨ Appel gratuit • 30 minutes • Sans engagement`
 
----
+2. **ClientsBand** (fond rose-light)
+   - Sur-titre italique serif : `Quelques projets qui nous ont fait confiance`
+   - Rangée 5 wordmarks SVG textuels (pas de reproduction des logos exacts) : ENSAD, Sea Shepherd, Decathlon, Emmaüs Défi, L214
 
-## Étape en cours — `/accompagnement-communication`
+3. **ProblemSection**
+   - H2 : `Vous portez un projet qui a du sens. Mais <em>la com'</em>, ça coince.`
+   - Para intro mono + liste à puces 5 items + paragraphe gras de conclusion + CTA secondaire
 
-Refonte complète de `src/routes/accompagnement-communication.tsx` qui n'a aujourd'hui qu'un H1 placeholder. On reprend la structure de la page source en respectant toutes les règles du design system (Libre Baskerville 400, IBM Plex Mono, palette imposée, H2 = `font-serif text-4xl md:text-6xl leading-[1.05] text-ink`, pas de cercle décoratif).
+4. **LaetitiaIntroSection**
+   - Sur-titre mono uppercase : `Je vous propose de prendre en main votre communication pour que vous respiriez`
+   - H2 : `Parce que gérer une structure engagée, c'est déjà un job à temps plein`
+   - 2 colonnes : texte (présentation Laetitia + "Je fais pour vous" + liste 4 puces) | portrait (placeholder rose-soft)
+   - CTA + mention réassurance
 
-### Sections à créer (composants dans `src/components/accompagnement/`)
+5. **PourquoiTravaillerSection** (fond cream)
+   - H2 : `Pourquoi <em>travailler avec moi</em> plutôt qu'une grosse agence ?`
+   - 3 cartes (💛 Prix accessibles / 🧡 Réactive, autonome, efficace / 🩷 Une com' qui donne envie) — titres serif, corps mono
+   - Lien outline `Voir nos études de cas` (ancre interne `#projets`)
 
-1. **HeroAccompagnement**
-  - H1 : `Tu fais un travail <em>magnifique</em>. Mais personne ne le voit.`
-  - Sous-titre serif : `Deviens <em>visible</em> sans vendre ton âme.`
-  - Accroche mono : `Ta com' te prend la tête ? On la fait ensemble.`
-  - Mention prix italique mono : `290€/mois pendant 6 mois. Soit moins de 9€ par jour…`
-  - CTA pill `rose-dark` : `Prends rdv pour discuter de ton projet` → `https://calendly.com/laetitia-mattioli/appel-decouverte`
-  - Ligne de réassurance mono : `✨ Appel gratuit • 30 minutes • Sans engagement`
-2. **ClientsBand** — fond `rose-light`
-  - Sur-titre italique serif : `Elles m'ont fait confiance`
-  - Rangée de 6 logos de clients (placeholders textuels stylisés en attendant les vrais logos)
-  - Note : génération de wordmarks SVG simples (Atelier Tiket, Ikigai, Boom Boom Dance, Hopla, Napperon, SLF) — ne pas reproduire les logos exacts (droits)
-3. **ProblemSection** — H2 `Ce que tu proposes est beau et responsable. Il est temps qu'on le voie.` + 3 paragraphes corps mono
-4. **LaetitiaIntroSection** — H2 `Enchantée, je suis Laetitia, et je crois que la communication n'est pas de la manipulation, mais un outil <em>d'émancipation</em>.` + paragraphe « safe place » + portrait (placeholder image générée → `src/assets/laetitia-portrait.jpg`)
-5. **TransformationGrid** — H2 `Dans 6 mois, ta com' <em>tourne</em>. Et tu n'es plus seule.` + 5 cartes (emoji + titre + texte) sur fond `cream`
-  - 🤝 Tu n'es plus seule…
-  - 🗺️ Tu as un plan clair…
-  - ⚡ Quelqu'un fait pour toi…
-  - 📈 Tu vois enfin des résultats
-  - 💜 Tu communiques sans trahir tes valeurs
-6. **ContrasteSection** — H2 `Imagine avoir quelqu'un qui bosse sur ta com' avec toi.` + liste 3 lignes `coach / formation / plan` → `→ Ici, on…`
-7. **TimelineSection** — sous-titre `6 mois pour tout mettre en place` + 3 colonnes (Mois 1→2 « On pose ta stratégie », Mois 3→6 « On applique ensemble », Au quotidien « Un doute ? Je suis là. »)
-8. **PrixSection** — fond `rose-soft`
-  - H2 `Pour 290 € / mois pendant 6 mois`
-  - Sous-texte + encart `Je te rembourse entièrement`
-  - CTA Calendly
-9. **ComparaisonAgenceSection** — H2 `Parce que déléguer à une agence est souvent hors de prix…`
-  - 2 colonnes side-by-side (Agence classique 16 000€ vs Ta binôme de com 1 740€) en tableau stylisé
-  - Ligne d'économie : `Soit 91% d'économie par rapport à une agence classique`
-10. **LivrablesGrid** — H2 `Concrètement tu repars avec :` + 6 cartes (🎨 branding, 📱 réseaux, 💻 site, ✉️ newsletter, ✨ presse, 🛠️ boîte à outils)
-11. **TemoignagesSection** — 2 témoignages texte (Pelin, Sarah/Mazeh) avec citation italique serif et nom mono
-12. **PourquoiCreeSection** — H2 `Pourquoi j'ai créé cet accompagnement ?` + bloc texte + liste à puces des préjugés + bio Laetitia (10 ans marketing, +150 projets, écoles) + portrait
-13. **ProjetsAccompagnesGrid** — H2 `Elles sont passées par mon accompagnement` + grille 3 col × N (Napperon, Boom Boom Dance, Mazeh Paris, Atelier Tiket, Hopla Studio, La Slow Fashionitude, Yza Handmade, L'école des femmes de Massoba, Sophie Brillouet, Péline, Comme un ruban d'étoile) — placeholder image grise + nom serif + courte description mono
-14. **InclusSection** — fond `rose-light`
-  - Titre récap prix
-    - Deux blocs liste : `👋 Toi + moi, concrètement` et `🛠️ Ce qu'on construit ensemble`
-    - Bloc garantie remboursement
-    - CTA Calendly
-15. **PourToiSection** — 2 colonnes : `Pour toi si…` (✓ × 5) et `Pas pour toi si…` (✕ × 4)
-16. **FaqSection** — H2 `Tu as des <em>questions</em> ?` + accordéon (composant `accordion` de shadcn déjà dispo) avec les 9 Q/R
-17. **CtaFinalAccompagnement** — réutiliser `FinalCtaSection` ou variante locale ; CTA vers Calendly
+6. **ProcessSection**
+   - H2 : `Comment <em>ça se passe</em> ?`
+   - 3 étapes numérotées (1️⃣ On se rencontre / 2️⃣ Proposition sur-mesure / 3️⃣ On avance ensemble)
 
-### Détails techniques
+7. **PrestationsSection**
+   - H2 : `Un accompagnement sur-mesure pour une <em>communication plus éthique</em>`
+   - Intro mono : `Selon vos besoins et votre budget, je peux intervenir sur :`
+   - Grille 2×2 de blocs : Stratégie & cadrage / Réseaux sociaux & Influence / Site web & SEO / Emailing & événements (chaque bloc = titre serif + liste à puces mono)
 
-- Tous les CTA "Réserver" pointent vers la même URL Calendly (`https://calendly.com/laetitia-mattioli/appel-decouverte`), ouvre dans un nouvel onglet (`target="_blank" rel="noopener noreferrer"`).
-- Header : passe la nav vers la page si pas déjà fait — vérifier le composant `Header.tsx`.
-- Réutiliser tokens couleur (`bg-rose-light`, `bg-rose-soft`, `bg-cream`, `text-ink`, `text-rose-dark`, etc.) — aucune couleur en dur.
-- Aucun cercle décoratif (règle mémoire).
-- Toutes les images sont des placeholders gris (cards avec fond `rose-soft` + emoji) — pas de génération d'images cette étape (à faire plus tard une fois la structure validée).
-- Découpage en sous-composants dans `src/components/accompagnement/` pour garder le route file court et permettre la réutilisation.
-- Mise à jour de `head()` : titre + description spécifiques + og:title/og:description ; canonical déjà en place.
+8. **ProjetsGrid** (id `projets`, fond rose-light)
+   - Sur-titre italique serif : `Celles et ceux qui font bouger les lignes avec nous`
+   - Paragraphe intro mono
+   - Grille 3 colonnes × N : 17 projets (ENSAD, Sea Shepherd, Decathlon Quechua, Emmaüs Défi, Clip It, L214, Coopérative Oasis, Okahina Wave, Study & Co, Mira, Black Stallion Trading, Ressources, We Slow, Jean Belgueule, Essential Oil Supplies, Bruno Zana, Atelier des lunettes, My Pilates World, Belle., Rose Donald, La prochaine aire)
+   - Chaque carte : placeholder image rose-soft (16/10) + nom serif + courte description mono (2–3 lignes max, paraphrasées)
+   - Pas de lien externe vers nowadaysagency.com — boutons "Voir le projet" désactivés ou ancres internes (à confirmer ; par défaut on les masque pour éviter les liens morts)
 
-### Fichiers touchés
+9. **FinalCtaSection** — réutiliser le composant existant (déjà sur la home)
 
-- Édité : `src/routes/accompagnement-communication.tsx` (remplacement complet du `Page()` actuel)
-- Nouveaux : 17 composants sous `src/components/accompagnement/` (un par section ci-dessus)
+## Détails techniques
 
----
+- Nouveau dossier `src/components/cooperative/` regroupant les 8 nouveaux composants de section (le 9e réutilise `FinalCtaSection`).
+- `src/routes/cooperative-asso.tsx` : remplacement complet du `Page()` placeholder, mise à jour de `head()` (title, description, og:title, og:description spécifiques) — canonical conservé.
+- `Header.tsx` : ajouter un lien nav vers `/cooperative-asso` (vérifier — actuellement seul `/accompagnement-communication` est listé). À confirmer : le site source n'a qu'un seul lien "Solutions de communication" ; on ajoute un second lien "Coopératives & assos" dans la nav.
+- Aucun nouvel asset image cette passe (placeholders rose-soft + emoji), génération d'images réelles dans un lot ultérieur une fois la structure validée.
+- Couleurs uniquement via tokens (`bg-rose-light`, `bg-cream`, `text-ink`, `text-rose-dark`, …).
+- Tous les CTA Calendly ouvrent un nouvel onglet (`target="_blank" rel="noopener noreferrer"`).
+- Aucun lien `Voir le projet` vers le site source (évite les sorties vers nowadaysagency.com) — à confirmer avec toi.
 
-## Question rapide avant de me lancer
+## Fichiers touchés
 
-Veux-tu que je :
+- Édité : `src/routes/cooperative-asso.tsx` (refonte complète)
+- Édité : `src/components/site/Header.tsx` (ajout lien nav)
+- Édité : `.lovable/plan.md` (avancement)
+- Nouveaux : 8 composants sous `src/components/cooperative/`
 
-- **(a)** construis cette page complète en une seule passe (toutes les 17 sections), ou oui c'est partie mais vraiment pixel perfect 
-- **(b)** procède par lot (par ex. d'abord Hero + Clients + Problème + Laetitia + Transformation + Timeline, puis seconde passe pour le reste) ?
+## À confirmer avant de coder
 
-Et confirmes-tu l'URL Calendly `https://calendly.com/laetitia-mattioli/appel-decouverte` pour tous les CTA ? oui
-
-&nbsp;
+1. Ajouter le lien `Coopératives & assos` dans la nav du header ? (oui par défaut)
+2. Les cartes projets dans la grille : on masque les liens "Voir le projet" (pas de page projet locale) ou on les laisse pointer vers les URLs externes nowadaysagency.com / sites clients ? (par défaut : on masque)
