@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Phone } from "lucide-react";
-import nowadaysLogo from "@/assets/nowadays-logo.webp.asset.json";
+import nowadaysLogo from "@/assets/nowadays-logo-v2.webp.asset.json";
 
 const CALENDLY_URL =
   "https://calendly.com/laetitia-mattioli/30-min-de-diagnostic-offert";
