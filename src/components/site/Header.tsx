@@ -36,6 +36,13 @@ export function Header() {
           >
             Coopératives & assos
           </Link>
+          <Link
+            to="/etudes-de-cas"
+            className="text-sm text-foreground hover:text-primary"
+          >
+            Études de cas
+          </Link>
+
         </nav>
 
         <a
