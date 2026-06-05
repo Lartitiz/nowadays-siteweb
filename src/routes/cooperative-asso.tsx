@@ -76,12 +76,12 @@ function Hero() {
   );
 }
 
-const CLIENT_WORDMARKS = [
-  "ENSAD",
-  "Sea Shepherd",
-  "Decathlon",
-  "Emmaüs Défi",
-  "L214",
+const CLIENT_LOGOS = [
+  { name: "L214", src: l214Logo.url },
+  { name: "Coopérative Oasis", src: cooperativeOasisLogo.url },
+  { name: "École des Arts Décoratifs — PSL", src: ensadPslLogo.url },
+  { name: "Emmaüs Défi", src: emmausDefiLogo.url },
+  { name: "Sea Shepherd", src: seaShepherdLogo.url },
 ];
 
 function ClientsBand() {
@@ -91,14 +91,15 @@ function ClientsBand() {
         <p className="text-center font-serif text-xl italic text-ink md:text-2xl">
           Quelques projets qui nous ont fait confiance
         </p>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-16">
-          {CLIENT_WORDMARKS.map((name) => (
-            <span
-              key={name}
-              className="font-serif text-2xl text-ink/80 md:text-3xl"
-            >
-              {name}
-            </span>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-8 md:gap-x-16">
+          {CLIENT_LOGOS.map((logo) => (
+            <img
+              key={logo.name}
+              src={logo.src}
+              alt={logo.name}
+              loading="lazy"
+              className="h-16 w-auto object-contain md:h-20"
+            />
           ))}
         </div>
       </div>
