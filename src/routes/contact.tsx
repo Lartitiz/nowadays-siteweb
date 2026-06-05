@@ -83,9 +83,8 @@ function ContactPage() {
           <h1 className="mt-6 font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
             Discutons de <em className="not-italic italic text-rose-dark">votre projet</em>.
           </h1>
-          <p className="mx-auto mt-6 max-w-xl font-mono text-base text-ink leading-relaxed">
-            Réponse sous 24 h ouvrées. Pas de script de vente, juste une vraie
-            conversation pour voir si on est faits pour avancer ensemble.
+          <p className="mx-auto mt-6 max-w-xl font-mono text-base text-ink leading-relaxed whitespace-pre-line">
+            Réponse sous 24 h ouvrées.{"\n"}(normalement si tout se passe bien on reste humaine :)
           </p>
         </div>
       </section>

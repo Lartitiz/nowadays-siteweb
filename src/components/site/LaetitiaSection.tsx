@@ -7,7 +7,7 @@ export function LaetitiaSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Photo */}
           <div className="lg:col-span-5">
-            <div className="relative overflow-hidden rounded-[2rem] bg-[var(--rose-light)] aspect-[4/5]">
+            <div className="relative overflow-hidden rounded-[2rem] bg-[var(--rose-light)] aspect-[4/5] max-w-[280px] mx-auto lg:max-w-none">
               <img
                 src={laetitiaPhoto.url}
                 alt="Laetitia Mattioli, fondatrice de Nowadays"
