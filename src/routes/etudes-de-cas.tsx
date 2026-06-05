@@ -26,64 +26,88 @@ export const Route = createFileRoute("/etudes-de-cas")({
   component: Page,
 });
 
+import blackStallion from "@/assets/etudes/black-stallion-trading.webp.asset.json";
+import fatMoose from "@/assets/etudes/fat-moose.jpg.asset.json";
+import ressources from "@/assets/etudes/ressources.png.asset.json";
+import jeanBelgueule from "@/assets/etudes/jean-belgueule.jpg.asset.json";
+import religionClothing from "@/assets/etudes/religion-clothing.png.asset.json";
+import cawa from "@/assets/etudes/cawa.png.asset.json";
+import samanthaPorpiglia from "@/assets/etudes/samantha-porpiglia.webp.asset.json";
+import stillNordic from "@/assets/etudes/still-nordic.jpg.asset.json";
+import napperon from "@/assets/etudes/napperon.jpg.asset.json";
+import weSlow from "@/assets/etudes/we-slow.jpg.asset.json";
+import essentialOilSupplies from "@/assets/etudes/essential-oil-supplies.jpg.asset.json";
+
 type Project = {
   name: string;
   description: string;
+  image?: string;
 };
 
 const PROJECTS: Project[] = [
   {
     name: "Black Stallion Trading",
+    image: blackStallion.url,
     description:
       "Une marque-showroom qui revendique le luxe conscient. Stratégie digitale complète, identité visuelle et influence pour fédérer une communauté engagée.",
   },
   {
     name: "Fat Moose",
+    image: fatMoose.url,
     description:
       "Marque danoise outdoor au design minimaliste. Stratégie de contenu, direction artistique et campagnes d'influence pour ancrer un univers entre aventure et élégance nordique.",
   },
   {
     name: "Ressources Emmanuelle Riboud",
+    image: ressources.url,
     description:
       "Changer la cantine pour changer le monde. Pose des bases d'une stratégie de marque et de communication autour d'une alimentation scolaire pleine de sens.",
   },
   {
     name: "Jean Belgueule",
+    image: jeanBelgueule.url,
     description:
       "Soins pour hommes simples et éco-responsables. Structuration de la présence digitale : storytelling, identité visuelle et calendrier social media.",
   },
   {
     name: "Religion Clothing",
+    image: religionClothing.url,
     description:
       "Marque britannique née dans les années 90, inspirée par la scène musicale. Campagnes d'influence et événements pour porter un univers audacieux et décalé.",
   },
   {
     name: "Cawa",
+    image: cawa.url,
     description:
       "Sacs en cuir indépendants qui célèbrent l'individualité. Positionnement streetwear, ligne éditoriale et collaborations pour incarner une vision urbaine et durable.",
   },
   {
     name: "Samantha Porpiglia",
+    image: samanthaPorpiglia.url,
     description:
       "Lovecoach n°1 pour femmes en France. Fondations de branding : identité de marque, message et positionnement.",
   },
   {
     name: "Still Nordic",
+    image: stillNordic.url,
     description:
       "Minimalisme scandinave et cuir d'exception. Présence digitale cohérente et élégante : réseaux, e-commerce et influence.",
   },
   {
     name: "Napperon",
+    image: napperon.url,
     description:
       "Lingerie upcyclée qui célèbre une féminité libre et consciente. Positionnement, stratégie de communication et fondations de marque dans le cadre de la Now Academy.",
   },
   {
     name: "We Slow",
+    image: weSlow.url,
     description:
       "Accélérateur de marques de mode écoresponsables. Atelier pour structurer leur plan de communication et clarifier leur stratégie de visibilité.",
   },
   {
     name: "Essential Oil Supplies",
+    image: essentialOilSupplies.url,
     description:
       "E-shop des passionné·es d'aromathérapie. Stratégie Instagram et animation d'une communauté autour du DIY et des huiles essentielles.",
   },
@@ -230,7 +254,16 @@ function EtudesGrid() {
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((p) => (
             <article key={p.name} className="flex flex-col">
-              <div className="aspect-[16/10] w-full overflow-hidden rounded-sm bg-rose-soft" />
+              <div className="aspect-[16/10] w-full overflow-hidden rounded-sm bg-rose-soft">
+                {p.image && (
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                )}
+              </div>
               <h2 className="mt-5 font-serif text-2xl leading-tight text-ink">
                 {p.name}
               </h2>
