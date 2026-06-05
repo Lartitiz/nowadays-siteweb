@@ -146,13 +146,13 @@ export function Footer() {
         </div>
 
         <div className="mt-20 flex flex-col gap-4 border-t border-rose-soft pt-8 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-1">
-            <span className="font-serif text-2xl text-ink">now</span>
-            <span className="font-serif text-2xl text-ink">a</span>
-            <span className="font-serif text-2xl" style={{ color: "var(--orange)" }}>
-              days
-            </span>
-          </div>
+          <Link to="/" className="flex items-center" aria-label="Nowadays Agency">
+            <img
+              src={nowadaysLogoV2.url}
+              alt="Nowadays Agency"
+              className="h-7 w-auto"
+            />
+          </Link>
           <p className="font-mono text-xs text-ink/60">
             © {new Date().getFullYear()} Nowadays Agency ·{" "}
             <Link
