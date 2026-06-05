@@ -9,6 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TemplateCalendrierEditorialRouteImport } from './routes/template-calendrier-editorial'
+import { Route as PlanCommunicationRouteImport } from './routes/plan-communication'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as GuideStorytellingRouteImport } from './routes/guide-storytelling'
 import { Route as FormationGratuiteInstagramRouteImport } from './routes/formation-gratuite-instagram'
@@ -36,6 +38,17 @@ import { Route as EtudesBlackStallionTradingRouteImport } from './routes/etudes.
 import { Route as EtudesAtelierDesLunettesRouteImport } from './routes/etudes.atelier-des-lunettes'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
+const TemplateCalendrierEditorialRoute =
+  TemplateCalendrierEditorialRouteImport.update({
+    id: '/template-calendrier-editorial',
+    path: '/template-calendrier-editorial',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PlanCommunicationRoute = PlanCommunicationRouteImport.update({
+  id: '/plan-communication',
+  path: '/plan-communication',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
   id: '/mentions-legales',
   path: '/mentions-legales',
@@ -182,6 +195,8 @@ export interface FileRoutesByFullPath {
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
   '/mentions-legales': typeof MentionsLegalesRoute
+  '/plan-communication': typeof PlanCommunicationRoute
+  '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
@@ -210,6 +225,8 @@ export interface FileRoutesByTo {
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
   '/mentions-legales': typeof MentionsLegalesRoute
+  '/plan-communication': typeof PlanCommunicationRoute
+  '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
@@ -239,6 +256,8 @@ export interface FileRoutesById {
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
   '/mentions-legales': typeof MentionsLegalesRoute
+  '/plan-communication': typeof PlanCommunicationRoute
+  '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
@@ -269,6 +288,8 @@ export interface FileRouteTypes {
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
     | '/mentions-legales'
+    | '/plan-communication'
+    | '/template-calendrier-editorial'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
     | '/etudes/black-stallion-trading'
@@ -297,6 +318,8 @@ export interface FileRouteTypes {
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
     | '/mentions-legales'
+    | '/plan-communication'
+    | '/template-calendrier-editorial'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
     | '/etudes/black-stallion-trading'
@@ -325,6 +348,8 @@ export interface FileRouteTypes {
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
     | '/mentions-legales'
+    | '/plan-communication'
+    | '/template-calendrier-editorial'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
     | '/etudes/black-stallion-trading'
@@ -354,6 +379,8 @@ export interface RootRouteChildren {
   FormationGratuiteInstagramRoute: typeof FormationGratuiteInstagramRoute
   GuideStorytellingRoute: typeof GuideStorytellingRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
+  PlanCommunicationRoute: typeof PlanCommunicationRoute
+  TemplateCalendrierEditorialRoute: typeof TemplateCalendrierEditorialRoute
   EtudesAtelierDesLunettesRoute: typeof EtudesAtelierDesLunettesRoute
   EtudesBlackStallionTradingRoute: typeof EtudesBlackStallionTradingRoute
   EtudesEmmausDefiRoute: typeof EtudesEmmausDefiRoute
@@ -373,6 +400,20 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/template-calendrier-editorial': {
+      id: '/template-calendrier-editorial'
+      path: '/template-calendrier-editorial'
+      fullPath: '/template-calendrier-editorial'
+      preLoaderRoute: typeof TemplateCalendrierEditorialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plan-communication': {
+      id: '/plan-communication'
+      path: '/plan-communication'
+      fullPath: '/plan-communication'
+      preLoaderRoute: typeof PlanCommunicationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/mentions-legales': {
       id: '/mentions-legales'
       path: '/mentions-legales'
@@ -579,6 +620,8 @@ const rootRouteChildren: RootRouteChildren = {
   FormationGratuiteInstagramRoute: FormationGratuiteInstagramRoute,
   GuideStorytellingRoute: GuideStorytellingRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
+  PlanCommunicationRoute: PlanCommunicationRoute,
+  TemplateCalendrierEditorialRoute: TemplateCalendrierEditorialRoute,
   EtudesAtelierDesLunettesRoute: EtudesAtelierDesLunettesRoute,
   EtudesBlackStallionTradingRoute: EtudesBlackStallionTradingRoute,
   EtudesEmmausDefiRoute: EtudesEmmausDefiRoute,
@@ -598,3 +641,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
