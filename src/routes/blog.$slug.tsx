@@ -42,6 +42,7 @@ export const Route = createFileRoute("/blog/$slug")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "article" },
+      { property: "og:url", content: `/blog/${a.slug}` },
       { property: "article:published_time", content: a.published_at },
       { property: "article:author", content: a.author },
     ];
@@ -49,9 +50,41 @@ export const Route = createFileRoute("/blog/$slug")({
       meta.push({ property: "og:image", content: a.cover_url });
       meta.push({ name: "twitter:image", content: a.cover_url });
     }
+    const articleSchema: Record<string, unknown> = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: a.title,
+      description,
+      datePublished: a.published_at,
+      author: { "@type": "Person", name: a.author },
+      publisher: {
+        "@type": "Organization",
+        name: "Nowadays Agency",
+      },
+      mainEntityOfPage: { "@type": "WebPage", "@id": `/blog/${a.slug}` },
+    };
+    if (a.cover_url) articleSchema.image = a.cover_url;
+    const breadcrumbs = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Accueil", item: "/" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "/blog" },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: a.title,
+          item: `/blog/${a.slug}`,
+        },
+      ],
+    };
     return {
       meta,
       links: [{ rel: "canonical", href: `/blog/${a.slug}` }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(articleSchema) },
+        { type: "application/ld+json", children: JSON.stringify(breadcrumbs) },
+      ],
     };
   },
   errorComponent: ({ error }) => (
