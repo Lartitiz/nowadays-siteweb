@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { FinalCtaSection } from "@/components/site/FinalCtaSection";
 
-export const Route = createFileRoute("/etudes-de-cas")({
+export const Route = createFileRoute("/creatrices-ethiques")({
   head: () => ({
     meta: [
       { title: "Études de cas — Créateur·ices éthiques | Nowadays" },

@@ -13,7 +13,7 @@ import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as GuideStorytellingRouteImport } from './routes/guide-storytelling'
 import { Route as FormationGratuiteInstagramRouteImport } from './routes/formation-gratuite-instagram'
 import { Route as EtudesDeCasProRouteImport } from './routes/etudes-de-cas-pro'
-import { Route as EtudesDeCasRouteImport } from './routes/etudes-de-cas'
+import { Route as CreatricesEthiquesRouteImport } from './routes/creatrices-ethiques'
 import { Route as CooperativeAssoRouteImport } from './routes/cooperative-asso'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogRouteImport } from './routes/blog'
@@ -57,9 +57,9 @@ const EtudesDeCasProRoute = EtudesDeCasProRouteImport.update({
   path: '/etudes-de-cas-pro',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EtudesDeCasRoute = EtudesDeCasRouteImport.update({
-  id: '/etudes-de-cas',
-  path: '/etudes-de-cas',
+const CreatricesEthiquesRoute = CreatricesEthiquesRouteImport.update({
+  id: '/creatrices-ethiques',
+  path: '/creatrices-ethiques',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CooperativeAssoRoute = CooperativeAssoRouteImport.update({
@@ -177,7 +177,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
-  '/etudes-de-cas': typeof EtudesDeCasRoute
+  '/creatrices-ethiques': typeof CreatricesEthiquesRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
@@ -205,7 +205,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
-  '/etudes-de-cas': typeof EtudesDeCasRoute
+  '/creatrices-ethiques': typeof CreatricesEthiquesRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
@@ -234,7 +234,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
-  '/etudes-de-cas': typeof EtudesDeCasRoute
+  '/creatrices-ethiques': typeof CreatricesEthiquesRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
@@ -264,7 +264,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/cooperative-asso'
-    | '/etudes-de-cas'
+    | '/creatrices-ethiques'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
@@ -292,7 +292,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/cooperative-asso'
-    | '/etudes-de-cas'
+    | '/creatrices-ethiques'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
@@ -320,7 +320,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/cooperative-asso'
-    | '/etudes-de-cas'
+    | '/creatrices-ethiques'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
@@ -349,7 +349,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   ContactRoute: typeof ContactRoute
   CooperativeAssoRoute: typeof CooperativeAssoRoute
-  EtudesDeCasRoute: typeof EtudesDeCasRoute
+  CreatricesEthiquesRoute: typeof CreatricesEthiquesRoute
   EtudesDeCasProRoute: typeof EtudesDeCasProRoute
   FormationGratuiteInstagramRoute: typeof FormationGratuiteInstagramRoute
   GuideStorytellingRoute: typeof GuideStorytellingRoute
@@ -401,11 +401,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EtudesDeCasProRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/etudes-de-cas': {
-      id: '/etudes-de-cas'
-      path: '/etudes-de-cas'
-      fullPath: '/etudes-de-cas'
-      preLoaderRoute: typeof EtudesDeCasRouteImport
+    '/creatrices-ethiques': {
+      id: '/creatrices-ethiques'
+      path: '/creatrices-ethiques'
+      fullPath: '/creatrices-ethiques'
+      preLoaderRoute: typeof CreatricesEthiquesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cooperative-asso': {
@@ -574,7 +574,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   ContactRoute: ContactRoute,
   CooperativeAssoRoute: CooperativeAssoRoute,
-  EtudesDeCasRoute: EtudesDeCasRoute,
+  CreatricesEthiquesRoute: CreatricesEthiquesRoute,
   EtudesDeCasProRoute: EtudesDeCasProRoute,
   FormationGratuiteInstagramRoute: FormationGratuiteInstagramRoute,
   GuideStorytellingRoute: GuideStorytellingRoute,
@@ -598,3 +598,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
