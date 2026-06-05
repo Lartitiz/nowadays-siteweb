@@ -59,14 +59,17 @@ export function Footer() {
             </p>
             <ul className="mt-6 space-y-4 font-mono text-sm text-ink list-disc pl-5 marker:text-rose-dark">
               <li>
-                <a href="#" className="underline underline-offset-4 hover:text-rose-dark">
+                <Link to="/blog" className="underline underline-offset-4 hover:text-rose-dark">
                   Le blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="underline underline-offset-4 hover:text-rose-dark">
+                <Link
+                  to="/template-calendrier-editorial"
+                  className="underline underline-offset-4 hover:text-rose-dark"
+                >
                   Outil Calendrier éditorial
-                </a>
+                </Link>
               </li>
               <li>
                 <Link
@@ -85,9 +88,12 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="underline underline-offset-4 hover:text-rose-dark">
+                <Link
+                  to="/plan-communication"
+                  className="underline underline-offset-4 hover:text-rose-dark"
+                >
                   Template Plan de com'
-                </a>
+                </Link>
               </li>
             </ul>
 

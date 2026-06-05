@@ -103,7 +103,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
         <div className="mx-auto max-w-4xl px-6 pt-12 md:pt-20 pb-20 md:pb-28 text-center">
           <div className="mb-4 flex justify-start">
             <Link
-              to="/etudes-de-cas"
+              to="/creatrices-ethiques"
               className="font-mono text-xs uppercase tracking-[0.22em] text-rose-dark hover:text-bordeaux"
             >
               ← Études de cas
