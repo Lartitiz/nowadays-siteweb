@@ -246,7 +246,7 @@ function ContactPage() {
 
           {/* Sidecar */}
           <aside className="space-y-8">
-            <div className="rounded-md border border-rose-soft bg-cream p-6 md:p-8">
+            <div className="rounded-md border border-rose-light bg-cream p-6 md:p-8">
               <p className="font-mono text-xs uppercase tracking-[0.22em] text-rose-dark">
                 Plutôt en visio ?
               </p>
@@ -306,7 +306,7 @@ function ContactPage() {
               </ul>
             </div>
 
-            <div className="rounded-md bg-rose-soft p-6">
+            <div className="rounded-md bg-rose-light p-6">
               <p className="font-mono text-xs uppercase tracking-[0.22em] text-ink">
                 Pour qui ?
               </p>
@@ -385,7 +385,7 @@ function ContactPage() {
                 a: "Oui, dès le premier appel. Nos formats vont de l'atelier ponctuel à l'accompagnement mensuel. Aucun engagement long terme imposé.",
               },
             ].map((f) => (
-              <div key={f.q} className="border-b border-rose-soft pb-6">
+              <div key={f.q} className="border-b border-rose-light pb-6">
                 <dt className="font-serif text-xl text-ink">{f.q}</dt>
                 <dd className="mt-3 font-mono text-sm text-ink leading-relaxed">
                   {f.a}

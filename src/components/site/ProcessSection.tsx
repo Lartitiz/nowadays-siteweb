@@ -64,7 +64,7 @@ export function ProcessSection() {
             {/* Vertical line */}
             <span
               aria-hidden
-              className="pointer-events-none absolute left-[21px] top-12 bottom-12 w-px bg-[var(--rose-soft)] md:left-[27px]"
+              className="pointer-events-none absolute left-[21px] top-12 bottom-12 w-px bg-[var(--rose-light)] md:left-[27px]"
             />
             {STEPS.map((s) => (
               <li

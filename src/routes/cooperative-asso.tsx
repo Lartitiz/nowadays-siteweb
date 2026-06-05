@@ -202,7 +202,7 @@ function LaetitiaIntroSection() {
             ✨ Appel gratuit • 30 minutes • Sans engagement
           </p>
         </div>
-        <div className="aspect-[4/5] w-full rounded-3xl bg-rose-soft" aria-hidden />
+        <div className="aspect-[4/5] w-full rounded-3xl bg-rose-light" aria-hidden />
       </div>
     </section>
   );
@@ -337,7 +337,7 @@ const PRESTATIONS = [
 
 function PrestationsSection() {
   return (
-    <section className="bg-rose-soft py-20 md:py-28">
+    <section className="bg-rose-light py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
           Un accompagnement sur-mesure pour une{" "}
@@ -469,7 +469,7 @@ function ProjetsGrid() {
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((p) => (
             <article key={p.name} className="flex flex-col">
-              <div className="aspect-[16/10] w-full rounded-2xl bg-rose-soft" aria-hidden />
+              <div className="aspect-[16/10] w-full rounded-2xl bg-rose-light" aria-hidden />
               <h3 className="mt-6 font-serif text-2xl text-ink">{p.name}</h3>
               <p className="mt-3 font-mono text-sm text-ink leading-relaxed">
                 {p.desc}

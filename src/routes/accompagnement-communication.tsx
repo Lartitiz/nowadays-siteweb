@@ -181,7 +181,7 @@ function LaetitiaIntroSection() {
   return (
     <section className="bg-rose-light">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-2 md:items-center">
-        <div className="aspect-[4/5] w-full bg-rose-soft" />
+        <div className="aspect-[4/5] w-full bg-rose-light" />
         <div>
           <SectionEyebrow>Enchantée</SectionEyebrow>
           <h2 className={H2}>
@@ -290,7 +290,7 @@ function ContrasteSection() {
           {rows.map((r, i) => (
             <div
               key={i}
-              className="rounded-[28px] border border-rose-soft bg-rose-light p-6 text-left md:flex md:items-center md:justify-between md:gap-6"
+              className="rounded-[28px] border border-rose-light bg-rose-light p-6 text-left md:flex md:items-center md:justify-between md:gap-6"
             >
               <p className="font-mono text-sm text-ink line-through decoration-rose-dark/40">
                 {r.left}
@@ -366,7 +366,7 @@ function TimelineSection() {
 
 function PrixSection() {
   return (
-    <section className="bg-rose-soft">
+    <section className="bg-rose-light">
       <div className="mx-auto max-w-3xl px-6 py-24 text-center">
         <h2 className={H2}>Pour 290 € / mois pendant 6 mois</h2>
         <p className="mt-8 font-mono text-base text-ink">
@@ -440,14 +440,14 @@ function ComparaisonAgenceSection() {
 
         <div className="mt-16 grid gap-8 md:grid-cols-2">
           {/* Agence classique */}
-          <div className="rounded-[32px] border border-rose-soft bg-rose-light p-8">
+          <div className="rounded-[32px] border border-rose-light bg-rose-light p-8">
             <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink/70">
               Prestation externalisée
             </p>
             <h3 className="mt-2 font-serif text-3xl text-ink">
               Agence classique
             </h3>
-            <ul className="mt-8 divide-y divide-rose-soft">
+            <ul className="mt-8 divide-y divide-rose-light">
               {rows.map((r) => (
                 <li key={r.label} className="flex items-start justify-between gap-4 py-4">
                   <div>
@@ -460,7 +460,7 @@ function ComparaisonAgenceSection() {
                 </li>
               ))}
             </ul>
-            <div className="mt-6 flex items-baseline justify-between border-t border-rose-soft pt-4">
+            <div className="mt-6 flex items-baseline justify-between border-t border-rose-light pt-4">
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink">
                 Total
               </p>
@@ -479,7 +479,7 @@ function ComparaisonAgenceSection() {
             <h3 className="mt-2 font-serif text-3xl text-ink">
               Ta binôme de com
             </h3>
-            <ul className="mt-8 divide-y divide-rose-soft">
+            <ul className="mt-8 divide-y divide-rose-light">
               {rows.map((r) => (
                 <li key={r.label} className="flex items-start justify-between gap-4 py-4">
                   <div>
@@ -492,7 +492,7 @@ function ComparaisonAgenceSection() {
                 </li>
               ))}
             </ul>
-            <div className="mt-6 flex items-baseline justify-between border-t border-rose-soft pt-4">
+            <div className="mt-6 flex items-baseline justify-between border-t border-rose-light pt-4">
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink">
                 Total
               </p>
@@ -675,7 +675,7 @@ function PourquoiCreeSection() {
         </div>
 
         <div>
-          <div className="aspect-[4/5] w-full rounded-[32px] bg-rose-soft" />
+          <div className="aspect-[4/5] w-full rounded-[32px] bg-rose-light" />
           <p className="mt-6 font-mono text-base text-ink">
             D'ailleurs, enchantée ! Moi c'est Laetitia Mattioli… En bref :
           </p>
@@ -757,7 +757,7 @@ function ProjetsAccompagnesGrid() {
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projets.map((p) => (
             <article key={p.name} className="flex flex-col">
-              <div className="aspect-[4/3] w-full rounded-[24px] bg-rose-soft" />
+              <div className="aspect-[4/3] w-full rounded-[24px] bg-rose-light" />
               <h3 className="mt-5 font-serif text-2xl text-ink">{p.name}</h3>
               <p className="mt-3 font-mono text-sm text-ink">{p.desc}</p>
             </article>
@@ -1014,7 +1014,7 @@ function FaqSection() {
             <AccordionItem
               key={i}
               value={`item-${i}`}
-              className="rounded-[24px] border border-rose-soft bg-cream px-6"
+              className="rounded-[24px] border border-rose-light bg-cream px-6"
             >
               <AccordionTrigger className="py-6 text-left font-serif text-lg text-ink hover:no-underline md:text-xl">
                 {f.q}

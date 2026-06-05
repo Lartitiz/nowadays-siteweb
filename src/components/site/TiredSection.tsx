@@ -115,7 +115,7 @@ export function TiredSection() {
             <PhotoBubble
               image={phoneAsset.url}
               alt="Personne au téléphone, l'air las"
-              frameColor="var(--rose-soft)"
+              frameColor="var(--rose-light)"
               squiggleColor="var(--rose-dark)"
               align="left"
             >

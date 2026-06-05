@@ -440,13 +440,13 @@ function FinalCTA() {
       <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16 md:items-end">
           <div className="md:col-span-6">
-            <p className="font-mono text-xs uppercase tracking-[0.24em] text-rose-soft">
+            <p className="font-mono text-xs uppercase tracking-[0.24em] text-cream/80">
               · Téléchargement gratuit ·
             </p>
             <h2 className="mt-6 font-serif text-4xl md:text-6xl leading-[1.05] text-cream">
               Reçois ton guide <em className="text-rose-mid">maintenant</em>
             </h2>
-            <p className="mt-6 font-mono text-sm text-rose-soft leading-relaxed">
+            <p className="mt-6 font-mono text-sm text-cream/80 leading-relaxed">
               Le PDF arrive directement dans ta boîte mail. Pas de spam,
               désinscription en 1 clic.
             </p>
@@ -454,11 +454,11 @@ function FinalCTA() {
 
           <div className="md:col-span-6">
             {sent ? (
-              <div className="border border-rose-soft/40 p-8 rounded-sm">
+              <div className="border border-rose-light/40 p-8 rounded-sm">
                 <p className="font-serif text-2xl text-cream leading-snug">
                   Merci — ton guide arrive dans quelques minutes.
                 </p>
-                <p className="mt-4 font-mono text-sm text-rose-soft">
+                <p className="mt-4 font-mono text-sm text-cream/80">
                   Pense à vérifier tes spams. Bonne planification ♡
                 </p>
               </div>
@@ -467,7 +467,7 @@ function FinalCTA() {
                 <div>
                   <label
                     htmlFor="fi-prenom"
-                    className="font-mono text-xs uppercase tracking-[0.2em] text-rose-soft"
+                    className="font-mono text-xs uppercase tracking-[0.2em] text-cream/80"
                   >
                     Ton prénom
                   </label>
@@ -477,13 +477,13 @@ function FinalCTA() {
                     required
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    className="mt-2 block w-full rounded-sm bg-cream/10 border border-rose-soft/40 px-4 py-3 font-mono text-sm text-cream placeholder:text-rose-soft/60 outline-none focus:border-rose-mid"
+                    className="mt-2 block w-full rounded-sm bg-cream/10 border border-rose-light/40 px-4 py-3 font-mono text-sm text-cream placeholder:text-cream/50 outline-none focus:border-rose-mid"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="fi-email"
-                    className="font-mono text-xs uppercase tracking-[0.2em] text-rose-soft"
+                    className="font-mono text-xs uppercase tracking-[0.2em] text-cream/80"
                   >
                     Ton e-mail
                   </label>
@@ -493,7 +493,7 @@ function FinalCTA() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="mt-2 block w-full rounded-sm bg-cream/10 border border-rose-soft/40 px-4 py-3 font-mono text-sm text-cream placeholder:text-rose-soft/60 outline-none focus:border-rose-mid"
+                    className="mt-2 block w-full rounded-sm bg-cream/10 border border-rose-light/40 px-4 py-3 font-mono text-sm text-cream placeholder:text-cream/50 outline-none focus:border-rose-mid"
                   />
                 </div>
                 <button
@@ -502,7 +502,7 @@ function FinalCTA() {
                 >
                   Envoyer le guide
                 </button>
-                <p className="font-mono text-[11px] text-rose-soft/70 leading-relaxed">
+                <p className="font-mono text-[11px] text-cream/60 leading-relaxed">
                   En soumettant, tu acceptes de recevoir le guide et nos
                   emails. Tes données restent confidentielles (RGPD).
                 </p>

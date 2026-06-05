@@ -57,9 +57,9 @@ export function DifferencesSection() {
           {CARDS.map((card, i) => (
             <article
               key={i}
-              className="group relative rounded-[28px] bg-white border border-[var(--rose-soft)] p-8 md:p-10 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-[var(--rose-dark)] hover:shadow-[0_20px_50px_-25px_rgba(145,1,75,0.35)]"
+              className="group relative rounded-[28px] bg-white border border-[var(--rose-light)] p-8 md:p-10 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-[var(--rose-dark)] hover:shadow-[0_20px_50px_-25px_rgba(145,1,75,0.35)]"
             >
-              <div className="flex items-baseline justify-between mb-8 pb-6 border-b border-[var(--rose-soft)]">
+              <div className="flex items-baseline justify-between mb-8 pb-6 border-b border-[var(--rose-light)]">
                 <span className="font-serif text-5xl md:text-6xl text-[var(--rose-dark)] leading-none">
                   {String(i + 1).padStart(2, "0")}
                 </span>

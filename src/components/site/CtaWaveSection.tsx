@@ -1,7 +1,7 @@
 export function CtaWaveSection() {
   return (
     <section className="relative bg-cream">
-      {/* Vague haut : transition cream → rose-soft */}
+      {/* Vague haut : transition cream → rose-light */}
       <svg
         className="block w-full"
         viewBox="0 0 1440 80"
@@ -10,11 +10,11 @@ export function CtaWaveSection() {
       >
         <path
           d="M0,40 C240,80 480,0 720,30 C960,60 1200,80 1440,40 L1440,80 L0,80 Z"
-          fill="var(--rose-soft)"
+          fill="var(--rose-light)"
         />
       </svg>
 
-      <div className="bg-rose-soft">
+      <div className="bg-rose-light">
         <div className="mx-auto max-w-4xl px-6 py-24 md:py-32 text-center">
           <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
             Prête à communiquer autrement ?
@@ -35,7 +35,7 @@ export function CtaWaveSection() {
         </div>
       </div>
 
-      {/* Vague bas : transition rose-soft → cream */}
+      {/* Vague bas : transition rose-light → cream */}
       <svg
         className="block w-full"
         viewBox="0 0 1440 80"
@@ -44,7 +44,7 @@ export function CtaWaveSection() {
       >
         <path
           d="M0,40 C240,0 480,80 720,50 C960,20 1200,0 1440,40 L1440,0 L0,0 Z"
-          fill="var(--rose-soft)"
+          fill="var(--rose-light)"
         />
       </svg>
     </section>
