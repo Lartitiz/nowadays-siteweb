@@ -1,44 +1,62 @@
-# Section témoignages clients homepage
+# SEO technique — Nowadays Agency
 
-Reprise pixel-perfect des 3 témoignages du site d'origine, placés entre `PourquoiNowadaysSection` et `PressSection` (même ordre que sur nowadaysagency.com).
+Tout le contenu éditorial est déjà en place. Il manque les briques techniques pour indexation + partage social.
 
-## Contenu repris à l'identique
+## 1. `src/routes/__root.tsx` — défauts sitewide
 
-**Titre** : « Elles nous font confiance pour leur *communication engagée* » (italique rose-dark sur "communication engagée")
-**Sous-titre** : *Plus de 150 projets accompagnés.*
+- Passer `<html lang="en">` → `lang="fr"`
+- Remplacer les méta génériques `"Lovable App"` / `"Lovable Generated Project"` par :
+  - `title` : `"Nowadays — Agence de communication engagée et éthique"`
+  - `description` : `"Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, éthique et efficace."`
+  - `og:site_name` : `"Nowadays Agency"`
+  - `og:locale` : `"fr_FR"`
+  - `twitter:card` : `"summary_large_image"`
+  - retirer `twitter:site @Lovable` et `author Lovable`
+- Ajouter JSON-LD **Organization** (nom, url relative, logo, sameAs Instagram/LinkedIn si fournis ultérieurement) dans `scripts`
+- **Pas** de canonical ni `og:image` au root (règle TanStack : leaves only)
+- Ajouter `<link rel="icon">` (favicon existant si présent, sinon laisser celui par défaut)
 
-**3 témoignages** (photos déjà téléchargées dans `src/assets/testimonials/`) :
+## 2. `public/robots.txt` (nouveau)
 
-1. **Abigail Sia** — Styliste & [Art Director](https://theanimalshadow.com/project/work-w-abigail/)
-   > Une vraie expertise et un savoir-faire qui fait la différence pour développer son réseau de clients. Les actions mises en place se sont rapidement traduites par une prise de confiance en moi, et donc de mes tarifs. Le suivi est au top et les conseils pertinents. Ne pas hésiter pour booster son activité.
+```
+User-agent: *
+Allow: /
+```
+Pas de directive `Sitemap:` (pas d'URL projet fixée — la sitemap reste découverte au chemin standard `/sitemap.xml`).
 
-2. **Emmanuelle Riboud** — Cheffe écoresponsable et Fondatrice de [Ressources](https://www.ressources.green/)
-   > Laetitia et son équipe ont une grande capacité d'écoute qui leur permet de concevoir des stratégies de marque et de communication pertinentes et très efficientes.
+## 3. `src/routes/sitemap[.]xml.ts` (nouveau, server route)
 
-3. **Laurent** — Fondateur d'[Okahina Wave](https://www.okahinawave.com/), vague de surf artificielle écologique
-   > Lorsque j'ai contacté Nowadays Agency pour gérer mes réseaux sociaux, j'étais au pied du mur. J'ai découvert leurs qualités de rigueur, de suivi, de propositions créatives et pertinentes. Mais surtout un excellent état d'esprit, très positif. À la question : « Est-ce que je les recommanderais à d'autres chefs d'entreprise ? ». Je répondrais : « SANS AUCUN DOUTE ».
+Server route qui génère `/sitemap.xml` dynamiquement avec :
+- Routes statiques : `/`, `/accompagnement-communication`, `/cooperative-asso`, `/creatrices-ethiques`, `/etudes-de-cas-pro`, `/contact`, `/blog`, `/mentions-legales`, `/plan-communication`, `/template-calendrier-editorial`, `/guide-storytelling`, `/formation-gratuite-instagram`
+- 14 études de cas `/etudes/*`
+- **Articles dynamiques** : SELECT slug, updated_at FROM articles → `/blog/{slug}`
+- `BASE_URL = ""` (chemins relatifs, TODO commenté pour quand le domaine sera fixé)
+- Cache-Control 1h
 
-## Fichiers
+## 4. JSON-LD Article sur `src/routes/blog.$slug.tsx`
 
-- **Créer** `src/components/site/TestimonialsSection.tsx`
-  - Section `bg-cream`, padding `py-20 md:py-32`
-  - H2 conforme à la règle Core : `font-serif text-4xl md:text-6xl leading-[1.05] text-ink` avec "communication engagée" en italique rose-dark
-  - Sous-titre IBM Plex Mono italique
-  - Grille 3 colonnes (1 col mobile), photo carrée + nom/rôle + citation italique
-  - Liens externes (Art Director, Ressources, Okahina Wave) avec `underline decoration-rose-dark` et `target="_blank" rel="noopener noreferrer"`
+Ajouter dans le `head()` existant un `scripts` avec schema.org `Article` (headline, datePublished, dateModified, author.Person, image si cover_url). Pas de modif des meta existantes.
 
-- **Éditer** `src/routes/index.tsx`
-  - Importer `TestimonialsSection`
-  - L'insérer entre `<PourquoiNowadaysSection />` et `<PressSection />`
+## 5. JSON-LD BreadcrumbList sur les pages profondes
 
-## Conformité design system
+Ajouter sur :
+- `blog.$slug.tsx` : Accueil › Blog › {titre}
+- `blog.tsx` : Accueil › Blog
+- `etudes-de-cas-pro.tsx` : Accueil › Études de cas
+- 14 fichiers `etudes.*.tsx` : Accueil › Études de cas › {nom client}
 
-- Typo : Libre Baskerville pour H2 (en `--ink`), IBM Plex Mono 400 pour le corps et citations (en `--ink`)
-- Italiques `<em>` colorées en `--rose-dark`
-- Palette : fond `--cream`, placeholder image `--rose-soft`
-- Aucun cercle décoratif, aucun CrownSticker, aucun EngageStamp
-- H2 à la taille canonique `text-4xl md:text-6xl`
+## 6. Canonical sur toutes les routes statiques
 
-## Assets
+Vérifier rapidement que chaque route a déjà `links: [{ rel: "canonical", href: "/..." }]`. Compléter celles qui manquent (la plupart en ont déjà).
 
-3 photos déjà téléchargées depuis le CDN Squarespace dans `src/assets/testimonials/` (abigail-sia.png, emmanuelle-riboud.png, laurent-okahina.png).
+## Hors scope (à faire plus tard quand le domaine sera connu)
+
+- Remplacer `BASE_URL = ""` par l'URL réelle dans sitemap + canonical absolus
+- Ajouter directive `Sitemap:` dans robots.txt
+- Vérification Google Search Console + Bing Webmaster
+- og:image générique de partage (visuel de marque) si désiré
+
+## Questions
+
+1. **Favicon** : tu en as un déjà ou je laisse celui par défaut pour l'instant ?
+2. **Profils sociaux** (pour Organization `sameAs`) : URLs Instagram / LinkedIn / Pinterest de Nowadays ?
