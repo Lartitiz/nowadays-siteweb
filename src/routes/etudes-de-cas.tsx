@@ -109,12 +109,14 @@ const PROJECTS: Project[] = [
   {
     name: "Cawa",
     image: cawa.url,
+    externalUrl: "https://cawa.me/",
     description:
       "Sacs en cuir indépendants qui célèbrent l'individualité. Positionnement streetwear, ligne éditoriale et collaborations pour incarner une vision urbaine et durable.",
   },
   {
     name: "Samantha Porpiglia",
     image: samanthaPorpiglia.url,
+    externalUrl: "https://samanthaporpiglia.com/",
     description:
       "Lovecoach n°1 pour femmes en France. Fondations de branding : identité de marque, message et positionnement.",
   },
@@ -128,23 +130,27 @@ const PROJECTS: Project[] = [
   {
     name: "Napperon",
     image: napperon.url,
+    externalUrl: "https://napperon.fr/",
     description:
       "Lingerie upcyclée qui célèbre une féminité libre et consciente. Positionnement, stratégie de communication et fondations de marque dans le cadre de la Now Academy.",
   },
   {
     name: "We Slow",
     image: weSlow.url,
+    externalUrl: "https://www.instagram.com/weslow.fr/",
     description:
       "Accélérateur de marques de mode écoresponsables. Atelier pour structurer leur plan de communication et clarifier leur stratégie de visibilité.",
   },
   {
     name: "Essential Oil Supplies",
     image: essentialOilSupplies.url,
+    externalUrl: "https://eu.eosupplies.com/",
     description:
       "E-shop des passionné·es d'aromathérapie. Stratégie Instagram et animation d'une communauté autour du DIY et des huiles essentielles.",
   },
   {
     name: "My Pilates World",
+    slug: "my-pilates-world",
     image: myPilatesWorld.url,
     description:
       "Plateforme bien-être qui amène l'expérience du studio à la maison. Positionnement, social media, email marketing et création de contenus.",
@@ -152,18 +158,21 @@ const PROJECTS: Project[] = [
   {
     name: "Belle.",
     image: belle.url,
+    externalUrl: "https://www.instagram.com/belle._paris/",
     description:
       "Cosmétiques bio, vegan et fabriqués en France. Branding et stratégie Instagram pour incarner une beauté éthique et désirable.",
   },
   {
     name: "Rose Donald",
     image: roseDonald.url,
+    externalUrl: "https://www.instagram.com/rosedonaldparis/",
     description:
       "Maison capillaire nichée dans le Marais, inspirée par la nature. Stratégie de marque et présence en ligne (site, Instagram, influence).",
   },
   {
     name: "Boom Boom Dance",
     image: boomBoomDance.url,
+    externalUrl: "https://www.boomboum.fr/",
     description:
       "Cours de danse avec bébé qui transforment le post-partum en moments de joie. Structuration complète de la communication via la Now Academy.",
   },
@@ -176,6 +185,7 @@ const PROJECTS: Project[] = [
   {
     name: "Atelier Tiket",
     image: atelierTiket.url,
+    externalUrl: "https://www.atelier-tiket.fr/",
     description:
       "Créatrice de mode durable qui dessine des pièces intemporelles. Accompagnée par la Now Academy pour communiquer avec authenticité.",
   },
@@ -188,60 +198,70 @@ const PROJECTS: Project[] = [
   {
     name: "Inti Personal Shopper",
     image: intiPersonalShopper.url,
+    externalUrl: "https://www.instagram.com/intipersonalshopper/",
     description:
       "Personal shopper éco-responsable qui guide vers une garde-robe consciente. Now Academy pour structurer son offre et sa communication.",
   },
   {
     name: "L'école des femmes de Massoba",
     image: ecoleFemmesMassoba.url,
+    externalUrl: "https://www.lecoledesfemmesdemassoba.com/",
     description:
       "Espace d'accompagnement sur mesure pour les femmes qui veulent affirmer leur présence. Now Academy pour faire rayonner sa mission.",
   },
   {
     name: "Sophie Brillouet",
     image: sophieBrillouet.url,
+    externalUrl: "https://www.instagram.com/sophie_brillouet/",
     description:
       "Sculptrice de coquillages et artisane d'art. Now Academy pour rendre visible un univers singulier et poétique.",
   },
   {
     name: "Oli Emoi",
     image: oliEmoi.url,
+    externalUrl: "https://www.oliemoi.com/",
     description:
       "Sacs à main en cuir de poisson, matière noble issue de la valorisation des déchets. Now Academy pour révéler ce savoir-faire rare.",
   },
   {
     name: "Comme un ruban d'étoile",
     image: commeUnRubanDetoile.url,
+    externalUrl: "https://www.instagram.com/commeunrubandetoiles/",
     description:
       "Bijoux au fil d'argent, délicats et lumineux. Now Academy pour faire briller une marque artisane.",
   },
   {
     name: "Jonesie",
     image: jonesie.url,
+    externalUrl: "https://studio.jonesie.fr/",
     description:
       "Illustratrice et typographe franco-américaine basée à Paris. Stratégie de communication digitale pour des lettrages et illustrations « super cute ».",
   },
   {
     name: "Hopla Studio",
     image: hoplaStudio.url,
+    externalUrl: "https://hoplastudio.com/",
     description:
       "Studio de design culinaire qui sublime les produits en expériences visuelles gourmandes. Now Academy pour développer sa stratégie digitale.",
   },
   {
     name: "Terra y mar",
     image: terraYMar.url,
+    externalUrl: "https://terraemar.shop/",
     description:
       "Sportwear éthique qui allie performance, style et respect du vivant. Now Academy pour une communication alignée avec ses valeurs.",
   },
   {
     name: "File ton cuir",
     image: fileTonCuir.url,
+    externalUrl: "https://filetoncuir.com/",
     description:
       "Laetitia, sculptrice sur cuir qui transforme la matière brute en pièces uniques. Now Academy pour raconter son savoir-faire.",
   },
   {
     name: "Yza Handmade",
     image: yzaHandmade.url,
+    externalUrl: "https://yza-shop.com/",
     description:
       "Vestiaire marocain réinventé : silhouettes fluides et accessoires intemporels fabriqués localement. Now Academy pour développer sa présence digitale.",
   },
@@ -254,34 +274,40 @@ const PROJECTS: Project[] = [
   {
     name: "Awqa",
     image: awqa.url,
+    externalUrl: "https://www.awqa.fr/",
     description:
       "Broderie artisanale et maroquinerie de haute qualité, entre chic parisien et savoir-faire ancestral des Andes. Now Academy pour raconter cette histoire unique.",
   },
   {
     name: "Péline Coach Sportive SOPK",
     image: pelineCoachSopk.url,
+    externalUrl: "https://www.pelinecoachsopk.com/",
     description:
       "Coach sportive spécialisée dans l'accompagnement des femmes atteintes du SOPK. Now Academy pour communiquer son expertise avec justesse.",
   },
   {
     name: "Le Jardin Parfumé Marseille",
     image: leJardinParfume.url,
+    externalUrl: "https://www.lejardinparfume.fr/",
     description:
       "Lingerie fine et parfums de niche dans un univers sensuel et raffiné. Now Academy pour cultiver sa communauté avec élégance.",
   },
   {
     name: "Flanelle, l'Atelier de Styliste",
+    slug: "flanelle",
     image: flanelleAtelierStyliste.url,
     description:
       "Univers magnifique mais invisible. Pose des fondations d'une marque d'upcycling joyeuse, lisible et désirable, sans trahir son ADN artisanal.",
   },
   {
     name: "Ombeline Mares",
+    slug: "ombeline-mares",
     image: ombelineMares.url,
     description:
       "Joaillière au savoir-faire exceptionnel. Positionnement, manifeste éthique, direction artistique et stratégie de contenu : le bijou devenu langage.",
   },
 ];
+
 
 function Hero() {
   return (
@@ -326,29 +352,47 @@ function EtudesGrid() {
                 <p className="mt-3 font-mono text-sm leading-relaxed text-ink">
                   {p.description}
                 </p>
-                {p.slug && (
+                {(p.slug || p.externalUrl) && (
                   <span className="mt-4 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-rose-dark transition-all group-hover:gap-3">
-                    Voir l'étude de cas
-                    <span aria-hidden="true">→</span>
+                    Voir le projet
+                    <span aria-hidden="true">{p.externalUrl ? "↗" : "→"}</span>
                   </span>
                 )}
               </>
 
             );
-            return p.slug ? (
-              <Link
-                key={p.name}
-                to={`/etudes/${p.slug}`}
-                className="group flex flex-col"
-              >
-                {inner}
-              </Link>
-            ) : (
+            if (p.slug) {
+              return (
+                <Link
+                  key={p.name}
+                  to={`/etudes/${p.slug}`}
+                  className="group flex flex-col"
+                >
+                  {inner}
+                </Link>
+              );
+            }
+            if (p.externalUrl) {
+              return (
+                <a
+                  key={p.name}
+                  href={p.externalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visiter le site de ${p.name} (nouvel onglet)`}
+                  className="group flex flex-col"
+                >
+                  {inner}
+                </a>
+              );
+            }
+            return (
               <article key={p.name} className="flex flex-col">
                 {inner}
               </article>
             );
           })}
+
         </div>
       </div>
     </section>
