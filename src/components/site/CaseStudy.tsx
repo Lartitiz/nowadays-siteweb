@@ -1,7 +1,9 @@
 import { Link } from "@tanstack/react-router";
 
 export type Block =
-  | { type: "h1" | "h2" | "h3"; text: string }
+  | { type: "h1"; text: string }
+  | { type: "h2"; text: string }
+  | { type: "h3"; text: string }
   | { type: "p"; text: string }
   | { type: "quote"; text: string }
   | { type: "img"; src: string; alt: string };
