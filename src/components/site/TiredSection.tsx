@@ -2,39 +2,16 @@ import type { ReactNode } from "react";
 import phoneAsset from "@/assets/tired-phone-instagram.jpg.asset.json";
 import teamAsset from "@/assets/tired-team.jpg.asset.json";
 
-function Squiggle({ color = "var(--rose-dark)" }: { color?: string }) {
-  return (
-    <svg
-      viewBox="0 0 80 12"
-      className="h-2 w-20"
-      aria-hidden
-      preserveAspectRatio="none"
-    >
-      <path
-        d="M2 8 Q 10 1, 18 6 T 38 6 T 58 6 T 78 6"
-        fill="none"
-        stroke={color}
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-
-
 function PhotoBubble({
   image,
   alt,
   frameColor,
-  squiggleColor,
   align,
   children,
 }: {
   image: string;
   alt: string;
   frameColor: string;
-  squiggleColor: string;
   align: "left" | "right";
   children: ReactNode;
 }) {
@@ -65,9 +42,6 @@ function PhotoBubble({
         <p className="font-mono text-[13px] leading-[1.65] text-ink md:text-sm">
           {children}
         </p>
-        <div className="mt-3">
-          <Squiggle color={squiggleColor} />
-        </div>
       </div>
     </div>
   );
@@ -97,26 +71,18 @@ export function TiredSection() {
             de l'attention, de l'éthique, du soin.
           </p>
 
-          <div className="mt-6">
-            <Squiggle color="var(--yellow)" />
-          </div>
-
-          <p className="mt-6 max-w-lg font-serif text-xl italic leading-[1.4] text-rose-dark md:text-2xl">
+          <p className="mt-8 max-w-lg font-serif text-xl italic leading-[1.4] text-rose-dark md:text-2xl">
             Mais côté communication, c'est une autre histoire…
           </p>
         </div>
 
         {/* Colonne droite */}
         <div className="relative md:col-span-5">
-
-
-
           <div className="relative z-10">
             <PhotoBubble
               image={phoneAsset.url}
               alt="Personne au téléphone, l'air las"
               frameColor="var(--rose-light)"
-              squiggleColor="var(--rose-dark)"
               align="left"
             >
               Peut-être que vous postez quand vous pouvez, entre deux urgences.
@@ -128,7 +94,6 @@ export function TiredSection() {
               image={teamAsset.url}
               alt="Équipe devant un écran, perplexe"
               frameColor="var(--yellow)"
-              squiggleColor="var(--bordeaux)"
               align="right"
             >
               Peut-être que personne dans l'équipe n'a vraiment le temps (ni les
