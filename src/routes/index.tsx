@@ -10,7 +10,7 @@ import { DifferencesSection } from "@/components/site/DifferencesSection";
 import { ExpertiseSection } from "@/components/site/ExpertiseSection";
 import { LaetitiaSection } from "@/components/site/LaetitiaSection";
 import { PourquoiNowadaysSection } from "@/components/site/PourquoiNowadaysSection";
-
+import { TestimonialsSection } from "@/components/site/TestimonialsSection";
 import { PressSection } from "@/components/site/PressSection";
 import { FinalCtaSection } from "@/components/site/FinalCtaSection";
 
@@ -51,7 +51,7 @@ function Index() {
       <ExpertiseSection />
       <LaetitiaSection />
       <PourquoiNowadaysSection />
-      
+      <TestimonialsSection />
       <PressSection />
       <FinalCtaSection />
     </SiteLayout>
