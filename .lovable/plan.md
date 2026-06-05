@@ -1,97 +1,97 @@
+## Constat
+
+Les 6 études de cas actuelles (`/etudes/black-stallion-trading`, `fat-moose`, `jean-belgueule`, `religion-clothing`, `ressources`, `still-nordic`) ont été scrapées partiellement :
+- titres approximatifs (ex. BST a une question générique au lieu de « Développer la notoriété d'un showroom à NYC… »)
+- sous-titre + CTA hero manquants
+- sections « Contexte / Solutions / Résultats » abrégées en listes plates de paragraphes
+- pas de bloc influenceurs façon grille (BST)
+- pas de bloc statistiques résultats
+- design générique (pas de logo client en hero, pas de marquee « Les solutions apportées 〰️ »)
+
+Le `CaseStudy` actuel n'est qu'un empilement vertical de h1/h2/img/p. On va le refondre pour matcher le gabarit Squarespace source.
+
 ## Objectif
 
-Scraper https://www.nowadaysagency.com/etude-de-cas-ethique (22 projets : associations, ONG, coopératives, PME engagées) et créer une nouvelle page sur le site, distincte de l'actuelle `/etudes-de-cas` (qui reste dédiée aux créatrices éthiques).
+Reproduire **pixel-perfect** la structure visuelle des pages source `nowadaysagency.com/<slug>` pour les 6 études existantes, en gardant la charte du site (Libre Baskerville, IBM Plex Mono, palette ink/bordeaux/rose).
 
-## Nouvelle route
+## Gabarit `CaseStudy` cible
 
-`src/routes/etudes-de-cas-pro.tsx` (slug : `/etudes-de-cas-pro`)
+Sections, dans l'ordre :
 
-Titre : « Ils nous ont fait confiance — Associations, ONG & marques engagées »
-Sous-titre repris du site source : « Une sélection de projets créatifs et engagés (Associations, ONG, start-up et entreprises responsables et éthiques) que nous avons accompagnés avec passion. »
+1. **Hero centré** (fond `bg-background` dégradé léger vers `rose-light`)
+   - Logo client (image ronde ou carrée), 120 px
+   - H1 serif `text-ink` taille 4xl→6xl, centré, max 4xl
+   - Sous-titre mono petit, centré
+   - Bouton rose-dark arrondi (rounded-full) : « Prendre rendez-vous pour discuter de votre projet » → Calendly
+2. **« Un peu de contexte »** (H2 charte) + paragraphes mono + image pleine largeur
+3. **Marquee « Les solutions apportées 〰️ »** (bandeau qui défile, fond cream)
+4. **Sous-sections solutions** : pour chaque solution, H3 serif + paragraphe + image (alternance gauche/droite si plusieurs images)
+5. **Bloc Résultats** (fond `rose-light`) : grille 4 colonnes, chiffre serif géant + label mono
+6. **Grille influenceurs** (BST uniquement) : avatars ronds + handle + rôle + followers
+7. **Final CTA** : H2 + bouton Calendly (réutilise `FinalCtaSection` existant)
 
-Même mise en page visuelle que `/etudes-de-cas` (grille charte respectée : serif Libre Baskerville, IBM Plex Mono, palette ink/bordeaux/rose), pour cohérence pixel-perfect.
+Le composant `CaseStudy` actuel devient un wrapper qui consomme un schéma plus riche :
 
-## Liste des 22 projets à intégrer
+```ts
+type CaseStudyData = {
+  brand: string;
+  logoSrc?: string;
+  title: string;
+  subtitle?: string;
+  ctaLabel?: string; // défaut: "Prendre rendez-vous pour discuter de votre projet"
+  context?: { title?: string; paragraphs: string[]; image?: { src: string; alt: string } };
+  solutionsTitle?: string; // défaut: "Les solutions apportées"
+  solutions: { title: string; paragraphs: string[]; images?: { src: string; alt: string }[] }[];
+  results?: { value: string; label: string }[];
+  influencers?: { avatar: string; handle: string; role?: string; followers?: string; link?: string }[];
+};
+```
 
-1. École des Arts Décoratifs (ENSAD) — lien interne `/ensad`
-2. Sea Shepherd x Racines de Demain — `/sea-shepherd`
-3. Decathlon x Quechua — pas de page projet (image seule)
-4. Emmaüs Défi — `/emmaus-defi`
-5. Clip It — `/clip-it`
-6. L214 — `/l214`
-7. Coopérative Oasis — `/cooperative-oasis`
-8. Okahina Wave — `/okahina-wave`
-9. Study & Co — externe https://studynco.com
-10. Mira — externe https://mymira.fr
-11. Black Stallion Trading — `/etudes/black-stallion-trading` (déjà existant)
-12. Ressources Emmanuelle Riboud — `/etudes/ressources` (déjà existant)
-13. We Slow — externe Instagram
-14. Jean Belgueule — `/etudes/jean-belgueule` (déjà existant)
-15. Essential Oil Supplies — externe
-16. Bruno Zana — externe
-17. Atelier des lunettes — pas encore de page
-18. My Pilates World — pas encore de page
-19. Belle. — externe Instagram
-20. Rose Donald — externe Instagram
-21. Elvezia — pas encore de page
-22. La prochaine aire — externe linktree
+Le bloc `Block[]` actuel est supprimé au profit de ce schéma typé. Le marquee est un composant local au `CaseStudy` (animation CSS `@keyframes scroll-x`).
 
-Les liens « Voir le projet » pointent vers la cible exacte du site source (page interne quand elle existe, sinon URL externe avec `target="_blank"`).
+## Scraping
 
-## Visuels
+Pour les 6 études de cas, on rescrape les pages source :
+- `nowadaysagency.com/black-stallion-trading`
+- `nowadaysagency.com/fat-moose`
+- `nowadaysagency.com/jean-belgueule`
+- `nowadaysagency.com/religion-clothing`
+- `nowadaysagency.com/ressources`
+- `nowadaysagency.com/still-nordic`
 
-Scraper les 22 images depuis `images.squarespace-cdn.com` et les sauvegarder via le système d'assets (`.asset.json`) sous `src/assets/etudes-pro/`, comme pour la page créatrices. Réutiliser les `.asset.json` déjà présents quand le projet est commun (`black-stallion-trading.webp`, `ressources.png`, `jean-belgueule.jpg`, `belle.jpg`, `rose-donald.jpg`, `my-pilates-world.jpg`).
+Pour chacune :
+- récupérer le logo (premier visuel rond/carré du hero) + l'uploader en asset
+- récupérer le H1 exact + sous-titre exact
+- extraire les sous-sections (H2/H3 + paragraphes + images) dans l'ordre source
+- extraire le bloc « Résultats » sous forme de stats (les chiffres apparaissent en gras dans le markdown source : `**1k visiteurs uniques**`, etc.)
+- pour BST : extraire la grille influenceurs (handle, rôle, followers, lien Instagram)
+- vérifier les alts des images (déjà bien décrits côté Squarespace pour l'accessibilité)
 
-Texte alternatif : description Squarespace existante (déjà très détaillée et accessible).
+Les visuels déjà uploadés dans `src/assets/etudes/<slug>/` sont réutilisés quand ils existent (ils sont déjà nommés d'après le nom de fichier source). On ajoute uniquement les logos manquants et les éventuelles images oubliées.
 
-## Navigation
+## Données
 
-Ajouter une entrée dans la nav principale du `SiteLayout` (Header) :
-- conserver « Études de cas » → renommer en « Créatrices éthiques » (URL `/etudes-de-cas`)
-- ajouter « Assos & marques engagées » (URL `/etudes-de-cas-pro`)
-
-Idem dans le footer si la nav y est dupliquée.
-
-## SEO
-
-`head()` dédié :
-- title : « Études de cas — Associations, ONG & marques engagées | Nowadays »
-- description : reprise du sous-titre
-- og:title / og:description identiques
-- canonical `/etudes-de-cas-pro`
+Chaque route `etudes.<slug>.tsx` exporte un objet `caseStudyData: CaseStudyData` et appelle `<CaseStudy data={caseStudyData} />`. Plus de `Block[]` ad-hoc.
 
 ## Hors scope
 
-- Pas de création des pages projet manquantes (Atelier des lunettes, My Pilates World, Elvezia, etc.) — uniquement liens externes ou vers le site source si l'utilisateur le demandera plus tard.
-- Pas de modification de `/etudes-de-cas` existant (sauf renommage du label de nav).
-- Pas de stockage DB : projets statiques dans le code (comme la page créatrices), pas dans `articles`.
+- Pas de nouvelles études de cas (l'utilisateur a déjà demandé une autre page pour les autres projets — `/etudes-de-cas-pro` les liste vers la source).
+- Pas de refonte du design global (couleurs, typo) — on reste sur la charte mémorisée.
+- Pas de système d'admin / CMS ; les données restent en dur dans chaque fichier route.
 
 ## Détails techniques
 
-```text
-src/
-  routes/
-    etudes-de-cas-pro.tsx        ← nouvelle route
-  assets/
-    etudes-pro/
-      ensad.jpg.asset.json
-      sea-shepherd.jpg.asset.json
-      decathlon-quechua.jpg.asset.json
-      emmaus-defi.jpg.asset.json
-      clip-it.jpg.asset.json
-      l214.jpg.asset.json
-      cooperative-oasis.jpg.asset.json
-      okahina-wave.jpg.asset.json
-      study-co.webp.asset.json
-      mira.jpg.asset.json
-      we-slow.jpg.asset.json      ← réutiliser src/assets/etudes/we-slow.jpg si identique
-      essential-oil-supplies.jpg.asset.json ← idem réutiliser si présent
-      bruno-zana.jpg.asset.json
-      atelier-des-lunettes.webp.asset.json
-      elvezia.jpg.asset.json
-      la-prochaine-aire.jpg.asset.json
-```
+- **`src/components/site/CaseStudy.tsx`** : réécriture complète selon le schéma `CaseStudyData`.
+- **Marquee** : animation CSS pure (`transform: translateX`) en boucle, durée 30s, accessible (`aria-hidden`).
+- **CTA hero** : `<a href={CALENDLY_URL} target="_blank">` style `rounded-full bg-rose-dark text-white px-8 py-4 font-mono uppercase`.
+- **Stats** : `grid-cols-2 md:grid-cols-4`, chiffre `font-serif text-5xl md:text-7xl text-rose-dark`, label `font-mono text-sm text-ink mt-2`.
+- **Influenceurs** : `grid-cols-2 md:grid-cols-3`, avatar `aspect-square rounded-full overflow-hidden`.
+- **Logos** : nouveau dossier `src/assets/etudes/<slug>/logo.<ext>.asset.json`.
+- 6 fichiers `etudes.<slug>.tsx` réécrits ; tous les imports d'assets déjà présents sont conservés.
 
-Composant `Project` identique à celui de `/etudes-de-cas` : image carrée, nom en serif `text-ink`, paragraphe descriptif, lien « Voir le projet » avec icône, support de l'attribut `external` pour ouvrir dans nouvel onglet.
+## Plan d'exécution
 
-Section finale : réutiliser `<FinalCtaSection />` comme sur la page créatrices.
+1. Refondre `CaseStudy.tsx` (nouveau schéma + marquee + stats + influenceurs).
+2. Scraper + uploader les 6 logos manquants.
+3. Pour chaque slug, regénérer les données depuis la source et réécrire la route.
+4. Vérification visuelle en preview (1 page suffit pour valider le gabarit, puis check rapide des 5 autres).
