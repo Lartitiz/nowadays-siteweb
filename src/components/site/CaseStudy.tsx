@@ -272,7 +272,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
 
       {/* Résultats */}
       {data.results && data.results.items.length > 0 && (
-        <section className="bg-rose-soft">
+        <section className="bg-rose-light">
           <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
             <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink text-center">
               Les <em className="not-italic text-rose-dark italic">résultats</em>

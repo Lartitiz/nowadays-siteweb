@@ -69,7 +69,7 @@ function OfferCard({ offer }: { offer: Offer }) {
   return (
     <article
       className="relative flex flex-col overflow-hidden rounded-[28px] border-2 bg-cream p-10 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_24px_48px_rgba(145,1,75,0.08),0_8px_16px_rgba(145,1,75,0.04)] md:p-12"
-      style={{ borderColor: "var(--rose-soft)" }}
+      style={{ borderColor: "var(--rose-light)" }}
     >
       {/* Accent bar */}
       <span
@@ -107,7 +107,7 @@ function OfferCard({ offer }: { offer: Offer }) {
 
       <div
         className="mt-8 border-t pt-6"
-        style={{ borderColor: "var(--rose-soft)" }}
+        style={{ borderColor: "var(--rose-light)" }}
       >
         <p className="font-serif text-3xl text-ink">{offer.price}</p>
         <p className="mt-1 font-mono text-[13px] text-ink/70">

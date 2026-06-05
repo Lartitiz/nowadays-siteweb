@@ -337,7 +337,7 @@ function EtudesGrid() {
           {PROJECTS.map((p) => {
             const inner = (
               <>
-                <div className="aspect-[16/10] w-full overflow-hidden rounded-sm bg-rose-soft">
+                <div className="aspect-[16/10] w-full overflow-hidden rounded-sm bg-rose-light">
                   {p.image && (
                     <img
                       src={p.image}

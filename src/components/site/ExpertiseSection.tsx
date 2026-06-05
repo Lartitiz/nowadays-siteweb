@@ -28,7 +28,7 @@ export function ExpertiseSection() {
           {EXPERTISES.map((item) => (
             <li
               key={item.label}
-              className="group inline-flex items-center gap-2.5 rounded-full bg-[var(--rose-light)] px-6 md:px-7 py-3.5 md:py-4 border border-transparent transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--rose-dark)] hover:bg-[var(--rose-soft)]"
+              className="group inline-flex items-center gap-2.5 rounded-full bg-[var(--rose-light)] px-6 md:px-7 py-3.5 md:py-4 border border-transparent transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--rose-dark)] hover:bg-[var(--rose-light)]"
             >
               <span className="text-lg leading-none" aria-hidden="true">{item.emoji}</span>
               <span className="font-mono text-[14px] md:text-[15px] text-[var(--ink)]">
