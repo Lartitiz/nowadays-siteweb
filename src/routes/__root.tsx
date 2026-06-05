@@ -77,19 +77,44 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Nowadays — Agence de communication engagée et éthique" },
+      {
+        name: "description",
+        content:
+          "Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, éthique et efficace.",
+      },
+      { property: "og:site_name", content: "Nowadays Agency" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:locale", content: "fr_FR" },
+      {
+        property: "og:title",
+        content: "Nowadays — Agence de communication engagée et éthique",
+      },
+      {
+        property: "og:description",
+        content:
+          "Une communication joyeuse, éthique et efficace pour les projets plus doux pour le monde.",
+      },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Nowadays Agency",
+          alternateName: "Nowadays",
+          description:
+            "Agence de communication engagée et éthique pour les projets plus doux pour le monde.",
+          url: "/",
+        }),
       },
     ],
   }),
@@ -101,7 +126,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <HeadContent />
       </head>
