@@ -13,6 +13,12 @@ import { Route as EtudesDeCasRouteImport } from './routes/etudes-de-cas'
 import { Route as CooperativeAssoRouteImport } from './routes/cooperative-asso'
 import { Route as AccompagnementCommunicationRouteImport } from './routes/accompagnement-communication'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as EtudesStillNordicRouteImport } from './routes/etudes.still-nordic'
+import { Route as EtudesRessourcesRouteImport } from './routes/etudes.ressources'
+import { Route as EtudesReligionClothingRouteImport } from './routes/etudes.religion-clothing'
+import { Route as EtudesJeanBelgueuleRouteImport } from './routes/etudes.jean-belgueule'
+import { Route as EtudesFatMooseRouteImport } from './routes/etudes.fat-moose'
+import { Route as EtudesBlackStallionTradingRouteImport } from './routes/etudes.black-stallion-trading'
 
 const EtudesDeCasRoute = EtudesDeCasRouteImport.update({
   id: '/etudes-de-cas',
@@ -35,18 +41,61 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EtudesStillNordicRoute = EtudesStillNordicRouteImport.update({
+  id: '/etudes/still-nordic',
+  path: '/etudes/still-nordic',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesRessourcesRoute = EtudesRessourcesRouteImport.update({
+  id: '/etudes/ressources',
+  path: '/etudes/ressources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesReligionClothingRoute = EtudesReligionClothingRouteImport.update({
+  id: '/etudes/religion-clothing',
+  path: '/etudes/religion-clothing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesJeanBelgueuleRoute = EtudesJeanBelgueuleRouteImport.update({
+  id: '/etudes/jean-belgueule',
+  path: '/etudes/jean-belgueule',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesFatMooseRoute = EtudesFatMooseRouteImport.update({
+  id: '/etudes/fat-moose',
+  path: '/etudes/fat-moose',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesBlackStallionTradingRoute =
+  EtudesBlackStallionTradingRouteImport.update({
+    id: '/etudes/black-stallion-trading',
+    path: '/etudes/black-stallion-trading',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/etudes-de-cas': typeof EtudesDeCasRoute
+  '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
+  '/etudes/fat-moose': typeof EtudesFatMooseRoute
+  '/etudes/jean-belgueule': typeof EtudesJeanBelgueuleRoute
+  '/etudes/religion-clothing': typeof EtudesReligionClothingRoute
+  '/etudes/ressources': typeof EtudesRessourcesRoute
+  '/etudes/still-nordic': typeof EtudesStillNordicRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/etudes-de-cas': typeof EtudesDeCasRoute
+  '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
+  '/etudes/fat-moose': typeof EtudesFatMooseRoute
+  '/etudes/jean-belgueule': typeof EtudesJeanBelgueuleRoute
+  '/etudes/religion-clothing': typeof EtudesReligionClothingRoute
+  '/etudes/ressources': typeof EtudesRessourcesRoute
+  '/etudes/still-nordic': typeof EtudesStillNordicRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -54,6 +103,12 @@ export interface FileRoutesById {
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/etudes-de-cas': typeof EtudesDeCasRoute
+  '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
+  '/etudes/fat-moose': typeof EtudesFatMooseRoute
+  '/etudes/jean-belgueule': typeof EtudesJeanBelgueuleRoute
+  '/etudes/religion-clothing': typeof EtudesReligionClothingRoute
+  '/etudes/ressources': typeof EtudesRessourcesRoute
+  '/etudes/still-nordic': typeof EtudesStillNordicRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -62,18 +117,36 @@ export interface FileRouteTypes {
     | '/accompagnement-communication'
     | '/cooperative-asso'
     | '/etudes-de-cas'
+    | '/etudes/black-stallion-trading'
+    | '/etudes/fat-moose'
+    | '/etudes/jean-belgueule'
+    | '/etudes/religion-clothing'
+    | '/etudes/ressources'
+    | '/etudes/still-nordic'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/accompagnement-communication'
     | '/cooperative-asso'
     | '/etudes-de-cas'
+    | '/etudes/black-stallion-trading'
+    | '/etudes/fat-moose'
+    | '/etudes/jean-belgueule'
+    | '/etudes/religion-clothing'
+    | '/etudes/ressources'
+    | '/etudes/still-nordic'
   id:
     | '__root__'
     | '/'
     | '/accompagnement-communication'
     | '/cooperative-asso'
     | '/etudes-de-cas'
+    | '/etudes/black-stallion-trading'
+    | '/etudes/fat-moose'
+    | '/etudes/jean-belgueule'
+    | '/etudes/religion-clothing'
+    | '/etudes/ressources'
+    | '/etudes/still-nordic'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -81,6 +154,12 @@ export interface RootRouteChildren {
   AccompagnementCommunicationRoute: typeof AccompagnementCommunicationRoute
   CooperativeAssoRoute: typeof CooperativeAssoRoute
   EtudesDeCasRoute: typeof EtudesDeCasRoute
+  EtudesBlackStallionTradingRoute: typeof EtudesBlackStallionTradingRoute
+  EtudesFatMooseRoute: typeof EtudesFatMooseRoute
+  EtudesJeanBelgueuleRoute: typeof EtudesJeanBelgueuleRoute
+  EtudesReligionClothingRoute: typeof EtudesReligionClothingRoute
+  EtudesRessourcesRoute: typeof EtudesRessourcesRoute
+  EtudesStillNordicRoute: typeof EtudesStillNordicRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -113,6 +192,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/etudes/still-nordic': {
+      id: '/etudes/still-nordic'
+      path: '/etudes/still-nordic'
+      fullPath: '/etudes/still-nordic'
+      preLoaderRoute: typeof EtudesStillNordicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/ressources': {
+      id: '/etudes/ressources'
+      path: '/etudes/ressources'
+      fullPath: '/etudes/ressources'
+      preLoaderRoute: typeof EtudesRessourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/religion-clothing': {
+      id: '/etudes/religion-clothing'
+      path: '/etudes/religion-clothing'
+      fullPath: '/etudes/religion-clothing'
+      preLoaderRoute: typeof EtudesReligionClothingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/jean-belgueule': {
+      id: '/etudes/jean-belgueule'
+      path: '/etudes/jean-belgueule'
+      fullPath: '/etudes/jean-belgueule'
+      preLoaderRoute: typeof EtudesJeanBelgueuleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/fat-moose': {
+      id: '/etudes/fat-moose'
+      path: '/etudes/fat-moose'
+      fullPath: '/etudes/fat-moose'
+      preLoaderRoute: typeof EtudesFatMooseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/black-stallion-trading': {
+      id: '/etudes/black-stallion-trading'
+      path: '/etudes/black-stallion-trading'
+      fullPath: '/etudes/black-stallion-trading'
+      preLoaderRoute: typeof EtudesBlackStallionTradingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -121,7 +242,23 @@ const rootRouteChildren: RootRouteChildren = {
   AccompagnementCommunicationRoute: AccompagnementCommunicationRoute,
   CooperativeAssoRoute: CooperativeAssoRoute,
   EtudesDeCasRoute: EtudesDeCasRoute,
+  EtudesBlackStallionTradingRoute: EtudesBlackStallionTradingRoute,
+  EtudesFatMooseRoute: EtudesFatMooseRoute,
+  EtudesJeanBelgueuleRoute: EtudesJeanBelgueuleRoute,
+  EtudesReligionClothingRoute: EtudesReligionClothingRoute,
+  EtudesRessourcesRoute: EtudesRessourcesRoute,
+  EtudesStillNordicRoute: EtudesStillNordicRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
