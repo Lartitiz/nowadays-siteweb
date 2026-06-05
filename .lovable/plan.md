@@ -1,32 +1,26 @@
-## Refonte de la section témoignages
+## Réorganisation du menu (desktop)
 
-Direction validée : **Polaroïds décalés**, avec instruction utilisateur « image plus petite ».
+Objectif : alléger le menu pour mettre en avant les solutions et les études de cas, sans toucher au menu mobile ni à aucune page.
 
-### Fichier modifié
+### Nouveau menu desktop (gauche → droite)
 
-`src/components/site/TestimonialsSection.tsx` (seul ce composant change — la data des 3 témoignages reste identique : Abigail Sia, Emmanuelle Riboud, Laurent).
+1. **Solutions** → 
+  1. `ici il faut renvoyer vers /accompagnement-communication` (renommé, plus court et plus fort)
+  2. mais aussi vers mon offre agency
+2. **Études de cas** → 
+  1. ici faut renvoyer vers celle des coop asso pme
+  2. et celles des créatrices éthiques
+3. **Blog** → `/blog -> est-ce vraiment nécessaire ?`
+4. **Contact** → `/contact`
 
-### Changements précis
-
-1. **Suppression des fonds ovales/ronds colorés** derrière les portraits (respect de la règle projet : pas de cercles décoratifs).
-2. **Portrait en cadre polaroïd** : rectangle blanc avec fine bordure `--ink` à 20%, padding 1, ombre légère, ratio `aspect-[4/5]`. Image en `grayscale` → couleur au hover (700 ms).
-3. **Image plus petite** : polaroïd contraint à `max-w-[240px]` centré dans sa colonne (au lieu de remplir toute la colonne).
-4. **Décalage magazine** : 3 cartes avec offsets verticaux différents (`translate-y-0`, `translate-y-16`, `-translate-y-2`) sur desktop pour casser la grille rigide.
-5. **Légende restructurée** : nom en `font-serif text-xl`, rôle en mono uppercase rose-dark (au lieu de gris/ink italique), citation en mono `text-[14px]` non-italique (les italiques restent sur le rôle si besoin).
-6. **Header conservé** : H2 inchangé (déjà aux bonnes tailles `text-4xl md:text-6xl`), sous-titre passé en mono uppercase tracking pour rythme éditorial.
-
-### Règles respectées (vérifiées)
-
-- H2 : `font-serif text-4xl md:text-6xl leading-[1.05] text-ink` ✓
-- Corps : IBM Plex Mono 400 en `--ink` sans opacité ✓
-- Aucun cercle / ovale / blob ✓
-- Italique uniquement sur l'accroche « communication engagée » en `--rose-dark` ✓
-- Palette respectée (cream, ink, rose-dark) ✓
-- Liens (Art Director, Ressources, Okahina Wave) préservés avec souligné rose-dark ✓
+CTA "Appel découverte gratuit" inchangé à droite.
 
 ### Hors scope
 
-- Pas de changement de copy
-- Pas de carrousel / interaction complexe
-- Pas de nouveau composant créé
-- Pas de modification ailleurs sur la homepage
+- Menu mobile : inchangé.
+- Footer : inchangé (les liens vers Coopératives & Créatrices y restent).
+- Aucune modification de page, de SEO, ou de logique business.
+
+### Fichier touché
+
+- `src/components/site/Header.tsx` — uniquement les `<Link>` du `<nav className="hidden md:flex">`.
