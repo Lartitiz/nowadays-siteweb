@@ -40,7 +40,13 @@ export function Header() {
             to="/etudes-de-cas"
             className="text-sm text-foreground hover:text-primary"
           >
-            Études de cas
+            Créatrices éthiques
+          </Link>
+          <Link
+            to="/etudes-de-cas-pro"
+            className="text-sm text-foreground hover:text-primary"
+          >
+            Assos & marques engagées
           </Link>
           <Link
             to="/blog"

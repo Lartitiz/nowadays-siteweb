@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as EtudesDeCasProRouteImport } from './routes/etudes-de-cas-pro'
 import { Route as EtudesDeCasRouteImport } from './routes/etudes-de-cas'
 import { Route as CooperativeAssoRouteImport } from './routes/cooperative-asso'
 import { Route as BlogRouteImport } from './routes/blog'
@@ -22,6 +23,11 @@ import { Route as EtudesFatMooseRouteImport } from './routes/etudes.fat-moose'
 import { Route as EtudesBlackStallionTradingRouteImport } from './routes/etudes.black-stallion-trading'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
+const EtudesDeCasProRoute = EtudesDeCasProRouteImport.update({
+  id: '/etudes-de-cas-pro',
+  path: '/etudes-de-cas-pro',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EtudesDeCasRoute = EtudesDeCasRouteImport.update({
   id: '/etudes-de-cas',
   path: '/etudes-de-cas',
@@ -91,6 +97,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/etudes-de-cas': typeof EtudesDeCasRoute
+  '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
@@ -105,6 +112,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRouteWithChildren
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/etudes-de-cas': typeof EtudesDeCasRoute
+  '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
@@ -120,6 +128,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/etudes-de-cas': typeof EtudesDeCasRoute
+  '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
@@ -136,6 +145,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/cooperative-asso'
     | '/etudes-de-cas'
+    | '/etudes-de-cas-pro'
     | '/blog/$slug'
     | '/etudes/black-stallion-trading'
     | '/etudes/fat-moose'
@@ -150,6 +160,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/cooperative-asso'
     | '/etudes-de-cas'
+    | '/etudes-de-cas-pro'
     | '/blog/$slug'
     | '/etudes/black-stallion-trading'
     | '/etudes/fat-moose'
@@ -164,6 +175,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/cooperative-asso'
     | '/etudes-de-cas'
+    | '/etudes-de-cas-pro'
     | '/blog/$slug'
     | '/etudes/black-stallion-trading'
     | '/etudes/fat-moose'
@@ -179,6 +191,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   CooperativeAssoRoute: typeof CooperativeAssoRoute
   EtudesDeCasRoute: typeof EtudesDeCasRoute
+  EtudesDeCasProRoute: typeof EtudesDeCasProRoute
   EtudesBlackStallionTradingRoute: typeof EtudesBlackStallionTradingRoute
   EtudesFatMooseRoute: typeof EtudesFatMooseRoute
   EtudesJeanBelgueuleRoute: typeof EtudesJeanBelgueuleRoute
@@ -189,6 +202,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/etudes-de-cas-pro': {
+      id: '/etudes-de-cas-pro'
+      path: '/etudes-de-cas-pro'
+      fullPath: '/etudes-de-cas-pro'
+      preLoaderRoute: typeof EtudesDeCasProRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/etudes-de-cas': {
       id: '/etudes-de-cas'
       path: '/etudes-de-cas'
@@ -292,6 +312,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   CooperativeAssoRoute: CooperativeAssoRoute,
   EtudesDeCasRoute: EtudesDeCasRoute,
+  EtudesDeCasProRoute: EtudesDeCasProRoute,
   EtudesBlackStallionTradingRoute: EtudesBlackStallionTradingRoute,
   EtudesFatMooseRoute: EtudesFatMooseRoute,
   EtudesJeanBelgueuleRoute: EtudesJeanBelgueuleRoute,
