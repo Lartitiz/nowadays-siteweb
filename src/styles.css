@@ -2,7 +2,7 @@
 @source "../src";
 @import "tw-animate-css";
 
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap");
+/* Fonts (Libre Baskerville + IBM Plex Mono) chargées via <link> dans __root.tsx */
 
 @custom-variant dark (&:is(.dark *));
 
