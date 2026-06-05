@@ -9,14 +9,14 @@ type SubItem = { label: string; description: string; to: string };
 
 const solutionsItems: SubItem[] = [
   {
-    label: "Accompagnement sur-mesure",
-    description: "Stratégie & contenu pour marques engagées",
+    label: "Ta binôme de com",
+    description: "Pour les solopreneures et créatrices éthiques",
     to: "/accompagnement-communication",
   },
   {
-    label: "Offre Agency",
-    description: "Délégation complète de votre communication",
-    to: "/accompagnement-communication",
+    label: "Ton agency",
+    description: "Pour les coopératives, associations et PME engagées",
+    to: "/cooperative-asso",
   },
 ];
 
