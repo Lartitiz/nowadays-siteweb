@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as FormationGratuiteInstagramRouteImport } from './routes/formation-gratuite-instagram'
 import { Route as EtudesDeCasProRouteImport } from './routes/etudes-de-cas-pro'
 import { Route as EtudesDeCasRouteImport } from './routes/etudes-de-cas'
@@ -24,6 +25,11 @@ import { Route as EtudesFatMooseRouteImport } from './routes/etudes.fat-moose'
 import { Route as EtudesBlackStallionTradingRouteImport } from './routes/etudes.black-stallion-trading'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FormationGratuiteInstagramRoute =
   FormationGratuiteInstagramRouteImport.update({
     id: '/formation-gratuite-instagram',
@@ -106,6 +112,7 @@ export interface FileRoutesByFullPath {
   '/etudes-de-cas': typeof EtudesDeCasRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
@@ -122,6 +129,7 @@ export interface FileRoutesByTo {
   '/etudes-de-cas': typeof EtudesDeCasRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
@@ -139,6 +147,7 @@ export interface FileRoutesById {
   '/etudes-de-cas': typeof EtudesDeCasRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
@@ -157,6 +166,7 @@ export interface FileRouteTypes {
     | '/etudes-de-cas'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
+    | '/mentions-legales'
     | '/blog/$slug'
     | '/etudes/black-stallion-trading'
     | '/etudes/fat-moose'
@@ -173,6 +183,7 @@ export interface FileRouteTypes {
     | '/etudes-de-cas'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
+    | '/mentions-legales'
     | '/blog/$slug'
     | '/etudes/black-stallion-trading'
     | '/etudes/fat-moose'
@@ -189,6 +200,7 @@ export interface FileRouteTypes {
     | '/etudes-de-cas'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
+    | '/mentions-legales'
     | '/blog/$slug'
     | '/etudes/black-stallion-trading'
     | '/etudes/fat-moose'
@@ -206,6 +218,7 @@ export interface RootRouteChildren {
   EtudesDeCasRoute: typeof EtudesDeCasRoute
   EtudesDeCasProRoute: typeof EtudesDeCasProRoute
   FormationGratuiteInstagramRoute: typeof FormationGratuiteInstagramRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
   EtudesBlackStallionTradingRoute: typeof EtudesBlackStallionTradingRoute
   EtudesFatMooseRoute: typeof EtudesFatMooseRoute
   EtudesJeanBelgueuleRoute: typeof EtudesJeanBelgueuleRoute
@@ -216,6 +229,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/formation-gratuite-instagram': {
       id: '/formation-gratuite-instagram'
       path: '/formation-gratuite-instagram'
@@ -335,6 +355,7 @@ const rootRouteChildren: RootRouteChildren = {
   EtudesDeCasRoute: EtudesDeCasRoute,
   EtudesDeCasProRoute: EtudesDeCasProRoute,
   FormationGratuiteInstagramRoute: FormationGratuiteInstagramRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
   EtudesBlackStallionTradingRoute: EtudesBlackStallionTradingRoute,
   EtudesFatMooseRoute: EtudesFatMooseRoute,
   EtudesJeanBelgueuleRoute: EtudesJeanBelgueuleRoute,
@@ -345,3 +366,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
