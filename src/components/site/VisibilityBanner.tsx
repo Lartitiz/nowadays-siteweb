@@ -1,39 +1,3 @@
-import type { ReactNode } from "react";
-
-function Squiggle({ color }: { color: string }) {
-  return (
-    <svg
-      viewBox="0 0 80 10"
-      className="absolute inset-x-0 -bottom-2 block h-1.5 w-full"
-      aria-hidden
-      preserveAspectRatio="none"
-    >
-      <path
-        d="M2 6 Q 10 1, 18 5 T 38 5 T 58 5 T 78 5"
-        fill="none"
-        stroke={color}
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function Underlined({
-  children,
-  color,
-}: {
-  children: ReactNode;
-  color: string;
-}) {
-  return (
-    <span className="relative inline-block">
-      <em className="relative">{children}</em>
-      <Squiggle color={color} />
-    </span>
-  );
-}
-
 export function VisibilityBanner() {
   return (
     <section className="bg-background py-12 md:py-16">
@@ -50,10 +14,8 @@ export function VisibilityBanner() {
             >
               vous rendre visible
             </span>{" "}
-            grâce à une communication{" "}
-            <Underlined color="var(--orange)">joyeuse</Underlined>,{" "}
-            <Underlined color="var(--rose-dark)">éthique</Underlined> et{" "}
-            <Underlined color="var(--bordeaux)">efficace</Underlined>.
+            grâce à une communication <em>joyeuse</em>, <em>éthique</em> et{" "}
+            <em>efficace</em>.
           </p>
         </div>
       </div>
