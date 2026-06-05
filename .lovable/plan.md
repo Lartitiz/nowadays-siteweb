@@ -1,62 +1,32 @@
-# SEO technique — Nowadays Agency
+## Refonte de la section témoignages
 
-Tout le contenu éditorial est déjà en place. Il manque les briques techniques pour indexation + partage social.
+Direction validée : **Polaroïds décalés**, avec instruction utilisateur « image plus petite ».
 
-## 1. `src/routes/__root.tsx` — défauts sitewide
+### Fichier modifié
 
-- Passer `<html lang="en">` → `lang="fr"`
-- Remplacer les méta génériques `"Lovable App"` / `"Lovable Generated Project"` par :
-  - `title` : `"Nowadays — Agence de communication engagée et éthique"`
-  - `description` : `"Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, éthique et efficace."`
-  - `og:site_name` : `"Nowadays Agency"`
-  - `og:locale` : `"fr_FR"`
-  - `twitter:card` : `"summary_large_image"`
-  - retirer `twitter:site @Lovable` et `author Lovable`
-- Ajouter JSON-LD **Organization** (nom, url relative, logo, sameAs Instagram/LinkedIn si fournis ultérieurement) dans `scripts`
-- **Pas** de canonical ni `og:image` au root (règle TanStack : leaves only)
-- Ajouter `<link rel="icon">` (favicon existant si présent, sinon laisser celui par défaut)
+`src/components/site/TestimonialsSection.tsx` (seul ce composant change — la data des 3 témoignages reste identique : Abigail Sia, Emmanuelle Riboud, Laurent).
 
-## 2. `public/robots.txt` (nouveau)
+### Changements précis
 
-```
-User-agent: *
-Allow: /
-```
-Pas de directive `Sitemap:` (pas d'URL projet fixée — la sitemap reste découverte au chemin standard `/sitemap.xml`).
+1. **Suppression des fonds ovales/ronds colorés** derrière les portraits (respect de la règle projet : pas de cercles décoratifs).
+2. **Portrait en cadre polaroïd** : rectangle blanc avec fine bordure `--ink` à 20%, padding 1, ombre légère, ratio `aspect-[4/5]`. Image en `grayscale` → couleur au hover (700 ms).
+3. **Image plus petite** : polaroïd contraint à `max-w-[240px]` centré dans sa colonne (au lieu de remplir toute la colonne).
+4. **Décalage magazine** : 3 cartes avec offsets verticaux différents (`translate-y-0`, `translate-y-16`, `-translate-y-2`) sur desktop pour casser la grille rigide.
+5. **Légende restructurée** : nom en `font-serif text-xl`, rôle en mono uppercase rose-dark (au lieu de gris/ink italique), citation en mono `text-[14px]` non-italique (les italiques restent sur le rôle si besoin).
+6. **Header conservé** : H2 inchangé (déjà aux bonnes tailles `text-4xl md:text-6xl`), sous-titre passé en mono uppercase tracking pour rythme éditorial.
 
-## 3. `src/routes/sitemap[.]xml.ts` (nouveau, server route)
+### Règles respectées (vérifiées)
 
-Server route qui génère `/sitemap.xml` dynamiquement avec :
-- Routes statiques : `/`, `/accompagnement-communication`, `/cooperative-asso`, `/creatrices-ethiques`, `/etudes-de-cas-pro`, `/contact`, `/blog`, `/mentions-legales`, `/plan-communication`, `/template-calendrier-editorial`, `/guide-storytelling`, `/formation-gratuite-instagram`
-- 14 études de cas `/etudes/*`
-- **Articles dynamiques** : SELECT slug, updated_at FROM articles → `/blog/{slug}`
-- `BASE_URL = ""` (chemins relatifs, TODO commenté pour quand le domaine sera fixé)
-- Cache-Control 1h
+- H2 : `font-serif text-4xl md:text-6xl leading-[1.05] text-ink` ✓
+- Corps : IBM Plex Mono 400 en `--ink` sans opacité ✓
+- Aucun cercle / ovale / blob ✓
+- Italique uniquement sur l'accroche « communication engagée » en `--rose-dark` ✓
+- Palette respectée (cream, ink, rose-dark) ✓
+- Liens (Art Director, Ressources, Okahina Wave) préservés avec souligné rose-dark ✓
 
-## 4. JSON-LD Article sur `src/routes/blog.$slug.tsx`
+### Hors scope
 
-Ajouter dans le `head()` existant un `scripts` avec schema.org `Article` (headline, datePublished, dateModified, author.Person, image si cover_url). Pas de modif des meta existantes.
-
-## 5. JSON-LD BreadcrumbList sur les pages profondes
-
-Ajouter sur :
-- `blog.$slug.tsx` : Accueil › Blog › {titre}
-- `blog.tsx` : Accueil › Blog
-- `etudes-de-cas-pro.tsx` : Accueil › Études de cas
-- 14 fichiers `etudes.*.tsx` : Accueil › Études de cas › {nom client}
-
-## 6. Canonical sur toutes les routes statiques
-
-Vérifier rapidement que chaque route a déjà `links: [{ rel: "canonical", href: "/..." }]`. Compléter celles qui manquent (la plupart en ont déjà).
-
-## Hors scope (à faire plus tard quand le domaine sera connu)
-
-- Remplacer `BASE_URL = ""` par l'URL réelle dans sitemap + canonical absolus
-- Ajouter directive `Sitemap:` dans robots.txt
-- Vérification Google Search Console + Bing Webmaster
-- og:image générique de partage (visuel de marque) si désiré
-
-## Questions
-
-1. **Favicon** : tu en as un déjà ou je laisse celui par défaut pour l'instant ?
-2. **Profils sociaux** (pour Organization `sameAs`) : URLs Instagram / LinkedIn / Pinterest de Nowadays ?
+- Pas de changement de copy
+- Pas de carrousel / interaction complexe
+- Pas de nouveau composant créé
+- Pas de modification ailleurs sur la homepage
