@@ -23,9 +23,12 @@ import { Route as EtudesStillNordicRouteImport } from './routes/etudes.still-nor
 import { Route as EtudesSeaShepherdRouteImport } from './routes/etudes.sea-shepherd'
 import { Route as EtudesRessourcesRouteImport } from './routes/etudes.ressources'
 import { Route as EtudesReligionClothingRouteImport } from './routes/etudes.religion-clothing'
+import { Route as EtudesOmbelineMaresRouteImport } from './routes/etudes.ombeline-mares'
 import { Route as EtudesOkahinaWaveRouteImport } from './routes/etudes.okahina-wave'
+import { Route as EtudesMyPilatesWorldRouteImport } from './routes/etudes.my-pilates-world'
 import { Route as EtudesL214RouteImport } from './routes/etudes.l214'
 import { Route as EtudesJeanBelgueuleRouteImport } from './routes/etudes.jean-belgueule'
+import { Route as EtudesFlanelleRouteImport } from './routes/etudes.flanelle'
 import { Route as EtudesFatMooseRouteImport } from './routes/etudes.fat-moose'
 import { Route as EtudesEnsadRouteImport } from './routes/etudes.ensad'
 import { Route as EtudesEmmausDefiRouteImport } from './routes/etudes.emmaus-defi'
@@ -105,9 +108,19 @@ const EtudesReligionClothingRoute = EtudesReligionClothingRouteImport.update({
   path: '/etudes/religion-clothing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EtudesOmbelineMaresRoute = EtudesOmbelineMaresRouteImport.update({
+  id: '/etudes/ombeline-mares',
+  path: '/etudes/ombeline-mares',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EtudesOkahinaWaveRoute = EtudesOkahinaWaveRouteImport.update({
   id: '/etudes/okahina-wave',
   path: '/etudes/okahina-wave',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesMyPilatesWorldRoute = EtudesMyPilatesWorldRouteImport.update({
+  id: '/etudes/my-pilates-world',
+  path: '/etudes/my-pilates-world',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EtudesL214Route = EtudesL214RouteImport.update({
@@ -118,6 +131,11 @@ const EtudesL214Route = EtudesL214RouteImport.update({
 const EtudesJeanBelgueuleRoute = EtudesJeanBelgueuleRouteImport.update({
   id: '/etudes/jean-belgueule',
   path: '/etudes/jean-belgueule',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesFlanelleRoute = EtudesFlanelleRouteImport.update({
+  id: '/etudes/flanelle',
+  path: '/etudes/flanelle',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EtudesFatMooseRoute = EtudesFatMooseRouteImport.update({
@@ -170,9 +188,12 @@ export interface FileRoutesByFullPath {
   '/etudes/emmaus-defi': typeof EtudesEmmausDefiRoute
   '/etudes/ensad': typeof EtudesEnsadRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
+  '/etudes/flanelle': typeof EtudesFlanelleRoute
   '/etudes/jean-belgueule': typeof EtudesJeanBelgueuleRoute
   '/etudes/l214': typeof EtudesL214Route
+  '/etudes/my-pilates-world': typeof EtudesMyPilatesWorldRoute
   '/etudes/okahina-wave': typeof EtudesOkahinaWaveRoute
+  '/etudes/ombeline-mares': typeof EtudesOmbelineMaresRoute
   '/etudes/religion-clothing': typeof EtudesReligionClothingRoute
   '/etudes/ressources': typeof EtudesRessourcesRoute
   '/etudes/sea-shepherd': typeof EtudesSeaShepherdRoute
@@ -195,9 +216,12 @@ export interface FileRoutesByTo {
   '/etudes/emmaus-defi': typeof EtudesEmmausDefiRoute
   '/etudes/ensad': typeof EtudesEnsadRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
+  '/etudes/flanelle': typeof EtudesFlanelleRoute
   '/etudes/jean-belgueule': typeof EtudesJeanBelgueuleRoute
   '/etudes/l214': typeof EtudesL214Route
+  '/etudes/my-pilates-world': typeof EtudesMyPilatesWorldRoute
   '/etudes/okahina-wave': typeof EtudesOkahinaWaveRoute
+  '/etudes/ombeline-mares': typeof EtudesOmbelineMaresRoute
   '/etudes/religion-clothing': typeof EtudesReligionClothingRoute
   '/etudes/ressources': typeof EtudesRessourcesRoute
   '/etudes/sea-shepherd': typeof EtudesSeaShepherdRoute
@@ -221,9 +245,12 @@ export interface FileRoutesById {
   '/etudes/emmaus-defi': typeof EtudesEmmausDefiRoute
   '/etudes/ensad': typeof EtudesEnsadRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
+  '/etudes/flanelle': typeof EtudesFlanelleRoute
   '/etudes/jean-belgueule': typeof EtudesJeanBelgueuleRoute
   '/etudes/l214': typeof EtudesL214Route
+  '/etudes/my-pilates-world': typeof EtudesMyPilatesWorldRoute
   '/etudes/okahina-wave': typeof EtudesOkahinaWaveRoute
+  '/etudes/ombeline-mares': typeof EtudesOmbelineMaresRoute
   '/etudes/religion-clothing': typeof EtudesReligionClothingRoute
   '/etudes/ressources': typeof EtudesRessourcesRoute
   '/etudes/sea-shepherd': typeof EtudesSeaShepherdRoute
@@ -248,9 +275,12 @@ export interface FileRouteTypes {
     | '/etudes/emmaus-defi'
     | '/etudes/ensad'
     | '/etudes/fat-moose'
+    | '/etudes/flanelle'
     | '/etudes/jean-belgueule'
     | '/etudes/l214'
+    | '/etudes/my-pilates-world'
     | '/etudes/okahina-wave'
+    | '/etudes/ombeline-mares'
     | '/etudes/religion-clothing'
     | '/etudes/ressources'
     | '/etudes/sea-shepherd'
@@ -273,9 +303,12 @@ export interface FileRouteTypes {
     | '/etudes/emmaus-defi'
     | '/etudes/ensad'
     | '/etudes/fat-moose'
+    | '/etudes/flanelle'
     | '/etudes/jean-belgueule'
     | '/etudes/l214'
+    | '/etudes/my-pilates-world'
     | '/etudes/okahina-wave'
+    | '/etudes/ombeline-mares'
     | '/etudes/religion-clothing'
     | '/etudes/ressources'
     | '/etudes/sea-shepherd'
@@ -298,9 +331,12 @@ export interface FileRouteTypes {
     | '/etudes/emmaus-defi'
     | '/etudes/ensad'
     | '/etudes/fat-moose'
+    | '/etudes/flanelle'
     | '/etudes/jean-belgueule'
     | '/etudes/l214'
+    | '/etudes/my-pilates-world'
     | '/etudes/okahina-wave'
+    | '/etudes/ombeline-mares'
     | '/etudes/religion-clothing'
     | '/etudes/ressources'
     | '/etudes/sea-shepherd'
@@ -323,9 +359,12 @@ export interface RootRouteChildren {
   EtudesEmmausDefiRoute: typeof EtudesEmmausDefiRoute
   EtudesEnsadRoute: typeof EtudesEnsadRoute
   EtudesFatMooseRoute: typeof EtudesFatMooseRoute
+  EtudesFlanelleRoute: typeof EtudesFlanelleRoute
   EtudesJeanBelgueuleRoute: typeof EtudesJeanBelgueuleRoute
   EtudesL214Route: typeof EtudesL214Route
+  EtudesMyPilatesWorldRoute: typeof EtudesMyPilatesWorldRoute
   EtudesOkahinaWaveRoute: typeof EtudesOkahinaWaveRoute
+  EtudesOmbelineMaresRoute: typeof EtudesOmbelineMaresRoute
   EtudesReligionClothingRoute: typeof EtudesReligionClothingRoute
   EtudesRessourcesRoute: typeof EtudesRessourcesRoute
   EtudesSeaShepherdRoute: typeof EtudesSeaShepherdRoute
@@ -432,11 +471,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EtudesReligionClothingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/etudes/ombeline-mares': {
+      id: '/etudes/ombeline-mares'
+      path: '/etudes/ombeline-mares'
+      fullPath: '/etudes/ombeline-mares'
+      preLoaderRoute: typeof EtudesOmbelineMaresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/etudes/okahina-wave': {
       id: '/etudes/okahina-wave'
       path: '/etudes/okahina-wave'
       fullPath: '/etudes/okahina-wave'
       preLoaderRoute: typeof EtudesOkahinaWaveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/my-pilates-world': {
+      id: '/etudes/my-pilates-world'
+      path: '/etudes/my-pilates-world'
+      fullPath: '/etudes/my-pilates-world'
+      preLoaderRoute: typeof EtudesMyPilatesWorldRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/etudes/l214': {
@@ -451,6 +504,13 @@ declare module '@tanstack/react-router' {
       path: '/etudes/jean-belgueule'
       fullPath: '/etudes/jean-belgueule'
       preLoaderRoute: typeof EtudesJeanBelgueuleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/flanelle': {
+      id: '/etudes/flanelle'
+      path: '/etudes/flanelle'
+      fullPath: '/etudes/flanelle'
+      preLoaderRoute: typeof EtudesFlanelleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/etudes/fat-moose': {
@@ -524,9 +584,12 @@ const rootRouteChildren: RootRouteChildren = {
   EtudesEmmausDefiRoute: EtudesEmmausDefiRoute,
   EtudesEnsadRoute: EtudesEnsadRoute,
   EtudesFatMooseRoute: EtudesFatMooseRoute,
+  EtudesFlanelleRoute: EtudesFlanelleRoute,
   EtudesJeanBelgueuleRoute: EtudesJeanBelgueuleRoute,
   EtudesL214Route: EtudesL214Route,
+  EtudesMyPilatesWorldRoute: EtudesMyPilatesWorldRoute,
   EtudesOkahinaWaveRoute: EtudesOkahinaWaveRoute,
+  EtudesOmbelineMaresRoute: EtudesOmbelineMaresRoute,
   EtudesReligionClothingRoute: EtudesReligionClothingRoute,
   EtudesRessourcesRoute: EtudesRessourcesRoute,
   EtudesSeaShepherdRoute: EtudesSeaShepherdRoute,
@@ -535,3 +598,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

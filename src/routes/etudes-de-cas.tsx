@@ -66,7 +66,9 @@ type Project = {
   description: string;
   image?: string;
   slug?: string;
+  externalUrl?: string;
 };
+
 
 const PROJECTS: Project[] = [
   {
