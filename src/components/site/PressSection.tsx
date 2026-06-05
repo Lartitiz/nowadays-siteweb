@@ -1,43 +1,32 @@
+import lebonbonLogo from "@/assets/press/lebonbon.png.asset.json";
+import emarketingLogo from "@/assets/press/emarketing.png.asset.json";
+import ladnLogo from "@/assets/press/ladn.png.asset.json";
+
 type PressItem = {
-  outlet: React.ReactNode;
+  logo: string;
+  alt: string;
   title: string;
   href: string;
 };
 
 const items: PressItem[] = [
   {
-    outlet: (
-      <span
-        className="text-4xl md:text-5xl text-ink"
-        style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontStyle: "italic" }}
-      >
-        le Bonbon
-      </span>
-    ),
+    logo: lebonbonLogo.url,
+    alt: "Le Bonbon",
     title: "Le marché écolo Nowadays Market s'installe au Jardin 21",
-    href: "#",
+    href: "https://www.lebonbon.fr/paris/loisirs/marche-ecolo-nowadays-market-jardin-21/",
   },
   {
-    outlet: (
-      <span className="font-mono text-2xl md:text-3xl text-ink lowercase tracking-tight">
-        <span style={{ color: "var(--orange)" }}>e</span>marketing
-        <span style={{ color: "var(--orange)" }}>.fr</span>
-      </span>
-    ),
+    logo: emarketingLogo.url,
+    alt: "e-marketing.fr",
     title: "Interview : Laetitia Mattioli, Fondatrice de Nowadays Agency",
-    href: "#",
+    href: "https://www.e-marketing.fr/Thematique/academie-1078/webreportage-10162/Laetitia-Mattioli-Fondatrice-nowadays-Agency-330712.htm",
   },
   {
-    outlet: (
-      <span
-        className="text-3xl md:text-4xl tracking-widest"
-        style={{ fontFamily: '"Libre Baskerville", Georgia, serif', color: "#1a2d80" }}
-      >
-        L'ADN
-      </span>
-    ),
+    logo: ladnLogo.url,
+    alt: "L'ADN",
     title: "Comment réussir un programme d'ambassadeurs de marque ?",
-    href: "#",
+    href: "https://www.ladn.eu/adn-business/experts-metiers/marketing/marketing-strategique/future-of-influence/comment-reussir-programme-dambassadeurs-marque/",
   },
 ];
 
@@ -62,9 +51,18 @@ export function PressSection() {
             <a
               key={i}
               href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex flex-col items-center text-center"
             >
-              <div className="flex h-24 items-center justify-center">{item.outlet}</div>
+              <div className="flex h-24 items-center justify-center">
+                <img
+                  src={item.logo}
+                  alt={item.alt}
+                  className="max-h-20 w-auto object-contain"
+                  loading="lazy"
+                />
+              </div>
               <p className="mt-6 max-w-[28ch] font-mono text-sm text-ink group-hover:text-rose-dark transition-colors">
                 {item.title}
               </p>
