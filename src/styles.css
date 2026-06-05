@@ -51,7 +51,7 @@
   --color-bordeaux: var(--bordeaux);
   --color-rose-dark: var(--rose-dark);
   --color-rose-mid: var(--rose-mid);
-  --color-rose-soft: var(--rose-soft);
+  
   --color-rose-light: var(--rose-light);
   --color-cream: var(--cream);
   --color-orange: var(--orange);
@@ -66,7 +66,7 @@
   --bordeaux: oklch(0.4 0.17 0);          /* #91014b */
   --rose-dark: oklch(0.66 0.24 5);        /* #fb3d80 */
   --rose-mid: oklch(0.81 0.13 5);         /* #fd9ebf */
-  --rose-soft: oklch(0.91 0.06 5);        /* #ffd6e8 */
+  
   --rose-light: oklch(0.96 0.025 5);      /* #feedf0 */
   --cream: oklch(0.985 0.012 30);         /* #fff7f5 */
   --orange: oklch(0.74 0.17 60);          /* #f19700 */
@@ -90,8 +90,8 @@
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: var(--rose-soft);
-  --input: var(--rose-soft);
+  --border: var(--rose-light);
+  --input: var(--rose-light);
   --ring: var(--rose-dark);
 }
 

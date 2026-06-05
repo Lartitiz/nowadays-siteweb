@@ -45,8 +45,8 @@ export function VisibilityBanner() {
           <p className="font-serif text-2xl leading-[1.55] text-ink md:text-[1.9rem] md:leading-[1.6]">
             Chez Nowadays, nous vous accompagnons à{" "}
             <span
-              className="whitespace-nowrap rounded-full px-3 py-0.5 italic"
-              style={{ backgroundColor: "var(--rose-soft)" }}
+              className="whitespace-nowrap rounded-full px-3 py-0.5 italic text-cream"
+              style={{ backgroundColor: "var(--bordeaux)" }}
             >
               vous rendre visible
             </span>{" "}
