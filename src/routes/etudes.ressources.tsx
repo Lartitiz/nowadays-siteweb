@@ -1,85 +1,110 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { FinalCtaSection } from "@/components/site/FinalCtaSection";
-import { CaseStudy, type Block } from "@/components/site/CaseStudy";
-
+import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
+import logo from "@/assets/etudes/ressources/logo.png.asset.json";
+import imgUnnamed from "@/assets/etudes/ressources/unnamed.jpg.asset.json";
+import imgEquipe from "@/assets/etudes/ressources/equipe.png.asset.json";
+import imgBureau from "@/assets/etudes/ressources/bureau-ressources.png.asset.json";
+import imgInterview from "@/assets/etudes/ressources/interview-emmanuelle.jpg.asset.json";
+import imgStrategie from "@/assets/etudes/ressources/strategie.png.asset.json";
+import imgSocial from "@/assets/etudes/ressources/social-media.png.asset.json";
 
 export const Route = createFileRoute("/etudes/ressources")({
   head: () => ({
     meta: [
-      { title: "Ressources — Emmanuelle Riboud — Étude de cas | Nowadays" },
-      { name: "description", content: "Changer la cantine pour changer le monde — stratégie de marque et campagne d'influence éthique." },
-      { property: "og:title", content: "Ressources — Emmanuelle Riboud — Étude de cas | Nowadays" },
-      { property: "og:description", content: "Changer la cantine pour changer le monde — stratégie de marque et campagne d'influence éthique." },
+      { title: "Ressources Green — Étude de cas | Nowadays" },
+      { name: "description", content: "Quand un traiteur bio et durable devient un laboratoire d'idées — branding, site web, social media." },
+      { property: "og:title", content: "Ressources Green — Étude de cas | Nowadays" },
+      { property: "og:description", content: "Quand un traiteur bio et durable devient un laboratoire d'idées — branding, site web, social media." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "/etudes/ressources" },
+      { property: "og:image", content: logo.url },
+      { name: "twitter:image", content: logo.url },
     ],
     links: [{ rel: "canonical", href: "/etudes/ressources" }],
   }),
   component: Page,
 });
 
-const BLOCKS: Block[] = [
-  { type: "h1", text: "Campagne Influence Marketing Éthique" },
-  { type: "h2", text: "Comment inciter des enseignes agroalimentaires à s'engager contre les pires pratiques d'élevage et d'abattage de poulet ?" },
-  { type: "h2", text: "L’histoire : Le jour où le vent à changé" },
-  { type: "h3", text: "C’était un été caniculaire" },
-  { type: "p", text: "Le soleil brûlait dans le ciel, et nous, éclairés par une flamme intérieure, prêt.es à faire bouger les choses avec L214." },
-  { type: "h3", text: "L'ennemi invisible" },
-  { type: "p", text: "Nous avions en ligne de mire le géant agroalimentaire, le groupe LDC." },
-  { type: "p", text: "Vous connaissez peut-être leurs marques – Le Gaulois, Marie, Maître Coq – mais ce qu'on ne sait pas toujours, c'est le tableau d'horreur caché derrière leurs étiquettes." },
-  { type: "p", text: "Des poulets génétiquement modifiés incapables de supporter leur propre poids..." },
-  { type: "p", text: "Une souffrance animale inimaginable, et l’absence totale de lumière naturelle." },
-  { type: "p", text: "Bref l'horreur..." },
-  { type: "h3", text: "La mission" },
-  { type: "p", text: "L’objectif était donc de les pousser à signer l'European Chicken Commitment, un pacte qui établit des normes éthiques pour l'élevage de poulets." },
-  { type: "h3", text: "La stratégie" },
-  { type: "p", text: "Lorsqu'ils nous ont approchés, nous avons suggéré une tactique qui changerait la donne : mobiliser des micro-influenceurs." },
-  { type: "p", text: "Car dans un monde saturé par le bruit médiatique, ce sont les murmures sincères qui ont le pouvoir de crier fort." },
-  { type: "h3", text: "Cap sur la République !" },
-  { type: "p", text: "Alors, nous avons mis le cap sur l'avenue de la République, avec un camion reproduisant ces abominables conditions d'élevage." },
-  { type: "p", text: "Une scène dure à regarder, mais impossible à ignorer." },
-  { type: "h3", text: "L’exécution" },
-  { type: "p", text: "Nous avons contacté une cinquantaine d’influenceurs choisis avec soin, des ambassadeurs du changement." },
-  { type: "p", text: "TikTok, Twitch, YouTube, Instagram... Nombreux ont répondu à l’appel pour cette campagne en pro-bono." },
-  { type: "p", text: "Près d'un demi-million de personnes ont vu la campagne." },
-  { type: "p", text: "Un raz-de-marée d'engagement." },
-  { type: "h2", text: "Le contexte, les objectifs" },
-  { type: "p", text: "Sensibiliser le grand public aux pires pratiques d'élevage et d'abattage." },
-  { type: "p", text: "Faire pression sur les enseignes agroalimentaires pour qu'elles s'engagent publiquement à améliorer les conditions de vie et d'abattage des poulets." },
-  { type: "h2", text: "La campagne" },
-  { type: "p", text: "Recherche & Documentation :" },
-  { type: "p", text: "Rassembler des données, vidéos, et témoignages concernant les conditions d'élevage et d'abattage." },
-  { type: "p", text: "Créer un dossier Influence complet avec ces informations." },
-  { type: "p", text: "Partenariats avec des influenceurs :" },
-  { type: "p", text: "Identification et collaboration avec des influenceurs (Youtube, Twitch, TitkTok et Instagram) engagés sur les sujets de l'éthique, du végétarisme, ou de la cause animale." },
-  { type: "p", text: "Campagne sur les réseaux sociaux :" },
-  { type: "p", text: "Diffusion d’une vidéo parodique avec une stratégie d’engagement sociale de “faux jeu-concours”" },
-  { type: "p", text: "Pétition en ligne :" },
-  { type: "p", text: "Lancement d'une pétition en ligne" },
-  { type: "p", text: "Promotion de cette pétition via les réseaux sociaux et les influenceurs partenaires." },
-  { type: "p", text: "Événementiel :" },
-  { type: "p", text: "Organisation d'événements de sensibilisation dans plusieurs villes" },
-  { type: "p", text: "Camion reproduisant les pratiques d’élevages place de la République à Paris" },
-  { type: "h2", text: "Les résultats" },
-  { type: "h2", text: "22 créateur.ices ont relayé" },
-  { type: "h3", text: "avec 50k followers en moyenne et 10k vues en moyenne" },
-  { type: "h2", text: "+500 000 vues" },
-  { type: "h3", text: "sur tous les supports" },
-  { type: "h2", text: "+10 000 nouvelles signatures à la pétition" },
-  { type: "h3", text: "sur tous les supports" },
-  { type: "h1", text: "Mentions" },
-  { type: "h1", text: "Contenus créés" }
-];
+const data: CaseStudyData = {
+  brand: "Ressources Green",
+  logo: { src: logo.url, alt: "Ressources Green" },
+  title: "Quand un traiteur bio et durable devient un laboratoire d'idées",
+  subtitle: "Découvrez la campagne de communication digitale (branding, site web, social media). Vous souhaitez vous développer sur le web ?",
+  ctaHref: "https://calendly.com/laetitia-mattioli/30-min-de-diagnostic-offert",
+  context: {
+    paragraphs: [
+      "Emmanuelle Riboud avait tout d'un laboratoire d'innovation en cuisine durable, mais communiquait encore comme un traiteur de quartier. En 4 mois, nous avons repositionné Ressources Green de A à Z : stratégie de marque, personal branding, formation complète de l'équipe.",
+      "Résultat : une fondatrice qui ose enfin incarner sa marque, un message clair, et les outils pour passer à l'échelle en toute autonomie.",
+      "Ressources Green, c'est l'histoire d'Emmanuelle Riboud, cheffe écoresponsable passionnée par la transmission d'une cuisine durable. Une cuisine qui relie l'alimentation à l'humain, qui questionne nos pratiques, qui forme et qui transforme.",
+    ],
+    image: { src: imgUnnamed.url, alt: "Ressources Green — atelier cuisine" },
+  },
+  solutions: [
+    {
+      title: "Le problème : l'écart entre ce qu'ils étaient et ce qu'ils montraient",
+      paragraphs: [
+        "« Ils avaient tout d'un laboratoire d'innovation, mais communiquaient encore comme un traiteur de quartier. »",
+        "Leur message ne reflétait pas l'ampleur de leur expertise. Emmanuelle restait dans l'ombre alors qu'elle EST la marque. La communication B2C écrasait leur potentiel B2B, et il manquait des outils pour convaincre entreprises, institutions et acteurs de la restauration collective.",
+      ],
+      images: [
+        { src: imgBureau.url, alt: "Bureau Ressources Green" },
+        { src: imgEquipe.url, alt: "Équipe Ressources Green" },
+      ],
+      imageLayout: "grid",
+    },
+    {
+      title: "La stratégie : un repositionnement qui change tout",
+      paragraphs: [
+        "Nous avons conçu une stratégie en 2 axes, pensée pour refléter enfin ce qu'ils étaient vraiment :",
+        "Axe 1 — Repositionnement de marque : de « traiteur bio » à « laboratoire pour la transmission d'une cuisine durable ».",
+        "Axe 2 — Personal branding : faire d'Emmanuelle la porte-parole visible de la cuisine durable.",
+      ],
+      images: [{ src: imgStrategie.url, alt: "Stratégie Ressources Green" }],
+    },
+    {
+      title: "Axe 1 — Repositionnement de marque",
+      paragraphs: [
+        "Clarification du message : pédagogie, actions concrètes, effets durables et positifs.",
+        "Nouvelle proposition de valeur : Ressources Green comme créateur de ressources et d'actions, pas simplement fournisseur de repas.",
+        "Définition des audiences : B2B entreprises, restauration collective, partenaires institutionnels, B2C engagé.",
+        "Création d'une charte graphique et d'une ligne éditoriale alignées avec cette nouvelle dimension.",
+      ],
+    },
+    {
+      title: "Axe 2 — Personal branding",
+      paragraphs: [
+        "Stratégie LinkedIn et Instagram pour positionner Emmanuelle comme experte de référence.",
+        "Storytelling autour de son parcours, ses convictions, sa vision.",
+        "Contenus pédagogiques qui prouvent son expertise (pas de l'auto-promo, de la transmission).",
+      ],
+      images: [{ src: imgInterview.url, alt: "Interview Emmanuelle Riboud" }],
+    },
+    {
+      title: "L'exécution — sur 4 mois",
+      paragraphs: [
+        "Mois 1-2 — Stratégie & Branding : audit complet, charte graphique, ligne éditoriale, stratégie d'acquisition, parcours client optimisé.",
+        "Mois 2-3 — Site web & SEO : audit du site, propositions de refonte alignées sur le nouveau branding, optimisations SEO, mise en place d'analytics et de KPIs.",
+        "Mois 3-4 — Social Media & Personal Branding : stratégie Instagram et LinkedIn, templates réutilisables, prise de parole pour Emmanuelle, checklist d'engagement.",
+      ],
+      images: [{ src: imgSocial.url, alt: "Social media Ressources Green" }],
+    },
+    {
+      title: "La transformation : où ils en sont",
+      paragraphs: [
+        "Aujourd'hui, Ressources Green n'est plus un traiteur de quartier. C'est un laboratoire reconnu, avec une vision claire, une fondatrice visible, et des outils pour passer à l'échelle.",
+        "Emmanuelle se sent alignée. Elle sait comment communiquer sans avoir l'impression de « vendre ». Elle incarne sa marque publiquement, et ça change tout.",
+        "L'équipe a gagné plusieurs années grâce à ce repositionnement : ils savent où ils vont, comment y aller, et avec quels outils. Ils ne se cachent plus.",
+      ],
+    },
+  ],
+};
 
 function Page() {
   return (
     <SiteLayout>
-      <CaseStudy
-        brand="Ressources — Emmanuelle Riboud"
-        tagline="Changer la cantine pour changer le monde — stratégie de marque et campagne d'influence éthique."
-        blocks={BLOCKS}
-      />
+      <CaseStudy data={data} />
       <FinalCtaSection />
     </SiteLayout>
   );

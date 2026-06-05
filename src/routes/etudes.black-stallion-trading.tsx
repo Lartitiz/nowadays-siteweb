@@ -1,89 +1,119 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { FinalCtaSection } from "@/components/site/FinalCtaSection";
-import { CaseStudy, type Block } from "@/components/site/CaseStudy";
-import img_black_stallion_trading from "@/assets/etudes/black-stallion-trading/black-stallion-trading.webp.asset.json";
-import img_Yael_Hupert from "@/assets/etudes/black-stallion-trading/Yael-Hupert.png.asset.json";
-import img_anjabrook from "@/assets/etudes/black-stallion-trading/anjabrook.png.asset.json";
-import img_Romina_16R_fashion_brand from "@/assets/etudes/black-stallion-trading/Romina-16R-fashion-brand.png.asset.json";
-import img_marut_studio_ from "@/assets/etudes/black-stallion-trading/marut-studio-.png.asset.json";
-import img_aesthetic_distance_photographer from "@/assets/etudes/black-stallion-trading/aesthetic-distance-photographer.png.asset.json";
-import img_kirstenanderton from "@/assets/etudes/black-stallion-trading/kirstenanderton.png.asset.json";
-import img_instagram_black_stallion_trading from "@/assets/etudes/black-stallion-trading/instagram_black_stallion_trading.webp.asset.json";
-import img_instagram_revamp_followers from "@/assets/etudes/black-stallion-trading/instagram_revamp_followers.webp.asset.json";
-import img_instagram_esthetique_ from "@/assets/etudes/black-stallion-trading/instagram_esthetique_.webp.asset.json";
-import img_BST_instagram_esthetique from "@/assets/etudes/black-stallion-trading/BST_instagram_esthetique.webp.asset.json";
-import img_top_instagram_esthetique from "@/assets/etudes/black-stallion-trading/top_instagram_esthetique.webp.asset.json";
-import img_instagram_best_aesthetic from "@/assets/etudes/black-stallion-trading/instagram_best_aesthetic.webp.asset.json";
-import img_Site_Web_Pr_sentation from "@/assets/etudes/black-stallion-trading/Site-Web-Pr-sentation.webp.asset.json";
-import img_Black_Stallion_Trading_mobile from "@/assets/etudes/black-stallion-trading/Black-Stallion-Trading-mobile.webp.asset.json";
+import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
+import logo from "@/assets/etudes/black-stallion-trading/black-stallion-trading.webp.asset.json";
+import imgSite from "@/assets/etudes/black-stallion-trading/Site-Web-Pr-sentation.webp.asset.json";
+import imgMobile from "@/assets/etudes/black-stallion-trading/Black-Stallion-Trading-mobile.webp.asset.json";
+import ig1 from "@/assets/etudes/black-stallion-trading/instagram_black_stallion_trading.webp.asset.json";
+import ig2 from "@/assets/etudes/black-stallion-trading/instagram_revamp_followers.webp.asset.json";
+import ig3 from "@/assets/etudes/black-stallion-trading/instagram_esthetique_.webp.asset.json";
+import ig4 from "@/assets/etudes/black-stallion-trading/BST_instagram_esthetique.webp.asset.json";
+import ig5 from "@/assets/etudes/black-stallion-trading/top_instagram_esthetique.webp.asset.json";
+import ig6 from "@/assets/etudes/black-stallion-trading/instagram_best_aesthetic.webp.asset.json";
+import infYael from "@/assets/etudes/black-stallion-trading/Yael-Hupert.png.asset.json";
+import infAnja from "@/assets/etudes/black-stallion-trading/anjabrook.png.asset.json";
+import inf16r from "@/assets/etudes/black-stallion-trading/Romina-16R-fashion-brand.png.asset.json";
+import infMarut from "@/assets/etudes/black-stallion-trading/marut-studio-.png.asset.json";
+import infAesth from "@/assets/etudes/black-stallion-trading/aesthetic-distance-photographer.png.asset.json";
+import infKirsten from "@/assets/etudes/black-stallion-trading/kirstenanderton.png.asset.json";
 
 export const Route = createFileRoute("/etudes/black-stallion-trading")({
   head: () => ({
     meta: [
       { title: "Black Stallion Trading — Étude de cas | Nowadays" },
-      { name: "description", content: "Une marque-showroom qui revendique le luxe conscient — stratégie digitale, identité visuelle et influence." },
+      { name: "description", content: "Développer la notoriété d'un showroom à NYC avec une communication digitale globale." },
       { property: "og:title", content: "Black Stallion Trading — Étude de cas | Nowadays" },
-      { property: "og:description", content: "Une marque-showroom qui revendique le luxe conscient — stratégie digitale, identité visuelle et influence." },
+      { property: "og:description", content: "Développer la notoriété d'un showroom à NYC avec une communication digitale globale." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "/etudes/black-stallion-trading" },
-        { property: "og:image", content: img_black_stallion_trading.url },
-        { name: "twitter:image", content: img_black_stallion_trading.url },
+      { property: "og:image", content: logo.url },
+      { name: "twitter:image", content: logo.url },
     ],
     links: [{ rel: "canonical", href: "/etudes/black-stallion-trading" }],
   }),
   component: Page,
 });
 
-const BLOCKS: Block[] = [
-  { type: "h1", text: "Comment mettre en place un programme d'influence pour développer sa visibilité et sa notoriété ?" },
-  { type: "img", src: img_black_stallion_trading.url, alt: "Black Stallion Trading" },
-  { type: "h2", text: "Contexte - Objectifs" },
-  { type: "p", text: "Accroître la visibilité de la marque auprès des marques de mode et des distributeurs" },
-  { type: "p", text: "Développer sa présence sur le digital" },
-  { type: "h2", text: "Nowadays Solutions" },
-  { type: "p", text: "Charte graphique" },
-  { type: "p", text: "Création et management du site web vitrine" },
-  { type: "p", text: "Community Management : Instagram / Facebook / Twitter" },
-  { type: "p", text: "Développement d'un blog lifestyle" },
-  { type: "p", text: "Stratégie de référencement : Search Engine Optimisation (SEO)" },
-  { type: "p", text: "Publicités digitales : promotion sur Facebook / Instagram / Google" },
-  { type: "p", text: "Interview d'influenceurs" },
-  { type: "h2", text: "Résultats" },
-  { type: "h2", text: "INFLUENCEURS" },
-  { type: "p", text: "Tous ces influenceurs ont été interviewés pour le blog de la marque" },
-  { type: "img", src: img_Yael_Hupert.url, alt: "Black Stallion Trading" },
-  { type: "p", text: "@Yaelhupert\nPeintre\n29.3K Followers" },
-  { type: "img", src: img_anjabrook.url, alt: "Black Stallion Trading" },
-  { type: "p", text: "@anjabrook\nModèle\n2K Followers" },
-  { type: "img", src: img_Romina_16R_fashion_brand.url, alt: "Black Stallion Trading" },
-  { type: "p", text: "@16rfirenze\nMode - tricot de luxe\n5K Followers" },
-  { type: "img", src: img_marut_studio_.url, alt: "Black Stallion Trading" },
-  { type: "p", text: "@marutstudio\nMode Lifestyle\n13K Followers" },
-  { type: "img", src: img_aesthetic_distance_photographer.url, alt: "Black Stallion Trading" },
-  { type: "p", text: "@aestheticdistance\nPhotographe de mode\n20.8K Followers" },
-  { type: "img", src: img_kirstenanderton.url, alt: "Black Stallion Trading" },
-  { type: "p", text: "@kirstenanderton\n61.1K Followers" },
-  { type: "h2", text: "INSTAGRAM" },
-  { type: "img", src: img_instagram_black_stallion_trading.url, alt: "Black Stallion Trading" },
-  { type: "img", src: img_instagram_revamp_followers.url, alt: "Black Stallion Trading" },
-  { type: "img", src: img_instagram_esthetique_.url, alt: "Black Stallion Trading" },
-  { type: "img", src: img_BST_instagram_esthetique.url, alt: "Black Stallion Trading" },
-  { type: "img", src: img_top_instagram_esthetique.url, alt: "Black Stallion Trading" },
-  { type: "img", src: img_instagram_best_aesthetic.url, alt: "Black Stallion Trading" },
-  { type: "h2", text: "WEBSITE" },
-  { type: "img", src: img_Site_Web_Pr_sentation.url, alt: "Black Stallion Trading" },
-  { type: "img", src: img_Black_Stallion_Trading_mobile.url, alt: "Black Stallion Trading" }
-];
+const data: CaseStudyData = {
+  brand: "Black Stallion Trading",
+  logo: { src: logo.url, alt: "Black Stallion Trading" },
+  title: "Développer la notoriété d'un showroom à NYC avec communication digitale globale",
+  subtitle: "Vous êtes une marque lifestyle et éthique et vous souhaitez de l'aide ?",
+  context: {
+    paragraphs: [
+      "Quand on parle de mode à New York, il ne s'agit pas seulement de bien s'habiller. Il s'agit de faire une entrée remarquée.",
+      "Pour ce showroom, l'objectif était clair : attirer l'attention des marques de mode et des distributeurs, tout en bâtissant une présence digitale solide.",
+    ],
+  },
+  solutions: [
+    {
+      title: "Une identité graphique taillée sur mesure",
+      paragraphs: [
+        "Parce que dans la mode, le style, c'est tout. Nous avons créé une charte graphique adaptée à l'identité du showroom, histoire que la marque ait son propre « It factor » sur tous les supports.",
+      ],
+      images: [{ src: imgSite.url, alt: "Site web Black Stallion Trading" }],
+    },
+    {
+      title: "Un site web vitrine digne d'une invitation VIP",
+      paragraphs: [
+        "Nous avons conçu et géré un site web vitrine pour présenter la marque sous son meilleur jour, avec un design épuré, une navigation intuitive et des visuels à faire pâlir les plus grandes enseignes.",
+      ],
+      images: [{ src: imgMobile.url, alt: "Site mobile Black Stallion Trading" }],
+    },
+    {
+      title: "Un Community Management ultra-connecté",
+      paragraphs: [
+        "Instagram, Facebook, Twitter… Nous avons fait en sorte que la marque soit là où il faut, quand il faut. Avec des contenus engageants, des stories de style et des interactions, nous avons transformé les followers en ambassadeurs.",
+      ],
+      images: [
+        { src: ig1.url, alt: "Feed Instagram Black Stallion Trading" },
+        { src: ig2.url, alt: "Instagram revamp followers" },
+        { src: ig3.url, alt: "Instagram esthétique" },
+        { src: ig4.url, alt: "Instagram BST esthétique" },
+        { src: ig5.url, alt: "Top Instagram esthétique" },
+        { src: ig6.url, alt: "Best aesthetic Instagram" },
+      ],
+      imageLayout: "grid",
+    },
+    {
+      title: "Un blog lifestyle, parce que la mode, c'est aussi un art de vivre",
+      paragraphs: [
+        "Pour enrichir l'univers de la marque, nous avons lancé un blog lifestyle : conseils mode, coulisses du showroom, inspirations new-yorkaises… Nous avons également optimisé le référencement de la marque ; parce qu'être bien habillé, c'est bien, mais être bien référencé, c'est encore mieux.",
+      ],
+    },
+    {
+      title: "Des influenceurs en invités de choix",
+      paragraphs: [
+        "Nous avons organisé des interviews d'influenceurs, qui ont partagé leur expérience avec le showroom et renforcé sa visibilité auprès de leur communauté.",
+      ],
+    },
+  ],
+  influencers: {
+    intro: "Tous ces influenceurs ont été interviewés pour le blog de la marque.",
+    items: [
+      { avatar: infYael.url, handle: "@Yaelhupert", role: "Peintre", followers: "29,3K Followers", link: "https://www.instagram.com/yaelhupert/" },
+      { avatar: infAnja.url, handle: "@anjabrook", role: "Modèle", followers: "2K Followers", link: "https://www.instagram.com/marienovosad/" },
+      { avatar: inf16r.url, handle: "@16rfirenze", role: "Mode — tricot de luxe", followers: "5K Followers" },
+      { avatar: infMarut.url, handle: "@marutstudio", role: "Mode Lifestyle", followers: "13K Followers" },
+      { avatar: infAesth.url, handle: "@aestheticdistance", role: "Photographe de mode", followers: "20,8K Followers" },
+      { avatar: infKirsten.url, handle: "@kirstenanderton", role: "Lifestyle", followers: "61,1K Followers" },
+    ],
+  },
+  results: {
+    items: [
+      { value: "1K", label: "Visiteurs uniques / mois sur le blog" },
+      { value: "10K", label: "Interactions sur les médias sociaux" },
+      { value: "+2K", label: "Audience sur les médias sociaux" },
+      { value: "12", label: "Partenariats influenceurs" },
+    ],
+  },
+};
 
 function Page() {
   return (
     <SiteLayout>
-      <CaseStudy
-        brand="Black Stallion Trading"
-        tagline="Une marque-showroom qui revendique le luxe conscient — stratégie digitale, identité visuelle et influence."
-        blocks={BLOCKS}
-      />
+      <CaseStudy data={data} />
       <FinalCtaSection />
     </SiteLayout>
   );

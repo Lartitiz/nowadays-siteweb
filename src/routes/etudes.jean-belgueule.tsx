@@ -1,65 +1,87 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { FinalCtaSection } from "@/components/site/FinalCtaSection";
-import { CaseStudy, type Block } from "@/components/site/CaseStudy";
-import img_logo_jbg_jean_belgueule from "@/assets/etudes/jean-belgueule/logo-jbg-jean-belgueule.jpg.asset.json";
-import img_instagram_jean_belgueule_case_study from "@/assets/etudes/jean-belgueule/instagram-jean-belgueule-case-study.webp.asset.json";
-import img_Capture_d_e_cran_2018_07_11_a_13_10_32 from "@/assets/etudes/jean-belgueule/Capture-d-e-cran-2018-07-11-a-13.10.32.png.asset.json";
-import img_instagram_feed from "@/assets/etudes/jean-belgueule/instagram-feed.webp.asset.json";
-import img_Capture_d_e_cran_2018_07_11_a_13_09_46 from "@/assets/etudes/jean-belgueule/Capture-d-e-cran-2018-07-11-a-13.09.46.png.asset.json";
+import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
+import logo from "@/assets/etudes/jean-belgueule/logo-jbg-jean-belgueule.jpg.asset.json";
+import ig1 from "@/assets/etudes/jean-belgueule/instagram-jean-belgueule-case-study.webp.asset.json";
+import ig2 from "@/assets/etudes/jean-belgueule/Capture-d-e-cran-2018-07-11-a-13.10.32.png.asset.json";
+import ig3 from "@/assets/etudes/jean-belgueule/instagram-feed.webp.asset.json";
+import ig4 from "@/assets/etudes/jean-belgueule/Capture-d-e-cran-2018-07-11-a-13.09.46.png.asset.json";
 
 export const Route = createFileRoute("/etudes/jean-belgueule")({
   head: () => ({
     meta: [
       { title: "Jean Belgueule — Étude de cas | Nowadays" },
-      { name: "description", content: "Soins pour hommes simples et éco-responsables — storytelling, identité visuelle et social media." },
+      { name: "description", content: "Communication digitale pour une marque de cosmétiques bio pour hommes." },
       { property: "og:title", content: "Jean Belgueule — Étude de cas | Nowadays" },
-      { property: "og:description", content: "Soins pour hommes simples et éco-responsables — storytelling, identité visuelle et social media." },
+      { property: "og:description", content: "Communication digitale pour une marque de cosmétiques bio pour hommes." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "/etudes/jean-belgueule" },
-        { property: "og:image", content: img_logo_jbg_jean_belgueule.url },
-        { name: "twitter:image", content: img_logo_jbg_jean_belgueule.url },
+      { property: "og:image", content: logo.url },
+      { name: "twitter:image", content: logo.url },
     ],
     links: [{ rel: "canonical", href: "/etudes/jean-belgueule" }],
   }),
   component: Page,
 });
 
-const BLOCKS: Block[] = [
-  { type: "h1", text: "Comment développer une image de marque forte pour une marque de cosmétiques pour hommes ?" },
-  { type: "p", text: "Cliquez pour voir la vidéo" },
-  { type: "img", src: img_logo_jbg_jean_belgueule.url, alt: "Jean Belgueule" },
-  { type: "h2", text: "Contexte - Objectifs" },
-  { type: "p", text: "Créer une identité de marque forte sur le digital" },
-  { type: "p", text: "Développer une communauté engagée sur les médias sociaux" },
-  { type: "h2", text: "Nowadays Solutions" },
-  { type: "p", text: "Community Management Instagram/Twitter/Facebook/Pinterest" },
-  { type: "p", text: "Création de contenu : shooting photos pour les médias sociaux" },
-  { type: "p", text: "Stratégie de micro-influence" },
-  { type: "p", text: "Communication événementielle" },
-  { type: "h2", text: "Résultats" },
-  { type: "p", text: "+83% de followers sur Instagram" },
-  { type: "p", text: "11% de taux d’engagement" },
-  { type: "p", text: "3 events d’organisés avec 200 personnes" },
-  { type: "h1", text: "Instagram" },
-  { type: "img", src: img_instagram_jean_belgueule_case_study.url, alt: "Jean Belgueule" },
-  { type: "img", src: img_Capture_d_e_cran_2018_07_11_a_13_10_32.url, alt: "Jean Belgueule" },
-  { type: "img", src: img_instagram_feed.url, alt: "Jean Belgueule" },
-  { type: "img", src: img_Capture_d_e_cran_2018_07_11_a_13_09_46.url, alt: "Jean Belgueule" },
-  { type: "h1", text: "Micro Influence" },
-  { type: "h1", text: "Événements" },
-  { type: "p", text: "Cliquez pour voir la vidéo" },
-  { type: "h1", text: "Production de contenu" }
-];
+const data: CaseStudyData = {
+  brand: "Jean Belgueule",
+  logo: { src: logo.url, alt: "Jean Belgueule" },
+  title: "Communication digitale pour cosmétique bio : Jean Belgueule",
+  subtitle: "Comment se faire connaître sur le web pour une marque de cosmétiques pour hommes ?",
+  context: {
+    paragraphs: [
+      "Jean Belgueule, une marque de cosmétiques pour hommes, voulait une stratégie digitale avec une identité forte.",
+      "L'idée ? Parler aux hommes d'aujourd'hui avec une bonne dose de caractère et un soupçon de street art.",
+    ],
+  },
+  solutions: [
+    {
+      title: "Des réseaux sociaux bien taillés",
+      paragraphs: [
+        "Nous avons pris en main les comptes Instagram, Twitter, Facebook et Pinterest. Avec des interactions aussi nettes qu'un bon coup de tondeuse et une présence constante pour peigner le quotidien des hommes, on a misé sur la simplicité (avec un brin d'humour).",
+      ],
+      images: [
+        { src: ig1.url, alt: "Instagram Jean Belgueule" },
+        { src: ig2.url, alt: "Instagram Jean Belgueule" },
+        { src: ig3.url, alt: "Feed Instagram Jean Belgueule" },
+        { src: ig4.url, alt: "Instagram Jean Belgueule" },
+      ],
+      imageLayout: "grid",
+    },
+    {
+      title: "Création de contenu",
+      paragraphs: [
+        "Nous avons mis en scène les produits de la marque dans un contexte urbain (street art) grâce à un shooting photo pensé pour les réseaux sociaux.",
+      ],
+    },
+    {
+      title: "Des ambassadeurs qui en ont sous le menton",
+      paragraphs: [
+        "Nous avons collaboré avec des micro-influenceurs loin des paillettes et des clichés. Ces partenariats ont permis de créer des contenus partagés avec leurs communautés et en phase avec les valeurs de la marque.",
+      ],
+    },
+    {
+      title: "Des événements pas barbants",
+      paragraphs: [
+        "Parce que rien ne vaut un bon moment avec sa communauté, nous avons organisé 3 événements exclusifs, rassemblant 200 personnes autour des produits et de l'univers Jean Belgueule.",
+      ],
+    },
+  ],
+  results: {
+    items: [
+      { value: "+2 000", label: "Followers sur Instagram" },
+      { value: "11%", label: "Taux d'engagement" },
+      { value: "3", label: "Événements (200 personnes)" },
+    ],
+  },
+};
 
 function Page() {
   return (
     <SiteLayout>
-      <CaseStudy
-        brand="Jean Belgueule"
-        tagline="Soins pour hommes simples et éco-responsables — storytelling, identité visuelle et social media."
-        blocks={BLOCKS}
-      />
+      <CaseStudy data={data} />
       <FinalCtaSection />
     </SiteLayout>
   );
