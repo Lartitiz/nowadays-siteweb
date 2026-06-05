@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// Scrape blog articles from nowadaysagency.com and emit JSON ready for DB insert.
 import { writeFileSync } from "node:fs";
 import * as cheerio from "cheerio";
 
@@ -21,8 +20,28 @@ const ARTICLES = [
 
 const BASE = "https://www.nowadaysagency.com/blog/";
 
+// Newsletter promos and other non-article noise to filter out
+const NOISE_PATTERNS = [
+  /abonne-toi à ma newsletter/i,
+  /recevoir nos conseils secrets/i,
+  /zéro culpabilisation/i,
+  /^communiquer autrement/i,
+  /^si tu veux communiquer autrement/i,
+];
+
+function isNoise(text) {
+  if (!text) return true;
+  const t = text.trim();
+  if (!t) return true;
+  return NOISE_PATTERNS.some((re) => re.test(t));
+}
+
+function cleanImgUrl(u) {
+  if (!u) return u;
+  return u.split("?")[0];
+}
+
 function inlineMd($, el) {
-  // Convert HTML inline content to markdown-ish text used by RichText
   let out = "";
   $(el).contents().each((_, node) => {
     if (node.type === "text") {
@@ -36,17 +55,37 @@ function inlineMd($, el) {
       else if (tag === "a") {
         const href = $(node).attr("href") || "";
         out += `[${inner}](${href})`;
-      } else if (tag === "u") out += inner;
-      else out += inner;
+      } else out += inner;
     }
   });
-  return out.replace(/\u00a0/g, " ").trim();
+  return out.replace(/\u00a0/g, " ").replace(/[ \t]+\n/g, "\n").trim();
 }
 
-function cleanImgUrl(u) {
-  if (!u) return u;
-  // strip Squarespace ?format= params that force tiny variants
-  return u.split("?")[0];
+function processHtmlBlock($, contentEl, blocks) {
+  $(contentEl).children().each((_, child) => {
+    const tag = child.name?.toLowerCase();
+    if (!tag) return;
+    if (tag === "h1" || tag === "h2") {
+      const text = inlineMd($, child);
+      if (text && !isNoise(text)) blocks.push({ type: "h2", text });
+    } else if (tag === "h3" || tag === "h4") {
+      const text = inlineMd($, child);
+      if (text && !isNoise(text)) blocks.push({ type: "h3", text });
+    } else if (tag === "blockquote") {
+      const text = inlineMd($, child);
+      if (text && !isNoise(text)) blocks.push({ type: "quote", text });
+    } else if (tag === "p") {
+      const text = inlineMd($, child);
+      if (text && !isNoise(text)) blocks.push({ type: "p", text });
+    } else if (tag === "ul" || tag === "ol") {
+      $(child).children("li").each((__, li) => {
+        const text = inlineMd($, li);
+        if (text && !isNoise(text)) blocks.push({ type: "p", text: `• ${text}` });
+      });
+    } else if (tag === "div") {
+      processHtmlBlock($, child, blocks);
+    }
+  });
 }
 
 async function scrape(slug) {
@@ -58,109 +97,46 @@ async function scrape(slug) {
   const html = await res.text();
   const $ = cheerio.load(html);
 
-  // Title — entry title
   const title =
     $(".entry-title").first().text().trim() ||
-    $("h1.BlogItem-title").first().text().trim() ||
-    $('meta[property="og:title"]').attr("content") ||
-    "";
+    $('meta[property="og:title"]').attr("content") || "";
 
-  // Excerpt — from meta description first
   const seo_description =
     $('meta[name="description"]').attr("content") ||
-    $('meta[property="og:description"]').attr("content") ||
-    "";
+    $('meta[property="og:description"]').attr("content") || "";
   const seo_title = $('meta[property="og:title"]').attr("content") || title;
-  const excerpt = seo_description;
 
-  // Cover — try post thumbnail first, fallback to og:image
-  let cover_url =
-    $(".BlogItem-meta-image img, .entry-image img, .BlogItem img.thumb-image")
-      .first()
-      .attr("data-src") ||
-    $(".BlogItem-meta-image img, .entry-image img, .BlogItem img.thumb-image")
-      .first()
-      .attr("src") ||
-    $('meta[property="og:image"]').attr("content") ||
-    "";
+  let cover_url = $('meta[property="og:image"]').attr("content") || "";
   cover_url = cleanImgUrl(cover_url);
   const cover_alt = title;
 
-  // Body — Squarespace puts blog body in .entry-content or .BlogItem-body
-  const root =
-    $(".entry-content").first().length
-      ? $(".entry-content").first()
-      : $(".BlogItem-body").first();
+  const root = $(".blog-item-content").first();
 
   const blocks = [];
-  // Walk top-level Squarespace blocks
-  root.find(".sqs-block").each((_, blk) => {
+  // Walk blocks in document order
+  root.find(".sqs-block-html, .sqs-block-image").each((_, blk) => {
     const $blk = $(blk);
-    const type = $blk.attr("data-block-type");
-
-    if (type === "2") {
-      // image block
+    const cls = $blk.attr("class") || "";
+    if (cls.includes("sqs-block-image")) {
       const img = $blk.find("img").first();
       let src = img.attr("data-src") || img.attr("src") || "";
       src = cleanImgUrl(src);
       const alt = (img.attr("alt") || "").trim();
-      if (src) blocks.push({ type: "img", src, alt });
-      return;
-    }
-
-    if (type === "8" || type === "39" || type === "44") {
-      // html / markdown / quote block — walk children
-      const html = $blk.find(".sqs-block-content").first();
-      html.children().each((_, child) => {
-        const tag = child.name?.toLowerCase();
-        if (!tag) return;
-        if (tag === "h1") {
-          const text = inlineMd($, child);
-          if (text) blocks.push({ type: "h2", text });
-        } else if (tag === "h2") {
-          const text = inlineMd($, child);
-          if (text) blocks.push({ type: "h2", text });
-        } else if (tag === "h3" || tag === "h4") {
-          const text = inlineMd($, child);
-          if (text) blocks.push({ type: "h3", text });
-        } else if (tag === "blockquote") {
-          const text = inlineMd($, child);
-          if (text) blocks.push({ type: "quote", text });
-        } else if (tag === "p") {
-          const text = inlineMd($, child);
-          if (text) blocks.push({ type: "p", text });
-        } else if (tag === "ul" || tag === "ol") {
-          // Render list items as paragraphs with bullets
-          $(child).find("> li").each((__, li) => {
-            const text = inlineMd($, li);
-            if (text) blocks.push({ type: "p", text: `• ${text}` });
-          });
-        } else if (tag === "hr") {
-          // skip
-        } else if (tag === "div") {
-          // unwrap one level
-          $(child).children().each((__, sub) => {
-            const subTag = sub.name?.toLowerCase();
-            if (subTag === "p") {
-              const text = inlineMd($, sub);
-              if (text) blocks.push({ type: "p", text });
-            } else if (subTag && /^h[1-4]$/.test(subTag)) {
-              const text = inlineMd($, sub);
-              if (text) blocks.push({ type: subTag === "h3" || subTag === "h4" ? "h3" : "h2", text });
-            }
-          });
-        }
-      });
-      return;
-    }
-
-    if (type === "52") {
-      // quote block
-      const text = inlineMd($, $blk.find(".source, blockquote, .sqs-block-content p, .sqs-block-content").first()[0]);
-      if (text) blocks.push({ type: "quote", text });
-      return;
+      if (src && !src.includes("transparent.png")) {
+        blocks.push({ type: "img", src, alt });
+      }
+    } else if (cls.includes("sqs-block-html")) {
+      const content = $blk.find(".sqs-html-content").first();
+      if (content.length) processHtmlBlock($, content[0], blocks);
     }
   });
+
+  // Excerpt: first non-empty short paragraph, or seo description
+  let excerpt = seo_description;
+  if (!excerpt) {
+    const firstP = blocks.find((b) => b.type === "p");
+    if (firstP) excerpt = firstP.text.replace(/[*_[\]()]/g, "").slice(0, 200);
+  }
 
   return {
     slug,
@@ -180,7 +156,8 @@ for (const a of ARTICLES) {
   try {
     const data = await scrape(a.slug);
     out.push({ ...data, published_at: a.published_at });
-    process.stderr.write(`  → ${data.content.length} blocks, cover=${data.cover_url ? "ok" : "MISSING"}\n`);
+    const counts = data.content.reduce((acc, b) => ({ ...acc, [b.type]: (acc[b.type] || 0) + 1 }), {});
+    process.stderr.write(`  → ${data.content.length} blocks ${JSON.stringify(counts)} cover=${data.cover_url ? "ok" : "MISSING"}\n`);
   } catch (e) {
     process.stderr.write(`  ✗ ${e.message}\n`);
   }
