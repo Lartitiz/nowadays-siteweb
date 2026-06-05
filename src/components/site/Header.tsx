@@ -48,6 +48,12 @@ export function Header() {
           >
             Blog
           </Link>
+          <Link
+            to="/contact"
+            className="text-sm text-foreground hover:text-primary"
+          >
+            Contact
+          </Link>
 
 
 

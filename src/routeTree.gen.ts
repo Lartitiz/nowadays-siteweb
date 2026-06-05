@@ -14,15 +14,22 @@ import { Route as FormationGratuiteInstagramRouteImport } from './routes/formati
 import { Route as EtudesDeCasProRouteImport } from './routes/etudes-de-cas-pro'
 import { Route as EtudesDeCasRouteImport } from './routes/etudes-de-cas'
 import { Route as CooperativeAssoRouteImport } from './routes/cooperative-asso'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AccompagnementCommunicationRouteImport } from './routes/accompagnement-communication'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EtudesStillNordicRouteImport } from './routes/etudes.still-nordic'
+import { Route as EtudesSeaShepherdRouteImport } from './routes/etudes.sea-shepherd'
 import { Route as EtudesRessourcesRouteImport } from './routes/etudes.ressources'
 import { Route as EtudesReligionClothingRouteImport } from './routes/etudes.religion-clothing'
+import { Route as EtudesOkahinaWaveRouteImport } from './routes/etudes.okahina-wave'
+import { Route as EtudesL214RouteImport } from './routes/etudes.l214'
 import { Route as EtudesJeanBelgueuleRouteImport } from './routes/etudes.jean-belgueule'
 import { Route as EtudesFatMooseRouteImport } from './routes/etudes.fat-moose'
+import { Route as EtudesEnsadRouteImport } from './routes/etudes.ensad'
+import { Route as EtudesEmmausDefiRouteImport } from './routes/etudes.emmaus-defi'
 import { Route as EtudesBlackStallionTradingRouteImport } from './routes/etudes.black-stallion-trading'
+import { Route as EtudesAtelierDesLunettesRouteImport } from './routes/etudes.atelier-des-lunettes'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
@@ -51,6 +58,11 @@ const CooperativeAssoRoute = CooperativeAssoRouteImport.update({
   path: '/cooperative-asso',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogRoute = BlogRouteImport.update({
   id: '/blog',
   path: '/blog',
@@ -72,6 +84,11 @@ const EtudesStillNordicRoute = EtudesStillNordicRouteImport.update({
   path: '/etudes/still-nordic',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EtudesSeaShepherdRoute = EtudesSeaShepherdRouteImport.update({
+  id: '/etudes/sea-shepherd',
+  path: '/etudes/sea-shepherd',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EtudesRessourcesRoute = EtudesRessourcesRouteImport.update({
   id: '/etudes/ressources',
   path: '/etudes/ressources',
@@ -80,6 +97,16 @@ const EtudesRessourcesRoute = EtudesRessourcesRouteImport.update({
 const EtudesReligionClothingRoute = EtudesReligionClothingRouteImport.update({
   id: '/etudes/religion-clothing',
   path: '/etudes/religion-clothing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesOkahinaWaveRoute = EtudesOkahinaWaveRouteImport.update({
+  id: '/etudes/okahina-wave',
+  path: '/etudes/okahina-wave',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesL214Route = EtudesL214RouteImport.update({
+  id: '/etudes/l214',
+  path: '/etudes/l214',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EtudesJeanBelgueuleRoute = EtudesJeanBelgueuleRouteImport.update({
@@ -92,10 +119,26 @@ const EtudesFatMooseRoute = EtudesFatMooseRouteImport.update({
   path: '/etudes/fat-moose',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EtudesEnsadRoute = EtudesEnsadRouteImport.update({
+  id: '/etudes/ensad',
+  path: '/etudes/ensad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesEmmausDefiRoute = EtudesEmmausDefiRouteImport.update({
+  id: '/etudes/emmaus-defi',
+  path: '/etudes/emmaus-defi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EtudesBlackStallionTradingRoute =
   EtudesBlackStallionTradingRouteImport.update({
     id: '/etudes/black-stallion-trading',
     path: '/etudes/black-stallion-trading',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const EtudesAtelierDesLunettesRoute =
+  EtudesAtelierDesLunettesRouteImport.update({
+    id: '/etudes/atelier-des-lunettes',
+    path: '/etudes/atelier-des-lunettes',
     getParentRoute: () => rootRouteImport,
   } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
@@ -108,34 +151,48 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
   '/blog': typeof BlogRouteWithChildren
+  '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/etudes-de-cas': typeof EtudesDeCasRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
+  '/etudes/emmaus-defi': typeof EtudesEmmausDefiRoute
+  '/etudes/ensad': typeof EtudesEnsadRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
   '/etudes/jean-belgueule': typeof EtudesJeanBelgueuleRoute
+  '/etudes/l214': typeof EtudesL214Route
+  '/etudes/okahina-wave': typeof EtudesOkahinaWaveRoute
   '/etudes/religion-clothing': typeof EtudesReligionClothingRoute
   '/etudes/ressources': typeof EtudesRessourcesRoute
+  '/etudes/sea-shepherd': typeof EtudesSeaShepherdRoute
   '/etudes/still-nordic': typeof EtudesStillNordicRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
   '/blog': typeof BlogRouteWithChildren
+  '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/etudes-de-cas': typeof EtudesDeCasRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
+  '/etudes/emmaus-defi': typeof EtudesEmmausDefiRoute
+  '/etudes/ensad': typeof EtudesEnsadRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
   '/etudes/jean-belgueule': typeof EtudesJeanBelgueuleRoute
+  '/etudes/l214': typeof EtudesL214Route
+  '/etudes/okahina-wave': typeof EtudesOkahinaWaveRoute
   '/etudes/religion-clothing': typeof EtudesReligionClothingRoute
   '/etudes/ressources': typeof EtudesRessourcesRoute
+  '/etudes/sea-shepherd': typeof EtudesSeaShepherdRoute
   '/etudes/still-nordic': typeof EtudesStillNordicRoute
 }
 export interface FileRoutesById {
@@ -143,17 +200,24 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
   '/blog': typeof BlogRouteWithChildren
+  '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/etudes-de-cas': typeof EtudesDeCasRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
+  '/etudes/emmaus-defi': typeof EtudesEmmausDefiRoute
+  '/etudes/ensad': typeof EtudesEnsadRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
   '/etudes/jean-belgueule': typeof EtudesJeanBelgueuleRoute
+  '/etudes/l214': typeof EtudesL214Route
+  '/etudes/okahina-wave': typeof EtudesOkahinaWaveRoute
   '/etudes/religion-clothing': typeof EtudesReligionClothingRoute
   '/etudes/ressources': typeof EtudesRessourcesRoute
+  '/etudes/sea-shepherd': typeof EtudesSeaShepherdRoute
   '/etudes/still-nordic': typeof EtudesStillNordicRoute
 }
 export interface FileRouteTypes {
@@ -162,51 +226,72 @@ export interface FileRouteTypes {
     | '/'
     | '/accompagnement-communication'
     | '/blog'
+    | '/contact'
     | '/cooperative-asso'
     | '/etudes-de-cas'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
     | '/mentions-legales'
     | '/blog/$slug'
+    | '/etudes/atelier-des-lunettes'
     | '/etudes/black-stallion-trading'
+    | '/etudes/emmaus-defi'
+    | '/etudes/ensad'
     | '/etudes/fat-moose'
     | '/etudes/jean-belgueule'
+    | '/etudes/l214'
+    | '/etudes/okahina-wave'
     | '/etudes/religion-clothing'
     | '/etudes/ressources'
+    | '/etudes/sea-shepherd'
     | '/etudes/still-nordic'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/accompagnement-communication'
     | '/blog'
+    | '/contact'
     | '/cooperative-asso'
     | '/etudes-de-cas'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
     | '/mentions-legales'
     | '/blog/$slug'
+    | '/etudes/atelier-des-lunettes'
     | '/etudes/black-stallion-trading'
+    | '/etudes/emmaus-defi'
+    | '/etudes/ensad'
     | '/etudes/fat-moose'
     | '/etudes/jean-belgueule'
+    | '/etudes/l214'
+    | '/etudes/okahina-wave'
     | '/etudes/religion-clothing'
     | '/etudes/ressources'
+    | '/etudes/sea-shepherd'
     | '/etudes/still-nordic'
   id:
     | '__root__'
     | '/'
     | '/accompagnement-communication'
     | '/blog'
+    | '/contact'
     | '/cooperative-asso'
     | '/etudes-de-cas'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
     | '/mentions-legales'
     | '/blog/$slug'
+    | '/etudes/atelier-des-lunettes'
     | '/etudes/black-stallion-trading'
+    | '/etudes/emmaus-defi'
+    | '/etudes/ensad'
     | '/etudes/fat-moose'
     | '/etudes/jean-belgueule'
+    | '/etudes/l214'
+    | '/etudes/okahina-wave'
     | '/etudes/religion-clothing'
     | '/etudes/ressources'
+    | '/etudes/sea-shepherd'
     | '/etudes/still-nordic'
   fileRoutesById: FileRoutesById
 }
@@ -214,16 +299,23 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AccompagnementCommunicationRoute: typeof AccompagnementCommunicationRoute
   BlogRoute: typeof BlogRouteWithChildren
+  ContactRoute: typeof ContactRoute
   CooperativeAssoRoute: typeof CooperativeAssoRoute
   EtudesDeCasRoute: typeof EtudesDeCasRoute
   EtudesDeCasProRoute: typeof EtudesDeCasProRoute
   FormationGratuiteInstagramRoute: typeof FormationGratuiteInstagramRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
+  EtudesAtelierDesLunettesRoute: typeof EtudesAtelierDesLunettesRoute
   EtudesBlackStallionTradingRoute: typeof EtudesBlackStallionTradingRoute
+  EtudesEmmausDefiRoute: typeof EtudesEmmausDefiRoute
+  EtudesEnsadRoute: typeof EtudesEnsadRoute
   EtudesFatMooseRoute: typeof EtudesFatMooseRoute
   EtudesJeanBelgueuleRoute: typeof EtudesJeanBelgueuleRoute
+  EtudesL214Route: typeof EtudesL214Route
+  EtudesOkahinaWaveRoute: typeof EtudesOkahinaWaveRoute
   EtudesReligionClothingRoute: typeof EtudesReligionClothingRoute
   EtudesRessourcesRoute: typeof EtudesRessourcesRoute
+  EtudesSeaShepherdRoute: typeof EtudesSeaShepherdRoute
   EtudesStillNordicRoute: typeof EtudesStillNordicRoute
 }
 
@@ -264,6 +356,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CooperativeAssoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog': {
       id: '/blog'
       path: '/blog'
@@ -292,6 +391,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EtudesStillNordicRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/etudes/sea-shepherd': {
+      id: '/etudes/sea-shepherd'
+      path: '/etudes/sea-shepherd'
+      fullPath: '/etudes/sea-shepherd'
+      preLoaderRoute: typeof EtudesSeaShepherdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/etudes/ressources': {
       id: '/etudes/ressources'
       path: '/etudes/ressources'
@@ -304,6 +410,20 @@ declare module '@tanstack/react-router' {
       path: '/etudes/religion-clothing'
       fullPath: '/etudes/religion-clothing'
       preLoaderRoute: typeof EtudesReligionClothingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/okahina-wave': {
+      id: '/etudes/okahina-wave'
+      path: '/etudes/okahina-wave'
+      fullPath: '/etudes/okahina-wave'
+      preLoaderRoute: typeof EtudesOkahinaWaveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/l214': {
+      id: '/etudes/l214'
+      path: '/etudes/l214'
+      fullPath: '/etudes/l214'
+      preLoaderRoute: typeof EtudesL214RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/etudes/jean-belgueule': {
@@ -320,11 +440,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EtudesFatMooseRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/etudes/ensad': {
+      id: '/etudes/ensad'
+      path: '/etudes/ensad'
+      fullPath: '/etudes/ensad'
+      preLoaderRoute: typeof EtudesEnsadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/emmaus-defi': {
+      id: '/etudes/emmaus-defi'
+      path: '/etudes/emmaus-defi'
+      fullPath: '/etudes/emmaus-defi'
+      preLoaderRoute: typeof EtudesEmmausDefiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/etudes/black-stallion-trading': {
       id: '/etudes/black-stallion-trading'
       path: '/etudes/black-stallion-trading'
       fullPath: '/etudes/black-stallion-trading'
       preLoaderRoute: typeof EtudesBlackStallionTradingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/atelier-des-lunettes': {
+      id: '/etudes/atelier-des-lunettes'
+      path: '/etudes/atelier-des-lunettes'
+      fullPath: '/etudes/atelier-des-lunettes'
+      preLoaderRoute: typeof EtudesAtelierDesLunettesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
@@ -351,16 +492,23 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AccompagnementCommunicationRoute: AccompagnementCommunicationRoute,
   BlogRoute: BlogRouteWithChildren,
+  ContactRoute: ContactRoute,
   CooperativeAssoRoute: CooperativeAssoRoute,
   EtudesDeCasRoute: EtudesDeCasRoute,
   EtudesDeCasProRoute: EtudesDeCasProRoute,
   FormationGratuiteInstagramRoute: FormationGratuiteInstagramRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
+  EtudesAtelierDesLunettesRoute: EtudesAtelierDesLunettesRoute,
   EtudesBlackStallionTradingRoute: EtudesBlackStallionTradingRoute,
+  EtudesEmmausDefiRoute: EtudesEmmausDefiRoute,
+  EtudesEnsadRoute: EtudesEnsadRoute,
   EtudesFatMooseRoute: EtudesFatMooseRoute,
   EtudesJeanBelgueuleRoute: EtudesJeanBelgueuleRoute,
+  EtudesL214Route: EtudesL214Route,
+  EtudesOkahinaWaveRoute: EtudesOkahinaWaveRoute,
   EtudesReligionClothingRoute: EtudesReligionClothingRoute,
   EtudesRessourcesRoute: EtudesRessourcesRoute,
+  EtudesSeaShepherdRoute: EtudesSeaShepherdRoute,
   EtudesStillNordicRoute: EtudesStillNordicRoute,
 }
 export const routeTree = rootRouteImport
