@@ -100,7 +100,7 @@ export function TestimonialsSection() {
               className={`flex flex-col gap-7 ${offsets[i] ?? ""}`}
             >
               <div className="mx-auto w-full max-w-[240px] border border-[color:color-mix(in_oklab,var(--ink)_20%,transparent)] p-1 bg-white shadow-sm">
-                <div className="aspect-[4/5] overflow-hidden">
+                <div className="aspect-[4/5] overflow-hidden bg-[var(--rose-light)]">
                   <img
                     src={t.photo}
                     alt={t.alt}
