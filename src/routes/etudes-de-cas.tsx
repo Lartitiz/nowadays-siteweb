@@ -26,9 +26,22 @@ export const Route = createFileRoute("/etudes-de-cas")({
   component: Page,
 });
 
+import blackStallion from "@/assets/etudes/black-stallion-trading.webp.asset.json";
+import fatMoose from "@/assets/etudes/fat-moose.jpg.asset.json";
+import ressources from "@/assets/etudes/ressources.png.asset.json";
+import jeanBelgueule from "@/assets/etudes/jean-belgueule.jpg.asset.json";
+import religionClothing from "@/assets/etudes/religion-clothing.png.asset.json";
+import cawa from "@/assets/etudes/cawa.png.asset.json";
+import samanthaPorpiglia from "@/assets/etudes/samantha-porpiglia.webp.asset.json";
+import stillNordic from "@/assets/etudes/still-nordic.jpg.asset.json";
+import napperon from "@/assets/etudes/napperon.jpg.asset.json";
+import weSlow from "@/assets/etudes/we-slow.jpg.asset.json";
+import essentialOilSupplies from "@/assets/etudes/essential-oil-supplies.jpg.asset.json";
+
 type Project = {
   name: string;
   description: string;
+  image?: string;
 };
 
 const PROJECTS: Project[] = [
