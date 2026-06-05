@@ -42,6 +42,14 @@ export function Header() {
           >
             Études de cas
           </Link>
+          <Link
+            to="/blog"
+            className="text-sm text-foreground hover:text-primary"
+          >
+            Blog
+          </Link>
+
+
 
         </nav>
 
