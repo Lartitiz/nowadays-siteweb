@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
+import { Route as GuideStorytellingRouteImport } from './routes/guide-storytelling'
 import { Route as FormationGratuiteInstagramRouteImport } from './routes/formation-gratuite-instagram'
 import { Route as EtudesDeCasProRouteImport } from './routes/etudes-de-cas-pro'
 import { Route as EtudesDeCasRouteImport } from './routes/etudes-de-cas'
@@ -35,6 +36,11 @@ import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
   id: '/mentions-legales',
   path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuideStorytellingRoute = GuideStorytellingRouteImport.update({
+  id: '/guide-storytelling',
+  path: '/guide-storytelling',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FormationGratuiteInstagramRoute =
@@ -156,6 +162,7 @@ export interface FileRoutesByFullPath {
   '/etudes-de-cas': typeof EtudesDeCasRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
+  '/guide-storytelling': typeof GuideStorytellingRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
@@ -180,6 +187,7 @@ export interface FileRoutesByTo {
   '/etudes-de-cas': typeof EtudesDeCasRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
+  '/guide-storytelling': typeof GuideStorytellingRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
@@ -205,6 +213,7 @@ export interface FileRoutesById {
   '/etudes-de-cas': typeof EtudesDeCasRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
+  '/guide-storytelling': typeof GuideStorytellingRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
@@ -231,6 +240,7 @@ export interface FileRouteTypes {
     | '/etudes-de-cas'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
+    | '/guide-storytelling'
     | '/mentions-legales'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
@@ -255,6 +265,7 @@ export interface FileRouteTypes {
     | '/etudes-de-cas'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
+    | '/guide-storytelling'
     | '/mentions-legales'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
@@ -279,6 +290,7 @@ export interface FileRouteTypes {
     | '/etudes-de-cas'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
+    | '/guide-storytelling'
     | '/mentions-legales'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
@@ -304,6 +316,7 @@ export interface RootRouteChildren {
   EtudesDeCasRoute: typeof EtudesDeCasRoute
   EtudesDeCasProRoute: typeof EtudesDeCasProRoute
   FormationGratuiteInstagramRoute: typeof FormationGratuiteInstagramRoute
+  GuideStorytellingRoute: typeof GuideStorytellingRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   EtudesAtelierDesLunettesRoute: typeof EtudesAtelierDesLunettesRoute
   EtudesBlackStallionTradingRoute: typeof EtudesBlackStallionTradingRoute
@@ -326,6 +339,13 @@ declare module '@tanstack/react-router' {
       path: '/mentions-legales'
       fullPath: '/mentions-legales'
       preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guide-storytelling': {
+      id: '/guide-storytelling'
+      path: '/guide-storytelling'
+      fullPath: '/guide-storytelling'
+      preLoaderRoute: typeof GuideStorytellingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/formation-gratuite-instagram': {
@@ -497,6 +517,7 @@ const rootRouteChildren: RootRouteChildren = {
   EtudesDeCasRoute: EtudesDeCasRoute,
   EtudesDeCasProRoute: EtudesDeCasProRoute,
   FormationGratuiteInstagramRoute: FormationGratuiteInstagramRoute,
+  GuideStorytellingRoute: GuideStorytellingRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   EtudesAtelierDesLunettesRoute: EtudesAtelierDesLunettesRoute,
   EtudesBlackStallionTradingRoute: EtudesBlackStallionTradingRoute,

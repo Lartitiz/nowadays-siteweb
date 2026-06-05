@@ -77,11 +77,20 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link
+                  to="/guide-storytelling"
+                  className="underline underline-offset-4 hover:text-rose-dark"
+                >
+                  Guide storytelling
+                </Link>
+              </li>
+              <li>
                 <a href="#" className="underline underline-offset-4 hover:text-rose-dark">
                   Template Plan de com'
                 </a>
               </li>
             </ul>
+
           </div>
 
           {/* Colonne 3 : newsletter */}
