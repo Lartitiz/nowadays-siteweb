@@ -31,7 +31,7 @@ export function Header() {
             Coopératives & assos
           </Link>
           <Link
-            to="/etudes-de-cas"
+            to="/creatrices-ethiques"
             className="text-sm text-foreground hover:text-primary"
           >
             Créatrices éthiques

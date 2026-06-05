@@ -13,7 +13,9 @@ export function FinalCtaSection() {
 
         <div className="mt-12">
           <a
-            href="#"
+            href="https://calendly.com/laetitia-mattioli/30-min-de-diagnostic-offert"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-rose-dark px-10 py-5 font-mono text-sm font-semibold uppercase tracking-[0.12em] text-cream transition-colors hover:bg-bordeaux"
           >
             Réserver mon appel découverte (gratuit)

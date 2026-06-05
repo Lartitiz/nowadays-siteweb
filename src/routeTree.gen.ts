@@ -9,11 +9,13 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TemplateCalendrierEditorialRouteImport } from './routes/template-calendrier-editorial'
+import { Route as PlanCommunicationRouteImport } from './routes/plan-communication'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as GuideStorytellingRouteImport } from './routes/guide-storytelling'
 import { Route as FormationGratuiteInstagramRouteImport } from './routes/formation-gratuite-instagram'
 import { Route as EtudesDeCasProRouteImport } from './routes/etudes-de-cas-pro'
-import { Route as EtudesDeCasRouteImport } from './routes/etudes-de-cas'
+import { Route as CreatricesEthiquesRouteImport } from './routes/creatrices-ethiques'
 import { Route as CooperativeAssoRouteImport } from './routes/cooperative-asso'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogRouteImport } from './routes/blog'
@@ -36,6 +38,17 @@ import { Route as EtudesBlackStallionTradingRouteImport } from './routes/etudes.
 import { Route as EtudesAtelierDesLunettesRouteImport } from './routes/etudes.atelier-des-lunettes'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
+const TemplateCalendrierEditorialRoute =
+  TemplateCalendrierEditorialRouteImport.update({
+    id: '/template-calendrier-editorial',
+    path: '/template-calendrier-editorial',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PlanCommunicationRoute = PlanCommunicationRouteImport.update({
+  id: '/plan-communication',
+  path: '/plan-communication',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
   id: '/mentions-legales',
   path: '/mentions-legales',
@@ -57,9 +70,9 @@ const EtudesDeCasProRoute = EtudesDeCasProRouteImport.update({
   path: '/etudes-de-cas-pro',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EtudesDeCasRoute = EtudesDeCasRouteImport.update({
-  id: '/etudes-de-cas',
-  path: '/etudes-de-cas',
+const CreatricesEthiquesRoute = CreatricesEthiquesRouteImport.update({
+  id: '/creatrices-ethiques',
+  path: '/creatrices-ethiques',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CooperativeAssoRoute = CooperativeAssoRouteImport.update({
@@ -177,11 +190,13 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
-  '/etudes-de-cas': typeof EtudesDeCasRoute
+  '/creatrices-ethiques': typeof CreatricesEthiquesRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
   '/mentions-legales': typeof MentionsLegalesRoute
+  '/plan-communication': typeof PlanCommunicationRoute
+  '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
@@ -205,11 +220,13 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
-  '/etudes-de-cas': typeof EtudesDeCasRoute
+  '/creatrices-ethiques': typeof CreatricesEthiquesRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
   '/mentions-legales': typeof MentionsLegalesRoute
+  '/plan-communication': typeof PlanCommunicationRoute
+  '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
@@ -234,11 +251,13 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
-  '/etudes-de-cas': typeof EtudesDeCasRoute
+  '/creatrices-ethiques': typeof CreatricesEthiquesRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
   '/mentions-legales': typeof MentionsLegalesRoute
+  '/plan-communication': typeof PlanCommunicationRoute
+  '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
@@ -264,11 +283,13 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/cooperative-asso'
-    | '/etudes-de-cas'
+    | '/creatrices-ethiques'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
     | '/mentions-legales'
+    | '/plan-communication'
+    | '/template-calendrier-editorial'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
     | '/etudes/black-stallion-trading'
@@ -292,11 +313,13 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/cooperative-asso'
-    | '/etudes-de-cas'
+    | '/creatrices-ethiques'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
     | '/mentions-legales'
+    | '/plan-communication'
+    | '/template-calendrier-editorial'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
     | '/etudes/black-stallion-trading'
@@ -320,11 +343,13 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/cooperative-asso'
-    | '/etudes-de-cas'
+    | '/creatrices-ethiques'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
     | '/mentions-legales'
+    | '/plan-communication'
+    | '/template-calendrier-editorial'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
     | '/etudes/black-stallion-trading'
@@ -349,11 +374,13 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   ContactRoute: typeof ContactRoute
   CooperativeAssoRoute: typeof CooperativeAssoRoute
-  EtudesDeCasRoute: typeof EtudesDeCasRoute
+  CreatricesEthiquesRoute: typeof CreatricesEthiquesRoute
   EtudesDeCasProRoute: typeof EtudesDeCasProRoute
   FormationGratuiteInstagramRoute: typeof FormationGratuiteInstagramRoute
   GuideStorytellingRoute: typeof GuideStorytellingRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
+  PlanCommunicationRoute: typeof PlanCommunicationRoute
+  TemplateCalendrierEditorialRoute: typeof TemplateCalendrierEditorialRoute
   EtudesAtelierDesLunettesRoute: typeof EtudesAtelierDesLunettesRoute
   EtudesBlackStallionTradingRoute: typeof EtudesBlackStallionTradingRoute
   EtudesEmmausDefiRoute: typeof EtudesEmmausDefiRoute
@@ -373,6 +400,20 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/template-calendrier-editorial': {
+      id: '/template-calendrier-editorial'
+      path: '/template-calendrier-editorial'
+      fullPath: '/template-calendrier-editorial'
+      preLoaderRoute: typeof TemplateCalendrierEditorialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plan-communication': {
+      id: '/plan-communication'
+      path: '/plan-communication'
+      fullPath: '/plan-communication'
+      preLoaderRoute: typeof PlanCommunicationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/mentions-legales': {
       id: '/mentions-legales'
       path: '/mentions-legales'
@@ -401,11 +442,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EtudesDeCasProRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/etudes-de-cas': {
-      id: '/etudes-de-cas'
-      path: '/etudes-de-cas'
-      fullPath: '/etudes-de-cas'
-      preLoaderRoute: typeof EtudesDeCasRouteImport
+    '/creatrices-ethiques': {
+      id: '/creatrices-ethiques'
+      path: '/creatrices-ethiques'
+      fullPath: '/creatrices-ethiques'
+      preLoaderRoute: typeof CreatricesEthiquesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cooperative-asso': {
@@ -574,11 +615,13 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   ContactRoute: ContactRoute,
   CooperativeAssoRoute: CooperativeAssoRoute,
-  EtudesDeCasRoute: EtudesDeCasRoute,
+  CreatricesEthiquesRoute: CreatricesEthiquesRoute,
   EtudesDeCasProRoute: EtudesDeCasProRoute,
   FormationGratuiteInstagramRoute: FormationGratuiteInstagramRoute,
   GuideStorytellingRoute: GuideStorytellingRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
+  PlanCommunicationRoute: PlanCommunicationRoute,
+  TemplateCalendrierEditorialRoute: TemplateCalendrierEditorialRoute,
   EtudesAtelierDesLunettesRoute: EtudesAtelierDesLunettesRoute,
   EtudesBlackStallionTradingRoute: EtudesBlackStallionTradingRoute,
   EtudesEmmausDefiRoute: EtudesEmmausDefiRoute,

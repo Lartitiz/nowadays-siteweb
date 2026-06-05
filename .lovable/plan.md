@@ -1,86 +1,73 @@
-## Audit de la page d'origine
 
-Sur `nowadaysagency.com/creatrices-ethiques`, chaque carte a un lien "Voir le projet". J'ai classé les 33 projets en 3 catégories :
+# Suite de la migration
 
-### A. Études de cas internes — déjà présentes (6)
-Pages `/etudes/...` existantes dans le projet, on les laisse telles quelles :
-- Black Stallion Trading, Fat Moose, Ressources, Jean Belgueule, Religion Clothing, Still Nordic
-
-### B. Études de cas internes — à créer (3)
-Sur le site d'origine ces liens pointent vers `nowadaysagency.com/{slug}` (donc une vraie étude de cas) mais on n'a pas encore la page :
-- **My Pilates World** → `/etudes/my-pilates-world`
-- **Flanelle, l'Atelier de Styliste** → `/etudes/flanelle`
-- **Ombeline Mares** → `/etudes/ombeline-mares`
-
-### C. Liens externes vers sites/Instagram des clientes (22)
-Le lien doit ouvrir le site/IG de la cliente dans un nouvel onglet :
-
-| Marque | URL |
-|---|---|
-| Cawa | https://cawa.me/ |
-| Samantha Porpiglia | https://samanthaporpiglia.com/ |
-| Napperon | https://napperon.fr/ |
-| We Slow | https://www.instagram.com/weslow.fr/ |
-| Essential Oil Supplies | https://eu.eosupplies.com/ |
-| Belle. | https://www.instagram.com/belle._paris/ |
-| Rose Donald | https://www.instagram.com/rosedonaldparis/ |
-| Boom Boom Dance | https://www.boomboum.fr/ |
-| Atelier Tiket | https://www.atelier-tiket.fr/ |
-| Inti Personal Shopper | https://www.instagram.com/intipersonalshopper/ |
-| L'école des femmes de Massoba | https://www.lecoledesfemmesdemassoba.com/ |
-| Sophie Brillouet | https://www.instagram.com/sophie_brillouet/ |
-| Oli Emoi | https://www.oliemoi.com/ |
-| Comme un ruban d'étoile | https://www.instagram.com/commeunrubandetoiles/ |
-| Jonesie | https://studio.jonesie.fr/ |
-| Hopla Studio | https://hoplastudio.com/ |
-| Terra y mar | https://terraemar.shop/ |
-| File ton cuir | https://filetoncuir.com/ |
-| Yza Handmade | https://yza-shop.com/ |
-| Awqa | https://www.awqa.fr/ |
-| Péline Coach SOPK | https://www.pelinecoachsopk.com/ |
-| Le Jardin Parfumé Marseille | https://www.lejardinparfume.fr/ |
-
-### D. Sans lien (3)
-Sur le site d'origine, les liens "Voir le projet" pointent vers la page elle-même (donc pas de destination réelle) :
-- Mazeh Paris, La Slow Fashionitude, Ti Matelot
-→ On les laisse sans CTA (comportement actuel quand pas de `slug`).
+Travail organisé en 4 chantiers parallèles. Tous les changements restent côté frontend (routes + composants), sauf un éventuel re-scraping d'articles si on découvre qu'il en manque ou que le contenu est dégradé.
 
 ---
 
-## Plan d'implémentation
+## 1. URLs et liens internes
 
-### 1. `src/routes/etudes-de-cas.tsx`
-- Ajouter un champ optionnel `externalUrl?: string` au type `Project`.
-- Renseigner `externalUrl` pour les 22 projets de la catégorie C.
-- Ajouter `slug` pour les 3 projets de la catégorie B (`my-pilates-world`, `flanelle`, `ombeline-mares`).
-- Adapter `EtudesGrid` :
-  - Si `slug` → `<Link to="/etudes/{slug}">` (comportement actuel).
-  - Sinon si `externalUrl` → `<a href={externalUrl} target="_blank" rel="noopener noreferrer">` avec libellé "Voir le projet ↗".
-  - Sinon → `<article>` sans CTA.
-- Le hover/style reste identique.
+**Renommer la route Créatrices éthiques**
+- `src/routes/etudes-de-cas.tsx` → `src/routes/creatrices-ethiques.tsx`
+- Mettre à jour `createFileRoute("/etudes-de-cas")` → `createFileRoute("/creatrices-ethiques")`
+- Mettre à jour la balise `<link rel="canonical">` et `og:url`
+- Mettre à jour les liens dans :
+  - `src/components/site/Header.tsx` (nav "Créatrices éthiques")
+  - `src/components/site/Footer.tsx` (lien "Nos études de cas (solopreneures)")
+  - Tout autre `Link to="/etudes-de-cas"` retrouvé via `rg` (CTAs homepage, sections, etc.)
+- Garder `/etudes-de-cas-pro` tel quel (URL conservée côté site source).
 
-### 2. Créer 3 nouvelles études de cas internes
-Pour chacune : `src/routes/etudes.{slug}.tsx` basée sur le pattern existant (`<CaseStudy data=...>` + `head()` + `FinalCtaSection`).
-
-- `etudes.my-pilates-world.tsx`
-- `etudes.flanelle.tsx`
-- `etudes.ombeline-mares.tsx`
-
-Pour chacune je scraperai la page source correspondante sur nowadaysagency.com (`/my-pilates-world`, `/flanelle`, `/ombeline`) pour récupérer le brief, les visuels et les chiffres, puis je structurerai au format `CaseStudyData` (objectifs, livrables, captures, résultats), comme les études déjà en place. Les visuels seront téléchargés en local sous `src/assets/etudes/{slug}/`.
-
-### 3. SEO et accessibilité
-- `target="_blank"` + `rel="noopener noreferrer"` sur les liens externes.
-- `aria-label` explicite "Visiter le site de {nom de la marque} (nouvel onglet)".
-- Les 3 nouvelles pages ont leur propre `head()` (title/description/og distincts) et `canonical`.
-
-### Détails techniques
-- Aucun changement de routing global, juste 3 nouveaux fichiers de route auto-détectés.
-- Pas de migration de données ni de changement back-end.
-- `routeTree.gen.ts` est régénéré automatiquement.
+**Audit des liens morts**
+- Le footer contient encore `href="#"` sur "Le blog" → remplacer par `<Link to="/blog">`.
+- Le footer pointe `/accompagnement-communication` et `/cooperative-asso` pour "études de cas" : à conserver, c'est volontaire.
+- Vérifier que la homepage et toutes les sections (`Hero`, `OffersSection`, `ProcessSection`, `FinalCtaSection`, etc.) n'ont aucun `href="#"` orphelin ni `<Link to="/etudes-de-cas">` après renommage.
 
 ---
 
-## À confirmer avant build
+## 2. Pages outils gratuits
 
-1. **Création des 3 pages internes** : OK pour les créer maintenant (avec scraping du site d'origine), ou tu préfères juste brancher les externes et garder les 3 sans lien pour l'instant ?
-2. **Sites externes** : OK pour la liste ci-dessus, ou tu veux modifier/retirer certaines URLs ?
+Deux pages à créer, sur le modèle de `formation-gratuite-instagram.tsx` (Hero + bénéfices + formulaire de récupération par email + signature). Scraper le contenu depuis le site source pour rester fidèle.
+
+**`src/routes/template-calendrier-editorial.tsx`** → `/template-calendrier-editorial`
+- Source : `https://www.nowadaysagency.com/template-calendrier-editorial`
+- Visuel : générer un cover + un mockup dans `src/assets/calendrier-editorial/`
+- `head()` dédié : titre, description, og:image = cover
+
+**`src/routes/plan-communication.tsx`** → `/plan-communication`
+- Source : `https://www.nowadaysagency.com/plan-communication`
+- Visuel : cover + mockup dans `src/assets/plan-communication/`
+- `head()` dédié
+
+**Footer**
+- Remplacer `href="#"` "Outil Calendrier éditorial" par `<Link to="/template-calendrier-editorial">`
+- Remplacer `href="#"` "Template Plan de com'" par `<Link to="/plan-communication">`
+
+---
+
+## 3. Blog — audit et complément
+
+État actuel en base : les **13 articles existent déjà** (slugs et contenus, entre 5 700 et 33 400 caractères chacun). Donc pas besoin de tout ré-extraire.
+
+À faire :
+- Visiter rapidement chacun des 13 articles en preview (`/blog/<slug>`) pour vérifier qu'ils s'affichent correctement (cover, contenu RichText, dates).
+- Pour les éventuels articles dont le contenu est dégradé ou dont la cover manque (`cover_url IS NULL`), re-scraper la page source correspondante sur `nowadaysagency.com/blog/<slug>` et faire un `UPDATE` ciblé via l'outil insert.
+- Vérifier que l'ordre du listing `/blog` correspond bien au site source (tri par `published_at DESC` — déjà OK).
+
+Pas de migration de schéma nécessaire ; la table `articles` est déjà bonne.
+
+---
+
+## 4. Vérifications finales
+
+- `rg "etudes-de-cas[^-]"` après renommage → 0 résultat (hors `etudes-de-cas-pro`).
+- `rg 'href="#"'` dans `src/` → seul `#manifesto` du footer doit subsister (ancre intra-page valide).
+- Toutes les nouvelles routes ont un `head()` complet (title, description, og:title, og:description, canonical).
+- Préserver les règles design (typo, palette, H2 = `font-serif text-4xl md:text-6xl leading-[1.05] text-ink`).
+
+---
+
+## Détails techniques
+
+- TanStack Router régénère `routeTree.gen.ts` automatiquement après création/renommage des fichiers `src/routes/*`.
+- Les nouvelles pages ressources réutilisent `SiteLayout` + `FinalCtaSection`.
+- Le scraping côté chantier 2 et 3 (si besoin) se fait via `code--fetch_website`, le contenu est ensuite collé directement dans les composants (chantier 2) ou poussé via `supabase--insert` (chantier 3).
