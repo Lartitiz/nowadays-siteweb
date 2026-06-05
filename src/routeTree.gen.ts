@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as EtudesDeCasRouteImport } from './routes/etudes-de-cas'
 import { Route as CooperativeAssoRouteImport } from './routes/cooperative-asso'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AccompagnementCommunicationRouteImport } from './routes/accompagnement-communication'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EtudesStillNordicRouteImport } from './routes/etudes.still-nordic'
@@ -19,6 +20,7 @@ import { Route as EtudesReligionClothingRouteImport } from './routes/etudes.reli
 import { Route as EtudesJeanBelgueuleRouteImport } from './routes/etudes.jean-belgueule'
 import { Route as EtudesFatMooseRouteImport } from './routes/etudes.fat-moose'
 import { Route as EtudesBlackStallionTradingRouteImport } from './routes/etudes.black-stallion-trading'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const EtudesDeCasRoute = EtudesDeCasRouteImport.update({
   id: '/etudes-de-cas',
@@ -28,6 +30,11 @@ const EtudesDeCasRoute = EtudesDeCasRouteImport.update({
 const CooperativeAssoRoute = CooperativeAssoRouteImport.update({
   id: '/cooperative-asso',
   path: '/cooperative-asso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AccompagnementCommunicationRoute =
@@ -72,12 +79,19 @@ const EtudesBlackStallionTradingRoute =
     path: '/etudes/black-stallion-trading',
     getParentRoute: () => rootRouteImport,
   } as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
+  '/blog': typeof BlogRouteWithChildren
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/etudes-de-cas': typeof EtudesDeCasRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
   '/etudes/jean-belgueule': typeof EtudesJeanBelgueuleRoute
@@ -88,8 +102,10 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
+  '/blog': typeof BlogRouteWithChildren
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/etudes-de-cas': typeof EtudesDeCasRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
   '/etudes/jean-belgueule': typeof EtudesJeanBelgueuleRoute
@@ -101,8 +117,10 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
+  '/blog': typeof BlogRouteWithChildren
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/etudes-de-cas': typeof EtudesDeCasRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
   '/etudes/jean-belgueule': typeof EtudesJeanBelgueuleRoute
@@ -115,8 +133,10 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/accompagnement-communication'
+    | '/blog'
     | '/cooperative-asso'
     | '/etudes-de-cas'
+    | '/blog/$slug'
     | '/etudes/black-stallion-trading'
     | '/etudes/fat-moose'
     | '/etudes/jean-belgueule'
@@ -127,8 +147,10 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/accompagnement-communication'
+    | '/blog'
     | '/cooperative-asso'
     | '/etudes-de-cas'
+    | '/blog/$slug'
     | '/etudes/black-stallion-trading'
     | '/etudes/fat-moose'
     | '/etudes/jean-belgueule'
@@ -139,8 +161,10 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/accompagnement-communication'
+    | '/blog'
     | '/cooperative-asso'
     | '/etudes-de-cas'
+    | '/blog/$slug'
     | '/etudes/black-stallion-trading'
     | '/etudes/fat-moose'
     | '/etudes/jean-belgueule'
@@ -152,6 +176,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AccompagnementCommunicationRoute: typeof AccompagnementCommunicationRoute
+  BlogRoute: typeof BlogRouteWithChildren
   CooperativeAssoRoute: typeof CooperativeAssoRoute
   EtudesDeCasRoute: typeof EtudesDeCasRoute
   EtudesBlackStallionTradingRoute: typeof EtudesBlackStallionTradingRoute
@@ -176,6 +201,13 @@ declare module '@tanstack/react-router' {
       path: '/cooperative-asso'
       fullPath: '/cooperative-asso'
       preLoaderRoute: typeof CooperativeAssoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/accompagnement-communication': {
@@ -234,12 +266,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EtudesBlackStallionTradingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
   }
 }
+
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AccompagnementCommunicationRoute: AccompagnementCommunicationRoute,
+  BlogRoute: BlogRouteWithChildren,
   CooperativeAssoRoute: CooperativeAssoRoute,
   EtudesDeCasRoute: EtudesDeCasRoute,
   EtudesBlackStallionTradingRoute: EtudesBlackStallionTradingRoute,
@@ -252,3 +302,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
