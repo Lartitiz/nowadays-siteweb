@@ -16,11 +16,12 @@ export function CaseStudy({
   blocks: Block[];
 }) {
   // First block is the H1 (question), then optional first image as cover
-  const h1 = blocks.find((b): b is Extract<Block, { type: "h1" }> => b.type === "h1");
+  const h1Idx = blocks.findIndex((b) => b.type === "h1");
+  const h1 = h1Idx >= 0 ? (blocks[h1Idx] as Extract<Block, { type: "h1" }>) : null;
   const firstImgIdx = blocks.findIndex((b) => b.type === "img");
   const cover =
     firstImgIdx >= 0 ? (blocks[firstImgIdx] as Extract<Block, { type: "img" }>) : null;
-  const rest = blocks.filter((b, i) => b !== h1 && i !== firstImgIdx);
+  const rest: Block[] = blocks.filter((_, i) => i !== h1Idx && i !== firstImgIdx);
 
   return (
     <>
