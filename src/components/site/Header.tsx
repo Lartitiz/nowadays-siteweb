@@ -30,6 +30,12 @@ export function Header() {
           >
             Solutions de communication
           </Link>
+          <Link
+            to="/cooperative-asso"
+            className="text-sm text-foreground hover:text-primary"
+          >
+            Coopératives & assos
+          </Link>
         </nav>
 
         <a
