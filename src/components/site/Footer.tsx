@@ -69,9 +69,12 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="underline underline-offset-4 hover:text-rose-dark">
+                <Link
+                  to="/formation-gratuite-instagram"
+                  className="underline underline-offset-4 hover:text-rose-dark"
+                >
                   Formation gratuite Instagram
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="underline underline-offset-4 hover:text-rose-dark">
