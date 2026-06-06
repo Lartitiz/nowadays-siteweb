@@ -175,7 +175,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
           {data.solutions.map((s, i) => (
             <article key={i}>
               <div className="mx-auto max-w-3xl">
-                <h3 className="font-serif text-2xl leading-[1.15] text-ink md:text-3xl">
+                <h3 className="font-serif text-xl leading-[1.2] text-ink md:text-2xl">
                   {s.title}
                 </h3>
                 {s.paragraphs?.map((p, j) => (
