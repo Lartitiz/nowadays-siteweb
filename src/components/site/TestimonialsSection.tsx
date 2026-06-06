@@ -82,7 +82,7 @@ export function TestimonialsSection() {
     <section className="bg-[var(--cream)] py-20 md:py-32">
       <div className="mx-auto max-w-6xl px-6 md:px-10">
         <div className="text-center mb-16 md:mb-24">
-          <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink max-w-4xl mx-auto">
+          <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink max-w-4xl mx-auto">
             Elles nous font confiance pour leur{" "}
             <em className="italic text-[var(--rose-dark)]">
               communication engagée

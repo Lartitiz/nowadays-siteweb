@@ -8,7 +8,7 @@ export function ManifestoSection() {
             <p className="block font-mono text-xs uppercase tracking-[0.2em] text-rose-dark mb-6 sm:mb-8">
               Notre manifeste
             </p>
-            <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink break-words hyphens-auto">
+            <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink break-words hyphens-auto">
               Une communication engagée comme outil{" "}
               <em>d'émancipation</em>.
             </h2>

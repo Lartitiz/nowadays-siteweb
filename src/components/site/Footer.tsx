@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <footer className="w-full bg-cream">
       <div className="mx-auto max-w-7xl px-6 pt-20 pb-12">
-        <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+        <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
           Votre agence de communication pop & <em>engagée</em>
         </h2>
 

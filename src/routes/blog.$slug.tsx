@@ -240,7 +240,7 @@ function ArticlePage() {
       {related.length > 0 && (
         <section className="bg-rose-light">
           <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-            <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+            <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
               À <em>lire</em> aussi
             </h2>
             <div className="mt-12 grid gap-x-10 gap-y-16 md:grid-cols-3">

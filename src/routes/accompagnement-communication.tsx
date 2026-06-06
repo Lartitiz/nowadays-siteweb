@@ -36,7 +36,7 @@ export const Route = createFileRoute("/accompagnement-communication")({
 
 /* ------------------------------ helpers ------------------------------ */
 
-const H2 = "font-serif text-4xl md:text-6xl leading-[1.05] text-ink";
+const H2 = "font-serif text-3xl md:text-5xl leading-[1.1] text-ink";
 
 function CtaButton({
   children = "Réserve ton café visio pour discuter de ton projet",
@@ -72,7 +72,7 @@ function HeroAccompagnement() {
   return (
     <section className="relative overflow-hidden bg-background">
       <div className="mx-auto max-w-5xl px-6 py-20 text-center md:py-28">
-        <h1 className="font-serif text-5xl leading-[1.02] text-ink md:text-7xl">
+        <h1 className="font-serif text-4xl leading-[1.05] text-ink md:text-6xl lg:text-7xl">
           Tu fais un travail <em>magnifique</em>.
           <br />
           Mais personne ne le voit.

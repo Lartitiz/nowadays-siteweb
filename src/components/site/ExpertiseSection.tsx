@@ -16,7 +16,7 @@ export function ExpertiseSection() {
     <section className="bg-[var(--cream)] py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6 md:px-10">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-[var(--ink)] mb-6">
+          <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-[var(--ink)] mb-6">
             Une <em className="not-italic italic text-[var(--rose-dark)]">expertise pointue</em>, sans le blabla corporate
           </h2>
           <p className="font-mono text-xs md:text-sm tracking-[0.22em] uppercase text-[var(--rose-dark)]">

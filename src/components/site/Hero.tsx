@@ -59,7 +59,7 @@ export function Hero() {
             </span>
           </div>
 
-          <h1 className="mt-8 font-serif text-5xl leading-[1.02] text-ink md:text-7xl lg:text-8xl">
+          <h1 className="mt-8 font-serif text-4xl leading-[1.05] text-ink md:text-6xl lg:text-7xl">
             Gagnez en <em>visibilité</em>
             <br />
             sans vendre votre âme.

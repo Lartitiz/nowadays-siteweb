@@ -479,7 +479,7 @@ function Section({
       id={id}
       className="scroll-mt-24 border-t border-ink/15 py-14 first-of-type:border-t-0 first-of-type:pt-0"
     >
-      <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+      <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
         {title}
       </h2>
       <div className="mt-8 space-y-5">{children}</div>

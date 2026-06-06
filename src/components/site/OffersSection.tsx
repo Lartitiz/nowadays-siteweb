@@ -136,7 +136,7 @@ export function OffersSection() {
           <p className="font-mono text-[12px] font-semibold uppercase tracking-[0.25em] text-rose-dark">
             Communication pour projets engagés
           </p>
-          <h2 className="mt-5 font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+          <h2 className="mt-5 font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
             Votre com' mérite mieux
             <br />
             que du <em>bricolage.</em>

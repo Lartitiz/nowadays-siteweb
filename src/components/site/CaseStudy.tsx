@@ -71,10 +71,10 @@ function SolutionsMarquee({ text }: { text: string }) {
       className="relative overflow-hidden bg-rose-light py-8 md:py-12"
     >
       <div className="flex w-max animate-cs-marquee whitespace-nowrap will-change-transform">
-        <span className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink pr-8">
+        <span className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink pr-8">
           {phrase}
         </span>
-        <span className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink pr-8">
+        <span className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink pr-8">
           {phrase}
         </span>
       </div>
@@ -120,7 +120,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
             </div>
           )}
 
-          <h1 className="mx-auto max-w-4xl font-serif text-5xl leading-[1.02] text-ink md:text-7xl lg:text-8xl">
+          <h1 className="mx-auto max-w-4xl font-serif text-4xl leading-[1.05] text-ink md:text-6xl lg:text-7xl">
             {data.title}
           </h1>
 
@@ -140,7 +140,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
       {data.context && (
         <section className="bg-background">
           <div className="mx-auto max-w-3xl px-6 pt-20 md:pt-28">
-            <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+            <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
               Un peu de <em className="not-italic text-rose-dark italic">contexte</em>
             </h2>
             <div className="mt-10 space-y-5">
@@ -216,7 +216,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
       {data.influencers && data.influencers.items.length > 0 && (
         <section className="bg-rose-light">
           <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
-            <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink text-center">
+            <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink text-center">
               <em className="not-italic text-rose-dark italic">Influenceurs</em>
             </h2>
             {data.influencers.intro && (
@@ -274,7 +274,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
       {data.results && data.results.items.length > 0 && (
         <section className="bg-rose-light">
           <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
-            <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink text-center">
+            <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink text-center">
               Les <em className="not-italic text-rose-dark italic">résultats</em>
             </h2>
             {data.results.intro && (

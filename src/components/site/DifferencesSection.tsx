@@ -48,7 +48,7 @@ export function DifferencesSection() {
           <p className="font-mono text-xs md:text-sm tracking-[0.22em] uppercase text-[var(--rose-dark)] mb-6">
             Pas votre agence de communication classique
           </p>
-          <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-[var(--ink)]">
+          <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-[var(--ink)]">
             Ce qui nous rend <em className="not-italic italic text-[var(--rose-dark)]">différentes</em>
           </h2>
         </div>
