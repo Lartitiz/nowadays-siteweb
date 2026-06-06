@@ -89,7 +89,7 @@ function OfferCard({ offer }: { offer: Offer }) {
         {offer.audience}
       </span>
 
-      <h3 className="mt-3 font-serif text-3xl leading-[1.15] text-ink md:text-4xl">
+      <h3 className="mt-3 font-serif text-2xl leading-[1.15] text-ink md:text-3xl">
         {offer.title}{" "}
         <span style={{ color: accentVar }}>{offer.highlight}</span>
       </h3>

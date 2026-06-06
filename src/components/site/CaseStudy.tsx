@@ -120,7 +120,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
             </div>
           )}
 
-          <h1 className="mx-auto max-w-3xl font-serif text-4xl leading-[1.05] text-ink md:text-6xl">
+          <h1 className="mx-auto max-w-4xl font-serif text-5xl leading-[1.02] text-ink md:text-7xl lg:text-8xl">
             {data.title}
           </h1>
 
@@ -175,7 +175,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
           {data.solutions.map((s, i) => (
             <article key={i}>
               <div className="mx-auto max-w-3xl">
-                <h3 className="font-serif text-3xl leading-[1.1] text-ink md:text-4xl">
+                <h3 className="font-serif text-2xl leading-[1.15] text-ink md:text-3xl">
                   {s.title}
                 </h3>
                 {s.paragraphs?.map((p, j) => (
