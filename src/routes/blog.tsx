@@ -83,7 +83,7 @@ function BlogPage() {
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-rose-dark">
             Journal
           </p>
-          <h1 className="mt-6 font-serif text-5xl leading-[1.02] text-ink md:text-8xl">
+          <h1 className="mt-6 font-serif text-4xl leading-[1.05] text-ink md:text-6xl lg:text-7xl">
             Le <em className="text-rose-dark">blog</em>
           </h1>
           <p className="mt-8 max-w-2xl font-mono text-base text-ink md:text-lg">

@@ -112,7 +112,7 @@ function Why() {
   return (
     <section className="bg-cream">
       <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
-        <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+        <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
           Pourquoi écrire son <em className="text-rose-dark">storytelling</em> ?
         </h2>
 
@@ -179,7 +179,7 @@ function Benefits() {
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-5">
-            <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+            <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
               Ce que tu vas en <em className="text-rose-dark">tirer</em>
             </h2>
             <p className="mt-8 font-mono text-sm text-ink leading-relaxed">
@@ -230,7 +230,7 @@ function Audience() {
   return (
     <section className="bg-cream">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
-        <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+        <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
           Pour qui c'est <em className="text-rose-dark">fait</em> ?
         </h2>
 
@@ -364,7 +364,7 @@ function Program() {
           <p className="font-mono text-xs uppercase tracking-[0.24em] text-rose-dark">
             · La méthode ·
           </p>
-          <h2 className="mt-6 font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+          <h2 className="mt-6 font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
             5 étapes, <em className="text-rose-dark">~80 min</em> pour écrire ton récit
           </h2>
         </div>
@@ -449,7 +449,7 @@ function FinalCTA() {
             <p className="font-mono text-xs uppercase tracking-[0.24em] text-cream/80">
               · Téléchargement gratuit ·
             </p>
-            <h2 className="mt-6 font-serif text-4xl md:text-6xl leading-[1.05] text-cream">
+            <h2 className="mt-6 font-serif text-3xl md:text-5xl leading-[1.1] text-cream">
               Reçois ton guide <em className="text-rose-mid">maintenant</em>
             </h2>
             <p className="mt-6 font-mono text-sm text-cream/80 leading-relaxed">

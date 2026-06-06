@@ -58,7 +58,7 @@ function Hero() {
   return (
     <section className="bg-background">
       <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
-        <h1 className="font-serif text-5xl leading-[1.02] text-ink md:text-6xl lg:text-7xl">
+        <h1 className="font-serif text-4xl leading-[1.05] text-ink md:text-6xl lg:text-7xl">
           Déléguez <em>votre com'</em> et concentrez-vous sur l'essentiel.
         </h1>
         <p className="mx-auto mt-8 max-w-2xl font-mono text-base text-ink md:text-lg">
@@ -119,7 +119,7 @@ function ProblemSection() {
   return (
     <section className="py-20 md:py-28">
       <div className="mx-auto max-w-3xl px-6">
-        <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+        <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
           Vous portez un projet qui a du sens. Mais <em>la com'</em>, ça coince.
         </h2>
         <p className="mt-8 font-mono text-base text-ink leading-relaxed">
@@ -160,7 +160,7 @@ function LaetitiaIntroSection() {
             Je vous propose de prendre en main votre communication pour que vous
             respiriez
           </p>
-          <h2 className="mt-6 font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+          <h2 className="mt-6 font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
             Parce que gérer une structure engagée, c'est déjà un job à temps plein
           </h2>
           <p className="mt-8 font-mono text-base text-ink leading-relaxed">
@@ -230,7 +230,7 @@ function PourquoiTravaillerSection() {
   return (
     <section className="bg-cream py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="max-w-3xl font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+        <h2 className="max-w-3xl font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
           Pourquoi <em>travailler avec moi</em> plutôt qu'une grosse agence ?
         </h2>
         <div className="mt-16 grid gap-8 md:grid-cols-3">
@@ -279,7 +279,7 @@ function ProcessSection() {
   return (
     <section className="py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+        <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
           Comment <em>ça se passe</em> ?
         </h2>
         <div className="mt-16 grid gap-10 md:grid-cols-3">
@@ -339,7 +339,7 @@ function PrestationsSection() {
   return (
     <section className="bg-rose-light py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+        <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
           Un accompagnement sur-mesure pour une{" "}
           <em>communication plus éthique</em>
         </h2>

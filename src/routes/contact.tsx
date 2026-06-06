@@ -80,7 +80,7 @@ function ContactPage() {
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-rose-dark">
             On vous écoute
           </p>
-          <h1 className="mt-6 font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+          <h1 className="mt-6 font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
             Discutons de <em className="not-italic italic text-rose-dark">votre projet</em>.
           </h1>
           <p className="mx-auto mt-6 max-w-xl font-mono text-base text-ink leading-relaxed whitespace-pre-line">
@@ -96,7 +96,7 @@ function ContactPage() {
           <div className="rounded-md bg-rose-light p-6 md:p-10">
             {status === "success" ? (
               <div className="py-12 text-center">
-                <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+                <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
                   Message <em className="not-italic italic text-rose-dark">bien reçu</em>.
                 </h2>
                 <p className="mx-auto mt-6 max-w-md font-mono text-base text-ink leading-relaxed">
@@ -322,7 +322,7 @@ function ContactPage() {
       {/* Ce qui se passe ensuite */}
       <section className="bg-rose-light">
         <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
-          <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink text-center">
+          <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink text-center">
             Ce qui se passe <em className="not-italic italic text-rose-dark">ensuite</em>.
           </h2>
           <ol className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-3">
@@ -362,7 +362,7 @@ function ContactPage() {
       {/* FAQ */}
       <section className="bg-background">
         <div className="mx-auto max-w-3xl px-6 py-20 md:py-28">
-          <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+          <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
             Questions <em className="not-italic italic text-rose-dark">fréquentes</em>
           </h2>
           <dl className="mt-12 space-y-8">

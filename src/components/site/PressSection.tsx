@@ -34,7 +34,7 @@ export function PressSection() {
   return (
     <section className="bg-cream py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-6">
-        <h2 className="text-center font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+        <h2 className="text-center font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
           Vu dans la{" "}
           <span className="relative inline-block">
             <em>presse</em>

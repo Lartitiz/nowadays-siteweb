@@ -53,7 +53,7 @@ export function TiredSection() {
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 md:grid-cols-12 md:gap-12">
         {/* Colonne gauche */}
         <div className="relative md:col-span-7">
-          <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+          <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
             Fatiguée du <em>marketing</em>
             <br />
             <em>agressif et des injonctions ?</em>

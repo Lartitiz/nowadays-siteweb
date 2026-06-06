@@ -16,7 +16,7 @@ export function CtaWaveSection() {
 
       <div className="bg-rose-light">
         <div className="mx-auto max-w-4xl px-6 py-24 md:py-32 text-center">
-          <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+          <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
             Prête à communiquer autrement ?
           </h2>
 

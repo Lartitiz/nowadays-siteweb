@@ -317,7 +317,7 @@ function Hero() {
         <p className="font-mono text-xs uppercase tracking-[0.22em] text-ink">
           Créateur·ices lifestyle éthiques
         </p>
-        <h1 className="mt-6 font-serif text-5xl leading-[1.02] text-ink md:text-6xl lg:text-7xl">
+        <h1 className="mt-6 font-serif text-4xl leading-[1.05] text-ink md:text-6xl lg:text-7xl">
           Ils nous ont fait <em className="text-rose-dark">confiance</em>
         </h1>
         <p className="mx-auto mt-8 max-w-2xl font-mono text-base text-ink md:text-lg">

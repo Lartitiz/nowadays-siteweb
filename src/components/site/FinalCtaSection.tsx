@@ -2,7 +2,7 @@ export function FinalCtaSection() {
   return (
     <section id="contact" className="bg-cream py-20 md:py-28">
       <div className="mx-auto max-w-3xl px-6 text-center">
-        <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-ink">
+        <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
           Prêt·es à <em>avancer</em> ?
         </h2>
 

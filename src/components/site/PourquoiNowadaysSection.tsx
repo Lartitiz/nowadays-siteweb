@@ -5,7 +5,7 @@ export function PourquoiNowadaysSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Titre avec underline calligraphique */}
           <div className="lg:col-span-6">
-            <h2 className="font-serif text-4xl md:text-6xl leading-[1.05] text-[var(--ink)]">
+            <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-[var(--ink)]">
               Pourquoi <em>Nowadays</em> ?
             </h2>
           </div>
