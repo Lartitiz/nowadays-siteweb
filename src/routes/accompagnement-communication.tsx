@@ -108,13 +108,13 @@ function HeroAccompagnement() {
 
 function ClientsBand() {
   const clients = [
-    { name: "Atelier Tiket", style: "serif" },
-    { name: "Ikigai", style: "serif-italic" },
-    { name: "Boom Boom Dance", style: "mono" },
-    { name: "Hopla", style: "serif" },
-    { name: "NAPPERON", style: "mono" },
-    { name: "SLF", style: "serif" },
-  ] as const;
+    { name: "Atelier Tiket", logo: logoAtelierTiket.url, alt: "Logo Atelier Tiket" },
+    { name: "Ikigai", logo: logoIkigai.url, alt: "Logo Ikigai" },
+    { name: "Boom Boom Dance", logo: logoBoomBoomDance.url, alt: "Logo Boom Boom Dance" },
+    { name: "Hopla", logo: logoHopla.url, alt: "Logo Hopla" },
+    { name: "Napperon", logo: logoNapperon.url, alt: "Logo Napperon" },
+    { name: "SLF", logo: logoSlf.url, alt: "Logo SLF" },
+  ];
 
   return (
     <section className="bg-rose-light">
@@ -122,23 +122,18 @@ function ClientsBand() {
         <p className="text-center font-serif text-xl italic text-rose-dark md:text-2xl">
           Elles m'ont fait confiance
         </p>
-        <div className="mt-10 grid grid-cols-2 items-center justify-items-center gap-8 md:grid-cols-6">
+        <div className="mt-10 grid grid-cols-2 items-center justify-items-center gap-x-8 gap-y-10 md:grid-cols-6">
           {clients.map((c) => (
             <div
               key={c.name}
-              className="flex h-16 w-full items-center justify-center"
+              className="flex h-20 w-full items-center justify-center"
             >
-              <span
-                className={
-                  c.style === "serif"
-                    ? "font-serif text-lg text-ink"
-                    : c.style === "serif-italic"
-                      ? "font-serif text-lg italic text-ink"
-                      : "font-mono text-xs uppercase tracking-[0.18em] text-ink"
-                }
-              >
-                {c.name}
-              </span>
+              <img
+                src={c.logo}
+                alt={c.alt}
+                className="max-h-16 w-auto object-contain"
+                loading="lazy"
+              />
             </div>
           ))}
         </div>
