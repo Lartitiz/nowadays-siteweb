@@ -1,28 +1,37 @@
 ## Objectif
 
-Sur `/accompagnement-communication`, la section "Elles m'ont fait confiance" affiche actuellement les noms des clientes en texte stylé. On les remplace par les vrais logos PNG scrapés depuis `nowadaysagency.com/accompagnement-communication`.
-
-## Logos identifiés (6)
-
-| Client | URL source |
-|---|---|
-| Atelier Tiket | `.../2ed079e2.../13.png` (cercle bleu clair) |
-| Ikigai | `.../e51d4725.../16.png` (fond gris foncé) |
-| Boom Boom Dance | `.../df91bb92.../18.png` (orange + cœur rose) |
-| Hopla | `.../3b1fd231.../Site+web+logo.png` (ovale "HOPELA") |
-| Napperon | `.../99e9ece9.../4.png` (noir motif fleur) |
-| SLF | `.../64a54fb3.../19.png` (vert lettres blanches) |
+Récupérer toutes les images de https://www.nowadaysagency.com/accompagnement-communication (photo de Laetitia, visuels de sections, etc. — hors logos clients déjà intégrés) et les remettre aux bons endroits dans `src/routes/accompagnement-communication.tsx`.
 
 ## Étapes
 
-1. Télécharger les 6 PNG dans `/tmp/` via `curl`.
-2. Uploader chacun via `lovable-assets create --file ... --filename <slug>.png` et écrire les pointeurs dans `src/assets/clients-accompagnement/{atelier-tiket,ikigai,boom-boom-dance,hopla,napperon,slf}.png.asset.json`.
-3. Modifier `src/components/...` — en fait section `ClientsBand` dans `src/routes/accompagnement-communication.tsx` (lignes 109-148) :
-   - Remplacer le tableau `clients` par `{ name, logo, alt }` important les 6 `.asset.json`.
-   - Remplacer le `<span>` stylé par `<img src={c.logo} alt={c.alt} className="max-h-12 w-auto object-contain" loading="lazy" />`.
-   - Garder la grille `grid-cols-2 md:grid-cols-6`, la hauteur `h-16` et le titre inchangés.
+1. **Scraper la page source**
+   - Charger la page avec `fetch_website` (HTML) pour récupérer toutes les URLs d'images.
+   - Identifier chaque image : URL, contexte (titre de section voisin), rôle probable (photo portrait, illustration, mockup, etc.).
+   - Exclure : favicons, sprites, et les 6 logos clients déjà intégrés.
 
-## Hors-scope
+2. **Cartographier image ↔ section dans notre page**
+   Sections actuelles qui ont besoin d'un visuel :
+   - `LaetitiaIntroSection` — bloc `aspect-[4/5]` actuellement vide → **photo portrait de Laetitia**
+   - Autres sections (timeline, transformation, prix…) → ajouter visuel uniquement si présent sur la page source et pertinent
+   
+   Je présenterai le mapping proposé dans un message de suivi avant intégration si plusieurs images ambiguës.
 
-- Pas de changement du wording du titre ni du layout (couleurs, espacements identiques).
-- Pas de modification des autres mentions "Atelier Tiket" plus bas dans la page (témoignages).
+3. **Télécharger + uploader en assets CDN**
+   - `curl` chaque image vers `/tmp/`
+   - `lovable-assets create --file` pour chaque fichier
+   - Écrire les pointeurs `.asset.json` dans `src/assets/accompagnement/{nom}.{ext}.asset.json`
+
+4. **Intégrer dans `src/routes/accompagnement-communication.tsx`**
+   - Ajouter les imports `.asset.json`
+   - Remplacer le bloc vide `<div className="aspect-[4/5] w-full bg-rose-light" />` par `<img>` avec la photo de Laetitia
+   - Insérer les autres visuels aux sections correspondantes en respectant les conventions typo/spacing existantes (pas de modif des H2/H3, palette inchangée)
+
+## Hors scope
+
+- Les 6 logos clients (déjà faits)
+- Modifications de texte ou de structure des sections
+- Création de nouvelles sections juste pour caser une image
+
+## Question (1)
+
+Veux-tu **toutes** les images de la page source remises là où elles sont sur l'original, ou **uniquement la photo de Laetitia** pour commencer ? Je peux aussi te lister d'abord ce que j'ai trouvé avant de tout intégrer.
