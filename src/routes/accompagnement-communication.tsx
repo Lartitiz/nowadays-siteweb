@@ -7,6 +7,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import logoAtelierTiket from "@/assets/clients-accompagnement/atelier-tiket.png.asset.json";
+import logoIkigai from "@/assets/clients-accompagnement/ikigai.png.asset.json";
+import logoBoomBoomDance from "@/assets/clients-accompagnement/boom-boom-dance.png.asset.json";
+import logoHopla from "@/assets/clients-accompagnement/hopla.png.asset.json";
+import logoNapperon from "@/assets/clients-accompagnement/napperon.png.asset.json";
+import logoSlf from "@/assets/clients-accompagnement/slf.png.asset.json";
+
 
 const CALENDLY = "https://calendly.com/laetitia-mattioli/appel-decouverte";
 
