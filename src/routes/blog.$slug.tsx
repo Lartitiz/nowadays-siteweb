@@ -149,7 +149,7 @@ function renderBlock(b: ArticleBlock, i: number) {
     return (
       <h2
         key={i}
-        className="mt-16 mb-6 font-serif text-4xl leading-[1.05] text-ink md:text-6xl"
+        className="mt-16 mb-6 font-serif text-3xl md:text-5xl leading-[1.1] text-ink"
       >
         <RichText text={b.text} />
       </h2>
@@ -159,7 +159,7 @@ function renderBlock(b: ArticleBlock, i: number) {
     return (
       <h3
         key={i}
-        className="mt-10 mb-4 font-serif text-2xl leading-tight text-ink md:text-3xl"
+        className="mt-10 mb-4 font-serif text-xl md:text-2xl leading-[1.2] text-ink"
       >
         <RichText text={b.text} />
       </h3>
