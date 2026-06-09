@@ -7,6 +7,27 @@ import ensadPslLogo from "@/assets/coop-logos/ensad-psl.jpg.asset.json";
 import emmausDefiLogo from "@/assets/coop-logos/emmaus-defi.png.asset.json";
 import seaShepherdLogo from "@/assets/coop-logos/sea-shepherd.png.asset.json";
 import laetitiaPhoto from "@/assets/coop/laetitia.jpg.asset.json";
+import imgEnsad from "@/assets/etudes-pro/ensad.jpg.asset.json";
+import imgSeaShepherd from "@/assets/etudes-pro/sea-shepherd.jpg.asset.json";
+import imgDecathlon from "@/assets/etudes-pro/decathlon-quechua.jpg.asset.json";
+import imgEmmaus from "@/assets/etudes-pro/emmaus-defi.jpg.asset.json";
+import imgClipIt from "@/assets/etudes-pro/clip-it.jpg.asset.json";
+import imgL214 from "@/assets/etudes-pro/l214.jpg.asset.json";
+import imgCoopOasis from "@/assets/etudes-pro/cooperative-oasis.jpg.asset.json";
+import imgOkahina from "@/assets/etudes-pro/okahina-wave.jpg.asset.json";
+import imgStudyCo from "@/assets/etudes-pro/study-co.webp.asset.json";
+import imgMira from "@/assets/etudes-pro/mira.jpg.asset.json";
+import imgBlackStallion from "@/assets/etudes/black-stallion-trading.webp.asset.json";
+import imgRessources from "@/assets/etudes/ressources.png.asset.json";
+import imgWeSlow from "@/assets/etudes/we-slow.jpg.asset.json";
+import imgJeanBelgueule from "@/assets/etudes/jean-belgueule.jpg.asset.json";
+import imgEssentialOil from "@/assets/etudes/essential-oil-supplies.jpg.asset.json";
+import imgBrunoZana from "@/assets/etudes-pro/bruno-zana.jpg.asset.json";
+import imgAtelierLunettes from "@/assets/etudes-pro/atelier-des-lunettes.webp.asset.json";
+import imgMyPilates from "@/assets/etudes/my-pilates-world.jpg.asset.json";
+import imgBelle from "@/assets/etudes/belle.jpg.asset.json";
+import imgRoseDonald from "@/assets/etudes/rose-donald.jpg.asset.json";
+import imgLaProchaineAire from "@/assets/etudes-pro/la-prochaine-aire.jpg.asset.json";
 
 const CALENDLY_URL =
   "https://calendly.com/laetitia-mattioli/appel-decouverte-atelier";
