@@ -160,15 +160,14 @@ function ProblemSection() {
         <div className="mt-10 space-y-6 font-mono text-base text-ink">
           <p>
             Tu sais que ta com' est importante, mais tu ne sais pas par où
-            commencer. Et quand tu essaies, t'as l'impression de parler dans
-            le vide.
+            commencer.
           </p>
           <p>
-            Le pire ? T'as déjà suivi des formations. T'as déjà téléchargé des
-            templates. T'as peut-être même payé quelqu'un pour te faire un
-            « plan ». Sauf que le plan, il est resté dans un Google Doc que tu
-            n'as jamais rouvert. <em>(On en a tou·tes un.)</em>
+            Le pire ? T'as déjà suivi des formations, téléchargé des templates
+            et peut-être même payé quelqu'un pour te faire un « plan ». Sauf que
+            le plan, il est resté dans un Google Doc que tu n'as jamais rouvert.
           </p>
+          <p>(On en a tou·tes un.)</p>
           <p>
             Le problème, c'est pas toi. C'est qu'on t'a donné des outils sans
             personne pour les utiliser avec toi.
