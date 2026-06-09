@@ -395,86 +395,107 @@ function PrestationsSection() {
 const PROJECTS = [
   {
     name: "École des Arts Décoratifs",
+    img: imgEnsad.url,
     desc: "Pour attirer du monde à l'exposition de Gérard Baudoin : réseaux sociaux, emailing ciblé et micro-influence — 700 visiteurs en une semaine, 5 articles, +100 clics vers l'événement.",
   },
   {
     name: "Sea Shepherd × Racines de Demain",
+    img: imgSeaShepherd.url,
     desc: "Campagne #PlutôtQue pour corriger la perception et mobiliser les dons : un plan en 4 actes, des images d'archives pour limiter l'impact, des actions ciblées sur Twitter et Instagram.",
   },
   {
     name: "Decathlon × Quechua",
+    img: imgDecathlon.url,
     desc: "Pour leur révolution circulaire (seconde main, réparation, location, recyclage), nous avons créé une campagne accessible pour expliquer l'initiative.",
   },
   {
     name: "Emmaüs Défi",
+    img: imgEmmaus.url,
     desc: "Un atelier de personal branding d'une demi-journée pour humaniser la marque : 3× plus de contenus personnalisés et des équipes désormais à l'aise pour raconter leur histoire.",
   },
   {
     name: "Clip It",
+    img: imgClipIt.url,
     desc: "Jeu créatif à base de bouchons upcyclés. Nous avons aidé à raconter cette aventure ludique et écologique (SEO et Instagram).",
   },
   {
     name: "L214",
+    img: imgL214.url,
     desc: "Un camion immersif et 50 micro-influenceur·ses pour dénoncer l'élevage intensif et pousser LDC à signer l'European Chicken Commitment : 500 000 vues, +10 000 signatures.",
   },
   {
     name: "Coopérative Oasis",
+    img: imgCoopOasis.url,
     desc: "Un écosystème d'écolieux qui bâtissent un autre modèle de société. Stratégie de communication pour leur festival : identité, storytelling et community management.",
   },
   {
     name: "Okahina Wave",
+    img: imgOkahina.url,
     desc: "Gestion des comptes Twitter et LinkedIn, blog et interviews d'influenceurs surf : 1 500 personnes atteintes/semaine, 2 000 visiteurs uniques, 50 000 fans via 10 influenceurs.",
   },
   {
     name: "Study & Co",
+    img: imgStudyCo.url,
     desc: "Plateforme qui digitalise l'onboarding des étudiant·es : +20 % de conversion, -260 h de demandes dans les écoles. Nous avons structuré leur marque autour de ces atouts.",
   },
   {
     name: "Mira",
+    img: imgMira.url,
     desc: "Huiles naturelles récoltées en France et à Madagascar, production française et transparence totale. Nous avons structuré leur stratégie de marque autour de leurs valeurs.",
   },
   {
     name: "Black Stallion Trading",
+    img: imgBlackStallion.url,
     desc: "Une marque-showroom qui revendique le luxe conscient. Stratégie digitale complète, de l'identité visuelle à l'influence, pour accroître sa notoriété.",
   },
   {
     name: "Ressources — Emmanuelle Riboud",
+    img: imgRessources.url,
     desc: "Changer la cantine pour changer le monde. Repenser l'alimentation scolaire avec bon sens et amour du vivant. Bases d'une stratégie de marque et de communication.",
   },
   {
     name: "We Slow",
+    img: imgWeSlow.url,
     desc: "Accélérateur de marques de mode écoresponsables. Atelier pour structurer leur plan de communication et clarifier leur stratégie de visibilité.",
   },
   {
     name: "Jean Belgueule",
+    img: imgJeanBelgueule.url,
     desc: "Soins pour hommes, simplicité et éco-responsabilité. Présence digitale structurée et image cohérente : storytelling, identité visuelle, calendrier social media.",
   },
   {
     name: "Essential Oil Supplies",
+    img: imgEssentialOil.url,
     desc: "L'e-shop des passionné·es d'aromathérapie. Stratégie Instagram pour fédérer une communauté autour du DIY et des bienfaits des huiles essentielles.",
   },
   {
     name: "Bruno Zana",
+    img: imgBrunoZana.url,
     desc: "Opticien indépendant à Paris : lunettes de créateurs et accompagnement sur-mesure. Branding et stratégie de communication : site élégant, manifeste et contenus pédagogiques.",
   },
   {
     name: "Atelier des lunettes",
+    img: imgAtelierLunettes.url,
     desc: "Boutique de lunettes de créateurs. Refonte site, présence Insta/FB/LinkedIn, manifeste : +46 % de reach social, 1ʳᵉ page SEO et +2 000 followers.",
   },
   {
     name: "My Pilates World",
+    img: imgMyPilates.url,
     desc: "Plateforme bien-être née du désir de proposer l'expérience studio à la maison. Stratégie globale : positionnement, réseaux, email marketing et contenus.",
   },
   {
     name: "Belle.",
+    img: imgBelle.url,
     desc: "Cosmétiques bio, vegan, fabriqués en France. Branding et stratégie Instagram pour incarner une beauté éthique et désirable.",
   },
   {
     name: "Rose Donald",
+    img: imgRoseDonald.url,
     desc: "Maison capillaire dans un passage du Marais : rituels de soin sur-mesure. Stratégie de marque et présence en ligne (site, Insta, influence).",
   },
   {
     name: "La prochaine aire",
+    img: imgLaProchaineAire.url,
     desc: "Tiers-lieu associatif dans une ancienne maison éclusière. Lancement de la com' : storytelling, relations presse, Instagram. Article dans Brut et posts viraux.",
   },
 ];
