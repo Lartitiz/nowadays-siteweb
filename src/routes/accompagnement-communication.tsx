@@ -13,6 +13,7 @@ import logoBoomBoomDance from "@/assets/clients-accompagnement/boom-boom-dance.p
 import logoHopla from "@/assets/clients-accompagnement/hopla.png.asset.json";
 import logoNapperon from "@/assets/clients-accompagnement/napperon.png.asset.json";
 import logoSlf from "@/assets/clients-accompagnement/slf.png.asset.json";
+import laetitiaPhoto from "@/assets/accompagnement/laetitia.jpg.asset.json";
 
 
 const CALENDLY = "https://calendly.com/laetitia-mattioli/appel-decouverte";
@@ -182,7 +183,14 @@ function LaetitiaIntroSection() {
   return (
     <section className="bg-rose-light">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-2 md:items-center">
-        <div className="aspect-[4/5] w-full bg-rose-light" />
+        <div className="aspect-[4/5] w-full overflow-hidden rounded-[32px] bg-rose-light">
+          <img
+            src={laetitiaPhoto.url}
+            alt="Portrait de Laetitia, fondatrice de Nowadays"
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
         <div>
           <SectionEyebrow>Enchantée</SectionEyebrow>
           <h2 className={H2}>
