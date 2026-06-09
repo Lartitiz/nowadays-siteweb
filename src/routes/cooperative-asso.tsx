@@ -516,7 +516,12 @@ function ProjetsGrid() {
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((p) => (
             <article key={p.name} className="flex flex-col">
-              <div className="aspect-[16/10] w-full rounded-2xl bg-rose-light" aria-hidden />
+              <img
+                src={p.img}
+                alt={p.name}
+                loading="lazy"
+                className="aspect-[16/10] w-full rounded-2xl object-cover"
+              />
               <h3 className="mt-6 font-serif text-2xl text-ink">{p.name}</h3>
               <p className="mt-3 font-mono text-sm text-ink leading-relaxed">
                 {p.desc}
