@@ -110,7 +110,7 @@ function ClientsBand() {
 const PROBLEM_POINTS = [
   "L'équipe est débordée, la com' passe toujours après",
   "Vous postez quand vous pouvez, sans vraie stratégie",
-  "Le digital, ce n'est pas votre cœur de métier (et ça se sent)",
+  "\n",
   "Vous avez besoin de quelqu'un qui fasse, pas juste qui conseille",
   "Et surtout : vous n'avez pas le temps de relire, corriger, valider 15 versions",
 ];
