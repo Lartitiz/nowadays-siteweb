@@ -1,19 +1,53 @@
-## Vérification
+## Diagnostic
 
-Oui, la page `https://www.nowadaysagency.com/etude-de-cas-ethique` a bien été scrapée : elle existe dans le projet sous la route `/etudes-de-cas-pro` (`src/routes/etudes-de-cas-pro.tsx`), avec son SEO, son schema BreadcrumbList et la grille de projets.
+Les 13 articles **sont bien scrapés** et présents en base (entre 46 et 215 blocs de contenu chacun, tous avec cover). Le script `scripts/scrape-blog.mjs` a fait son travail.
 
-Actuellement, dans le `Header.tsx`, l'entrée du menu **Études de cas → "Coopératives, assos & PME"** pointe par erreur vers `/cooperative-asso` (qui est la page commerciale "Ton agency"), pas vers la page d'études de cas.
+**Le vrai bug** : quand on clique sur un article, l'URL change bien vers `/blog/agence-communication-engagee` mais la page affichée reste la **liste du blog**. L'article ne se rend jamais. C'est ça qui te fait croire qu'ils ne sont pas scrapés.
 
-## Changement
+**Cause** : en routing TanStack Start à plat, dès qu'il existe un fichier `blog.$slug.tsx`, le fichier `blog.tsx` devient un **layout parent**. Il doit alors rendre un `<Outlet />` pour que l'enfant `/blog/$slug` s'affiche. Or `src/routes/blog.tsx` rend directement la page liste (`BlogPage`) sans `<Outlet />`. Résultat : pour `/blog/$slug`, le routeur matche bien le child mais c'est le parent (la liste) qui s'affiche par-dessus.
 
-Dans `src/components/site/Header.tsx`, modifier le tableau `etudesItems` :
+## Plan d'action
 
-- Entrée "Coopératives, assos & PME" : `to: "/cooperative-asso"` → `to: "/etudes-de-cas-pro"`
+### Étape 1 — Fix routing (priorité, 1 fichier)
 
-L'entrée "Créatrices éthiques" (`/creatrices-ethiques`) reste inchangée.
+Convention TanStack : transformer `blog.tsx` en route index.
 
-Aucun autre fichier n'est touché. Les deux pages (`/cooperative-asso` commerciale et `/etudes-de-cas-pro` études de cas) restent accessibles directement par leur URL.
+1. Renommer `src/routes/blog.tsx` → `src/routes/blog.index.tsx` (aucun changement de code, juste le nom). Le routeur regénère `routeTree.gen.ts` automatiquement.
+2. Vérifier dans la preview : `/blog` affiche la liste, `/blog/agence-communication-engagee` affiche l'article complet.
 
-&nbsp;
+Après cette étape, **les 13 articles sont accessibles** avec leurs ~50 à 215 blocs (titres, paragraphes, citations, images).
 
- alors, oui, il faut changer l'URL. Du coup, [/etude-de-cas-ethique](https://www.nowadaysagency.com/etude-de-cas-ethique)
+### Étape 2 — Audit pixel-perfect du rendu article (vérification)
+
+Comparer côte à côte 2 articles preview ↔ Squarespace original pour identifier les écarts visuels. Je propose 2 articles :
+
+- `agence-communication-engagee` (long, 215 blocs, beaucoup d'images)
+- `communication-ethique` (court, 52 blocs)
+
+Pour chaque écart trouvé, je note le type :
+
+| Type d'écart | Exemple | Où corriger |
+|---|---|---|
+| Bloc manquant dans le scrape | Embed YouTube, formulaire, CTA Squarespace | `scripts/scrape-blog.mjs` : ajouter le sélecteur `.sqs-block-X` |
+| Mise en page différente | Spacing titres/paragraphes, alignement images | `renderBlock` dans `src/routes/blog.$slug.tsx` |
+| Style typographique | Taille H2, italiques, couleur citations | `renderBlock` |
+| Image dégradée / qualité | URL Squarespace avec `?format=…` retirée | `cleanImgUrl` dans le script |
+
+### Étape 3 — Re-scrape ciblé si besoin
+
+Si l'étape 2 révèle des blocs manquants (typiquement : listes à puces stylées, encadrés colorés, blocs HTML custom Squarespace, embeds), j'ajuste `scripts/scrape-blog.mjs` et je relance :
+
+```bash
+node scripts/scrape-blog.mjs   # régénère scripts/articles.json
+```
+
+Puis je pousse le contenu en base via une migration (UPDATE de la colonne `content` jsonb pour chaque slug). Les covers/titres/SEO ne sont pas réécrits sauf si tu le demandes.
+
+### Hors scope (sauf demande explicite)
+- Refonte du design des articles (typo, couleurs, layout) — la charte actuelle est respectée.
+- Ajout d'articles nouveaux (uniquement les 13 listés dans le script).
+- Réécriture du contenu.
+
+## Question
+
+Tu veux que je fasse les 3 étapes d'un coup, ou seulement l'étape 1 (fix routing) d'abord pour vérifier que les articles s'affichent bien, puis on décide pour l'audit pixel-perfect ?

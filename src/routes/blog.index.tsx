@@ -9,7 +9,7 @@ const articlesQueryOptions = queryOptions({
   queryFn: () => listArticles(),
 });
 
-export const Route = createFileRoute("/blog")({
+export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
       { title: "Le blog — Nowadays | Communication éthique" },
