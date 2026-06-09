@@ -6,6 +6,7 @@ import cooperativeOasisLogo from "@/assets/coop-logos/cooperative-oasis.png.asse
 import ensadPslLogo from "@/assets/coop-logos/ensad-psl.jpg.asset.json";
 import emmausDefiLogo from "@/assets/coop-logos/emmaus-defi.png.asset.json";
 import seaShepherdLogo from "@/assets/coop-logos/sea-shepherd.png.asset.json";
+import laetitiaPhoto from "@/assets/coop/laetitia.jpg.asset.json";
 
 const CALENDLY_URL =
   "https://calendly.com/laetitia-mattioli/appel-decouverte-atelier";
@@ -201,7 +202,12 @@ function LaetitiaIntroSection() {
             ✨ Appel gratuit • 30 minutes • Sans engagement
           </p>
         </div>
-        <div className="aspect-[4/5] w-full rounded-3xl bg-rose-light" aria-hidden />
+        <img
+          src={laetitiaPhoto.url}
+          alt="Laetitia Mattioli, fondatrice de Nowadays Agency"
+          loading="lazy"
+          className="aspect-[4/5] w-full rounded-3xl object-cover"
+        />
       </div>
     </section>
   );
