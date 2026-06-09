@@ -130,7 +130,7 @@ function ProblemSection() {
           Mais côté communication digitale, c'est une autre histoire :
         </p>
         <ul className="mt-6 space-y-3 font-mono text-base text-ink">
-          {PROBLEM_POINTS.map((p) => (
+          {PROBLEM_POINTS.filter(p => p.trim() !== "").map((p) => (
             <li key={p} className="flex gap-3">
               <span className="text-rose-dark">→</span>
               <span>{p}</span>
