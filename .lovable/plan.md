@@ -1,40 +1,28 @@
-## Constat
+## Objectif
 
-Actuel (desktop) :
-- H1 : `text-5xl md:text-7xl lg:text-8xl` → ~6rem (96px) en lg → trop massif
-- H2 : `text-4xl md:text-6xl` → ~3.75rem (60px)
-- H3 : `text-2xl md:text-3xl` → ~1.875rem (30px)
+Sur `/accompagnement-communication`, la section "Elles m'ont fait confiance" affiche actuellement les noms des clientes en texte stylé. On les remplace par les vrais logos PNG scrapés depuis `nowadaysagency.com/accompagnement-communication`.
 
-Le H1 écrase tout, surtout dans le Hero où il prend 2 lignes.
+## Logos identifiés (6)
 
-## Nouvelle échelle proposée
+| Client | URL source |
+|---|---|
+| Atelier Tiket | `.../2ed079e2.../13.png` (cercle bleu clair) |
+| Ikigai | `.../e51d4725.../16.png` (fond gris foncé) |
+| Boom Boom Dance | `.../df91bb92.../18.png` (orange + cœur rose) |
+| Hopla | `.../3b1fd231.../Site+web+logo.png` (ovale "HOPELA") |
+| Napperon | `.../99e9ece9.../4.png` (noir motif fleur) |
+| SLF | `.../64a54fb3.../19.png` (vert lettres blanches) |
 
-| Niveau | Mobile | Desktop | Pixels desktop |
-|---|---|---|---|
-| H1 | text-4xl | md:text-6xl lg:text-7xl | ~72px |
-| H2 | text-3xl | md:text-5xl | ~48px |
-| H3 | text-xl | md:text-2xl | ~24px |
+## Étapes
 
-Hiérarchie conservée (72 / 48 / 24), mais plus respirable et moins "agence brutaliste".
-
-## Fichiers à modifier
-
-**H1** (`font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.05] text-ink`) :
-- `src/components/site/Hero.tsx` ligne 62
-- `src/components/site/CaseStudy.tsx` ligne 123
-
-**H2** (`font-serif text-3xl md:text-5xl leading-[1.1] text-ink`) — 14 sections concernées :
-- Hero, ManifestoSection, OffersSection, ProcessSection, DifferencesSection, ExpertiseSection, LaetitiaSection, PourquoiNowadaysSection, TestimonialsSection, PressSection, FinalCtaSection, TiredSection, VisibilityBanner, CaseStudy (contexte/influenceurs/résultats + marquee)
-
-**H3** (`font-serif text-xl md:text-2xl leading-[1.2] text-ink`) :
-- `src/components/site/OffersSection.tsx` ligne 92
-- `src/components/site/CaseStudy.tsx` ligne 178
-
-## Mémoire
-
-Mettre à jour `mem://index.md` avec la nouvelle échelle (remplace les règles actuelles).
+1. Télécharger les 6 PNG dans `/tmp/` via `curl`.
+2. Uploader chacun via `lovable-assets create --file ... --filename <slug>.png` et écrire les pointeurs dans `src/assets/clients-accompagnement/{atelier-tiket,ikigai,boom-boom-dance,hopla,napperon,slf}.png.asset.json`.
+3. Modifier `src/components/...` — en fait section `ClientsBand` dans `src/routes/accompagnement-communication.tsx` (lignes 109-148) :
+   - Remplacer le tableau `clients` par `{ name, logo, alt }` important les 6 `.asset.json`.
+   - Remplacer le `<span>` stylé par `<img src={c.logo} alt={c.alt} className="max-h-12 w-auto object-contain" loading="lazy" />`.
+   - Garder la grille `grid-cols-2 md:grid-cols-6`, la hauteur `h-16` et le titre inchangés.
 
 ## Hors-scope
 
-- Pas de changement de famille / poids / couleur (Libre Baskerville 400 ink).
-- Les gros chiffres décoratifs (`StatBand`, stats Hero, valeurs résultats) restent inchangés — ce ne sont pas des titres sémantiques.
+- Pas de changement du wording du titre ni du layout (couleurs, espacements identiques).
+- Pas de modification des autres mentions "Atelier Tiket" plus bas dans la page (témoignages).
