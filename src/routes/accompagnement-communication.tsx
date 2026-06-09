@@ -183,7 +183,14 @@ function LaetitiaIntroSection() {
   return (
     <section className="bg-rose-light">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-2 md:items-center">
-        <div className="aspect-[4/5] w-full bg-rose-light" />
+        <div className="aspect-[4/5] w-full overflow-hidden rounded-[32px] bg-rose-light">
+          <img
+            src={laetitiaPhoto.url}
+            alt="Portrait de Laetitia, fondatrice de Nowadays"
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
         <div>
           <SectionEyebrow>Enchantée</SectionEyebrow>
           <h2 className={H2}>
