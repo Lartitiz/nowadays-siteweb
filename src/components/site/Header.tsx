@@ -24,7 +24,7 @@ const etudesItems: SubItem[] = [
   {
     label: "Coopératives, assos & PME",
     description: "Études de cas pour structures engagées",
-    to: "/cooperative-asso",
+    to: "/etudes-de-cas-pro",
   },
   {
     label: "Créatrices éthiques",
