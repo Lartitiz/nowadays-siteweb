@@ -222,25 +222,10 @@ function ArticlePage() {
           <p className="mt-8 font-mono text-xs uppercase tracking-[0.22em] text-ink">
             {article.author} · {formatDate(article.published_at)}
           </p>
-          <h1 className="mt-6 font-serif text-4xl leading-[1.05] text-ink md:text-6xl">
+          <h1 className="mt-6 font-serif text-4xl leading-[1.05] text-ink md:text-6xl lg:text-7xl">
             {article.title}
           </h1>
-          {article.excerpt && (
-            <p className="mt-8 font-serif text-xl italic leading-snug text-rose-dark md:text-2xl">
-              {article.excerpt}
-            </p>
-          )}
         </div>
-        {article.cover_url && (
-          <div className="mx-auto max-w-5xl px-6 pb-16">
-            <img
-              src={article.cover_url}
-              alt={article.cover_alt ?? article.title}
-              loading="eager"
-              className="aspect-[16/9] w-full rounded-sm object-cover"
-            />
-          </div>
-        )}
       </section>
 
       {/* Body */}
