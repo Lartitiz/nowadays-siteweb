@@ -9,6 +9,11 @@
     "seo_description": "Découvrez les critères écologiques et sociaux pour choisir une agence de communication engagée, éviter le greenwashing et amplifier votre impact.",
     "content": [
       {
+        "type": "button",
+        "text": "Clique ici pour recevoir les conseils gratuits",
+        "href": "https://subscribepage.io/nowadays"
+      },
+      {
         "type": "p",
         "text": "Vous lancez un projet **lifestyle éthique** (mode, déco, beauté, bien-être…) et vous cherchez une agence de communication alignée avec vos valeurs ?"
       },
@@ -885,6 +890,11 @@
         "text": "Et si tu veux encore + d’idées pour te rendre visible sans trahir tes valeurs ⤵️"
       },
       {
+        "type": "button",
+        "text": "Rejoins le club privé",
+        "href": "https://subscribepage.io/nowadays"
+      },
+      {
         "type": "p",
         "text": "Tenir une communication régulière quand on dirige **une petite marque éthique**, c’est tout un défi."
       },
@@ -1431,6 +1441,11 @@
       {
         "type": "p",
         "text": "Si tu veux plus de réflexions sur la communication éthique et pouvoir avoir de l’inspiration pour ton projet"
+      },
+      {
+        "type": "button",
+        "text": "Clique ici et rejoins le club privé",
+        "href": "https://subscribepage.io/nowadays"
       },
       {
         "type": "p",
@@ -1980,6 +1995,11 @@
         "text": "Et si tu veux + de conseils pour te rendre visible sans t’épuiser"
       },
       {
+        "type": "button",
+        "text": "Inscris toi au club privé",
+        "href": "https://subscribepage.io/nowadays"
+      },
+      {
         "type": "p",
         "text": "Tu veux savoir comment une petite marque de lifestyle peut passer de :"
       },
@@ -2096,6 +2116,11 @@
       {
         "type": "p",
         "text": "D’ailleurs, si vous souhaitez être [accompagné pour développer votre compte Instagram](/accompagnement-instagram), nous pouvons vous aider 😉"
+      },
+      {
+        "type": "button",
+        "text": "Diagnostic Instagram offert",
+        "href": "https://calendly.com/laetitia-mattioli/rendez-vous-avec-laetitia"
       },
       {
         "type": "h3",
@@ -2701,6 +2726,11 @@
       {
         "type": "h2",
         "text": "Tu as besoin d’aide pour te rendre visible ?"
+      },
+      {
+        "type": "button",
+        "text": "Prends rendez-vous pour discuter de ton projet",
+        "href": "https://calendly.com/laetitia-mattioli/rendez-vous-avec-laetitia"
       }
     ],
     "published_at": "2025-04-30"
@@ -2717,6 +2747,11 @@
       {
         "type": "h3",
         "text": "Et si on arrêtait de suivre les “codes” de l’influence pour créer autre chose ?"
+      },
+      {
+        "type": "button",
+        "text": "Rejoins le club privé",
+        "href": "https://subscribepage.io/nowadays"
       },
       {
         "type": "p",
@@ -2910,6 +2945,11 @@
       {
         "type": "h2",
         "text": "Tu as besoin d’aide pour te rendre visible sans manipuler qui que ce soit ?"
+      },
+      {
+        "type": "button",
+        "text": "Prends rdv pour discuter de ton projet",
+        "href": "https://calendly.com/laetitia-mattioli/rendez-vous-avec-laetitia"
       }
     ],
     "published_at": "2025-02-20"
@@ -2926,6 +2966,11 @@
       {
         "type": "h3",
         "text": "Ras-le-bol de la com’ “éthique” qui sent le greenwashing à plein nez ?"
+      },
+      {
+        "type": "button",
+        "text": "Rejoins la communauté privée",
+        "href": "https://subscribepage.io/nowadays"
       },
       {
         "type": "p",
@@ -3130,6 +3175,11 @@
       {
         "type": "h2",
         "text": "Tu as besoin d’aide pour te rendre visible avec une communication plus éthique ?"
+      },
+      {
+        "type": "button",
+        "text": "Prends rdv pour discuter de ton projet",
+        "href": "https://calendly.com/laetitia-mattioli/rendez-vous-avec-laetitia"
       }
     ],
     "published_at": "2025-02-20"
@@ -3146,6 +3196,11 @@
       {
         "type": "h3",
         "text": "Ras-le-bol des packagings “verts” vides de sens ?"
+      },
+      {
+        "type": "button",
+        "text": "Reçois nos cours gratuits",
+        "href": "https://subscribepage.io/nowadays"
       },
       {
         "type": "p",
@@ -3373,6 +3428,11 @@
       {
         "type": "h2",
         "text": "Tu as besoin d’aide pour te rendre visible sans te prendre la tête ?"
+      },
+      {
+        "type": "button",
+        "text": "Prends rdv pour discuter de ton projet",
+        "href": "https://calendly.com/laetitia-mattioli/rendez-vous-avec-laetitia"
       }
     ],
     "published_at": "2024-11-21"
@@ -3389,6 +3449,11 @@
       {
         "type": "h3",
         "text": "Tu crois en la force des récits pour accompagner la transition, mais pas au prix de l'instrumentalisation ?"
+      },
+      {
+        "type": "button",
+        "text": "Rejoins le club privé",
+        "href": "https://subscribepage.io/nowadays"
       },
       {
         "type": "p",
@@ -3721,6 +3786,11 @@
       {
         "type": "p",
         "text": "**1 email par semaine avec tous nos conseils les mieux gardés**"
+      },
+      {
+        "type": "button",
+        "text": "Inscrivez-vous",
+        "href": "https://www.subscribepage.com/nowadays"
       }
     ],
     "published_at": "2023-03-11"
@@ -3737,6 +3807,11 @@
       {
         "type": "h3",
         "text": "Si tu veux + de conseils gratuits pour faire ta stratégie de communication et rendre visible ton projet ⤵️"
+      },
+      {
+        "type": "button",
+        "text": "Clique ici et rejoins le club privé",
+        "href": "https://subscribepage.io/nowadays"
       },
       {
         "type": "p",
@@ -4306,6 +4381,11 @@
       {
         "type": "p",
         "text": "**1 email par semaine avec tous nos conseils les mieux gardés**"
+      },
+      {
+        "type": "button",
+        "text": "Cliquer ici pour s'inscrire",
+        "href": "https://subscribepage.io/nowadays"
       }
     ],
     "published_at": "2022-02-06"
@@ -4833,6 +4913,11 @@
       {
         "type": "p",
         "text": "**1 email par semaine avec tous nos conseils les mieux gardés**"
+      },
+      {
+        "type": "button",
+        "text": "REJOIGNEZ LE CLUB PRIVÉ",
+        "href": "https://www.subscribepage.com/nowadays"
       }
     ],
     "published_at": "2021-02-18"
@@ -5168,6 +5253,11 @@
       {
         "type": "h3",
         "text": "Recevez des cours gratuits par email chaque semaine avec tous nos conseils les mieux gardés."
+      },
+      {
+        "type": "button",
+        "text": "Rejoignez le club privé",
+        "href": "https://www.subscribepage.com/nowadays"
       }
     ],
     "published_at": "2020-10-10"
@@ -5496,6 +5586,11 @@
       {
         "type": "p",
         "text": "**1 email par semaine avec tous nos conseils les mieux gardés**"
+      },
+      {
+        "type": "button",
+        "text": "REJOIGNEZ LE CLUB PRIVÉ",
+        "href": "https://www.subscribepage.com/nowadays"
       }
     ],
     "published_at": "2020-09-10"

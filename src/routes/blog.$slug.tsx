@@ -149,7 +149,7 @@ function renderBlock(b: ArticleBlock, i: number) {
     return (
       <h2
         key={i}
-        className="mt-16 mb-6 font-serif text-4xl leading-[1.05] text-ink md:text-6xl"
+        className="mt-16 mb-6 font-serif text-3xl md:text-5xl leading-[1.1] text-ink"
       >
         <RichText text={b.text} />
       </h2>
@@ -159,7 +159,7 @@ function renderBlock(b: ArticleBlock, i: number) {
     return (
       <h3
         key={i}
-        className="mt-10 mb-4 font-serif text-2xl leading-tight text-ink md:text-3xl"
+        className="mt-10 mb-4 font-serif text-xl md:text-2xl leading-[1.2] text-ink"
       >
         <RichText text={b.text} />
       </h3>
@@ -173,6 +173,20 @@ function renderBlock(b: ArticleBlock, i: number) {
       >
         <RichText text={b.text} />
       </blockquote>
+    );
+  }
+  if (b.type === "button") {
+    return (
+      <div key={i} className="my-10 flex justify-center">
+        <a
+          href={b.href}
+          target={b.href.startsWith("http") ? "_blank" : undefined}
+          rel={b.href.startsWith("http") ? "noopener noreferrer" : undefined}
+          className="inline-flex items-center rounded-full bg-rose-dark px-8 py-4 font-mono text-sm uppercase tracking-[0.18em] text-cream transition-colors hover:bg-bordeaux"
+        >
+          {b.text}
+        </a>
+      </div>
     );
   }
   return (
@@ -208,25 +222,10 @@ function ArticlePage() {
           <p className="mt-8 font-mono text-xs uppercase tracking-[0.22em] text-ink">
             {article.author} · {formatDate(article.published_at)}
           </p>
-          <h1 className="mt-6 font-serif text-4xl leading-[1.05] text-ink md:text-6xl">
+          <h1 className="mt-6 font-serif text-4xl leading-[1.05] text-ink md:text-6xl lg:text-7xl">
             {article.title}
           </h1>
-          {article.excerpt && (
-            <p className="mt-8 font-serif text-xl italic leading-snug text-rose-dark md:text-2xl">
-              {article.excerpt}
-            </p>
-          )}
         </div>
-        {article.cover_url && (
-          <div className="mx-auto max-w-5xl px-6 pb-16">
-            <img
-              src={article.cover_url}
-              alt={article.cover_alt ?? article.title}
-              loading="eager"
-              className="aspect-[16/9] w-full rounded-sm object-cover"
-            />
-          </div>
-        )}
       </section>
 
       {/* Body */}

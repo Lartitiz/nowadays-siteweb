@@ -4,7 +4,8 @@ import { z } from "zod";
 export type ArticleBlock =
   | { type: "h1" | "h2" | "h3"; text: string }
   | { type: "p" | "quote"; text: string }
-  | { type: "img"; src: string; alt: string };
+  | { type: "img"; src: string; alt: string }
+  | { type: "button"; text: string; href: string };
 
 export type ArticleListItem = {
   slug: string;

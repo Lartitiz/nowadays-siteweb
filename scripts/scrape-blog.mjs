@@ -114,7 +114,7 @@ async function scrape(slug) {
 
   const blocks = [];
   // Walk blocks in document order
-  root.find(".sqs-block-html, .sqs-block-image").each((_, blk) => {
+  root.find(".sqs-block-html, .sqs-block-image, .sqs-block-button").each((_, blk) => {
     const $blk = $(blk);
     const cls = $blk.attr("class") || "";
     if (cls.includes("sqs-block-image")) {
@@ -124,6 +124,13 @@ async function scrape(slug) {
       const alt = (img.attr("alt") || "").trim();
       if (src && !src.includes("transparent.png")) {
         blocks.push({ type: "img", src, alt });
+      }
+    } else if (cls.includes("sqs-block-button")) {
+      const a = $blk.find("a").first();
+      const text = a.text().trim();
+      const href = a.attr("href") || "";
+      if (text && href && !isNoise(text)) {
+        blocks.push({ type: "button", text, href });
       }
     } else if (cls.includes("sqs-block-html")) {
       const content = $blk.find(".sqs-html-content").first();
