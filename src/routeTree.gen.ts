@@ -19,9 +19,9 @@ import { Route as EtudesDeCasProRouteImport } from './routes/etudes-de-cas-pro'
 import { Route as CreatricesEthiquesRouteImport } from './routes/creatrices-ethiques'
 import { Route as CooperativeAssoRouteImport } from './routes/cooperative-asso'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AccompagnementCommunicationRouteImport } from './routes/accompagnement-communication'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as EtudesStillNordicRouteImport } from './routes/etudes.still-nordic'
 import { Route as EtudesSeaShepherdRouteImport } from './routes/etudes.sea-shepherd'
 import { Route as EtudesRessourcesRouteImport } from './routes/etudes.ressources'
@@ -91,11 +91,6 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AccompagnementCommunicationRoute =
   AccompagnementCommunicationRouteImport.update({
     id: '/accompagnement-communication',
@@ -105,6 +100,11 @@ const AccompagnementCommunicationRoute =
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EtudesStillNordicRoute = EtudesStillNordicRouteImport.update({
@@ -185,15 +185,14 @@ const EtudesAtelierDesLunettesRoute =
     getParentRoute: () => rootRouteImport,
   } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => BlogRoute,
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
-  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/creatrices-ethiques': typeof CreatricesEthiquesRoute
@@ -220,11 +219,11 @@ export interface FileRoutesByFullPath {
   '/etudes/ressources': typeof EtudesRessourcesRoute
   '/etudes/sea-shepherd': typeof EtudesSeaShepherdRoute
   '/etudes/still-nordic': typeof EtudesStillNordicRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
-  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/creatrices-ethiques': typeof CreatricesEthiquesRoute
@@ -251,12 +250,12 @@ export interface FileRoutesByTo {
   '/etudes/ressources': typeof EtudesRessourcesRoute
   '/etudes/sea-shepherd': typeof EtudesSeaShepherdRoute
   '/etudes/still-nordic': typeof EtudesStillNordicRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
-  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/creatrices-ethiques': typeof CreatricesEthiquesRoute
@@ -283,13 +282,13 @@ export interface FileRoutesById {
   '/etudes/ressources': typeof EtudesRessourcesRoute
   '/etudes/sea-shepherd': typeof EtudesSeaShepherdRoute
   '/etudes/still-nordic': typeof EtudesStillNordicRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/accompagnement-communication'
-    | '/blog'
     | '/contact'
     | '/cooperative-asso'
     | '/creatrices-ethiques'
@@ -316,11 +315,11 @@ export interface FileRouteTypes {
     | '/etudes/ressources'
     | '/etudes/sea-shepherd'
     | '/etudes/still-nordic'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/accompagnement-communication'
-    | '/blog'
     | '/contact'
     | '/cooperative-asso'
     | '/creatrices-ethiques'
@@ -347,11 +346,11 @@ export interface FileRouteTypes {
     | '/etudes/ressources'
     | '/etudes/sea-shepherd'
     | '/etudes/still-nordic'
+    | '/blog'
   id:
     | '__root__'
     | '/'
     | '/accompagnement-communication'
-    | '/blog'
     | '/contact'
     | '/cooperative-asso'
     | '/creatrices-ethiques'
@@ -378,12 +377,12 @@ export interface FileRouteTypes {
     | '/etudes/ressources'
     | '/etudes/sea-shepherd'
     | '/etudes/still-nordic'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AccompagnementCommunicationRoute: typeof AccompagnementCommunicationRoute
-  BlogRoute: typeof BlogRouteWithChildren
   ContactRoute: typeof ContactRoute
   CooperativeAssoRoute: typeof CooperativeAssoRoute
   CreatricesEthiquesRoute: typeof CreatricesEthiquesRoute
@@ -394,6 +393,7 @@ export interface RootRouteChildren {
   PlanCommunicationRoute: typeof PlanCommunicationRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TemplateCalendrierEditorialRoute: typeof TemplateCalendrierEditorialRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   EtudesAtelierDesLunettesRoute: typeof EtudesAtelierDesLunettesRoute
   EtudesBlackStallionTradingRoute: typeof EtudesBlackStallionTradingRoute
   EtudesEmmausDefiRoute: typeof EtudesEmmausDefiRoute
@@ -409,6 +409,7 @@ export interface RootRouteChildren {
   EtudesRessourcesRoute: typeof EtudesRessourcesRoute
   EtudesSeaShepherdRoute: typeof EtudesSeaShepherdRoute
   EtudesStillNordicRoute: typeof EtudesStillNordicRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -483,13 +484,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/accompagnement-communication': {
       id: '/accompagnement-communication'
       path: '/accompagnement-communication'
@@ -502,6 +496,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/etudes/still-nordic': {
@@ -611,28 +612,17 @@ declare module '@tanstack/react-router' {
     }
     '/blog/$slug': {
       id: '/blog/$slug'
-      path: '/$slug'
+      path: '/blog/$slug'
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteImport
-      parentRoute: typeof BlogRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
 
-interface BlogRouteChildren {
-  BlogSlugRoute: typeof BlogSlugRoute
-}
-
-const BlogRouteChildren: BlogRouteChildren = {
-  BlogSlugRoute: BlogSlugRoute,
-}
-
-const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AccompagnementCommunicationRoute: AccompagnementCommunicationRoute,
-  BlogRoute: BlogRouteWithChildren,
   ContactRoute: ContactRoute,
   CooperativeAssoRoute: CooperativeAssoRoute,
   CreatricesEthiquesRoute: CreatricesEthiquesRoute,
@@ -643,6 +633,7 @@ const rootRouteChildren: RootRouteChildren = {
   PlanCommunicationRoute: PlanCommunicationRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TemplateCalendrierEditorialRoute: TemplateCalendrierEditorialRoute,
+  BlogSlugRoute: BlogSlugRoute,
   EtudesAtelierDesLunettesRoute: EtudesAtelierDesLunettesRoute,
   EtudesBlackStallionTradingRoute: EtudesBlackStallionTradingRoute,
   EtudesEmmausDefiRoute: EtudesEmmausDefiRoute,
@@ -658,6 +649,7 @@ const rootRouteChildren: RootRouteChildren = {
   EtudesRessourcesRoute: EtudesRessourcesRoute,
   EtudesSeaShepherdRoute: EtudesSeaShepherdRoute,
   EtudesStillNordicRoute: EtudesStillNordicRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
