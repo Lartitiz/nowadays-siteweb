@@ -110,7 +110,6 @@ function ClientsBand() {
 const PROBLEM_POINTS = [
   "L'équipe est débordée, la com' passe toujours après",
   "Vous postez quand vous pouvez, sans vraie stratégie",
-  "\n",
   "Vous avez besoin de quelqu'un qui fasse, pas juste qui conseille",
   "Et surtout : vous n'avez pas le temps de relire, corriger, valider 15 versions",
 ];
@@ -130,7 +129,7 @@ function ProblemSection() {
           Mais côté communication digitale, c'est une autre histoire :
         </p>
         <ul className="mt-6 space-y-3 font-mono text-base text-ink">
-          {PROBLEM_POINTS.filter(p => p.trim() !== "").map((p) => (
+          {PROBLEM_POINTS.map((p) => (
             <li key={p} className="flex gap-3">
               <span className="text-rose-dark">→</span>
               <span>{p}</span>
