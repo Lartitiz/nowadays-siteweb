@@ -13,6 +13,7 @@ import logoBoomBoomDance from "@/assets/clients-accompagnement/boom-boom-dance.p
 import logoHopla from "@/assets/clients-accompagnement/hopla.png.asset.json";
 import logoNapperon from "@/assets/clients-accompagnement/napperon.png.asset.json";
 import logoSlf from "@/assets/clients-accompagnement/slf.png.asset.json";
+import laetitiaPhoto from "@/assets/accompagnement/laetitia.jpg.asset.json";
 
 
 const CALENDLY = "https://calendly.com/laetitia-mattioli/appel-decouverte";
