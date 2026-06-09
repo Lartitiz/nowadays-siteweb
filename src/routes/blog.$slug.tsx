@@ -175,6 +175,20 @@ function renderBlock(b: ArticleBlock, i: number) {
       </blockquote>
     );
   }
+  if (b.type === "button") {
+    return (
+      <div key={i} className="my-10 flex justify-center">
+        <a
+          href={b.href}
+          target={b.href.startsWith("http") ? "_blank" : undefined}
+          rel={b.href.startsWith("http") ? "noopener noreferrer" : undefined}
+          className="inline-flex items-center rounded-full bg-rose-dark px-8 py-4 font-mono text-sm uppercase tracking-[0.18em] text-cream transition-colors hover:bg-bordeaux"
+        >
+          {b.text}
+        </a>
+      </div>
+    );
+  }
   return (
     <p
       key={i}
