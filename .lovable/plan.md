@@ -1,53 +1,89 @@
-## Diagnostic
+# Refonte « Ta binôme de com » — focus conversion
 
-Les 13 articles **sont bien scrapés** et présents en base (entre 46 et 215 blocs de contenu chacun, tous avec cover). Le script `scripts/scrape-blog.mjs` a fait son travail.
+## Objectif
 
-**Le vrai bug** : quand on clique sur un article, l'URL change bien vers `/blog/agence-communication-engagee` mais la page affichée reste la **liste du blog**. L'article ne se rend jamais. C'est ça qui te fait croire qu'ils ne sont pas scrapés.
+Page de vente plus courte, plus fluide, plus convertissante. On garde tout le copywriting fort, on supprime les doublons, on réordonne, on ajoute des éléments conversion-driven.
 
-**Cause** : en routing TanStack Start à plat, dès qu'il existe un fichier `blog.$slug.tsx`, le fichier `blog.tsx` devient un **layout parent**. Il doit alors rendre un `<Outlet />` pour que l'enfant `/blog/$slug` s'affiche. Or `src/routes/blog.tsx` rend directement la page liste (`BlogPage`) sans `<Outlet />`. Résultat : pour `/blog/$slug`, le routeur matche bien le child mais c'est le parent (la liste) qui s'affiche par-dessus.
+---
 
-## Plan d'action
+## 1. Sections supprimées / fusionnées (4 coupes)
 
-### Étape 1 — Fix routing (priorité, 1 fichier)
 
-Convention TanStack : transformer `blog.tsx` en route index.
+| Avant                                              | Action                                    | Pourquoi                                          |
+| -------------------------------------------------- | ----------------------------------------- | ------------------------------------------------- |
+| &nbsp;                                             | &nbsp;                                    | &nbsp;                                            |
+| `LivrablesGrid` (6 cards "Ce que tu repars avec")  | **Supprimer**                             | Doublon de la colonne droite d'`InclusSection`    |
+| `PourquoiCreeSection` (portrait #2 Laetitia + bio) | **Fusionner dans `LaetitiaIntroSection**` | 2 portraits Laetitia sur la même page = redondant |
+| `CtaFinalAccompagnement`                           | **Garder mais simplifier**                | OK, dernière chance de convertir                  |
 
-1. Renommer `src/routes/blog.tsx` → `src/routes/blog.index.tsx` (aucun changement de code, juste le nom). Le routeur regénère `routeTree.gen.ts` automatiquement.
-2. Vérifier dans la preview : `/blog` affiche la liste, `/blog/agence-communication-engagee` affiche l'article complet.
 
-Après cette étape, **les 13 articles sont accessibles** avec leurs ~50 à 215 blocs (titres, paragraphes, citations, images).
+Résultat : **17 → 13 sections**.
 
-### Étape 2 — Audit pixel-perfect du rendu article (vérification)
+## 2. Nouvel ordre narratif
 
-Comparer côte à côte 2 articles preview ↔ Squarespace original pour identifier les écarts visuels. Je propose 2 articles :
-
-- `agence-communication-engagee` (long, 215 blocs, beaucoup d'images)
-- `communication-ethique` (court, 52 blocs)
-
-Pour chaque écart trouvé, je note le type :
-
-| Type d'écart | Exemple | Où corriger |
-|---|---|---|
-| Bloc manquant dans le scrape | Embed YouTube, formulaire, CTA Squarespace | `scripts/scrape-blog.mjs` : ajouter le sélecteur `.sqs-block-X` |
-| Mise en page différente | Spacing titres/paragraphes, alignement images | `renderBlock` dans `src/routes/blog.$slug.tsx` |
-| Style typographique | Taille H2, italiques, couleur citations | `renderBlock` |
-| Image dégradée / qualité | URL Squarespace avec `?format=…` retirée | `cleanImgUrl` dans le script |
-
-### Étape 3 — Re-scrape ciblé si besoin
-
-Si l'étape 2 révèle des blocs manquants (typiquement : listes à puces stylées, encadrés colorés, blocs HTML custom Squarespace, embeds), j'ajuste `scripts/scrape-blog.mjs` et je relance :
-
-```bash
-node scripts/scrape-blog.mjs   # régénère scripts/articles.json
+```text
+1.  Hero (renforcé)            ← hook + promesse + 1 CTA + reassurance
+2.  ClientsBand                ← preuve sociale immédiate
+3.  ProblemSection (resserrée) ← la douleur
+4.  ContrasteSection           ← la solution différenciée
+5.  TransformationGrid         ← la promesse concrète
+6.  LaetitiaIntroSection +     ← qui je suis + pourquoi j'ai créé ça
+    bio fusionnée
+7.  TimelineSection            ← comment ça se passe
+8.  ComparaisonAgence (16k€)   ← AVANT le prix, on ancre la valeur
+9.  InclusSection (= prix 290€ ← le prix après l'ancrage + garantie
+    + inclus + garantie)
+10. TemoignagesSection         ← preuve sociale qualitative
+11. ProjetsAccompagnesGrid     ← preuve sociale quantitative
+12. PourToiSection             ← qualification (pour toi / pas pour toi)
+13. FaqSection                 ← traiter les objections
+14. CtaFinalAccompagnement     ← dernier appel
 ```
 
-Puis je pousse le contenu en base via une migration (UPDATE de la colonne `content` jsonb pour chaque slug). Les covers/titres/SEO ne sont pas réécrits sauf si tu le demandes.
+Changement clé : **comparatif AGENCE → prix** (et plus l'inverse). C'est ce que font toutes les pages de vente qui convertissent.
 
-### Hors scope (sauf demande explicite)
-- Refonte du design des articles (typo, couleurs, layout) — la charte actuelle est respectée.
-- Ajout d'articles nouveaux (uniquement les 13 listés dans le script).
-- Réécriture du contenu.
+## 3. Hero renforcé
 
-## Question
+- Layout **2 colonnes** desktop (texte gauche, portrait Laetitia droite) au lieu du centré actuel.
+- Ajouter un **mini social proof** sous le H1 : « ★★★★★ +150 projets accompagnés » (chiffre déjà mentionné plus bas).
+- Déplacer la blague « matcha latte » dans `InclusSection` (elle casse l'autorité du hero).
+- 1 seul CTA, court : **« Réserver mon appel découverte »**.
+- Sous-ligne reassurance : « 30 min · Gratuit · Sans engagement ».
 
-Tu veux que je fasse les 3 étapes d'un coup, ou seulement l'étape 1 (fix routing) d'abord pour vérifier que les articles s'affichent bien, puis on décide pour l'audit pixel-perfect ?
+## 4. Sticky CTA mobile + desktop
+
+Composant fixe en bas d'écran (mobile) et en bas-droit (desktop, après scroll > 800px) :
+
+- Bouton rose-dark « Réserver mon appel »
+- Visible sur toute la page sauf hero et section CTA finale (`IntersectionObserver`).
+
+## 5. Charte typo respectée
+
+- Tous les `font-serif text-2xl/3xl/4xl` utilisés comme H3 → ramener à `text-xl md:text-2xl` (charte).
+- Les "punchlines italiques rose-dark" : garder mais **passer en `font-serif text-xl md:text-2xl**` (pas plus gros qu'un H3) pour qu'elles ne concurrencent pas les H2.
+- Supprimer les `text-4xl` parasites (lignes 927, 945 sur les H3 "pour toi / pas pour toi").
+
+## 6. Visuels scrapés depuis Squarespace
+
+À récupérer via `scripts/scrape-accompagnement.mjs` (calqué sur `scrape-blog.mjs`) : [https://www.nowadaysagency.com/accompagnement-communication](https://www.nowadaysagency.com/accompagnement-communication)
+
+- **11 vignettes projets** (Napperon, Boom Boom Dance, Mazeh, Atelier Tiket, Hopla, La Slow Fashionitude, Yza Handmade, École Massoba, Sophie Brillouet, Péline, Comme un ruban d'étoile) depuis nowadaysagency.com.
+- **2e portrait Laetitia** (fusionné, donc 1 seul portrait final déjà présent).
+- Logos clients → déjà OK.
+- Fallback : si scrape échoue pour un projet, on retire la card (mieux qu'un placeholder gris).
+  &nbsp;
+- Retirer les **placeholders `bg-rose-light` vides** (lignes 769, 687).
+
+## 8. Détails techniques
+
+- Nouveau composant `<StickyCallCta />` dans `src/components/site/` avec `useState` + `useEffect` sur scrollY.
+- Constante `CALENDLY` à extraire dans `src/lib/links.ts` partagée avec la home.
+- Script de scrape : `scripts/scrape-accompagnement.mjs` → écrit `scripts/projets-accompagnes.json` → importé dans `ProjetsAccompagnesGrid`.
+
+---
+
+## Hors scope (à faire plus tard si tu veux)
+
+- Tests A/B sur le wording CTA.
+- Ajout d'une vidéo Laetitia dans le hero.
+- Schéma JSON-LD `Service` pour SEO local.
