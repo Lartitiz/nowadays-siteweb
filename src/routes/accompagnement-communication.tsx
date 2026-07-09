@@ -622,38 +622,39 @@ function InclusSection() {
 }
 
 function TemoignagesSection() {
-  const temoignages = [
+  const captures = [
     {
-      quote:
-        "Avec Laetitia, j'ai enfin compris à qui je parlais et pourquoi. En 6 mois, j'ai doublé ma communauté et signé mes premiers clients sans avoir l'impression de me trahir.",
-      name: "Péline",
-      role: "Coach sportive pour les femmes atteintes de SOPK",
+      src: "/temoignages/peline.webp",
+      alt: "Témoignage de Péline, coach sportive, sur son accompagnement en communication",
     },
     {
-      quote:
-        "Je suis passée du syndrome de l'imposteur à la confiance. Plus d'interactions, plus de likes, plus de messages privés, plus d'abonné·es. Et surtout : du plaisir à publier.",
-      name: "Sarah",
-      role: "Fondatrice de Mazeh Paris",
+      src: "/temoignages/whatsapp-1.webp",
+      alt: "Message de témoignage : un changement positif sur les réseaux sociaux",
+    },
+    {
+      src: "/temoignages/whatsapp-2.webp",
+      alt: "Capture d'écran d'un message WhatsApp de gratitude sur l'accompagnement",
     },
   ];
   return (
     <section className="bg-background">
       <div className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className={`${H2} text-center`}>
-          Pour que tu te sentes fière de ta communication.
-        </h2>
-        <div className="mt-16 grid gap-8 md:grid-cols-2">
-          {temoignages.map((t) => (
+        <h2 className={`${H2} text-center`}>Ce qu'elles en disent.</h2>
+        <p className="mx-auto mt-6 max-w-2xl text-center font-mono text-base italic text-ink">
+          Des retours, en vrai, de créatrices accompagnées.
+        </p>
+        <div className="mt-16 grid items-start gap-8 sm:grid-cols-2 md:grid-cols-3">
+          {captures.map((c) => (
             <figure
-              key={t.name}
-              className="rounded-[32px] bg-rose-light p-10"
+              key={c.src}
+              className="overflow-hidden rounded-[24px] bg-rose-light"
             >
-              <blockquote className="font-serif text-xl italic text-ink md:text-2xl">
-                « {t.quote} »
-              </blockquote>
-              <figcaption className="mt-6 font-mono text-xs uppercase tracking-[0.18em] text-rose-dark">
-                {t.name} — {t.role}
-              </figcaption>
+              <img
+                src={c.src}
+                alt={c.alt}
+                loading="lazy"
+                className="h-auto w-full object-contain"
+              />
             </figure>
           ))}
         </div>
