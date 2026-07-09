@@ -94,6 +94,13 @@ export function RichText({ text }: { text: string }) {
         trailing = tm[0];
         url = url.slice(0, -trailing.length);
       }
+      // Libellé lisible = le nom de domaine (sans www), pas l'URL complète.
+      let label = url;
+      try {
+        label = new URL(url).hostname.replace(/^www\./, "");
+      } catch {
+        label = url;
+      }
       out.push(
         <a
           key={`u${idx++}`}
@@ -102,7 +109,7 @@ export function RichText({ text }: { text: string }) {
           rel="noopener noreferrer"
           className={LINK_CLASS}
         >
-          {url}
+          {label}
         </a>,
       );
       if (trailing) out.push(<Fragment key={`ut${idx++}`}>{trailing}</Fragment>);
