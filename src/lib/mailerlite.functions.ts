@@ -16,14 +16,15 @@ export const SUBSCRIBE_SOURCES = [
 
 export type SubscribeSource = (typeof SUBSCRIBE_SOURCES)[number];
 
-// Map source -> id de groupe MailerLite. Les ids ne sont pas secrets.
-// TODO(clé API) : remplir avec les vrais ids une fois les groupes listés.
+// Map source -> id de groupe MailerLite (relevés dans le compte le 09/07/2026).
+// Les ids ne sont pas secrets. L'ajout au groupe déclenche l'automation
+// MailerLite qui envoie le PDF / la séquence.
 const GROUP_IDS: Record<SubscribeSource, string> = {
-  "formation-instagram": "",
-  "guide-storytelling": "",
-  "plan-communication": "",
-  "calendrier-editorial": "",
-  newsletter: "",
+  "formation-instagram": "97403595324917086", // Instagram Lead Magnet
+  "guide-storytelling": "97403595302896957", // Storytelling
+  "plan-communication": "171976181183153753", // Lead Magnet Plan de com'
+  "calendrier-editorial": "140326980271736757", // Calendrier Éditorial
+  newsletter: "168045674357589073", // Newsletter sans email de bienvenue
 };
 
 const SubscribeSchema = z.object({
