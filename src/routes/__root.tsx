@@ -93,9 +93,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Une communication joyeuse, éthique et efficace pour les projets plus doux pour le monde.",
+          "Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, éthique et efficace.",
       },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Nowadays — Agence de communication engagée et éthique" },
+      { name: "twitter:description", content: "Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, éthique et efficace." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d4f1c2b3-5833-4d3b-8c1b-c01692798844/id-preview-554ed6f5--4b40518c-0b57-4589-a036-3de8316962ef.lovable.app-1783632229311.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d4f1c2b3-5833-4d3b-8c1b-c01692798844/id-preview-554ed6f5--4b40518c-0b57-4589-a036-3de8316962ef.lovable.app-1783632229311.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

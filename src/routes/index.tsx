@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Une communication joyeuse, éthique et efficace pour les projets plus doux pour le monde.",
+          "Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, éthique et efficace.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
