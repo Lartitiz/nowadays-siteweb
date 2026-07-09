@@ -124,7 +124,7 @@ const PROJECTS: Project[] = [
     alt: "Deux enfants jouant avec des jouets de construction en plastique colorés sur un sol en bois.",
     description:
       "Jeu créatif à base de bouchons upcyclés : l’upcycling transforme la matière sans gaspillage et réduit les émissions de CO₂. Nous avons aidé à raconter cette aventure ludique et écologique (SEO et Instagram).",
-    external: "https://www.nowadaysagency.com/clip-it",
+    internal: "clip-it",
   },
   {
     name: "L214",
@@ -140,7 +140,7 @@ const PROJECTS: Project[] = [
     alt: "Une femme avec chapeau et gants dans un jardin devant une maison en cours de rénovation, entourée d’arbres.",
     description:
       "Un écosystème d’écolieux qui bâtissent un autre modèle de société. Nous avons accompagné la Coopérative Oasis sur sa stratégie de communication pour son festival : identité, storytelling et community management.",
-    external: "https://www.nowadaysagency.com/cooperative-oasis",
+    internal: "cooperative-oasis",
   },
   {
     name: "Okahina Wave",
@@ -229,7 +229,7 @@ const PROJECTS: Project[] = [
     alt: "Trois femmes assises sur des marches extérieures, souriant et riant, partageant un moment convivial.",
     description:
       "Plateforme bien-être née du désir de proposer l’expérience du studio à la maison. Sa fondatrice, ancienne danseuse, partage passion et expertise via des cours en ligne. Nous avons élaboré une stratégie globale : positionnement, réseaux sociaux, email marketing et création de contenus.",
-    external: "https://www.nowadaysagency.com/my-pilates-world",
+    internal: "my-pilates-world",
   },
   {
     name: "Belle.",
@@ -253,7 +253,7 @@ const PROJECTS: Project[] = [
     alt: "Chocolats Elvezia mis en scène dans une nature morte gourmande.",
     description:
       "Elvezia vendait du chocolat. On en a fait une marque. Repositionnement stratégique, identité visuelle et sales enablement pour le partenaire premium des artisans de bouche.",
-    external: "https://www.nowadaysagency.com/elvezia",
+    internal: "elvezia",
   },
   {
     name: "La prochaine aire",

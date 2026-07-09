@@ -19,6 +19,11 @@ const LEGACY_CASE_STUDIES = [
   "l214",
   "sea-shepherd",
   "emmaus-defi",
+  // Études migrées depuis l'ancien Squarespace pendant la refonte (certaines
+  // n'étaient plus dans le sitemap Squarespace mais restent liées ailleurs).
+  "clip-it",
+  "cooperative-oasis",
+  "elvezia",
 ];
 
 const REDIRECTS: Record<string, string> = Object.fromEntries(

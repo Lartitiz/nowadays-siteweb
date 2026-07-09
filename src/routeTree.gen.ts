@@ -35,6 +35,9 @@ import { Route as EtudesFlanelleRouteImport } from './routes/etudes.flanelle'
 import { Route as EtudesFatMooseRouteImport } from './routes/etudes.fat-moose'
 import { Route as EtudesEnsadRouteImport } from './routes/etudes.ensad'
 import { Route as EtudesEmmausDefiRouteImport } from './routes/etudes.emmaus-defi'
+import { Route as EtudesElveziaRouteImport } from './routes/etudes.elvezia'
+import { Route as EtudesCooperativeOasisRouteImport } from './routes/etudes.cooperative-oasis'
+import { Route as EtudesClipItRouteImport } from './routes/etudes.clip-it'
 import { Route as EtudesBlackStallionTradingRouteImport } from './routes/etudes.black-stallion-trading'
 import { Route as EtudesAtelierDesLunettesRouteImport } from './routes/etudes.atelier-des-lunettes'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -172,6 +175,21 @@ const EtudesEmmausDefiRoute = EtudesEmmausDefiRouteImport.update({
   path: '/etudes/emmaus-defi',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EtudesElveziaRoute = EtudesElveziaRouteImport.update({
+  id: '/etudes/elvezia',
+  path: '/etudes/elvezia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesCooperativeOasisRoute = EtudesCooperativeOasisRouteImport.update({
+  id: '/etudes/cooperative-oasis',
+  path: '/etudes/cooperative-oasis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesClipItRoute = EtudesClipItRouteImport.update({
+  id: '/etudes/clip-it',
+  path: '/etudes/clip-it',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EtudesBlackStallionTradingRoute =
   EtudesBlackStallionTradingRouteImport.update({
     id: '/etudes/black-stallion-trading',
@@ -206,6 +224,9 @@ export interface FileRoutesByFullPath {
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
+  '/etudes/clip-it': typeof EtudesClipItRoute
+  '/etudes/cooperative-oasis': typeof EtudesCooperativeOasisRoute
+  '/etudes/elvezia': typeof EtudesElveziaRoute
   '/etudes/emmaus-defi': typeof EtudesEmmausDefiRoute
   '/etudes/ensad': typeof EtudesEnsadRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
@@ -237,6 +258,9 @@ export interface FileRoutesByTo {
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
+  '/etudes/clip-it': typeof EtudesClipItRoute
+  '/etudes/cooperative-oasis': typeof EtudesCooperativeOasisRoute
+  '/etudes/elvezia': typeof EtudesElveziaRoute
   '/etudes/emmaus-defi': typeof EtudesEmmausDefiRoute
   '/etudes/ensad': typeof EtudesEnsadRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
@@ -269,6 +293,9 @@ export interface FileRoutesById {
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
+  '/etudes/clip-it': typeof EtudesClipItRoute
+  '/etudes/cooperative-oasis': typeof EtudesCooperativeOasisRoute
+  '/etudes/elvezia': typeof EtudesElveziaRoute
   '/etudes/emmaus-defi': typeof EtudesEmmausDefiRoute
   '/etudes/ensad': typeof EtudesEnsadRoute
   '/etudes/fat-moose': typeof EtudesFatMooseRoute
@@ -302,6 +329,9 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
     | '/etudes/black-stallion-trading'
+    | '/etudes/clip-it'
+    | '/etudes/cooperative-oasis'
+    | '/etudes/elvezia'
     | '/etudes/emmaus-defi'
     | '/etudes/ensad'
     | '/etudes/fat-moose'
@@ -333,6 +363,9 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
     | '/etudes/black-stallion-trading'
+    | '/etudes/clip-it'
+    | '/etudes/cooperative-oasis'
+    | '/etudes/elvezia'
     | '/etudes/emmaus-defi'
     | '/etudes/ensad'
     | '/etudes/fat-moose'
@@ -364,6 +397,9 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
     | '/etudes/black-stallion-trading'
+    | '/etudes/clip-it'
+    | '/etudes/cooperative-oasis'
+    | '/etudes/elvezia'
     | '/etudes/emmaus-defi'
     | '/etudes/ensad'
     | '/etudes/fat-moose'
@@ -396,6 +432,9 @@ export interface RootRouteChildren {
   BlogSlugRoute: typeof BlogSlugRoute
   EtudesAtelierDesLunettesRoute: typeof EtudesAtelierDesLunettesRoute
   EtudesBlackStallionTradingRoute: typeof EtudesBlackStallionTradingRoute
+  EtudesClipItRoute: typeof EtudesClipItRoute
+  EtudesCooperativeOasisRoute: typeof EtudesCooperativeOasisRoute
+  EtudesElveziaRoute: typeof EtudesElveziaRoute
   EtudesEmmausDefiRoute: typeof EtudesEmmausDefiRoute
   EtudesEnsadRoute: typeof EtudesEnsadRoute
   EtudesFatMooseRoute: typeof EtudesFatMooseRoute
@@ -596,6 +635,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EtudesEmmausDefiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/etudes/elvezia': {
+      id: '/etudes/elvezia'
+      path: '/etudes/elvezia'
+      fullPath: '/etudes/elvezia'
+      preLoaderRoute: typeof EtudesElveziaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/cooperative-oasis': {
+      id: '/etudes/cooperative-oasis'
+      path: '/etudes/cooperative-oasis'
+      fullPath: '/etudes/cooperative-oasis'
+      preLoaderRoute: typeof EtudesCooperativeOasisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/clip-it': {
+      id: '/etudes/clip-it'
+      path: '/etudes/clip-it'
+      fullPath: '/etudes/clip-it'
+      preLoaderRoute: typeof EtudesClipItRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/etudes/black-stallion-trading': {
       id: '/etudes/black-stallion-trading'
       path: '/etudes/black-stallion-trading'
@@ -636,6 +696,9 @@ const rootRouteChildren: RootRouteChildren = {
   BlogSlugRoute: BlogSlugRoute,
   EtudesAtelierDesLunettesRoute: EtudesAtelierDesLunettesRoute,
   EtudesBlackStallionTradingRoute: EtudesBlackStallionTradingRoute,
+  EtudesClipItRoute: EtudesClipItRoute,
+  EtudesCooperativeOasisRoute: EtudesCooperativeOasisRoute,
+  EtudesElveziaRoute: EtudesElveziaRoute,
   EtudesEmmausDefiRoute: EtudesEmmausDefiRoute,
   EtudesEnsadRoute: EtudesEnsadRoute,
   EtudesFatMooseRoute: EtudesFatMooseRoute,
@@ -654,3 +717,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

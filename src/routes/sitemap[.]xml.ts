@@ -29,6 +29,9 @@ const STATIC_ENTRIES: SitemapEntry[] = [
 const CASE_STUDY_SLUGS = [
   "atelier-des-lunettes",
   "black-stallion-trading",
+  "clip-it",
+  "cooperative-oasis",
+  "elvezia",
   "emmaus-defi",
   "ensad",
   "fat-moose",
