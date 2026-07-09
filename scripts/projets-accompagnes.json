@@ -1,67 +1,67 @@
 [
   {
     "name": "Napperon",
-    "image": "https://images.squarespace-cdn.com/content/v1/59c38a8032601e172fe556ad/9f4d3af3-78a7-4ada-b6df-226b57d4f055/20240927115040-edr452copier.jpg",
+    "image": "/projets/napperon.webp",
     "alt": "Napperon — lingerie upcyclée",
     "desc": "Une marque de lingerie upcyclée qui célèbre la féminité libre et consciente. Nous avons travaillé ensemble son positionnement, sa stratégie de communication et ses fondations de marque."
   },
   {
     "name": "Boom Boom Dance",
-    "image": "https://images.squarespace-cdn.com/content/v1/59c38a8032601e172fe556ad/ae85b7ac-99b4-4985-84ae-2e2f680420d6/DSC03053-min.jpg",
+    "image": "/projets/boom-boom-dance.webp",
     "alt": "Boom Boom Dance — danse post-partum",
     "desc": "Boom Boom Dance propose des cours de danse avec bébé qui transforment le post-partum en moments de joie et de reconnexion. Nous avons structuré toute sa communication."
   },
   {
     "name": "Mazeh Paris",
-    "image": "https://images.squarespace-cdn.com/content/v1/59c38a8032601e172fe556ad/1f4ca328-7ee2-4043-b6a6-02c278d3ef57/isbl_3360x840.70372746_r962yv19.webp",
+    "image": "/projets/mazeh-paris.webp",
     "alt": "Mazeh Paris — atelier upcycling",
     "desc": "Mazeh Paris est un atelier d'upcycling qui redonne vie aux textiles oubliés avec créativité et conscience. Nous avons posé les bases de sa visibilité."
   },
   {
     "name": "Atelier Tiket",
-    "image": "https://images.squarespace-cdn.com/content/v1/59c38a8032601e172fe556ad/18108291-0c1f-4286-a7f3-86b1ea8ae695/atelier-tiket-createur_de_mode_durable_made_in_france-2_42c11010-074b-403f-9e5a-7218711de4aa.webp",
+    "image": "/projets/atelier-tiket.webp",
     "alt": "Atelier Tiket — mode durable",
     "desc": "Atelier Tiket est une créatrice de mode durable qui dessine des pièces intemporelles et responsables. Elle a appris à communiquer avec authenticité."
   },
   {
     "name": "Hopla Studio",
-    "image": "https://images.squarespace-cdn.com/content/v1/59c38a8032601e172fe556ad/3176f3f6-a028-4c91-87c4-6aa367ee149b/Capture+d%E2%80%99e%CC%81cran+2025-12-15+a%CC%80+10.48.17.png",
+    "image": "/projets/hopla-studio.webp",
     "alt": "Hopla Studio — design culinaire",
     "desc": "Hopla Studio est un studio de design culinaire qui sublime les produits en expériences visuelles gourmandes. Je l'ai accompagnée pour développer sa stratégie digitale."
   },
   {
     "name": "La Slow Fashionitude",
-    "image": "https://images.squarespace-cdn.com/content/v1/59c38a8032601e172fe556ad/9092f493-988e-440e-a501-91a84a2889b6/mayele-accueil.png",
+    "image": "/projets/la-slow-fashionitude.webp",
     "alt": "La Slow Fashionitude — plateforme slow fashion",
     "desc": "Une plateforme dédiée à la slow fashion qui rassemble et met en lumière les acteurs d'une mode plus responsable. Nous avons structuré sa communication et fédéré sa communauté."
   },
   {
     "name": "L'école des femmes de Massoba",
-    "image": "https://images.squarespace-cdn.com/content/v1/59c38a8032601e172fe556ad/4eba5fce-08a6-405e-a27c-ed771cc3d584/Capture+d%E2%80%99e%CC%81cran+2025-12-15+a%CC%80+11.25.44.png",
+    "image": "/projets/ecole-femmes-massoba.webp",
     "alt": "L'école des femmes de Massoba",
     "desc": "Un espace d'accompagnement sur mesure pour les femmes qui souhaitent mieux se comprendre et affirmer leur présence. Nous avons fait rayonner sa mission."
   },
   {
     "name": "Yza Handmade",
-    "image": "https://images.squarespace-cdn.com/content/v1/59c38a8032601e172fe556ad/9837c510-613f-491e-8e10-96c683bdb7da/%C2%A9YZAInstagram-Crop-Yza-Handmade-3869-scaled.webp",
+    "image": "/projets/yza-handmade.webp",
     "alt": "Yza Handmade — vestiaire marocain",
     "desc": "Yza Handmade réinvente le vestiaire marocain avec des silhouettes fluides et des accessoires intemporels fabriqués localement. Je l'ai accompagnée pour développer sa présence digitale."
   },
   {
     "name": "Sophie Brillouet",
-    "image": "https://images.squarespace-cdn.com/content/v1/59c38a8032601e172fe556ad/48ef26b7-a6e8-4da2-9554-5d72a40728f9/SB_portrait_nuage_1.webp",
+    "image": "/projets/sophie-brillouet.webp",
     "alt": "Sophie Brillouet — sculptrice de coquillages",
     "desc": "Sophie Brillouet est sculptrice de coquillages et artisane d'art qui transforme les trésors de la mer en pièces poétiques. Nous avons rendu visible son univers singulier."
   },
   {
     "name": "Péline Coach Sportive SOPK",
-    "image": "https://images.squarespace-cdn.com/content/v1/59c38a8032601e172fe556ad/b413cf7e-7e6c-4b01-9675-e0ef09a43835/6814fffb940b3b7511552624_users%252F3W3MZ53ACebZ1KcOU5lElVddPgV2%252Fuploads%252F1746204236584000.jpg",
+    "image": "/projets/peline-coach-sopk.webp",
     "alt": "Péline — coach sportive SOPK",
     "desc": "Péline est coach sportive spécialisée dans l'accompagnement des femmes atteintes du syndrome des ovaires polykystiques. Elle a appris à communiquer sur son expertise avec justesse."
   },
   {
     "name": "Comme un ruban d'étoile",
-    "image": "https://images.squarespace-cdn.com/content/v1/59c38a8032601e172fe556ad/fbcce36e-89aa-4901-8c34-0807821ce7f1/Capture+d%E2%80%99e%CC%81cran+2025-12-15+a%CC%80+11.41.54.png",
+    "image": "/projets/comme-un-ruban-detoile.webp",
     "alt": "Comme un ruban d'étoile — bijoux fil d'argent",
     "desc": "Comme un ruban d'étoile façonne des bijoux au fil d'argent, délicats et lumineux comme leur nom. Nous avons fait briller sa marque."
   }
