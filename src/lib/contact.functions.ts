@@ -31,8 +31,8 @@ async function notifyByEmail(data: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Site Nowadays <hello@nowadaysagency.com>",
-        to: ["hello@nowadaysagency.com"],
+        from: "Site Nowadays <notifications@nowadaysagency.com>",
+        to: ["laetitia@nowadaysagency.com"],
         reply_to: data.email,
         subject: `Nouveau message — ${data.name} (${NEED_LABELS[data.needType] ?? data.needType})`,
         html: `
