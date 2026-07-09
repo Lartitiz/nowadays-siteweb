@@ -90,48 +90,39 @@ function StepBadge({ n }: { n: string }) {
 function HeroAccompagnement() {
   return (
     <section className="relative overflow-hidden bg-background">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
-        <div>
-          <SectionEyebrow>Accompagnement · 6 mois</SectionEyebrow>
-          <h1 className="font-serif text-4xl leading-[1.05] text-ink md:text-6xl lg:text-7xl">
-            Tu fais un travail <em>magnifique</em>.
-            <br />
-            Mais personne ne le voit.
-          </h1>
+      <div className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
+        <h1 className="mx-auto text-balance font-serif text-4xl leading-[1.08] text-ink md:text-6xl">
+          Tu fais un travail <em>magnifique</em>. Mais personne ne le voit.
+        </h1>
 
-          <p className="mt-8 font-serif text-2xl text-ink md:text-3xl">
-            Deviens <em>visible</em> sans vendre ton âme.
-          </p>
+        <p className="mx-auto mt-8 max-w-2xl font-serif text-2xl text-ink md:text-3xl">
+          Deviens <em>visible</em> sans vendre ton âme.
+        </p>
 
-          <p className="mt-6 font-mono text-base text-ink">
-            Ta com' te prend la tête ? On la fait ensemble. Pendant 6 mois,
-            je deviens ta binôme. 290&nbsp;€/mois.
-          </p>
+        <p className="mt-8 font-mono text-base text-ink">
+          Ta com' te prend la tête ? On la fait ensemble.
+        </p>
 
-          <div className="mt-10">
-            <CtaButton />
-          </div>
+        <p className="mx-auto mt-5 max-w-xl font-mono text-sm italic leading-relaxed text-ink/70">
+          290&nbsp;€/mois pendant 6 mois. Soit moins de 9&nbsp;€ par jour. Le prix
+          d'un matcha latte et d'un croissant si tu es à Paris. 😅 (Sauf que là,
+          ça nourrit ton business pour des années.)
+        </p>
 
-          <p className="mt-5 font-mono text-xs uppercase tracking-[0.18em] text-ink">
-            30 minutes · Gratuit · Sans engagement
-          </p>
-
-          <p className="mt-6 font-mono text-sm text-ink">
-            <strong className="font-mono font-medium text-rose-dark">
-              +150 projets accompagnés
-            </strong>{" "}
-            · 10 ans d'expérience
-          </p>
+        <div className="mt-10 flex justify-center">
+          <CtaButton>Prends RDV pour discuter de ton projet</CtaButton>
         </div>
 
-        <div className="relative">
-          <div className="aspect-[4/5] w-full overflow-hidden rounded-[32px] bg-rose-light">
-            <img
-              src={laetitiaPhoto.url}
-              alt="Portrait de Laetitia, fondatrice de Nowadays"
-              className="h-full w-full object-cover"
-            />
-          </div>
+        <p className="mt-6 font-mono text-xs uppercase tracking-[0.18em] text-ink">
+          ✨ Appel gratuit · 30 minutes · Sans engagement
+        </p>
+
+        <div className="mx-auto mt-14 max-w-sm overflow-hidden rounded-[32px] bg-rose-light">
+          <img
+            src={laetitiaPhoto.url}
+            alt="Portrait de Laetitia, fondatrice de Nowadays"
+            className="aspect-[4/5] w-full object-cover"
+          />
         </div>
       </div>
     </section>
