@@ -35,10 +35,7 @@ export type ArticleFull = ArticleListItem & {
 
 export const listArticles = createServerFn({ method: "GET" }).handler(
   async (): Promise<ArticleListItem[]> => {
-    const { supabaseAdmin } = await import(
-      "@/integrations/supabase/client.server"
-    );
-    const { data, error } = await supabaseAdmin
+    const { data, error } = await getPublicClient()
       .from("articles" as never)
       .select(
         "slug, title, excerpt, cover_url, cover_alt, author, published_at",
