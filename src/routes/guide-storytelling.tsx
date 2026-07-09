@@ -36,6 +36,7 @@ function Page() {
       <SocialProof />
       <Why />
       <Benefits />
+      <Apercu />
       <Audience />
       <Program />
       <FinalCTA />
@@ -226,6 +227,36 @@ const AUDIENCE = [
     body: "Tu as les valeurs, l'impact, le produit. Manque le récit qui les fait tenir ensemble.",
   },
 ];
+
+function Apercu() {
+  return (
+    <section className="bg-rose-light">
+      <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="font-mono text-xs uppercase tracking-[0.24em] text-rose-dark">
+            · Aperçu ·
+          </p>
+          <h2 className="mt-6 font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
+            Un aperçu de ce qui t'attend <em className="text-rose-dark">dedans</em>
+          </h2>
+          <p className="mt-6 font-mono text-sm text-ink leading-relaxed">
+            Les mots qui font mouche, la structure du récit étape par étape, des
+            exemples concrets (oui, même Harry Potter) — tout est prêt à
+            appliquer.
+          </p>
+        </div>
+        <div className="mt-14 flex justify-center">
+          <img
+            src="/guide/apercu-storytelling.png"
+            alt="Aperçu des pages du guide storytelling : mots à utiliser, structure du récit en étapes, exemples concrets."
+            loading="lazy"
+            className="w-full max-w-3xl rounded-[24px] shadow-[0_30px_70px_-30px_rgba(26,5,13,0.35)]"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function Audience() {
   return (
