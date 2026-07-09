@@ -49,10 +49,7 @@ export const listArticles = createServerFn({ method: "GET" }).handler(
 export const getArticleBySlug = createServerFn({ method: "GET" })
   .inputValidator((input) => z.object({ slug: z.string().min(1).max(200) }).parse(input))
   .handler(async ({ data }): Promise<ArticleFull | null> => {
-    const { supabaseAdmin } = await import(
-      "@/integrations/supabase/client.server"
-    );
-    const { data: row, error } = await supabaseAdmin
+    const { data: row, error } = await getPublicClient()
       .from("articles" as never)
       .select(
         "slug, title, excerpt, cover_url, cover_alt, author, published_at, content, seo_title, seo_description",
