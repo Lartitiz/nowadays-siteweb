@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
+import { useSubscribe } from "@/lib/useSubscribe";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import cover from "@/assets/plan-communication/cover.png";
 import mockup from "@/assets/plan-communication/mockup.png";
@@ -271,13 +272,11 @@ function Audience() {
 function FinalCTA() {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
-  const [sent, setSent] = useState(false);
+  const { sent, sending, error, submit } = useSubscribe("plan-communication");
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    void email;
-    void firstName;
-    setSent(true);
+    void submit(firstName, email);
   }
 
   return (
@@ -343,10 +342,16 @@ function FinalCTA() {
                 </div>
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center rounded-sm bg-cream px-7 py-4 font-mono text-sm uppercase tracking-[0.16em] text-ink transition-colors hover:bg-rose-mid hover:text-ink"
+                  disabled={sending}
+                  className="inline-flex items-center justify-center rounded-sm bg-cream px-7 py-4 font-mono text-sm uppercase tracking-[0.16em] text-ink transition-colors hover:bg-rose-mid hover:text-ink disabled:opacity-60"
                 >
-                  Télécharger mon plan
+                  {sending ? "Envoi…" : "Télécharger mon plan"}
                 </button>
+                {error && (
+                  <p className="font-mono text-[11px] text-rose-mid leading-relaxed">
+                    {error}
+                  </p>
+                )}
                 <p className="font-mono text-[11px] text-cream/60 leading-relaxed">
                   En soumettant, tu acceptes de recevoir le template et nos
                   emails. Tes données restent confidentielles (RGPD).
