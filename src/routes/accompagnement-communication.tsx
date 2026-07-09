@@ -77,14 +77,6 @@ function SectionEyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
-function StepBadge({ n }: { n: string }) {
-  return (
-    <span className="inline-flex h-9 items-center justify-center rounded-full bg-rose-dark px-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-cream">
-      {n}
-    </span>
-  );
-}
-
 /* ============================== sections ============================== */
 
 function HeroAccompagnement() {
@@ -240,27 +232,27 @@ function ContrasteSection() {
 function TransformationGrid() {
   const items = [
     {
-      n: "01",
+      emoji: "🤝",
       title: "Tu n'es plus seule face à ta com'",
       text: "Fini de fixer ton écran en te demandant quoi poster. Tu as une binôme qui bosse avec toi, qui répond à tes questions, qui te débloque quand ça coince.",
     },
     {
-      n: "02",
+      emoji: "🗺️",
       title: "Tu as un plan clair, et il avance",
       text: "Branding, réseaux, site, newsletter, SEO : tout est structuré, priorisé, planifié. Tu sais exactement quoi faire chaque semaine. L'éparpillement, c'est terminé.",
     },
     {
-      n: "03",
+      emoji: "⚡",
       title: "Quelqu'un fait pour toi (en vrai)",
       text: "Je crée tes templates, tes accroches, ton calendrier éditorial. Tu n'as plus qu'à personnaliser et publier. La page blanche, c'est fini.",
     },
     {
-      n: "04",
+      emoji: "📈",
       title: "Tu vois enfin des résultats",
       text: "Plus de visibilité, plus de demandes, plus de ventes. Parce que ta com' est devenue un vrai système qui travaille pour toi.",
     },
     {
-      n: "05",
+      emoji: "💜",
       title: "Tu communiques sans trahir tes valeurs",
       text: "Il existe une manière de rendre ton projet visible sans devenir « commerciale », sans forcer, sans te sentir illégitime. Ta voix, amplifiée. Pas déformée.",
     },
@@ -281,7 +273,9 @@ function TransformationGrid() {
               key={it.title}
               className="flex flex-col rounded-[32px] bg-rose-light p-8"
             >
-              <StepBadge n={it.n} />
+              <span className="text-4xl leading-none" aria-hidden="true">
+                {it.emoji}
+              </span>
               <h3 className={`${H3} mt-5`}>{it.title}</h3>
               <p className="mt-3 font-mono text-sm text-ink">{it.text}</p>
             </article>
@@ -377,19 +371,19 @@ function LaetitiaIntroSection() {
 function TimelineSection() {
   const cols = [
     {
-      n: "01",
+      emoji: "🎯",
       meta: "Mois 1 → 2",
       title: "On pose ta stratégie",
       text: "Atelier de lancement pour tout poser à plat. Ensuite je construis avec toi : branding, positionnement, plan d'action, calendrier éditorial. Tout est intégré dans ton espace de travail.",
     },
     {
-      n: "02",
+      emoji: "⚡",
       meta: "Mois 3 → 6",
       title: "On applique ensemble",
       text: "Sessions visio mensuelles. On crée tes contenus, on optimise ton profil, on ajuste ce qui marche pas. Tu repars avec du concret à chaque fois. Pas une to-do list : du fait.",
     },
     {
-      n: "03",
+      emoji: "💬",
       meta: "Au quotidien",
       title: "Un doute ? Je suis là.",
       text: "Entre les sessions, tu me poses tes questions sur WhatsApp, jours ouvrés. Réponse sous 24-48h. Tu n'es jamais seule avec un problème de com'.",
@@ -408,7 +402,9 @@ function TimelineSection() {
               key={c.title}
               className="rounded-[32px] bg-rose-light p-8 text-left"
             >
-              <StepBadge n={c.n} />
+              <span className="text-4xl leading-none" aria-hidden="true">
+                {c.emoji}
+              </span>
               <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.2em] text-rose-dark">
                 {c.meta}
               </p>
