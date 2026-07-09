@@ -508,6 +508,34 @@ function ComparaisonAgenceSection() {
   );
 }
 
+function PrixSection() {
+  return (
+    <section className="bg-background">
+      <div className="mx-auto max-w-3xl px-6 py-24 text-center md:py-28">
+        <h2 className={H2}>Pour 290&nbsp;€ / mois pendant 6&nbsp;mois</h2>
+        <p className="mt-8 font-mono text-base text-ink">
+          Le prix de 3 restos par mois. Sauf que dans 6 mois, t'as un business
+          qui tourne.
+        </p>
+        <p className="mt-10 font-mono text-sm text-ink">
+          Et si tu n'as pas de résultats :
+        </p>
+        <p className="mt-2 font-serif text-2xl italic text-rose-dark md:text-3xl">
+          Je te rembourse entièrement.
+        </p>
+        <p className="mt-10 font-mono text-xs uppercase tracking-[0.22em] text-rose-dark">
+          🔽 Pour intégrer le programme 🔽
+        </p>
+        <div className="mt-6 flex justify-center">
+          <CtaButton>
+            Réserve ton café visio pour discuter de ton projet
+          </CtaButton>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function InclusSection() {
   const concretement = [
     "6 sessions visio de 2h avec Laetitia (à 4 mains sur ton projet, en direct)",
@@ -853,6 +881,7 @@ function Page() {
       <TransformationGrid />
       <LaetitiaIntroSection />
       <TimelineSection />
+      <PrixSection />
       <ComparaisonAgenceSection />
       <InclusSection />
       <TemoignagesSection />
