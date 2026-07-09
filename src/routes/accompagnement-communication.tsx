@@ -83,8 +83,10 @@ function HeroAccompagnement() {
   return (
     <section className="relative overflow-hidden bg-background">
       <div className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
-        <h1 className="mx-auto text-balance font-serif text-4xl leading-[1.08] text-ink md:text-6xl">
-          Tu fais un travail <em>magnifique</em>. Mais personne ne le voit.
+        <h1 className="mx-auto font-serif text-4xl leading-[1.08] text-ink md:text-6xl">
+          Tu fais un travail <em>magnifique</em>.
+          <br />
+          Mais personne ne le voit.
         </h1>
 
         <p className="mx-auto mt-8 max-w-2xl font-serif text-2xl text-ink md:text-3xl">
@@ -287,80 +289,82 @@ function TransformationGrid() {
 }
 
 function LaetitiaIntroSection() {
-  const bio = [
-    "10 ans dans le marketing digital",
-    "+150 projets éthiques accompagnés (de 0 à 10k followers)",
-    "Enseignante en grandes écoles : ENSAD Paris, CESACOM, ISCPA, ENS, Mines",
-  ];
+  return (
+    <section className="bg-rose-light">
+      <div className="mx-auto max-w-3xl px-6 py-24 text-center">
+        <SectionEyebrow>Enchantée</SectionEyebrow>
+        <h2 className={H2}>
+          Je suis Laetitia. Pour moi, la communication n'est pas de la
+          manipulation, mais un outil <em>d'émancipation</em>.
+        </h2>
+        <p className="mx-auto mt-8 max-w-2xl font-mono text-base text-ink">
+          Parce qu'il existe une autre façon de communiquer. Ici je te propose{" "}
+          <strong className="font-mono font-medium">une safe place</strong> : un
+          espace où ta vision et tes valeurs sont respectées. Où tu peux enfin
+          te sentir légitime et en confiance dans ta communication.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function PourquoiSection() {
   const prejuges = [
     "Parler de soi, c'est être prétentieuse",
     "Vendre, c'est manipuler",
     "Le marketing, c'est l'ennemi de l'authenticité",
   ];
+  const bio = [
+    "10 ans dans le marketing digital",
+    "+150 projets éthiques accompagnés (de 0 à 10k followers)",
+    "J'enseigne en grandes écoles : ENSAD Paris, CESACOM, ISCPA, ENS, Mines",
+  ];
   return (
-    <section className="bg-rose-light">
-      <div className="mx-auto max-w-6xl px-6 py-24">
-        <div className="grid gap-12 md:grid-cols-2 md:items-start">
-          <div>
-            <SectionEyebrow>Enchantée</SectionEyebrow>
-            <h2 className={H2}>
-              Je suis Laetitia. Pour moi, la communication n'est pas de la
-              manipulation, mais un outil <em>d'émancipation</em>.
-            </h2>
-            <div className="mt-8 space-y-5 font-mono text-base text-ink">
-              <p>
-                Tu vois ces femmes qui créent des projets magnifiques ?{" "}
-                <strong className="font-mono font-medium">
-                  Des projets qui améliorent notre manière de vivre, de
-                  consommer, d'exister.
-                </strong>{" "}
-                Pour certaines, elles restent invisibles.
-              </p>
-              <p>
-                Pas parce que leur travail n'est pas bon. Mais parce qu'on
-                leur a appris que :
-              </p>
-              <ul className="space-y-2 pl-6">
-                {prejuges.map((p) => (
-                  <li
-                    key={p}
-                    className="list-disc font-mono text-base text-ink marker:text-rose-dark"
-                  >
-                    {p}
-                  </li>
-                ))}
-              </ul>
-              <p className="font-serif text-xl italic text-rose-dark md:text-2xl">
-                C'est ça que je veux changer.
-              </p>
-            </div>
-          </div>
+    <section className="bg-background">
+      <div className="mx-auto max-w-3xl px-6 py-24">
+        <div className="text-center">
+          <SectionEyebrow>Pourquoi j'ai créé cet accompagnement</SectionEyebrow>
+          <h2 className={H2}>
+            Tu vois ces femmes qui créent des projets <em>magnifiques</em> ?
+          </h2>
+        </div>
+        <div className="mt-10 space-y-5 font-mono text-base text-ink">
+          <p>
+            Des projets qui améliorent notre manière de vivre, de consommer,
+            d'exister. Pour certaines, elles restent invisibles. Pas parce que
+            leur travail n'est pas bon. Mais parce qu'on leur a appris que :
+          </p>
+          <ul className="space-y-2 pl-6">
+            {prejuges.map((p) => (
+              <li
+                key={p}
+                className="list-disc font-mono text-base text-ink marker:text-rose-dark"
+              >
+                {p}
+              </li>
+            ))}
+          </ul>
+          <p className="font-serif text-xl italic text-rose-dark md:text-2xl">
+            C'est ça que je veux changer.
+          </p>
+        </div>
 
-          <div className="md:pt-16">
-            <div className="rounded-[32px] border border-rose-light bg-cream p-8">
-              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-rose-dark">
-                Mon parcours
-              </p>
-              <ul className="mt-5 space-y-3">
-                {bio.map((b) => (
-                  <li
-                    key={b}
-                    className="flex gap-3 font-mono text-sm text-ink"
-                  >
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-rose-dark" />
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-6 font-mono text-sm text-ink">
-                Ici je te propose <strong className="font-mono font-medium">une safe place</strong> : un
-                espace où ta vision et tes valeurs sont respectées. Où tu peux
-                enfin te sentir légitime et en confiance dans ta com'.
-              </p>
-              <div className="mt-6">
-                <CtaButton>Discuter avec Laetitia</CtaButton>
-              </div>
-            </div>
+        <div className="mt-12 rounded-[32px] bg-rose-light p-8 text-center">
+          <p className="font-serif text-lg italic text-ink md:text-xl">
+            D'ailleurs, enchantée ! Moi c'est Laetitia Mattioli. En bref :
+          </p>
+          <ul className="mx-auto mt-6 inline-flex flex-col gap-3 text-left">
+            {bio.map((b) => (
+              <li key={b} className="flex gap-3 font-mono text-sm text-ink">
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-rose-dark" />
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-8 flex justify-center">
+            <CtaButton>
+              Réserve ton café visio pour discuter de ton projet
+            </CtaButton>
           </div>
         </div>
       </div>
@@ -508,6 +512,70 @@ function ComparaisonAgenceSection() {
   );
 }
 
+function DeliverablesSection() {
+  const items = [
+    {
+      emoji: "🎨",
+      title: "Ton branding posé",
+      text: "Tu sais qui tu es, à qui tu parles, et comment en parler. Ton positionnement, ton storytelling, tes messages clés : tout est clair. Tu n'hésites plus quand on te demande « tu fais quoi dans la vie ? »",
+    },
+    {
+      emoji: "📱",
+      title: "Tes réseaux qui vivent",
+      text: "Un calendrier éditorial tenable (pas « poster tous les jours ou mourir »). Des templates à ta sauce. Tu sais quoi publier, quand, et pourquoi. Et surtout : tu prends du plaisir à le faire.",
+    },
+    {
+      emoji: "💻",
+      title: "Un site qui convertit",
+      text: "Pas juste joli : efficace. Tes pages retravaillées, ton parcours client fluide, ton SEO amélioré. Un vrai outil de vente qui bosse pour toi même quand tu dors.",
+    },
+    {
+      emoji: "✉️",
+      title: "Ta newsletter qui tourne",
+      text: "Un canal qui t'appartient (bye bye les algorithmes). On crée ton template, on rédige ensemble, on programme. Tu as un lien direct avec ton audience, sans dépendre d'Instagram.",
+    },
+    {
+      emoji: "✨",
+      title: "Ta stratégie presse et influence",
+      text: "Tu sais comment contacter les médias et les créateur·ices de contenu. Sans y laisser un rein. Un système pour développer ta visibilité au-delà de tes propres réseaux.",
+    },
+    {
+      emoji: "🛠️",
+      title: "Une boîte à outils complète",
+      text: "Templates Canva, scripts de posts, calendrier pré-rempli, mini-guide tournage smartphone, suivi de performance. Plus de 20 outils que tu gardes à vie.",
+    },
+  ];
+  return (
+    <section className="bg-cream">
+      <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <SectionEyebrow>Concrètement tu repars avec</SectionEyebrow>
+          <h2 className={H2}>
+            En 6 mois, voilà ce qui est <em>fait</em>.
+          </h2>
+          <p className="mt-4 font-serif text-xl italic text-rose-dark md:text-2xl">
+            Pas « à faire ». Fait.
+          </p>
+        </div>
+        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {items.map((it) => (
+            <article
+              key={it.title}
+              className="flex flex-col rounded-[32px] bg-rose-light p-8"
+            >
+              <span className="text-4xl leading-none" aria-hidden="true">
+                {it.emoji}
+              </span>
+              <h3 className={`${H3} mt-5`}>{it.title}</h3>
+              <p className="mt-3 font-mono text-sm text-ink">{it.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function PrixSection() {
   return (
     <section className="bg-background">
@@ -581,7 +649,7 @@ function InclusSection() {
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
           <div className="rounded-[32px] bg-cream p-8">
-            <h3 className={H3}>Toi + moi, concrètement</h3>
+            <h3 className={H3}>👋 Toi + moi, concrètement</h3>
             <ul className="mt-6 space-y-3">
               {concretement.map((c) => (
                 <li key={c} className="flex gap-3 font-mono text-sm text-ink">
@@ -592,7 +660,7 @@ function InclusSection() {
             </ul>
           </div>
           <div className="rounded-[32px] bg-cream p-8">
-            <h3 className={H3}>Ce qu'on construit ensemble (à vie)</h3>
+            <h3 className={H3}>🛠️ Ce qu'on construit ensemble (à vie)</h3>
             <ul className="mt-6 space-y-3">
               {construit.map((c) => (
                 <li key={c} className="flex gap-3 font-mono text-sm text-ink">
@@ -878,14 +946,16 @@ function Page() {
       <HeroAccompagnement />
       <ClientsBand />
       <ProblemSection />
-      <ContrasteSection />
-      <TransformationGrid />
       <LaetitiaIntroSection />
+      <TransformationGrid />
+      <ContrasteSection />
       <TimelineSection />
       <PrixSection />
       <ComparaisonAgenceSection />
+      <DeliverablesSection />
       <InclusSection />
       <TemoignagesSection />
+      <PourquoiSection />
       <ProjetsAccompagnesGrid />
       <PourToiSection />
       <FaqSection />
