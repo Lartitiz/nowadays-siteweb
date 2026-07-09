@@ -82,8 +82,8 @@ function SectionEyebrow({ children }: { children: React.ReactNode }) {
 function HeroAccompagnement() {
   return (
     <section className="relative overflow-hidden bg-background">
-      <div className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
-        <h1 className="mx-auto font-serif text-4xl leading-[1.08] text-ink md:text-6xl">
+      <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
+        <h1 className="mx-auto font-serif text-4xl leading-[1.08] text-ink md:text-5xl">
           Tu fais un travail <em>magnifique</em>.
           <br />
           Mais personne ne le voit.
@@ -715,7 +715,7 @@ function TemoignagesSection() {
           {captures.map((c) => (
             <figure
               key={c.src}
-              className="overflow-hidden rounded-[24px] bg-rose-light"
+              className="overflow-hidden rounded-[24px] bg-rose-light shadow-[0_14px_36px_-18px_rgba(26,5,13,0.25)]"
             >
               <img
                 src={c.src}
