@@ -1,5 +1,15 @@
 import { createServerFn } from "@tanstack/react-start";
+import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
+import type { Database } from "@/integrations/supabase/types";
+
+function getPublicClient() {
+  return createClient<Database>(
+    process.env.SUPABASE_URL!,
+    process.env.SUPABASE_PUBLISHABLE_KEY!,
+    { auth: { storage: undefined, persistSession: false, autoRefreshToken: false } },
+  );
+}
 
 export type ArticleBlock =
   | { type: "h1" | "h2" | "h3"; text: string }
@@ -25,10 +35,7 @@ export type ArticleFull = ArticleListItem & {
 
 export const listArticles = createServerFn({ method: "GET" }).handler(
   async (): Promise<ArticleListItem[]> => {
-    const { supabaseAdmin } = await import(
-      "@/integrations/supabase/client.server"
-    );
-    const { data, error } = await supabaseAdmin
+    const { data, error } = await getPublicClient()
       .from("articles" as never)
       .select(
         "slug, title, excerpt, cover_url, cover_alt, author, published_at",
@@ -42,10 +49,7 @@ export const listArticles = createServerFn({ method: "GET" }).handler(
 export const getArticleBySlug = createServerFn({ method: "GET" })
   .inputValidator((input) => z.object({ slug: z.string().min(1).max(200) }).parse(input))
   .handler(async ({ data }): Promise<ArticleFull | null> => {
-    const { supabaseAdmin } = await import(
-      "@/integrations/supabase/client.server"
-    );
-    const { data: row, error } = await supabaseAdmin
+    const { data: row, error } = await getPublicClient()
       .from("articles" as never)
       .select(
         "slug, title, excerpt, cover_url, cover_alt, author, published_at, content, seo_title, seo_description",
