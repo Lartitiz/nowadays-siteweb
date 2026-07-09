@@ -2,6 +2,7 @@ import "./lib/error-capture";
 
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
+import { getRedirect } from "./lib/redirects";
 
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
@@ -39,6 +40,17 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    // Redirections 301 des anciennes URLs Squarespace (SEO). Traitées avant
+    // le SSR : pas de rendu React inutile, un vrai 301 côté serveur.
+    const url = new URL(request.url);
+    const redirectTo = getRedirect(url.pathname);
+    if (redirectTo) {
+      return new Response(null, {
+        status: 301,
+        headers: { Location: `${redirectTo}${url.search}` },
+      });
+    }
+
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
