@@ -1,11 +1,16 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { useSubscribe } from "@/lib/useSubscribe";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import cover from "@/assets/plan-communication/cover.png";
 import mockup from "@/assets/plan-communication/mockup.png";
 
+// Le "template plan de com" est une fonctionnalité de L'Assistant Com' :
+// cette route redirige directement vers l'app (pas une page de freebie).
 export const Route = createFileRoute("/plan-communication")({
+  beforeLoad: () => {
+    throw redirect({ href: "https://nowadays-assistant.fr" });
+  },
   head: () => ({
     meta: [
       { title: "Template Plan de communication gratuit — Canva à remplir | Nowadays Agency" },

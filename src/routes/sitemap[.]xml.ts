@@ -19,8 +19,6 @@ const STATIC_ENTRIES: SitemapEntry[] = [
   { path: "/etudes-de-cas-pro", changefreq: "monthly", priority: "0.8" },
   { path: "/blog", changefreq: "weekly", priority: "0.8" },
   { path: "/contact", changefreq: "yearly", priority: "0.7" },
-  { path: "/plan-communication", changefreq: "monthly", priority: "0.7" },
-  { path: "/template-calendrier-editorial", changefreq: "monthly", priority: "0.7" },
   { path: "/guide-storytelling", changefreq: "monthly", priority: "0.7" },
   { path: "/formation-gratuite-instagram", changefreq: "monthly", priority: "0.7" },
   { path: "/mentions-legales", changefreq: "yearly", priority: "0.2" },

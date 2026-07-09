@@ -1,11 +1,16 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { useSubscribe } from "@/lib/useSubscribe";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import cover from "@/assets/calendrier-editorial/cover.png";
 import mockup from "@/assets/calendrier-editorial/mockup.png";
 
+// Le "calendrier éditorial" est une fonctionnalité de L'Assistant Com' :
+// cette route redirige directement vers l'app (pas une page de freebie).
 export const Route = createFileRoute("/template-calendrier-editorial")({
+  beforeLoad: () => {
+    throw redirect({ href: "https://nowadays-assistant.fr" });
+  },
   head: () => ({
     meta: [
       { title: "Template Calendrier éditorial gratuit — Modèle PDF | Nowadays Agency" },

@@ -73,12 +73,12 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/template-calendrier-editorial"
+                <a
+                  href="https://nowadays-assistant.fr"
                   className="underline underline-offset-4 hover:text-rose-dark"
                 >
                   Outil Calendrier éditorial
-                </Link>
+                </a>
               </li>
               <li>
                 <Link
@@ -97,12 +97,12 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/plan-communication"
+                <a
+                  href="https://nowadays-assistant.fr"
                   className="underline underline-offset-4 hover:text-rose-dark"
                 >
                   Template Plan de com'
-                </Link>
+                </a>
               </li>
             </ul>
 
