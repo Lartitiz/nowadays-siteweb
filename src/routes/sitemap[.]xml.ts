@@ -17,11 +17,13 @@ const STATIC_ENTRIES: SitemapEntry[] = [
   { path: "/cooperative-asso", changefreq: "monthly", priority: "0.9" },
   { path: "/creatrices-ethiques", changefreq: "monthly", priority: "0.8" },
   { path: "/demarche-ethique", changefreq: "monthly", priority: "0.7" },
+  { path: "/manifeste", changefreq: "monthly", priority: "0.7" },
   { path: "/etudes-de-cas-pro", changefreq: "monthly", priority: "0.8" },
   { path: "/blog", changefreq: "weekly", priority: "0.8" },
   { path: "/contact", changefreq: "yearly", priority: "0.7" },
   { path: "/guide-storytelling", changefreq: "monthly", priority: "0.7" },
   { path: "/formation-gratuite-instagram", changefreq: "monthly", priority: "0.7" },
+  { path: "/template-branding", changefreq: "monthly", priority: "0.7" },
   { path: "/mentions-legales", changefreq: "yearly", priority: "0.2" },
 ];
 
