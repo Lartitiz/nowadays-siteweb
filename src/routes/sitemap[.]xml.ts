@@ -16,6 +16,7 @@ const STATIC_ENTRIES: SitemapEntry[] = [
   { path: "/accompagnement-communication", changefreq: "monthly", priority: "0.9" },
   { path: "/cooperative-asso", changefreq: "monthly", priority: "0.9" },
   { path: "/creatrices-ethiques", changefreq: "monthly", priority: "0.8" },
+  { path: "/demarche-ethique", changefreq: "monthly", priority: "0.7" },
   { path: "/etudes-de-cas-pro", changefreq: "monthly", priority: "0.8" },
   { path: "/blog", changefreq: "weekly", priority: "0.8" },
   { path: "/contact", changefreq: "yearly", priority: "0.7" },
