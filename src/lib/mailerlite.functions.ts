@@ -25,10 +25,7 @@ const GROUP_IDS: Record<SubscribeSource, string> = {
   "guide-storytelling": "97403595302896957", // Storytelling
   "plan-communication": "171976181183153753", // Lead Magnet Plan de com'
   "calendrier-editorial": "140326980271736757", // Calendrier Éditorial
-  // ⚠️ À COMPLÉTER : id du groupe MailerLite « Template Branding » (relevé dans
-  // le compte). Tant qu'il est vide, l'inscription fonctionne mais l'automation
-  // qui envoie le template ne se déclenche pas. Ce n'est pas un secret.
-  "template-branding": "",
+  "template-branding": "121129867221665139", // Branding Lead Magnet
   newsletter: "168045674357589073", // Newsletter sans email de bienvenue
 };
 
