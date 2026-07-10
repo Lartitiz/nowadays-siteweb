@@ -36,6 +36,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  to="/manifeste"
+                  className="underline underline-offset-4 hover:text-rose-dark"
+                >
+                  Notre manifeste
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/accompagnement-communication"
                   className="underline underline-offset-4 hover:text-rose-dark"
                 >
@@ -97,6 +105,14 @@ export function Footer() {
                   className="underline underline-offset-4 hover:text-rose-dark"
                 >
                   Guide storytelling
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/template-branding"
+                  className="underline underline-offset-4 hover:text-rose-dark"
+                >
+                  Template Branding
                 </Link>
               </li>
               <li>

@@ -24,11 +24,37 @@ const LEGACY_CASE_STUDIES = [
   "clip-it",
   "cooperative-oasis",
   "elvezia",
+  // Études présentes dans l'ancien sitemap mais oubliées au premier passage
+  // (mêmes slugs, elles vivent désormais sous /etudes/).
+  "flanelle",
+  "my-pilates-world",
+  "ressources",
 ];
 
-const REDIRECTS: Record<string, string> = Object.fromEntries(
-  LEGACY_CASE_STUDIES.map((slug) => [`/${slug}`, `/etudes/${slug}`]),
-);
+// Pages éditoriales dont l'URL a changé ou disparu à la refonte. On les
+// renvoie vers leur équivalent le plus proche pour ne pas casser le SEO ni
+// l'expérience (aucune ne doit tomber en 404 après la bascule du domaine).
+const EDITORIAL_REDIRECTS: Record<string, string> = {
+  // Étude de cas dont le slug a changé (ombeline → ombeline-mares).
+  "/ombeline": "/etudes/ombeline-mares",
+  // La démarche éthique « Faire mieux, pas plus » (ancien /communication-ethique).
+  "/communication-ethique": "/demarche-ethique",
+  // Ancienne page d'accueil SEO → nouvelle home.
+  "/agence-communication-ethique": "/",
+  // Index des études de cas asso/coopératives/PME.
+  "/etude-de-cas-ethique": "/etudes-de-cas-pro",
+  // La politique de confidentialité est désormais intégrée aux mentions légales.
+  "/politique-confidentialite": "/mentions-legales",
+  // Offre « binôme » supprimée → on renvoie vers l'accompagnement.
+  "/coaching-communication": "/accompagnement-communication",
+};
+
+const REDIRECTS: Record<string, string> = {
+  ...Object.fromEntries(
+    LEGACY_CASE_STUDIES.map((slug) => [`/${slug}`, `/etudes/${slug}`]),
+  ),
+  ...EDITORIAL_REDIRECTS,
+};
 
 // Renvoie le chemin cible d'une redirection 301, ou null si le chemin n'a pas
 // bougé. Tolère un éventuel slash final.
