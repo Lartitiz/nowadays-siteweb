@@ -166,6 +166,22 @@ function renderBlock(b: ArticleBlock, i: number) {
     );
   }
   if (b.type === "quote") {
+    // Certains blocs "quote" sont en fait des EXEMPLES (« *👉 …* ») : on les
+    // rend en encart clair, pas en grande citation. On retire l'italique
+    // enveloppant (*…*) qui n'a plus lieu d'être.
+    const raw = b.text.trim();
+    const isExample = raw.replace(/^\*+/, "").trimStart().startsWith("👉");
+    if (isExample) {
+      const cleaned = raw.replace(/^\*+/, "").replace(/\*+$/, "").trim();
+      return (
+        <aside
+          key={i}
+          className="my-8 rounded-2xl bg-rose-light px-6 py-5 font-mono text-sm leading-relaxed text-ink md:text-base"
+        >
+          <RichText text={cleaned} />
+        </aside>
+      );
+    }
     return (
       <blockquote
         key={i}

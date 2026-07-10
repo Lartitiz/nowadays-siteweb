@@ -57,6 +57,9 @@ function renderInline(text: string, kp: string): ReactNode[] {
  * `<a>` cliquables, plus **gras**, *italique* et sauts de ligne.
  */
 export function RichText({ text }: { text: string }) {
+  // Le scraper a parfois double-encode le gras (****mot****) → on normalise
+  // toute suite de 3+ asterisques en un gras propre (**).
+  text = text.replace(/\*{3,}/g, "**");
   const out: ReactNode[] = [];
   // Lien markdown [txt](url) OU URL brute http(s)://…
   const re = /\[([^\]]+)\]\(([^)\s]+)\)|(https?:\/\/[^\s)]+)/g;
