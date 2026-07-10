@@ -27,9 +27,12 @@ export function Footer() {
           <div className="space-y-4">
             <ul className="space-y-4 font-mono text-sm text-ink">
               <li>
-                <a href="#manifesto" className="underline underline-offset-4 hover:text-rose-dark">
+                <Link
+                  to="/demarche-ethique"
+                  className="underline underline-offset-4 hover:text-rose-dark"
+                >
                   Notre démarche éthique
-                </a>
+                </Link>
               </li>
               <li>
                 <Link
