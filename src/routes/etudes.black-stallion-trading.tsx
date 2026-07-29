@@ -17,6 +17,7 @@ import inf16r from "@/assets/etudes/black-stallion-trading/Romina-16R-fashion-br
 import infMarut from "@/assets/etudes/black-stallion-trading/marut-studio-.png.asset.json";
 import infAesth from "@/assets/etudes/black-stallion-trading/aesthetic-distance-photographer.png.asset.json";
 import infKirsten from "@/assets/etudes/black-stallion-trading/kirstenanderton.png.asset.json";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/etudes/black-stallion-trading")({
   head: () => ({
@@ -26,11 +27,11 @@ export const Route = createFileRoute("/etudes/black-stallion-trading")({
       { property: "og:title", content: "Black Stallion Trading — Étude de cas | Nowadays" },
       { property: "og:description", content: "Développer la notoriété d'un showroom à NYC avec une communication digitale globale." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/etudes/black-stallion-trading" },
-      { property: "og:image", content: logo.url },
-      { name: "twitter:image", content: logo.url },
+      { property: "og:url", content: absoluteUrl("/etudes/black-stallion-trading") },
+      { property: "og:image", content: absoluteUrl(logo.url) },
+      { name: "twitter:image", content: absoluteUrl(logo.url) },
     ],
-    links: [{ rel: "canonical", href: "/etudes/black-stallion-trading" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/etudes/black-stallion-trading") }],
   }),
   component: Page,
 });

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { CALENDLY_URL } from "@/lib/links";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/manifeste")({
   head: () => ({
@@ -21,9 +22,9 @@ export const Route = createFileRoute("/manifeste")({
           "Développer l'influence sans trahir l'éthique. Notre vision d'une communication qui fait du lien, redéfinit l'influenceur et repense les indicateurs de réussite.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/manifeste" },
+      { property: "og:url", content: absoluteUrl("/manifeste") },
     ],
-    links: [{ rel: "canonical", href: "/manifeste" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/manifeste") }],
   }),
   component: Page,
 });

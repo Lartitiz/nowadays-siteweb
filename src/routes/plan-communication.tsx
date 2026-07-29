@@ -4,6 +4,7 @@ import { useSubscribe } from "@/lib/useSubscribe";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import cover from "@/assets/plan-communication/cover.png";
 import mockup from "@/assets/plan-communication/mockup.png";
+import { absoluteUrl } from "@/lib/site";
 
 // Le "template plan de com" est une fonctionnalité de L'Assistant Com' :
 // cette route redirige directement vers l'app (pas une page de freebie).
@@ -25,11 +26,11 @@ export const Route = createFileRoute("/plan-communication")({
         content:
           "Ton plan de com' prêt à remplir et à appliquer — pour aligner ta com' avec ton activité réelle.",
       },
-      { property: "og:url", content: "/plan-communication" },
+      { property: "og:url", content: absoluteUrl("/plan-communication") },
       { property: "og:type", content: "article" },
-      { property: "og:image", content: cover },
+      { property: "og:image", content: absoluteUrl(cover) },
     ],
-    links: [{ rel: "canonical", href: "/plan-communication" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/plan-communication") }],
   }),
   component: Page,
 });

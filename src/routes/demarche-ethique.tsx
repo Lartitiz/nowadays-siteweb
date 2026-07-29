@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { CALENDLY_URL } from "@/lib/links";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/demarche-ethique")({
   head: () => ({
@@ -18,9 +19,9 @@ export const Route = createFileRoute("/demarche-ethique")({
           "La communication comme outil d'émancipation, pas de manipulation. Ce qu'on met en place, et nos limites.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/demarche-ethique" },
+      { property: "og:url", content: absoluteUrl("/demarche-ethique") },
     ],
-    links: [{ rel: "canonical", href: "/demarche-ethique" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/demarche-ethique") }],
   }),
   component: Page,
 });

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/mentions-legales")({
   head: () => ({
@@ -16,10 +17,10 @@ export const Route = createFileRoute("/mentions-legales")({
         content:
           "Informations légales et politique de confidentialité de Nowadays Agency.",
       },
-      { property: "og:url", content: "/mentions-legales" },
+      { property: "og:url", content: absoluteUrl("/mentions-legales") },
       { name: "robots", content: "index, follow" },
     ],
-    links: [{ rel: "canonical", href: "/mentions-legales" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/mentions-legales") }],
   }),
   component: Page,
 });

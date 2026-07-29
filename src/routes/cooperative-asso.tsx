@@ -28,6 +28,7 @@ import imgMyPilates from "@/assets/etudes/my-pilates-world.jpg.asset.json";
 import imgBelle from "@/assets/etudes/belle.jpg.asset.json";
 import imgRoseDonald from "@/assets/etudes/rose-donald.jpg.asset.json";
 import imgLaProchaineAire from "@/assets/etudes-pro/la-prochaine-aire.jpg.asset.json";
+import { absoluteUrl } from "@/lib/site";
 
 const CALENDLY_URL =
   "https://calendly.com/laetitia-mattioli/appel-decouverte-atelier";
@@ -51,7 +52,7 @@ export const Route = createFileRoute("/cooperative-asso")({
           "Déléguez votre com' à une agence qui partage vos valeurs. Réactive, autonome, efficace.",
       },
     ],
-    links: [{ rel: "canonical", href: "/cooperative-asso" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/cooperative-asso") }],
   }),
   component: Page,
 });

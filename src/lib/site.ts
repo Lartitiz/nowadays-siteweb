@@ -4,6 +4,9 @@
 export const SITE_ORIGIN = "https://nowadaysagency.com";
 
 export function absoluteUrl(path: string): string {
+  // Déjà absolue (image hébergée ailleurs, CDN, Supabase…) : on ne touche pas.
+  if (/^(https?:)?\/\//i.test(path)) return path;
+  if (path.startsWith("data:")) return path;
   if (!path.startsWith("/")) return `${SITE_ORIGIN}/${path}`;
   return `${SITE_ORIGIN}${path}`;
 }

@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { FinalCtaSection } from "@/components/site/FinalCtaSection";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes-pro/cooperative-oasis.jpg.asset.json";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/etudes/cooperative-oasis")({
   head: () => ({
@@ -20,11 +21,11 @@ export const Route = createFileRoute("/etudes/cooperative-oasis")({
           "Donner de la voix à un écosystème d'écolieux qui bâtissent un autre modèle de société.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/etudes/cooperative-oasis" },
-      { property: "og:image", content: cover.url },
-      { name: "twitter:image", content: cover.url },
+      { property: "og:url", content: absoluteUrl("/etudes/cooperative-oasis") },
+      { property: "og:image", content: absoluteUrl(cover.url) },
+      { name: "twitter:image", content: absoluteUrl(cover.url) },
     ],
-    links: [{ rel: "canonical", href: "/etudes/cooperative-oasis" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/etudes/cooperative-oasis") }],
   }),
   component: Page,
 });

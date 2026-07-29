@@ -20,9 +20,9 @@ export const Route = createFileRoute("/creatrices-ethiques")({
         content:
           "Marques engagées, artisanes et créatrices : découvrez les projets que nous avons accompagnés.",
       },
-      { property: "og:url", content: "/creatrices-ethiques" },
+      { property: "og:url", content: absoluteUrl("/creatrices-ethiques") },
     ],
-    links: [{ rel: "canonical", href: "/creatrices-ethiques" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/creatrices-ethiques") }],
   }),
   component: Page,
 });
@@ -61,6 +61,7 @@ import pelineCoachSopk from "@/assets/etudes/peline-coach-sopk.jpg.asset.json";
 import leJardinParfume from "@/assets/etudes/le-jardin-parfume.webp.asset.json";
 import flanelleAtelierStyliste from "@/assets/etudes/flanelle-atelier-styliste.jpg.asset.json";
 import ombelineMares from "@/assets/etudes/ombeline-mares.jpg.asset.json";
+import { absoluteUrl } from "@/lib/site";
 
 type Project = {
   name: string;

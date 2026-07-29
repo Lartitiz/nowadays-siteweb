@@ -4,6 +4,7 @@ import { FinalCtaSection } from "@/components/site/FinalCtaSection";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import logo from "@/assets/etudes/religion-clothing/religion-clothing.webp.asset.json";
 import imgEvt from "@/assets/etudes/religion-clothing/Capture-d-e-cran-2017-12-15-a-19.37.16.png.asset.json";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/etudes/religion-clothing")({
   head: () => ({
@@ -13,11 +14,11 @@ export const Route = createFileRoute("/etudes/religion-clothing")({
       { property: "og:title", content: "Religion Clothing — Étude de cas | Nowadays" },
       { property: "og:description", content: "Lancement de produit pour Religion Clothing avec une stratégie de partenariats événementiels." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/etudes/religion-clothing" },
-      { property: "og:image", content: logo.url },
-      { name: "twitter:image", content: logo.url },
+      { property: "og:url", content: absoluteUrl("/etudes/religion-clothing") },
+      { property: "og:image", content: absoluteUrl(logo.url) },
+      { name: "twitter:image", content: absoluteUrl(logo.url) },
     ],
-    links: [{ rel: "canonical", href: "/etudes/religion-clothing" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/etudes/religion-clothing") }],
   }),
   component: Page,
 });

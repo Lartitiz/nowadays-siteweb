@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SITE_ORIGIN, absoluteUrl } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -119,11 +120,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
+          "@id": `${SITE_ORIGIN}/#organization`,
           name: "Nowadays Agency",
           alternateName: "Nowadays",
           description:
             "Agence de communication engagée et éthique pour les projets plus doux pour le monde.",
-          url: "/",
+          url: absoluteUrl("/"),
         }),
       },
     ],

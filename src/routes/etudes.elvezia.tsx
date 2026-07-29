@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { FinalCtaSection } from "@/components/site/FinalCtaSection";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes-pro/elvezia.jpg.asset.json";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/etudes/elvezia")({
   head: () => ({
@@ -20,11 +21,11 @@ export const Route = createFileRoute("/etudes/elvezia")({
           "D'un discours produit à une marque premium incarnée et stratégique.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/etudes/elvezia" },
-      { property: "og:image", content: cover.url },
-      { name: "twitter:image", content: cover.url },
+      { property: "og:url", content: absoluteUrl("/etudes/elvezia") },
+      { property: "og:image", content: absoluteUrl(cover.url) },
+      { name: "twitter:image", content: absoluteUrl(cover.url) },
     ],
-    links: [{ rel: "canonical", href: "/etudes/elvezia" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/etudes/elvezia") }],
   }),
   component: Page,
 });

@@ -4,6 +4,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { Calendar, Mail, Instagram, Linkedin, ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { submitContact } from "@/lib/contact.functions";
+import { absoluteUrl } from "@/lib/site";
 
 const CALENDLY_URL =
   "https://calendly.com/laetitia-mattioli/30-min-de-diagnostic-offert";
@@ -27,9 +28,9 @@ export const Route = createFileRoute("/contact")({
           "Réponse sous 24 h ouvrées. Pour les projets qui ont du sens.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: absoluteUrl("/contact") },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/contact") }],
   }),
   component: ContactPage,
 });

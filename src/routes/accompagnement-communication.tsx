@@ -17,6 +17,7 @@ import logoSlf from "@/assets/clients-accompagnement/slf.png.asset.json";
 import laetitiaPhoto from "@/assets/accompagnement/laetitia.jpg.asset.json";
 import projetsData from "../../scripts/projets-accompagnes.json";
 import { CALENDLY_URL } from "@/lib/links";
+import { absoluteUrl } from "@/lib/site";
 
 const CALENDLY = CALENDLY_URL;
 
@@ -39,7 +40,7 @@ export const Route = createFileRoute("/accompagnement-communication")({
           "Deviens visible sans vendre ton âme. 290€/mois pendant 6 mois.",
       },
     ],
-    links: [{ rel: "canonical", href: "/accompagnement-communication" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/accompagnement-communication") }],
   }),
   component: Page,
 });

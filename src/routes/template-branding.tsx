@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { useSubscribe } from "@/lib/useSubscribe";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/template-branding")({
   head: () => ({
@@ -18,10 +19,10 @@ export const Route = createFileRoute("/template-branding")({
         content:
           "Le modèle à modifier pour clarifier ta marque en 8 étapes. Gratuit, reçu directement par email.",
       },
-      { property: "og:url", content: "/template-branding" },
+      { property: "og:url", content: absoluteUrl("/template-branding") },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/template-branding" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/template-branding") }],
   }),
   component: Page,
 });

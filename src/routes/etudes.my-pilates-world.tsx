@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { FinalCtaSection } from "@/components/site/FinalCtaSection";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes/my-pilates-world.jpg.asset.json";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/etudes/my-pilates-world")({
   head: () => ({
@@ -20,11 +21,11 @@ export const Route = createFileRoute("/etudes/my-pilates-world")({
           "Une stratégie digitale musclée pour une plateforme de Pilates en ligne : branding, social media, influence, tunnel de vente et email marketing.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/etudes/my-pilates-world" },
-      { property: "og:image", content: cover.url },
-      { name: "twitter:image", content: cover.url },
+      { property: "og:url", content: absoluteUrl("/etudes/my-pilates-world") },
+      { property: "og:image", content: absoluteUrl(cover.url) },
+      { name: "twitter:image", content: absoluteUrl(cover.url) },
     ],
-    links: [{ rel: "canonical", href: "/etudes/my-pilates-world" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/etudes/my-pilates-world") }],
   }),
   component: Page,
 });

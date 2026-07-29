@@ -4,6 +4,7 @@ import { useSubscribe } from "@/lib/useSubscribe";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import cover from "@/assets/guide-storytelling/cover.png";
 import canvas from "@/assets/guide-storytelling/mockup-canvas.png";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/guide-storytelling")({
   head: () => ({
@@ -20,11 +21,11 @@ export const Route = createFileRoute("/guide-storytelling")({
         content:
           "Le guide PDF gratuit pour structurer ton récit de marque en 5 étapes. Canevas pratique inclus.",
       },
-      { property: "og:url", content: "/guide-storytelling" },
+      { property: "og:url", content: absoluteUrl("/guide-storytelling") },
       { property: "og:type", content: "article" },
-      { property: "og:image", content: cover },
+      { property: "og:image", content: absoluteUrl(cover) },
     ],
-    links: [{ rel: "canonical", href: "/guide-storytelling" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/guide-storytelling") }],
   }),
   component: Page,
 });

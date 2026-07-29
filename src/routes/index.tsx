@@ -13,6 +13,7 @@ import { PourquoiNowadaysSection } from "@/components/site/PourquoiNowadaysSecti
 import { TestimonialsSection } from "@/components/site/TestimonialsSection";
 import { PressSection } from "@/components/site/PressSection";
 import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,7 +34,7 @@ export const Route = createFileRoute("/")({
           "Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, éthique et efficace.",
       },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/") }],
   }),
   component: Index,
 });

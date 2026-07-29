@@ -9,6 +9,7 @@ import {
   type ArticleBlock,
   type ArticleFull,
 } from "@/lib/articles.functions";
+import { absoluteUrl } from "@/lib/site";
 
 const articleQueryOptions = (slug: string) =>
   queryOptions({
@@ -42,13 +43,13 @@ export const Route = createFileRoute("/blog/$slug")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: `/blog/${a.slug}` },
+      { property: "og:url", content: absoluteUrl(`/blog/${a.slug}`) },
       { property: "article:published_time", content: a.published_at },
       { property: "article:author", content: a.author },
     ];
     if (a.cover_url) {
-      meta.push({ property: "og:image", content: a.cover_url });
-      meta.push({ name: "twitter:image", content: a.cover_url });
+      meta.push({ property: "og:image", content: absoluteUrl(a.cover_url) });
+      meta.push({ name: "twitter:image", content: absoluteUrl(a.cover_url) });
     }
     const articleSchema: Record<string, unknown> = {
       "@context": "https://schema.org",
@@ -61,26 +62,39 @@ export const Route = createFileRoute("/blog/$slug")({
         "@type": "Organization",
         name: "Nowadays Agency",
       },
-      mainEntityOfPage: { "@type": "WebPage", "@id": `/blog/${a.slug}` },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": absoluteUrl(`/blog/${a.slug}`),
+      },
     };
-    if (a.cover_url) articleSchema.image = a.cover_url;
+    if (a.cover_url) articleSchema.image = absoluteUrl(a.cover_url);
     const breadcrumbs = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Accueil", item: "/" },
-        { "@type": "ListItem", position: 2, name: "Blog", item: "/blog" },
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Accueil",
+          item: absoluteUrl("/"),
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Blog",
+          item: absoluteUrl("/blog"),
+        },
         {
           "@type": "ListItem",
           position: 3,
           name: a.title,
-          item: `/blog/${a.slug}`,
+          item: absoluteUrl(`/blog/${a.slug}`),
         },
       ],
     };
     return {
       meta,
-      links: [{ rel: "canonical", href: `/blog/${a.slug}` }],
+      links: [{ rel: "canonical", href: absoluteUrl(`/blog/${a.slug}`) }],
       scripts: [
         { type: "application/ld+json", children: JSON.stringify(articleSchema) },
         { type: "application/ld+json", children: JSON.stringify(breadcrumbs) },

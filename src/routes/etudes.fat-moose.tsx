@@ -16,6 +16,7 @@ import inf6 from "@/assets/etudes/fat-moose/6.png.asset.json";
 import inf4 from "@/assets/etudes/fat-moose/4.png.asset.json";
 import inf3 from "@/assets/etudes/fat-moose/3.png.asset.json";
 import inf2 from "@/assets/etudes/fat-moose/2.png.asset.json";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/etudes/fat-moose")({
   head: () => ({
@@ -25,11 +26,11 @@ export const Route = createFileRoute("/etudes/fat-moose")({
       { property: "og:title", content: "Fat Moose — Étude de cas | Nowadays" },
       { property: "og:description", content: "Assurer le lancement d'une marque streetwear avec une stratégie de communication 360°." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/etudes/fat-moose" },
-      { property: "og:image", content: logo.url },
-      { name: "twitter:image", content: logo.url },
+      { property: "og:url", content: absoluteUrl("/etudes/fat-moose") },
+      { property: "og:image", content: absoluteUrl(logo.url) },
+      { name: "twitter:image", content: absoluteUrl(logo.url) },
     ],
-    links: [{ rel: "canonical", href: "/etudes/fat-moose" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/etudes/fat-moose") }],
   }),
   component: Page,
 });

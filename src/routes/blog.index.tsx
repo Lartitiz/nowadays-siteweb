@@ -3,6 +3,7 @@ import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { FinalCtaSection } from "@/components/site/FinalCtaSection";
 import { listArticles } from "@/lib/articles.functions";
+import { absoluteUrl } from "@/lib/site";
 
 const articlesQueryOptions = queryOptions({
   queryKey: ["articles", "list"],
@@ -24,9 +25,9 @@ export const Route = createFileRoute("/blog/")({
         content:
           "Des conseils pratiques pour te faire connaître tout en respectant ton éthique.",
       },
-      { property: "og:url", content: "/blog" },
+      { property: "og:url", content: absoluteUrl("/blog") },
     ],
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/blog") }],
     scripts: [
       {
         type: "application/ld+json",
@@ -34,8 +35,18 @@ export const Route = createFileRoute("/blog/")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Accueil", item: "/" },
-            { "@type": "ListItem", position: 2, name: "Blog", item: "/blog" },
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Accueil",
+              item: absoluteUrl("/"),
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Blog",
+              item: absoluteUrl("/blog"),
+            },
           ],
         }),
       },

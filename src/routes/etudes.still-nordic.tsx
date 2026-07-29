@@ -11,6 +11,7 @@ import ig5 from "@/assets/etudes/still-nordic/top_esthetic_instagram.webp.asset.
 import ig6 from "@/assets/etudes/still-nordic/square_esthetic_instagram.webp.asset.json";
 import infDying from "@/assets/etudes/still-nordic/still-nordic-influencer-2.png.asset.json";
 import infAesth from "@/assets/etudes/still-nordic/still-nordic-influencer.png.asset.json";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/etudes/still-nordic")({
   head: () => ({
@@ -20,11 +21,11 @@ export const Route = createFileRoute("/etudes/still-nordic")({
       { property: "og:title", content: "Still Nordic — Étude de cas | Nowadays" },
       { property: "og:description", content: "Social Media et Branding pour Still Nordic — sacs en cuir au design scandinave." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/etudes/still-nordic" },
-      { property: "og:image", content: logo.url },
-      { name: "twitter:image", content: logo.url },
+      { property: "og:url", content: absoluteUrl("/etudes/still-nordic") },
+      { property: "og:image", content: absoluteUrl(logo.url) },
+      { name: "twitter:image", content: absoluteUrl(logo.url) },
     ],
-    links: [{ rel: "canonical", href: "/etudes/still-nordic" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/etudes/still-nordic") }],
   }),
   component: Page,
 });

@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { FinalCtaSection } from "@/components/site/FinalCtaSection";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes-pro/okahina-wave.jpg.asset.json";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/etudes/okahina-wave")({
   head: () => ({
@@ -20,11 +21,11 @@ export const Route = createFileRoute("/etudes/okahina-wave")({
           "Stratégie de communication digitale pour une marque éthique en lancement.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/etudes/okahina-wave" },
-      { property: "og:image", content: cover.url },
-      { name: "twitter:image", content: cover.url },
+      { property: "og:url", content: absoluteUrl("/etudes/okahina-wave") },
+      { property: "og:image", content: absoluteUrl(cover.url) },
+      { name: "twitter:image", content: absoluteUrl(cover.url) },
     ],
-    links: [{ rel: "canonical", href: "/etudes/okahina-wave" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/etudes/okahina-wave") }],
   }),
   component: Page,
 });

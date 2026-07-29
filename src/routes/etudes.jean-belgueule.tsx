@@ -7,6 +7,7 @@ import ig1 from "@/assets/etudes/jean-belgueule/instagram-jean-belgueule-case-st
 import ig2 from "@/assets/etudes/jean-belgueule/Capture-d-e-cran-2018-07-11-a-13.10.32.png.asset.json";
 import ig3 from "@/assets/etudes/jean-belgueule/instagram-feed.webp.asset.json";
 import ig4 from "@/assets/etudes/jean-belgueule/Capture-d-e-cran-2018-07-11-a-13.09.46.png.asset.json";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/etudes/jean-belgueule")({
   head: () => ({
@@ -16,11 +17,11 @@ export const Route = createFileRoute("/etudes/jean-belgueule")({
       { property: "og:title", content: "Jean Belgueule — Étude de cas | Nowadays" },
       { property: "og:description", content: "Communication digitale pour une marque de cosmétiques bio pour hommes." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/etudes/jean-belgueule" },
-      { property: "og:image", content: logo.url },
-      { name: "twitter:image", content: logo.url },
+      { property: "og:url", content: absoluteUrl("/etudes/jean-belgueule") },
+      { property: "og:image", content: absoluteUrl(logo.url) },
+      { name: "twitter:image", content: absoluteUrl(logo.url) },
     ],
-    links: [{ rel: "canonical", href: "/etudes/jean-belgueule" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/etudes/jean-belgueule") }],
   }),
   component: Page,
 });

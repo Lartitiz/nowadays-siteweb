@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { FinalCtaSection } from "@/components/site/FinalCtaSection";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes/ombeline-mares.jpg.asset.json";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/etudes/ombeline-mares")({
   head: () => ({
@@ -20,11 +21,11 @@ export const Route = createFileRoute("/etudes/ombeline-mares")({
           "Transformer une activité de création en marque de joaillerie incarnée : positionnement, manifeste éthique, direction artistique et stratégie de contenu.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/etudes/ombeline-mares" },
-      { property: "og:image", content: cover.url },
-      { name: "twitter:image", content: cover.url },
+      { property: "og:url", content: absoluteUrl("/etudes/ombeline-mares") },
+      { property: "og:image", content: absoluteUrl(cover.url) },
+      { name: "twitter:image", content: absoluteUrl(cover.url) },
     ],
-    links: [{ rel: "canonical", href: "/etudes/ombeline-mares" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/etudes/ombeline-mares") }],
   }),
   component: Page,
 });

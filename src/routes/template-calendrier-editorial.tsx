@@ -4,6 +4,7 @@ import { useSubscribe } from "@/lib/useSubscribe";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import cover from "@/assets/calendrier-editorial/cover.png";
 import mockup from "@/assets/calendrier-editorial/mockup.png";
+import { absoluteUrl } from "@/lib/site";
 
 // Le "calendrier éditorial" est une fonctionnalité de L'Assistant Com' :
 // cette route redirige directement vers l'app (pas une page de freebie).
@@ -25,11 +26,11 @@ export const Route = createFileRoute("/template-calendrier-editorial")({
         content:
           "Organise tes contenus sans stress avec notre modèle de calendrier éditorial gratuit. Pensé pour les créatrices et marques engagées.",
       },
-      { property: "og:url", content: "/template-calendrier-editorial" },
+      { property: "og:url", content: absoluteUrl("/template-calendrier-editorial") },
       { property: "og:type", content: "article" },
-      { property: "og:image", content: cover },
+      { property: "og:image", content: absoluteUrl(cover) },
     ],
-    links: [{ rel: "canonical", href: "/template-calendrier-editorial" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/template-calendrier-editorial") }],
   }),
   component: Page,
 });

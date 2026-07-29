@@ -10,12 +10,15 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TemplateCalendrierEditorialRouteImport } from './routes/template-calendrier-editorial'
+import { Route as TemplateBrandingRouteImport } from './routes/template-branding'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PlanCommunicationRouteImport } from './routes/plan-communication'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
+import { Route as ManifesteRouteImport } from './routes/manifeste'
 import { Route as GuideStorytellingRouteImport } from './routes/guide-storytelling'
 import { Route as FormationGratuiteInstagramRouteImport } from './routes/formation-gratuite-instagram'
 import { Route as EtudesDeCasProRouteImport } from './routes/etudes-de-cas-pro'
+import { Route as DemarcheEthiqueRouteImport } from './routes/demarche-ethique'
 import { Route as CreatricesEthiquesRouteImport } from './routes/creatrices-ethiques'
 import { Route as CooperativeAssoRouteImport } from './routes/cooperative-asso'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -48,6 +51,11 @@ const TemplateCalendrierEditorialRoute =
     path: '/template-calendrier-editorial',
     getParentRoute: () => rootRouteImport,
   } as any)
+const TemplateBrandingRoute = TemplateBrandingRouteImport.update({
+  id: '/template-branding',
+  path: '/template-branding',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -61,6 +69,11 @@ const PlanCommunicationRoute = PlanCommunicationRouteImport.update({
 const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
   id: '/mentions-legales',
   path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManifesteRoute = ManifesteRouteImport.update({
+  id: '/manifeste',
+  path: '/manifeste',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GuideStorytellingRoute = GuideStorytellingRouteImport.update({
@@ -77,6 +90,11 @@ const FormationGratuiteInstagramRoute =
 const EtudesDeCasProRoute = EtudesDeCasProRouteImport.update({
   id: '/etudes-de-cas-pro',
   path: '/etudes-de-cas-pro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DemarcheEthiqueRoute = DemarcheEthiqueRouteImport.update({
+  id: '/demarche-ethique',
+  path: '/demarche-ethique',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CreatricesEthiquesRoute = CreatricesEthiquesRouteImport.update({
@@ -214,12 +232,15 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/creatrices-ethiques': typeof CreatricesEthiquesRoute
+  '/demarche-ethique': typeof DemarcheEthiqueRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
+  '/manifeste': typeof ManifesteRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/plan-communication': typeof PlanCommunicationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/template-branding': typeof TemplateBrandingRoute
   '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
@@ -248,12 +269,15 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/creatrices-ethiques': typeof CreatricesEthiquesRoute
+  '/demarche-ethique': typeof DemarcheEthiqueRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
+  '/manifeste': typeof ManifesteRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/plan-communication': typeof PlanCommunicationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/template-branding': typeof TemplateBrandingRoute
   '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
@@ -283,12 +307,15 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/creatrices-ethiques': typeof CreatricesEthiquesRoute
+  '/demarche-ethique': typeof DemarcheEthiqueRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
+  '/manifeste': typeof ManifesteRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/plan-communication': typeof PlanCommunicationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/template-branding': typeof TemplateBrandingRoute
   '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
@@ -319,12 +346,15 @@ export interface FileRouteTypes {
     | '/contact'
     | '/cooperative-asso'
     | '/creatrices-ethiques'
+    | '/demarche-ethique'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
+    | '/manifeste'
     | '/mentions-legales'
     | '/plan-communication'
     | '/sitemap.xml'
+    | '/template-branding'
     | '/template-calendrier-editorial'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
@@ -353,12 +383,15 @@ export interface FileRouteTypes {
     | '/contact'
     | '/cooperative-asso'
     | '/creatrices-ethiques'
+    | '/demarche-ethique'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
+    | '/manifeste'
     | '/mentions-legales'
     | '/plan-communication'
     | '/sitemap.xml'
+    | '/template-branding'
     | '/template-calendrier-editorial'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
@@ -387,12 +420,15 @@ export interface FileRouteTypes {
     | '/contact'
     | '/cooperative-asso'
     | '/creatrices-ethiques'
+    | '/demarche-ethique'
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
+    | '/manifeste'
     | '/mentions-legales'
     | '/plan-communication'
     | '/sitemap.xml'
+    | '/template-branding'
     | '/template-calendrier-editorial'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
@@ -422,12 +458,15 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   CooperativeAssoRoute: typeof CooperativeAssoRoute
   CreatricesEthiquesRoute: typeof CreatricesEthiquesRoute
+  DemarcheEthiqueRoute: typeof DemarcheEthiqueRoute
   EtudesDeCasProRoute: typeof EtudesDeCasProRoute
   FormationGratuiteInstagramRoute: typeof FormationGratuiteInstagramRoute
   GuideStorytellingRoute: typeof GuideStorytellingRoute
+  ManifesteRoute: typeof ManifesteRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   PlanCommunicationRoute: typeof PlanCommunicationRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TemplateBrandingRoute: typeof TemplateBrandingRoute
   TemplateCalendrierEditorialRoute: typeof TemplateCalendrierEditorialRoute
   BlogSlugRoute: typeof BlogSlugRoute
   EtudesAtelierDesLunettesRoute: typeof EtudesAtelierDesLunettesRoute
@@ -460,6 +499,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TemplateCalendrierEditorialRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/template-branding': {
+      id: '/template-branding'
+      path: '/template-branding'
+      fullPath: '/template-branding'
+      preLoaderRoute: typeof TemplateBrandingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -481,6 +527,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MentionsLegalesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/manifeste': {
+      id: '/manifeste'
+      path: '/manifeste'
+      fullPath: '/manifeste'
+      preLoaderRoute: typeof ManifesteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/guide-storytelling': {
       id: '/guide-storytelling'
       path: '/guide-storytelling'
@@ -500,6 +553,13 @@ declare module '@tanstack/react-router' {
       path: '/etudes-de-cas-pro'
       fullPath: '/etudes-de-cas-pro'
       preLoaderRoute: typeof EtudesDeCasProRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demarche-ethique': {
+      id: '/demarche-ethique'
+      path: '/demarche-ethique'
+      fullPath: '/demarche-ethique'
+      preLoaderRoute: typeof DemarcheEthiqueRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/creatrices-ethiques': {
@@ -686,12 +746,15 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   CooperativeAssoRoute: CooperativeAssoRoute,
   CreatricesEthiquesRoute: CreatricesEthiquesRoute,
+  DemarcheEthiqueRoute: DemarcheEthiqueRoute,
   EtudesDeCasProRoute: EtudesDeCasProRoute,
   FormationGratuiteInstagramRoute: FormationGratuiteInstagramRoute,
   GuideStorytellingRoute: GuideStorytellingRoute,
+  ManifesteRoute: ManifesteRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   PlanCommunicationRoute: PlanCommunicationRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TemplateBrandingRoute: TemplateBrandingRoute,
   TemplateCalendrierEditorialRoute: TemplateCalendrierEditorialRoute,
   BlogSlugRoute: BlogSlugRoute,
   EtudesAtelierDesLunettesRoute: EtudesAtelierDesLunettesRoute,
@@ -717,3 +780,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

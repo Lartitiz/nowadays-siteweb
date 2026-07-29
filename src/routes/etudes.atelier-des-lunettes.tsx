@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { FinalCtaSection } from "@/components/site/FinalCtaSection";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes-pro/atelier-des-lunettes.webp.asset.json";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/etudes/atelier-des-lunettes")({
   head: () => ({
@@ -19,11 +20,11 @@ export const Route = createFileRoute("/etudes/atelier-des-lunettes")({
         content: "Faire passer un cap à une boutique de lunettes de créateurs.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/etudes/atelier-des-lunettes" },
-      { property: "og:image", content: cover.url },
-      { name: "twitter:image", content: cover.url },
+      { property: "og:url", content: absoluteUrl("/etudes/atelier-des-lunettes") },
+      { property: "og:image", content: absoluteUrl(cover.url) },
+      { name: "twitter:image", content: absoluteUrl(cover.url) },
     ],
-    links: [{ rel: "canonical", href: "/etudes/atelier-des-lunettes" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/etudes/atelier-des-lunettes") }],
   }),
   component: Page,
 });

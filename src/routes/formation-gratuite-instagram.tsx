@@ -4,6 +4,7 @@ import { useSubscribe } from "@/lib/useSubscribe";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import cover from "@/assets/formation-ig/cover.png.asset.json";
 import mockupOptim from "@/assets/formation-ig/mockup-optimisation.png.asset.json";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/formation-gratuite-instagram")({
   head: () => ({
@@ -20,11 +21,11 @@ export const Route = createFileRoute("/formation-gratuite-instagram")({
         content:
           "Le guide PDF gratuit pour bâtir une stratégie Instagram alignée et durable. 5 modules, ~90 min.",
       },
-      { property: "og:url", content: "/formation-gratuite-instagram" },
+      { property: "og:url", content: absoluteUrl("/formation-gratuite-instagram") },
       { property: "og:type", content: "article" },
-      { property: "og:image", content: cover.url },
+      { property: "og:image", content: absoluteUrl(cover.url) },
     ],
-    links: [{ rel: "canonical", href: "/formation-gratuite-instagram" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/formation-gratuite-instagram") }],
   }),
   component: Page,
 });

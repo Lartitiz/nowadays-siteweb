@@ -9,6 +9,7 @@ import imgBureau from "@/assets/etudes/ressources/bureau-ressources.png.asset.js
 import imgInterview from "@/assets/etudes/ressources/interview-emmanuelle.jpg.asset.json";
 import imgStrategie from "@/assets/etudes/ressources/strategie.png.asset.json";
 import imgSocial from "@/assets/etudes/ressources/social-media.png.asset.json";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/etudes/ressources")({
   head: () => ({
@@ -18,11 +19,11 @@ export const Route = createFileRoute("/etudes/ressources")({
       { property: "og:title", content: "Ressources Green — Étude de cas | Nowadays" },
       { property: "og:description", content: "Quand un traiteur bio et durable devient un laboratoire d'idées — branding, site web, social media." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/etudes/ressources" },
-      { property: "og:image", content: logo.url },
-      { name: "twitter:image", content: logo.url },
+      { property: "og:url", content: absoluteUrl("/etudes/ressources") },
+      { property: "og:image", content: absoluteUrl(logo.url) },
+      { name: "twitter:image", content: absoluteUrl(logo.url) },
     ],
-    links: [{ rel: "canonical", href: "/etudes/ressources" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/etudes/ressources") }],
   }),
   component: Page,
 });
