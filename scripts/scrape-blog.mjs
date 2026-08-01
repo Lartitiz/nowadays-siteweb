@@ -43,58 +43,49 @@ function cleanImgUrl(u) {
 
 function inlineMd($, el) {
   let out = "";
-  $(el)
-    .contents()
-    .each((_, node) => {
-      if (node.type === "text") {
-        out += node.data;
-      } else if (node.type === "tag") {
-        const tag = node.name.toLowerCase();
-        const inner = inlineMd($, node);
-        if (tag === "br") out += "\n";
-        else if (tag === "strong" || tag === "b") out += `**${inner}**`;
-        else if (tag === "em" || tag === "i") out += `*${inner}*`;
-        else if (tag === "a") {
-          const href = $(node).attr("href") || "";
-          out += `[${inner}](${href})`;
-        } else out += inner;
-      }
-    });
-  return out
-    .replace(/\u00a0/g, " ")
-    .replace(/[ \t]+\n/g, "\n")
-    .trim();
+  $(el).contents().each((_, node) => {
+    if (node.type === "text") {
+      out += node.data;
+    } else if (node.type === "tag") {
+      const tag = node.name.toLowerCase();
+      const inner = inlineMd($, node);
+      if (tag === "br") out += "\n";
+      else if (tag === "strong" || tag === "b") out += `**${inner}**`;
+      else if (tag === "em" || tag === "i") out += `*${inner}*`;
+      else if (tag === "a") {
+        const href = $(node).attr("href") || "";
+        out += `[${inner}](${href})`;
+      } else out += inner;
+    }
+  });
+  return out.replace(/\u00a0/g, " ").replace(/[ \t]+\n/g, "\n").trim();
 }
 
 function processHtmlBlock($, contentEl, blocks) {
-  $(contentEl)
-    .children()
-    .each((_, child) => {
-      const tag = child.name?.toLowerCase();
-      if (!tag) return;
-      if (tag === "h1" || tag === "h2") {
-        const text = inlineMd($, child);
-        if (text && !isNoise(text)) blocks.push({ type: "h2", text });
-      } else if (tag === "h3" || tag === "h4") {
-        const text = inlineMd($, child);
-        if (text && !isNoise(text)) blocks.push({ type: "h3", text });
-      } else if (tag === "blockquote") {
-        const text = inlineMd($, child);
-        if (text && !isNoise(text)) blocks.push({ type: "quote", text });
-      } else if (tag === "p") {
-        const text = inlineMd($, child);
-        if (text && !isNoise(text)) blocks.push({ type: "p", text });
-      } else if (tag === "ul" || tag === "ol") {
-        $(child)
-          .children("li")
-          .each((__, li) => {
-            const text = inlineMd($, li);
-            if (text && !isNoise(text)) blocks.push({ type: "p", text: `• ${text}` });
-          });
-      } else if (tag === "div") {
-        processHtmlBlock($, child, blocks);
-      }
-    });
+  $(contentEl).children().each((_, child) => {
+    const tag = child.name?.toLowerCase();
+    if (!tag) return;
+    if (tag === "h1" || tag === "h2") {
+      const text = inlineMd($, child);
+      if (text && !isNoise(text)) blocks.push({ type: "h2", text });
+    } else if (tag === "h3" || tag === "h4") {
+      const text = inlineMd($, child);
+      if (text && !isNoise(text)) blocks.push({ type: "h3", text });
+    } else if (tag === "blockquote") {
+      const text = inlineMd($, child);
+      if (text && !isNoise(text)) blocks.push({ type: "quote", text });
+    } else if (tag === "p") {
+      const text = inlineMd($, child);
+      if (text && !isNoise(text)) blocks.push({ type: "p", text });
+    } else if (tag === "ul" || tag === "ol") {
+      $(child).children("li").each((__, li) => {
+        const text = inlineMd($, li);
+        if (text && !isNoise(text)) blocks.push({ type: "p", text: `• ${text}` });
+      });
+    } else if (tag === "div") {
+      processHtmlBlock($, child, blocks);
+    }
+  });
 }
 
 async function scrape(slug) {
@@ -107,12 +98,12 @@ async function scrape(slug) {
   const $ = cheerio.load(html);
 
   const title =
-    $(".entry-title").first().text().trim() || $('meta[property="og:title"]').attr("content") || "";
+    $(".entry-title").first().text().trim() ||
+    $('meta[property="og:title"]').attr("content") || "";
 
   const seo_description =
     $('meta[name="description"]').attr("content") ||
-    $('meta[property="og:description"]').attr("content") ||
-    "";
+    $('meta[property="og:description"]').attr("content") || "";
   const seo_title = $('meta[property="og:title"]').attr("content") || title;
 
   let cover_url = $('meta[property="og:image"]').attr("content") || "";
@@ -172,13 +163,8 @@ for (const a of ARTICLES) {
   try {
     const data = await scrape(a.slug);
     out.push({ ...data, published_at: a.published_at });
-    const counts = data.content.reduce(
-      (acc, b) => ({ ...acc, [b.type]: (acc[b.type] || 0) + 1 }),
-      {},
-    );
-    process.stderr.write(
-      `  → ${data.content.length} blocks ${JSON.stringify(counts)} cover=${data.cover_url ? "ok" : "MISSING"}\n`,
-    );
+    const counts = data.content.reduce((acc, b) => ({ ...acc, [b.type]: (acc[b.type] || 0) + 1 }), {});
+    process.stderr.write(`  → ${data.content.length} blocks ${JSON.stringify(counts)} cover=${data.cover_url ? "ok" : "MISSING"}\n`);
   } catch (e) {
     process.stderr.write(`  ✗ ${e.message}\n`);
   }
