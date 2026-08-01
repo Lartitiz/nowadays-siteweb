@@ -1,3 +1,4 @@
+import { Pill } from "@/components/da/Pill";
 const TEMOIGNAGES = [
   {
     photo: "/images/home/temoin-abigail.jpg",
@@ -26,7 +27,7 @@ export function HomeTemoignages() {
   return (
     <section className="testimonials rose">
       <div className="wrap">
-        <span className="eyebrow">Elles l'ont fait</span>
+        <Pill>Elles l'ont fait</Pill>
         <h2>Des paroles réellement prononcées.</h2>
 
         <div className="test-grid">

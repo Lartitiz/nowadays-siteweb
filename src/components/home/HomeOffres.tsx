@@ -1,3 +1,4 @@
+import { Pill } from "@/components/da/Pill";
 import { Link } from "@tanstack/react-router";
 
 export function HomeOffres() {
@@ -5,7 +6,7 @@ export function HomeOffres() {
     <section className="section" id="solutions">
       <div className="wrap">
         <div className="offers-head">
-          <span className="eyebrow">Les solutions</span>
+          <Pill>Les solutions</Pill>
           <h2>Votre com' mérite mieux que du bricolage.</h2>
           <p className="lead">
             On a deux façons de vous aider. À vous de choisir celle qui vous ressemble.

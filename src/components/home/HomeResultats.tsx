@@ -1,4 +1,5 @@
-import { CtaInline } from "./CtaInline";
+import { Pill } from "@/components/da/Pill";
+import { CtaInline } from "@/components/da/CtaInline";
 
 const RESULTATS = [
   {
@@ -34,7 +35,7 @@ export function HomeResultats() {
   return (
     <section className="section results" id="resultats">
       <div className="wrap">
-        <span className="eyebrow yellow">Quatre exemples</span>
+        <Pill ton="jaune">Quatre exemples</Pill>
         <h2>Ce qu'on a mis en place, et ce que ça a donné.</h2>
 
         <div className="result-list">

@@ -1,31 +1,13 @@
-import { PRESSE } from "./constants";
+import { Pill } from "@/components/da/Pill";
+import { PressLogos } from "@/components/da/PressLogos";
+import { Section } from "@/components/da/Section";
 
 export function HomePresse() {
   return (
-    <section className="section presse">
-      <div className="wrap">
-        <span className="eyebrow">On en a parlé</span>
-        <h2>Vu dans la presse</h2>
-
-        <div className="press-names">
-          {PRESSE.map((media) => (
-            <a
-              key={media.nom}
-              href={media.href}
-              target="_blank"
-              rel="noopener"
-              aria-label={`Article ${media.nom}`}
-            >
-              <img
-                src={media.src}
-                alt={media.nom}
-                style={{ height: media.hauteur }}
-                loading="lazy"
-              />
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
+    <Section className="presse">
+      <Pill>On en a parlé</Pill>
+      <h2>Vu dans la presse</h2>
+      <PressLogos />
+    </Section>
   );
 }

@@ -1,3 +1,4 @@
+import { Pill } from "@/components/da/Pill";
 const FAITS = [
   "10+ ans de marketing digital",
   "150+ projets accompagnés",
@@ -17,7 +18,7 @@ export function HomeLaetitia() {
         </div>
 
         <div className="about-text">
-          <span className="eyebrow">Derrière Nowadays</span>
+          <Pill>Derrière Nowadays</Pill>
           <h2>Enchantée, moi c'est Laetitia.</h2>
           <p className="lead">
             J'ai créé Nowadays après avoir vu trop de marques éthiques et engagées s'épuiser à

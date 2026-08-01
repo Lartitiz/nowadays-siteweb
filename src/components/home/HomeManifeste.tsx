@@ -1,12 +1,14 @@
+import { Pill } from "@/components/da/Pill";
 import { Link } from "@tanstack/react-router";
-import { Megaphone } from "./primitives";
+import { Megaphone } from "@/components/da/primitives";
+import { StickerNote } from "@/components/da/StickerNote";
 
 export function HomeManifeste() {
   return (
     <section className="section manifesto" id="manifeste">
       <div className="wrap manifesto-grid">
         <div>
-          <span className="eyebrow yellow">Notre manifeste</span>
+          <Pill ton="jaune">Notre manifeste</Pill>
           <h2>Une communication engagée comme outil d'émancipation.</h2>
           <p className="lead">
             La visibilité, c'est déjà une forme de liberté. Une créatrice qui vit de son métier,
@@ -20,12 +22,11 @@ export function HomeManifeste() {
           </p>
         </div>
 
-        <div className="sticker-ethique">
+        <StickerNote lien={<Link to="/demarche-ethique">Notre démarche</Link>}>
           « 100 % éthique », ça n'existe pas.
           <br />
           Plus éthique chaque année, oui.
-          <Link to="/demarche-ethique">Notre démarche</Link>
-        </div>
+        </StickerNote>
 
         <div className="manifesto-mark">
           <Megaphone />

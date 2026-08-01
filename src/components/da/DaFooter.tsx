@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import nowadaysLogo from "@/assets/nowadays-logo-v2.webp.asset.json";
 import { ASSISTANT_URL } from "./constants";
 
-export function HomeFooter() {
+export function DaFooter() {
   return (
     <footer className="site-footer">
       <div className="wrap">

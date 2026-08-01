@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import designSystemCss from "../styles/design-system.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SITE_ORIGIN, absoluteUrl } from "@/lib/site";
 
@@ -45,9 +46,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-serif text-xl tracking-tight text-foreground">
-          This page didn't load
-        </h1>
+        <h1 className="font-serif text-xl tracking-tight text-foreground">This page didn't load</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
@@ -98,9 +97,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Nowadays — Agence de communication engagée et éthique" },
-      { name: "twitter:description", content: "Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, éthique et efficace." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d4f1c2b3-5833-4d3b-8c1b-c01692798844/id-preview-554ed6f5--4b40518c-0b57-4589-a036-3de8316962ef.lovable.app-1783632229311.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d4f1c2b3-5833-4d3b-8c1b-c01692798844/id-preview-554ed6f5--4b40518c-0b57-4589-a036-3de8316962ef.lovable.app-1783632229311.png" },
+      {
+        name: "twitter:description",
+        content:
+          "Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, éthique et efficace.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d4f1c2b3-5833-4d3b-8c1b-c01692798844/id-preview-554ed6f5--4b40518c-0b57-4589-a036-3de8316962ef.lovable.app-1783632229311.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d4f1c2b3-5833-4d3b-8c1b-c01692798844/id-preview-554ed6f5--4b40518c-0b57-4589-a036-3de8316962ef.lovable.app-1783632229311.png",
+      },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -109,9 +120,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap",
       },
+      // Polices du design system. Chargées pour tout le site : elles ne
+      // changent rien tant qu'une page ne les demande pas, et les pages sont
+      // converties lot par lot.
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      // Styles du design system, entièrement scopés sous .nowadays-da : sans
+      // cette classe sur la page, ils n'ont aucun effet.
+      {
+        rel: "stylesheet",
+        href: designSystemCss,
       },
     ],
     scripts: [

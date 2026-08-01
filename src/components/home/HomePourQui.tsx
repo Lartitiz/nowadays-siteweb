@@ -1,3 +1,7 @@
+import { CardPointillee } from "@/components/da/CardPointillee";
+import { Pill } from "@/components/da/Pill";
+import { Section } from "@/components/da/Section";
+
 const POUR_VOUS = [
   "vous portez un projet éthique, engagé ou artisanal ;",
   "vous voulez poser la base avant d'empiler des contenus ;",
@@ -14,31 +18,27 @@ const PAS_POUR_VOUS = [
 
 export function HomePourQui() {
   return (
-    <section className="section">
-      <div className="wrap">
-        <span className="eyebrow">Pour qui</span>
-        <h2>La bonne collaboration, c'est aussi savoir où on met les pieds.</h2>
+    <Section>
+      <Pill>Pour qui</Pill>
+      <h2>La bonne collaboration, c'est aussi savoir où on met les pieds.</h2>
 
-        <div className="audience-grid">
-          <article className="audience-card yes card">
-            <h3>C'est pour vous si…</h3>
-            <ul>
-              {POUR_VOUS.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
+      <div className="audience-grid">
+        <CardPointillee titre="C'est pour vous si…" ton="rose">
+          <ul>
+            {POUR_VOUS.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </CardPointillee>
 
-          <article className="audience-card no card">
-            <h3>Ce n'est probablement pas pour vous si…</h3>
-            <ul>
-              {PAS_POUR_VOUS.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
-        </div>
+        <CardPointillee titre="Ce n'est probablement pas pour vous si…" ton="gris">
+          <ul>
+            {PAS_POUR_VOUS.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </CardPointillee>
       </div>
-    </section>
+    </Section>
   );
 }

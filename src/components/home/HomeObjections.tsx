@@ -1,4 +1,5 @@
-import { CtaInline } from "./CtaInline";
+import { Pill } from "@/components/da/Pill";
+import { CtaInline } from "@/components/da/CtaInline";
 
 const QUESTIONS = [
   {
@@ -44,7 +45,7 @@ export function HomeObjections() {
       <div className="wrap">
         <div className="obj-head">
           <div>
-            <span className="eyebrow">Les vraies questions</span>
+            <Pill>Les vraies questions</Pill>
             <h2>Vous vous dites peut-être…</h2>
           </div>
           <img
