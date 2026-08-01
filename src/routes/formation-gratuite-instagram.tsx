@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { useSubscribe } from "@/lib/useSubscribe";
-import { SiteLayout } from "@/components/site/SiteLayout";
+import { DaLayout } from "@/components/da/DaLayout";
 import cover from "@/assets/formation-ig/cover.png.asset.json";
 import mockupOptim from "@/assets/formation-ig/mockup-optimisation.png.asset.json";
 import { absoluteUrl } from "@/lib/site";
@@ -9,13 +9,13 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/formation-gratuite-instagram")({
   head: () => ({
     meta: [
-      { title: "Formation Instagram gratuite — Guide PDF | Nowadays Agency" },
+      { title: "Formation Instagram gratuite | Guide PDF | Nowadays Agency" },
       {
         name: "description",
         content:
           "Reçois gratuitement le guide PDF pour bâtir une stratégie Instagram alignée : 5 modules, ~90 min, pensé pour les créatrices et marques engagées.",
       },
-      { property: "og:title", content: "Formation Instagram gratuite — Guide PDF" },
+      { property: "og:title", content: "Formation Instagram gratuite ; Guide PDF" },
       {
         property: "og:description",
         content:
@@ -32,7 +32,7 @@ export const Route = createFileRoute("/formation-gratuite-instagram")({
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <Hero />
       <SocialProof />
       <Why />
@@ -41,7 +41,7 @@ function Page() {
       <Program />
       <FinalCTA />
       <Signature />
-    </SiteLayout>
+    </DaLayout>
   );
 }
 
@@ -49,31 +49,30 @@ function Page() {
 
 function Hero() {
   return (
-    <section className="bg-cream">
+    <section className="bg-white">
       <div className="mx-auto max-w-7xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
         <div className="grid grid-cols-1 gap-14 md:grid-cols-12 md:items-center md:gap-12">
           {/* Texte */}
           <div className="md:col-span-7">
-            <p className="font-mono text-xs uppercase tracking-[0.24em] text-rose-dark">
+            <p className="text-xs uppercase tracking-[0.24em] text-framboise">
               · Formation gratuite ·
             </p>
-            <h1 className="mt-6 font-serif text-5xl md:text-7xl leading-[1.02] text-ink">
-              Formation Instagram <em className="text-rose-dark">gratuite</em>
+            <h1 className="mt-6 font-titre text-5xl md:text-7xl leading-[1.02] text-encre">
+              Formation Instagram <em className="text-framboise">gratuite</em>
             </h1>
-            <p className="mt-8 max-w-xl font-mono text-base text-ink leading-relaxed">
-              Établis toute ta stratégie Instagram grâce à notre guide PDF —
-              pensé pour les créatrices, artisanes et marques qui veulent
-              communiquer avec sens.
+            <p className="mt-8 max-w-xl text-base text-encre leading-relaxed">
+              Établis toute ta stratégie Instagram grâce à notre guide PDF ; pensé pour les
+              créatrices, artisanes et marques qui veulent communiquer avec sens.
             </p>
 
             <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center">
               <a
                 href="#recevoir"
-                className="inline-flex items-center justify-center rounded-sm bg-ink px-7 py-4 font-mono text-sm uppercase tracking-[0.16em] text-cream transition-colors hover:bg-bordeaux"
+                className="inline-flex items-center justify-center rounded-sm bg-ink px-7 py-4 text-sm uppercase tracking-[0.16em] text-white transition-colors hover:bg-bordeaux"
               >
                 Recevoir le guide
               </a>
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink/70">
+              <p className="text-xs uppercase tracking-[0.2em] text-encre/70">
                 Guide PDF · 5 modules · ~90 min
               </p>
             </div>
@@ -100,11 +99,10 @@ function Hero() {
 
 function SocialProof() {
   return (
-    <section className="bg-cream border-t border-ink/10">
+    <section className="border-t border-ink/10 bg-rose-pale">
       <div className="mx-auto max-w-7xl px-6 py-6">
-        <p className="text-center font-mono text-xs uppercase tracking-[0.24em] text-ink">
-          +200 créatrices &amp; projets engagés · ont déjà téléchargé le guide
-          · ⭐ ⭐ ⭐ ⭐ ⭐
+        <p className="text-center text-xs uppercase tracking-[0.24em] text-encre">
+          +200 créatrices &amp; projets engagés · ont déjà téléchargé le guide · ⭐ ⭐ ⭐ ⭐ ⭐
         </p>
       </div>
     </section>
@@ -115,35 +113,33 @@ function SocialProof() {
 
 function Why() {
   return (
-    <section className="bg-cream">
+    <section className="bg-white">
       <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
-        <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
-          Pourquoi télécharger ce <em className="text-rose-dark">guide</em> ?
+        <h2 className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
+          Pourquoi télécharger ce <em className="text-framboise">guide</em> ?
         </h2>
 
         <div className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-5 md:gap-16">
-          <div className="md:col-span-3 space-y-6 font-mono text-base text-ink leading-relaxed">
+          <div className="md:col-span-3 space-y-6 text-base text-encre leading-relaxed">
             <p>
-              Tu te sens un peu comme un <em>fantôme digital</em> sur
-              Instagram malgré tes efforts ? Tu postes… et personne ne répond
-              à l'appel ?
+              Tu te sens un peu comme un <em>fantôme digital</em> sur Instagram malgré tes efforts ?
+              Tu postes… et personne ne répond à l'appel ?
             </p>
             <p>
-              Cette mini-formation gratuite est là pour t'aider à
-              communiquer avec sens, gagner en visibilité et arrêter de
-              t'épuiser à chercher la bonne idée de post à 23h57.
+              Cette mini-formation gratuite est là pour t'aider à communiquer avec sens, gagner en
+              visibilité et arrêter de t'épuiser à chercher la bonne idée de post à 23h57.
             </p>
             <p>
-              Des solutions pratiques pour bâtir une stratégie Instagram
-              performante, tout en respectant tes valeurs et tes objectifs.
+              Des solutions pratiques pour bâtir une stratégie Instagram performante, tout en
+              respectant tes valeurs et tes objectifs.
             </p>
           </div>
 
-          <blockquote className="md:col-span-2 border-l-2 border-bordeaux pl-6 font-serif text-2xl italic text-rose-dark leading-snug">
-            « Super utile et bien organisée. Les dossiers sont bien pensés —
-            ça change des formations floues qu'on ne termine jamais. »
-            <footer className="mt-4 font-mono text-xs not-italic uppercase tracking-[0.2em] text-ink/70">
-              — Témoignage participante
+          <blockquote className="md:col-span-2 rounded-carte bg-rose-pale px-8 py-6 font-titre text-2xl italic text-framboise leading-snug">
+            « Super utile et bien organisée. Les dossiers sont bien pensés ; ça change des
+            formations floues qu'on ne termine jamais. »
+            <footer className="mt-4 text-xs not-italic uppercase tracking-[0.2em] text-encre/70">
+              ; Témoignage participante
             </footer>
           </blockquote>
         </div>
@@ -173,37 +169,31 @@ const BENEFITS = [
   {
     n: "04",
     title: "Une marque qui te ressemble",
-    body: "Parce que ton univers est unique — et que ton logo pastel mérite mieux que 12 likes.",
+    body: "Parce que ton univers est unique ; et que ton logo pastel mérite mieux que 12 likes.",
   },
 ];
 
 function Benefits() {
   return (
-    <section className="bg-rose-light">
+    <section className="bg-rose-pale">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-5">
-            <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
-              Ce que tu vas en <em className="text-rose-dark">tirer</em>
+            <h2 className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
+              Ce que tu vas en <em className="text-framboise">tirer</em>
             </h2>
-            <p className="mt-8 font-mono text-sm text-ink leading-relaxed">
-              4 acquis concrets, pensés pour passer de « je poste au feeling »
-              à une présence Instagram alignée et durable.
+            <p className="mt-8 text-sm text-encre leading-relaxed">
+              4 acquis concrets, pensés pour passer de « je poste au feeling » à une présence
+              Instagram alignée et durable.
             </p>
           </div>
 
           <ul className="md:col-span-7 grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2">
             {BENEFITS.map((b) => (
               <li key={b.n}>
-                <p className="font-mono text-xs uppercase tracking-[0.24em] text-rose-dark">
-                  {b.n}
-                </p>
-                <h3 className="mt-3 font-serif text-2xl text-ink leading-snug">
-                  {b.title}
-                </h3>
-                <p className="mt-3 font-mono text-sm text-ink leading-relaxed">
-                  {b.body}
-                </p>
+                <p className="text-xs uppercase tracking-[0.24em] text-framboise">{b.n}</p>
+                <h3 className="mt-3 font-titre text-2xl text-encre leading-snug">{b.title}</h3>
+                <p className="mt-3 text-sm text-encre leading-relaxed">{b.body}</p>
               </li>
             ))}
           </ul>
@@ -218,7 +208,7 @@ function Benefits() {
 const AUDIENCE = [
   {
     label: "Créatrice ou artisane",
-    body: "Mode, bien-être, déco, artiste — un univers de marque à faire rayonner.",
+    body: "Mode, bien-être, déco, artiste ; un univers de marque à faire rayonner.",
   },
   {
     label: "Débordée mais motivée",
@@ -232,27 +222,18 @@ const AUDIENCE = [
 
 function Audience() {
   return (
-    <section className="bg-cream">
+    <section className="bg-white">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
-        <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
-          Pour qui c'est <em className="text-rose-dark">fait</em> ?
+        <h2 className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
+          Pour qui c'est <em className="text-framboise">fait</em> ?
         </h2>
 
         <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12">
           {AUDIENCE.map((a, i) => (
-            <div
-              key={a.label}
-              className="border-t border-ink pt-6"
-            >
-              <p className="font-mono text-xs uppercase tracking-[0.24em] text-rose-dark">
-                0{i + 1}
-              </p>
-              <h3 className="mt-4 font-serif text-2xl text-ink leading-snug">
-                {a.label}
-              </h3>
-              <p className="mt-3 font-mono text-sm text-ink leading-relaxed">
-                {a.body}
-              </p>
+            <div key={a.label} className="border-t border-ink pt-6">
+              <p className="text-xs uppercase tracking-[0.24em] text-framboise">0{i + 1}</p>
+              <h3 className="mt-4 font-titre text-2xl text-encre leading-snug">{a.label}</h3>
+              <p className="mt-3 text-sm text-encre leading-relaxed">{a.body}</p>
             </div>
           ))}
         </div>
@@ -283,45 +264,38 @@ const MODULES = [
     n: "01",
     duration: "≈ 20 min",
     title: "Bases",
-    goal:
-      "Poser des fondations solides et cohérentes, alignées avec ton univers lifestyle/éthique.",
+    goal: "Poser des fondations solides et cohérentes, alignées avec ton univers lifestyle/éthique.",
     content: [
       "Contexte & enjeux : pourquoi un bon profil, alignement des valeurs.",
       "2 axes clés : bio (positionnement, ton, CTA minimal) et photo (cohérence visuelle).",
       "Les « highlights éthiques » triés et structurés.",
     ],
-    activity:
-      "Remplir une grille « identité visuelle + 3 parties clés de la bio ».",
-    deliverable:
-      "Version prête de ta bio + plan rapide de 3 highlights alignés.",
+    activity: "Remplir une grille « identité visuelle + 3 parties clés de la bio ».",
+    deliverable: "Version prête de ta bio + plan rapide de 3 highlights alignés.",
   },
   {
     n: "02",
     duration: "≈ 20 min",
     title: "Stratégie média",
-    goal:
-      "Jeter les bases d'un mix de formats (visuels / vidéos) adaptés à ton audience.",
+    goal: "Jeter les bases d'un mix de formats (visuels / vidéos) adaptés à ton audience.",
     content: [
       "Panorama des formats : Reels, Feed, Stories, Carrousels.",
       "Exemples inspirants, codes éthiques centrés communauté & storytelling.",
     ],
     activity:
       "Remplir ta grille média hebdomadaire (ex. Lundi : quote + Reel, Mercredi : carrousel, Vendredi : Story participative).",
-    deliverable:
-      "Plan média hebdo visuel + note « pourquoi ce choix, impact attendu ».",
+    deliverable: "Plan média hebdo visuel + note « pourquoi ce choix, impact attendu ».",
   },
   {
     n: "03",
     duration: "≈ 15 min",
     title: "Stratégie description",
-    goal:
-      "Maîtriser les mots justes, efficaces, alignés, pour inviter à l'action en douceur.",
+    goal: "Maîtriser les mots justes, efficaces, alignés, pour inviter à l'action en douceur.",
     content: [
       "Anatomie d'une légende qui fonctionne : accroche, storytelling, valeur, CTA.",
       "3 modèles de légendes : storytelling produit, engagement doux, appel à la réflexion.",
     ],
-    activity:
-      "Choisir un de tes futurs posts et réécrire la légende en appliquant un modèle.",
+    activity: "Choisir un de tes futurs posts et réécrire la légende en appliquant un modèle.",
     deliverable: "Ta légende prête, avec note « pourquoi ça marche ».",
   },
   {
@@ -333,49 +307,40 @@ const MODULES = [
       "Formats d'engagement efficaces : questions ouvertes, sondages Story, tags/collabs.",
       "Calendrier interactif (ex. « poser une question le mardi », « répondre aux DM le jeudi »).",
     ],
-    activity:
-      "Identifier 2 à 3 tactiques d'engagement à tester cette semaine.",
-    deliverable:
-      "Mini-planning d'interactions + 2 modèles de phrases à adapter.",
+    activity: "Identifier 2 à 3 tactiques d'engagement à tester cette semaine.",
+    deliverable: "Mini-planning d'interactions + 2 modèles de phrases à adapter.",
   },
   {
     n: "05",
     duration: "≈ 20 min",
     title: "Planification",
-    goal:
-      "Transformer ton énergie en routine fluide et créative — sans pression.",
+    goal: "Transformer ton énergie en routine fluide et créative ; sans pression.",
     content: [
       "Pourquoi un calendrier éditorial : clarté, régularité, alignement.",
       "Les 4 piliers de contenu (inspiration, mise en valeur, communauté, valeurs).",
     ],
-    activity:
-      "Remplir un calendrier type (1 mois) avec ton mix de contenu selon tes 4 piliers.",
+    activity: "Remplir un calendrier type (1 mois) avec ton mix de contenu selon tes 4 piliers.",
     deliverable: "Calendrier éditorial visuel (template Canva) prêt à l'emploi.",
   },
 ];
 
 function Program() {
   return (
-    <section className="bg-cream border-t border-ink/10">
+    <section className="border-t border-ink/10 bg-rose-pale">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="max-w-3xl">
-          <p className="font-mono text-xs uppercase tracking-[0.24em] text-rose-dark">
-            · Programme ·
-          </p>
-          <h2 className="mt-6 font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
-            5 modules, <em className="text-rose-dark">~90 min</em> en tout
+          <p className="text-xs uppercase tracking-[0.24em] text-framboise">· Programme ·</p>
+          <h2 className="mt-6 font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
+            5 modules, <em className="text-framboise">~90 min</em> en tout
           </h2>
         </div>
 
         <ol className="mt-16 divide-y divide-ink/15">
           {MODULES.map((m) => (
-            <li
-              key={m.n}
-              className="grid grid-cols-1 gap-6 py-12 md:grid-cols-12 md:gap-10"
-            >
+            <li key={m.n} className="grid grid-cols-1 gap-6 py-12 md:grid-cols-12 md:gap-10">
               <div className="md:col-span-2">
                 <p
-                  className="font-serif text-7xl leading-none text-rose-dark"
+                  className="font-titre text-7xl leading-none text-framboise"
                   style={{ opacity: 0.85 }}
                 >
                   {m.n}
@@ -383,37 +348,25 @@ function Program() {
               </div>
 
               <div className="md:col-span-4">
-                <p className="font-mono text-xs uppercase tracking-[0.24em] text-ink/70">
-                  {m.duration}
-                </p>
-                <h3 className="mt-3 font-serif text-3xl text-ink leading-tight">
-                  {m.title}
-                </h3>
-                <p className="mt-4 font-mono text-sm text-ink leading-relaxed">
-                  {m.goal}
-                </p>
+                <p className="text-xs uppercase tracking-[0.24em] text-encre/70">{m.duration}</p>
+                <h3 className="mt-3 font-titre text-3xl text-encre leading-tight">{m.title}</h3>
+                <p className="mt-4 text-sm text-encre leading-relaxed">{m.goal}</p>
               </div>
 
               <div className="md:col-span-6 space-y-6">
-                <ul className="space-y-2 font-mono text-sm text-ink leading-relaxed list-disc pl-5 marker:text-rose-dark">
+                <ul className="space-y-2 text-sm text-encre leading-relaxed list-disc pl-5 marker:text-framboise">
                   {m.content.map((c) => (
                     <li key={c}>{c}</li>
                   ))}
                 </ul>
 
-                <div className="space-y-3 border border-ink/20 bg-cream p-5 rounded-sm">
-                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-rose-dark">
+                <div className="space-y-3 border border-ink/20 bg-white p-5 rounded-sm">
+                  <p className="text-xs uppercase tracking-[0.2em] text-framboise">
                     Activité guidée
                   </p>
-                  <p className="font-mono text-sm text-ink leading-relaxed">
-                    {m.activity}
-                  </p>
-                  <p className="mt-4 font-mono text-xs uppercase tracking-[0.2em] text-rose-dark">
-                    Livrable
-                  </p>
-                  <p className="font-mono text-sm text-ink leading-relaxed">
-                    {m.deliverable}
-                  </p>
+                  <p className="text-sm text-encre leading-relaxed">{m.activity}</p>
+                  <p className="mt-4 text-xs uppercase tracking-[0.2em] text-framboise">Livrable</p>
+                  <p className="text-sm text-encre leading-relaxed">{m.deliverable}</p>
                 </div>
               </div>
             </li>
@@ -437,29 +390,28 @@ function FinalCTA() {
   }
 
   return (
-    <section id="recevoir" className="bg-bordeaux">
+    <section id="recevoir" className="bg-jaune">
       <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16 md:items-end">
           <div className="md:col-span-6">
-            <p className="font-mono text-xs uppercase tracking-[0.24em] text-cream/80">
+            <p className="text-xs uppercase tracking-[0.24em] text-white/80">
               · Téléchargement gratuit ·
             </p>
-            <h2 className="mt-6 font-serif text-3xl md:text-5xl leading-[1.1] text-cream">
+            <h2 className="mt-6 font-titre text-3xl md:text-5xl leading-[1.1] text-white">
               Reçois ton guide <em className="text-rose-mid">maintenant</em>
             </h2>
-            <p className="mt-6 font-mono text-sm text-cream/80 leading-relaxed">
-              Le PDF arrive directement dans ta boîte mail. Pas de spam,
-              désinscription en 1 clic.
+            <p className="mt-6 text-sm text-white/80 leading-relaxed">
+              Le PDF arrive directement dans ta boîte mail. Pas de spam, désinscription en 1 clic.
             </p>
           </div>
 
           <div className="md:col-span-6">
             {sent ? (
-              <div className="border border-rose-light/40 p-8 rounded-sm">
-                <p className="font-serif text-2xl text-cream leading-snug">
-                  Merci — ton guide arrive dans quelques minutes.
+              <div className="border border-rose-pale/40 p-8 rounded-sm">
+                <p className="font-titre text-2xl text-white leading-snug">
+                  Merci ; ton guide arrive dans quelques minutes.
                 </p>
-                <p className="mt-4 font-mono text-sm text-cream/80">
+                <p className="mt-4 text-sm text-white/80">
                   Pense à vérifier tes spams. Bonne planification ♡
                 </p>
               </div>
@@ -468,7 +420,7 @@ function FinalCTA() {
                 <div>
                   <label
                     htmlFor="fi-prenom"
-                    className="font-mono text-xs uppercase tracking-[0.2em] text-cream/80"
+                    className="text-xs uppercase tracking-[0.2em] text-white/80"
                   >
                     Ton prénom
                   </label>
@@ -478,13 +430,13 @@ function FinalCTA() {
                     required
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    className="mt-2 block w-full rounded-sm bg-cream/10 border border-rose-light/40 px-4 py-3 font-mono text-sm text-cream placeholder:text-cream/50 outline-none focus:border-rose-mid"
+                    className="mt-2 block w-full rounded-sm bg-white/10 border border-rose-pale/40 px-4 py-3 text-sm text-white placeholder:text-white/50 outline-none focus:border-rose-mid"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="fi-email"
-                    className="font-mono text-xs uppercase tracking-[0.2em] text-cream/80"
+                    className="text-xs uppercase tracking-[0.2em] text-white/80"
                   >
                     Ton e-mail
                   </label>
@@ -494,24 +446,20 @@ function FinalCTA() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="mt-2 block w-full rounded-sm bg-cream/10 border border-rose-light/40 px-4 py-3 font-mono text-sm text-cream placeholder:text-cream/50 outline-none focus:border-rose-mid"
+                    className="mt-2 block w-full rounded-sm bg-white/10 border border-rose-pale/40 px-4 py-3 text-sm text-white placeholder:text-white/50 outline-none focus:border-rose-mid"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={sending}
-                  className="inline-flex items-center justify-center rounded-sm bg-cream px-7 py-4 font-mono text-sm uppercase tracking-[0.16em] text-ink transition-colors hover:bg-rose-mid hover:text-ink disabled:opacity-60"
+                  className="inline-flex items-center justify-center rounded-sm bg-white px-7 py-4 text-sm uppercase tracking-[0.16em] text-encre transition-colors hover:bg-rose-mid hover:text-encre disabled:opacity-60"
                 >
                   {sending ? "Envoi…" : "Envoyer le guide"}
                 </button>
-                {error && (
-                  <p className="font-mono text-[11px] text-rose-mid leading-relaxed">
-                    {error}
-                  </p>
-                )}
-                <p className="font-mono text-[11px] text-cream/60 leading-relaxed">
-                  En soumettant, tu acceptes de recevoir le guide et nos
-                  emails. Tes données restent confidentielles (RGPD).
+                {error && <p className="text-[11px] text-rose-mid leading-relaxed">{error}</p>}
+                <p className="text-[11px] text-white/60 leading-relaxed">
+                  En soumettant, tu acceptes de recevoir le guide et nos emails. Tes données restent
+                  confidentielles (RGPD).
                 </p>
               </form>
             )}
@@ -526,10 +474,10 @@ function FinalCTA() {
 
 function Signature() {
   return (
-    <section className="bg-cream">
+    <section className="bg-white">
       <div className="mx-auto max-w-5xl px-6 py-16 text-right">
-        <p className="font-serif text-2xl italic text-ink">
-          Bonne planification, <span className="text-rose-dark">♡ Laetitia</span>
+        <p className="font-titre text-2xl italic text-encre">
+          Bonne planification, <span className="text-framboise">♡ Laetitia</span>
         </p>
       </div>
     </section>

@@ -13,26 +13,35 @@ import appCss from "../styles.css?url";
 import designSystemCss from "../styles/design-system.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SITE_ORIGIN, absoluteUrl } from "@/lib/site";
+import { DaLayout } from "@/components/da/DaLayout";
+import { Confettis } from "@/components/da/primitives";
 
+// La 404 était en anglais et hors charte. Seule page où le brief autorise
+// quelques lignes de texte neuves : on en profite pour la rendre accueillante.
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="font-serif text-7xl text-foreground">404</h1>
-        <h2 className="mt-4 font-serif text-xl text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
+    <DaLayout>
+      <section className="hero vichy">
+        <Confettis />
+        <div className="wrap">
+          <div className="hero-card">
+            <h1>
+              Cette page n'existe pas.
+              <br />
+              <em>Votre visibilité, si.</em>
+            </h1>
+            <p className="hero-copy">
+              Le lien est peut-être périmé, ou l'adresse mal recopiée. Reprenons depuis le début.
+            </p>
+            <div className="actions" style={{ justifyContent: "center" }}>
+              <Link className="btn btn-primary" to="/">
+                Retour à l'accueil
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </DaLayout>
   );
 }
 
@@ -77,30 +86,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Nowadays — Agence de communication engagée et éthique" },
+      { title: "Nowadays | Agence de communication engagée et responsable" },
       {
         name: "description",
         content:
-          "Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, éthique et efficace.",
+          "Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, plus éthique et efficace.",
       },
       { property: "og:site_name", content: "Nowadays Agency" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "fr_FR" },
       {
         property: "og:title",
-        content: "Nowadays — Agence de communication engagée et éthique",
+        content: "Nowadays | Agence de communication engagée et responsable",
       },
       {
         property: "og:description",
         content:
-          "Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, éthique et efficace.",
+          "Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, plus éthique et efficace.",
       },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Nowadays — Agence de communication engagée et éthique" },
+      {
+        name: "twitter:title",
+        content: "Nowadays | Agence de communication engagée et responsable",
+      },
       {
         name: "twitter:description",
         content:
-          "Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, éthique et efficace.",
+          "Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, plus éthique et efficace.",
       },
       {
         property: "og:image",
@@ -148,7 +160,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "Nowadays Agency",
           alternateName: "Nowadays",
           description:
-            "Agence de communication engagée et éthique pour les projets plus doux pour le monde.",
+            "Agence de communication engagée et responsable pour les projets plus doux pour le monde.",
           url: absoluteUrl("/"),
         }),
       },
