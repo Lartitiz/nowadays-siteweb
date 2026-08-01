@@ -99,7 +99,7 @@ export const Route = createFileRoute("/")({
 // SiteLayout, inchangé.
 function Index() {
   return (
-    <DaLayout>
+    <DaLayout className="page-accueil">
       <HomeHero />
       <HomePreuve />
       <HomeConstat />
