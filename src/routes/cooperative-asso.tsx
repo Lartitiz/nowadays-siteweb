@@ -102,7 +102,7 @@ function Hero() {
 const CLIENT_LOGOS = [
   { name: "L214", src: l214Logo.url },
   { name: "Coopérative Oasis", src: cooperativeOasisLogo.url },
-  { name: "École des Arts Décoratifs | PSL", src: ensadPslLogo.url },
+  { name: "École des Arts Décoratifs ; PSL", src: ensadPslLogo.url },
   { name: "Emmaüs Défi", src: emmausDefiLogo.url },
   { name: "Sea Shepherd", src: seaShepherdLogo.url },
 ];
@@ -389,7 +389,7 @@ const PROJECTS = [
   {
     name: "École des Arts Décoratifs",
     img: imgEnsad.url,
-    desc: "Pour attirer du monde à l'exposition de Gérard Baudoin : réseaux sociaux, emailing ciblé et micro-influence | 700 visiteurs en une semaine, 5 articles, +100 clics vers l'événement.",
+    desc: "Pour attirer du monde à l'exposition de Gérard Baudoin : réseaux sociaux, emailing ciblé et micro-influence ; 700 visiteurs en une semaine, 5 articles, +100 clics vers l'événement.",
   },
   {
     name: "Sea Shepherd × Racines de Demain",
@@ -442,7 +442,7 @@ const PROJECTS = [
     desc: "Une marque-showroom qui revendique le luxe conscient. Stratégie digitale complète, de l'identité visuelle à l'influence, pour accroître sa notoriété.",
   },
   {
-    name: "Ressources | Emmanuelle Riboud",
+    name: "Ressources ; Emmanuelle Riboud",
     img: imgRessources.url,
     desc: "Changer la cantine pour changer le monde. Repenser l'alimentation scolaire avec bon sens et amour du vivant. Bases d'une stratégie de marque et de communication.",
   },
