@@ -1,11 +1,18 @@
 import { useState } from "react";
-import nowadaysLogo from "@/assets/nowadays-logo-v2.webp.asset.json";
+import { Link } from "@tanstack/react-router";
 import { CALENDLY_URL } from "./constants";
 
+// Logo servi comme fichier du repo (design system : jamais de base64, et pas de
+// dépendance au pipeline d'assets Lovable).
+const LOGO = "/images/logo-nowadays.png";
+
+// Menu par besoin, pas par rubrique. Les trois sections visées vivent sur la
+// page d'accueil : on passe par le routeur avec une ancre, pour que le lien
+// marche aussi depuis les autres pages, et sans recharger la page.
 const LIENS = [
-  { label: "Faire ensemble", href: "#solutions" },
-  { label: "Déléguer", href: "#solutions" },
-  { label: "Résultats", href: "#resultats" },
+  { label: "Faire ensemble", hash: "solutions" },
+  { label: "Déléguer", hash: "solutions" },
+  { label: "Résultats", hash: "resultats" },
 ] as const;
 
 export function DaHeader() {
@@ -17,15 +24,15 @@ export function DaHeader() {
     <header className="site-header">
       <div className="wrap">
         <nav>
-          <a className="brand" href="#top" aria-label="Nowadays Agency">
-            <img className="logo" src={nowadaysLogo.url} alt="Nowadays Agency" />
-          </a>
+          <Link className="brand" to="/" aria-label="Nowadays Agency">
+            <img className="logo" src={LOGO} alt="Nowadays Agency" />
+          </Link>
 
           <div className="navlinks">
             {LIENS.map((lien) => (
-              <a key={lien.label} href={lien.href}>
+              <Link key={lien.label} to="/" hash={lien.hash}>
                 {lien.label}
-              </a>
+              </Link>
             ))}
             <a className="btn btn-primary" href={CALENDLY_URL}>
               Appel découverte
@@ -49,9 +56,9 @@ export function DaHeader() {
           <ul>
             {LIENS.map((lien) => (
               <li key={lien.label}>
-                <a href={lien.href} onClick={() => setOuvert(false)}>
+                <Link to="/" hash={lien.hash} onClick={() => setOuvert(false)}>
                   {lien.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
