@@ -1,7 +1,7 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { useSubscribe } from "@/lib/useSubscribe";
-import { SiteLayout } from "@/components/site/SiteLayout";
+import { DaLayout } from "@/components/da/DaLayout";
 import cover from "@/assets/calendrier-editorial/cover.png";
 import mockup from "@/assets/calendrier-editorial/mockup.png";
 import { absoluteUrl } from "@/lib/site";
@@ -14,13 +14,13 @@ export const Route = createFileRoute("/template-calendrier-editorial")({
   },
   head: () => ({
     meta: [
-      { title: "Template Calendrier éditorial gratuit — Modèle PDF | Nowadays Agency" },
+      { title: "Template Calendrier éditorial gratuit | Modèle PDF | Nowadays Agency" },
       {
         name: "description",
         content:
           "Reçois gratuitement notre template de calendrier éditorial pour organiser tes contenus (Instagram, Pinterest, blog) et publier sans stress. Modèle à modifier inclus.",
       },
-      { property: "og:title", content: "Template Calendrier éditorial gratuit — Modèle PDF" },
+      { property: "og:title", content: "Template Calendrier éditorial gratuit ; Modèle PDF" },
       {
         property: "og:description",
         content:
@@ -37,7 +37,7 @@ export const Route = createFileRoute("/template-calendrier-editorial")({
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <Hero />
       <SocialProof />
       <Why />
@@ -45,7 +45,7 @@ function Page() {
       <Audience />
       <FinalCTA />
       <Signature />
-    </SiteLayout>
+    </DaLayout>
   );
 }
 
@@ -53,30 +53,30 @@ function Page() {
 
 function Hero() {
   return (
-    <section className="bg-cream">
+    <section className="bg-white">
       <div className="mx-auto max-w-7xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
         <div className="grid grid-cols-1 gap-14 md:grid-cols-12 md:items-center md:gap-12">
           <div className="md:col-span-7">
-            <p className="font-mono text-xs uppercase tracking-[0.24em] text-rose-dark">
+            <p className="text-xs uppercase tracking-[0.24em] text-framboise">
               · Ressource gratuite ·
             </p>
-            <h1 className="mt-6 font-serif text-5xl md:text-7xl leading-[1.02] text-ink">
-              Le calendrier éditorial <em className="text-rose-dark">gratuit</em>
+            <h1 className="mt-6 font-titre text-5xl md:text-7xl leading-[1.02] text-encre">
+              Le calendrier éditorial <em className="text-framboise">gratuit</em>
             </h1>
-            <p className="mt-8 max-w-xl font-mono text-base text-ink leading-relaxed">
-              Organise tes contenus en un coup d'œil — la trame qu'on utilise
-              chez Nowadays pour planifier les posts Instagram, Pinterest et
-              blog de nos clientes, sans publier au feeling.
+            <p className="mt-8 max-w-xl text-base text-encre leading-relaxed">
+              Organise tes contenus en un coup d'œil ; la trame qu'on utilise chez Nowadays pour
+              planifier les posts Instagram, Pinterest et blog de nos clientes, sans publier au
+              feeling.
             </p>
 
             <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center">
               <a
                 href="#recevoir"
-                className="inline-flex items-center justify-center rounded-sm bg-ink px-7 py-4 font-mono text-sm uppercase tracking-[0.16em] text-cream transition-colors hover:bg-bordeaux"
+                className="inline-flex items-center justify-center rounded-sm bg-ink px-7 py-4 text-sm uppercase tracking-[0.16em] text-white transition-colors hover:bg-bordeaux"
               >
                 Recevoir mon modèle
               </a>
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink/70">
+              <p className="text-xs uppercase tracking-[0.2em] text-encre/70">
                 Modèle à modifier · PDF + tableur · prêt en 2 min
               </p>
             </div>
@@ -102,9 +102,9 @@ function Hero() {
 
 function SocialProof() {
   return (
-    <section className="bg-cream border-t border-ink/10">
+    <section className="border-t border-ink/10 bg-rose-pale">
       <div className="mx-auto max-w-7xl px-6 py-6">
-        <p className="text-center font-mono text-xs uppercase tracking-[0.24em] text-ink">
+        <p className="text-center text-xs uppercase tracking-[0.24em] text-encre">
           ⭐ ⭐ ⭐ ⭐ ⭐ · « Très structuré et pratique. » · +1 200 téléchargements
         </p>
       </div>
@@ -116,36 +116,35 @@ function SocialProof() {
 
 function Why() {
   return (
-    <section className="bg-cream">
+    <section className="bg-white">
       <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
-        <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
-          Pourquoi un <em className="text-rose-dark">calendrier éditorial</em> ?
+        <h2 className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
+          Pourquoi un <em className="text-framboise">calendrier éditorial</em> ?
         </h2>
 
         <div className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-5 md:gap-16">
-          <div className="md:col-span-3 space-y-6 font-mono text-base text-ink leading-relaxed">
+          <div className="md:col-span-3 space-y-6 text-base text-encre leading-relaxed">
             <p>
-              Tu publies <em>quand tu peux</em>, entre deux urgences. Tu
-              cherches une idée le matin pour un post qui devait sortir hier.
-              Et tu finis par lâcher pendant deux semaines, frustrée.
+              Tu publies <em>quand tu peux</em>, entre deux urgences. Tu cherches une idée le matin
+              pour un post qui devait sortir hier. Et tu finis par lâcher pendant deux semaines,
+              frustrée.
             </p>
             <p>
-              Le problème, ce n'est pas ta motivation. C'est l'absence de
-              structure. Avec un calendrier éditorial clair, tu sais
-              <em> quoi </em>publier, <em>quand</em> et <em>pourquoi</em> —
-              sans devoir tout réinventer chaque semaine.
+              Le problème, ce n'est pas ta motivation. C'est l'absence de structure. Avec un
+              calendrier éditorial clair, tu sais
+              <em> quoi </em>publier, <em>quand</em> et <em>pourquoi</em> ; sans devoir tout
+              réinventer chaque semaine.
             </p>
             <p>
-              Ce modèle te donne la trame, les catégories de contenu et la
-              méthode pour planifier 3 mois d'avance, en 30 minutes par mois.
+              Ce modèle te donne la trame, les catégories de contenu et la méthode pour planifier 3
+              mois d'avance, en 30 minutes par mois.
             </p>
           </div>
 
-          <blockquote className="md:col-span-2 border-l-2 border-bordeaux pl-6 font-serif text-2xl italic text-rose-dark leading-snug">
-            « J'ai enfin arrêté de poster au feeling. En une heure tout mon
-            mois est calé. »
-            <footer className="mt-4 font-mono text-xs not-italic uppercase tracking-[0.2em] text-ink/70">
-              — Témoignage lectrice
+          <blockquote className="md:col-span-2 rounded-carte bg-rose-pale px-8 py-6 font-titre text-2xl italic text-framboise leading-snug">
+            « J'ai enfin arrêté de poster au feeling. En une heure tout mon mois est calé. »
+            <footer className="mt-4 text-xs not-italic uppercase tracking-[0.2em] text-encre/70">
+              ; Témoignage lectrice
             </footer>
           </blockquote>
         </div>
@@ -160,7 +159,7 @@ const BENEFITS = [
   {
     n: "01",
     title: "Une vue d'ensemble claire",
-    body: "Tous tes contenus de la semaine, du mois, du trimestre en un seul tableau lisible — fini les post-it.",
+    body: "Tous tes contenus de la semaine, du mois, du trimestre en un seul tableau lisible ; fini les post-it.",
   },
   {
     n: "02",
@@ -170,7 +169,7 @@ const BENEFITS = [
   {
     n: "03",
     title: "Une planification multi-canal",
-    body: "Pensé pour Instagram, Pinterest et le blog — pour que rien ne se chevauche ni ne disparaisse.",
+    body: "Pensé pour Instagram, Pinterest et le blog ; pour que rien ne se chevauche ni ne disparaisse.",
   },
   {
     n: "04",
@@ -181,31 +180,25 @@ const BENEFITS = [
 
 function Benefits() {
   return (
-    <section className="bg-rose-light">
+    <section className="bg-rose-pale">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-5">
-            <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
-              Ce que tu vas en <em className="text-rose-dark">tirer</em>
+            <h2 className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
+              Ce que tu vas en <em className="text-framboise">tirer</em>
             </h2>
-            <p className="mt-8 font-mono text-sm text-ink leading-relaxed">
-              4 acquis concrets, pour passer d'une com' subie à une com'
-              organisée — sans y passer tes week-ends.
+            <p className="mt-8 text-sm text-encre leading-relaxed">
+              4 acquis concrets, pour passer d'une com' subie à une com' organisée ; sans y passer
+              tes week-ends.
             </p>
           </div>
 
           <ul className="md:col-span-7 grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2">
             {BENEFITS.map((b) => (
               <li key={b.n}>
-                <p className="font-mono text-xs uppercase tracking-[0.24em] text-rose-dark">
-                  {b.n}
-                </p>
-                <h3 className="mt-3 font-serif text-2xl text-ink leading-snug">
-                  {b.title}
-                </h3>
-                <p className="mt-3 font-mono text-sm text-ink leading-relaxed">
-                  {b.body}
-                </p>
+                <p className="text-xs uppercase tracking-[0.24em] text-framboise">{b.n}</p>
+                <h3 className="mt-3 font-titre text-2xl text-encre leading-snug">{b.title}</h3>
+                <p className="mt-3 text-sm text-encre leading-relaxed">{b.body}</p>
               </li>
             ))}
           </ul>
@@ -232,7 +225,7 @@ function Benefits() {
 const AUDIENCE = [
   {
     label: "Entrepreneur·e débordée",
-    body: "Tu jongles avec dix casquettes, la com' passe toujours en dernier — il te faut un cadre simple à appliquer.",
+    body: "Tu jongles avec dix casquettes, la com' passe toujours en dernier ; il te faut un cadre simple à appliquer.",
   },
   {
     label: "Créateur·ice de contenu",
@@ -240,30 +233,24 @@ const AUDIENCE = [
   },
   {
     label: "Petite équipe à impact",
-    body: "Vous êtes deux ou trois à gérer la com' — il vous faut un document partagé pour ne plus se marcher dessus.",
+    body: "Vous êtes deux ou trois à gérer la com' ; il vous faut un document partagé pour ne plus se marcher dessus.",
   },
 ];
 
 function Audience() {
   return (
-    <section className="bg-cream">
+    <section className="bg-white">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
-        <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
-          Pour qui c'est <em className="text-rose-dark">fait</em> ?
+        <h2 className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
+          Pour qui c'est <em className="text-framboise">fait</em> ?
         </h2>
 
         <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12">
           {AUDIENCE.map((a, i) => (
             <div key={a.label} className="border-t border-ink pt-6">
-              <p className="font-mono text-xs uppercase tracking-[0.24em] text-rose-dark">
-                0{i + 1}
-              </p>
-              <h3 className="mt-4 font-serif text-2xl text-ink leading-snug">
-                {a.label}
-              </h3>
-              <p className="mt-3 font-mono text-sm text-ink leading-relaxed">
-                {a.body}
-              </p>
+              <p className="text-xs uppercase tracking-[0.24em] text-framboise">0{i + 1}</p>
+              <h3 className="mt-4 font-titre text-2xl text-encre leading-snug">{a.label}</h3>
+              <p className="mt-3 text-sm text-encre leading-relaxed">{a.body}</p>
             </div>
           ))}
         </div>
@@ -285,29 +272,29 @@ function FinalCTA() {
   }
 
   return (
-    <section id="recevoir" className="bg-bordeaux">
+    <section id="recevoir" className="bg-jaune">
       <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16 md:items-end">
           <div className="md:col-span-6">
-            <p className="font-mono text-xs uppercase tracking-[0.24em] text-cream/80">
+            <p className="text-xs uppercase tracking-[0.24em] text-white/80">
               · Téléchargement gratuit ·
             </p>
-            <h2 className="mt-6 font-serif text-3xl md:text-5xl leading-[1.1] text-cream">
+            <h2 className="mt-6 font-titre text-3xl md:text-5xl leading-[1.1] text-white">
               Reçois ton modèle <em className="text-rose-mid">maintenant</em>
             </h2>
-            <p className="mt-6 font-mono text-sm text-cream/80 leading-relaxed">
-              Le modèle arrive directement dans ta boîte mail. Pas de spam,
-              désinscription en 1 clic.
+            <p className="mt-6 text-sm text-white/80 leading-relaxed">
+              Le modèle arrive directement dans ta boîte mail. Pas de spam, désinscription en 1
+              clic.
             </p>
           </div>
 
           <div className="md:col-span-6">
             {sent ? (
-              <div className="border border-rose-light/40 p-8 rounded-sm">
-                <p className="font-serif text-2xl text-cream leading-snug">
-                  Merci — ton modèle arrive dans quelques minutes.
+              <div className="border border-rose-pale/40 p-8 rounded-sm">
+                <p className="font-titre text-2xl text-white leading-snug">
+                  Merci ; ton modèle arrive dans quelques minutes.
                 </p>
-                <p className="mt-4 font-mono text-sm text-cream/80">
+                <p className="mt-4 text-sm text-white/80">
                   Pense à vérifier tes spams. Belle planification ♡
                 </p>
               </div>
@@ -316,7 +303,7 @@ function FinalCTA() {
                 <div>
                   <label
                     htmlFor="ce-prenom"
-                    className="font-mono text-xs uppercase tracking-[0.2em] text-cream/80"
+                    className="text-xs uppercase tracking-[0.2em] text-white/80"
                   >
                     Ton prénom
                   </label>
@@ -326,13 +313,13 @@ function FinalCTA() {
                     required
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    className="mt-2 block w-full rounded-sm bg-cream/10 border border-rose-light/40 px-4 py-3 font-mono text-sm text-cream placeholder:text-cream/50 outline-none focus:border-rose-mid"
+                    className="mt-2 block w-full rounded-sm bg-white/10 border border-rose-pale/40 px-4 py-3 text-sm text-white placeholder:text-white/50 outline-none focus:border-rose-mid"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="ce-email"
-                    className="font-mono text-xs uppercase tracking-[0.2em] text-cream/80"
+                    className="text-xs uppercase tracking-[0.2em] text-white/80"
                   >
                     Ton e-mail
                   </label>
@@ -342,24 +329,20 @@ function FinalCTA() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="mt-2 block w-full rounded-sm bg-cream/10 border border-rose-light/40 px-4 py-3 font-mono text-sm text-cream placeholder:text-cream/50 outline-none focus:border-rose-mid"
+                    className="mt-2 block w-full rounded-sm bg-white/10 border border-rose-pale/40 px-4 py-3 text-sm text-white placeholder:text-white/50 outline-none focus:border-rose-mid"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={sending}
-                  className="inline-flex items-center justify-center rounded-sm bg-cream px-7 py-4 font-mono text-sm uppercase tracking-[0.16em] text-ink transition-colors hover:bg-rose-mid hover:text-ink disabled:opacity-60"
+                  className="inline-flex items-center justify-center rounded-sm bg-white px-7 py-4 text-sm uppercase tracking-[0.16em] text-encre transition-colors hover:bg-rose-mid hover:text-encre disabled:opacity-60"
                 >
                   {sending ? "Envoi…" : "Envoyer le modèle"}
                 </button>
-                {error && (
-                  <p className="font-mono text-[11px] text-rose-mid leading-relaxed">
-                    {error}
-                  </p>
-                )}
-                <p className="font-mono text-[11px] text-cream/60 leading-relaxed">
-                  En soumettant, tu acceptes de recevoir le modèle et nos
-                  emails. Tes données restent confidentielles (RGPD).
+                {error && <p className="text-[11px] text-rose-mid leading-relaxed">{error}</p>}
+                <p className="text-[11px] text-white/60 leading-relaxed">
+                  En soumettant, tu acceptes de recevoir le modèle et nos emails. Tes données
+                  restent confidentielles (RGPD).
                 </p>
               </form>
             )}
@@ -374,10 +357,10 @@ function FinalCTA() {
 
 function Signature() {
   return (
-    <section className="bg-cream">
+    <section className="bg-white">
       <div className="mx-auto max-w-5xl px-6 py-16 text-right">
-        <p className="font-serif text-2xl italic text-ink">
-          Belle planification, <span className="text-rose-dark">♡ Laetitia</span>
+        <p className="font-titre text-2xl italic text-encre">
+          Belle planification, <span className="text-framboise">♡ Laetitia</span>
         </p>
       </div>
     </section>

@@ -1,7 +1,7 @@
 import { Fragment, type ReactNode } from "react";
 
 const LINK_CLASS =
-  "text-rose-dark underline underline-offset-2 decoration-rose-dark/40 transition-colors hover:text-bordeaux break-words";
+  "text-framboise underline underline-offset-2 decoration-framboise/40 transition-colors hover:text-bordeaux break-words";
 
 /** Gras / italique / sauts de ligne dans un fragment SANS lien. */
 function renderInline(text: string, kp: string): ReactNode[] {
@@ -27,7 +27,7 @@ function renderInline(text: string, kp: string): ReactNode[] {
     while ((im = italicRe.exec(s))) {
       if (im.index > l) pushText(s.slice(l, im.index));
       out.push(
-        <em key={`${kp}-i${idx++}`} className="italic text-rose-dark">
+        <em key={`${kp}-i${idx++}`} className="italic text-framboise">
           {im[1]}
         </em>,
       );
@@ -70,9 +70,7 @@ export function RichText({ text }: { text: string }) {
   while ((m = re.exec(text))) {
     if (m.index > last) {
       out.push(
-        <Fragment key={`p${idx++}`}>
-          {renderInline(text.slice(last, m.index), `p${idx}`)}
-        </Fragment>,
+        <Fragment key={`p${idx++}`}>{renderInline(text.slice(last, m.index), `p${idx}`)}</Fragment>,
       );
     }
     if (m[1] !== undefined) {
@@ -120,11 +118,7 @@ export function RichText({ text }: { text: string }) {
     last = m.index + m[0].length;
   }
   if (last < text.length) {
-    out.push(
-      <Fragment key={`p${idx++}`}>
-        {renderInline(text.slice(last), `p${idx}`)}
-      </Fragment>,
-    );
+    out.push(<Fragment key={`p${idx++}`}>{renderInline(text.slice(last), `p${idx}`)}</Fragment>);
   }
 
   return <>{out}</>;
