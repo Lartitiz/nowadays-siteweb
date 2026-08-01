@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import nowadaysLogo from "@/assets/nowadays-logo-v2.webp.asset.json";
+// Logo servi comme fichier du repo (design system : jamais de base64, et pas de
+// dépendance au pipeline d'assets Lovable).
+const LOGO = "/images/logo-nowadays.png";
 import { ASSISTANT_URL } from "./constants";
 
 export function DaFooter() {
@@ -9,12 +11,7 @@ export function DaFooter() {
         <div className="footer-grid">
           <div>
             <div className="brand" aria-label="Nowadays Agency">
-              <img
-                className="logo logo-footer"
-                src={nowadaysLogo.url}
-                alt="Nowadays Agency"
-                loading="lazy"
-              />
+              <img className="logo logo-footer" src={LOGO} alt="Nowadays Agency" loading="lazy" />
             </div>
             <p>
               Agence de communication pop &amp; engagée pour les projets qui font bouger le monde.
@@ -43,10 +40,14 @@ export function DaFooter() {
                 <Link to="/blog">Les Tracts (le blog)</Link>
               </li>
               <li>
-                <a href="#manifeste">Le Manifeste</a>
+                <Link to="/" hash="manifeste">
+                  Le Manifeste
+                </Link>
               </li>
               <li>
-                <a href="#megaphone">Le Mégaphone</a>
+                <Link to="/" hash="megaphone">
+                  Le Mégaphone
+                </Link>
               </li>
             </ul>
           </div>

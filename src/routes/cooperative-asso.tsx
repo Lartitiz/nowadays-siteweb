@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import l214Logo from "@/assets/coop-logos/l214.png.asset.json";
 import cooperativeOasisLogo from "@/assets/coop-logos/cooperative-oasis.png.asset.json";
 import ensadPslLogo from "@/assets/coop-logos/ensad-psl.jpg.asset.json";
@@ -30,13 +31,12 @@ import imgRoseDonald from "@/assets/etudes/rose-donald.jpg.asset.json";
 import imgLaProchaineAire from "@/assets/etudes-pro/la-prochaine-aire.jpg.asset.json";
 import { absoluteUrl } from "@/lib/site";
 
-const CALENDLY_URL =
-  "https://calendly.com/laetitia-mattioli/appel-decouverte-atelier";
+const CALENDLY_URL = "https://calendly.com/laetitia-mattioli/appel-decouverte-atelier";
 
 export const Route = createFileRoute("/cooperative-asso")({
   head: () => ({
     meta: [
-      { title: "Ton agency de com — Coopératives & assos | Nowadays" },
+      { title: "Ton agency de com | Coopératives & assos | Nowadays" },
       {
         name: "description",
         content:
@@ -44,7 +44,7 @@ export const Route = createFileRoute("/cooperative-asso")({
       },
       {
         property: "og:title",
-        content: "Ton agency de com — Coopératives & assos | Nowadays",
+        content: "Ton agency de com | Coopératives & assos | Nowadays",
       },
       {
         property: "og:description",
@@ -65,11 +65,11 @@ function Cta({
   variant?: "primary" | "ghost";
 }) {
   const base =
-    "inline-flex items-center justify-center rounded-full px-8 py-4 font-mono text-sm uppercase tracking-[0.16em] transition-colors";
+    "inline-flex items-center justify-center rounded-full px-8 py-4 text-sm uppercase tracking-[0.16em] transition-colors";
   const cls =
     variant === "primary"
-      ? `${base} bg-rose-dark text-cream hover:bg-bordeaux`
-      : `${base} border border-ink text-ink hover:bg-ink hover:text-cream`;
+      ? `${base} bg-framboise text-white hover:bg-bordeaux`
+      : `${base} border border-ink text-encre hover:bg-ink hover:text-white`;
   return (
     <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className={cls}>
       {children}
@@ -79,19 +79,19 @@ function Cta({
 
 function Hero() {
   return (
-    <section className="bg-background">
+    <section className="bg-white">
       <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
-        <h1 className="font-serif text-4xl leading-[1.05] text-ink md:text-6xl lg:text-7xl">
+        <h1 className="font-titre text-4xl leading-[1.05] text-encre md:text-6xl lg:text-7xl">
           Déléguez <em>votre com'</em> et concentrez-vous sur l'essentiel.
         </h1>
-        <p className="mx-auto mt-8 max-w-2xl font-mono text-base text-ink md:text-lg">
-          Une communication pro, réactive et stylée pour les structures qui ont mieux
-          à faire que de galérer sur Instagram.
+        <p className="mx-auto mt-8 max-w-2xl text-base text-encre md:text-lg">
+          Une communication pro, réactive et stylée pour les structures qui ont mieux à faire que de
+          galérer sur Instagram.
         </p>
         <div className="mt-10">
           <Cta>Réservez votre appel découverte</Cta>
         </div>
-        <p className="mt-6 font-mono text-xs uppercase tracking-[0.16em] text-ink">
+        <p className="mt-6 text-xs uppercase tracking-[0.16em] text-encre">
           ✨ Appel gratuit • 30 minutes • Sans engagement
         </p>
       </div>
@@ -102,16 +102,16 @@ function Hero() {
 const CLIENT_LOGOS = [
   { name: "L214", src: l214Logo.url },
   { name: "Coopérative Oasis", src: cooperativeOasisLogo.url },
-  { name: "École des Arts Décoratifs — PSL", src: ensadPslLogo.url },
+  { name: "École des Arts Décoratifs ; PSL", src: ensadPslLogo.url },
   { name: "Emmaüs Défi", src: emmausDefiLogo.url },
   { name: "Sea Shepherd", src: seaShepherdLogo.url },
 ];
 
 function ClientsBand() {
   return (
-    <section className="bg-rose-light py-16">
+    <section className="py-16 bg-rose-pale">
       <div className="mx-auto max-w-6xl px-6">
-        <p className="text-center font-serif text-xl italic text-ink md:text-2xl">
+        <p className="text-center font-titre text-xl italic text-encre md:text-2xl">
           Quelques projets qui nous ont fait confiance
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-8 md:gap-x-16">
@@ -139,30 +139,30 @@ const PROBLEM_POINTS = [
 
 function ProblemSection() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-20 md:py-28 bg-white">
       <div className="mx-auto max-w-3xl px-6">
-        <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
+        <h2 className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
           Vous portez un projet qui a du sens. Mais <em>la com'</em>, ça coince.
         </h2>
-        <p className="mt-8 font-mono text-base text-ink leading-relaxed">
-          Vous êtes une coopérative, une association ou une PME engagée ? Votre
-          mission est claire, votre équipe est motivée.
+        <p className="mt-8 text-base text-encre leading-relaxed">
+          Vous êtes une coopérative, une association ou une PME engagée ? Votre mission est claire,
+          votre équipe est motivée.
         </p>
-        <p className="mt-4 font-mono text-base text-ink leading-relaxed">
+        <p className="mt-4 text-base text-encre leading-relaxed">
           Mais côté communication digitale, c'est une autre histoire :
         </p>
-        <ul className="mt-6 space-y-3 font-mono text-base text-ink">
+        <ul className="mt-6 space-y-3 text-base text-encre">
           {PROBLEM_POINTS.map((p) => (
             <li key={p} className="flex gap-3">
-              <span className="text-rose-dark">→</span>
+              <span className="text-framboise">→</span>
               <span>{p}</span>
             </li>
           ))}
         </ul>
-        <p className="mt-8 font-mono text-base text-ink leading-relaxed">
+        <p className="mt-8 text-base text-encre leading-relaxed">
           <strong className="font-semibold">
-            Vous avez besoin de déléguer à quelqu'un de confiance. Quelqu'un qui
-            comprend votre projet, qui va vite, et qui livre du travail propre.
+            Vous avez besoin de déléguer à quelqu'un de confiance. Quelqu'un qui comprend votre
+            projet, qui va vite, et qui livre du travail propre.
           </strong>
         </p>
         <div className="mt-10">
@@ -175,52 +175,49 @@ function ProblemSection() {
 
 function LaetitiaIntroSection() {
   return (
-    <section className="bg-rose-light py-20 md:py-28">
+    <section className="py-20 md:py-28 bg-rose-pale">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-2 md:items-center">
         <div>
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-rose-dark">
-            Je vous propose de prendre en main votre communication pour que vous
-            respiriez
+          <p className="text-xs uppercase tracking-[0.2em] text-framboise">
+            Je vous propose de prendre en main votre communication pour que vous respiriez
           </p>
-          <h2 className="mt-6 font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
+          <h2 className="mt-6 font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
             Parce que gérer une structure engagée, c'est déjà un job à temps plein
           </h2>
-          <p className="mt-8 font-mono text-base text-ink leading-relaxed">
-            Je suis Laetitia, fondatrice de Nowadays Agency. Depuis 2017,
-            j'accompagne des structures engagées à devenir plus visibles sur le
-            web, sans trahir leurs valeurs.
+          <p className="mt-8 text-base text-encre leading-relaxed">
+            Je suis Laetitia, fondatrice de Nowadays Agency. Depuis 2017, j'accompagne des
+            structures engagées à devenir plus visibles sur le web, sans trahir leurs valeurs.
           </p>
-          <p className="mt-4 font-mono text-base text-ink leading-relaxed">
+          <p className="mt-4 text-base text-encre leading-relaxed">
             Ce que je vous propose, c'est simple :{" "}
             <strong className="font-semibold">je fais pour vous.</strong>
           </p>
-          <p className="mt-4 font-mono text-base text-ink leading-relaxed">
+          <p className="mt-4 text-base text-encre leading-relaxed">
             Pas juste un audit qui finit dans un tiroir. Pas juste des{" "}
-            <em>« recommandations stratégiques »</em> que personne n'applique.
-            Mais :
+            <em>« recommandations stratégiques »</em> que personne n'applique. Mais :
           </p>
-          <ul className="mt-6 space-y-3 font-mono text-base text-ink">
+          <ul className="mt-6 space-y-3 text-base text-encre">
             <li className="flex gap-3">
-              <span className="text-rose-dark">→</span>
+              <span className="text-framboise">→</span>
               <span>Des contenus créés, rédigés, publiés</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-rose-dark">→</span>
+              <span className="text-framboise">→</span>
               <span>Un site et des e-mails qui convertissent, des réseaux qui vivent</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-rose-dark">→</span>
+              <span className="text-framboise">→</span>
               <span>Des campagnes qui font venir du monde à vos événements</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-rose-dark">→</span>
+              <span className="text-framboise">→</span>
               <span>Et vous : tranquilles, concentrés sur votre mission</span>
             </li>
           </ul>
           <div className="mt-10">
             <Cta>Réserver mon appel découverte (gratuit)</Cta>
           </div>
-          <p className="mt-6 font-mono text-xs uppercase tracking-[0.16em] text-ink">
+          <p className="mt-6 text-xs uppercase tracking-[0.16em] text-encre">
             ✨ Appel gratuit • 30 minutes • Sans engagement
           </p>
         </div>
@@ -255,26 +252,24 @@ const PILLARS = [
 
 function PourquoiTravaillerSection() {
   return (
-    <section className="bg-cream py-20 md:py-28">
+    <section className="py-20 md:py-28 bg-white">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="max-w-3xl font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
+        <h2 className="max-w-3xl font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
           Pourquoi <em>travailler avec moi</em> plutôt qu'une grosse agence ?
         </h2>
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {PILLARS.map((p) => (
-            <div key={p.title} className="rounded-2xl bg-background p-8">
+            <div key={p.title} className="rounded-2xl bg-white p-8">
               <div className="text-4xl">{p.emoji}</div>
-              <h3 className="mt-6 font-serif text-2xl text-ink">{p.title}</h3>
-              <p className="mt-4 font-mono text-sm text-ink leading-relaxed">
-                {p.body}
-              </p>
+              <h3 className="mt-6 font-titre text-2xl text-encre">{p.title}</h3>
+              <p className="mt-4 text-sm text-encre leading-relaxed">{p.body}</p>
             </div>
           ))}
         </div>
         <div className="mt-12 text-center">
           <a
             href="#projets"
-            className="inline-flex items-center justify-center rounded-full border border-ink px-8 py-4 font-mono text-sm uppercase tracking-[0.16em] text-ink transition-colors hover:bg-ink hover:text-cream"
+            className="inline-flex items-center justify-center rounded-full border border-ink px-8 py-4 text-sm uppercase tracking-[0.16em] text-encre transition-colors hover:bg-ink hover:text-white"
           >
             Voir nos études de cas
           </a>
@@ -304,19 +299,17 @@ const STEPS = [
 
 function ProcessSection() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-20 md:py-28 bg-rose-pale">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
+        <h2 className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
           Comment <em>ça se passe</em> ?
         </h2>
         <div className="mt-16 grid gap-10 md:grid-cols-3">
           {STEPS.map((s) => (
             <div key={s.title}>
               <div className="text-3xl">{s.n}</div>
-              <h3 className="mt-6 font-serif text-2xl text-ink">{s.title}</h3>
-              <p className="mt-4 font-mono text-sm text-ink leading-relaxed">
-                {s.body}
-              </p>
+              <h3 className="mt-6 font-titre text-2xl text-encre">{s.title}</h3>
+              <p className="mt-4 text-sm text-encre leading-relaxed">{s.body}</p>
             </div>
           ))}
         </div>
@@ -364,23 +357,22 @@ const PRESTATIONS = [
 
 function PrestationsSection() {
   return (
-    <section className="bg-rose-light py-20 md:py-28">
+    <section className="py-20 md:py-28 bg-white">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
-          Un accompagnement sur-mesure pour une{" "}
-          <em>communication plus éthique</em>
+        <h2 className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
+          Un accompagnement sur-mesure pour une <em>communication plus éthique</em>
         </h2>
-        <p className="mt-8 font-mono text-base text-ink">
+        <p className="mt-8 text-base text-encre">
           Selon vos besoins et votre budget, je peux intervenir sur :
         </p>
         <div className="mt-12 grid gap-8 md:grid-cols-2">
           {PRESTATIONS.map((p) => (
-            <div key={p.title} className="rounded-2xl bg-background p-8">
-              <h3 className="font-serif text-2xl text-ink">{p.title}</h3>
-              <ul className="mt-6 space-y-2 font-mono text-sm text-ink">
+            <div key={p.title} className="rounded-2xl bg-white p-8">
+              <h3 className="font-titre text-2xl text-encre">{p.title}</h3>
+              <ul className="mt-6 space-y-2 text-sm text-encre">
                 {p.items.map((i) => (
                   <li key={i} className="flex gap-3">
-                    <span className="text-rose-dark">→</span>
+                    <span className="text-framboise">→</span>
                     <span>{i}</span>
                   </li>
                 ))}
@@ -397,7 +389,7 @@ const PROJECTS = [
   {
     name: "École des Arts Décoratifs",
     img: imgEnsad.url,
-    desc: "Pour attirer du monde à l'exposition de Gérard Baudoin : réseaux sociaux, emailing ciblé et micro-influence — 700 visiteurs en une semaine, 5 articles, +100 clics vers l'événement.",
+    desc: "Pour attirer du monde à l'exposition de Gérard Baudoin : réseaux sociaux, emailing ciblé et micro-influence ; 700 visiteurs en une semaine, 5 articles, +100 clics vers l'événement.",
   },
   {
     name: "Sea Shepherd × Racines de Demain",
@@ -450,7 +442,7 @@ const PROJECTS = [
     desc: "Une marque-showroom qui revendique le luxe conscient. Stratégie digitale complète, de l'identité visuelle à l'influence, pour accroître sa notoriété.",
   },
   {
-    name: "Ressources — Emmanuelle Riboud",
+    name: "Ressources ; Emmanuelle Riboud",
     img: imgRessources.url,
     desc: "Changer la cantine pour changer le monde. Repenser l'alimentation scolaire avec bon sens et amour du vivant. Bases d'une stratégie de marque et de communication.",
   },
@@ -497,22 +489,21 @@ const PROJECTS = [
   {
     name: "La prochaine aire",
     img: imgLaProchaineAire.url,
-    desc: "Tiers-lieu associatif dans une ancienne maison éclusière. Lancement de la com' : storytelling, relations presse, Instagram. Article dans Brut et posts viraux.",
+    desc: "Tiers-lieu associatif dans une ancienne maison éclusière. Lancement de la com' : storytelling, relations presse, Instagram. Retombées presse et posts viraux.",
   },
 ];
 
 function ProjetsGrid() {
   return (
-    <section id="projets" className="bg-rose-light py-20 md:py-28">
+    <section id="projets" className="py-20 md:py-28 bg-rose-pale">
       <div className="mx-auto max-w-6xl px-6">
-        <p className="text-center font-serif text-xl italic text-ink md:text-2xl">
+        <p className="text-center font-titre text-xl italic text-encre md:text-2xl">
           Celles et ceux qui font bouger les lignes avec nous
         </p>
-        <p className="mx-auto mt-8 max-w-3xl text-center font-mono text-base text-ink leading-relaxed">
-          Qu'ils sauvent les océans ou réinventent l'artisanat local, ils nous ont
-          fait confiance pour porter leur message. Une sélection de projets
-          créatifs et engagés (associations, ONG, start-ups et entreprises
-          responsables) que nous avons accompagnés avec passion.
+        <p className="mx-auto mt-8 max-w-3xl text-center text-base text-encre leading-relaxed">
+          Qu'ils sauvent les océans ou réinventent l'artisanat local, ils nous ont fait confiance
+          pour porter leur message. Une sélection de projets créatifs et engagés (associations, ONG,
+          start-ups et entreprises responsables) que nous avons accompagnés avec passion.
         </p>
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((p) => (
@@ -523,10 +514,8 @@ function ProjetsGrid() {
                 loading="lazy"
                 className="aspect-[16/10] w-full rounded-2xl object-cover"
               />
-              <h3 className="mt-6 font-serif text-2xl text-ink">{p.name}</h3>
-              <p className="mt-3 font-mono text-sm text-ink leading-relaxed">
-                {p.desc}
-              </p>
+              <h3 className="mt-6 font-titre text-2xl text-encre">{p.name}</h3>
+              <p className="mt-3 text-sm text-encre leading-relaxed">{p.desc}</p>
             </article>
           ))}
         </div>
@@ -537,7 +526,7 @@ function ProjetsGrid() {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <Hero />
       <ClientsBand />
       <ProblemSection />
@@ -546,7 +535,8 @@ function Page() {
       <ProcessSection />
       <PrestationsSection />
       <ProjetsGrid />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }
