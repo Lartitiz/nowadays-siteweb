@@ -1,0 +1,33 @@
+import { CALENDLY_URL } from "./constants";
+import { Confettis } from "./primitives";
+
+export function HomeHero() {
+  return (
+    <section className="hero vichy">
+      <Confettis />
+      <div className="wrap">
+        <div className="hero-card">
+          <h1>
+            Gagnez en <span className="surligne">visibilité</span>
+            <br />
+            <em>sans vendre votre âme.</em>
+          </h1>
+          <p className="hero-sub">
+            Agence de communication engagée et responsable, pour les projets qui font bouger le
+            monde.
+          </p>
+          <p className="hero-copy">
+            Vous portez un projet plus doux pour le monde ? Votre com' mérite mieux que « je
+            posterai lundi » <em>(on est jeudi)</em>. On s'en occupe.
+          </p>
+          <p className="hero-audience">Créatrices, assos, coopératives, entreprises engagées.</p>
+          <div className="actions">
+            <a className="btn btn-primary" href={CALENDLY_URL}>
+              Réserver un appel découverte
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
