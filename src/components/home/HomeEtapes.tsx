@@ -1,3 +1,4 @@
+import { Pill } from "@/components/da/Pill";
 const ETAPES = [
   {
     numero: "1",
@@ -22,7 +23,7 @@ export function HomeEtapes() {
   return (
     <section className="section steps">
       <div className="wrap">
-        <span className="eyebrow">Comment ça marche</span>
+        <Pill>Comment ça marche</Pill>
         <h2>3 étapes. Zéro prise de tête.</h2>
         <div className="step-grid">
           {ETAPES.map((etape) => (

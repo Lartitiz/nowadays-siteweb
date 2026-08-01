@@ -1,6 +1,7 @@
+import { Pill } from "@/components/da/Pill";
 import { type FormEvent } from "react";
 import { useSubscribe } from "@/lib/useSubscribe";
-import { Megaphone } from "./primitives";
+import { Megaphone } from "@/components/da/primitives";
 
 export function HomeMegaphone() {
   // Même branchement MailerLite que les autres formulaires du site
@@ -21,7 +22,7 @@ export function HomeMegaphone() {
         </div>
 
         <div>
-          <span className="eyebrow">Le Mégaphone</span>
+          <Pill>Le Mégaphone</Pill>
           <h2>Des conseils en com' engagée, faits pour circuler.</h2>
           <p className="lead">
             Rejoignez les +2 800 projets engagés qui reçoivent mes conseils. Du concret, sans

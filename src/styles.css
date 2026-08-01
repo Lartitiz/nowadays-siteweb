@@ -21,7 +21,6 @@
   --radius-3xl: 18px;
   --radius-4xl: 22px;
 
-
   --font-serif: "Libre Baskerville", Georgia, serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --font-sans: "IBM Plex Mono", ui-monospace, monospace;
@@ -51,27 +50,59 @@
   --color-bordeaux: var(--bordeaux);
   --color-rose-dark: var(--rose-dark);
   --color-rose-mid: var(--rose-mid);
-  
+
   --color-rose-light: var(--rose-light);
   --color-cream: var(--cream);
   --color-orange: var(--orange);
   --color-ink: var(--ink);
   --color-yellow: var(--yellow);
+
+  /* ---------------------------------------------------------------------
+   * Design system Nowadays — DESIGN_SYSTEM_NOWADAYS.md (racine) fait foi.
+   *
+   * Ajouts SEULEMENT : aucun jeton existant n'est modifié, donc aucune page
+   * ne change d'aspect tant qu'elle n'a pas été convertie (un lot par PR).
+   * Ces jetons donnent les classes Tailwind utilisées pour convertir les
+   * pages, qui sont toutes écrites en Tailwind : bg-rose-pale, text-framboise,
+   * font-titre, rounded-carte…
+   *
+   * --color-bordeaux existe déjà plus haut et vaut bien #91014B : on le réutilise.
+   * ------------------------------------------------------------------- */
+
+  --font-titre: "Instrument Serif", Georgia, serif;
+  --font-courant: "Hanken Grotesk", Arial, sans-serif;
+
+  --color-framboise: #fb3d80;
+  --color-jaune: #ffe561;
+  --color-rose-moyen: #ffa7c6;
+  --color-rose-doux: #ffd6e8;
+  --color-rose-pale: #fff4f8;
+  --color-encre: #1a1a1a;
+  --color-gris-chaud: #6b5a62;
+  /* Orange et rouge : petites touches (flèches, confettis), jamais en fond.
+     Nommés « vif » car --color-orange existe déjà et vaut un ambre différent. */
+  --color-orange-vif: #ff7a33;
+  --color-rouge-vif: #e8402e;
+
+  /* Rectangles arrondis asymétriques : jamais quatre coins égaux sur les
+     cartes importantes. */
+  --radius-carte: 12px 24px 10px 20px;
+  --radius-carte-douce: 10px 20px 8px 16px;
 }
 
 :root {
   --radius: 9999px;
 
   /* Couleurs de marque (converties depuis les hex fournis) */
-  --bordeaux: oklch(0.4 0.17 0);          /* #91014b */
-  --rose-dark: oklch(0.66 0.24 5);        /* #fb3d80 */
-  --rose-mid: oklch(0.81 0.13 5);         /* #fd9ebf */
-  
-  --rose-light: oklch(0.96 0.025 5);      /* #feedf0 */
-  --cream: oklch(1 0 0);                  /* #ffffff — blanc pur (demande cliente : fond blanc partout) */
-  --orange: oklch(0.74 0.17 60);          /* #f19700 */
-  --ink: oklch(0.18 0.04 5);              /* #1a050d — noir chaud teinté bordeaux */
-  --yellow: oklch(0.93 0.16 95);          /* #FFE561 — jaune badge "ou" */
+  --bordeaux: oklch(0.4 0.17 0); /* #91014b */
+  --rose-dark: oklch(0.66 0.24 5); /* #fb3d80 */
+  --rose-mid: oklch(0.81 0.13 5); /* #fd9ebf */
+
+  --rose-light: oklch(0.96 0.025 5); /* #feedf0 */
+  --cream: oklch(1 0 0); /* #ffffff — blanc pur (demande cliente : fond blanc partout) */
+  --orange: oklch(0.74 0.17 60); /* #f19700 */
+  --ink: oklch(0.18 0.04 5); /* #1a050d — noir chaud teinté bordeaux */
+  --yellow: oklch(0.93 0.16 95); /* #FFE561 — jaune badge "ou" */
 
   /* Mapping sémantique shadcn */
   --background: var(--cream);
@@ -108,14 +139,20 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-serif);
     font-weight: 400; /* jamais bold */
     color: var(--ink);
     line-height: 1.1;
   }
 
-  em, i {
+  em,
+  i {
     font-style: italic;
     color: var(--rose-dark);
   }

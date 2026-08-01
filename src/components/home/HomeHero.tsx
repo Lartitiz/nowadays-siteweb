@@ -1,5 +1,5 @@
-import { CALENDLY_URL } from "./constants";
-import { Confettis } from "./primitives";
+import { CALENDLY_URL } from "@/components/da/constants";
+import { Confettis } from "@/components/da/primitives";
 
 export function HomeHero() {
   return (

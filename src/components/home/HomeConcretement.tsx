@@ -1,4 +1,5 @@
-import { CtaInline } from "./CtaInline";
+import { Pill } from "@/components/da/Pill";
+import { CtaInline } from "@/components/da/CtaInline";
 
 const FONDATIONS = [
   "Votre offre",
@@ -22,7 +23,7 @@ export function HomeConcretement() {
       <div className="wrap">
         <div className="concrete-intro">
           <div>
-            <span className="eyebrow">Le travail</span>
+            <Pill>Le travail</Pill>
             <h2>Concrètement, on fait quoi ensemble ?</h2>
           </div>
           <p className="lead">

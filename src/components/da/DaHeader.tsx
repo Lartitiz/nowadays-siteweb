@@ -8,7 +8,7 @@ const LIENS = [
   { label: "Résultats", href: "#resultats" },
 ] as const;
 
-export function HomeHeader() {
+export function DaHeader() {
   // Le bouton « Menu » de la maquette était décoratif : ici il ouvre vraiment
   // la navigation sous 950 px.
   const [ouvert, setOuvert] = useState(false);

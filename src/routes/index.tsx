@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { absoluteUrl } from "@/lib/site";
-import homeCss from "@/styles/home.css?url";
 
-import { HomeHeader } from "@/components/home/HomeHeader";
+import { DaLayout } from "@/components/da/DaLayout";
 import { HomeHero } from "@/components/home/HomeHero";
 import { HomePreuve } from "@/components/home/HomePreuve";
 import { HomeConstat } from "@/components/home/HomeConstat";
@@ -19,7 +18,6 @@ import { HomeTemoignages } from "@/components/home/HomeTemoignages";
 import { HomeMegaphone } from "@/components/home/HomeMegaphone";
 import { HomePresse } from "@/components/home/HomePresse";
 import { HomeCtaFinal } from "@/components/home/HomeCtaFinal";
-import { HomeFooter } from "@/components/home/HomeFooter";
 
 const TITRE = "Agence de communication engagée et responsable | Nowadays Agency";
 
@@ -52,16 +50,9 @@ export const Route = createFileRoute("/")({
       },
       { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [
-      { rel: "canonical", href: absoluteUrl("/") },
-      // Polices de la maquette, chargées depuis la home uniquement : les autres
-      // pages gardent Libre Baskerville + IBM Plex Mono (lien dans __root.tsx).
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&display=swap",
-      },
-      { rel: "stylesheet", href: homeCss },
-    ],
+    // Polices et feuille du design system sont désormais chargées pour tout le
+    // site depuis __root.tsx : elles servent aussi aux pages converties.
+    links: [{ rel: "canonical", href: absoluteUrl("/") }],
     scripts: [
       {
         type: "application/ld+json",
@@ -103,32 +94,28 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// La home n'utilise pas SiteLayout : elle a son propre en-tête et son propre
-// pied de page (maquette v13). SiteLayout reste inchangé pour les 33 autres
-// routes.
+// La home passe par DaLayout, le gabarit du design system (en-tête, pied de
+// page et classe .nowadays-da). Les pages pas encore converties gardent
+// SiteLayout, inchangé.
 function Index() {
   return (
-    <div className="home-v13">
-      <HomeHeader />
-      <main id="top">
-        <HomeHero />
-        <HomePreuve />
-        <HomeConstat />
-        <HomeManifeste />
-        <HomeConcretement />
-        <HomeOffres />
-        <HomeEtapes />
-        <HomeResultats />
-        <HomeDifferences />
-        <HomePourQui />
-        <HomeObjections />
-        <HomeLaetitia />
-        <HomeTemoignages />
-        <HomeMegaphone />
-        <HomePresse />
-        <HomeCtaFinal />
-      </main>
-      <HomeFooter />
-    </div>
+    <DaLayout className="page-accueil">
+      <HomeHero />
+      <HomePreuve />
+      <HomeConstat />
+      <HomeManifeste />
+      <HomeConcretement />
+      <HomeOffres />
+      <HomeEtapes />
+      <HomeResultats />
+      <HomeDifferences />
+      <HomePourQui />
+      <HomeObjections />
+      <HomeLaetitia />
+      <HomeTemoignages />
+      <HomeMegaphone />
+      <HomePresse />
+      <HomeCtaFinal />
+    </DaLayout>
   );
 }

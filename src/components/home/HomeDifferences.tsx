@@ -1,3 +1,4 @@
+import { Pill } from "@/components/da/Pill";
 const SAVOIR_FAIRE = [
   "Branding",
   "Instagram",
@@ -17,7 +18,7 @@ export function HomeDifferences() {
   return (
     <section className="section rose">
       <div className="wrap">
-        <span className="eyebrow">Ce qui nous rend différentes</span>
+        <Pill>Ce qui nous rend différentes</Pill>
         <h2>Pas votre agence de communication classique.</h2>
 
         <div className="diff-grid">
