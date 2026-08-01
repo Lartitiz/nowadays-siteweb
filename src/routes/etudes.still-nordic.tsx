@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import logo from "@/assets/etudes/still-nordic/still-nordic.jpg.asset.json";
 import ig1 from "@/assets/etudes/still-nordic/still_nordic_instagram_take_over_Nowadays_agency.webp.asset.json";
@@ -16,10 +17,16 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/etudes/still-nordic")({
   head: () => ({
     meta: [
-      { title: "Still Nordic — Étude de cas | Nowadays" },
-      { name: "description", content: "Social Media et Branding pour Still Nordic — sacs en cuir au design scandinave." },
-      { property: "og:title", content: "Still Nordic — Étude de cas | Nowadays" },
-      { property: "og:description", content: "Social Media et Branding pour Still Nordic — sacs en cuir au design scandinave." },
+      { title: "Still Nordic | Étude de cas | Nowadays" },
+      {
+        name: "description",
+        content: "Social Media et Branding pour Still Nordic | sacs en cuir au design scandinave.",
+      },
+      { property: "og:title", content: "Still Nordic | Étude de cas | Nowadays" },
+      {
+        property: "og:description",
+        content: "Social Media et Branding pour Still Nordic | sacs en cuir au design scandinave.",
+      },
       { property: "og:type", content: "article" },
       { property: "og:url", content: absoluteUrl("/etudes/still-nordic") },
       { property: "og:image", content: absoluteUrl(logo.url) },
@@ -34,7 +41,8 @@ const data: CaseStudyData = {
   brand: "Still Nordic",
   logo: { src: logo.url, alt: "Still Nordic" },
   title: "Social Media et Branding pour Still Nordic",
-  subtitle: "Comment développer ses audiences sur le digital tout en ayant une identité cohérente et différenciante ?",
+  subtitle:
+    "Comment développer ses audiences sur le digital tout en ayant une identité cohérente et différenciante ?",
   context: {
     paragraphs: [
       "Still Nordic, marque de sacs en cuir au design minimaliste et épuré, voulait passer à la vitesse supérieure. L'idée ? Créer plus de lien avec sa communauté sur les réseaux sociaux tout en renforçant sa présence digitale.",
@@ -77,10 +85,23 @@ const data: CaseStudyData = {
     },
   ],
   influencers: {
-    intro: "Toutes ces photos ont été prises dans le cadre de la campagne d'influence pour Still Nordic.",
+    intro:
+      "Toutes ces photos ont été prises dans le cadre de la campagne d'influence pour Still Nordic.",
     items: [
-      { avatar: infDying.url, handle: "@dyingseasons", role: "Photographe", followers: "10K Followers", link: "https://www.instagram.com/dyingseasons/" },
-      { avatar: infAesth.url, handle: "@aesthetnik", role: "Content Creator", followers: "18,5K Followers", link: "https://www.instagram.com/aesthetnik/" },
+      {
+        avatar: infDying.url,
+        handle: "@dyingseasons",
+        role: "Photographe",
+        followers: "10K Followers",
+        link: "https://www.instagram.com/dyingseasons/",
+      },
+      {
+        avatar: infAesth.url,
+        handle: "@aesthetnik",
+        role: "Content Creator",
+        followers: "18,5K Followers",
+        link: "https://www.instagram.com/aesthetnik/",
+      },
     ],
   },
   results: {
@@ -95,9 +116,10 @@ const data: CaseStudyData = {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <CaseStudy data={data} />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

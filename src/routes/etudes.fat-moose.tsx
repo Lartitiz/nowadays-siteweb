@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import logo from "@/assets/etudes/fat-moose/Fat-Moose-clothing.webp.asset.json";
 import ig1 from "@/assets/etudes/fat-moose/Capture-d-e-cran-2017-12-04-a-18.30.17.png.asset.json";
@@ -21,10 +22,18 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/etudes/fat-moose")({
   head: () => ({
     meta: [
-      { title: "Fat Moose — Étude de cas | Nowadays" },
-      { name: "description", content: "Assurer le lancement d'une marque streetwear avec une stratégie de communication 360°." },
-      { property: "og:title", content: "Fat Moose — Étude de cas | Nowadays" },
-      { property: "og:description", content: "Assurer le lancement d'une marque streetwear avec une stratégie de communication 360°." },
+      { title: "Fat Moose | Étude de cas | Nowadays" },
+      {
+        name: "description",
+        content:
+          "Assurer le lancement d'une marque streetwear avec une stratégie de communication 360°.",
+      },
+      { property: "og:title", content: "Fat Moose | Étude de cas | Nowadays" },
+      {
+        property: "og:description",
+        content:
+          "Assurer le lancement d'une marque streetwear avec une stratégie de communication 360°.",
+      },
       { property: "og:type", content: "article" },
       { property: "og:url", content: absoluteUrl("/etudes/fat-moose") },
       { property: "og:image", content: absoluteUrl(logo.url) },
@@ -99,12 +108,48 @@ const data: CaseStudyData = {
   influencers: {
     intro: "Toutes ces photos ont été prises dans le cadre de la campagne #wearefatmoose.",
     items: [
-      { avatar: inf5.url, handle: "@joeybadass", role: "Rappeur", followers: "1M Followers", link: "https://www.instagram.com/joeybadass/" },
-      { avatar: inf7.url, handle: "@marienovosad", role: "Content Creator", followers: "296K Followers", link: "https://www.instagram.com/marienovosad/" },
-      { avatar: inf6.url, handle: "@shakuto", role: "Sport & lifestyle photo", followers: "24K Followers", link: "https://www.instagram.com/shakuto/" },
-      { avatar: inf4.url, handle: "@victorhernandezm", role: "Photographer", followers: "20K Followers", link: "https://www.instagram.com/victorhernandezm/" },
-      { avatar: inf3.url, handle: "@danieldorsa", role: "Photographer", followers: "3K Followers", link: "https://www.instagram.com/danieldorsa/" },
-      { avatar: inf2.url, handle: "@ogdrico", role: "Creator", followers: "1,6K Followers", link: "https://www.instagram.com/ogdrico/" },
+      {
+        avatar: inf5.url,
+        handle: "@joeybadass",
+        role: "Rappeur",
+        followers: "1M Followers",
+        link: "https://www.instagram.com/joeybadass/",
+      },
+      {
+        avatar: inf7.url,
+        handle: "@marienovosad",
+        role: "Content Creator",
+        followers: "296K Followers",
+        link: "https://www.instagram.com/marienovosad/",
+      },
+      {
+        avatar: inf6.url,
+        handle: "@shakuto",
+        role: "Sport & lifestyle photo",
+        followers: "24K Followers",
+        link: "https://www.instagram.com/shakuto/",
+      },
+      {
+        avatar: inf4.url,
+        handle: "@victorhernandezm",
+        role: "Photographer",
+        followers: "20K Followers",
+        link: "https://www.instagram.com/victorhernandezm/",
+      },
+      {
+        avatar: inf3.url,
+        handle: "@danieldorsa",
+        role: "Photographer",
+        followers: "3K Followers",
+        link: "https://www.instagram.com/danieldorsa/",
+      },
+      {
+        avatar: inf2.url,
+        handle: "@ogdrico",
+        role: "Creator",
+        followers: "1,6K Followers",
+        link: "https://www.instagram.com/ogdrico/",
+      },
     ],
   },
   results: {
@@ -122,9 +167,10 @@ const data: CaseStudyData = {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <CaseStudy data={data} />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

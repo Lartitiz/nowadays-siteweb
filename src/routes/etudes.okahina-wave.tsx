@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes-pro/okahina-wave.jpg.asset.json";
 import { absoluteUrl } from "@/lib/site";
@@ -8,17 +9,16 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/etudes/okahina-wave")({
   head: () => ({
     meta: [
-      { title: "Okahina Wave — Étude de cas | Nowadays" },
+      { title: "Okahina Wave | Étude de cas | Nowadays" },
       {
         name: "description",
         content:
           "Twitter, LinkedIn, blog et interviews d'influenceurs surf pour la start-up des vagues artificielles écoresponsables : 1 500 personnes touchées chaque semaine, 2 000 visiteurs uniques et 50 000 fans via 10 influenceurs.",
       },
-      { property: "og:title", content: "Okahina Wave — Étude de cas" },
+      { property: "og:title", content: "Okahina Wave | Étude de cas" },
       {
         property: "og:description",
-        content:
-          "Stratégie de communication digitale pour une marque éthique en lancement.",
+        content: "Stratégie de communication digitale pour une marque éthique en lancement.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: absoluteUrl("/etudes/okahina-wave") },
@@ -69,8 +69,7 @@ const data: CaseStudyData = {
     },
   ],
   results: {
-    intro:
-      "Une voix nouvelle pour une start-up qui change radicalement la façon de surfer.",
+    intro: "Une voix nouvelle pour une start-up qui change radicalement la façon de surfer.",
     items: [
       { value: "1,5K", label: "Personnes atteintes chaque semaine sur Twitter" },
       { value: "2K", label: "Visiteurs uniques sur le blog" },
@@ -82,9 +81,10 @@ const data: CaseStudyData = {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <CaseStudy data={data} />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

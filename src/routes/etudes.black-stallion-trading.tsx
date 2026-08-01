@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import logo from "@/assets/etudes/black-stallion-trading/black-stallion-trading.webp.asset.json";
 import imgSite from "@/assets/etudes/black-stallion-trading/Site-Web-Pr-sentation.webp.asset.json";
@@ -22,10 +23,18 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/etudes/black-stallion-trading")({
   head: () => ({
     meta: [
-      { title: "Black Stallion Trading — Étude de cas | Nowadays" },
-      { name: "description", content: "Développer la notoriété d'un showroom à NYC avec une communication digitale globale." },
-      { property: "og:title", content: "Black Stallion Trading — Étude de cas | Nowadays" },
-      { property: "og:description", content: "Développer la notoriété d'un showroom à NYC avec une communication digitale globale." },
+      { title: "Black Stallion Trading | Étude de cas | Nowadays" },
+      {
+        name: "description",
+        content:
+          "Développer la notoriété d'un showroom à NYC avec une communication digitale globale.",
+      },
+      { property: "og:title", content: "Black Stallion Trading | Étude de cas | Nowadays" },
+      {
+        property: "og:description",
+        content:
+          "Développer la notoriété d'un showroom à NYC avec une communication digitale globale.",
+      },
       { property: "og:type", content: "article" },
       { property: "og:url", content: absoluteUrl("/etudes/black-stallion-trading") },
       { property: "og:image", content: absoluteUrl(logo.url) },
@@ -93,12 +102,44 @@ const data: CaseStudyData = {
   influencers: {
     intro: "Tous ces influenceurs ont été interviewés pour le blog de la marque.",
     items: [
-      { avatar: infYael.url, handle: "@Yaelhupert", role: "Peintre", followers: "29,3K Followers", link: "https://www.instagram.com/yaelhupert/" },
-      { avatar: infAnja.url, handle: "@anjabrook", role: "Modèle", followers: "2K Followers", link: "https://www.instagram.com/marienovosad/" },
-      { avatar: inf16r.url, handle: "@16rfirenze", role: "Mode — tricot de luxe", followers: "5K Followers" },
-      { avatar: infMarut.url, handle: "@marutstudio", role: "Mode Lifestyle", followers: "13K Followers" },
-      { avatar: infAesth.url, handle: "@aestheticdistance", role: "Photographe de mode", followers: "20,8K Followers" },
-      { avatar: infKirsten.url, handle: "@kirstenanderton", role: "Lifestyle", followers: "61,1K Followers" },
+      {
+        avatar: infYael.url,
+        handle: "@Yaelhupert",
+        role: "Peintre",
+        followers: "29,3K Followers",
+        link: "https://www.instagram.com/yaelhupert/",
+      },
+      {
+        avatar: infAnja.url,
+        handle: "@anjabrook",
+        role: "Modèle",
+        followers: "2K Followers",
+        link: "https://www.instagram.com/marienovosad/",
+      },
+      {
+        avatar: inf16r.url,
+        handle: "@16rfirenze",
+        role: "Mode ; tricot de luxe",
+        followers: "5K Followers",
+      },
+      {
+        avatar: infMarut.url,
+        handle: "@marutstudio",
+        role: "Mode Lifestyle",
+        followers: "13K Followers",
+      },
+      {
+        avatar: infAesth.url,
+        handle: "@aestheticdistance",
+        role: "Photographe de mode",
+        followers: "20,8K Followers",
+      },
+      {
+        avatar: infKirsten.url,
+        handle: "@kirstenanderton",
+        role: "Lifestyle",
+        followers: "61,1K Followers",
+      },
     ],
   },
   results: {
@@ -113,9 +154,10 @@ const data: CaseStudyData = {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <CaseStudy data={data} />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

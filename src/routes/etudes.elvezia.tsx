@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes-pro/elvezia.jpg.asset.json";
 import { absoluteUrl } from "@/lib/site";
@@ -8,17 +9,16 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/etudes/elvezia")({
   head: () => ({
     meta: [
-      { title: "Elvezia — Étude de cas | Nowadays" },
+      { title: "Elvezia | Étude de cas | Nowadays" },
       {
         name: "description",
         content:
           "Repositionnement stratégique complet d'Elvezia : d'un distributeur de chocolat à une marque premium incarnée. Plateforme de marque, identité visuelle et stratégie 360°.",
       },
-      { property: "og:title", content: "Elvezia — Étude de cas" },
+      { property: "og:title", content: "Elvezia | Étude de cas" },
       {
         property: "og:description",
-        content:
-          "D'un discours produit à une marque premium incarnée et stratégique.",
+        content: "D'un discours produit à une marque premium incarnée et stratégique.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: absoluteUrl("/etudes/elvezia") },
@@ -53,7 +53,7 @@ const data: CaseStudyData = {
     {
       title: "2 · Plateforme de marque",
       paragraphs: [
-        "Mission, vision, valeurs, ton, piliers éditoriaux et messages clés — la colonne vertébrale qui aligne toute la communication.",
+        "Mission, vision, valeurs, ton, piliers éditoriaux et messages clés ; la colonne vertébrale qui aligne toute la communication.",
       ],
     },
     {
@@ -94,9 +94,10 @@ const data: CaseStudyData = {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <CaseStudy data={data} />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

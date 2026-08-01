@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes-pro/atelier-des-lunettes.webp.asset.json";
 import { absoluteUrl } from "@/lib/site";
@@ -8,13 +9,13 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/etudes/atelier-des-lunettes")({
   head: () => ({
     meta: [
-      { title: "Atelier des Lunettes — Étude de cas | Nowadays" },
+      { title: "Atelier des Lunettes | Étude de cas | Nowadays" },
       {
         name: "description",
         content:
           "Stratégie social media, site vitrine et manifeste de marque pour une boutique de lunettes de créateurs : +46 % de reach, première page SEO, +2 000 followers.",
       },
-      { property: "og:title", content: "Atelier des Lunettes — Étude de cas" },
+      { property: "og:title", content: "Atelier des Lunettes | Étude de cas" },
       {
         property: "og:description",
         content: "Faire passer un cap à une boutique de lunettes de créateurs.",
@@ -68,8 +69,7 @@ const data: CaseStudyData = {
     },
   ],
   results: {
-    intro:
-      "Une marque qui voit clair, et qui rayonne au-delà de sa boutique parisienne.",
+    intro: "Une marque qui voit clair, et qui rayonne au-delà de sa boutique parisienne.",
     items: [
       { value: "+46 %", label: "Reach sur les médias sociaux" },
       { value: "1ʳᵉ", label: "Page SEO sur « lunette paris »" },
@@ -81,9 +81,10 @@ const data: CaseStudyData = {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <CaseStudy data={data} />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

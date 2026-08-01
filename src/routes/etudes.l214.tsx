@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes-pro/l214.jpg.asset.json";
 import { absoluteUrl } from "@/lib/site";
@@ -8,13 +9,13 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/etudes/l214")({
   head: () => ({
     meta: [
-      { title: "L214 — Étude de cas | Nowadays" },
+      { title: "L214 | Étude de cas | Nowadays" },
       {
         name: "description",
         content:
           "Camion immersif place de la République, 50 micro-influenceur·ses, 500 000 vues et +10 000 signatures pour pousser LDC à signer l'European Chicken Commitment.",
       },
-      { property: "og:title", content: "L214 — Étude de cas" },
+      { property: "og:title", content: "L214 | Étude de cas" },
       {
         property: "og:description",
         content: "Mobiliser avec la micro-influence : la campagne L214.",
@@ -31,7 +32,7 @@ export const Route = createFileRoute("/etudes/l214")({
 
 const data: CaseStudyData = {
   brand: "L214",
-  logo: { src: cover.url, alt: "L214 — Éthique & Animaux" },
+  logo: { src: cover.url, alt: "L214 | Éthique & Animaux" },
   title: "Mobiliser avec la micro-influence : la campagne L214",
   subtitle:
     "Pour inciter des enseignes agroalimentaires à s'engager contre les pires pratiques d'élevage et d'abattage de poulet.",
@@ -67,8 +68,7 @@ const data: CaseStudyData = {
     },
   ],
   results: {
-    intro:
-      "Le silence n'est plus une option : une campagne qui a fait bouger les lignes.",
+    intro: "Le silence n'est plus une option : une campagne qui a fait bouger les lignes.",
     items: [
       { value: "+500K", label: "Vues sur tous les supports" },
       { value: "+10K", label: "Signatures de pétition" },
@@ -80,9 +80,10 @@ const data: CaseStudyData = {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <CaseStudy data={data} />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

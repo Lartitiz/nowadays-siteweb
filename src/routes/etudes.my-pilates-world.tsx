@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes/my-pilates-world.jpg.asset.json";
 import { absoluteUrl } from "@/lib/site";
@@ -8,13 +9,13 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/etudes/my-pilates-world")({
   head: () => ({
     meta: [
-      { title: "My Pilates World — Étude de cas | Nowadays" },
+      { title: "My Pilates World | Étude de cas | Nowadays" },
       {
         name: "description",
         content:
           "Une stratégie digitale musclée pour une plateforme de Pilates en ligne : branding, social media, influence, tunnel de vente et email marketing.",
       },
-      { property: "og:title", content: "My Pilates World — Étude de cas | Nowadays" },
+      { property: "og:title", content: "My Pilates World | Étude de cas | Nowadays" },
       {
         property: "og:description",
         content:
@@ -48,7 +49,7 @@ const data: CaseStudyData = {
       title: "Penser une stratégie globale",
       paragraphs: [
         "Audit en profondeur de la marque, du marché et du parcours client pour cartographier les forces, les faiblesses et les points de friction.",
-        "Puis une roadmap claire — plan d'attaque chirurgical — pour aligner branding, contenu, acquisition et conversion.",
+        "Puis une roadmap claire ; plan d'attaque chirurgical ; pour aligner branding, contenu, acquisition et conversion.",
       ],
     },
     {
@@ -93,9 +94,10 @@ const data: CaseStudyData = {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <CaseStudy data={data} />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import logo from "@/assets/etudes/jean-belgueule/logo-jbg-jean-belgueule.jpg.asset.json";
 import ig1 from "@/assets/etudes/jean-belgueule/instagram-jean-belgueule-case-study.webp.asset.json";
@@ -12,10 +13,16 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/etudes/jean-belgueule")({
   head: () => ({
     meta: [
-      { title: "Jean Belgueule — Étude de cas | Nowadays" },
-      { name: "description", content: "Communication digitale pour une marque de cosmétiques bio pour hommes." },
-      { property: "og:title", content: "Jean Belgueule — Étude de cas | Nowadays" },
-      { property: "og:description", content: "Communication digitale pour une marque de cosmétiques bio pour hommes." },
+      { title: "Jean Belgueule | Étude de cas | Nowadays" },
+      {
+        name: "description",
+        content: "Communication digitale pour une marque de cosmétiques bio pour hommes.",
+      },
+      { property: "og:title", content: "Jean Belgueule | Étude de cas | Nowadays" },
+      {
+        property: "og:description",
+        content: "Communication digitale pour une marque de cosmétiques bio pour hommes.",
+      },
       { property: "og:type", content: "article" },
       { property: "og:url", content: absoluteUrl("/etudes/jean-belgueule") },
       { property: "og:image", content: absoluteUrl(logo.url) },
@@ -81,9 +88,10 @@ const data: CaseStudyData = {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <CaseStudy data={data} />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

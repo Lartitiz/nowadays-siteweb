@@ -1,7 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { RichText } from "@/components/site/RichText";
 import {
   getArticleBySlug,
@@ -24,9 +25,7 @@ const relatedQueryOptions = queryOptions({
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: async ({ context, params }) => {
-    const article = await context.queryClient.ensureQueryData(
-      articleQueryOptions(params.slug),
-    );
+    const article = await context.queryClient.ensureQueryData(articleQueryOptions(params.slug));
     if (!article) throw notFound();
     // Pré-charger la liste pour les "articles récents" (best effort)
     void context.queryClient.ensureQueryData(relatedQueryOptions);
@@ -34,8 +33,8 @@ export const Route = createFileRoute("/blog/$slug")({
   },
   head: ({ loaderData }) => {
     const a = loaderData?.article as ArticleFull | undefined;
-    if (!a) return { meta: [{ title: "Article — Nowadays" }] };
-    const title = a.seo_title ?? `${a.title} — Nowadays`;
+    if (!a) return { meta: [{ title: "Article | Nowadays" }] };
+    const title = a.seo_title ?? `${a.title} | Nowadays`;
     const description = a.seo_description ?? a.excerpt ?? "";
     const meta = [
       { title },
@@ -102,38 +101,48 @@ export const Route = createFileRoute("/blog/$slug")({
     };
   },
   errorComponent: ({ error }) => (
-    <SiteLayout>
+    <DaLayout>
       <section className="mx-auto max-w-3xl px-6 py-24 text-center">
-        <h1 className="font-serif text-4xl text-ink">Erreur de chargement</h1>
-        <p className="mt-4 font-mono text-sm text-ink">{error.message}</p>
+        <h1 className="font-titre text-4xl text-encre">Erreur de chargement</h1>
+        <p className="mt-4 text-sm text-encre">{error.message}</p>
         <Link
           to="/blog"
-          className="mt-8 inline-block font-mono text-sm uppercase tracking-[0.18em] text-rose-dark hover:text-bordeaux"
+          className="mt-8 inline-block text-sm uppercase tracking-[0.18em] text-framboise hover:text-bordeaux"
         >
           ← Retour au blog
         </Link>
       </section>
-    </SiteLayout>
+    </DaLayout>
   ),
   notFoundComponent: () => (
-    <SiteLayout>
+    <DaLayout>
       <section className="mx-auto max-w-3xl px-6 py-24 text-center">
-        <h1 className="font-serif text-4xl text-ink">Article introuvable</h1>
+        <h1 className="font-titre text-4xl text-encre">Article introuvable</h1>
         <Link
           to="/blog"
-          className="mt-8 inline-block font-mono text-sm uppercase tracking-[0.18em] text-rose-dark hover:text-bordeaux"
+          className="mt-8 inline-block text-sm uppercase tracking-[0.18em] text-framboise hover:text-bordeaux"
         >
           ← Retour au blog
         </Link>
       </section>
-    </SiteLayout>
+    </DaLayout>
   ),
   component: ArticlePage,
 });
 
 const MONTHS_FR = [
-  "janvier", "février", "mars", "avril", "mai", "juin",
-  "juillet", "août", "septembre", "octobre", "novembre", "décembre",
+  "janvier",
+  "février",
+  "mars",
+  "avril",
+  "mai",
+  "juin",
+  "juillet",
+  "août",
+  "septembre",
+  "octobre",
+  "novembre",
+  "décembre",
 ];
 
 function formatDate(iso: string): string {
@@ -145,14 +154,9 @@ function renderBlock(b: ArticleBlock, i: number) {
   if (b.type === "img") {
     return (
       <figure key={i} className="my-12 -mx-2 md:-mx-12">
-        <img
-          src={b.src}
-          alt={b.alt}
-          loading="lazy"
-          className="w-full rounded-sm"
-        />
+        <img src={b.src} alt={b.alt} loading="lazy" className="w-full rounded-sm" />
         {b.alt && b.alt.trim() && (
-          <figcaption className="mt-3 text-center font-mono text-xs uppercase tracking-[0.18em] text-rose-dark">
+          <figcaption className="mt-3 text-center text-xs uppercase tracking-[0.18em] text-framboise">
             {b.alt}
           </figcaption>
         )}
@@ -161,20 +165,14 @@ function renderBlock(b: ArticleBlock, i: number) {
   }
   if (b.type === "h2" || b.type === "h1") {
     return (
-      <h2
-        key={i}
-        className="mt-16 mb-6 font-serif text-3xl md:text-5xl leading-[1.1] text-ink"
-      >
+      <h2 key={i} className="mt-16 mb-6 font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
         <RichText text={b.text} />
       </h2>
     );
   }
   if (b.type === "h3") {
     return (
-      <h3
-        key={i}
-        className="mt-10 mb-4 font-serif text-xl md:text-2xl leading-[1.2] text-ink"
-      >
+      <h3 key={i} className="mt-10 mb-4 font-titre text-xl md:text-2xl leading-[1.2] text-encre">
         <RichText text={b.text} />
       </h3>
     );
@@ -190,7 +188,7 @@ function renderBlock(b: ArticleBlock, i: number) {
       return (
         <aside
           key={i}
-          className="my-8 rounded-2xl bg-rose-light px-6 py-5 font-mono text-sm leading-relaxed text-ink md:text-base"
+          className="my-8 rounded-carte bg-rose-pale px-6 py-5 text-sm leading-relaxed text-encre md:text-base"
         >
           <RichText text={cleaned} />
         </aside>
@@ -199,7 +197,7 @@ function renderBlock(b: ArticleBlock, i: number) {
     return (
       <blockquote
         key={i}
-        className="my-10 border-l-2 border-rose-dark pl-6 font-serif text-2xl italic leading-snug text-ink md:text-3xl"
+        className="my-10 rounded-carte bg-rose-pale px-8 py-6 font-titre text-2xl italic leading-snug text-bordeaux md:text-3xl"
       >
         <RichText text={b.text} />
       </blockquote>
@@ -212,7 +210,7 @@ function renderBlock(b: ArticleBlock, i: number) {
           href={b.href}
           target={b.href.startsWith("http") ? "_blank" : undefined}
           rel={b.href.startsWith("http") ? "noopener noreferrer" : undefined}
-          className="inline-flex items-center rounded-full bg-rose-dark px-8 py-4 font-mono text-sm uppercase tracking-[0.18em] text-cream transition-colors hover:bg-bordeaux"
+          className="btn btn-primary"
         >
           {b.text}
         </a>
@@ -220,10 +218,7 @@ function renderBlock(b: ArticleBlock, i: number) {
     );
   }
   return (
-    <p
-      key={i}
-      className="mt-5 whitespace-pre-line font-mono text-base leading-relaxed text-ink md:text-lg"
-    >
+    <p key={i} className="mt-5 whitespace-pre-line text-encre">
       <RichText text={b.text} />
     </p>
   );
@@ -239,37 +234,37 @@ function ArticlePage() {
   const related = allArticles.filter((a) => a.slug !== article.slug).slice(0, 3);
 
   return (
-    <SiteLayout>
+    <DaLayout>
       {/* Hero */}
-      <section className="bg-background">
+      <section className="bg-white">
         <div className="mx-auto max-w-4xl px-6 pt-16 pb-10 md:pt-24">
           <Link
             to="/blog"
-            className="font-mono text-xs uppercase tracking-[0.22em] text-rose-dark hover:text-bordeaux"
+            className="text-xs uppercase tracking-[0.22em] text-framboise hover:text-bordeaux"
           >
             ← Le blog
           </Link>
-          <p className="mt-8 font-mono text-xs uppercase tracking-[0.22em] text-ink">
+          <p className="mt-8 text-xs uppercase tracking-[0.22em] text-encre">
             {article.author} · {formatDate(article.published_at)}
           </p>
-          <h1 className="mt-6 font-serif text-4xl leading-[1.05] text-ink md:text-6xl lg:text-7xl">
+          <h1 className="mt-6 font-titre text-4xl leading-[1.05] text-encre md:text-6xl lg:text-7xl">
             {article.title}
           </h1>
         </div>
       </section>
 
       {/* Body */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-3xl px-6 pb-24">
+      <section className="bg-white">
+        <div className="corps-article mx-auto max-w-[70ch] px-6 pb-24">
           {article.content.map(renderBlock)}
         </div>
       </section>
 
       {/* Related */}
       {related.length > 0 && (
-        <section className="bg-rose-light">
+        <section className="bg-rose-pale">
           <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-            <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
+            <h2 className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
               À <em>lire</em> aussi
             </h2>
             <div className="mt-12 grid gap-x-10 gap-y-16 md:grid-cols-3">
@@ -281,7 +276,7 @@ function ArticlePage() {
                   className="group flex flex-col"
                 >
                   {r.cover_url && (
-                    <div className="aspect-[4/3] overflow-hidden bg-cream">
+                    <div className="aspect-[4/3] overflow-hidden bg-white">
                       <img
                         src={r.cover_url}
                         alt={r.cover_alt ?? r.title}
@@ -290,10 +285,10 @@ function ArticlePage() {
                       />
                     </div>
                   )}
-                  <p className="mt-5 font-mono text-xs uppercase tracking-[0.22em] text-rose-dark">
+                  <p className="mt-5 text-xs uppercase tracking-[0.22em] text-framboise">
                     {formatDate(r.published_at)}
                   </p>
-                  <h3 className="mt-2 font-serif text-xl leading-tight text-ink md:text-2xl">
+                  <h3 className="mt-2 font-titre text-xl leading-tight text-encre md:text-2xl">
                     {r.title}
                   </h3>
                 </Link>
@@ -303,7 +298,8 @@ function ArticlePage() {
         </section>
       )}
 
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

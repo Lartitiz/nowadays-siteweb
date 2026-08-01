@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes-pro/clip-it.jpg.asset.json";
 import { absoluteUrl } from "@/lib/site";
@@ -8,17 +9,16 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/etudes/clip-it")({
   head: () => ({
     meta: [
-      { title: "Clip It — Étude de cas | Nowadays" },
+      { title: "Clip It | Étude de cas | Nowadays" },
       {
         name: "description",
         content:
           "Site, SEO et stratégie d'influence pour Clip It, jeu de construction éco-responsable en plastique recyclé fabriqué en France. 50 micro-influenceur·ses alignés.",
       },
-      { property: "og:title", content: "Clip It — Étude de cas" },
+      { property: "og:title", content: "Clip It | Étude de cas" },
       {
         property: "og:description",
-        content:
-          "Quand un jeu engagé trouve sa voix digitale : site, SEO et influence.",
+        content: "Quand un jeu engagé trouve sa voix digitale : site, SEO et influence.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: absoluteUrl("/etudes/clip-it") },
@@ -37,8 +37,8 @@ const data: CaseStudyData = {
   subtitle: "Site, SEO et influence pour un jeu de construction éco-responsable.",
   context: {
     paragraphs: [
-      "Clip It, c'est un jeu né du recyclage, qui apprend aux enfants à créer plutôt qu'à consommer : un jeu de construction éco-responsable en plastique recyclé, pensé dès 4-5 ans et fabriqué en France. Le principe est simple — des clips permettent d'assembler des bouchons recyclés, et le geste du tri devient jeu.",
-      "La marque voulait non seulement vendre, mais aussi sensibiliser : motricité fine, imagination, recyclage. Le fond était fort, mais le site ne racontait pas encore assez bien l'histoire — architecture SEO fragile, message « éco-responsable » pas assez mis en avant, potentiel d'influence non structuré.",
+      "Clip It, c'est un jeu né du recyclage, qui apprend aux enfants à créer plutôt qu'à consommer : un jeu de construction éco-responsable en plastique recyclé, pensé dès 4-5 ans et fabriqué en France. Le principe est simple ; des clips permettent d'assembler des bouchons recyclés, et le geste du tri devient jeu.",
+      "La marque voulait non seulement vendre, mais aussi sensibiliser : motricité fine, imagination, recyclage. Le fond était fort, mais le site ne racontait pas encore assez bien l'histoire ; architecture SEO fragile, message « éco-responsable » pas assez mis en avant, potentiel d'influence non structuré.",
       "Le défi : traduire cette ambition dans une présence digitale claire, optimisée et engageante, sans perdre l'âme artisanale de la marque.",
     ],
   },
@@ -54,7 +54,7 @@ const data: CaseStudyData = {
       title: "Un site et un tunnel de conversion",
       paragraphs: [
         "Réarchitecture autour de 3 piliers : jeux éco-responsables, espace éducation, solutions pro.",
-        "Un parcours clair — découverte → choix → conversion — qui met en avant les preuves sociales et les valeurs (fabrication française, plastique recyclé).",
+        "Un parcours clair ; découverte → choix → conversion ; qui met en avant les preuves sociales et les valeurs (fabrication française, plastique recyclé).",
       ],
     },
     {
@@ -67,7 +67,7 @@ const data: CaseStudyData = {
   ],
   results: {
     intro:
-      "Une présence digitale qui raconte enfin l'histoire de la marque — et un réseau d'ambassadeur·ices activable.",
+      "Une présence digitale qui raconte enfin l'histoire de la marque ; et un réseau d'ambassadeur·ices activable.",
     items: [
       { value: "50", label: "Micro-influenceur·ses aligné·es sélectionné·es" },
       { value: "3", label: "Piliers thématiques structurant le site" },
@@ -78,9 +78,10 @@ const data: CaseStudyData = {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <CaseStudy data={data} />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

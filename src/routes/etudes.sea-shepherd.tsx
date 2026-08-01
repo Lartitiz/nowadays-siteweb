@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes-pro/sea-shepherd.jpg.asset.json";
 import { absoluteUrl } from "@/lib/site";
@@ -8,13 +9,13 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/etudes/sea-shepherd")({
   head: () => ({
     meta: [
-      { title: "Sea Shepherd — Étude de cas | Nowadays" },
+      { title: "Sea Shepherd | Étude de cas | Nowadays" },
       {
         name: "description",
         content:
           "Campagne #PlutôtQue pour soutenir l'appel aux dons de Sea Shepherd : un plan en 4 actes, vidéo d'archives à faible impact, actions ciblées sur Twitter, Instagram et auprès des leaders d'opinion.",
       },
-      { property: "og:title", content: "Sea Shepherd — Étude de cas" },
+      { property: "og:title", content: "Sea Shepherd | Étude de cas" },
       {
         property: "og:description",
         content: "Soutenir l'appel au don grâce à une stratégie social media.",
@@ -34,7 +35,7 @@ const data: CaseStudyData = {
   logo: { src: cover.url, alt: "Sea Shepherd × Racines de Demain" },
   title: "Stratégie social media pour Sea Shepherd",
   subtitle:
-    "Soutenir l'appel au don grâce à une stratégie social media — en collaboration avec Racines de Demain.",
+    "Soutenir l'appel au don grâce à une stratégie social media ; en collaboration avec Racines de Demain.",
   context: {
     paragraphs: [
       "Malgré une perception publique de Sea Shepherd comme une organisation fortement financée, la réalité est qu'ils dépendent principalement des dons de particuliers.",
@@ -53,10 +54,10 @@ const data: CaseStudyData = {
     {
       title: "Un plan en 4 actes",
       paragraphs: [
-        "1 — Poser les bases et informer : Sea Shepherd a partagé des informations sur sa dépendance aux dons individuels, accompagnées de teasers et pré-annonces pour éveiller la curiosité.",
-        "2 — Une vidéo pour mobiliser : mêlant archives et messages forts, elle a lancé la campagne en incarnant le choix du « loup libre ».",
-        "3 — Maintenir une dynamique : un live interactif a permis d'échanger avec la communauté, de répondre aux questions et de montrer l'impact des dons en temps réel.",
-        "4 — Remercier et préparer la suite : la campagne s'est terminée par un appel à poursuivre le combat.",
+        "1 ; Poser les bases et informer : Sea Shepherd a partagé des informations sur sa dépendance aux dons individuels, accompagnées de teasers et pré-annonces pour éveiller la curiosité.",
+        "2 ; Une vidéo pour mobiliser : mêlant archives et messages forts, elle a lancé la campagne en incarnant le choix du « loup libre ».",
+        "3 ; Maintenir une dynamique : un live interactif a permis d'échanger avec la communauté, de répondre aux questions et de montrer l'impact des dons en temps réel.",
+        "4 ; Remercier et préparer la suite : la campagne s'est terminée par un appel à poursuivre le combat.",
       ],
     },
     {
@@ -81,9 +82,10 @@ const data: CaseStudyData = {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <CaseStudy data={data} />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

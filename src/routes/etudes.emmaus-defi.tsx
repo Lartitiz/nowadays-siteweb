@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes-pro/emmaus-defi.jpg.asset.json";
 import { absoluteUrl } from "@/lib/site";
@@ -8,13 +9,13 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/etudes/emmaus-defi")({
   head: () => ({
     meta: [
-      { title: "Emmaüs Défi — Étude de cas | Nowadays" },
+      { title: "Emmaüs Défi | Étude de cas | Nowadays" },
       {
         name: "description",
         content:
           "Un atelier de personal branding d'une demi-journée pour humaniser la marque : 3× plus de contenus personnalisés et des équipes à l'aise pour raconter leur histoire.",
       },
-      { property: "og:title", content: "Emmaüs Défi — Étude de cas" },
+      { property: "og:title", content: "Emmaüs Défi | Étude de cas" },
       {
         property: "og:description",
         content: "Augmenter l'engagement grâce au personal branding.",
@@ -60,8 +61,7 @@ const data: CaseStudyData = {
     },
   ],
   results: {
-    intro:
-      "Une équipe outillée, autonome et prête à incarner la mission au quotidien.",
+    intro: "Une équipe outillée, autonome et prête à incarner la mission au quotidien.",
     items: [
       { value: "×3", label: "Contenus personnalisés post-atelier" },
       { value: "100 %", label: "Participants formés au personal branding" },
@@ -72,9 +72,10 @@ const data: CaseStudyData = {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <CaseStudy data={data} />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

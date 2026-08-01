@@ -1,13 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 
 export const Route = createFileRoute("/etudes-de-cas-pro")({
   head: () => ({
     meta: [
       {
-        title:
-          "Études de cas — Associations, ONG & marques engagées | Nowadays",
+        title: "Études de cas | Associations, ONG & marques engagées | Nowadays",
       },
       {
         name: "description",
@@ -16,8 +16,7 @@ export const Route = createFileRoute("/etudes-de-cas-pro")({
       },
       {
         property: "og:title",
-        content:
-          "Études de cas — Associations, ONG & marques engagées | Nowadays",
+        content: "Études de cas | Associations, ONG & marques engagées | Nowadays",
       },
       {
         property: "og:description",
@@ -210,8 +209,7 @@ const PROJECTS: Project[] = [
     alt: "Deux petits flacons en verre avec bouchons en liège contenant des huiles essentielles, avec des fleurs de prairie en arrière-plan.",
     description:
       "L’e-shop des passionné·es d’aromathérapie : accessoires et contenus pour créer ses propres remèdes. Notre mission ? Gérer la stratégie de leur compte Instagram et fédérer une communauté autour du DIY et des bienfaits des huiles essentielles.",
-    external:
-      "https://eu.eosupplies.com/?shpxid=7615bb2f-a8cb-4f18-9c95-7a1be7f0605b",
+    external: "https://eu.eosupplies.com/?shpxid=7615bb2f-a8cb-4f18-9c95-7a1be7f0605b",
   },
   {
     name: "Bruno Zana",
@@ -266,26 +264,24 @@ const PROJECTS: Project[] = [
     image: laProchaineAire.url,
     alt: "Tiers-lieu La prochaine aire installé dans une ancienne maison éclusière au bord de l’Yonne.",
     description:
-      "Tiers-lieu associatif installé dans une ancienne maison éclusière, au bord de l’Yonne. Nous avons accompagné le lancement de sa communication (storytelling, relations presse, Instagram), avec un article dans Brut et plusieurs posts devenus viraux.",
-    external:
-      "https://linktr.ee/la_prochaine_aire",
+      "Tiers-lieu associatif installé dans une ancienne maison éclusière, au bord de l’Yonne. Nous avons accompagné le lancement de sa communication (storytelling, relations presse, Instagram), avec des retombées presse et plusieurs posts devenus viraux.",
+    external: "https://linktr.ee/la_prochaine_aire",
   },
 ];
 
 function Hero() {
   return (
-    <section className="bg-background">
+    <section className="bg-white">
       <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
-        <p className="font-mono text-xs uppercase tracking-[0.22em] text-ink">
+        <p className="text-xs uppercase tracking-[0.22em] text-encre">
           Associations, ONG & marques engagées
         </p>
-        <h1 className="mt-6 font-serif text-4xl leading-[1.05] text-ink md:text-6xl lg:text-7xl">
-          Ils nous ont fait <em className="text-rose-dark">confiance</em>
+        <h1 className="mt-6 font-titre text-4xl leading-[1.05] text-encre md:text-6xl lg:text-7xl">
+          Ils nous ont fait <em className="text-framboise">confiance</em>
         </h1>
-        <p className="mx-auto mt-8 max-w-2xl font-mono text-base text-ink md:text-lg">
-          Une sélection de projets créatifs et engagés (associations, ONG,
-          start-up et entreprises responsables et éthiques) que nous avons
-          accompagnés avec passion.
+        <p className="mx-auto mt-8 max-w-2xl text-base text-encre md:text-lg">
+          Une sélection de projets créatifs et engagés (associations, ONG, start-up et entreprises
+          responsables et éthiques) que nous avons accompagnés avec passion.
         </p>
       </div>
     </section>
@@ -294,13 +290,13 @@ function Hero() {
 
 function EtudesGrid() {
   return (
-    <section className="bg-background">
+    <section className="bg-rose-pale">
       <div className="mx-auto max-w-7xl px-6 pb-24">
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((p) => {
             const inner = (
               <>
-                <div className="aspect-[16/10] w-full overflow-hidden rounded-sm bg-rose-light">
+                <div className="aspect-[16/10] w-full overflow-hidden rounded-sm bg-rose-pale">
                   <img
                     src={p.image}
                     alt={p.alt}
@@ -308,21 +304,13 @@ function EtudesGrid() {
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                   />
                 </div>
-                <h2 className="mt-5 font-serif text-2xl leading-tight text-ink">
-                  {p.name}
-                </h2>
-                <p className="mt-3 font-mono text-sm leading-relaxed text-ink">
-                  {p.description}
-                </p>
+                <h2 className="mt-5 font-titre text-2xl leading-tight text-encre">{p.name}</h2>
+                <p className="mt-3 text-sm leading-relaxed text-encre">{p.description}</p>
               </>
             );
             if (p.internal) {
               return (
-                <Link
-                  key={p.name}
-                  to={`/etudes/${p.internal}`}
-                  className="group flex flex-col"
-                >
+                <Link key={p.name} to={`/etudes/${p.internal}`} className="group flex flex-col">
                   {inner}
                 </Link>
               );
@@ -354,10 +342,11 @@ function EtudesGrid() {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <Hero />
       <EtudesGrid />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

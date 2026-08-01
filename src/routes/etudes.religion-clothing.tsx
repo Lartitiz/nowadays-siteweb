@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import logo from "@/assets/etudes/religion-clothing/religion-clothing.webp.asset.json";
 import imgEvt from "@/assets/etudes/religion-clothing/Capture-d-e-cran-2017-12-15-a-19.37.16.png.asset.json";
@@ -9,10 +10,18 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/etudes/religion-clothing")({
   head: () => ({
     meta: [
-      { title: "Religion Clothing — Étude de cas | Nowadays" },
-      { name: "description", content: "Lancement de produit pour Religion Clothing avec une stratégie de partenariats événementiels." },
-      { property: "og:title", content: "Religion Clothing — Étude de cas | Nowadays" },
-      { property: "og:description", content: "Lancement de produit pour Religion Clothing avec une stratégie de partenariats événementiels." },
+      { title: "Religion Clothing | Étude de cas | Nowadays" },
+      {
+        name: "description",
+        content:
+          "Lancement de produit pour Religion Clothing avec une stratégie de partenariats événementiels.",
+      },
+      { property: "og:title", content: "Religion Clothing | Étude de cas | Nowadays" },
+      {
+        property: "og:description",
+        content:
+          "Lancement de produit pour Religion Clothing avec une stratégie de partenariats événementiels.",
+      },
       { property: "og:type", content: "article" },
       { property: "og:url", content: absoluteUrl("/etudes/religion-clothing") },
       { property: "og:image", content: absoluteUrl(logo.url) },
@@ -27,7 +36,8 @@ const data: CaseStudyData = {
   brand: "Religion Clothing",
   logo: { src: logo.url, alt: "Religion Clothing" },
   title: "Lancement de produit pour Religion Clothing",
-  subtitle: "Comment assurer un lancement de produit avec une stratégie de partenariats événementiels ?",
+  subtitle:
+    "Comment assurer un lancement de produit avec une stratégie de partenariats événementiels ?",
   context: {
     paragraphs: [
       "Religion Clothing, marque londonienne au style rebelle et alternatif, souhaitait marquer les esprits à Paris.",
@@ -60,9 +70,10 @@ const data: CaseStudyData = {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <CaseStudy data={data} />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }
