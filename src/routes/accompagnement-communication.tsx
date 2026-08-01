@@ -187,7 +187,7 @@ function ContrasteSection() {
               key={i}
               className="rounded-carte border border-rose-pale bg-rose-pale p-6 text-left md:flex md:items-center md:justify-between md:gap-6"
             >
-              <p className="text-sm text-encre line-through decoration-rose-dark/40">{r.left}</p>
+              <p className="text-sm text-encre line-through decoration-framboise/40">{r.left}</p>
               <p className="mt-3 font-titre text-lg italic text-framboise md:mt-0 md:text-xl">
                 → {r.right}
               </p>
@@ -458,7 +458,7 @@ function ComparaisonAgenceSection() {
           </div>
 
           {/* Ta binôme */}
-          <div className="relative rounded-carte border-2 border-rose-dark bg-white p-8">
+          <div className="relative rounded-carte border-2 border-framboise bg-white p-8">
             <span className="absolute -top-4 left-8 inline-flex rounded-full bg-framboise px-4 py-1 text-[11px] uppercase tracking-[0.2em] text-white">
               Recommandé
             </span>
@@ -642,7 +642,7 @@ function InclusSection() {
           </div>
         </div>
 
-        <div className="mx-auto mt-12 max-w-3xl rounded-carte border-2 border-rose-dark bg-white p-8 text-center">
+        <div className="mx-auto mt-12 max-w-3xl rounded-carte border-2 border-framboise bg-white p-8 text-center">
           <p className="text-xs uppercase tracking-[0.22em] text-encre">
             Et si tu n'as pas de résultats
           </p>

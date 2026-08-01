@@ -259,7 +259,7 @@ function PourquoiTravaillerSection() {
         </h2>
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {PILLARS.map((p) => (
-            <div key={p.title} className="rounded-2xl bg-background p-8">
+            <div key={p.title} className="rounded-2xl bg-white p-8">
               <div className="text-4xl">{p.emoji}</div>
               <h3 className="mt-6 font-titre text-2xl text-encre">{p.title}</h3>
               <p className="mt-4 text-sm text-encre leading-relaxed">{p.body}</p>
@@ -367,7 +367,7 @@ function PrestationsSection() {
         </p>
         <div className="mt-12 grid gap-8 md:grid-cols-2">
           {PRESTATIONS.map((p) => (
-            <div key={p.title} className="rounded-2xl bg-background p-8">
+            <div key={p.title} className="rounded-2xl bg-white p-8">
               <h3 className="font-titre text-2xl text-encre">{p.title}</h3>
               <ul className="mt-6 space-y-2 text-sm text-encre">
                 {p.items.map((i) => (
