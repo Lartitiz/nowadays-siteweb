@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes-pro/cooperative-oasis.jpg.asset.json";
 import { absoluteUrl } from "@/lib/site";
@@ -8,13 +9,13 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/etudes/cooperative-oasis")({
   head: () => ({
     meta: [
-      { title: "Coopérative Oasis — Étude de cas | Nowadays" },
+      { title: "Coopérative Oasis | Étude de cas | Nowadays" },
       {
         name: "description",
         content:
           "Stratégie de communication pour la Coopérative Oasis, écosystème d'écolieux : identité, storytelling et community management autour de son festival.",
       },
-      { property: "og:title", content: "Coopérative Oasis — Étude de cas" },
+      { property: "og:title", content: "Coopérative Oasis | Étude de cas" },
       {
         property: "og:description",
         content:
@@ -37,7 +38,7 @@ const data: CaseStudyData = {
   subtitle: "Stratégie de communication pour le festival de la Coopérative Oasis.",
   context: {
     paragraphs: [
-      "La Coopérative Oasis fédère un écosystème d'écolieux qui bâtissent, concrètement, un autre modèle de société. Un projet dense, porteur de sens — mais dont l'ampleur peut rendre le message difficile à incarner clairement.",
+      "La Coopérative Oasis fédère un écosystème d'écolieux qui bâtissent, concrètement, un autre modèle de société. Un projet dense, porteur de sens ; mais dont l'ampleur peut rendre le message difficile à incarner clairement.",
       "Nous avons accompagné la Coopérative Oasis sur sa stratégie de communication autour de son festival : rendre le projet lisible, désirable et mobilisateur.",
     ],
   },
@@ -65,9 +66,10 @@ const data: CaseStudyData = {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <CaseStudy data={data} />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes/flanelle-atelier-styliste.jpg.asset.json";
 import { absoluteUrl } from "@/lib/site";
@@ -8,13 +9,13 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/etudes/flanelle")({
   head: () => ({
     meta: [
-      { title: "Flanelle — Étude de cas | Nowadays" },
+      { title: "Flanelle | Étude de cas | Nowadays" },
       {
         name: "description",
         content:
           "D'atelier artisanal inspirant à marque incarnée et désirable : positionnement, plateforme de marque, direction artistique et stratégie de contenu pour Flanelle.",
       },
-      { property: "og:title", content: "Flanelle — Étude de cas | Nowadays" },
+      { property: "og:title", content: "Flanelle | Étude de cas | Nowadays" },
       {
         property: "og:description",
         content:
@@ -45,42 +46,42 @@ const data: CaseStudyData = {
   },
   solutions: [
     {
-      title: "01 — Clarification du positionnement",
+      title: "01 | Clarification du positionnement",
       paragraphs: [
         "Structuration d'un univers qui existait déjà de façon intuitive : une marque d'upcycling joyeuse, accessible et désirable.",
         "À mi-chemin entre le DIY « bricolé » et le luxe inaccessible, avec un territoire unique autour des femmes +50, de la couleur, de la liberté et de l'artisanat.",
       ],
     },
     {
-      title: "02 — Plateforme de marque complète",
+      title: "02 | Plateforme de marque complète",
       paragraphs: [
         "Mission, vision, valeurs, combats : tout ce qui donne de la profondeur.",
         "Rendre la mode plus joyeuse, responsable et humaine. Faire de l'upcycling un choix désirable, pas un compromis. Repositionner l'écologie sans culpabilité, avec du plaisir.",
       ],
     },
     {
-      title: "03 — Persona précis",
+      title: "03 | Persona précis",
       paragraphs: [
         "Une cible qui n'est pas « marketing cliché » : des femmes libres, transgénérationnelles, sensibles à l'histoire et aux matières, attirées par la couleur mais freinées par des clichés.",
         "Deux axes : la locale engagée et l'exploratrice en quête d'authenticité.",
       ],
     },
     {
-      title: "04 — Direction artistique",
+      title: "04 | Direction artistique",
       paragraphs: [
         "Univers 70's, flower power, solaire. Palette colorée (zéro noir, full émotion). Style bohème, casual-chic, vivant.",
         "Chaque couleur raconte quelque chose : la framboise pour l'énergie, le jaune pour la joie, la lavande pour la douceur.",
       ],
     },
     {
-      title: "05 — Refonte stratégique de la communication",
+      title: "05 | Refonte stratégique de la communication",
       paragraphs: [
         "Des objectifs clairs (lisibilité, cohérence, désirabilité), des canaux prioritaires (Instagram, site, Pinterest, newsletter), un rôle précis pour chaque levier.",
         "Le storytelling remis au centre de tout.",
       ],
     },
     {
-      title: "06 — Recommandations concrètes activables",
+      title: "06 | Recommandations concrètes activables",
       paragraphs: [
         "Formats social media (avant/après, coulisses atelier, mini tutos, carrousels narratifs), concepts créatifs (« un tissu, trois idées », défis upcycling, campagnes incarnées), améliorations du parcours d'achat sur le site.",
         "Du concret, pas de la théorie.",
@@ -100,9 +101,10 @@ const data: CaseStudyData = {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <CaseStudy data={data} />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

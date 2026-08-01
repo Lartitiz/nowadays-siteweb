@@ -49,12 +49,7 @@ export type Block =
 
 function CtaButton({ label, href }: { label: string; href: string }) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center justify-center rounded-full bg-rose-dark px-10 py-5 font-mono text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] text-cream transition-colors hover:bg-bordeaux"
-    >
+    <a href={href} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
       {label}
     </a>
   );
@@ -66,15 +61,12 @@ function SolutionsMarquee({ text }: { text: string }) {
   const unit = `${text} ${sep} `;
   const phrase = unit.repeat(8);
   return (
-    <div
-      aria-hidden
-      className="relative overflow-hidden bg-rose-light py-8 md:py-12"
-    >
+    <div aria-hidden className="relative overflow-hidden bg-rose-pale py-8 md:py-12">
       <div className="flex w-max animate-cs-marquee whitespace-nowrap will-change-transform">
-        <span className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink pr-8">
+        <span className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre pr-8">
           {phrase}
         </span>
-        <span className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink pr-8">
+        <span className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre pr-8">
           {phrase}
         </span>
       </div>
@@ -99,33 +91,29 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-background to-rose-light">
+      <section className="bg-white">
         <div className="mx-auto max-w-4xl px-6 pt-12 md:pt-20 pb-20 md:pb-28 text-center">
           <div className="mb-4 flex justify-start">
             <Link
               to="/creatrices-ethiques"
-              className="font-mono text-xs uppercase tracking-[0.22em] text-rose-dark hover:text-bordeaux"
+              className="text-xs uppercase tracking-[0.22em] text-framboise hover:text-bordeaux"
             >
               ← Études de cas
             </Link>
           </div>
 
           {data.logo && (
-            <div className="mx-auto mb-10 flex h-32 w-32 items-center justify-center overflow-hidden rounded-full bg-white shadow-sm md:h-40 md:w-40">
-              <img
-                src={data.logo.src}
-                alt={data.logo.alt}
-                className="h-full w-full object-cover"
-              />
+            <div className="mx-auto mb-10 flex h-32 w-32 items-center justify-center overflow-hidden rounded-carte bg-white shadow-sm md:h-40 md:w-40">
+              <img src={data.logo.src} alt={data.logo.alt} className="h-full w-full object-cover" />
             </div>
           )}
 
-          <h1 className="mx-auto max-w-4xl font-serif text-4xl leading-[1.05] text-ink md:text-6xl lg:text-7xl">
+          <h1 className="mx-auto max-w-4xl font-titre text-4xl leading-[1.05] text-encre md:text-6xl lg:text-7xl">
             {data.title}
           </h1>
 
           {data.subtitle && (
-            <p className="mx-auto mt-8 max-w-xl font-mono text-sm md:text-base text-ink leading-relaxed">
+            <p className="mx-auto mt-8 max-w-xl text-sm md:text-base text-encre leading-relaxed">
               {data.subtitle}
             </p>
           )}
@@ -138,14 +126,14 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
 
       {/* Contexte */}
       {data.context && (
-        <section className="bg-background">
+        <section className="bg-white">
           <div className="mx-auto max-w-3xl px-6 pt-20 md:pt-28">
-            <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">
-              Un peu de <em className="not-italic text-rose-dark italic">contexte</em>
+            <h2 className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
+              Un peu de <em className="not-italic text-framboise italic">contexte</em>
             </h2>
             <div className="mt-10 space-y-5">
               {data.context.paragraphs.map((p, i) => (
-                <p key={i} className="font-mono text-base leading-relaxed text-ink">
+                <p key={i} className="text-base leading-relaxed text-encre">
                   {p}
                 </p>
               ))}
@@ -170,19 +158,16 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
       </div>
 
       {/* Solutions */}
-      <section className="bg-background">
+      <section className="bg-white">
         <div className="mx-auto max-w-5xl px-6 py-20 md:py-28 space-y-20 md:space-y-28">
           {data.solutions.map((s, i) => (
             <article key={i}>
               <div className="mx-auto max-w-3xl">
-                <h3 className="font-serif text-xl leading-[1.2] text-ink md:text-2xl">
+                <h3 className="font-titre text-xl leading-[1.2] text-encre md:text-2xl">
                   {s.title}
                 </h3>
                 {s.paragraphs?.map((p, j) => (
-                  <p
-                    key={j}
-                    className="mt-5 font-mono text-base leading-relaxed text-ink"
-                  >
+                  <p key={j} className="mt-5 text-base leading-relaxed text-encre">
                     {p}
                   </p>
                 ))}
@@ -214,13 +199,13 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
 
       {/* Influenceurs */}
       {data.influencers && data.influencers.items.length > 0 && (
-        <section className="bg-rose-light">
+        <section className="bg-rose-pale">
           <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
-            <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink text-center">
-              <em className="not-italic text-rose-dark italic">Influenceurs</em>
+            <h2 className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre text-center">
+              <em className="not-italic text-framboise italic">Influenceurs</em>
             </h2>
             {data.influencers.intro && (
-              <p className="mx-auto mt-6 max-w-2xl text-center font-mono text-base text-ink leading-relaxed">
+              <p className="mx-auto mt-6 max-w-2xl text-center text-base text-encre leading-relaxed">
                 {data.influencers.intro}
               </p>
             )}
@@ -242,7 +227,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
                 return (
                   <li key={i} className="text-center">
                     <Wrap>
-                      <div className="mx-auto aspect-square w-full max-w-[200px] overflow-hidden rounded-full bg-white">
+                      <div className="mx-auto aspect-square w-full max-w-[200px] overflow-hidden rounded-carte bg-white">
                         <img
                           src={inf.avatar}
                           alt={inf.handle}
@@ -250,16 +235,14 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
                           className="h-full w-full object-cover transition-transform group-hover:scale-105"
                         />
                       </div>
-                      <p className="mt-4 font-serif text-xl text-ink">{inf.handle}</p>
+                      <p className="mt-4 font-titre text-xl text-encre">{inf.handle}</p>
                       {inf.role && (
-                        <p className="mt-1 font-mono text-xs uppercase tracking-[0.18em] text-ink">
+                        <p className="mt-1 text-xs uppercase tracking-[0.18em] text-encre">
                           {inf.role}
                         </p>
                       )}
                       {inf.followers && (
-                        <p className="mt-1 font-mono text-sm text-rose-dark">
-                          {inf.followers}
-                        </p>
+                        <p className="mt-1 text-sm text-framboise">{inf.followers}</p>
                       )}
                     </Wrap>
                   </li>
@@ -272,13 +255,13 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
 
       {/* Résultats */}
       {data.results && data.results.items.length > 0 && (
-        <section className="bg-rose-light">
+        <section className="bg-rose-pale">
           <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
-            <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink text-center">
-              Les <em className="not-italic text-rose-dark italic">résultats</em>
+            <h2 className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre text-center">
+              Les <em className="not-italic text-framboise italic">résultats</em>
             </h2>
             {data.results.intro && (
-              <p className="mx-auto mt-6 max-w-2xl text-center font-mono text-base text-ink leading-relaxed">
+              <p className="mx-auto mt-6 max-w-2xl text-center text-base text-encre leading-relaxed">
                 {data.results.intro}
               </p>
             )}
@@ -293,10 +276,10 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
             >
               {data.results.items.map((r, i) => (
                 <div key={i} className="text-center">
-                  <dt className="font-serif text-4xl leading-none text-ink md:text-6xl">
+                  <dt className="font-titre text-4xl leading-none text-bordeaux md:text-6xl">
                     {r.value}
                   </dt>
-                  <dd className="mt-3 font-mono text-xs uppercase tracking-[0.18em] text-ink">
+                  <dd className="mt-3 text-xs uppercase tracking-[0.18em] text-gris-chaud">
                     {r.label}
                   </dd>
                 </div>

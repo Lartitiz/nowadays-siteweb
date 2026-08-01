@@ -1531,3 +1531,16 @@ html:has(.nowadays-da) {
     right: 2%;
   }
 }
+
+/* ---------- corps d'article (blog) ---------- */
+
+/* Colonne d'environ 70 caractères, 18 px, interligne 1.7 : la lecture longue
+   demande plus d'air que le reste du site. */
+.nowadays-da .corps-article {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.nowadays-da .corps-article p {
+  margin: 0 0 1.4em;
+}

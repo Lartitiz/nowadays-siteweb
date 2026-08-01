@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes/ombeline-mares.jpg.asset.json";
 import { absoluteUrl } from "@/lib/site";
@@ -8,13 +9,13 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/etudes/ombeline-mares")({
   head: () => ({
     meta: [
-      { title: "Ombeline Mares — Étude de cas | Nowadays" },
+      { title: "Ombeline Mares | Étude de cas | Nowadays" },
       {
         name: "description",
         content:
           "Transformer une activité de création en marque de joaillerie incarnée : positionnement, manifeste éthique, direction artistique et stratégie de contenu.",
       },
-      { property: "og:title", content: "Ombeline Mares — Étude de cas | Nowadays" },
+      { property: "og:title", content: "Ombeline Mares | Étude de cas | Nowadays" },
       {
         property: "og:description",
         content:
@@ -45,54 +46,54 @@ const data: CaseStudyData = {
   },
   solutions: [
     {
-      title: "01 — Clarification du positionnement",
+      title: "01 | Clarification du positionnement",
       paragraphs: [
         "Passage de « créatrice de bijoux » à « bijou comme langage intime ». Ancrage entre artisanat d'art, design contemporain et quête de sens.",
       ],
     },
     {
-      title: "02 — Plateforme de marque complète",
+      title: "02 | Plateforme de marque complète",
       paragraphs: [
         "Mission, valeurs, combats, vision. Une joaillerie lucide, imparfaite mais honnête. Structuration de la stratégie de A à Z.",
       ],
     },
     {
-      title: "03 — Manifeste éthique",
+      title: "03 | Manifeste éthique",
       paragraphs: [
         "Un manifeste qui refuse les discours creux, assume les dilemmes (diamants, or, recyclage) et pose des choix concrets.",
         "La crédibilité, pas la perfection.",
       ],
     },
     {
-      title: "04 — Persona ultra-fine",
+      title: "04 | Persona ultra-fine",
       paragraphs: [
         "Femme 30-40 ans, cultivée, sensible, en transformation. Freins psychologiques, déclencheurs d'achat, rapport émotionnel au bijou.",
         "Ce qui permet de vendre sans forcer.",
       ],
     },
     {
-      title: "05 — Storytelling fondateur",
+      title: "05 | Storytelling fondateur",
       paragraphs: [
         "Point de départ : une bague de fiançailles ratée. Frustration, dépossession, déclic, apprentissage, création.",
         "« Je crée les bijoux que je n'ai pas trouvés. »",
       ],
     },
     {
-      title: "06 — Direction artistique",
+      title: "06 | Direction artistique",
       paragraphs: [
         "Univers botanique, animal, mythologique. Matières brutes : lin, cire, peau, pierre.",
         "Lumière douce, gestes du quotidien, intimité. Chaque élément visuel sert le sens.",
       ],
     },
     {
-      title: "07 — Stratégie de contenu",
+      title: "07 | Stratégie de contenu",
       paragraphs: [
         "Trois piliers : bijou symbole (émotion, talismans), artisanat incarné (geste, matière, savoir-faire), éthique & élégance (réflexion, vision).",
         "Cohérent et profond.",
       ],
     },
     {
-      title: "08 — Repositionnement de l'offre",
+      title: "08 | Repositionnement de l'offre",
       paragraphs: [
         "Bijou de collection (accessible, porteur de sens), sur-mesure (forte valeur émotionnelle), logique de transmission.",
         "On sort du produit pour entrer dans l'expérience intime.",
@@ -112,9 +113,10 @@ const data: CaseStudyData = {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <CaseStudy data={data} />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

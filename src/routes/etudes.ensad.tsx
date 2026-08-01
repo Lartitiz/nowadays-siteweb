@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 import { CaseStudy, type CaseStudyData } from "@/components/site/CaseStudy";
 import cover from "@/assets/etudes-pro/ensad.jpg.asset.json";
 import { absoluteUrl } from "@/lib/site";
@@ -8,7 +9,7 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/etudes/ensad")({
   head: () => ({
     meta: [
-      { title: "École des Arts Décoratifs — Étude de cas | Nowadays" },
+      { title: "École des Arts Décoratifs | Étude de cas | Nowadays" },
       {
         name: "description",
         content:
@@ -16,7 +17,7 @@ export const Route = createFileRoute("/etudes/ensad")({
       },
       {
         property: "og:title",
-        content: "École des Arts Décoratifs — Étude de cas",
+        content: "École des Arts Décoratifs | Étude de cas",
       },
       {
         property: "og:description",
@@ -82,9 +83,10 @@ const data: CaseStudyData = {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <CaseStudy data={data} />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }

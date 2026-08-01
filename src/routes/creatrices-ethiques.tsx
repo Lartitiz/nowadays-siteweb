@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SiteLayout } from "@/components/site/SiteLayout";
-import { FinalCtaSection } from "@/components/site/FinalCtaSection";
+import { DaLayout } from "@/components/da/DaLayout";
+import { CtaFinal } from "@/components/da/CtaFinal";
+import { VichyBand } from "@/components/da/VichyBand";
 
 export const Route = createFileRoute("/creatrices-ethiques")({
   head: () => ({
     meta: [
-      { title: "Créatrices éthiques — Études de cas | Nowadays" },
+      { title: "Créatrices éthiques | Études de cas | Nowadays" },
       {
         name: "description",
         content:
@@ -13,7 +14,7 @@ export const Route = createFileRoute("/creatrices-ethiques")({
       },
       {
         property: "og:title",
-        content: "Créatrices éthiques — Études de cas | Nowadays",
+        content: "Créatrices éthiques | Études de cas | Nowadays",
       },
       {
         property: "og:description",
@@ -70,7 +71,6 @@ type Project = {
   slug?: string;
   externalUrl?: string;
 };
-
 
 const PROJECTS: Project[] = [
   {
@@ -310,20 +310,19 @@ const PROJECTS: Project[] = [
   },
 ];
 
-
 function Hero() {
   return (
-    <section className="bg-background">
+    <section className="bg-white">
       <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
-        <p className="font-mono text-xs uppercase tracking-[0.22em] text-ink">
+        <p className="text-xs uppercase tracking-[0.22em] text-encre">
           Créateur·ices lifestyle éthiques
         </p>
-        <h1 className="mt-6 font-serif text-4xl leading-[1.05] text-ink md:text-6xl lg:text-7xl">
-          Ils nous ont fait <em className="text-rose-dark">confiance</em>
+        <h1 className="mt-6 font-titre text-4xl leading-[1.05] text-encre md:text-6xl lg:text-7xl">
+          Ils nous ont fait <em className="text-framboise">confiance</em>
         </h1>
-        <p className="mx-auto mt-8 max-w-2xl font-mono text-base text-ink md:text-lg">
-          Une sélection de projets créatifs et engagés (mode, design, beauté,
-          bien-être, culture) que nous avons accompagnés avec passion.
+        <p className="mx-auto mt-8 max-w-2xl text-base text-encre md:text-lg">
+          Une sélection de projets créatifs et engagés (mode, design, beauté, bien-être, culture)
+          que nous avons accompagnés avec passion.
         </p>
       </div>
     </section>
@@ -332,13 +331,13 @@ function Hero() {
 
 function EtudesGrid() {
   return (
-    <section className="bg-background">
+    <section className="bg-rose-pale">
       <div className="mx-auto max-w-7xl px-6 pb-24">
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((p) => {
             const inner = (
               <>
-                <div className="aspect-[16/10] w-full overflow-hidden rounded-sm bg-rose-light">
+                <div className="aspect-[16/10] w-full overflow-hidden rounded-sm bg-rose-pale">
                   {p.image && (
                     <img
                       src={p.image}
@@ -348,28 +347,19 @@ function EtudesGrid() {
                     />
                   )}
                 </div>
-                <h2 className="mt-5 font-serif text-2xl leading-tight text-ink">
-                  {p.name}
-                </h2>
-                <p className="mt-3 font-mono text-sm leading-relaxed text-ink">
-                  {p.description}
-                </p>
+                <h2 className="mt-5 font-titre text-2xl leading-tight text-encre">{p.name}</h2>
+                <p className="mt-3 text-sm leading-relaxed text-encre">{p.description}</p>
                 {(p.slug || p.externalUrl) && (
-                  <span className="mt-4 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-rose-dark transition-all group-hover:gap-3">
+                  <span className="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-wider text-framboise transition-all group-hover:gap-3">
                     Voir le projet
                     <span aria-hidden="true">{p.externalUrl ? "↗" : "→"}</span>
                   </span>
                 )}
               </>
-
             );
             if (p.slug) {
               return (
-                <Link
-                  key={p.name}
-                  to={`/etudes/${p.slug}`}
-                  className="group flex flex-col"
-                >
+                <Link key={p.name} to={`/etudes/${p.slug}`} className="group flex flex-col">
                   {inner}
                 </Link>
               );
@@ -394,7 +384,6 @@ function EtudesGrid() {
               </article>
             );
           })}
-
         </div>
       </div>
     </section>
@@ -403,10 +392,11 @@ function EtudesGrid() {
 
 function Page() {
   return (
-    <SiteLayout>
+    <DaLayout>
       <Hero />
       <EtudesGrid />
-      <FinalCtaSection />
-    </SiteLayout>
+      <VichyBand />
+      <CtaFinal />
+    </DaLayout>
   );
 }
