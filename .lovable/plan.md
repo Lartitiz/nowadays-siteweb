@@ -8,23 +8,29 @@ Faire atterrir les liens du header sur les vraies pages du site : offres et étu
 ```text
 Nowadays Agency (logo)
 
-Solutions ▾              Résultats ▾              Contact      Appel découverte (CTA)
-  ├─ Ta binôme de com      ├─ Assos & coopératives
-  │   (solopreneures,        (études de cas pro)
-  │    créatrices éthiques)
-  └─ Ton agency            └─ Créatrices éthiques
-      (assos, coopératives,    (études de cas créatrices)
-       PME engagées)
+Faire ensemble      Déléguer      Résultats ▾              Contact      Appel découverte (CTA)
+                       ├─ Assos & coopératives
+                       └─ Créatrices éthiques
 ```
+
+- **Faire ensemble** → `/accompagnement-communication` (offre « Ta binôme de com » pour solopreneures et créatrices éthiques).
+- **Déléguer** → `/cooperative-asso` (offre « Ton agency » pour assos, coopératives et PME engagées).
+- **Résultats** → dropdown avec deux sous-liens :
+  - **Assos & coopératives** → `/etudes-de-cas-pro`
+  - **Créatrices éthiques** → `/creatrices-ethiques`
+- **Contact** → `/contact`
+- **Appel découverte** → `CALENDLY_URL`
 
 ## Changements
 
 1. **Mettre à jour `src/components/da/DaHeader.tsx`**
-   - Remplacer les 3 liens actuels (ancres `#solutions`, `#resultats`) par une navigation vers les vraies routes.
-   - Créer un composant `NavDropdown` réutilisable pour les deux groupes (Solutions, Résultats).
-   - Chaque dropdown affiche un label + une description courte pour orienter l'utilisateur.
+   - Transformer les liens ancres (`#solutions`, `#resultats`) en liens vers les vraies routes.
+   - « Faire ensemble » devient un lien direct vers `/accompagnement-communication`.
+   - « Déléguer » devient un lien direct vers `/cooperative-asso`.
+   - « Résultats » devient un dropdown avec deux sous-liens : `/etudes-de-cas-pro` et `/creatrices-ethiques`.
+   - Ajouter un lien « Contact » vers `/contact`.
    - Conserver le bouton « Appel découverte » vers `CALENDLY_URL`.
-   - Adapter le menu mobile : les groupes se déplient pour montrer leurs sous-liens.
+   - Adapter le menu mobile pour afficher le dropdown « Résultats » dépliable.
 
 2. **Ajouter les styles dans `src/styles/design-system.css`**
    - Styles pour `.nav-dropdown`, `.dropdown-panel`, `.dropdown-item`.
