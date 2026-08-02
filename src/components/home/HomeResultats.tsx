@@ -12,7 +12,7 @@ const RESULTATS = [
     action:
       "Un camion immersif et des micro-influenceur·ses mobilisé·es pour dénoncer l'élevage intensif.",
     chiffre: "500 000 vues",
-    suite: "et plus de 10 000 signatures.",
+    suite: "et plus de 10 000 signatures à la pétition.",
   },
   {
     nom: "L'Atelier des Lunettes",
@@ -54,9 +54,9 @@ export function HomeResultats() {
               </div>
               <div className="result-action">{resultat.action}</div>
               <div className="arrow-solid" aria-hidden="true" />
-              <div className="result-outcome">
+              <div className="result-outcome whitespace-pre-line">
                 <strong>{resultat.chiffre}</strong>
-                {resultat.suite}
+                {"\n"}{resultat.suite}
               </div>
             </article>
           ))}
