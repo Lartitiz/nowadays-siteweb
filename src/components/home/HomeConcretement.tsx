@@ -36,7 +36,7 @@ export function HomeConcretement() {
             <div className="big-num">01</div>
             {/* Espace fine insécable avant le « ? » : sinon il tombe seul
                 sur la ligne suivante dans cette colonne étroite. */}
-            <h3>Et si on commençait par le début&#8239;?</h3>
+            <h3 className="font-bold">Et si on commençait par le début&#8239;?</h3>
             <p>
               Qu'est-ce que vous proposez ? Comment on le rend désirable ? Quels sont vos messages,
               votre positionnement, ce qui vous différencie ? De là, on construit votre plan de
@@ -53,7 +53,7 @@ export function HomeConcretement() {
 
           <div className="actions-stage card">
             <div className="big-num">02</div>
-            <h3>Ensuite, on passe à l'action.</h3>
+            <h3 className="font-bold">Ensuite, on passe à l'action.</h3>
             <div className="action-ribbon">
               {ACTIONS.map((action) => (
                 <div className="action-item" key={action}>
