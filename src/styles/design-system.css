@@ -15,6 +15,12 @@
 
 .nowadays-da {
   --framboise: #fb3d80;
+  /* Le framboise vif ne contraste qu'à 3,45:1 sur blanc : conforme au-dessus de
+     24 px (seuil 3), pas en dessous (seuil 4,5). Ce rose plus dense monte à
+     5,18:1 et prend le relais sur tout ce qui est petit — fonds de bouton,
+     sur-titres, liens. Le vif reste la couleur des grands moments : le titre
+     d'accueil, les chiffres, les noms de projets. */
+  --framboise-dense: #d4155c;
   --bordeaux: #91014b;
   --orange: #ff7a33;
   --rouge: #e8402e;
@@ -170,7 +176,7 @@ html:has(.nowadays-da) {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  background: var(--framboise);
+  background: var(--framboise-dense); /* sur-titre : 12,5 px blanc sur rose */
   color: white;
   border-radius: 999px;
   padding: 8px 18px;
@@ -226,7 +232,7 @@ html:has(.nowadays-da) {
 }
 
 .nowadays-da .btn-primary {
-  background: var(--framboise);
+  background: var(--framboise-dense); /* bouton principal : libellé 18 px gras, seuil 4,5 */
   color: white;
 }
 
@@ -339,7 +345,7 @@ html:has(.nowadays-da) {
 
 .nowadays-da .navlinks > a:hover,
 .nowadays-da .nav-dropdown-trigger:hover {
-  color: var(--framboise);
+  color: var(--framboise-dense); /* lien de nav au survol : 16,5 px */
 }
 
 /* Dropdown desktop pour "Résultats" */
@@ -382,7 +388,9 @@ html:has(.nowadays-da) {
   gap: 4px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
   z-index: 40;
 }
 
@@ -447,7 +455,7 @@ html:has(.nowadays-da) {
 }
 
 .nowadays-da .mobile-dropdown-list a:hover {
-  color: var(--framboise);
+  color: var(--framboise-dense); /* lien du menu mobile */
 }
 
 .nowadays-da .menu-btn {
@@ -992,7 +1000,7 @@ html:has(.nowadays-da) {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--framboise);
+  color: var(--framboise-dense); /* étiquette d'offre : 14 px */
 }
 
 .nowadays-da .offer h3 {
@@ -1525,7 +1533,7 @@ html:has(.nowadays-da) {
 }
 
 .nowadays-da .footer-grid a:hover {
-  color: var(--framboise);
+  color: var(--framboise-dense); /* lien de pied de page au survol */
 }
 
 .nowadays-da .footer-bottom {
