@@ -65,9 +65,10 @@ export function DaFooter() {
                 <Link to="/template-branding">Le template branding</Link>
               </li>
               <li>
-                <a href={ASSISTANT_URL} target="_blank" rel="noopener">
-                  Le calendrier éditorial
-                </a>
+                {/* Menait vers l'Assistant, exactement comme la ligne suivante :
+                    deux libellés, une seule destination. Le calendrier a sa
+                    propre page d'aimant, c'est elle qu'il faut servir. */}
+                <Link to="/template-calendrier-editorial">Le calendrier éditorial</Link>
               </li>
               <li>
                 <a href={ASSISTANT_URL} target="_blank" rel="noopener">

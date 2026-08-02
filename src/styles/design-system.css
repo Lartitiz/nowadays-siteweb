@@ -62,9 +62,25 @@ html:has(.nowadays-da) {
   max-width: 100%;
 }
 
-.nowadays-da a {
-  color: inherit;
-  text-decoration: none;
+/*
+ * Cette règle est dans @layer base, et elle seule. Hors couche, `.nowadays-da a`
+ * (spécificité 0,1,1) battait silencieusement les utilitaires Tailwind de
+ * couleur : un <a className="text-white"> gardait la couleur héritée. C'est ce
+ * qui rendait « Choisir un créneau » (page contact) noir sur bordeaux, donc
+ * illisible. Dans @layer base, un `text-*` posé volontairement l'emporte, et le
+ * défaut « le lien prend la couleur de son parent » continue de s'appliquer
+ * partout où aucune classe ne le contredit.
+ *
+ * On ne descend PAS le reste des règles de balise dans cette couche : les pages
+ * intérieures sont écrites en Tailwind et comptent sur le design system pour
+ * imposer le bordeaux et l'échelle typo à leurs h1/h2 (testé : le faire repeint
+ * les titres en encre et casse l'échelle sur 13 pages).
+ */
+@layer base {
+  .nowadays-da a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 .nowadays-da h1,
@@ -1618,8 +1634,26 @@ html:has(.nowadays-da) {
   .nowadays-da .stats-grid.two {
     grid-template-columns: 1fr;
   }
+  /* Les trois post-it se chevauchent en absolu avec des `top` fixes (20/214/438)
+     dans un bloc de hauteur devinée. Sur petit écran ils grandissent (colonne
+     plus étroite = plus de lignes) et le troisième débordait, coupé net par la
+     section bordeaux du manifeste. On les remet dans le flux : plus de hauteur
+     à deviner, donc plus rien à couper. La rotation garde l'effet collage. */
   .nowadays-da .pain-panels {
-    min-height: 490px;
+    min-height: 0;
+    display: grid;
+    gap: 18px;
+  }
+  .nowadays-da .pain-panels .post-it {
+    position: static;
+    width: auto;
+  }
+  .nowadays-da .pain-panels .post-it.une,
+  .nowadays-da .pain-panels .post-it.deux,
+  .nowadays-da .pain-panels .post-it.trois {
+    top: auto;
+    left: auto;
+    right: auto;
   }
   .nowadays-da .post-it {
     font-size: 1.55rem;
