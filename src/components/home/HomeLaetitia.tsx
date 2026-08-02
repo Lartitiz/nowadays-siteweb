@@ -1,4 +1,5 @@
 import { Pill } from "@/components/da/Pill";
+import laetitiaPhoto from "@/assets/laetitia-accueil.jpeg.asset.json";
 const FAITS = [
   "10+ ans de marketing digital",
   "150+ projets accompagnés",
@@ -11,7 +12,7 @@ export function HomeLaetitia() {
       <div className="wrap about-grid">
         <div className="about-photo">
           <img
-            src="/images/home/laetitia-atelier.jpg"
+            src={laetitiaPhoto.url}
             alt="Laetitia Mattioli, fondatrice de Nowadays Agency"
             loading="lazy"
           />
