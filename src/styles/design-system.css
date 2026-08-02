@@ -73,7 +73,8 @@ html:has(.nowadays-da) {
   font-weight: 400; /* les titres serif ne sont jamais gras */
   line-height: 1.02;
   color: var(--bordeaux);
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* Échelle typographique du design system, pour les pages intérieures :
@@ -92,7 +93,8 @@ html:has(.nowadays-da) {
 .nowadays-da h3 {
   font-size: clamp(1.375rem, 2vw, 1.75rem);
   line-height: 1.2;
-  margin: 0.4rem 0 1rem;
+  margin-top: 0.4rem;
+  margin-bottom: 1rem;
   font-family: "Instrument Serif", Georgia, serif;
   font-weight: 400;
   color: var(--bordeaux);
@@ -123,7 +125,8 @@ html:has(.nowadays-da) {
 }
 
 .nowadays-da p {
-  margin: 0.5rem 0 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 /* styles.css colore les <em> en rose sur tout le site : ici l'italique
@@ -457,7 +460,8 @@ html:has(.nowadays-da) {
 
 .nowadays-da .mobile-menu ul {
   list-style: none;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
   padding: 0;
   display: grid;
   gap: 4px;
@@ -498,7 +502,8 @@ html:has(.nowadays-da) {
 }
 
 .nowadays-da .hero-card h1 {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .nowadays-da .hero-card h1 em {
@@ -979,7 +984,8 @@ html:has(.nowadays-da) {
   font-weight: 400;
   font-size: 3rem;
   color: var(--bordeaux);
-  margin: 16px 0 0;
+  margin-top: 16px;
+  margin-bottom: 0;
 }
 
 .nowadays-da .offer-sub {
@@ -1004,7 +1010,8 @@ html:has(.nowadays-da) {
   font-size: 3.2rem;
   color: var(--bordeaux);
   line-height: 1;
-  margin: 28px 0 8px;
+  margin-top: 28px;
+  margin-bottom: 8px;
 }
 
 .nowadays-da .price small {
@@ -1016,7 +1023,8 @@ html:has(.nowadays-da) {
   font-size: 0.94rem;
   font-style: italic;
   color: var(--gris-chaud);
-  margin: 0 0 6px;
+  margin-top: 0;
+  margin-bottom: 6px;
 }
 
 .nowadays-da .offer-footer {
@@ -1199,7 +1207,8 @@ html:has(.nowadays-da) {
 }
 
 .nowadays-da .carte-pointillee li {
-  margin: 0.5rem 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 /* ---------- objections ---------- */
@@ -1226,7 +1235,8 @@ html:has(.nowadays-da) {
 .nowadays-da details {
   background: white;
   border-radius: 16px;
-  margin: 12px 0;
+  margin-top: 12px;
+  margin-bottom: 12px;
   overflow: hidden;
   border: 1px solid rgba(145, 1, 75, 0.08);
 }
@@ -1286,7 +1296,8 @@ html:has(.nowadays-da) {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 24px 0;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .nowadays-da .fact {
@@ -1330,7 +1341,8 @@ html:has(.nowadays-da) {
 }
 
 .nowadays-da .testimonial blockquote {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
   font-family: "Instrument Serif", Georgia, serif;
   font-size: 1.62rem;
   line-height: 1.18;
@@ -1467,17 +1479,20 @@ html:has(.nowadays-da) {
 
 .nowadays-da .footer-grid h4 {
   color: var(--bordeaux);
-  margin: 0 0 15px;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 .nowadays-da .footer-grid ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .nowadays-da .footer-grid li {
-  margin: 8px 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .nowadays-da .footer-grid a:hover {
@@ -1528,7 +1543,8 @@ html:has(.nowadays-da) {
   }
   .nowadays-da .arrow-solid {
     transform: rotate(90deg);
-    margin: 5px 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
   .nowadays-da .audience-grid {
     grid-template-columns: 1fr;
@@ -1651,5 +1667,25 @@ html:has(.nowadays-da) {
 }
 
 .nowadays-da .corps-article p {
-  margin: 0 0 1.4em;
+  margin-top: 0;
+  margin-bottom: 1.4em;
+}
+
+/* ---------- CTA final centré (pages intérieures) ---------- */
+
+/* Le CTA final de la page d'accueil est aligné à gauche ; celui des pages
+   intérieures est centré. Les blocs à largeur maximale ont besoin d'une marge
+   horizontale automatique, sinon ils restent collés à gauche malgré le
+   text-align. */
+.nowadays-da .final-cta.centre .wrap {
+  text-align: center;
+}
+
+.nowadays-da .final-cta.centre h2,
+.nowadays-da .final-cta.centre .lead {
+  margin-inline: auto;
+}
+
+.nowadays-da .final-cta.centre .actions {
+  justify-content: center;
 }

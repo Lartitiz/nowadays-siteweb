@@ -35,7 +35,7 @@ function Page() {
       <article className="bg-white">
         <div className="mx-auto max-w-3xl px-6 pb-24">
           <Toc />
-          <Section id="editeur" title="01 ; Éditeur du site">
+          <Section id="editeur" title="01 · Éditeur du site">
             <Dl>
               <Dt>Raison sociale</Dt>
               <Dd>Nowadays Agency, SAS (société par actions simplifiée)</Dd>
@@ -70,12 +70,12 @@ function Page() {
 
               <Dt>RCS</Dt>
               <Dd>
-                <Todo>Paris B 902 834 688 ; à confirmer</Todo>
+                <Todo>Paris B 902 834 688 · à confirmer</Todo>
               </Dd>
 
               <Dt>N° TVA intracommunautaire</Dt>
               <Dd>
-                <Todo>FR XX 902834688 ; à compléter</Todo>
+                <Todo>FR XX 902834688 · à compléter</Todo>
               </Dd>
 
               <Dt>Contact</Dt>
@@ -96,7 +96,7 @@ function Page() {
             </Dl>
           </Section>
 
-          <Section id="hebergeur" title="02 ; Hébergement">
+          <Section id="hebergeur" title="02 · Hébergement">
             <P>
               Le site est hébergé sur l'infrastructure <strong>Lovable</strong> qui s'appuie sur le
               réseau de distribution <strong>Cloudflare</strong>.
@@ -140,7 +140,7 @@ function Page() {
             </P>
           </Section>
 
-          <Section id="cgu" title="03 ; Conditions d'utilisation">
+          <Section id="cgu" title="03 · Conditions d'utilisation">
             <P>
               L'utilisation du site nowadaysagency.com implique l'acceptation pleine et entière des
               présentes conditions. Elles peuvent être modifiées à tout moment : les utilisateurs
@@ -162,7 +162,7 @@ function Page() {
             </P>
           </Section>
 
-          <Section id="pi" title="04 ; Propriété intellectuelle">
+          <Section id="pi" title="04 · Propriété intellectuelle">
             <P>
               Nowadays Agency est propriétaire des droits de propriété intellectuelle ou détient les
               droits d'usage sur tous les éléments accessibles sur le site : textes, images,
@@ -179,7 +179,7 @@ function Page() {
             </P>
           </Section>
 
-          <Section id="rgpd" title="05 ; Données personnelles (RGPD)">
+          <Section id="rgpd" title="05 · Données personnelles (RGPD)">
             <H3>Responsable de traitement</H3>
             <P>
               Nowadays Agency (SAS), représentée par Laetitia Mattioli, joignable à{" "}
@@ -257,7 +257,7 @@ function Page() {
             </P>
           </Section>
 
-          <Section id="cookies" title="06 ; Cookies">
+          <Section id="cookies" title="06 · Cookies">
             <P>Le site utilise un minimum de cookies, classés en deux catégories :</P>
             <H3>Cookies techniques (exemptés de consentement)</H3>
             <P>
@@ -292,7 +292,7 @@ function Page() {
             </P>
           </Section>
 
-          <Section id="liens" title="07 ; Liens hypertextes">
+          <Section id="liens" title="07 · Liens hypertextes">
             <P>
               Le site peut contenir des liens vers d'autres sites. Nowadays Agency n'exerce aucun
               contrôle sur ces sites et décline toute responsabilité quant à leur contenu, services
@@ -300,7 +300,7 @@ function Page() {
             </P>
           </Section>
 
-          <Section id="mediation" title="08 ; Médiation de la consommation">
+          <Section id="mediation" title="08 · Médiation de la consommation">
             <P>
               Conformément à l'article L.612-1 du Code de la consommation, tout client consommateur
               a le droit de recourir gratuitement à un médiateur en cas de litige non résolu à
@@ -314,7 +314,7 @@ function Page() {
             </P>
           </Section>
 
-          <Section id="accessibilite" title="09 ; Accessibilité">
+          <Section id="accessibilite" title="09 · Accessibilité">
             <P>
               Nowadays Agency s'efforce de rendre son site accessible au plus grand nombre, en
               s'appuyant sur les recommandations du Référentiel Général d'Amélioration de
@@ -335,15 +335,15 @@ function Page() {
             </P>
           </Section>
 
-          <Section id="credits" title="10 ; Crédits">
+          <Section id="credits" title="10 · Crédits">
             <Dl>
               <Dt>Conception &amp; rédaction</Dt>
               <Dd>Laetitia Mattioli, Nowadays Agency.</Dd>
 
               <Dt>Typographies</Dt>
               <Dd>
-                Libre Baskerville (Pablo Impallari) et IBM Plex Mono (Mike Abbink &amp; Bold
-                Monday), distribuées sous licence SIL Open Font License 1.1.
+                Instrument Serif (Rodrigo Fuenzalida) et Hanken Grotesk (Alfredo Marco Pradil),
+                distribuées sous licence SIL Open Font License 1.1.
               </Dd>
 
               <Dt>Photographies &amp; visuels</Dt>
@@ -354,7 +354,7 @@ function Page() {
             </Dl>
           </Section>
 
-          <Section id="droit" title="11 ; Droit applicable">
+          <Section id="droit" title="11 · Droit applicable">
             <P>
               Les présentes mentions sont soumises au droit français. Tout litige relatif à
               l'utilisation du site relève de la compétence exclusive des tribunaux de Paris, sous

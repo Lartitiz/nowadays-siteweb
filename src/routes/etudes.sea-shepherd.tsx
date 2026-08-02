@@ -54,10 +54,10 @@ const data: CaseStudyData = {
     {
       title: "Un plan en 4 actes",
       paragraphs: [
-        "1 ; Poser les bases et informer : Sea Shepherd a partagé des informations sur sa dépendance aux dons individuels, accompagnées de teasers et pré-annonces pour éveiller la curiosité.",
-        "2 ; Une vidéo pour mobiliser : mêlant archives et messages forts, elle a lancé la campagne en incarnant le choix du « loup libre ».",
-        "3 ; Maintenir une dynamique : un live interactif a permis d'échanger avec la communauté, de répondre aux questions et de montrer l'impact des dons en temps réel.",
-        "4 ; Remercier et préparer la suite : la campagne s'est terminée par un appel à poursuivre le combat.",
+        "1 · Poser les bases et informer : Sea Shepherd a partagé des informations sur sa dépendance aux dons individuels, accompagnées de teasers et pré-annonces pour éveiller la curiosité.",
+        "2 · Une vidéo pour mobiliser : mêlant archives et messages forts, elle a lancé la campagne en incarnant le choix du « loup libre ».",
+        "3 · Maintenir une dynamique : un live interactif a permis d'échanger avec la communauté, de répondre aux questions et de montrer l'impact des dons en temps réel.",
+        "4 · Remercier et préparer la suite : la campagne s'est terminée par un appel à poursuivre le combat.",
       ],
     },
     {
