@@ -7,14 +7,14 @@ export function HomeHero() {
       <Confettis />
       <div className="wrap">
         <div className="hero-card">
+          <p className="hero-sub">
+            Agence de communication engagée et responsable
+          </p>
           <h1>
             Gagnez en <span className="surligne">visibilité</span>
             <br />
             <em>sans vendre votre âme.</em>
           </h1>
-          <p className="hero-sub">
-            Agence de communication engagée et responsable
-          </p>
           <p className="hero-copy">
             Vous portez un projet plus doux pour le monde ? Votre com' mérite mieux que « je
             posterai lundi » <em>(on est jeudi)</em>. On s'en occupe.
