@@ -8,35 +8,18 @@ Faire atterrir les liens du header sur les vraies pages du site : offres et étu
 ```text
 Nowadays Agency (logo)
 
-Solutions ▾              Résultats ▾              Contact      Appel découverte (CTA)
-  ├─ Ta binôme de com      ├─ Assos & coopératives
-  │   (solopreneures,        (études de cas pro)
-  │    créatrices éthiques)
-  └─ Ton agency            └─ Créatrices éthiques
-      (assos, coopératives,    (études de cas créatrices)
-       PME engagées)
+Faire ensemble      Déléguer      Résultats ▾              Contact      Appel découverte (CTA)
+                       ├─ Assos & coopératives
+                       └─ Créatrices éthiques
 ```
 
-## Changements
-
-1. **Mettre à jour `src/components/da/DaHeader.tsx`**
-   - Remplacer les 3 liens actuels (ancres `#solutions`, `#resultats`) par une navigation vers les vraies routes.
-   - Créer un composant `NavDropdown` réutilisable pour les deux groupes (Solutions, Résultats).
-   - Chaque dropdown affiche un label + une description courte pour orienter l'utilisateur.
-   - Conserver le bouton « Appel découverte » vers `CALENDLY_URL`.
-   - Adapter le menu mobile : les groupes se déplient pour montrer leurs sous-liens.
-
-2. **Ajouter les styles dans `src/styles/design-system.css`**
-   - Styles pour `.nav-dropdown`, `.dropdown-panel`, `.dropdown-item`.
-   - Comportement au survol sur desktop (`group-hover`) et au clic sur mobile.
-   - Garantir que le dropdown reste lisible sur le fond blanc du header.
-
-3. **Vérifier les routes existantes**
-   - `/accompagnement-communication` — offre pour solopreneures/créatrices.
-   - `/cooperative-asso` — offre pour assos/coopératives/PME.
-   - `/etudes-de-cas-pro` — résultats pour assos/coopératives/PME.
-   - `/creatrices-ethiques` — résultats pour créatrices.
-   - `/contact` — page de contact.
+- **Faire ensemble** → `/accompagnement-communication` (offre « Ta binôme de com » pour solopreneures et créatrices éthiques).
+- **Déléguer** → `/cooperative-asso` (offre « Ton agency » pour assos, coopératives et PME engagées).
+- **Résultats** → dropdown avec deux sous-liens :
+  - **Assos & coopératives** → `/etudes-de-cas-pro`
+  - **Créatrices éthiques** → `/creatrices-ethiques`
+- **Contact** → `/contact`
+- **Appel découverte** → `CALENDLY_URL`
 
 ## Non compris
 - Aucun changement de contenu des pages cibles.
