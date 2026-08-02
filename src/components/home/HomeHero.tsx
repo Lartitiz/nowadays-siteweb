@@ -13,8 +13,7 @@ export function HomeHero() {
             <em>sans vendre votre âme.</em>
           </h1>
           <p className="hero-sub">
-            Agence de communication engagée et responsable, pour les projets qui font bouger le
-            monde.
+            Agence de communication engagée et responsable
           </p>
           <p className="hero-copy">
             Vous portez un projet plus doux pour le monde ? Votre com' mérite mieux que « je
