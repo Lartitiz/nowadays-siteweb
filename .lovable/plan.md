@@ -1,50 +1,36 @@
-# Plan : refonte du menu de navigation
+# Mettre les titres en gras — plan
 
-## Objectif
-Faire atterrir les liens du header sur les vraies pages du site : offres et études de cas, avec deux cibles distinctes pour les résultats (assos/coopératives vs créatrices).
+## Contexte
+L'utilisateur souhaite renforcer les titres (H1, H2, H3) de la page d'accueil et des pages intérieures, initialement exprimé comme « mettre en grain », puis clarifié en « mettre en gras ».
 
-## Structure proposée
+## Contrainte actuelle
+Le design system en vigueur impose :
+- Titres en serif `font-weight: 400` (jamais bold) — voir `src/styles/design-system.css` lignes 70-99.
+- Mémorisé : « Titres : Libre Baskerville 400 (jamais bold), en --ink. »
 
-```text
-Nowadays Agency (logo)
+Passer les titres en gras rompt donc une règle de marque. Il faut proposer des options cohérentes.
 
-Faire ensemble      Déléguer      Résultats ▾              Contact      Appel découverte (CTA)
-                       ├─ Assos & coopératives
-                       └─ Créatrices éthiques
-```
+## Options proposées
 
-- **Faire ensemble** → `/accompagnement-communication` (offre « Ta binôme de com » pour solopreneures et créatrices éthiques).
-- **Déléguer** → `/cooperative-asso` (offre « Ton agency » pour assos, coopératives et PME engagées).
-- **Résultats** → dropdown avec deux sous-liens :
-  - **Assos & coopératives** → `/etudes-de-cas-pro`
-  - **Créatrices éthiques** → `/creatrices-ethiques`
-- **Contact** → `/contact`
-- **Appel découverte** → `CALENDLY_URL`
+### Option A — Gras léger sur les titres (rupture marque)
+- Passer `h1, h2, h3` à `font-weight: 500` ou `600` (selon ce que la webfont supporte).
+- Impact : les titres gagnent en présence, mais le style devient plus classique/événementiel, moins éditorial.
 
-## Changements
+### Option B — Renforcer sans gras (respect marque)
+- Conserver `font-weight: 400`.
+- Ajouter un contraste plus marqué : `color: var(--ink)` sur les titres au lieu de `var(--bordeaux)` ou inverser selon les sections.
+- Resserrer légèrement le `letter-spacing` (`-0.04em`) pour plus de densité.
+- Éventuellement ajouter une très légère ombre portée texte (`text-shadow`) pour donner du relief sans gras.
 
-1. **Mettre à jour `src/components/da/DaHeader.tsx`**
-   - Transformer les liens ancres (`#solutions`, `#resultats`) en liens vers les vraies routes.
-   - « Faire ensemble » devient un lien direct vers `/accompagnement-communication`.
-   - « Déléguer » devient un lien direct vers `/cooperative-asso`.
-   - « Résultats » devient un dropdown avec deux sous-liens : `/etudes-de-cas-pro` et `/creatrices-ethiques`.
-   - Ajouter un lien « Contact » vers `/contact`.
-   - Conserver le bouton « Appel découverte » vers `CALENDLY_URL`.
-   - Adapter le menu mobile pour afficher le dropdown « Résultats » dépliable.
+### Option C — Gras ciblé uniquement sur les H3 et sous-sections
+- Garder H1/H2 en 400 (marque éditoriale).
+- Passer seulement les `h3` à 500/600 pour différencier les niveaux.
+- Moins de rupture visuelle globale.
 
-2. **Ajouter les styles dans `src/styles/design-system.css`**
-   - Styles pour `.nav-dropdown`, `.dropdown-panel`, `.dropdown-item`.
-   - Comportement au survol sur desktop (`group-hover`) et au clic sur mobile.
-   - Garantir que le dropdown reste lisible sur le fond blanc du header.
+## Portée suggérée
+- `src/styles/design-system.css` : règles globales `h1, h2, h3`.
+- Pages concernées : toutes les sections `Home*` et les pages routes (`accompagnement-communication`, `cooperative-asso`, etc.).
+- Aucune base de données ou fonction serveur impactée.
 
-3. **Vérifier les routes existantes**
-   - `/accompagnement-communication` — offre pour solopreneures/créatrices.
-   - `/cooperative-asso` — offre pour assos/coopératives/PME.
-   - `/etudes-de-cas-pro` — résultats pour assos/coopératives/PME.
-   - `/creatrices-ethiques` — résultats pour créatrices.
-   - `/contact` — page de contact.
-
-## Non compris
-- Aucun changement de contenu des pages cibles.
-- Aucune création de nouvelle route.
-- Les ancres de la home (`#solutions`, `#resultats`) ne seront plus utilisées dans le header ; elles restent fonctionnelles si un lien externe ou un bouton de la page d'accueil y fait référence.
+## Recommandation
+Avant de modifier, choisir l'option A, B ou C. Si l'objectif est « on ne voit pas assez les titres », l'option B préserve l'identité éditoriale tout en renforçant la hiérarchie.
