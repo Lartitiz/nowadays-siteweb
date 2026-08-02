@@ -29,7 +29,7 @@ export function HomeEtapes() {
           {ETAPES.map((etape) => (
             <article className="step" key={etape.numero}>
               <div className="step-num">{etape.numero}</div>
-              <h3 className="font-bold">{etape.titre}</h3>
+              <h3 className="!font-bold">{etape.titre}</h3>
               <p>{etape.texte}</p>
             </article>
           ))}
