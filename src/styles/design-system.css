@@ -1098,6 +1098,19 @@ html:has(.nowadays-da) {
   color: var(--framboise);
 }
 
+.nowadays-da .result-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nowadays-da .result-logo img {
+  max-width: 170px;
+  max-height: 64px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
 .nowadays-da .result-action {
   font-size: 1rem;
 }
