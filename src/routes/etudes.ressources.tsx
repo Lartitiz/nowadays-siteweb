@@ -69,8 +69,8 @@ const data: CaseStudyData = {
       title: "La stratégie : un repositionnement qui change tout",
       paragraphs: [
         "Nous avons conçu une stratégie en 2 axes, pensée pour refléter enfin ce qu'ils étaient vraiment :",
-        "Axe 1 ; Repositionnement de marque : de « traiteur bio » à « laboratoire pour la transmission d'une cuisine durable ».",
-        "Axe 2 ; Personal branding : faire d'Emmanuelle la porte-parole visible de la cuisine durable.",
+        "Axe 1 · Repositionnement de marque : de « traiteur bio » à « laboratoire pour la transmission d'une cuisine durable ».",
+        "Axe 2 · Personal branding : faire d'Emmanuelle la porte-parole visible de la cuisine durable.",
       ],
       images: [{ src: imgStrategie.url, alt: "Stratégie Ressources Green" }],
     },
@@ -95,9 +95,9 @@ const data: CaseStudyData = {
     {
       title: "L'exécution | sur 4 mois",
       paragraphs: [
-        "Mois 1-2 ; Stratégie & Branding : audit complet, charte graphique, ligne éditoriale, stratégie d'acquisition, parcours client optimisé.",
-        "Mois 2-3 ; Site web & SEO : audit du site, propositions de refonte alignées sur le nouveau branding, optimisations SEO, mise en place d'analytics et de KPIs.",
-        "Mois 3-4 ; Social Media & Personal Branding : stratégie Instagram et LinkedIn, templates réutilisables, prise de parole pour Emmanuelle, checklist d'engagement.",
+        "Mois 1-2 · Stratégie & Branding : audit complet, charte graphique, ligne éditoriale, stratégie d'acquisition, parcours client optimisé.",
+        "Mois 2-3 · Site web & SEO : audit du site, propositions de refonte alignées sur le nouveau branding, optimisations SEO, mise en place d'analytics et de KPIs.",
+        "Mois 3-4 · Social Media & Personal Branding : stratégie Instagram et LinkedIn, templates réutilisables, prise de parole pour Emmanuelle, checklist d'engagement.",
       ],
       images: [{ src: imgSocial.url, alt: "Social media Ressources Green" }],
     },

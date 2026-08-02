@@ -2,14 +2,16 @@
 @source "../src";
 @import "tw-animate-css";
 
-/* Fonts (Libre Baskerville + IBM Plex Mono) chargées via <link> dans __root.tsx */
+/* Polices du design system (Instrument Serif + Hanken Grotesk), chargées via
+   <link> dans __root.tsx. Libre Baskerville et IBM Plex Mono ont été retirées :
+   plus aucune page ne les utilisait depuis le passage à la nouvelle DA. */
 
 @custom-variant dark (&:is(.dark *));
 
 /*
  * Nowadays Agency — design system
- * Palette imposée par la cliente. Typo : Libre Baskerville (titres, jamais bold)
- * + IBM Plex Mono (corps). Toutes les couleurs en oklch dérivées des hex fournis.
+ * Palette imposée par la cliente. Typo : Instrument Serif (titres, jamais bold)
+ * + Hanken Grotesk (corps). Toutes les couleurs en oklch dérivées des hex fournis.
  */
 
 @theme inline {
@@ -21,9 +23,9 @@
   --radius-3xl: 18px;
   --radius-4xl: 22px;
 
-  --font-serif: "Libre Baskerville", Georgia, serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --font-sans: "IBM Plex Mono", ui-monospace, monospace;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-mono: "Hanken Grotesk", Arial, sans-serif;
+  --font-sans: "Hanken Grotesk", Arial, sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
