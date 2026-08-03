@@ -394,6 +394,17 @@ html:has(.nowadays-da) {
   z-index: 40;
 }
 
+/* Pont invisible entre le bouton et le panneau : évite que le menu se ferme
+   quand la souris traverse l'espace de 12 px. */
+.nowadays-da .nav-dropdown-panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 16px;
+}
+
 .nowadays-da .nav-dropdown-panel.open,
 .nowadays-da .nav-dropdown:hover .nav-dropdown-panel {
   opacity: 1;
