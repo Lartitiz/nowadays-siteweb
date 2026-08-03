@@ -34,6 +34,7 @@ export const Route = createFileRoute("/etudes/ensad")({
 });
 
 const data: CaseStudyData = {
+  backTo: "/etudes-de-cas-pro",
   brand: "EnsAD",
   logo: { src: cover.url, alt: "École nationale supérieure des Arts Décoratifs" },
   title: "Communication pour l'École nationale supérieure des Arts Décoratifs",

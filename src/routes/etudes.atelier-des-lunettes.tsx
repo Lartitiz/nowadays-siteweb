@@ -31,6 +31,7 @@ export const Route = createFileRoute("/etudes/atelier-des-lunettes")({
 });
 
 const data: CaseStudyData = {
+  backTo: "/etudes-de-cas-pro",
   brand: "Atelier des Lunettes",
   logo: { src: cover.url, alt: "Atelier des Lunettes" },
   title: "Communication et marketing digital pour opticiens",

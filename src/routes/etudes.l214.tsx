@@ -31,6 +31,7 @@ export const Route = createFileRoute("/etudes/l214")({
 });
 
 const data: CaseStudyData = {
+  backTo: "/etudes-de-cas-pro",
   brand: "L214",
   logo: { src: cover.url, alt: "L214 | Éthique & Animaux" },
   title: "Mobiliser avec la micro-influence : la campagne L214",
