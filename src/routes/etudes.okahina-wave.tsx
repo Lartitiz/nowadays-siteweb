@@ -31,6 +31,7 @@ export const Route = createFileRoute("/etudes/okahina-wave")({
 });
 
 const data: CaseStudyData = {
+  backTo: "/etudes-de-cas-pro",
   brand: "Okahina Wave",
   logo: { src: cover.url, alt: "Okahina Wave" },
   title: "Communication pour Okahina Wave, marque engagée",

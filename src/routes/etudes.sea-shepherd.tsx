@@ -31,6 +31,7 @@ export const Route = createFileRoute("/etudes/sea-shepherd")({
 });
 
 const data: CaseStudyData = {
+  backTo: "/etudes-de-cas-pro",
   brand: "Sea Shepherd",
   logo: { src: cover.url, alt: "Sea Shepherd × Racines de Demain" },
   title: "Stratégie social media pour Sea Shepherd",

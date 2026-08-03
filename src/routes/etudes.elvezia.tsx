@@ -31,6 +31,7 @@ export const Route = createFileRoute("/etudes/elvezia")({
 });
 
 const data: CaseStudyData = {
+  backTo: "/etudes-de-cas-pro",
   brand: "Elvezia",
   logo: { src: cover.url, alt: "Elvezia" },
   title: "D'un distributeur de chocolat à une marque premium incarnée",

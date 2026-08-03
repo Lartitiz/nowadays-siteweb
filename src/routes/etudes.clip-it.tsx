@@ -31,6 +31,7 @@ export const Route = createFileRoute("/etudes/clip-it")({
 });
 
 const data: CaseStudyData = {
+  backTo: "/etudes-de-cas-pro",
   brand: "Clip It",
   logo: { src: cover.url, alt: "Clip It" },
   title: "Clip It, quand un jeu engagé trouve sa voix digitale",

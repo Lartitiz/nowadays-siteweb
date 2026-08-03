@@ -32,6 +32,7 @@ export const Route = createFileRoute("/etudes/cooperative-oasis")({
 });
 
 const data: CaseStudyData = {
+  backTo: "/etudes-de-cas-pro",
   brand: "Coopérative Oasis",
   logo: { src: cover.url, alt: "Coopérative Oasis" },
   title: "Donner de la voix à un écosystème d'écolieux",

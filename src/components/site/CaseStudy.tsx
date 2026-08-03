@@ -29,6 +29,8 @@ export type CaseStudyData = {
   subtitle?: string;
   ctaLabel?: string;
   ctaHref?: string;
+  /** Page de liste vers laquelle renvoie le lien « ← Études de cas » */
+  backTo?: "/creatrices-ethiques" | "/etudes-de-cas-pro";
   /** "Un peu de contexte" block */
   context?: { paragraphs: string[]; image?: Img };
   /** Pulled marquee header text (default "Les solutions apportées") */
@@ -95,7 +97,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
         <div className="mx-auto max-w-4xl px-6 pt-12 md:pt-20 pb-20 md:pb-28 text-center">
           <div className="mb-4 flex justify-start">
             <Link
-              to="/creatrices-ethiques"
+              to={data.backTo ?? "/creatrices-ethiques"}
               className="text-xs uppercase tracking-[0.22em] text-framboise hover:text-bordeaux"
             >
               ← Études de cas

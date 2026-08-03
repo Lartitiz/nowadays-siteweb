@@ -31,6 +31,7 @@ export const Route = createFileRoute("/etudes/emmaus-defi")({
 });
 
 const data: CaseStudyData = {
+  backTo: "/etudes-de-cas-pro",
   brand: "Emmaüs Défi",
   logo: { src: cover.url, alt: "Emmaüs Défi" },
   title: "Atelier en communication pour Emmaüs Défi",
