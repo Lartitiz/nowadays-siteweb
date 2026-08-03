@@ -188,7 +188,9 @@ function ContrasteSection() {
               className="rounded-carte border border-rose-pale bg-rose-pale p-6 text-left md:flex md:items-center md:justify-between md:gap-6"
             >
               <p className="text-sm text-encre line-through decoration-framboise/40">{r.left}</p>
-              <p className="mt-3 font-titre text-lg italic text-framboise md:mt-0 md:text-xl">
+              {/* Seul rose en serif sous 24 px : la règle générale de styles.css
+                  épargne le serif, donc on densifie ici à la main (3,21:1 → 4,82:1). */}
+              <p className="mt-3 font-titre text-lg italic text-framboise-dense md:mt-0 md:text-xl">
                 → {r.right}
               </p>
             </div>

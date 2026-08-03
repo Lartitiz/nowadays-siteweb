@@ -75,6 +75,11 @@
   --font-courant: "Hanken Grotesk", Arial, sans-serif;
 
   --color-framboise: #fb3d80;
+  /* Le framboise vif ne contraste qu'à 3,45:1 sur blanc : conforme au-dessus de
+     24 px (seuil 3), pas en dessous (seuil 4,5). Ce rose plus dense monte à
+     5,18:1 et sert donc au petit texte : sur-titres, « Lire la suite », fonds de
+     bouton. Le vif reste la couleur des grands moments (titres, chiffres, prix). */
+  --color-framboise-dense: #d4155c;
   --color-jaune: #ffe561;
   --color-rose-moyen: #ffa7c6;
   --color-rose-doux: #ffd6e8;
@@ -90,6 +95,28 @@
      cartes importantes. */
   --radius-carte: 12px 24px 10px 20px;
   --radius-carte-douce: 10px 20px 8px 16px;
+}
+
+/*
+ * Contraste du framboise.
+ *
+ * #fb3d80 ne monte qu'à 3,45:1 sur blanc : conforme au-dessus de 24 px (seuil 3),
+ * pas en dessous (seuil 4,5). Or `text-framboise` est posé 143 fois dans les
+ * pages écrites en Tailwind, à toutes les tailles.
+ *
+ * Plutôt que de reprendre les 143 appels un par un, on s'appuie sur une règle
+ * que le design system tient déjà : les grands moments roses sont TOUS en
+ * Instrument Serif (`font-titre`) — le titre d'accueil, les chiffres d'étape,
+ * les prix — et les petits libellés sont TOUS en Hanken : sur-titres,
+ * « Lire la suite », étiquettes. On densifie donc le rose partout sauf sur le
+ * serif, et sur les fonds de bouton, qui portent du blanc en petit corps.
+ */
+.text-framboise:not(.font-titre) {
+  color: var(--color-framboise-dense);
+}
+
+.bg-framboise {
+  background-color: var(--color-framboise-dense);
 }
 
 :root {
