@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
 
+import { imageSize } from "@/lib/image-sizes";
+
 import { CaseStudyNav } from "./CaseStudyNav";
 
 const CALENDLY_URL = "https://calendly.com/laetitia-mattioli/rendez-vous-avec-laetitia";
@@ -149,7 +151,8 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
                 src={data.context.image.src}
                 alt={data.context.image.alt}
                 loading="lazy"
-                className="w-full rounded-sm"
+                {...imageSize(data.context.image.src)}
+                className="h-auto w-full rounded-sm"
               />
             </div>
           )}
@@ -190,7 +193,8 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
                         src={img.src}
                         alt={img.alt}
                         loading="lazy"
-                        className="w-full rounded-sm"
+                        {...imageSize(img.src)}
+                        className="h-auto w-full rounded-sm"
                       />
                     </figure>
                   ))}

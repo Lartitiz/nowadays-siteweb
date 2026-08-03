@@ -6,6 +6,11 @@ import cover from "@/assets/guide-storytelling/cover.png";
 import canvas from "@/assets/guide-storytelling/mockup-canvas.png";
 import { absoluteUrl } from "@/lib/site";
 
+// `cover` et `canvas` passent par l'import Vite : leur URL est hachée au build,
+// donc absente du manifeste des tailles (qui indexe des chemins publics). Ces
+// deux visuels sont fixes — mesurés à 1024×1024 dans src/assets.
+const GUIDE_VISUAL = { width: 1024, height: 1024 };
+
 export const Route = createFileRoute("/guide-storytelling")({
   head: () => ({
     meta: [
@@ -81,7 +86,8 @@ function Hero() {
               <img
                 src={cover}
                 alt="Aperçu du guide Storytelling gratuit Nowadays : couverture éditoriale et méthode en 5 étapes."
-                className="w-full rounded-sm shadow-[0_30px_60px_-30px_rgba(26,5,13,0.35)]"
+                {...GUIDE_VISUAL}
+                className="h-auto w-full rounded-sm shadow-[0_30px_60px_-30px_rgba(26,5,13,0.35)]"
                 style={{ transform: "rotate(-1.5deg)" }}
               />
             </div>
@@ -235,10 +241,12 @@ function Apercu() {
         </div>
         <div className="mt-14 flex justify-center">
           <img
-            src="/guide/apercu-storytelling.png"
+            src="/guide/apercu-storytelling.webp"
             alt="Aperçu des pages du guide storytelling : mots à utiliser, structure du récit en étapes, exemples concrets."
             loading="lazy"
-            className="w-full max-w-3xl rounded-carte shadow-[0_30px_70px_-30px_rgba(26,5,13,0.35)]"
+            width={1032}
+            height={1556}
+            className="h-auto w-full max-w-3xl rounded-carte shadow-[0_30px_70px_-30px_rgba(26,5,13,0.35)]"
           />
         </div>
       </div>
@@ -269,14 +277,16 @@ function Audience() {
             src={canvas}
             alt="Mockup d'une page intérieure du guide : le canevas de storytelling en 5 étapes."
             loading="lazy"
-            className="w-full rounded-sm shadow-[0_30px_60px_-30px_rgba(26,5,13,0.3)]"
+            {...GUIDE_VISUAL}
+            className="h-auto w-full rounded-sm shadow-[0_30px_60px_-30px_rgba(26,5,13,0.3)]"
             style={{ transform: "rotate(-1deg)" }}
           />
           <img
             src={cover}
             alt="Aperçu de la couverture du guide storytelling."
             loading="lazy"
-            className="w-full rounded-sm shadow-[0_30px_60px_-30px_rgba(26,5,13,0.3)]"
+            {...GUIDE_VISUAL}
+            className="h-auto w-full rounded-sm shadow-[0_30px_60px_-30px_rgba(26,5,13,0.3)]"
             style={{ transform: "rotate(1.2deg)" }}
           />
         </div>

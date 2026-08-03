@@ -6,6 +6,7 @@ import { ArticleOffres } from "@/components/da/ArticleOffres";
 import { VichyBand } from "@/components/da/VichyBand";
 import { RichText } from "@/components/site/RichText";
 import { pickRelated } from "@/lib/articles-related";
+import { imageSize } from "@/lib/image-sizes";
 import {
   getArticleBySlug,
   listArticles,
@@ -156,7 +157,13 @@ function renderBlock(b: ArticleBlock, i: number) {
   if (b.type === "img") {
     return (
       <figure key={i} className="my-12 -mx-2 md:-mx-12">
-        <img src={b.src} alt={b.alt} loading="lazy" className="w-full rounded-sm" />
+        <img
+          src={b.src}
+          alt={b.alt}
+          loading="lazy"
+          {...imageSize(b.src)}
+          className="h-auto w-full rounded-sm"
+        />
         {b.alt && b.alt.trim() && (
           <figcaption className="mt-3 text-center text-xs uppercase tracking-[0.18em] text-framboise">
             {b.alt}

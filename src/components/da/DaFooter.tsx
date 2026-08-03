@@ -11,7 +11,7 @@ export function DaFooter() {
         <div className="footer-grid">
           <div>
             <div className="brand" aria-label="Nowadays Agency">
-              <img className="logo logo-footer" src={LOGO} alt="Nowadays Agency" loading="lazy" />
+              <img className="logo logo-footer" width={900} height={295} src={LOGO} alt="Nowadays Agency" loading="lazy" />
             </div>
             <p>
               Agence de communication pop &amp; engagée pour les projets qui font bouger le monde.
