@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { DaLayout } from "@/components/da/DaLayout";
 import { CtaFinal } from "@/components/da/CtaFinal";
 import { VichyBand } from "@/components/da/VichyBand";
@@ -164,6 +164,17 @@ function ProblemSection() {
             Vous avez besoin de déléguer à quelqu'un de confiance. Quelqu'un qui comprend votre
             projet, qui va vite, et qui livre du travail propre.
           </strong>
+        </p>
+        <p className="mt-6 text-base text-encre leading-relaxed">
+          C'est ce qu'on a fait pour L214, Emmaüs Défi, la Coopérative Oasis ou l'ENSAD —{" "}
+          <Link to="/etudes-de-cas-pro" className="text-bordeaux underline underline-offset-4">
+            les projets sont détaillés ici
+          </Link>
+          . Et si vous voulez d'abord savoir comment on travaille, on a écrit{" "}
+          <Link to="/demarche-ethique" className="text-bordeaux underline underline-offset-4">
+            notre démarche éthique
+          </Link>{" "}
+          en toute transparence, limites comprises.
         </p>
         <div className="mt-10">
           <Cta>Réserver mon appel découverte (gratuit)</Cta>

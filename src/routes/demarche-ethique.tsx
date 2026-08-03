@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { DaLayout } from "@/components/da/DaLayout";
 import { CALENDLY_URL } from "@/lib/links";
 import { absoluteUrl } from "@/lib/site";
@@ -140,9 +140,15 @@ function Pedagogie() {
       <div className="mx-auto max-w-3xl px-6 py-24 space-y-10">
         <div className="space-y-5 text-base leading-relaxed text-encre">
           <p>
-            Je travaille majoritairement avec des artisanes, créatrices, petits projets,
-            associations, artistes, coopératives. Parce que c'est là que j'observe le plus
-            d'alignement entre discours et actes.
+            Je travaille majoritairement avec des{" "}
+            <Link to="/creatrices-ethiques" className="text-bordeaux underline underline-offset-4">
+              artisanes, créatrices, petits projets
+            </Link>
+            ,{" "}
+            <Link to="/etudes-de-cas-pro" className="text-bordeaux underline underline-offset-4">
+              associations, artistes, coopératives
+            </Link>
+            . Parce que c'est là que j'observe le plus d'alignement entre discours et actes.
           </p>
         </div>
         <div>
@@ -230,6 +236,20 @@ function FinalCta() {
         <div className="mt-10 flex justify-center">
           <CtaButton>Réserver un appel découverte</CtaButton>
         </div>
+        <p className="mt-8 text-sm leading-relaxed text-encre">
+          Ou voyez à quoi ça ressemble concrètement :{" "}
+          <Link
+            to="/accompagnement-communication"
+            className="text-bordeaux underline underline-offset-4"
+          >
+            l'accompagnement 6 mois
+          </Link>{" "}
+          si vous êtes seule aux commandes,{" "}
+          <Link to="/cooperative-asso" className="text-bordeaux underline underline-offset-4">
+            la prise en charge complète
+          </Link>{" "}
+          si vous êtes une structure.
+        </p>
       </div>
     </section>
   );

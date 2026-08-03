@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
 
+import { CaseStudyNav } from "./CaseStudyNav";
+
 const CALENDLY_URL = "https://calendly.com/laetitia-mattioli/rendez-vous-avec-laetitia";
 
 export type Img = { src: string; alt: string };
@@ -290,6 +292,10 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
           </div>
         </section>
       )}
+
+      {/* Projet précédent / suivant + rappel de l'offre. Rendu ici pour que
+          les 18 routes en bénéficient sans être modifiées une à une. */}
+      <CaseStudyNav />
     </>
   );
 }
