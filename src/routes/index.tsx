@@ -19,10 +19,10 @@ import { HomeMegaphone } from "@/components/home/HomeMegaphone";
 import { HomePresse } from "@/components/home/HomePresse";
 import { HomeCtaFinal } from "@/components/home/HomeCtaFinal";
 
-const TITRE = "Agence de communication engagée et responsable | Nowadays Agency";
+const TITRE = "Agence de communication engagée et responsable | Nowadays";
 
 const DESCRIPTION =
-  "Nowadays Agency, agence de communication engagée et responsable. On vise une communication plus éthique, On aide les créatrices, associations, coopératives et PME à impact à gagner en visibilité, sans vendre leur âme. Basée à Joigny, partout en France.";
+  "Agence de communication engagée basée à Joigny : créatrices, associations, coopératives et PME à impact gagnent en visibilité, sans vendre leur âme.";
 
 const OG_IMAGE = absoluteUrl("/og-image-nowadays.jpg");
 

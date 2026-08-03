@@ -13,7 +13,7 @@ export const Route = createFileRoute("/etudes/sea-shepherd")({
       {
         name: "description",
         content:
-          "Campagne #PlutôtQue pour soutenir l'appel aux dons de Sea Shepherd : un plan en 4 actes, vidéo d'archives à faible impact, actions ciblées sur Twitter, Instagram et auprès des leaders d'opinion.",
+          "Campagne #PlutôtQue pour l'appel aux dons de Sea Shepherd : un plan en 4 actes, vidéo d'archives à faible impact, actions ciblées sur Twitter et Instagram.",
       },
       { property: "og:title", content: "Sea Shepherd | Étude de cas" },
       {

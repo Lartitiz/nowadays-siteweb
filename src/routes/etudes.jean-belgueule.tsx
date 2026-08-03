@@ -16,12 +16,12 @@ export const Route = createFileRoute("/etudes/jean-belgueule")({
       { title: "Jean Belgueule | Étude de cas | Nowadays" },
       {
         name: "description",
-        content: "Communication digitale pour une marque de cosmétiques bio pour hommes.",
+        content: "Communication digitale pour Jean Belgueule, cosmétique bio pour hommes : identité de marque, contenus social media et prise de parole sur le soin au masculin.",
       },
       { property: "og:title", content: "Jean Belgueule | Étude de cas | Nowadays" },
       {
         property: "og:description",
-        content: "Communication digitale pour une marque de cosmétiques bio pour hommes.",
+        content: "Communication digitale pour Jean Belgueule, cosmétique bio pour hommes : identité de marque, contenus social media et prise de parole sur le soin au masculin.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: absoluteUrl("/etudes/jean-belgueule") },

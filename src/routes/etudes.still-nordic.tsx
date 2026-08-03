@@ -20,12 +20,12 @@ export const Route = createFileRoute("/etudes/still-nordic")({
       { title: "Still Nordic | Étude de cas | Nowadays" },
       {
         name: "description",
-        content: "Social Media et Branding pour Still Nordic | sacs en cuir au design scandinave.",
+        content: "Social media et branding pour Still Nordic, sacs en cuir au design scandinave : direction artistique, ligne éditoriale et contenus pour installer la marque.",
       },
       { property: "og:title", content: "Still Nordic | Étude de cas | Nowadays" },
       {
         property: "og:description",
-        content: "Social Media et Branding pour Still Nordic | sacs en cuir au design scandinave.",
+        content: "Social media et branding pour Still Nordic, sacs en cuir au design scandinave : direction artistique, ligne éditoriale et contenus pour installer la marque.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: absoluteUrl("/etudes/still-nordic") },

@@ -14,7 +14,7 @@ const GUIDE_VISUAL = { width: 1024, height: 1024 };
 export const Route = createFileRoute("/guide-storytelling")({
   head: () => ({
     meta: [
-      { title: "Guide storytelling gratuit | Méthode PDF en 5 étapes | Nowadays Agency" },
+      { title: "Guide storytelling gratuit : la méthode en 5 étapes" },
       {
         name: "description",
         content:

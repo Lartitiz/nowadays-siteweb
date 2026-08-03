@@ -93,7 +93,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, plus éthique et efficace.",
+          "Nowadays accompagne les projets engagés (créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, éthique et efficace.",
       },
       { property: "og:site_name", content: "Nowadays Agency" },
       { property: "og:type", content: "website" },
@@ -105,7 +105,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, plus éthique et efficace.",
+          "Nowadays accompagne les projets engagés (créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, éthique et efficace.",
       },
       { name: "twitter:card", content: "summary_large_image" },
       {
@@ -115,7 +115,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "twitter:description",
         content:
-          "Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, plus éthique et efficace.",
+          "Nowadays accompagne les projets engagés (créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, éthique et efficace.",
       },
       // Image de partage par défaut (LinkedIn, WhatsApp, Slack…). C'était une
       // capture d'écran de l'éditeur Lovable, hébergée sur son CDN : hors

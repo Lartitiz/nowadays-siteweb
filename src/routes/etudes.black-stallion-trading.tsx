@@ -27,13 +27,13 @@ export const Route = createFileRoute("/etudes/black-stallion-trading")({
       {
         name: "description",
         content:
-          "Développer la notoriété d'un showroom à NYC avec une communication digitale globale.",
+          "Développer la notoriété d'un showroom new-yorkais : stratégie digitale globale, contenus et relations influenceurs pour installer la marque aux États-Unis.",
       },
       { property: "og:title", content: "Black Stallion Trading | Étude de cas | Nowadays" },
       {
         property: "og:description",
         content:
-          "Développer la notoriété d'un showroom à NYC avec une communication digitale globale.",
+          "Développer la notoriété d'un showroom new-yorkais : stratégie digitale globale, contenus et relations influenceurs pour installer la marque aux États-Unis.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: absoluteUrl("/etudes/black-stallion-trading") },

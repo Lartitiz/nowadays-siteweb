@@ -26,13 +26,13 @@ export const Route = createFileRoute("/etudes/fat-moose")({
       {
         name: "description",
         content:
-          "Assurer le lancement d'une marque streetwear avec une stratégie de communication 360°.",
+          "Lancer une marque streetwear avec une stratégie 360° : réseaux sociaux, blog lifestyle et contenus qui ancrent Fat Moose dans la culture street.",
       },
       { property: "og:title", content: "Fat Moose | Étude de cas | Nowadays" },
       {
         property: "og:description",
         content:
-          "Assurer le lancement d'une marque streetwear avec une stratégie de communication 360°.",
+          "Lancer une marque streetwear avec une stratégie 360° : réseaux sociaux, blog lifestyle et contenus qui ancrent Fat Moose dans la culture street.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: absoluteUrl("/etudes/fat-moose") },

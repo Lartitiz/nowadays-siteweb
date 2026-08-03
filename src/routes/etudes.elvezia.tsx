@@ -13,7 +13,7 @@ export const Route = createFileRoute("/etudes/elvezia")({
       {
         name: "description",
         content:
-          "Repositionnement stratégique complet d'Elvezia : d'un distributeur de chocolat à une marque premium incarnée. Plateforme de marque, identité visuelle et stratégie 360°.",
+          "D'un distributeur de chocolat à une marque premium incarnée : plateforme de marque, identité visuelle et stratégie 360° pour repositionner Elvezia.",
       },
       { property: "og:title", content: "Elvezia | Étude de cas" },
       {

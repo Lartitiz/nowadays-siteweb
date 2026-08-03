@@ -19,13 +19,13 @@ export const Route = createFileRoute("/etudes/ressources")({
       {
         name: "description",
         content:
-          "Quand un traiteur bio et durable devient un laboratoire d'idées ; branding, site web, social media.",
+          "Quand un traiteur bio et durable devient un laboratoire d'idées : branding, site web et social media pour donner à Ressources une voix aussi nette que sa cuisine.",
       },
       { property: "og:title", content: "Ressources Green | Étude de cas | Nowadays" },
       {
         property: "og:description",
         content:
-          "Quand un traiteur bio et durable devient un laboratoire d'idées ; branding, site web, social media.",
+          "Quand un traiteur bio et durable devient un laboratoire d'idées : branding, site web et social media pour donner à Ressources une voix aussi nette que sa cuisine.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: absoluteUrl("/etudes/ressources") },

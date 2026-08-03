@@ -10,7 +10,7 @@ export const Route = createFileRoute("/demarche-ethique")({
       {
         name: "description",
         content:
-          "Notre démarche éthique en toute transparence : dire vrai sans manipuler, émanciper et rendre visible, refuser le marketing anxiogène. Nos méthodes, et nos limites assumées.",
+          "Notre démarche éthique en toute transparence : dire vrai sans manipuler, émanciper, refuser le marketing anxiogène. Nos méthodes et nos limites.",
       },
       { property: "og:title", content: "Notre démarche éthique | Faire mieux, pas plus" },
       {
