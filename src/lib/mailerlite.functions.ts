@@ -75,5 +75,10 @@ export const subscribeToMailerLite = createServerFn({ method: "POST" })
       throw new Error("Impossible de t'inscrire pour le moment");
     }
 
+    // On compte l'inscription ici, une fois MailerLite d'accord : le tableau de
+    // bord affiche donc des inscriptions abouties, pas des clics de bouton.
+    const { enregistrerAimant } = await import("@/lib/mesure.server");
+    await enregistrerAimant(data.source);
+
     return { ok: true };
   });

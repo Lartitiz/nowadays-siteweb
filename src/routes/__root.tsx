@@ -15,6 +15,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SITE_ORIGIN, absoluteUrl } from "@/lib/site";
 import { DaLayout } from "@/components/da/DaLayout";
 import { Confettis } from "@/components/da/primitives";
+import { Mesure } from "@/components/Mesure";
 
 // La 404 était en anglais et hors charte. Seule page où le brief autorise
 // quelques lignes de texte neuves : on en profite pour la rendre accueillante.
@@ -185,6 +186,8 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      {/* Mesure d'audience maison : voir src/lib/mesure.functions.ts. */}
+      <Mesure />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>

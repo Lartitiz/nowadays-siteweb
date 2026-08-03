@@ -20,6 +20,7 @@ import { Route as FormationGratuiteInstagramRouteImport } from './routes/formati
 import { Route as EtudesDeCasProRouteImport } from './routes/etudes-de-cas-pro'
 import { Route as DemarcheEthiqueRouteImport } from './routes/demarche-ethique'
 import { Route as CreatricesEthiquesRouteImport } from './routes/creatrices-ethiques'
+import { Route as CoulissesRouteImport } from './routes/coulisses'
 import { Route as CooperativeAssoRouteImport } from './routes/cooperative-asso'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AccompagnementCommunicationRouteImport } from './routes/accompagnement-communication'
@@ -100,6 +101,11 @@ const DemarcheEthiqueRoute = DemarcheEthiqueRouteImport.update({
 const CreatricesEthiquesRoute = CreatricesEthiquesRouteImport.update({
   id: '/creatrices-ethiques',
   path: '/creatrices-ethiques',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoulissesRoute = CoulissesRouteImport.update({
+  id: '/coulisses',
+  path: '/coulisses',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CooperativeAssoRoute = CooperativeAssoRouteImport.update({
@@ -231,6 +237,7 @@ export interface FileRoutesByFullPath {
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
+  '/coulisses': typeof CoulissesRoute
   '/creatrices-ethiques': typeof CreatricesEthiquesRoute
   '/demarche-ethique': typeof DemarcheEthiqueRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
@@ -268,6 +275,7 @@ export interface FileRoutesByTo {
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
+  '/coulisses': typeof CoulissesRoute
   '/creatrices-ethiques': typeof CreatricesEthiquesRoute
   '/demarche-ethique': typeof DemarcheEthiqueRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
@@ -306,6 +314,7 @@ export interface FileRoutesById {
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
+  '/coulisses': typeof CoulissesRoute
   '/creatrices-ethiques': typeof CreatricesEthiquesRoute
   '/demarche-ethique': typeof DemarcheEthiqueRoute
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
@@ -345,6 +354,7 @@ export interface FileRouteTypes {
     | '/accompagnement-communication'
     | '/contact'
     | '/cooperative-asso'
+    | '/coulisses'
     | '/creatrices-ethiques'
     | '/demarche-ethique'
     | '/etudes-de-cas-pro'
@@ -382,6 +392,7 @@ export interface FileRouteTypes {
     | '/accompagnement-communication'
     | '/contact'
     | '/cooperative-asso'
+    | '/coulisses'
     | '/creatrices-ethiques'
     | '/demarche-ethique'
     | '/etudes-de-cas-pro'
@@ -419,6 +430,7 @@ export interface FileRouteTypes {
     | '/accompagnement-communication'
     | '/contact'
     | '/cooperative-asso'
+    | '/coulisses'
     | '/creatrices-ethiques'
     | '/demarche-ethique'
     | '/etudes-de-cas-pro'
@@ -457,6 +469,7 @@ export interface RootRouteChildren {
   AccompagnementCommunicationRoute: typeof AccompagnementCommunicationRoute
   ContactRoute: typeof ContactRoute
   CooperativeAssoRoute: typeof CooperativeAssoRoute
+  CoulissesRoute: typeof CoulissesRoute
   CreatricesEthiquesRoute: typeof CreatricesEthiquesRoute
   DemarcheEthiqueRoute: typeof DemarcheEthiqueRoute
   EtudesDeCasProRoute: typeof EtudesDeCasProRoute
@@ -567,6 +580,13 @@ declare module '@tanstack/react-router' {
       path: '/creatrices-ethiques'
       fullPath: '/creatrices-ethiques'
       preLoaderRoute: typeof CreatricesEthiquesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coulisses': {
+      id: '/coulisses'
+      path: '/coulisses'
+      fullPath: '/coulisses'
+      preLoaderRoute: typeof CoulissesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cooperative-asso': {
@@ -745,6 +765,7 @@ const rootRouteChildren: RootRouteChildren = {
   AccompagnementCommunicationRoute: AccompagnementCommunicationRoute,
   ContactRoute: ContactRoute,
   CooperativeAssoRoute: CooperativeAssoRoute,
+  CoulissesRoute: CoulissesRoute,
   CreatricesEthiquesRoute: CreatricesEthiquesRoute,
   DemarcheEthiqueRoute: DemarcheEthiqueRoute,
   EtudesDeCasProRoute: EtudesDeCasProRoute,

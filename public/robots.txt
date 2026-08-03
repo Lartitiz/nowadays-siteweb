@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /coulisses
 
 Sitemap: https://nowadaysagency.com/sitemap.xml
