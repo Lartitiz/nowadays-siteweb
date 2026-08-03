@@ -343,9 +343,13 @@ html:has(.nowadays-da) {
   font-weight: 700;
 }
 
-.nowadays-da .navlinks > a:hover,
+.nowadays-da .navlinks > a:not(.btn):hover,
 .nowadays-da .nav-dropdown-trigger:hover {
   color: var(--framboise-dense); /* lien de nav au survol : 16,5 px */
+}
+
+.nowadays-da .navlinks > a.btn-primary:hover {
+  color: white; /* le bouton CTA reste lisible au survol */
 }
 
 /* Dropdown desktop pour "Résultats" */
