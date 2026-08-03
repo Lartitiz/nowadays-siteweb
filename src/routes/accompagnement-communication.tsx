@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, X } from "lucide-react";
 import { DaLayout } from "@/components/da/DaLayout";
 import { Pill } from "@/components/da/Pill";
@@ -729,7 +729,18 @@ function ProjetsAccompagnesGrid() {
             </article>
           ))}
         </div>
-        <div className="mt-16 flex justify-center">
+        <p className="mt-14 text-center text-base leading-relaxed text-encre">
+          Envie du détail ? Les études de cas complètes sont là :{" "}
+          <Link to="/creatrices-ethiques" className="text-bordeaux underline underline-offset-4">
+            créatrices et artisanes
+          </Link>
+          ,{" "}
+          <Link to="/etudes-de-cas-pro" className="text-bordeaux underline underline-offset-4">
+            associations et structures engagées
+          </Link>
+          .
+        </p>
+        <div className="mt-10 flex justify-center">
           <CtaButton />
         </div>
       </div>

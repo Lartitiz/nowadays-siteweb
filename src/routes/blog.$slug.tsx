@@ -2,8 +2,10 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { DaLayout } from "@/components/da/DaLayout";
 import { CtaFinal } from "@/components/da/CtaFinal";
+import { ArticleOffres } from "@/components/da/ArticleOffres";
 import { VichyBand } from "@/components/da/VichyBand";
 import { RichText } from "@/components/site/RichText";
+import { pickRelated } from "@/lib/articles-related";
 import {
   getArticleBySlug,
   listArticles,
@@ -231,7 +233,7 @@ function ArticlePage() {
 
   if (!article) return null;
 
-  const related = allArticles.filter((a) => a.slug !== article.slug).slice(0, 3);
+  const related = pickRelated(article.slug, allArticles, 3);
 
   return (
     <DaLayout>
@@ -259,6 +261,10 @@ function ArticlePage() {
           {article.content.map(renderBlock)}
         </div>
       </section>
+
+      {/* Passerelle vers les offres : sans elle, un article ne renvoie qu'à
+          d'autres articles et à Calendly, donc hors du site. */}
+      <ArticleOffres />
 
       {/* Related */}
       {related.length > 0 && (
