@@ -13,7 +13,7 @@ export const Route = createFileRoute("/etudes/ensad")({
       {
         name: "description",
         content:
-          "700 visiteurs en une semaine, 5 articles et plus de 100 clics vers l'événement : social media, emailing ciblé et micro-influence pour l'exposition Gérard Baudoin.",
+          "700 visiteurs en une semaine, 5 articles et 100 clics vers l'événement : social media, emailing ciblé et micro-influence pour l'exposition Gérard Baudoin.",
       },
       {
         property: "og:title",

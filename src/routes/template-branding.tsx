@@ -11,7 +11,7 @@ export const Route = createFileRoute("/template-branding")({
       {
         name: "description",
         content:
-          "Reçois gratuitement notre template de branding : 8 étapes pour construire ta stratégie de marque (mission, audience, positionnement, storytelling, identité visuelle, contenus).",
+          "Reçois gratuitement notre template de branding : 8 étapes pour construire ta stratégie de marque, de la mission au storytelling et à l'identité visuelle.",
       },
       { property: "og:title", content: "Template Branding gratuit ; Stratégie de marque" },
       {

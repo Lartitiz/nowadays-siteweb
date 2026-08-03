@@ -14,13 +14,13 @@ export const Route = createFileRoute("/etudes/religion-clothing")({
       {
         name: "description",
         content:
-          "Lancement de produit pour Religion Clothing avec une stratégie de partenariats événementiels.",
+          "Lancement de produit pour Religion Clothing : partenariats événementiels et prise de parole ciblée pour faire exister la sortie auprès des bonnes communautés.",
       },
       { property: "og:title", content: "Religion Clothing | Étude de cas | Nowadays" },
       {
         property: "og:description",
         content:
-          "Lancement de produit pour Religion Clothing avec une stratégie de partenariats événementiels.",
+          "Lancement de produit pour Religion Clothing : partenariats événementiels et prise de parole ciblée pour faire exister la sortie auprès des bonnes communautés.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: absoluteUrl("/etudes/religion-clothing") },

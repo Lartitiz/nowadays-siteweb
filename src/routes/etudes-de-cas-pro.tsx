@@ -7,7 +7,7 @@ export const Route = createFileRoute("/etudes-de-cas-pro")({
   head: () => ({
     meta: [
       {
-        title: "Études de cas | Associations, ONG & marques engagées | Nowadays",
+        title: "Études de cas : associations, ONG et marques engagées",
       },
       {
         name: "description",
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/etudes-de-cas-pro")({
       },
       {
         property: "og:title",
-        content: "Études de cas | Associations, ONG & marques engagées | Nowadays",
+        content: "Études de cas : associations, ONG et marques engagées",
       },
       {
         property: "og:description",

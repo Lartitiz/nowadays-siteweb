@@ -13,7 +13,7 @@ export const Route = createFileRoute("/etudes/okahina-wave")({
       {
         name: "description",
         content:
-          "Twitter, LinkedIn, blog et interviews d'influenceurs surf pour la start-up des vagues artificielles écoresponsables : 1 500 personnes touchées chaque semaine, 2 000 visiteurs uniques et 50 000 fans via 10 influenceurs.",
+          "1 500 personnes touchées chaque semaine et 2 000 visiteurs uniques pour la start-up des vagues artificielles : LinkedIn, blog et 10 influenceurs surf.",
       },
       { property: "og:title", content: "Okahina Wave | Étude de cas" },
       {

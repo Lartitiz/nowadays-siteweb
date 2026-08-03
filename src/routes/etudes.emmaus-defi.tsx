@@ -13,7 +13,7 @@ export const Route = createFileRoute("/etudes/emmaus-defi")({
       {
         name: "description",
         content:
-          "Un atelier de personal branding d'une demi-journée pour humaniser la marque : 3× plus de contenus personnalisés et des équipes à l'aise pour raconter leur histoire.",
+          "Un atelier de personal branding d'une demi-journée pour humaniser la marque : 3× plus de contenus personnalisés et des équipes à l'aise pour se raconter.",
       },
       { property: "og:title", content: "Emmaüs Défi | Étude de cas" },
       {

@@ -12,7 +12,7 @@ export const Route = createFileRoute("/manifeste")({
       {
         name: "description",
         content:
-          "Notre manifeste pour une influence éthique : la communication comme écosystème, redéfinir l'influenceur en ambassadeur, de nouveaux indicateurs de performance au service du vivant.",
+          "Notre manifeste pour une influence éthique : la communication comme écosystème, l'influenceur devenu ambassadeur, de nouveaux indicateurs de succès.",
       },
       {
         property: "og:title",
