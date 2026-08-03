@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "4ad09126-f3e0-4ce7-92ab-9a7b4b916931",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/4ad09126-f3e0-4ce7-92ab-9a7b4b916931/atelier-des-lunettes.webp",
+  "url": "/media/4ad09126-f3e0-4ce7-92ab-9a7b4b916931/atelier-des-lunettes.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/4ad09126-f3e0-4ce7-92ab-9a7b4b916931/atelier-des-lunettes.webp",
   "original_filename": "atelier-des-lunettes.webp",
-  "size": 89524,
+  "size": 68162,
   "content_type": "image/webp",
-  "created_at": "2026-06-05T09:44:53Z"
+  "created_at": "2026-06-05T09:44:53Z",
+  "cdn_url": "/__l5e/assets-v1/4ad09126-f3e0-4ce7-92ab-9a7b4b916931/atelier-des-lunettes.webp"
 }

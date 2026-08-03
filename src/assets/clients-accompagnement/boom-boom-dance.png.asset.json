@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "e3c7f6e1-36af-48d2-ad6d-db2b52adbc5d",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/e3c7f6e1-36af-48d2-ad6d-db2b52adbc5d/boom-boom-dance.png",
+  "url": "/media/e3c7f6e1-36af-48d2-ad6d-db2b52adbc5d/boom-boom-dance.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/e3c7f6e1-36af-48d2-ad6d-db2b52adbc5d/boom-boom-dance.png",
   "original_filename": "boom-boom-dance.png",
-  "size": 9202,
+  "size": 5584,
   "content_type": "image/webp",
-  "created_at": "2026-06-09T09:12:05Z"
+  "created_at": "2026-06-09T09:12:05Z",
+  "cdn_url": "/__l5e/assets-v1/e3c7f6e1-36af-48d2-ad6d-db2b52adbc5d/boom-boom-dance.png"
 }

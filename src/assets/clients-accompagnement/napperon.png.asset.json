@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "3797dc4f-375b-4597-a34d-754df78a991b",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/3797dc4f-375b-4597-a34d-754df78a991b/napperon.png",
+  "url": "/media/3797dc4f-375b-4597-a34d-754df78a991b/napperon.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/3797dc4f-375b-4597-a34d-754df78a991b/napperon.png",
   "original_filename": "napperon.png",
-  "size": 148829,
+  "size": 5106,
   "content_type": "image/png",
-  "created_at": "2026-06-09T09:12:12Z"
+  "created_at": "2026-06-09T09:12:12Z",
+  "cdn_url": "/__l5e/assets-v1/3797dc4f-375b-4597-a34d-754df78a991b/napperon.png"
 }

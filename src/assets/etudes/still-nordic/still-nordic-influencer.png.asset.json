@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "dd91b501-8748-4470-b5f2-8353457418cb",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/dd91b501-8748-4470-b5f2-8353457418cb/still-nordic-influencer.png",
+  "url": "/media/dd91b501-8748-4470-b5f2-8353457418cb/still-nordic-influencer.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/dd91b501-8748-4470-b5f2-8353457418cb/still-nordic-influencer.png",
   "original_filename": "still-nordic-influencer.png",
-  "size": 64760,
+  "size": 11982,
   "content_type": "image/webp",
-  "created_at": "2026-06-05T07:23:19Z"
+  "created_at": "2026-06-05T07:23:19Z",
+  "cdn_url": "/__l5e/assets-v1/dd91b501-8748-4470-b5f2-8353457418cb/still-nordic-influencer.png"
 }

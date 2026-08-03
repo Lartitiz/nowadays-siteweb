@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "2e3899d7-3653-4fb1-bd19-fac25fd7cfad",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/2e3899d7-3653-4fb1-bd19-fac25fd7cfad/ensad.jpg",
+  "url": "/media/2e3899d7-3653-4fb1-bd19-fac25fd7cfad/ensad.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/2e3899d7-3653-4fb1-bd19-fac25fd7cfad/ensad.jpg",
   "original_filename": "ensad.jpg",
-  "size": 221374,
+  "size": 148942,
   "content_type": "image/webp",
-  "created_at": "2026-06-05T09:45:23Z"
+  "created_at": "2026-06-05T09:45:23Z",
+  "cdn_url": "/__l5e/assets-v1/2e3899d7-3653-4fb1-bd19-fac25fd7cfad/ensad.jpg"
 }

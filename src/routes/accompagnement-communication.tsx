@@ -97,6 +97,7 @@ function HeroAccompagnement() {
         <div className="mx-auto mt-14 max-w-sm overflow-hidden rounded-carte bg-rose-pale">
           <img
             src="/images/home/laetitia-fauteuil.jpg"
+            {...imageSize("/images/home/laetitia-fauteuil.jpg")}
             alt="Portrait de Laetitia, fondatrice de Nowadays"
             className="aspect-[4/5] w-full object-cover"
             loading="lazy"
@@ -128,6 +129,7 @@ function ClientsBand() {
             <div key={c.name} className="flex h-20 w-full items-center justify-center">
               <img
                 src={c.logo}
+                {...imageSize(c.logo)}
                 alt={c.alt}
                 className="max-h-16 w-auto object-contain"
                 loading="lazy"
@@ -721,6 +723,7 @@ function ProjetsAccompagnesGrid() {
               <div className="aspect-[4/3] w-full overflow-hidden rounded-carte bg-rose-pale">
                 <img
                   src={p.image}
+                  {...imageSize(p.image)}
                   alt={p.alt}
                   loading="lazy"
                   className="h-full w-full object-cover"

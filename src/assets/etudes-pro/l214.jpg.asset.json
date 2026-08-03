@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "3ace1360-b4bf-42e8-8bab-66d5b1b31aed",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/3ace1360-b4bf-42e8-8bab-66d5b1b31aed/l214.jpg",
+  "url": "/media/3ace1360-b4bf-42e8-8bab-66d5b1b31aed/l214.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/3ace1360-b4bf-42e8-8bab-66d5b1b31aed/l214.jpg",
   "original_filename": "l214.jpg",
-  "size": 82592,
+  "size": 60754,
   "content_type": "image/webp",
-  "created_at": "2026-06-05T09:45:27Z"
+  "created_at": "2026-06-05T09:45:27Z",
+  "cdn_url": "/__l5e/assets-v1/3ace1360-b4bf-42e8-8bab-66d5b1b31aed/l214.jpg"
 }

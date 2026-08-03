@@ -52,8 +52,11 @@ for path in sorted(Path("public").rglob("*")):
 # 2. Les visuels hébergés par le CDN Lovable, décrits par les .asset.json
 fetched = failed = 0
 for meta_path in sorted(Path("src/assets").rglob("*.asset.json")):
-    url = json.loads(meta_path.read_text()).get("url")
-    if not url or url in known:
+    url = json.loads(meta_path.read_text()).get("url", "")
+    # Depuis le rapatriement (scripts/rapatrier-assets-cdn.py), la plupart des
+    # .asset.json pointent vers public/media/ : déjà mesurés au passage
+    # ci-dessus. On ne télécharge que ce qui vit encore sur le CDN.
+    if not url.startswith("/__l5e/") or url in known:
         continue
     try:
         req = urllib.request.Request(ORIGIN + url, headers={"User-Agent": "Mozilla/5.0"})

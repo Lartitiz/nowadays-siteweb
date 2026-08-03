@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "d867f5cf-6b22-40ed-9b4b-599976e0991e",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/d867f5cf-6b22-40ed-9b4b-599976e0991e/cooperative-oasis.png",
+  "url": "/media/d867f5cf-6b22-40ed-9b4b-599976e0991e/cooperative-oasis.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/d867f5cf-6b22-40ed-9b4b-599976e0991e/cooperative-oasis.png",
   "original_filename": "cooperative-oasis.png",
-  "size": 5929,
+  "size": 5410,
   "content_type": "image/png",
-  "created_at": "2026-08-02T13:19:15Z"
+  "created_at": "2026-08-02T13:19:15Z",
+  "cdn_url": "/__l5e/assets-v1/d867f5cf-6b22-40ed-9b4b-599976e0991e/cooperative-oasis.png"
 }

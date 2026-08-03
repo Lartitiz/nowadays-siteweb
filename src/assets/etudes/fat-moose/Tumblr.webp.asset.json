@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "81ec0e1d-e114-4896-87ae-de057651071e",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/81ec0e1d-e114-4896-87ae-de057651071e/Tumblr.webp",
+  "url": "/media/81ec0e1d-e114-4896-87ae-de057651071e/Tumblr.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/81ec0e1d-e114-4896-87ae-de057651071e/Tumblr.webp",
   "original_filename": "Tumblr.webp",
-  "size": 2422648,
+  "size": 198768,
   "content_type": "image/webp",
-  "created_at": "2026-06-05T07:22:41Z"
+  "created_at": "2026-06-05T07:22:41Z",
+  "cdn_url": "/__l5e/assets-v1/81ec0e1d-e114-4896-87ae-de057651071e/Tumblr.webp"
 }

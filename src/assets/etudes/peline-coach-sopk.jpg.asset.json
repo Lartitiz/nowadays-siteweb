@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "add29557-3ff5-43a0-bddc-1d4619464937",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/add29557-3ff5-43a0-bddc-1d4619464937/peline-coach-sopk.jpg",
+  "url": "/media/add29557-3ff5-43a0-bddc-1d4619464937/peline-coach-sopk.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/add29557-3ff5-43a0-bddc-1d4619464937/peline-coach-sopk.jpg",
   "original_filename": "peline-coach-sopk.jpg",
-  "size": 64382,
+  "size": 35994,
   "content_type": "image/webp",
-  "created_at": "2026-06-05T09:22:10Z"
+  "created_at": "2026-06-05T09:22:10Z",
+  "cdn_url": "/__l5e/assets-v1/add29557-3ff5-43a0-bddc-1d4619464937/peline-coach-sopk.jpg"
 }

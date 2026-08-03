@@ -63,6 +63,7 @@ import leJardinParfume from "@/assets/etudes/le-jardin-parfume.webp.asset.json";
 import flanelleAtelierStyliste from "@/assets/etudes/flanelle-atelier-styliste.jpg.asset.json";
 import ombelineMares from "@/assets/etudes/ombeline-mares.jpg.asset.json";
 import { absoluteUrl } from "@/lib/site";
+import { imageSize } from "@/lib/image-sizes";
 
 type Project = {
   name: string;
@@ -344,6 +345,7 @@ function EtudesGrid() {
                   {p.image && (
                     <img
                       src={p.image}
+                      {...imageSize(p.image)}
                       alt={p.name}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"

@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "31912e67-11b7-457c-9505-85f7dfb857f8",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/31912e67-11b7-457c-9505-85f7dfb857f8/interview-emmanuelle.jpg",
+  "url": "/media/31912e67-11b7-457c-9505-85f7dfb857f8/interview-emmanuelle.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/31912e67-11b7-457c-9505-85f7dfb857f8/interview-emmanuelle.jpg",
   "original_filename": "interview-emmanuelle.jpg",
-  "size": 31200,
+  "size": 25538,
   "content_type": "image/webp",
-  "created_at": "2026-06-05T09:53:30Z"
+  "created_at": "2026-06-05T09:53:30Z",
+  "cdn_url": "/__l5e/assets-v1/31912e67-11b7-457c-9505-85f7dfb857f8/interview-emmanuelle.jpg"
 }

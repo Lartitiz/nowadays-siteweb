@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "c3cf6aca-b828-4d90-9a02-96fab9a8aeff",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/c3cf6aca-b828-4d90-9a02-96fab9a8aeff/rose-donald.jpg",
+  "url": "/media/c3cf6aca-b828-4d90-9a02-96fab9a8aeff/rose-donald.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/c3cf6aca-b828-4d90-9a02-96fab9a8aeff/rose-donald.jpg",
   "original_filename": "rose-donald.jpg",
-  "size": 85274,
+  "size": 65458,
   "content_type": "image/webp",
-  "created_at": "2026-06-05T09:22:14Z"
+  "created_at": "2026-06-05T09:22:14Z",
+  "cdn_url": "/__l5e/assets-v1/c3cf6aca-b828-4d90-9a02-96fab9a8aeff/rose-donald.jpg"
 }

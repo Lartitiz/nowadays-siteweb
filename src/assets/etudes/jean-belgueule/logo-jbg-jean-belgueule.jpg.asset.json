@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "d1f4a5b0-5d99-4f4a-b995-245cbf5849fe",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/d1f4a5b0-5d99-4f4a-b995-245cbf5849fe/logo-jbg-jean-belgueule.jpg",
+  "url": "/media/d1f4a5b0-5d99-4f4a-b995-245cbf5849fe/logo-jbg-jean-belgueule.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/d1f4a5b0-5d99-4f4a-b995-245cbf5849fe/logo-jbg-jean-belgueule.jpg",
   "original_filename": "logo-jbg-jean-belgueule.jpg",
-  "size": 6806,
+  "size": 5072,
   "content_type": "image/webp",
-  "created_at": "2026-06-05T07:22:53Z"
+  "created_at": "2026-06-05T07:22:53Z",
+  "cdn_url": "/__l5e/assets-v1/d1f4a5b0-5d99-4f4a-b995-245cbf5849fe/logo-jbg-jean-belgueule.jpg"
 }

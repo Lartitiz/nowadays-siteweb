@@ -294,6 +294,7 @@ function ArticlePage() {
                         src={r.cover_url}
                         alt={r.cover_alt ?? r.title}
                         loading="lazy"
+                        {...imageSize(r.cover_url)}
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
