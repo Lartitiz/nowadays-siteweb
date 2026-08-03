@@ -1,5 +1,6 @@
 import { Pill } from "@/components/da/Pill";
 import laetitiaPhoto from "@/assets/laetitia-accueil.jpeg.asset.json";
+import { imageSize } from "@/lib/image-sizes";
 const FAITS = [
   "10+ ans de marketing digital",
   "150+ projets accompagnés",
@@ -15,6 +16,7 @@ export function HomeLaetitia() {
             src={laetitiaPhoto.url}
             alt="Laetitia Mattioli, fondatrice de Nowadays Agency"
             loading="lazy"
+            {...imageSize(laetitiaPhoto.url)}
           />
         </div>
 

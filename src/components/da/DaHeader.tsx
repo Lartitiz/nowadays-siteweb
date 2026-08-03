@@ -63,7 +63,7 @@ export function DaHeader() {
       <div className="wrap">
         <nav>
           <Link className="brand" to="/" aria-label="Nowadays Agency">
-            <img className="logo" src={LOGO} alt="Nowadays Agency" />
+            <img className="logo" width={900} height={295} src={LOGO} alt="Nowadays Agency" />
           </Link>
 
           <div className="navlinks">

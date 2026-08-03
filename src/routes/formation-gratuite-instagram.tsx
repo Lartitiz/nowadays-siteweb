@@ -5,6 +5,7 @@ import { DaLayout } from "@/components/da/DaLayout";
 import cover from "@/assets/formation-ig/cover.png.asset.json";
 import mockupOptim from "@/assets/formation-ig/mockup-optimisation.png.asset.json";
 import { absoluteUrl } from "@/lib/site";
+import { imageSize } from "@/lib/image-sizes";
 
 export const Route = createFileRoute("/formation-gratuite-instagram")({
   head: () => ({
@@ -84,7 +85,8 @@ function Hero() {
               <img
                 src={cover.url}
                 alt="Aperçu du guide Instagram gratuit Nowadays : planches d'écrans, conseils stratégie et exemples de contenus."
-                className="w-full rounded-sm shadow-[0_30px_60px_-30px_rgba(26,5,13,0.35)]"
+                {...imageSize(cover.url)}
+                className="h-auto w-full rounded-sm shadow-[0_30px_60px_-30px_rgba(26,5,13,0.35)]"
                 style={{ transform: "rotate(-1.5deg)" }}
               />
             </div>
@@ -242,13 +244,15 @@ function Audience() {
           <img
             src={mockupOptim.url}
             alt="Mockup d'une page du guide : optimisation du compte Instagram (photo de profil, bio, stories, feed)."
-            className="w-full rounded-sm shadow-[0_30px_60px_-30px_rgba(26,5,13,0.3)]"
+            {...imageSize(mockupOptim.url)}
+            className="h-auto w-full rounded-sm shadow-[0_30px_60px_-30px_rgba(26,5,13,0.3)]"
             style={{ transform: "rotate(-1deg)" }}
           />
           <img
             src={cover.url}
             alt="Aperçu des planches du guide stratégie Instagram."
-            className="w-full rounded-sm shadow-[0_30px_60px_-30px_rgba(26,5,13,0.3)]"
+            {...imageSize(cover.url)}
+            className="h-auto w-full rounded-sm shadow-[0_30px_60px_-30px_rgba(26,5,13,0.3)]"
             style={{ transform: "rotate(1.2deg)" }}
           />
         </div>

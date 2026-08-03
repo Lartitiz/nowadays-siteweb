@@ -19,6 +19,7 @@ import logoSlf from "@/assets/clients-accompagnement/slf.png.asset.json";
 import projetsData from "../../scripts/projets-accompagnes.json";
 import { CALENDLY_URL } from "@/lib/links";
 import { absoluteUrl } from "@/lib/site";
+import { imageSize } from "@/lib/image-sizes";
 
 const CALENDLY = CALENDLY_URL;
 
@@ -693,6 +694,7 @@ function TemoignagesSection() {
                 src={c.src}
                 alt={c.alt}
                 loading="lazy"
+                {...imageSize(c.src)}
                 className="h-auto w-full object-contain"
               />
             </figure>
