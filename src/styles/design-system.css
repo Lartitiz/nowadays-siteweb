@@ -535,8 +535,12 @@ html:has(.nowadays-da) {
   font-style: italic;
 }
 
+/* Le surlignage part du haut des minuscules et s'arrête juste sous la ligne de
+   base, comme un vrai coup de marqueur. Les bornes précédentes (58 % / 94 %)
+   attaquaient au milieu des lettres et débordaient franchement sous le mot :
+   ça se lisait comme un soulignement épais, pas comme un surlignage. */
 .nowadays-da .surligne {
-  background: linear-gradient(transparent 58%, var(--jaune) 58%, var(--jaune) 94%, transparent 94%);
+  background: linear-gradient(transparent 44%, var(--jaune) 44%, var(--jaune) 82%, transparent 82%);
   padding: 0 0.06em;
 }
 
@@ -1532,6 +1536,18 @@ html:has(.nowadays-da) {
   margin-bottom: 8px;
 }
 
+/* Les liens du pied de page ne faisaient que 22 px de haut : sous le doigt,
+   c'est deux fois moins que les 44 px recommandés, et on tape à côté. La zone
+   cliquable s'étend sans que le texte bouge — l'espacement des lignes absorbe
+   déjà la hauteur ajoutée. */
+@media (pointer: coarse) {
+  .nowadays-da .footer-grid a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
 .nowadays-da .footer-grid a:hover {
   color: var(--framboise-dense); /* lien de pied de page au survol */
 }
@@ -1705,10 +1721,13 @@ html:has(.nowadays-da) {
   .nowadays-da .footer-bottom {
     display: block;
   }
+  /* La fleur est tournée de 14° : sa boîte visible fait ~1,21 fois sa largeur,
+     soit 85 px pour 70. À `right: 2%` elle touchait le bord et se faisait
+     couper net par l'`overflow: hidden` de la section. On la rentre. */
   .nowadays-da .final-cta .flower {
     width: 70px;
     height: 70px;
-    right: 2%;
+    right: 7%;
   }
 }
 
