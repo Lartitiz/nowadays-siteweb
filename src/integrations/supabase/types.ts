@@ -101,6 +101,39 @@ export type Database = {
         }
         Relationships: []
       }
+      site_events: {
+        Row: {
+          device: string
+          id: number
+          kind: string
+          label: string | null
+          occurred_at: string
+          path: string
+          source: string
+          visiteur_jour: string
+        }
+        Insert: {
+          device?: string
+          id?: never
+          kind: string
+          label?: string | null
+          occurred_at?: string
+          path: string
+          source?: string
+          visiteur_jour: string
+        }
+        Update: {
+          device?: string
+          id?: never
+          kind?: string
+          label?: string | null
+          occurred_at?: string
+          path?: string
+          source?: string
+          visiteur_jour?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
