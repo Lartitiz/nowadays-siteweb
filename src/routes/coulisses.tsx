@@ -6,6 +6,8 @@ import { DaLayout } from "@/components/da/DaLayout";
 import {
   connexionCoulisses,
   deconnexionCoulisses,
+  envoyerRecapMaintenant,
+  lireLignePlanification,
   lireStatistiques,
   type Periode,
   type Statistiques,
@@ -38,6 +40,42 @@ const LIBELLES_AIMANTS: Record<string, string> = {
   "calendrier-editorial": "Le calendrier éditorial",
   "template-branding": "Le template branding",
   newsletter: "Le Mégaphone",
+};
+
+/*
+ * Les chemins bruts (/etudes/l214) sont lisibles par un développeur, pas par
+ * quelqu'un qui regarde ses chiffres du lundi. On les traduit.
+ */
+const LIBELLES_PAGES: Record<string, string> = {
+  "/": "L'accueil",
+  "/accompagnement-communication": "Ta binôme de com'",
+  "/cooperative-asso": "Votre agency de com'",
+  "/etudes-de-cas-pro": "Études de cas — assos",
+  "/creatrices-ethiques": "Études de cas — créatrices",
+  "/contact": "Contact",
+  "/manifeste": "Le manifeste",
+  "/demarche-ethique": "La démarche éthique",
+  "/blog": "Le blog",
+  "/guide-storytelling": "Aimant — guide storytelling",
+  "/formation-gratuite-instagram": "Aimant — formation Instagram",
+  "/template-branding": "Aimant — template branding",
+  "/template-calendrier-editorial": "Aimant — calendrier éditorial",
+  "/mentions-legales": "Mentions légales",
+};
+
+function nommerPage(chemin: string): string {
+  if (LIBELLES_PAGES[chemin]) return LIBELLES_PAGES[chemin];
+  // Une étude de cas : /etudes/atelier-des-lunettes → « Étude — atelier des lunettes »
+  const etude = chemin.match(/^\/etudes\/(.+)$/);
+  if (etude) return `Étude — ${etude[1].replace(/-/g, " ")}`;
+  const article = chemin.match(/^\/blog\/(.+)$/);
+  if (article) return `Article — ${article[1].replace(/-/g, " ")}`;
+  return chemin;
+}
+
+const LIBELLES_APPAREILS: Record<string, string> = {
+  mobile: "Téléphone",
+  ordinateur: "Ordinateur",
 };
 
 function Page() {
@@ -250,9 +288,140 @@ function Chiffre({
   );
 }
 
-function Tableau({ stats }: { stats: Statistiques }) {
-  const totalVues = stats.provenances.reduce((s, p) => s + p.nombre, 0) || 1;
+/* --------------------------------------------------------- Briques */
 
+function Bloc({ titre, children }: { titre: string; children: React.ReactNode }) {
+  return (
+    <div className="rounded-carte-douce border border-rose-pale bg-white p-5">
+      <h2 className="font-titre text-2xl text-encre">{titre}</h2>
+      {children}
+    </div>
+  );
+}
+
+function Vide() {
+  return <p className="mt-4 text-sm text-gris-chaud">Rien encore sur cette période.</p>;
+}
+
+function Liste({
+  lignes,
+  libelle,
+}: {
+  lignes: Array<{ cle: string; nombre: number }>;
+  libelle?: (c: string) => string;
+}) {
+  if (lignes.length === 0) return <Vide />;
+  return (
+    <ul className="mt-4">
+      {lignes.map((l) => (
+        <li
+          key={l.cle}
+          className="flex justify-between gap-4 border-b border-rose-pale py-2 text-sm last:border-0"
+        >
+          <span className="text-encre">{libelle ? libelle(l.cle) : l.cle}</span>
+          <span className="whitespace-nowrap text-gris-chaud">{l.nombre}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/*
+ * Le croisement visiteuses × appels. C'est le tableau qui répond à « est-ce
+ * qu'Instagram m'amène des clientes ou seulement du monde ». On met le taux en
+ * évidence, pas le volume : c'est lui qui départage.
+ */
+function Croisement({
+  lignes,
+}: {
+  lignes: Array<{ nom: string; visiteuses: number; appels: number; tauxPourCent: number }>;
+}) {
+  if (lignes.length === 0) return <Vide />;
+  const meilleur = Math.max(...lignes.map((l) => l.tauxPourCent), 0);
+  return (
+    <table className="mt-4 w-full text-sm">
+      <thead>
+        <tr className="text-left text-gris-chaud">
+          <th className="pb-2 font-normal">&nbsp;</th>
+          <th className="pb-2 text-right font-normal">Visiteuses</th>
+          <th className="pb-2 text-right font-normal">Appels</th>
+          <th className="pb-2 text-right font-normal">Taux</th>
+        </tr>
+      </thead>
+      <tbody>
+        {lignes.map((l) => (
+          <tr key={l.nom} className="border-t border-rose-pale">
+            <td className="py-2 text-encre">{l.nom}</td>
+            <td className="py-2 text-right text-gris-chaud">{l.visiteuses}</td>
+            <td className="py-2 text-right text-gris-chaud">{l.appels}</td>
+            <td
+              className={
+                l.tauxPourCent > 0 && l.tauxPourCent === meilleur
+                  ? "py-2 text-right text-framboise-dense"
+                  : "py-2 text-right text-gris-chaud"
+              }
+            >
+              {l.tauxPourCent.toLocaleString("fr-FR")} %
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
+/*
+ * La courbe. Deux séries empilées visuellement : les visites en barres pâles,
+ * les appels en points francs par-dessus. Pas de bibliothèque : quelques divs
+ * suffisent, et ça évite 80 ko de JavaScript pour dessiner trente barres.
+ */
+function Courbe({
+  points,
+}: {
+  points: Array<{ jour: string; visiteuses: number; appels: number }>;
+}) {
+  if (points.length === 0) return <Vide />;
+  const haut = Math.max(...points.map((p) => p.visiteuses), 1);
+  const jourCourt = (j: string) => {
+    const d = new Date(`${j}T12:00:00Z`);
+    return d.toLocaleDateString("fr-FR", { day: "numeric", month: "short" });
+  };
+  return (
+    <div className="mt-5">
+      <div className="flex h-32 items-end gap-[3px]">
+        {points.map((p) => (
+          <div
+            key={p.jour}
+            className="group relative flex-1"
+            title={`${jourCourt(p.jour)} — ${p.visiteuses} visiteuse${p.visiteuses > 1 ? "s" : ""}, ${p.appels} appel${p.appels > 1 ? "s" : ""}`}
+          >
+            <div
+              className="w-full rounded-t-sm bg-rose-doux"
+              style={{ height: `${Math.round((p.visiteuses / haut) * 118)}px`, minHeight: "2px" }}
+            />
+            {p.appels > 0 ? (
+              <div className="absolute inset-x-0 -top-2 flex justify-center">
+                <span className="h-2 w-2 rounded-full bg-framboise-dense" />
+              </div>
+            ) : null}
+          </div>
+        ))}
+      </div>
+      <div className="mt-2 flex justify-between text-xs text-gris-chaud">
+        <span>{jourCourt(points[0].jour)}</span>
+        <span>{jourCourt(points[points.length - 1].jour)}</span>
+      </div>
+      <p className="mt-3 text-sm text-gris-chaud">
+        Barres : les visiteuses. <span className="text-framboise-dense">Points</span> : les jours où
+        quelqu'un a demandé un appel.
+      </p>
+    </div>
+  );
+}
+
+/* --------------------------------------------------------- Tableau */
+
+function Tableau({ stats }: { stats: Statistiques }) {
   return (
     <div className="mt-10 space-y-4">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -285,56 +454,117 @@ function Tableau({ stats }: { stats: Statistiques }) {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <div className="rounded-carte-douce border border-rose-pale bg-white p-5">
-          <h2 className="font-titre text-2xl text-encre">D'où elles viennent</h2>
-          {stats.provenances.length === 0 ? (
-            <p className="mt-4 text-sm text-gris-chaud">Rien encore sur cette période.</p>
-          ) : (
-            <ul className="mt-4 space-y-3">
-              {stats.provenances.map((p) => (
-                <li key={p.nom}>
-                  <div className="flex justify-between text-sm text-encre">
-                    <span>{p.nom}</span>
-                    <span className="text-gris-chaud">{p.nombre}</span>
-                  </div>
-                  <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-rose-pale">
-                    <div
-                      className="h-full bg-framboise-dense"
-                      style={{ width: `${Math.round((p.nombre / totalVues) * 100)}%` }}
-                    />
-                  </div>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+      <Bloc titre="Jour par jour">
+        <Courbe points={stats.courbe} />
+      </Bloc>
 
-        <div className="rounded-carte-douce border border-rose-pale bg-white p-5">
-          <h2 className="font-titre text-2xl text-encre">Par quelle page elles entrent</h2>
-          {stats.pagesEntree.length === 0 ? (
-            <p className="mt-4 text-sm text-gris-chaud">Rien encore sur cette période.</p>
-          ) : (
-            <ul className="mt-4">
-              {stats.pagesEntree.map((p) => (
-                <li
-                  key={p.chemin}
-                  className="flex justify-between gap-4 border-b border-rose-pale py-2 text-sm last:border-0"
-                >
-                  <span className="text-encre">{LIBELLES_AIMANTS[p.chemin] ?? p.chemin}</span>
-                  <span className="whitespace-nowrap text-gris-chaud">{p.nombre}</span>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+      <Bloc titre="D'où elles viennent, et lesquelles demandent un appel">
+        <Croisement lignes={stats.provenances} />
+      </Bloc>
+
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <Bloc titre="Par quelle page elles entrent">
+          <Liste
+            lignes={stats.pagesEntree.map((p) => ({ cle: p.chemin, nombre: p.nombre }))}
+            libelle={nommerPage}
+          />
+        </Bloc>
+        <Bloc titre="Les pages qui déclenchent un appel">
+          <Liste
+            lignes={stats.pagesQuiDeclenchent.map((p) => ({ cle: p.chemin, nombre: p.nombre }))}
+            libelle={nommerPage}
+          />
+        </Bloc>
       </div>
+
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <Bloc titre="Quel aimant recrute">
+          <Liste
+            lignes={stats.aimantsDetail.map((a) => ({ cle: a.nom, nombre: a.nombre }))}
+            libelle={(c) => LIBELLES_AIMANTS[c] ?? c}
+          />
+        </Bloc>
+        <Bloc titre="Téléphone ou ordinateur">
+          <Croisement
+            lignes={stats.appareils.map((a) => ({ ...a, nom: LIBELLES_APPAREILS[a.nom] ?? a.nom }))}
+          />
+        </Bloc>
+      </div>
+
+      <Recap />
 
       <p className="text-sm text-gris-chaud">
         Une visiteuse revenue un autre jour compte deux fois : c'est le prix à payer pour ne poser
         aucun cookie.
         {stats.tronque ? " Affichage limité aux 100 000 derniers événements." : ""}
       </p>
+    </div>
+  );
+}
+
+/* --------------------------------------------------------- Récap e-mail */
+
+function Recap() {
+  const lireLigne = useServerFn(lireLignePlanification);
+  const envoyer = useServerFn(envoyerRecapMaintenant);
+  const [jeton, setJeton] = useState<string | null>(null);
+  const [ouvert, setOuvert] = useState(false);
+  const [envoi, setEnvoi] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!ouvert || jeton) return;
+    void lireLigne({}).then((r) => {
+      if (r.ok) setJeton(r.jeton);
+    });
+  }, [ouvert, jeton, lireLigne]);
+
+  const sql = jeton
+    ? `select cron.schedule(\n  'recap-hebdo-nowadays',\n  '0 6 * * 1',\n  $$ select net.http_get('https://nowadaysagency.com/api/recap-hebdo?cle=${jeton}') $$\n);`
+    : "…";
+
+  return (
+    <div className="rounded-carte-douce border border-rose-pale bg-white p-5">
+      <button
+        type="button"
+        onClick={() => setOuvert((v) => !v)}
+        className="text-sm text-gris-chaud underline underline-offset-4"
+      >
+        {ouvert ? "Masquer" : "Le récap du lundi par e-mail"}
+      </button>
+
+      {ouvert ? (
+        <div className="mt-4 space-y-4">
+          <div className="flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => {
+                setEnvoi("Envoi…");
+                void envoyer({}).then((r) =>
+                  setEnvoi(r.ok ? "Envoyé, regarde ta boîte." : r.message),
+                );
+              }}
+            >
+              M'envoyer le récap maintenant
+            </button>
+            {envoi ? <span className="text-sm text-gris-chaud">{envoi}</span> : null}
+          </div>
+
+          <div>
+            <p className="text-sm text-encre">
+              Pour le recevoir chaque lundi à 8 h, colle cette ligne au chat Lovable en lui
+              demandant de l'exécuter sur Supabase :
+            </p>
+            <pre className="mt-2 overflow-x-auto rounded-md bg-rose-pale p-3 text-xs text-encre">
+              {sql}
+            </pre>
+            <p className="mt-2 text-sm text-gris-chaud">
+              Elle contient une clé qui ne permet que d'envoyer ce récap. Ce n'est pas ton mot de
+              passe.
+            </p>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

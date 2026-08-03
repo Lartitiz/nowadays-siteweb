@@ -55,7 +55,16 @@ export function Mesure() {
       const href = lien.getAttribute("href") || "";
       if (!href.includes("calendly.com")) return;
 
-      void enregistrerClicAppel({ data: { path: window.location.pathname } }).catch(() => {
+      // Même provenance que la vue : `document.referrer` ne bouge pas pendant
+      // la navigation interne, il désigne toujours la porte d'entrée.
+      const params = new URLSearchParams(window.location.search);
+      void enregistrerClicAppel({
+        data: {
+          path: window.location.pathname,
+          referent: document.referrer || null,
+          utmSource: params.get("utm_source"),
+        },
+      }).catch(() => {
         /* on n'empêche jamais le départ vers la prise de rendez-vous */
       });
     }
