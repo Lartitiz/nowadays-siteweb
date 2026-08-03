@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "e7c8bf42-b52c-483c-a944-cd3a915f128d",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/e7c8bf42-b52c-483c-a944-cd3a915f128d/jonesie.jpg",
+  "url": "/media/e7c8bf42-b52c-483c-a944-cd3a915f128d/jonesie.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/e7c8bf42-b52c-483c-a944-cd3a915f128d/jonesie.jpg",
   "original_filename": "jonesie.jpg",
-  "size": 114252,
+  "size": 44948,
   "content_type": "image/webp",
-  "created_at": "2026-06-05T09:21:51Z"
+  "created_at": "2026-06-05T09:21:51Z",
+  "cdn_url": "/__l5e/assets-v1/e7c8bf42-b52c-483c-a944-cd3a915f128d/jonesie.jpg"
 }

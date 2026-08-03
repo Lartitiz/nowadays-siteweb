@@ -110,7 +110,12 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
 
           {data.logo && (
             <div className="mx-auto mb-10 flex h-32 w-32 items-center justify-center overflow-hidden rounded-carte bg-white shadow-sm md:h-40 md:w-40">
-              <img src={data.logo.src} alt={data.logo.alt} className="h-full w-full object-cover" />
+              <img
+                src={data.logo.src}
+                alt={data.logo.alt}
+                {...imageSize(data.logo.src)}
+                className="h-full w-full object-cover"
+              />
             </div>
           )}
 
@@ -240,6 +245,7 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
                           src={inf.avatar}
                           alt={inf.handle}
                           loading="lazy"
+                          {...imageSize(inf.avatar)}
                           className="h-full w-full object-cover transition-transform group-hover:scale-105"
                         />
                       </div>

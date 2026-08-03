@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "a5bcb32d-3cde-43ca-8bde-d7d49454b9db",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/a5bcb32d-3cde-43ca-8bde-d7d49454b9db/bureau-ressources.png",
+  "url": "/media/a5bcb32d-3cde-43ca-8bde-d7d49454b9db/bureau-ressources.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/a5bcb32d-3cde-43ca-8bde-d7d49454b9db/bureau-ressources.png",
   "original_filename": "bureau-ressources.png",
-  "size": 2218038,
+  "size": 65406,
   "content_type": "image/webp",
-  "created_at": "2026-06-05T09:53:44Z"
+  "created_at": "2026-06-05T09:53:44Z",
+  "cdn_url": "/__l5e/assets-v1/a5bcb32d-3cde-43ca-8bde-d7d49454b9db/bureau-ressources.png"
 }

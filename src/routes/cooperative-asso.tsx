@@ -30,6 +30,7 @@ import imgBelle from "@/assets/etudes/belle.jpg.asset.json";
 import imgRoseDonald from "@/assets/etudes/rose-donald.jpg.asset.json";
 import imgLaProchaineAire from "@/assets/etudes-pro/la-prochaine-aire.jpg.asset.json";
 import { absoluteUrl } from "@/lib/site";
+import { imageSize } from "@/lib/image-sizes";
 
 const CALENDLY_URL = "https://calendly.com/laetitia-mattioli/appel-decouverte-atelier";
 
@@ -119,6 +120,7 @@ function ClientsBand() {
             <img
               key={logo.name}
               src={logo.src}
+              {...imageSize(logo.src)}
               alt={logo.name}
               loading="lazy"
               className="h-16 w-auto object-contain md:h-20"
@@ -234,6 +236,7 @@ function LaetitiaIntroSection() {
         </div>
         <img
           src={laetitiaPhoto.url}
+          {...imageSize(laetitiaPhoto.url)}
           alt="Laetitia Mattioli, fondatrice de Nowadays Agency"
           loading="lazy"
           className="aspect-[4/5] w-full rounded-3xl object-cover"
@@ -521,6 +524,7 @@ function ProjetsGrid() {
             <article key={p.name} className="flex flex-col">
               <img
                 src={p.img}
+                {...imageSize(p.img)}
                 alt={p.name}
                 loading="lazy"
                 className="aspect-[16/10] w-full rounded-2xl object-cover"

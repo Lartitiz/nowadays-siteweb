@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "de1241d7-b943-4b95-b7af-3aab937d831e",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/de1241d7-b943-4b95-b7af-3aab937d831e/leather-bag-influence-agency.png",
+  "url": "/media/de1241d7-b943-4b95-b7af-3aab937d831e/leather-bag-influence-agency.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/de1241d7-b943-4b95-b7af-3aab937d831e/leather-bag-influence-agency.png",
   "original_filename": "leather-bag-influence-agency.png",
-  "size": 959935,
+  "size": 74422,
   "content_type": "image/png",
-  "created_at": "2026-06-05T07:23:09Z"
+  "created_at": "2026-06-05T07:23:09Z",
+  "cdn_url": "/__l5e/assets-v1/de1241d7-b943-4b95-b7af-3aab937d831e/leather-bag-influence-agency.png"
 }

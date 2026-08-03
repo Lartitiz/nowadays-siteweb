@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "d2caa13f-c051-426b-8ca1-6555865db93b",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/d2caa13f-c051-426b-8ca1-6555865db93b/ikigai.png",
+  "url": "/media/d2caa13f-c051-426b-8ca1-6555865db93b/ikigai.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/d2caa13f-c051-426b-8ca1-6555865db93b/ikigai.png",
   "original_filename": "ikigai.png",
-  "size": 9952,
+  "size": 4920,
   "content_type": "image/webp",
-  "created_at": "2026-06-09T09:12:01Z"
+  "created_at": "2026-06-09T09:12:01Z",
+  "cdn_url": "/__l5e/assets-v1/d2caa13f-c051-426b-8ca1-6555865db93b/ikigai.png"
 }

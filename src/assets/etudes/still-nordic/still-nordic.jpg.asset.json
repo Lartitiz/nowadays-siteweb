@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "ef0af789-74e3-4e64-93a7-b62dc62caf99",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/ef0af789-74e3-4e64-93a7-b62dc62caf99/still-nordic.jpg",
+  "url": "/media/ef0af789-74e3-4e64-93a7-b62dc62caf99/still-nordic.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/ef0af789-74e3-4e64-93a7-b62dc62caf99/still-nordic.jpg",
   "original_filename": "still-nordic.jpg",
-  "size": 27272,
+  "size": 21640,
   "content_type": "image/webp",
-  "created_at": "2026-06-05T07:23:24Z"
+  "created_at": "2026-06-05T07:23:24Z",
+  "cdn_url": "/__l5e/assets-v1/ef0af789-74e3-4e64-93a7-b62dc62caf99/still-nordic.jpg"
 }

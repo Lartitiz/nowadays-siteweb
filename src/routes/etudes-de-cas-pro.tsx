@@ -79,6 +79,7 @@ import myPilatesWorld from "@/assets/etudes/my-pilates-world.jpg.asset.json";
 import belle from "@/assets/etudes/belle.jpg.asset.json";
 import roseDonald from "@/assets/etudes/rose-donald.jpg.asset.json";
 import { absoluteUrl } from "@/lib/site";
+import { imageSize } from "@/lib/image-sizes";
 
 type Project = {
   name: string;
@@ -302,6 +303,7 @@ function EtudesGrid() {
                 <div className="aspect-[16/10] w-full overflow-hidden rounded-sm bg-rose-pale">
                   <img
                     src={p.image}
+                    {...imageSize(p.image)}
                     alt={p.alt}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"

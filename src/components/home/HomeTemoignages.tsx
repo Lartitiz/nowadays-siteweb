@@ -1,4 +1,5 @@
 import { Pill } from "@/components/da/Pill";
+import { imageSize } from "@/lib/image-sizes";
 const TEMOIGNAGES = [
   {
     photo: "/images/home/temoin-abigail.jpg",
@@ -33,7 +34,13 @@ export function HomeTemoignages() {
         <div className="test-grid">
           {TEMOIGNAGES.map((temoignage) => (
             <article className="testimonial" key={temoignage.nom}>
-              <img className="avatar" src={temoignage.photo} alt={temoignage.nom} loading="lazy" />
+              <img
+                className="avatar"
+                src={temoignage.photo}
+                alt={temoignage.nom}
+                loading="lazy"
+                {...imageSize(temoignage.photo)}
+              />
               <blockquote>{temoignage.citation}</blockquote>
               <cite>
                 {temoignage.nom}

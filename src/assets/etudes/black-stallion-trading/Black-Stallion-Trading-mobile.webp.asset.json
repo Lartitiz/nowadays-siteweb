@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "ee56ecab-9b59-4d76-8d4f-25d4b3744c54",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/ee56ecab-9b59-4d76-8d4f-25d4b3744c54/Black-Stallion-Trading-mobile.webp",
+  "url": "/media/ee56ecab-9b59-4d76-8d4f-25d4b3744c54/Black-Stallion-Trading-mobile.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/ee56ecab-9b59-4d76-8d4f-25d4b3744c54/Black-Stallion-Trading-mobile.webp",
   "original_filename": "Black-Stallion-Trading-mobile.webp",
-  "size": 213124,
+  "size": 68434,
   "content_type": "image/webp",
-  "created_at": "2026-06-05T07:21:37Z"
+  "created_at": "2026-06-05T07:21:37Z",
+  "cdn_url": "/__l5e/assets-v1/ee56ecab-9b59-4d76-8d4f-25d4b3744c54/Black-Stallion-Trading-mobile.webp"
 }

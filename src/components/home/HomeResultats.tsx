@@ -4,6 +4,7 @@ import logoL214 from "@/assets/logos-resultats/l214.png.asset.json";
 import logoAtelier from "@/assets/logos-resultats/atelier-des-lunettes.png.asset.json";
 import logoOasis from "@/assets/logos-resultats/cooperative-oasis.png.asset.json";
 import logoPeline from "@/assets/logos-resultats/peline-coach-sopk.jpg.asset.json";
+import { imageSize } from "@/lib/image-sizes";
 
 const RESULTATS = [
   {
@@ -50,7 +51,12 @@ export function HomeResultats() {
           {RESULTATS.map((resultat) => (
             <article className="result" key={resultat.nom}>
               <div className="result-logo">
-                <img src={resultat.logo} alt={`Logo ${resultat.nom}`} loading="lazy" />
+                <img
+                  src={resultat.logo}
+                  alt={`Logo ${resultat.nom}`}
+                  loading="lazy"
+                  {...imageSize(resultat.logo)}
+                />
               </div>
               <div className="result-action">{resultat.action}</div>
               <div className="arrow-solid" aria-hidden="true" />

@@ -1,5 +1,6 @@
 import { Pill } from "@/components/da/Pill";
 import { CtaInline } from "@/components/da/CtaInline";
+import { imageSize } from "@/lib/image-sizes";
 
 const QUESTIONS = [
   {
@@ -51,6 +52,7 @@ export function HomeObjections() {
           <img
             className="obj-photo"
             src="/images/home/laetitia-objections.jpg"
+            {...imageSize("/images/home/laetitia-objections.jpg")}
             alt="Laetitia, sourcils levés"
             loading="lazy"
           />

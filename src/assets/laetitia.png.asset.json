@@ -2,10 +2,11 @@
   "version": 1,
   "asset_id": "e7672a38-0cf8-4d5d-899a-6fbbc4e14071",
   "project_id": "4b40518c-0b57-4589-a036-3de8316962ef",
-  "url": "/__l5e/assets-v1/e7672a38-0cf8-4d5d-899a-6fbbc4e14071/laetitia.png",
+  "url": "/media/e7672a38-0cf8-4d5d-899a-6fbbc4e14071/laetitia.webp",
   "r2_key": "a/v1/4b40518c-0b57-4589-a036-3de8316962ef/e7672a38-0cf8-4d5d-899a-6fbbc4e14071/laetitia.png",
   "original_filename": "laetitia.png",
-  "size": 2235780,
+  "size": 221838,
   "content_type": "image/webp",
-  "created_at": "2026-06-04T19:51:30Z"
+  "created_at": "2026-06-04T19:51:30Z",
+  "cdn_url": "/__l5e/assets-v1/e7672a38-0cf8-4d5d-899a-6fbbc4e14071/laetitia.png"
 }
