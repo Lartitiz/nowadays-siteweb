@@ -27,10 +27,16 @@ export const enregistrerVue = createServerFn({ method: "POST" })
   });
 
 export const enregistrerClicAppel = createServerFn({ method: "POST" })
-  .inputValidator(z.object({ path: z.string().min(1).max(200) }))
+  .inputValidator(
+    z.object({
+      path: z.string().min(1).max(200),
+      referent: z.string().max(500).nullable().optional(),
+      utmSource: z.string().max(60).nullable().optional(),
+    }),
+  )
   .handler(async ({ data }) => {
     const { enregistrerAppelServeur } = await import("@/lib/mesure.server");
-    await enregistrerAppelServeur(data.path);
+    await enregistrerAppelServeur(data.path, data.referent ?? null, data.utmSource ?? null);
     return { ok: true };
   });
 
@@ -71,3 +77,21 @@ export const lireStatistiques = createServerFn({ method: "POST" })
       return { ok: false, raison: "lecture", message };
     }
   });
+
+/*
+ * La ligne SQL à programmer dans Supabase pour l'envoi du lundi. Elle contient
+ * le jeton, donc elle ne sort que pour une session admin valide : c'est plus
+ * sûr que de faire circuler le jeton dans une conversation ou un e-mail.
+ */
+export const lireLignePlanification = createServerFn({ method: "POST" }).handler(async () => {
+  const { sessionAdminValide, jetonRecap } = await import("@/lib/mesure.server");
+  if (!sessionAdminValide()) return { ok: false as const };
+  return { ok: true as const, jeton: jetonRecap() };
+});
+
+// Envoi immédiat, pour vérifier que l'e-mail part avant d'attendre lundi.
+export const envoyerRecapMaintenant = createServerFn({ method: "POST" }).handler(async () => {
+  const { sessionAdminValide, envoyerRecapHebdo } = await import("@/lib/mesure.server");
+  if (!sessionAdminValide()) return { ok: false, message: "Accès refusé" };
+  return envoyerRecapHebdo();
+});

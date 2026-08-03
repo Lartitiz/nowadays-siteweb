@@ -4,7 +4,18 @@ import process from "node:process";
 import { deleteCookie, getCookie, getRequest, setCookie } from "@tanstack/react-start/server";
 
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
+import {
+  agreger,
+  debutPeriode,
+  JOURS,
+  PLAFOND_LIGNES,
+  type LigneEvenement,
+  type Periode,
+  type Statistiques,
+} from "@/lib/mesure-agregation";
 import { provenance } from "@/lib/mesure-provenance";
+
+export type { Periode, Statistiques };
 
 /*
  * Mesure d'audience maison — tout ce qui ne doit jamais partir au navigateur.
@@ -30,33 +41,6 @@ const DUREE_SESSION_ADMIN = 60 * 60 * 24 * 30; // 30 jours
 // Aspirateurs et robots les plus courants : on ne les compte pas.
 const ROBOTS =
   /bot|crawler|spider|crawling|slurp|bingpreview|headlesschrome|lighthouse|pagespeed|gtmetrix|pingdom|uptime|curl|wget|python-requests|axios|node-fetch|postman|facebookexternalhit|whatsapp|telegrambot|semrush|ahrefs|mj12|dotbot|petalbot|dataforseo|screaming frog/i;
-
-export type Periode = "7j" | "30j" | "tout";
-
-export interface Statistiques {
-  periode: Periode;
-  visiteuses: number;
-  visiteusesAvant: number | null;
-  appels: number;
-  appelsAvant: number | null;
-  messages: number;
-  aimants: number;
-  tauxPourCent: number;
-  tauxAvantPourCent: number | null;
-  provenances: Array<{ nom: string; nombre: number }>;
-  pagesEntree: Array<{ chemin: string; nombre: number }>;
-  tronque: boolean;
-}
-
-interface LigneEvenement {
-  occurred_at: string;
-  kind: string;
-  path: string;
-  source: string;
-  label: string | null;
-  device: string;
-  visiteur_jour: string;
-}
 
 type NouvelEvenement = Omit<LigneEvenement, "occurred_at">;
 
@@ -159,8 +143,17 @@ export async function enregistrerVueServeur(
   await enregistrer("vue", path, provenance(referent, utmSource), null);
 }
 
-export async function enregistrerAppelServeur(path: string) {
-  await enregistrer("appel", path, "—", null);
+/*
+ * On enregistre la provenance sur le clic aussi, pas seulement sur la vue :
+ * sans ça, impossible de dire si Instagram amène des gens qui demandent un
+ * appel ou seulement du volume. C'est le chiffre qui décide où passe le temps.
+ */
+export async function enregistrerAppelServeur(
+  path: string,
+  referent: string | null,
+  utmSource: string | null,
+) {
+  await enregistrer("appel", path, provenance(referent, utmSource), null);
 }
 
 /*
@@ -226,33 +219,10 @@ export function fermerSession() {
  * Lecture — le tableau de bord
  * ------------------------------------------------------------------ */
 
-const JOURS: Record<Periode, number | null> = { "7j": 7, "30j": 30, tout: null };
-const PLAFOND_LIGNES = 100_000;
-
-function debut(jours: number | null, decalage = 0): string {
-  if (jours === null) return "1970-01-01T00:00:00.000Z";
-  return new Date(Date.now() - (jours + decalage) * 86_400_000).toISOString();
-}
-
-function compte(lignes: LigneEvenement[], kind: string): number {
-  return lignes.filter((l) => l.kind === kind).length;
-}
-
-function visiteusesUniques(lignes: LigneEvenement[]): number {
-  // Une empreinte par jour : une personne revenue un autre jour compte deux
-  // fois. C'est le prix à payer pour ne poser aucun cookie.
-  return new Set(lignes.filter((l) => l.kind === "vue").map((l) => l.visiteur_jour)).size;
-}
-
-function taux(appels: number, visiteuses: number): number {
-  if (!visiteuses) return 0;
-  return Math.round((appels / visiteuses) * 1000) / 10;
-}
-
 export async function calculerStatistiques(periode: Periode): Promise<Statistiques> {
   const jours = JOURS[periode];
   // On remonte deux périodes en arrière pour pouvoir comparer à la précédente.
-  const depuis = debut(jours, jours ?? 0);
+  const depuis = debutPeriode(jours, jours ?? 0);
 
   const { data: lignes, error } = await evenements()
     .select("occurred_at,kind,path,source,label,device,visiteur_jour")
@@ -261,29 +231,9 @@ export async function calculerStatistiques(periode: Periode): Promise<Statistiqu
     .limit(PLAFOND_LIGNES);
 
   if (error) throw new Error(`Lecture impossible : ${error.message}`);
-  const toutes = lignes ?? [];
-
-  const limite = jours === null ? null : new Date(Date.now() - jours * 86_400_000).toISOString();
-  const courante = limite ? toutes.filter((l) => l.occurred_at >= limite) : toutes;
-  const precedente = limite ? toutes.filter((l) => l.occurred_at < limite) : [];
-  const aDuPasse = limite !== null && precedente.length > 0;
-
-  const visiteuses = visiteusesUniques(courante);
-  const appels = compte(courante, "appel");
-  const visiteusesAvant = aDuPasse ? visiteusesUniques(precedente) : null;
-  const appelsAvant = aDuPasse ? compte(precedente, "appel") : null;
-
-  const parCle = (cle: (l: LigneEvenement) => string) => {
-    const paniers = new Map<string, number>();
-    for (const l of courante) {
-      if (l.kind !== "vue") continue;
-      const k = cle(l);
-      paniers.set(k, (paniers.get(k) ?? 0) + 1);
-    }
-    return [...paniers.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6);
-  };
 
   // Les messages du formulaire sont déjà en base : on les compte à la source.
+  const limite = jours === null ? null : new Date(Date.now() - jours * 86_400_000).toISOString();
   const requeteMessages = supabaseAdmin
     .from("contact_messages")
     .select("id", { count: "exact", head: true });
@@ -291,19 +241,112 @@ export async function calculerStatistiques(periode: Periode): Promise<Statistiqu
     ? await requeteMessages.gte("created_at", limite)
     : await requeteMessages;
 
-  return {
-    periode,
-    visiteuses,
-    visiteusesAvant,
-    appels,
-    appelsAvant,
-    messages: count ?? 0,
-    aimants: compte(courante, "aimant"),
-    tauxPourCent: taux(appels, visiteuses),
-    tauxAvantPourCent:
-      visiteusesAvant !== null && appelsAvant !== null ? taux(appelsAvant, visiteusesAvant) : null,
-    provenances: parCle((l) => l.source).map(([nom, nombre]) => ({ nom, nombre })),
-    pagesEntree: parCle((l) => l.path).map(([chemin, nombre]) => ({ chemin, nombre })),
-    tronque: toutes.length >= PLAFOND_LIGNES,
-  };
+  return agreger(lignes ?? [], periode, count ?? 0);
+}
+
+/* ------------------------------------------------------------------ *
+ * Récap hebdomadaire par e-mail
+ * ------------------------------------------------------------------ */
+
+/*
+ * Le site est déployé sur Cloudflare, dont la configuration est régénérée à
+ * chaque build : on ne peut pas y inscrire une tâche planifiée durablement.
+ * C'est donc Supabase qui appellera cette route chaque lundi (pg_cron +
+ * pg_net). Le jeton n'est pas le mot de passe : il ne donne le droit que de
+ * déclencher l'envoi du récap, et il est dérivé du secret serveur, donc
+ * impossible à deviner et jamais écrit dans le code.
+ */
+export function jetonRecap(): string {
+  return createHmac("sha256", secretServeur()).update("recap-hebdo").digest("hex").slice(0, 40);
+}
+
+function fleche(actuel: number, avant: number | null): string {
+  if (avant === null || avant === 0) return "";
+  const p = Math.round(((actuel - avant) / avant) * 100);
+  if (p === 0) return " (stable)";
+  return p > 0 ? ` (+${p} %)` : ` (${p} %)`;
+}
+
+export async function composerRecapHebdo(): Promise<{
+  sujet: string;
+  html: string;
+  texte: string;
+}> {
+  const s = await calculerStatistiques("7j");
+
+  const meilleure = s.provenances
+    .filter((p) => p.appels > 0)
+    .sort((a, b) => b.appels - a.appels)[0];
+  const grosseSource = s.provenances[0];
+
+  // Une phrase de lecture, pas un tableau de plus : c'est ce qu'on lit vraiment
+  // sur un téléphone le lundi matin.
+  let lecture: string;
+  if (s.visiteuses === 0) {
+    lecture = "Aucune visite cette semaine. À creuser du côté de l'acquisition.";
+  } else if (s.appels === 0) {
+    lecture = `${s.visiteuses} visiteuses, aucune demande d'appel. Le trafic vient surtout de ${grosseSource?.nom ?? "sources variées"}.`;
+  } else if (meilleure) {
+    lecture = `${s.appels} demande${s.appels > 1 ? "s" : ""} d'appel, surtout depuis ${meilleure.nom}.`;
+  } else {
+    lecture = `${s.appels} demande${s.appels > 1 ? "s" : ""} d'appel cette semaine.`;
+  }
+
+  const lignes: Array<[string, string]> = [
+    ["Visiteuses", `${s.visiteuses}${fleche(s.visiteuses, s.visiteusesAvant)}`],
+    ["Ont demandé un appel", `${s.appels}${fleche(s.appels, s.appelsAvant)}`],
+    ["Messages reçus", String(s.messages)],
+    ["Inscriptions", String(s.aimants)],
+    ["Sur 100 visiteuses", `${s.tauxPourCent.toLocaleString("fr-FR")} demandent un appel`],
+  ];
+
+  const sujet = `Nowadays — ${s.visiteuses} visiteuses, ${s.appels} demande${s.appels > 1 ? "s" : ""} d'appel`;
+
+  const html = `
+    <div style="font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;color:#1a1a1a;max-width:520px">
+      <h2 style="font-size:18px;font-weight:500;color:#91014b;margin:0 0 4px">Ta semaine sur le site</h2>
+      <p style="font-size:14px;color:#6b5a62;margin:0 0 20px">7 derniers jours</p>
+      <table style="border-collapse:collapse;width:100%">
+        ${lignes
+          .map(
+            ([k, v]) =>
+              `<tr><td style="padding:9px 0;border-bottom:1px solid #ffd6e8;font-size:15px">${k}</td>
+               <td style="padding:9px 0;border-bottom:1px solid #ffd6e8;font-size:15px;text-align:right;font-weight:500">${v}</td></tr>`,
+          )
+          .join("")}
+      </table>
+      <p style="font-size:15px;line-height:1.6;margin:20px 0">${lecture}</p>
+      <p style="margin:24px 0 0">
+        <a href="https://nowadaysagency.com/coulisses" style="color:#d4155c">Voir le détail</a>
+      </p>
+    </div>`;
+
+  const texte = `Ta semaine sur le site (7 derniers jours)\n\n${lignes
+    .map(([k, v]) => `${k} : ${v}`)
+    .join("\n")}\n\n${lecture}\n\nhttps://nowadaysagency.com/coulisses`;
+
+  return { sujet, html, texte };
+}
+
+export async function envoyerRecapHebdo(): Promise<{ ok: boolean; message: string }> {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) return { ok: false, message: "RESEND_API_KEY manquant" };
+
+  const { sujet, html, texte } = await composerRecapHebdo();
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      from: "Site Nowadays <notifications@nowadaysagency.com>",
+      to: ["laetitia@nowadaysagency.com"],
+      subject: sujet,
+      html,
+      text: texte,
+    }),
+  });
+  if (!res.ok) {
+    const detail = await res.text().catch(() => "");
+    return { ok: false, message: `Resend ${res.status} ${detail.slice(0, 120)}` };
+  }
+  return { ok: true, message: "envoyé" };
 }

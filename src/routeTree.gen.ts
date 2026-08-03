@@ -45,6 +45,7 @@ import { Route as EtudesClipItRouteImport } from './routes/etudes.clip-it'
 import { Route as EtudesBlackStallionTradingRouteImport } from './routes/etudes.black-stallion-trading'
 import { Route as EtudesAtelierDesLunettesRouteImport } from './routes/etudes.atelier-des-lunettes'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as ApiRecapHebdoRouteImport } from './routes/api.recap-hebdo'
 
 const TemplateCalendrierEditorialRoute =
   TemplateCalendrierEditorialRouteImport.update({
@@ -231,6 +232,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiRecapHebdoRoute = ApiRecapHebdoRouteImport.update({
+  id: '/api/recap-hebdo',
+  path: '/api/recap-hebdo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -249,6 +255,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/template-branding': typeof TemplateBrandingRoute
   '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
+  '/api/recap-hebdo': typeof ApiRecapHebdoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
@@ -287,6 +294,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/template-branding': typeof TemplateBrandingRoute
   '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
+  '/api/recap-hebdo': typeof ApiRecapHebdoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
@@ -326,6 +334,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/template-branding': typeof TemplateBrandingRoute
   '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
+  '/api/recap-hebdo': typeof ApiRecapHebdoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etudes/atelier-des-lunettes': typeof EtudesAtelierDesLunettesRoute
   '/etudes/black-stallion-trading': typeof EtudesBlackStallionTradingRoute
@@ -366,6 +375,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/template-branding'
     | '/template-calendrier-editorial'
+    | '/api/recap-hebdo'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
     | '/etudes/black-stallion-trading'
@@ -404,6 +414,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/template-branding'
     | '/template-calendrier-editorial'
+    | '/api/recap-hebdo'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
     | '/etudes/black-stallion-trading'
@@ -442,6 +453,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/template-branding'
     | '/template-calendrier-editorial'
+    | '/api/recap-hebdo'
     | '/blog/$slug'
     | '/etudes/atelier-des-lunettes'
     | '/etudes/black-stallion-trading'
@@ -481,6 +493,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TemplateBrandingRoute: typeof TemplateBrandingRoute
   TemplateCalendrierEditorialRoute: typeof TemplateCalendrierEditorialRoute
+  ApiRecapHebdoRoute: typeof ApiRecapHebdoRoute
   BlogSlugRoute: typeof BlogSlugRoute
   EtudesAtelierDesLunettesRoute: typeof EtudesAtelierDesLunettesRoute
   EtudesBlackStallionTradingRoute: typeof EtudesBlackStallionTradingRoute
@@ -757,6 +770,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/recap-hebdo': {
+      id: '/api/recap-hebdo'
+      path: '/api/recap-hebdo'
+      fullPath: '/api/recap-hebdo'
+      preLoaderRoute: typeof ApiRecapHebdoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -777,6 +797,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TemplateBrandingRoute: TemplateBrandingRoute,
   TemplateCalendrierEditorialRoute: TemplateCalendrierEditorialRoute,
+  ApiRecapHebdoRoute: ApiRecapHebdoRoute,
   BlogSlugRoute: BlogSlugRoute,
   EtudesAtelierDesLunettesRoute: EtudesAtelierDesLunettesRoute,
   EtudesBlackStallionTradingRoute: EtudesBlackStallionTradingRoute,
