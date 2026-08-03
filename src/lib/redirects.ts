@@ -47,6 +47,16 @@ const EDITORIAL_REDIRECTS: Record<string, string> = {
   "/politique-confidentialite": "/mentions-legales",
   // Offre « binôme » supprimée → on renvoie vers l'accompagnement.
   "/coaching-communication": "/accompagnement-communication",
+  // Liens laissés dans le TEXTE des articles de blog (base Supabase) et
+  // hérités de Squarespace : ils tombaient tous en 404 depuis que les liens
+  // des articles sont cliquables. On les renvoie vers l'équivalent actuel.
+  // Les deux anciennes offres à la carte sont reprises par l'accompagnement
+  // « ta binôme de com ».
+  "/accompagnement-instagram": "/accompagnement-communication",
+  "/accompagnement-strategie-digitale": "/accompagnement-communication",
+  // Anciens contenus devenus des ressources gratuites.
+  "/formation-branding": "/template-branding",
+  "/storytelling-etape-par-etape": "/guide-storytelling",
 };
 
 const REDIRECTS: Record<string, string> = {

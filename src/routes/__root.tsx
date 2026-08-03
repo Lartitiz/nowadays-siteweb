@@ -81,6 +81,8 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const DEFAULT_OG_IMAGE = absoluteUrl("/og-image-nowadays.jpg");
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -114,16 +116,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Nowadays accompagne les projets engagés (solopreneur·es, créateur·ices, assos, coopératives, PME à impact) avec une communication joyeuse, plus éthique et efficace.",
       },
-      {
-        property: "og:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d4f1c2b3-5833-4d3b-8c1b-c01692798844/id-preview-554ed6f5--4b40518c-0b57-4589-a036-3de8316962ef.lovable.app-1783632229311.png",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d4f1c2b3-5833-4d3b-8c1b-c01692798844/id-preview-554ed6f5--4b40518c-0b57-4589-a036-3de8316962ef.lovable.app-1783632229311.png",
-      },
+      // Image de partage par défaut (LinkedIn, WhatsApp, Slack…). C'était une
+      // capture d'écran de l'éditeur Lovable, hébergée sur son CDN : hors
+      // charte, et hors de notre contrôle. Les pages qui ont leur propre
+      // visuel (accueil, articles, études de cas) écrasent ces deux balises.
+      { property: "og:image", content: DEFAULT_OG_IMAGE },
+      { name: "twitter:image", content: DEFAULT_OG_IMAGE },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
