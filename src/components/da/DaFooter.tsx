@@ -25,7 +25,7 @@ export function DaFooter() {
                 <Link to="/accompagnement-communication">Ta binôme de com'</Link>
               </li>
               <li>
-                <Link to="/cooperative-asso">Ton agency de com'</Link>
+                <Link to="/cooperative-asso">Votre agency de com'</Link>
               </li>
               <li>
                 <Link to="/contact">Contact</Link>
