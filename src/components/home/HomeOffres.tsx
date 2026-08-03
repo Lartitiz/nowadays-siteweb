@@ -41,7 +41,7 @@ export function HomeOffres() {
 
           <article className="offer right card">
             <div className="offer-type">Pour les structures engagées</div>
-            <h3>Ton agency de com'</h3>
+            <h3>Votre agency de com'</h3>
             <p className="offer-sub">On s'en occupe pour vous.</p>
             <p>
               Vous n'avez ni le temps, ni l'envie de gérer votre communication. On prend en charge

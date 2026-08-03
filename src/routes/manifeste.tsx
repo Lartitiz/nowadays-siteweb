@@ -31,7 +31,11 @@ export const Route = createFileRoute("/manifeste")({
   component: Page,
 });
 
-function CtaButton({ children = "Prends rdv pour discuter de ton projet" }: { children?: string }) {
+function CtaButton({
+  children = "Prenez rdv pour discuter de votre projet",
+}: {
+  children?: string;
+}) {
   return (
     <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
       {children}
@@ -69,9 +73,9 @@ function Hero() {
 
 function Vision() {
   const questions = [
-    "Qui tu veux toucher",
-    "Comment tu veux qu'on te perçoive",
-    "Qui peut porter ton message avec toi",
+    "Qui vous voulez toucher",
+    "Comment vous voulez qu'on vous perçoive",
+    "Qui peut porter votre message avec vous",
   ];
   return (
     <section className="manifesto">
@@ -86,7 +90,7 @@ function Vision() {
             lien. Pas juste un logo ou un post Instagram : un réseau vivant de connexions,
             d'alliances, d'authenticité.
           </p>
-          <p>Avant de parler design ou storytelling, on regarde avec toi :</p>
+          <p>Avant de parler design ou storytelling, on regarde avec vous :</p>
         </div>
         <ul className="mt-8 space-y-4">
           {questions.map((q) => (
@@ -157,8 +161,8 @@ function Redefinir() {
           </p>
           <p>
             Mais l'influence, la vraie, c'est ce qui reste quand la hype est passée. C'est ce que
-            ton projet change, inspire, construit autour de lui. Nous, on veut aider nos clientes à
-            développer cette influence-là : durable, alignée, engagée.
+            votre projet change, inspire, construit autour de lui. Nous, on veut aider nos clientes
+            à développer cette influence-là : durable, alignée, engagée.
           </p>
         </div>
 
@@ -212,7 +216,7 @@ function Ambassadeur() {
             Un « influenceur » ne doit pas être synonyme de personne aux millions d'abonnés. Au
             contraire, il s'agit d'un profil reconnu par son réseau : on le retrouve parmi ses
             collaborateurs, ses fournisseurs, ses clients, ses partenaires… Derrière toutes ces
-            pistes se cache sûrement ton ambassadeur idéal.
+            pistes se cache sûrement votre ambassadeur idéal.
           </p>
         </div>
       </div>
@@ -242,7 +246,7 @@ function Kpi() {
             Le chiffre d'affaires reste central ; il est indispensable à la survie d'une marque.
             Chez Nowadays, on travaille sur le meilleur compromis entre rentabilité et réduction
             d'empreinte carbone, en repensant les KPI pour les faire évoluer vers des objectifs plus
-            réalistes et respectueux de tes valeurs, et de la planète.
+            réalistes et respectueux de vos valeurs, et de la planète.
           </p>
         </div>
       </div>
@@ -283,7 +287,7 @@ function FinalCta() {
   return (
     <section className="bg-jaune">
       <div className="mx-auto max-w-3xl px-6 py-24 text-center">
-        <h2>Envie de te rendre visible sans trahir ton éthique ?</h2>
+        <h2>Envie de vous rendre visible sans trahir votre éthique ?</h2>
         <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-encre">
           On en discute autour d'un appel découverte. Sans engagement, et honnêtement.
         </p>

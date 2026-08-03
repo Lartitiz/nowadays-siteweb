@@ -36,7 +36,7 @@ const CALENDLY_URL = "https://calendly.com/laetitia-mattioli/appel-decouverte-at
 export const Route = createFileRoute("/cooperative-asso")({
   head: () => ({
     meta: [
-      { title: "Ton agency de com | Coopératives & assos | Nowadays" },
+      { title: "Votre agency de com | Coopératives & assos | Nowadays" },
       {
         name: "description",
         content:
@@ -44,7 +44,7 @@ export const Route = createFileRoute("/cooperative-asso")({
       },
       {
         property: "og:title",
-        content: "Ton agency de com | Coopératives & assos | Nowadays",
+        content: "Votre agency de com | Coopératives & assos | Nowadays",
       },
       {
         property: "og:description",
