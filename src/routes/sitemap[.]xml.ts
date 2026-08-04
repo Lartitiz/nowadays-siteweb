@@ -25,6 +25,7 @@ const STATIC_ENTRIES: SitemapEntry[] = [
   { path: "/formation-gratuite-instagram", changefreq: "monthly", priority: "0.7" },
   { path: "/template-branding", changefreq: "monthly", priority: "0.7" },
   { path: "/mentions-legales", changefreq: "yearly", priority: "0.2" },
+  { path: "/confidentialite", changefreq: "yearly", priority: "0.2" },
 ];
 
 const CASE_STUDY_SLUGS = [

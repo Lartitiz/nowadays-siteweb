@@ -23,6 +23,7 @@ import { Route as CreatricesEthiquesRouteImport } from './routes/creatrices-ethi
 import { Route as CoulissesRouteImport } from './routes/coulisses'
 import { Route as CooperativeAssoRouteImport } from './routes/cooperative-asso'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ConfidentialiteRouteImport } from './routes/confidentialite'
 import { Route as AccompagnementCommunicationRouteImport } from './routes/accompagnement-communication'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -117,6 +118,11 @@ const CooperativeAssoRoute = CooperativeAssoRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfidentialiteRoute = ConfidentialiteRouteImport.update({
+  id: '/confidentialite',
+  path: '/confidentialite',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AccompagnementCommunicationRoute =
@@ -241,6 +247,7 @@ const ApiRecapHebdoRoute = ApiRecapHebdoRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
+  '/confidentialite': typeof ConfidentialiteRoute
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/coulisses': typeof CoulissesRoute
@@ -280,6 +287,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
+  '/confidentialite': typeof ConfidentialiteRoute
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/coulisses': typeof CoulissesRoute
@@ -320,6 +328,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
+  '/confidentialite': typeof ConfidentialiteRoute
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
   '/coulisses': typeof CoulissesRoute
@@ -361,6 +370,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/accompagnement-communication'
+    | '/confidentialite'
     | '/contact'
     | '/cooperative-asso'
     | '/coulisses'
@@ -400,6 +410,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/accompagnement-communication'
+    | '/confidentialite'
     | '/contact'
     | '/cooperative-asso'
     | '/coulisses'
@@ -439,6 +450,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/accompagnement-communication'
+    | '/confidentialite'
     | '/contact'
     | '/cooperative-asso'
     | '/coulisses'
@@ -479,6 +491,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AccompagnementCommunicationRoute: typeof AccompagnementCommunicationRoute
+  ConfidentialiteRoute: typeof ConfidentialiteRoute
   ContactRoute: typeof ContactRoute
   CooperativeAssoRoute: typeof CooperativeAssoRoute
   CoulissesRoute: typeof CoulissesRoute
@@ -614,6 +627,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/confidentialite': {
+      id: '/confidentialite'
+      path: '/confidentialite'
+      fullPath: '/confidentialite'
+      preLoaderRoute: typeof ConfidentialiteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/accompagnement-communication': {
@@ -783,6 +803,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AccompagnementCommunicationRoute: AccompagnementCommunicationRoute,
+  ConfidentialiteRoute: ConfidentialiteRoute,
   ContactRoute: ContactRoute,
   CooperativeAssoRoute: CooperativeAssoRoute,
   CoulissesRoute: CoulissesRoute,

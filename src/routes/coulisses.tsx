@@ -61,6 +61,7 @@ const LIBELLES_PAGES: Record<string, string> = {
   "/template-branding": "Aimant — template branding",
   "/template-calendrier-editorial": "Aimant — calendrier éditorial",
   "/mentions-legales": "Mentions légales",
+  "/confidentialite": "Politique de confidentialité",
 };
 
 function nommerPage(chemin: string): string {
