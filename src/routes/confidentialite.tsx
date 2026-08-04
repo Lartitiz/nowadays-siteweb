@@ -62,8 +62,10 @@ function Page() {
                 via le lien de désinscription. Conservation : jusqu'au retrait.
               </li>
               <li>
-                <strong>Mesure d'audience</strong> : pages consultées et données techniques, pour
-                comprendre ce qui vous intéresse. Base légale : intérêt légitime, mesure anonymisée.
+                <strong>Mesure d'audience</strong> : pages consultées, provenance et type d'appareil
+                (mobile ou ordinateur), pour comprendre ce qui vous intéresse. Base légale : intérêt
+                légitime. Votre adresse IP n'est jamais conservée : elle sert uniquement à calculer
+                une empreinte chiffrée qui change chaque jour et ne permet pas de vous identifier.
               </li>
             </Ul>
           </Section>
@@ -71,11 +73,31 @@ function Page() {
           <Section id="destinataires" title="03 · Destinataires">
             <P>
               Vos données ne sont ni vendues ni cédées. Elles sont traitées par nos prestataires
-              techniques :{" "}
-              <Todo>
-                MailerLite, Calendly, Supabase, l'hébergeur et l'outil de mesure d'audience
-                effectivement utilisés
-              </Todo>
+              techniques :
+            </P>
+            <Ul>
+              <li>
+                <strong>MailerLite</strong> : e-mail et prénom des inscrites à la newsletter.
+              </li>
+              <li>
+                <strong>Resend</strong> : acheminement des messages envoyés depuis le formulaire de
+                contact.
+              </li>
+              <li>
+                <strong>Supabase</strong> : conservation des messages de contact et des statistiques
+                de visite.
+              </li>
+              <li>
+                <strong>Lovable</strong> et <strong>Cloudflare</strong> : hébergement du site.
+              </li>
+              <li>
+                <strong>Google Fonts</strong> : les polices du site sont chargées depuis les
+                serveurs de Google, qui reçoit à ce titre votre adresse IP.
+              </li>
+            </Ul>
+            <P>
+              Calendly n'intervient que si vous cliquez pour réserver un appel : vous quittez alors
+              ce site et vos données relèvent de la politique de Calendly.
             </P>
           </Section>
 
@@ -106,7 +128,12 @@ function Page() {
 
           <Section id="cookies" title="05 · Cookies">
             <P>
-              <Todo>description des cookies réellement posés, à confirmer avant mise en ligne</Todo>
+              Ce site ne dépose <strong>aucun cookie</strong> et n'utilise aucun stockage sur votre
+              navigateur. Aucune bannière de consentement n'est donc nécessaire.
+            </P>
+            <P>
+              Un unique cookie technique, nommé « coulisses », existe : il n'est déposé que lorsque
+              l'éditrice du site se connecte à son tableau de bord privé. Il ne vous concerne pas.
             </P>
           </Section>
 
@@ -211,16 +238,5 @@ function Ul({ children }: { children: React.ReactNode }) {
     <ul className="mt-4 space-y-3 text-sm text-encre leading-relaxed list-disc pl-5 marker:text-framboise">
       {children}
     </ul>
-  );
-}
-
-function Todo({ children }: { children: React.ReactNode }) {
-  return (
-    <span
-      className="border-b border-dashed border-bordeaux text-bordeaux"
-      title="Donnée à confirmer"
-    >
-      [À compléter ; {children}]
-    </span>
   );
 }
