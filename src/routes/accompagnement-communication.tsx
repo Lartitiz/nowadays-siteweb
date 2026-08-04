@@ -30,7 +30,7 @@ export const Route = createFileRoute("/accompagnement-communication")({
       {
         name: "description",
         content:
-          "Accompagnement communication 6 mois pour solopreneur·es engagé·es. On construit ta stratégie, on crée tes contenus, on met tout en place. Ensemble. 350€/mois.",
+          "Accompagnement communication 6 mois pour solopreneur·es engagé·es. On construit ta stratégie, on crée tes contenus, on met tout en place. Ensemble. 350 €/mois.",
       },
       {
         property: "og:title",
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/accompagnement-communication")({
       },
       {
         property: "og:description",
-        content: "Deviens visible sans vendre ton âme. 350€/mois pendant 6 mois.",
+        content: "Deviens visible sans vendre ton âme. 350 €/mois pendant 6 mois.",
       },
     ],
     links: [{ rel: "canonical", href: absoluteUrl("/accompagnement-communication") }],
@@ -852,7 +852,7 @@ function FaqSection() {
     },
     {
       q: "Et si je préfère que quelqu'un fasse tout à ma place ?",
-      a: "Je comprends. Sauf que voilà : un·e community manager freelance correct·e, c'est minimum 600 à 1 500€ par mois. Une agence qui fait du boulot propre ? Compte 2 000 à 5 000€. Par mois. L'accompagnement, c'est 350€/mois. Tu apprends à faire toi-même. Et à la fin, tu es libre. Si un jour tu veux déléguer ? Tu sauras exactement quoi déléguer, à qui, et pourquoi.",
+      a: "Je comprends. Sauf que voilà : un·e community manager freelance correct·e, c'est minimum 600 à 1 500€ par mois. Une agence qui fait du boulot propre ? Compte 2 000 à 5 000€. Par mois. L'accompagnement, c'est 350 €/mois. Tu apprends à faire toi-même. Et à la fin, tu es libre. Si un jour tu veux déléguer ? Tu sauras exactement quoi déléguer, à qui, et pourquoi.",
     },
     {
       q: "À qui s'adresse cet accompagnement exactement ?",
