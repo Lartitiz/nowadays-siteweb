@@ -43,8 +43,8 @@ const EDITORIAL_REDIRECTS: Record<string, string> = {
   "/agence-communication-ethique": "/",
   // Index des études de cas asso/coopératives/PME.
   "/etude-de-cas-ethique": "/etudes-de-cas-pro",
-  // La politique de confidentialité est désormais intégrée aux mentions légales.
-  "/politique-confidentialite": "/mentions-legales",
+  // La politique de confidentialité a désormais sa propre page, plus courte.
+  "/politique-confidentialite": "/confidentialite",
   // Offre « binôme » supprimée → on renvoie vers l'accompagnement.
   "/coaching-communication": "/accompagnement-communication",
   // Liens laissés dans le TEXTE des articles de blog (base Supabase) et

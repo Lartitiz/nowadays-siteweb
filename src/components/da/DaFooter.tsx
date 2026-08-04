@@ -80,7 +80,25 @@ export function DaFooter() {
         </div>
 
         <div className="footer-bottom">
-          <span>© 2026 Nowadays Agency</span>
+          {/* `block` : sur mobile .footer-bottom repasse en `display: block`, et deux
+              spans inline se collent bout à bout (« …confidentialitéJoigny · Paris »).
+              Sur desktop la règle est sans effet : un enfant de flex est déjà blockifié. */}
+          <span className="block">
+            © 2026 Nowadays Agency ·{" "}
+            <Link
+              to="/mentions-legales"
+              className="underline underline-offset-4 hover:text-framboise"
+            >
+              Mentions légales
+            </Link>{" "}
+            ·{" "}
+            <Link
+              to="/confidentialite"
+              className="underline underline-offset-4 hover:text-framboise"
+            >
+              Politique de confidentialité
+            </Link>
+          </span>
           <span>Joigny · Paris · Partout où les projets engagés ont besoin d'une voix.</span>
         </div>
       </div>
