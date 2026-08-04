@@ -45,9 +45,7 @@ function Page() {
               <Dd>832 189 070 00028</Dd>
 
               <Dt>Siège</Dt>
-              <Dd>
-                <Todo>adresse du siège</Todo>
-              </Dd>
+              <Dd>6 rue Saint-Jacques, 89300 Joigny, France</Dd>
 
               <Dt>Contact</Dt>
               <Dd>
