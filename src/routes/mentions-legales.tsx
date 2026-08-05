@@ -94,16 +94,16 @@ function Page() {
 
           <Section id="hebergeur" title="03 · Hébergement">
             <P>
-              Le site est hébergé par <strong>Lovable Labs Incorporated</strong>, dont le représentant
-              dans l'Union européenne est <strong>Lovable Labs AB</strong>, Regeringsgatan 25, 111 53
-              Stockholm, Suède. Site :{" "}
+              Le site est hébergé par <strong>OVH SAS</strong>, société par actions simplifiée au
+              capital de 10 174 560 €, immatriculée au RCS de Lille Métropole sous le numéro 424 761
+              419 00045, dont le siège social est situé 2 rue Kellermann, 59100 Roubaix, France. Site :{" "}
               <a
-                href="https://lovable.dev"
+                href="https://www.ovhcloud.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline underline-offset-4 hover:text-framboise"
               >
-                lovable.dev
+                ovhcloud.com
               </a>
               .
             </P>
