@@ -16,6 +16,11 @@ export function DaFooter() {
             <p>
               Agence de communication pop &amp; engagée pour les projets qui font bouger le monde.
             </p>
+            <p className="mt-4 text-xs text-ink/70">
+              <a href="mailto:hello@nowadaysagency.com" className="hover:text-framboise">hello@nowadaysagency.com</a>
+              <span className="mx-2">·</span>
+              <a href="tel:+33614133921" className="hover:text-framboise">06 14 13 39 21</a>
+            </p>
           </div>
 
           <div>
