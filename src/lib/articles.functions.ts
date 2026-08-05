@@ -31,6 +31,8 @@ export type ArticleFull = ArticleListItem & {
   content: ArticleBlock[];
   seo_title: string | null;
   seo_description: string | null;
+  /** Sert à renseigner `dateModified` : Google privilégie le contenu tenu à jour. */
+  updated_at: string | null;
 };
 
 export const listArticles = createServerFn({ method: "GET" }).handler(
@@ -52,7 +54,7 @@ export const getArticleBySlug = createServerFn({ method: "GET" })
     const { data: row, error } = await getPublicClient()
       .from("articles" as never)
       .select(
-        "slug, title, excerpt, cover_url, cover_alt, author, published_at, content, seo_title, seo_description",
+        "slug, title, excerpt, cover_url, cover_alt, author, published_at, content, seo_title, seo_description, updated_at",
       )
       .eq("slug", data.slug)
       .maybeSingle();

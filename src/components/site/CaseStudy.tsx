@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { imageSize } from "@/lib/image-sizes";
 
 import { CaseStudyNav } from "./CaseStudyNav";
+import { CaseStudySchema } from "./CaseStudySchema";
 
 const CALENDLY_URL = "https://calendly.com/laetitia-mattioli/rendez-vous-avec-laetitia";
 
@@ -306,6 +307,13 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
       {/* Projet précédent / suivant + rappel de l'offre. Rendu ici pour que
           les 18 routes en bénéficient sans être modifiées une à une. */}
       <CaseStudyNav />
+
+      {/* Idem pour les données structurées : CreativeWork + fil d'Ariane. */}
+      <CaseStudySchema
+        title={data.title}
+        description={data.subtitle}
+        image={data.logo?.src}
+      />
     </>
   );
 }
