@@ -283,7 +283,7 @@ function Section({
   return (
     <section
       id={id}
-      className="scroll-mt-24 border-t border-ink/15 py-14 first-of-type:border-t-0 first-of-type:pt-0 bg-rose-light"
+      className="scroll-mt-24 border-t border-ink/15 py-14 first-of-type:border-t-0 first-of-type:pt-0 bg-rose-pale"
     >
       <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-ink">{title}</h2>
       <div className="mt-8 space-y-5">{children}</div>
