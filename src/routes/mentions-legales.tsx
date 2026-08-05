@@ -77,10 +77,10 @@ function Page() {
               <Dt>E-mail</Dt>
               <Dd>
                 <a
-                  href="mailto:hello@nowadaysagency.com"
+                  href="mailto:laetitia@nowadaysagency.com"
                   className="underline underline-offset-4 hover:text-framboise"
                 >
-                  hello@nowadaysagency.com
+                  laetitia@nowadaysagency.com
                 </a>
               </Dd>
             </Dl>
@@ -144,7 +144,7 @@ function Page() {
                 href="mailto:hello@nowadaysagency.com"
                 className="underline underline-offset-4 hover:text-framboise"
               >
-                hello@nowadaysagency.com
+                laetitia@nowadaysagency.com
               </a>
               . Vous pouvez également introduire une réclamation auprès de la CNIL :{" "}
               <a
