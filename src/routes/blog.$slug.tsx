@@ -70,6 +70,9 @@ export const Route = createFileRoute("/blog/$slug")({
       },
     };
     if (a.cover_url) articleSchema.image = absoluteUrl(a.cover_url);
+    // Google privilégie le contenu tenu à jour : sans `dateModified`, un article
+    // révisé passe pour aussi vieux que sa date de publication.
+    if (a.updated_at) articleSchema.dateModified = a.updated_at;
     const breadcrumbs = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",

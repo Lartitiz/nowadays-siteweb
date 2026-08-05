@@ -20,6 +20,8 @@ const FAMILIES = {
   pro: {
     listingPath: "/etudes-de-cas-pro",
     listingLabel: "Tous les projets engagés",
+    // Court, pour le fil d'Ariane : « Accueil › Études de cas › L214 ».
+    breadcrumbLabel: "Études de cas",
     offerPath: "/cooperative-asso",
     offerLabel: "Déléguez votre com'",
     entries: [
@@ -37,6 +39,7 @@ const FAMILIES = {
   creatrices: {
     listingPath: "/creatrices-ethiques",
     listingLabel: "Toutes les créatrices accompagnées",
+    breadcrumbLabel: "Créatrices éthiques",
     offerPath: "/accompagnement-communication",
     offerLabel: "Ta binôme de com'",
     entries: [
@@ -62,6 +65,7 @@ export type EtudeNeighbours = {
   next: EtudeEntry;
   listingPath: Family["listingPath"];
   listingLabel: string;
+  breadcrumbLabel: string;
   offerPath: Family["offerPath"];
   offerLabel: string;
 };
@@ -85,6 +89,7 @@ export function getEtudeNeighbours(pathname: string): EtudeNeighbours | null {
       next: entries[(i + 1) % n],
       listingPath: family.listingPath,
       listingLabel: family.listingLabel,
+      breadcrumbLabel: family.breadcrumbLabel,
       offerPath: family.offerPath,
       offerLabel: family.offerLabel,
     };
