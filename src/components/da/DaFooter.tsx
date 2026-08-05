@@ -17,7 +17,7 @@ export function DaFooter() {
               Agence de communication pop &amp; engagée pour les projets qui font bouger le monde.
             </p>
             <p className="mt-4 text-xs text-ink/70">
-              <a href="mailto:hello@nowadaysagency.com" className="hover:text-framboise">hello@nowadaysagency.com</a>
+              <a href="mailto:laetitia@nowadaysagency.com" className="hover:text-framboise">laetitia@nowadaysagency.com</a>
             </p>
           </div>
 
