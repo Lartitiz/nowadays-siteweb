@@ -141,7 +141,7 @@ function Page() {
               d'effacement, de limitation, d'opposition et de portabilité sur vos données. Pour
               l'exercer, écrivez à{" "}
               <a
-                href="mailto:hello@nowadaysagency.com"
+                href="mailto:laetitia@nowadaysagency.com"
                 className="underline underline-offset-4 hover:text-framboise"
               >
                 laetitia@nowadaysagency.com
