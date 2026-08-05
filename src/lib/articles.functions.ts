@@ -15,7 +15,11 @@ export type ArticleBlock =
   | { type: "h1" | "h2" | "h3"; text: string }
   | { type: "p" | "quote"; text: string }
   | { type: "img"; src: string; alt: string }
-  | { type: "button"; text: string; href: string };
+  | { type: "button"; text: string; href: string }
+  // Tableau comparatif. `headers` donne les en-têtes de colonnes, `rows` les
+  // lignes — chaque ligne doit avoir autant de cellules que d'en-têtes, la
+  // première servant de libellé de ligne (et de titre de carte sur mobile).
+  | { type: "table"; caption?: string; headers: string[]; rows: string[][] };
 
 export type ArticleListItem = {
   slug: string;

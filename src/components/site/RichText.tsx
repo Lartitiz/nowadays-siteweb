@@ -75,12 +75,16 @@ export function RichText({ text }: { text: string }) {
     }
     if (m[1] !== undefined) {
       // Lien markdown : le texte peut contenir gras/italique.
+      // Un lien INTERNE (/blog/…, /contact…) reste dans le même onglet : ouvrir
+      // une page du site dans un nouvel onglet fait perdre le fil au lecteur, et
+      // Google ne suit pas le maillage interne de la même façon.
+      const isExternal = !m[2].startsWith("/");
       out.push(
         <a
           key={`l${idx++}`}
           href={m[2]}
-          target="_blank"
-          rel="noopener noreferrer"
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
           className={LINK_CLASS}
         >
           {renderInline(m[1], `l${idx}`)}
