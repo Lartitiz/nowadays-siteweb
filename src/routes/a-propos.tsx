@@ -27,13 +27,13 @@ export const Route = createFileRoute("/a-propos")({
       {
         name: "description",
         content:
-          "Qui est derrière Nowadays : Laetitia Mattioli, dix ans de marketing digital et plus de 150 projets éthiques accompagnés, depuis Joigny dans l'Yonne.",
+          "Qui est derrière Nowadays : Laetitia Mattioli, dix ans de marketing digital, un départ de Paris pour Joigny en 2021, et un tiers-lieu co-fondé dans l'Yonne.",
       },
       { property: "og:title", content: "À propos | Laetitia Mattioli, fondatrice de Nowadays" },
       {
         property: "og:description",
         content:
-          "Qui est derrière Nowadays : Laetitia Mattioli, dix ans de marketing digital et plus de 150 projets éthiques accompagnés, depuis Joigny dans l'Yonne.",
+          "Qui est derrière Nowadays : Laetitia Mattioli, dix ans de marketing digital, un départ de Paris pour Joigny en 2021, et un tiers-lieu co-fondé dans l'Yonne.",
       },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: absoluteUrl("/a-propos") },
@@ -52,6 +52,11 @@ export const Route = createFileRoute("/a-propos")({
             name: "Laetitia Mattioli",
             jobTitle: "Fondatrice de Nowadays Agency",
             worksFor: { "@type": "Organization", name: "Nowadays Agency" },
+            memberOf: {
+              "@type": "Organization",
+              name: "La Prochaine Aire",
+              url: "https://laprochaineaire.fr/",
+            },
             address: {
               "@type": "PostalAddress",
               addressLocality: "Joigny",
@@ -97,6 +102,146 @@ function Hero() {
   );
 }
 
+// L'histoire de Joigny — la colonne vertébrale de la page.
+//
+// 🔑 Récit fourni par Laetitia elle-même (06/08). Aucun fait ajouté : Paris
+// pendant trente ans, arrivée à Joigny en 2021, la crise d'éco-anxiété, la
+// newsletter de la Convergence des Possibles, le mail envoyé, La Prochaine
+// Aire co-fondée en 2023 dans une ancienne maison éclusière au bord de l'Yonne.
+//
+// 🔑 Le troisième bloc est le pivot : c'est là que le récit personnel devient
+// un argument professionnel. Elle a reçu, du côté du destinataire, la preuve
+// de ce qu'elle vend. Ne pas le déplacer ni le diluer.
+//
+// 🔑 On passe VITE sur l'angoisse et on s'installe dans ce qui l'a dénouée :
+// c'est la règle que Laetitia s'impose ailleurs (« pas de campagnes
+// anxiogènes »), elle vaut aussi pour sa propre histoire.
+function Histoire() {
+  return (
+    <>
+      <section className="bg-white">
+        <div className="mx-auto max-w-3xl px-6 pt-20 pb-16">
+          <h2 className="font-titre text-3xl leading-[1.1] text-encre md:text-4xl">
+            2021. J'arrive à Joigny en pleine <em>tempête</em>
+          </h2>
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-encre">
+            <p>
+              J'ai créé Nowadays en 2017. Quatre ans plus tard, après trente ans à Paris, je me
+              suis installée à Joigny — et j'y suis arrivée dans une belle tempête intérieure. Une
+              crise d'éco-anxiété : ce moment où vous mesurez l'ampleur de ce qui vient, et où vous
+              ne savez plus quoi en faire.
+            </p>
+            <p>
+              Dans les podcasts que j'écoutais alors, une phrase revenait tout le temps. Pour
+              sortir de l'éco-anxiété, il faut s'ancrer localement. Agir là où on est, à l'échelle
+              où on peut.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-rose-pale">
+        <div className="mx-auto max-w-3xl px-6 py-16">
+          <h2 className="font-titre text-3xl leading-[1.1] text-encre md:text-4xl">
+            Un <em>e-mail</em>
+          </h2>
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-encre">
+            <p>
+              Un jour, un peu au hasard, je me suis inscrite à la newsletter de{" "}
+              <a
+                href="https://convergencedespossibles.org/"
+                target="_blank"
+                rel="noopener"
+                className="text-bordeaux underline underline-offset-4"
+              >
+                la Convergence des Possibles
+              </a>
+              , qui recense les événements engagés du coin. Rien d'extraordinaire : une liste. Des
+              ateliers, des rencontres, des initiatives.
+            </p>
+            <p className="font-titre text-2xl leading-snug text-bordeaux md:text-3xl">
+              Quand je l'ai reçue, j'ai fondu en larmes.
+            </p>
+            <p>Ça bougeait déjà, ici, chez moi. Et je pouvais en faire partie.</p>
+            <p>
+              J'ai répondu dans la foulée : « Merci pour cette newsletter. Ça me fait un bien fou de
+              savoir que des choses existent ici. Si je peux aider bénévolement en communication, ce
+              sera avec grand plaisir. »
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="mx-auto max-w-3xl px-6 py-16">
+          <h2 className="font-titre text-3xl leading-[1.1] text-encre md:text-4xl">
+            Ce qu'un e-mail peut <em>faire</em>
+          </h2>
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-encre">
+            <p>
+              Je fais ce métier depuis dix ans. Ce jour-là, je l'ai reçu de l'autre côté.
+            </p>
+            <p>
+              Une newsletter bricolée par des bénévoles, sans budget, m'a fait plus de bien que
+              n'importe quelle campagne. Pas parce qu'elle était belle. Parce qu'elle disait :{" "}
+              <em>il se passe des choses ici, et tu peux en être.</em> Elle ne m'a pas alarmée. Elle
+              ne m'a rien vendu. Elle m'a donné une place.
+            </p>
+            <p>
+              C'est de là que vient tout le reste : mon refus des messages qui culpabilisent, ma
+              manie de transmettre plutôt que de garder. Une communication qui ne rend pas les gens
+              plus capables ne m'intéresse pas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-rose-pale">
+        <div className="mx-auto max-w-3xl px-6 py-16">
+          <h2 className="font-titre text-3xl leading-[1.1] text-encre md:text-4xl">
+            La Prochaine <em>Aire</em>
+          </h2>
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-encre">
+            <p>
+              De ce mail sont nées des rencontres. Des gens qui, comme moi, cherchaient du sens, du
+              collectif, de quoi agir. Ensemble, on s'est mis à rêver d'un lieu.
+            </p>
+            <p>
+              En 2023, j'ai co-fondé{" "}
+              <a
+                href="https://laprochaineaire.fr/"
+                target="_blank"
+                rel="noopener"
+                className="text-bordeaux underline underline-offset-4"
+              >
+                La Prochaine Aire
+              </a>{" "}
+              : une ancienne maison éclusière au bord de l'Yonne, sur une vélo-route, transformée en
+              tiers-lieu associatif. Un endroit de passage où l'on vient poser ses valises, ses
+              idées, ses colères et ses envies.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="mx-auto max-w-3xl px-6 py-16">
+          <h2 className="font-titre text-3xl leading-[1.1] text-encre md:text-4xl">
+            Pourquoi je vous raconte <em>ça</em>
+          </h2>
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-encre">
+            <p>
+              Parce que c'est exactement ce que je vous propose de faire. Pas d'être visible à tout
+              prix : de trouver les mots qui donnent une place aux gens que votre projet concerne.
+            </p>
+            <p>C'est plus lent que les recettes. Ça tient beaucoup plus longtemps.</p>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
 function Reperes() {
   return (
     <section className="bg-rose-pale">
@@ -133,8 +278,8 @@ function Ancrage() {
         </h2>
         <div className="mt-8 space-y-5 text-base leading-relaxed text-encre">
           <p>
-            Nowadays est basée à Joigny, dans l'Yonne, en Bourgogne-Franche-Comté. Les ateliers et
-            les sessions de travail se font en visio : on peut donc construire votre communication
+            Nowadays est donc basée à Joigny, dans l'Yonne, en Bourgogne-Franche-Comté. Les ateliers
+            et les sessions de travail se font en visio : on peut construire votre communication
             depuis n'importe où en France, et c'est ce qu'on fait la plupart du temps.
           </p>
           <p>
@@ -157,8 +302,7 @@ function Convictions() {
         <div className="mt-8 space-y-5 text-base leading-relaxed text-encre">
           <p>
             Pas de fausse rareté, pas de compte à rebours agressif, pas de message qui culpabilise.
-            Une communication juste montre ses limites, explique, contextualise. C'est plus lent, et
-            ça tient plus longtemps.
+            Une communication juste montre ses limites, explique, contextualise.
           </p>
           <p>
             J'ai écrit tout ça noir sur blanc — les méthodes, les refus, et mes propres limites —
@@ -229,6 +373,7 @@ function Page() {
   return (
     <DaLayout>
       <Hero />
+      <Histoire />
       <Reperes />
       <Ancrage />
       <Convictions />
