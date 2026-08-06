@@ -193,7 +193,12 @@ function renderBlock(b: ArticleBlock, i: number) {
     const raw = b.text.trim();
     const isExample = raw.replace(/^\*+/, "").trimStart().startsWith("👉");
     if (isExample) {
-      const cleaned = raw.replace(/^\*+/, "").replace(/\*+$/, "").trim();
+      // On ne dégrafe l'italique que si le bloc est vraiment ENVELOPPÉ dedans.
+      // Sinon un exemple qui se termine par une annotation en italique
+      // (« …*(porte ouverte)*  ») perd son astérisque fermante, et le lecteur
+      // voit l'astérisque ouvrante en clair.
+      const wrapped = /^\*[\s\S]*\*$/.test(raw);
+      const cleaned = wrapped ? raw.replace(/^\*+/, "").replace(/\*+$/, "").trim() : raw;
       return (
         <aside
           key={i}

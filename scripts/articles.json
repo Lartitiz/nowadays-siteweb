@@ -1,5 +1,400 @@
 [
   {
+    "slug": "prospection-ethique",
+    "title": "Qu'est-ce que la prospection éthique ?",
+    "excerpt": "Contacter une personne à la fois, après l'avoir vraiment regardée, en la laissant libre de dire non. La méthode, les chiffres, et le rythme que ça demande.",
+    "cover_url": "/blog/prospection-ethique-cover.webp",
+    "cover_alt": "Une main écrit à la plume dans un carnet ouvert, sur un bureau sombre",
+    "seo_title": "Qu'est-ce que la prospection éthique ? La méthode",
+    "seo_description": "La prospection éthique : sa définition, son origine, ce que disent les chiffres du cold email, et la méthode complète pour s'y mettre en 15 min par semaine.",
+    "content": [
+      {
+        "type": "quote",
+        "text": "Une méthode qui existe, qui a un nom, et qui marche mieux que le cold email de masse. Voilà comment elle fonctionne."
+      },
+      {
+        "type": "p",
+        "text": "La prospection éthique consiste à contacter des personnes **une par une**, après avoir vraiment regardé leur travail, en leur laissant à chaque étape la liberté de dire non. Elle s'oppose à la prospection de masse : moins de messages, beaucoup plus de préparation, et un taux de réponse nettement supérieur."
+      },
+      {
+        "type": "p",
+        "text": "Cet article donne la définition, l'origine de la méthode, ce que disent les chiffres, les cinq mythes qui empêchent la plupart des créatif·ves de s'y mettre, la méthode étape par étape, et le rythme réel que ça demande. Je suis Laetitia Mattioli, fondatrice de Nowadays Agency, une [agence de communication engagée et responsable](/demarche-ethique) installée à Joigny, dans l'Yonne, et j'enseigne la prospection éthique à l'EPSAA."
+      },
+      {
+        "type": "h2",
+        "text": "D'où vient la prospection éthique ?"
+      },
+      {
+        "type": "p",
+        "text": "De la **prospection consentie**, une méthode formalisée par [Thomas Burbidge](https://fr.linkedin.com/in/thomasburbidge), formateur français et fondateur de la communauté Inside Freelancing. C'est lui qui a posé le cadre, et ma méthode en découle directement."
+      },
+      {
+        "type": "p",
+        "text": "Son idée de départ : tout accord commercial doit être volontaire, et le consentement, pour être réel, doit être **éclairé, libre, spécifique, réversible et enthousiaste**. Il refuse explicitement le « qui ne dit mot consent ». Un silence n'est pas un oui. Une absence de refus n'est pas un accord."
+      },
+      {
+        "type": "p",
+        "text": "Concrètement, ça donne trois gestes : poser la question avant d'envoyer quoi que ce soit, personnaliser assez pour provoquer une vraie réaction, puis avancer par paliers (conversation, ressource, visio, proposition) en revérifiant l'accord à chaque marche. Il en parle notamment dans le podcast [L'ambition au féminin](https://podcasts.apple.com/us/podcast/ep-166-la-prospection-consentie-avec-thomas-burbidge/id1481773166?i=1000652477905), en avril 2024."
+      },
+      {
+        "type": "p",
+        "text": "Ce que j'ai ajouté, c'est la version pour les métiers créatifs : ce qu'on regarde avant d'écrire, comment se structure le message, et à quel rythme on tient ça quand on a un business à faire tourner à côté."
+      },
+      {
+        "type": "h2",
+        "text": "Pourquoi la prospection classique ne marche plus ?"
+      },
+      {
+        "type": "p",
+        "text": "Parce que les chiffres de l'industrie du cold email démontrent le contraire de ce qu'elle vend."
+      },
+      {
+        "type": "img",
+        "src": "/blog/prospection-ethique-0.webp",
+        "alt": "Un mur de boîtes aux lettres identiques, toutes numérotées : l'image même de la prospection de masse"
+      },
+      {
+        "type": "p",
+        "text": "[Saleshandy](https://www.saleshandy.com/blog/cold-email-statistics/) a analysé **53,1 millions de cold emails** envoyés entre janvier et juin 2026, répartis sur 60 000 séquences. Le taux de réponse moyen est de **3,7 %**. Sur cent messages envoyés, quatre personnes répondent, et parmi elles toutes ne sont pas intéressées."
+      },
+      {
+        "type": "p",
+        "text": "Mais le chiffre qui compte est ailleurs, et il change tout : **les campagnes visant moins de 200 personnes obtiennent deux fois plus de réponses que celles qui dépassent 500**. Plus tu envoies, moins ça marche. Pas proportionnellement moins : mécaniquement moins, par message."
+      },
+      {
+        "type": "p",
+        "text": "Troisième donnée du même rapport : **44 % des réponses positives arrivent sur une relance**, pas sur le premier envoi."
+      },
+      {
+        "type": "p",
+        "text": "Mets les trois ensemble et tu obtiens la démonstration complète, produite par l'industrie qui vend l'automatisation : moins de personnes, mieux ciblées, avec une relance et du temps. C'est-à-dire exactement la prospection éthique."
+      },
+      {
+        "type": "p",
+        "text": "*(Ce qui m'arrange, évidemment. Mais je n'ai pas fabriqué les chiffres, et ils sont vérifiables.)*"
+      },
+      {
+        "type": "p",
+        "text": "Donc non : la prospection éthique n'est pas le choix moral qu'on ferait au détriment de l'efficacité, c'est le choix efficace, qui se trouve aussi être le moral."
+      },
+      {
+        "type": "h2",
+        "text": "Les cinq mythes qui bloquent les créatif·ves"
+      },
+      {
+        "type": "p",
+        "text": "Avant la méthode, il y a ce qu'il faut enlever. Ce sont les cinq croyances que je retrouve dans chaque promotion, en école comme en accompagnement."
+      },
+      {
+        "type": "table",
+        "caption": "Les cinq croyances qui empêchent de s'y mettre, et ce qu'il faut leur répondre",
+        "headers": [
+          "Le mythe",
+          "La réalité"
+        ],
+        "rows": [
+          [
+            "« Si mon travail est bon, les clients viendront tout seuls. »",
+            "Ton travail, c'est la cuisine. La prospection, c'est l'enseigne. Les deux sont indispensables."
+          ],
+          [
+            "« Prospecter, c'est manipuler. »",
+            "Manipuler, c'est créer un faux besoin. Prospecter, c'est répondre à un besoin qui existe déjà."
+          ],
+          [
+            "« Il faut être extraverti·e pour prospecter. »",
+            "La prospection en 2026 est écrite. Si tu synthétises une idée en une image depuis des années, c'est la même compétence."
+          ],
+          [
+            "« Instagram suffit pour trouver des clients. »",
+            "[Instagram est une vitrine](/formation-gratuite-instagram), c'est passif. La prospection, c'est aller frapper à la bonne porte, c'est actif."
+          ],
+          [
+            "« On dérange les gens quand on les contacte. »",
+            "On dérange quand on force. On ne dérange pas quand on demande."
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "text": "Le dernier est le plus important, parce que c'est celui qui paralyse. La différence entre déranger et ne pas déranger ne tient pas au fait de contacter quelqu'un. Elle tient à ce que tu fais de son **silence**."
+      },
+      {
+        "type": "h2",
+        "text": "Comment prospecter éthiquement, concrètement ?"
+      },
+      {
+        "type": "p",
+        "text": "Quatre temps : comprendre, déconstruire, contacter, lier. À chaque étape, on vérifie que c'est OK pour l'autre. Les deux premiers, on vient de les faire. Voilà les deux suivants."
+      },
+      {
+        "type": "h3",
+        "text": "L'immersion : 15 à 20 minutes avant d'écrire une ligne"
+      },
+      {
+        "type": "img",
+        "src": "/blog/prospection-ethique-1.webp",
+        "alt": "Une femme lit une page sur son ordinateur portable : l'immersion, l'étape que tout le monde saute"
+      },
+      {
+        "type": "p",
+        "text": "C'est l'étape que tout le monde saute, et c'est la seule qui fait la différence entre un message qu'on supprime et un message auquel on répond."
+      },
+      {
+        "type": "p",
+        "text": "Tu ouvres quatre choses. **Leur site**, pas seulement la page d'accueil : les projets, l'équipe, le manifeste. **Leurs réseaux** : leur dernier post, ce qu'iels partagent, ce qui les anime. **Leurs mots** : un podcast, un talk, une interview, quelque chose qu'iels ont dit. **Leur réseau** : y a-t-il un contact commun, un·e prof, une ancienne collègue ?"
+      },
+      {
+        "type": "p",
+        "text": "Tu en ressors avec trois détails précis :"
+      },
+      {
+        "type": "p",
+        "text": "**Un projet précis.** Pas « j'aime votre travail », mais « votre identité pour tel lieu, et le choix de tel détail technique »."
+      },
+      {
+        "type": "p",
+        "text": "**Un mot à eux.** Une phrase qu'iels ont prononcée quelque part."
+      },
+      {
+        "type": "p",
+        "text": "**Un point commun.** Un sujet, une valeur, une approche que vous partagez. C'est là que se construit le pont."
+      },
+      {
+        "type": "h3",
+        "text": "Choisir son angle d'entrée"
+      },
+      {
+        "type": "p",
+        "text": "Trois niveaux, du plus efficace au plus audacieux."
+      },
+      {
+        "type": "p",
+        "text": "**La warm intro**, la plus puissante. Quelqu'un te met en relation. Cherche toujours si ce levier existe avant d'envoyer un message à froid."
+      },
+      {
+        "type": "p",
+        "text": "**Le deep cold**, le plus impressionnant. Tu écoutes un podcast, un talk, une conférence de la personne, et tu reprends une idée précise. C'est impossible à copier-coller, et c'est exactement pour ça que ça marche."
+      },
+      {
+        "type": "p",
+        "text": "**Le project cold**, le plus concret. Tu identifies un besoin chez l'autre et tu proposes une piste. Le travail de réflexion est fait avant, pas pendant l'échange."
+      },
+      {
+        "type": "h3",
+        "text": "La structure du message : quatre profondeurs"
+      },
+      {
+        "type": "p",
+        "text": "Ce ne sont pas quatre étapes mécaniques, mais quatre niveaux de profondeur dans la relation."
+      },
+      {
+        "type": "p",
+        "text": "**1. La preuve d'immersion.** Pas « j'aime votre travail », mais « j'ai écouté votre intervention dans tel podcast, votre réflexion sur tel sujet m'a marquée »."
+      },
+      {
+        "type": "p",
+        "text": "**2. Le pont de valeur.** Pas « on a des points communs », mais « voici ce que je pourrais apporter à ce que vous faites, concrètement »."
+      },
+      {
+        "type": "p",
+        "text": "**3. La demande calibrée.** Pas systématiquement « 15 minutes d'échange ». Parfois une question précise, un retour à demander, un sujet à creuser ensemble."
+      },
+      {
+        "type": "p",
+        "text": "**4. La porte ouverte.** Toujours laisser l'autre libre de dire non, sans culpabilité. « Je comprendrai si le timing n'est pas bon. »"
+      },
+      {
+        "type": "h3",
+        "text": "Un exemple complet"
+      },
+      {
+        "type": "quote",
+        "text": "👉 **Objet : Votre réflexion sur la DA éditoriale dans [podcast]**\n\nBonjour [Prénom], j'ai écouté votre intervention aux Rencontres du graphisme sur le design génératif appliqué à la signalétique. Votre réflexion sur « la typographie comme matière vivante » m'a beaucoup parlé. *(immersion)*\n\nC'est exactement le sujet sur lequel je travaille : j'explore comment les systèmes typographiques peuvent évoluer selon leur contexte spatial. *(pont)*\n\nJ'aurais une question sur votre process : comment décidez-vous du degré d'aléatoire dans vos systèmes ? *(demande)*\n\nAucune pression, je sais que le temps est précieux. Même une réponse en deux lignes me ferait avancer. *(porte ouverte)*"
+      },
+      {
+        "type": "p",
+        "text": "Regarde ce que ce message ne fait pas. Il ne propose pas de travailler ensemble. Il ne joint pas de portfolio en pièce jointe de trois mégaoctets. Il pose une vraie question, à laquelle on ne peut pas répondre par un lien."
+      },
+      {
+        "type": "h2",
+        "text": "Les trois erreurs qui tuent un message"
+      },
+      {
+        "type": "p",
+        "text": "**Le survol.** « J'ai regardé votre site et j'aime beaucoup ce que vous faites. » Trente secondes de visite, zéro détail. Ça se voit immédiatement. À la place : un projet précis, un détail technique, une idée qui t'a marquée."
+      },
+      {
+        "type": "p",
+        "text": "**Le copier-coller.** Le même message envoyé à cinquante personnes. Elles le sentent, même quand tu changes le prénom. La règle, et c'est celle qui résume tout le reste : **chaque message doit être impossible à envoyer à quelqu'un d'autre.**"
+      },
+      {
+        "type": "p",
+        "text": "**La bague au premier rendez-vous.** « Je serais ravie de travailler avec vous » dès le premier message, alors que tu ne connais même pas leurs besoins. D'abord une question, un échange, un café. La collaboration viendra après, ou pas."
+      },
+      {
+        "type": "h2",
+        "text": "À quel rythme faut-il prospecter ?"
+      },
+      {
+        "type": "p",
+        "text": "Un contact par semaine. C'est tout."
+      },
+      {
+        "type": "img",
+        "src": "/blog/prospection-ethique-2.webp",
+        "alt": "Une main écrit dans un agenda hebdomadaire : quinze minutes le lundi matin, et c'est tout"
+      },
+      {
+        "type": "p",
+        "text": "Quinze minutes le lundi matin : repérer une personne, écrire un message. Une relance après dix jours, une seule fois, deux au maximum. Et un tableau de suivi tout bête : qui, quand, quoi, la suite."
+      },
+      {
+        "type": "p",
+        "text": "Ce qui se passe après l'envoi, dans l'ordre. **J+0**, tu envoies, et le plus dur est fait. **J+3**, silence : les gens sont occupés, le silence n'est pas un rejet. **J+10**, relance douce, une fois. **J+30**, nouveau contact, on recommence."
+      },
+      {
+        "type": "p",
+        "text": "Un message par semaine pendant six mois, ça fait **vingt-quatre portes ouvertes**. La régularité bat l'intensité, en prospection comme partout ailleurs."
+      },
+      {
+        "type": "h2",
+        "text": "Est-ce que ça marche vraiment ?"
+      },
+      {
+        "type": "p",
+        "text": "Oui, mais il faut être honnête sur deux choses."
+      },
+      {
+        "type": "p",
+        "text": "**Ça prend du temps là où l'automatisation n'en prend pas.** Vingt minutes d'immersion plus dix minutes de rédaction, ça fait une demi-heure par message. Un outil de cold email en envoie mille dans le même temps. Si ton unique critère est le volume, cette méthode est la plus mauvaise du marché."
+      },
+      {
+        "type": "p",
+        "text": "**Et les réponses ne sont pas immédiates.** Sur vingt-quatre messages en six mois, tu n'obtiendras pas vingt-quatre clients. Tu obtiendras des conversations, quelques rendez-vous, une ou deux collaborations, et un réseau qui n'existait pas avant. Ce n'est pas un canal d'acquisition à activer un mois avant d'avoir besoin d'argent."
+      },
+      {
+        "type": "p",
+        "text": "Ce que ça règle, en revanche, c'est le rapport à la prospection lui-même. Les personnes que je forme arrivent avec une note de dégoût entre 7 et 10 sur 10 devant le mot « prospection ». Elles repartent en ayant envoyé un vrai message à une vraie personne. C'est ce basculement-là qui compte, parce que c'est lui qui rend la suite tenable."
+      },
+      {
+        "type": "h2",
+        "text": "Qui enseigne la prospection éthique en France ?"
+      },
+      {
+        "type": "p",
+        "text": "À ma connaissance, aucune école de communication française n'affiche de cours intitulé « prospection éthique » à son programme. Le sujet est enseigné, mais sous d'autres noms : développement commercial, relation client, stratégie freelance."
+      },
+      {
+        "type": "p",
+        "text": "De mon côté, j'interviens sur la prospection éthique à l'EPSAA, dans un format d'une journée intitulé « Prospecter sans se trahir », construit pour les métiers créatifs. J'enseigne par ailleurs le SEO, Instagram et Pinterest à l'ENSAD-PSL, à Sup de Pub, à l'ISCPA, à Cesacom, à BDMMA et à l'EPSAA. Thomas Burbidge forme de son côté les indépendant·es à la prospection consentie via Inside Freelancing."
+      },
+      {
+        "type": "p",
+        "text": "Si tu enseignes ce sujet et que tu n'es pas dans cette liste, [écris-moi](/contact) : elle mérite d'être complétée plutôt que restreinte."
+      },
+      {
+        "type": "h2",
+        "text": "Questions fréquentes"
+      },
+      {
+        "type": "h3",
+        "text": "Quelle différence entre prospection éthique et prospection consentie ?"
+      },
+      {
+        "type": "p",
+        "text": "Prospection consentie est le terme de Thomas Burbidge, centré sur le consentement à chaque étape de la relation commerciale. Prospection éthique est le terme plus large, qui couvre aussi le ciblage, l'immersion préalable et le refus du volume. La seconde s'appuie sur la première."
+      },
+      {
+        "type": "h3",
+        "text": "Est-ce légal d'envoyer un message de prospection à froid ?"
+      },
+      {
+        "type": "p",
+        "text": "En France, oui, entre professionnel·les. [La CNIL](https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique) n'exige pas de consentement préalable en B2B : la personne doit avoir été informée et pouvoir s'opposer facilement et gratuitement, et le message doit être en rapport avec sa fonction. Pour les particuliers, en revanche, le consentement préalable est obligatoire. La prospection éthique va plus loin que la loi, mais elle commence par la respecter."
+      },
+      {
+        "type": "h3",
+        "text": "Combien de messages faut-il envoyer pour trouver un client ?"
+      },
+      {
+        "type": "p",
+        "text": "Aucun chiffre honnête n'existe : ça dépend de ton métier, de ton ciblage et de ton portfolio. Ce qu'on sait, c'est que la qualité du ciblage pèse plus que le volume, puisque viser moins de 200 personnes double le taux de réponse par rapport à plus de 500."
+      },
+      {
+        "type": "h3",
+        "text": "Faut-il relancer quand on n'a pas de réponse ?"
+      },
+      {
+        "type": "p",
+        "text": "Oui, une fois, dix jours après. Deux au maximum. C'est le meilleur rapport effort-résultat de toute la méthode, puisque 44 % des réponses positives arrivent sur une relance. Au-delà de deux, tu forces, et forcer est exactement ce que cette méthode évite."
+      },
+      {
+        "type": "h3",
+        "text": "Peut-on prospecter quand on est introverti·e ?"
+      },
+      {
+        "type": "p",
+        "text": "Oui, et c'est même plus confortable. La prospection éthique se fait à l'écrit, seule devant son écran, avec le temps de peser chaque phrase. Rien à voir avec l'appel à froid."
+      },
+      {
+        "type": "h3",
+        "text": "Par quel canal contacter : email ou LinkedIn ?"
+      },
+      {
+        "type": "p",
+        "text": "Celui où la personne est réellement active. Regarde la date de son dernier post LinkedIn avant de choisir. Un message parfait sur un compte abandonné ne sert à rien."
+      },
+      {
+        "type": "h2",
+        "text": "Par où commencer"
+      },
+      {
+        "type": "img",
+        "src": "/blog/prospection-ethique-3.webp",
+        "alt": "Une femme debout consulte son téléphone : repérer cinq personnes dont le travail t'intéresse vraiment"
+      },
+      {
+        "type": "p",
+        "text": "Ouvre LinkedIn. Repère cinq personnes dont le travail t'intéresse vraiment. Note pour chacune un projet précis, une phrase qu'elle a dite, un point commun avec toi. Lundi prochain, quinze minutes, tu en contactes une."
+      },
+      {
+        "type": "p",
+        "text": "C'est tout. Il n'y a pas d'étape zéro cachée, pas de préalable à acheter."
+      },
+      {
+        "type": "quote",
+        "text": "« Prospecter, ce n'est pas se vendre. C'est se rendre visible. Et rendre visible un travail qui a de la valeur, c'est un acte généreux. Pas un acte commercial. »"
+      },
+      {
+        "type": "p",
+        "text": "Si tu veux qu'on regarde ta prospection ensemble, ou qu'on [construise ta com'](/accompagnement-communication) pour que les gens te contactent aussi sans que tu aies à frapper à toutes les portes, on en parle en appel découverte. Et si ton problème n'est pas de savoir quoi faire mais d'avoir le temps de le faire, [cet article-là](/blog/alternative-formation-instagram) est fait pour toi."
+      },
+      {
+        "type": "button",
+        "text": "Réserver un appel découverte",
+        "href": "https://calendly.com/laetitia-mattioli/30-min-de-diagnostic-offert"
+      },
+      {
+        "type": "p",
+        "text": "30 minutes, gratuites, sans engagement."
+      },
+      {
+        "type": "h3",
+        "text": "Sources"
+      },
+      {
+        "type": "p",
+        "text": "Méthode de la prospection consentie : Thomas Burbidge, documenté par [Social Declik](https://socialdeclik.com/appliquer-la-prospection-consentie-pour-developper-son-activite-de-solopreneur/), 18 avril 2023, mis à jour le 8 août 2025 · [podcast L'ambition au féminin, épisode 166](https://podcasts.apple.com/us/podcast/ep-166-la-prospection-consentie-avec-thomas-burbidge/id1481773166?i=1000652477905), avril 2024\nTaux de réponse, effet de taille de campagne et rôle des relances : [Saleshandy](https://www.saleshandy.com/blog/cold-email-statistics/), analyse de 53,1 millions de cold emails, janvier-juin 2026\nRègles de la prospection commerciale par e-mail : [CNIL](https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique)"
+      },
+      {
+        "type": "p",
+        "text": "*Article publié sur Les Tracts, le blog de Nowadays Agency. Dernière mise à jour : août 2026.*"
+      }
+    ],
+    "published_at": "2026-08-06"
+  },
+  {
     "slug": "alternative-formation-instagram",
     "title": "Existe-t-il une alternative aux formations Instagram en ligne ?",
     "excerpt": "Oui, il en existe six, de la communauté à 39 € par mois à la délégation en agence. Ce que chacune coûte vraiment en 2026, et comment choisir.",
