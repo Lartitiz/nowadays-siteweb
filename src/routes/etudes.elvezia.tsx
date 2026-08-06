@@ -13,7 +13,7 @@ export const Route = createFileRoute("/etudes/elvezia")({
       {
         name: "description",
         content:
-          "D'un distributeur de chocolat à une marque premium incarnée : plateforme de marque, identité visuelle et stratégie globale pour repositionner Elvezia.",
+          "D'un distributeur de chocolat à une marque premium incarnée : plateforme de marque, identité visuelle et stratégie 360° pour repositionner Elvezia.",
       },
       { property: "og:title", content: "Elvezia | Étude de cas" },
       {
@@ -64,7 +64,7 @@ const data: CaseStudyData = {
       ],
     },
     {
-      title: "4 · Stratégie globale",
+      title: "4 · Stratégie 360°",
       paragraphs: [
         "Déploiement sur 6 canaux : Instagram, LinkedIn, emailing, site, relations presse et événements.",
       ],
@@ -86,7 +86,7 @@ const data: CaseStudyData = {
     intro:
       "Une marque enfin à la hauteur du produit : cohérente, incarnée et outillée pour vendre.",
     items: [
-      { value: "6 canaux", label: "Stratégie globale déployée" },
+      { value: "360°", label: "Stratégie déployée sur 6 canaux" },
       { value: "6", label: "Étapes, du diagnostic au recrutement" },
       { value: "1", label: "Plateforme de marque complète livrée" },
     ],

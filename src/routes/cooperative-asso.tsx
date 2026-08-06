@@ -41,7 +41,7 @@ export const Route = createFileRoute("/cooperative-asso")({
       {
         name: "description",
         content:
-          "Une agence de communication pour coopératives, associations et structures engagées. Budget global de mission, échelonnable, à partir de 1 500 €.",
+          "Une agence de communication pour coopératives, associations et structures engagées. On prend en charge stratégie, contenus et canaux. À partir de 2 000 €.",
       },
       {
         property: "og:title",
@@ -250,7 +250,7 @@ const PILLARS = [
   {
     emoji: "💛",
     title: "Des prix accessibles",
-    body: "Je ne suis pas une grosse agence avec des bureaux sur les Champs-Élysées. Mes tarifs sont pensés pour des structures comme les vôtres : un budget global de mission, échelonnable, entre 1 500 € et 20 000 € selon l'ampleur du projet. Vous payez pour du travail concret, pas pour financer un open space.",
+    body: "Je ne suis pas une grosse agence avec des bureaux sur les Champs-Élysées. Mes tarifs sont pensés pour des structures comme les vôtres : entre 2 000 € et 20 000 € selon l'ampleur du projet. Vous payez pour du travail concret, pas pour financer un open space.",
   },
   {
     emoji: "🧡",
