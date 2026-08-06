@@ -9,89 +9,83 @@
     "seo_description": "La prospection éthique : sa définition, son origine, ce que disent les chiffres du cold email, et la méthode complète pour s'y mettre en 15 min par semaine.",
     "content": [
       {
-        "type": "quote",
-        "text": "Une méthode qui existe, qui a un nom, et qui marche mieux que le cold email de masse. Voilà comment elle fonctionne."
+        "text": "Une méthode qui existe, qui a un nom, et qui marche mieux que le cold email de masse. Voilà comment elle fonctionne.",
+        "type": "quote"
+      },
+      {
+        "text": "La prospection éthique consiste à contacter des personnes **une par une**, après avoir vraiment regardé leur travail, en leur laissant à chaque étape la liberté de dire non. Elle s'oppose à la prospection de masse : moins de messages, beaucoup plus de préparation, et un taux de réponse nettement supérieur.",
+        "type": "p"
       },
       {
         "type": "p",
-        "text": "La prospection éthique consiste à contacter des personnes **une par une**, après avoir vraiment regardé leur travail, en leur laissant à chaque étape la liberté de dire non. Elle s'oppose à la prospection de masse : moins de messages, beaucoup plus de préparation, et un taux de réponse nettement supérieur."
+        "text": "Dans cet article, je te donne la définition, l'origine de la méthode, ce que disent les chiffres *(spoiler : c'est l'industrie du cold email elle-même qui enterre le cold email)*, les cinq mythes qui t'empêchent de t'y mettre, la méthode étape par étape, et le rythme réel que ça demande. Parce que soyons honnêtes : une méthode de prospection qui réclame 3 h par jour, je ne la tiendrais pas non plus. Je suis Laetitia Mattioli, fondatrice de Nowadays Agency, une [agence de communication engagée et responsable](/demarche-ethique) installée à Joigny, dans l'Yonne, et j'enseigne la prospection éthique à l'EPSAA."
       },
       {
-        "type": "p",
-        "text": "Cet article donne la définition, l'origine de la méthode, ce que disent les chiffres, les cinq mythes qui empêchent la plupart des créatif·ves de s'y mettre, la méthode étape par étape, et le rythme réel que ça demande. Je suis Laetitia Mattioli, fondatrice de Nowadays Agency, une [agence de communication engagée et responsable](/demarche-ethique) installée à Joigny, dans l'Yonne, et j'enseigne la prospection éthique à l'EPSAA."
+        "text": "D'où vient la prospection éthique ?",
+        "type": "h2"
       },
       {
-        "type": "h2",
-        "text": "D'où vient la prospection éthique ?"
+        "text": "De la **prospection consentie**, une méthode formalisée par [Thomas Burbidge](https://fr.linkedin.com/in/thomasburbidge), formateur français et fondateur de la communauté Inside Freelancing. C'est lui qui a posé le cadre, et ma méthode en découle directement.",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "De la **prospection consentie**, une méthode formalisée par [Thomas Burbidge](https://fr.linkedin.com/in/thomasburbidge), formateur français et fondateur de la communauté Inside Freelancing. C'est lui qui a posé le cadre, et ma méthode en découle directement."
+        "text": "Son idée de départ : tout accord commercial doit être volontaire, et le consentement, pour être réel, doit être **éclairé, libre, spécifique, réversible et enthousiaste**. Il refuse explicitement le « qui ne dit mot consent ». Un silence n'est pas un oui. Une absence de refus n'est pas un accord.",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "Son idée de départ : tout accord commercial doit être volontaire, et le consentement, pour être réel, doit être **éclairé, libre, spécifique, réversible et enthousiaste**. Il refuse explicitement le « qui ne dit mot consent ». Un silence n'est pas un oui. Une absence de refus n'est pas un accord."
+        "text": "Concrètement, ça donne trois gestes : poser la question avant d'envoyer quoi que ce soit, personnaliser assez pour provoquer une vraie réaction, puis avancer par paliers (conversation, ressource, visio, proposition) en revérifiant l'accord à chaque marche. Il en parle notamment dans le podcast [L'ambition au féminin](https://podcasts.apple.com/us/podcast/ep-166-la-prospection-consentie-avec-thomas-burbidge/id1481773166?i=1000652477905), en avril 2024.",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "Concrètement, ça donne trois gestes : poser la question avant d'envoyer quoi que ce soit, personnaliser assez pour provoquer une vraie réaction, puis avancer par paliers (conversation, ressource, visio, proposition) en revérifiant l'accord à chaque marche. Il en parle notamment dans le podcast [L'ambition au féminin](https://podcasts.apple.com/us/podcast/ep-166-la-prospection-consentie-avec-thomas-burbidge/id1481773166?i=1000652477905), en avril 2024."
+        "text": "Ce que j'ai ajouté, c'est la version pour les métiers créatifs : ce qu'on regarde avant d'écrire, comment se structure le message, et à quel rythme on tient ça quand on a un business à faire tourner à côté.",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "Ce que j'ai ajouté, c'est la version pour les métiers créatifs : ce qu'on regarde avant d'écrire, comment se structure le message, et à quel rythme on tient ça quand on a un business à faire tourner à côté."
+        "text": "Pourquoi la prospection classique ne marche plus ?",
+        "type": "h2"
       },
       {
-        "type": "h2",
-        "text": "Pourquoi la prospection classique ne marche plus ?"
+        "text": "Parce que les chiffres de l'industrie du cold email démontrent le contraire de ce qu'elle vend.",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "Parce que les chiffres de l'industrie du cold email démontrent le contraire de ce qu'elle vend."
-      },
-      {
-        "type": "img",
+        "alt": "Un mur de boîtes aux lettres identiques, toutes numérotées : l'image même de la prospection de masse",
         "src": "/blog/prospection-ethique-0.webp",
-        "alt": "Un mur de boîtes aux lettres identiques, toutes numérotées : l'image même de la prospection de masse"
+        "type": "img"
+      },
+      {
+        "text": "[Saleshandy](https://www.saleshandy.com/blog/cold-email-statistics/) a analysé **53,1 millions de cold emails** envoyés entre janvier et juin 2026, répartis sur 60 000 séquences. Le taux de réponse moyen est de **3,7 %**. Sur cent messages envoyés, quatre personnes répondent, et parmi elles toutes ne sont pas intéressées.",
+        "type": "p"
+      },
+      {
+        "text": "Mais le chiffre qui compte est ailleurs, et il change tout : **les campagnes visant moins de 200 personnes obtiennent deux fois plus de réponses que celles qui dépassent 500**. Plus tu envoies, moins ça marche. Pas proportionnellement moins : mécaniquement moins, par message.",
+        "type": "p"
+      },
+      {
+        "text": "Troisième donnée du même rapport : **44 % des réponses positives arrivent sur une relance**, pas sur le premier envoi.",
+        "type": "p"
+      },
+      {
+        "text": "Mets les trois ensemble et tu obtiens la démonstration complète, produite par l'industrie qui vend l'automatisation : moins de personnes, mieux ciblées, avec une relance et du temps. C'est-à-dire exactement la prospection éthique.",
+        "type": "p"
+      },
+      {
+        "text": "*(Ce qui m'arrange, évidemment. Mais je n'ai pas fabriqué les chiffres, et ils sont vérifiables.)*",
+        "type": "p"
+      },
+      {
+        "text": "Donc non : la prospection éthique n'est pas le choix moral qu'on ferait au détriment de l'efficacité, c'est le choix efficace, qui se trouve aussi être le moral.",
+        "type": "p"
+      },
+      {
+        "text": "Les cinq mythes qui bloquent les créatif·ves",
+        "type": "h2"
       },
       {
         "type": "p",
-        "text": "[Saleshandy](https://www.saleshandy.com/blog/cold-email-statistics/) a analysé **53,1 millions de cold emails** envoyés entre janvier et juin 2026, répartis sur 60 000 séquences. Le taux de réponse moyen est de **3,7 %**. Sur cent messages envoyés, quatre personnes répondent, et parmi elles toutes ne sont pas intéressées."
+        "text": "Avant la méthode, il y a ce qu'il faut enlever. Ce sont les cinq croyances que je retrouve dans chaque promotion, en école comme en accompagnement. *(Toutes. À chaque fois. C'en serait presque rassurant : personne n'aime prospecter au départ.)*"
       },
       {
-        "type": "p",
-        "text": "Mais le chiffre qui compte est ailleurs, et il change tout : **les campagnes visant moins de 200 personnes obtiennent deux fois plus de réponses que celles qui dépassent 500**. Plus tu envoies, moins ça marche. Pas proportionnellement moins : mécaniquement moins, par message."
-      },
-      {
-        "type": "p",
-        "text": "Troisième donnée du même rapport : **44 % des réponses positives arrivent sur une relance**, pas sur le premier envoi."
-      },
-      {
-        "type": "p",
-        "text": "Mets les trois ensemble et tu obtiens la démonstration complète, produite par l'industrie qui vend l'automatisation : moins de personnes, mieux ciblées, avec une relance et du temps. C'est-à-dire exactement la prospection éthique."
-      },
-      {
-        "type": "p",
-        "text": "*(Ce qui m'arrange, évidemment. Mais je n'ai pas fabriqué les chiffres, et ils sont vérifiables.)*"
-      },
-      {
-        "type": "p",
-        "text": "Donc non : la prospection éthique n'est pas le choix moral qu'on ferait au détriment de l'efficacité, c'est le choix efficace, qui se trouve aussi être le moral."
-      },
-      {
-        "type": "h2",
-        "text": "Les cinq mythes qui bloquent les créatif·ves"
-      },
-      {
-        "type": "p",
-        "text": "Avant la méthode, il y a ce qu'il faut enlever. Ce sont les cinq croyances que je retrouve dans chaque promotion, en école comme en accompagnement."
-      },
-      {
-        "type": "table",
-        "caption": "Les cinq croyances qui empêchent de s'y mettre, et ce qu'il faut leur répondre",
-        "headers": [
-          "Le mythe",
-          "La réalité"
-        ],
         "rows": [
           [
             "« Si mon travail est bon, les clients viendront tout seuls. »",
@@ -113,283 +107,289 @@
             "« On dérange les gens quand on les contacte. »",
             "On dérange quand on force. On ne dérange pas quand on demande."
           ]
+        ],
+        "type": "table",
+        "caption": "Les cinq croyances qui empêchent de s'y mettre, et ce qu'il faut leur répondre",
+        "headers": [
+          "Le mythe",
+          "La réalité"
         ]
       },
       {
-        "type": "p",
-        "text": "Le dernier est le plus important, parce que c'est celui qui paralyse. La différence entre déranger et ne pas déranger ne tient pas au fait de contacter quelqu'un. Elle tient à ce que tu fais de son **silence**."
+        "text": "Le dernier est le plus important, parce que c'est celui qui paralyse. La différence entre déranger et ne pas déranger ne tient pas au fait de contacter quelqu'un. Elle tient à ce que tu fais de son **silence**.",
+        "type": "p"
       },
       {
-        "type": "h2",
-        "text": "Comment prospecter éthiquement, concrètement ?"
+        "text": "Comment prospecter éthiquement, concrètement ?",
+        "type": "h2"
       },
       {
-        "type": "p",
-        "text": "Quatre temps : comprendre, déconstruire, contacter, lier. À chaque étape, on vérifie que c'est OK pour l'autre. Les deux premiers, on vient de les faire. Voilà les deux suivants."
+        "text": "Quatre temps : comprendre, déconstruire, contacter, lier. À chaque étape, on vérifie que c'est OK pour l'autre. Les deux premiers, on vient de les faire. Voilà les deux suivants.",
+        "type": "p"
       },
       {
-        "type": "h3",
-        "text": "L'immersion : 15 à 20 minutes avant d'écrire une ligne"
+        "text": "L'immersion : 15 à 20 minutes avant d'écrire une ligne",
+        "type": "h3"
       },
       {
-        "type": "img",
+        "alt": "Une femme lit une page sur son ordinateur portable : l'immersion, l'étape que tout le monde saute",
         "src": "/blog/prospection-ethique-1.webp",
-        "alt": "Une femme lit une page sur son ordinateur portable : l'immersion, l'étape que tout le monde saute"
+        "type": "img"
       },
       {
         "type": "p",
-        "text": "C'est l'étape que tout le monde saute, et c'est la seule qui fait la différence entre un message qu'on supprime et un message auquel on répond."
+        "text": "C'est l'étape que tout le monde saute *(moi la première, à mes débuts)*, et c'est la seule qui fait la différence entre un message qu'on supprime et un message auquel on répond."
       },
       {
-        "type": "p",
-        "text": "Tu ouvres quatre choses. **Leur site**, pas seulement la page d'accueil : les projets, l'équipe, le manifeste. **Leurs réseaux** : leur dernier post, ce qu'iels partagent, ce qui les anime. **Leurs mots** : un podcast, un talk, une interview, quelque chose qu'iels ont dit. **Leur réseau** : y a-t-il un contact commun, un·e prof, une ancienne collègue ?"
+        "text": "Tu ouvres quatre choses. **Leur site**, pas seulement la page d'accueil : les projets, l'équipe, le manifeste. **Leurs réseaux** : leur dernier post, ce qu'iels partagent, ce qui les anime. **Leurs mots** : un podcast, un talk, une interview, quelque chose qu'iels ont dit. **Leur réseau** : y a-t-il un contact commun, un·e prof, une ancienne collègue ?",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "Tu en ressors avec trois détails précis :"
+        "text": "Tu en ressors avec trois détails précis :",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "**Un projet précis.** Pas « j'aime votre travail », mais « votre identité pour tel lieu, et le choix de tel détail technique »."
+        "text": "**Un projet précis.** Pas « j'aime votre travail », mais « votre identité pour tel lieu, et le choix de tel détail technique ».",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "**Un mot à eux.** Une phrase qu'iels ont prononcée quelque part."
+        "text": "**Un mot à eux.** Une phrase qu'iels ont prononcée quelque part.",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "**Un point commun.** Un sujet, une valeur, une approche que vous partagez. C'est là que se construit le pont."
+        "text": "**Un point commun.** Un sujet, une valeur, une approche que vous partagez. C'est là que se construit le pont.",
+        "type": "p"
       },
       {
-        "type": "h3",
-        "text": "Choisir son angle d'entrée"
+        "text": "Choisir son angle d'entrée",
+        "type": "h3"
       },
       {
-        "type": "p",
-        "text": "Trois niveaux, du plus efficace au plus audacieux."
+        "text": "Trois niveaux, du plus efficace au plus audacieux.",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "**La warm intro**, la plus puissante. Quelqu'un te met en relation. Cherche toujours si ce levier existe avant d'envoyer un message à froid."
+        "text": "**La warm intro**, la plus puissante. Quelqu'un te met en relation. Cherche toujours si ce levier existe avant d'envoyer un message à froid.",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "**Le deep cold**, le plus impressionnant. Tu écoutes un podcast, un talk, une conférence de la personne, et tu reprends une idée précise. C'est impossible à copier-coller, et c'est exactement pour ça que ça marche."
+        "text": "**Le deep cold**, le plus impressionnant. Tu écoutes un podcast, un talk, une conférence de la personne, et tu reprends une idée précise. C'est impossible à copier-coller, et c'est exactement pour ça que ça marche.",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "**Le project cold**, le plus concret. Tu identifies un besoin chez l'autre et tu proposes une piste. Le travail de réflexion est fait avant, pas pendant l'échange."
+        "text": "**Le project cold**, le plus concret. Tu identifies un besoin chez l'autre et tu proposes une piste. Le travail de réflexion est fait avant, pas pendant l'échange.",
+        "type": "p"
       },
       {
-        "type": "h3",
-        "text": "La structure du message : quatre profondeurs"
+        "text": "La structure du message : quatre profondeurs",
+        "type": "h3"
       },
       {
-        "type": "p",
-        "text": "Ce ne sont pas quatre étapes mécaniques, mais quatre niveaux de profondeur dans la relation."
+        "text": "Ce ne sont pas quatre étapes mécaniques, mais quatre niveaux de profondeur dans la relation.",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "**1. La preuve d'immersion.** Pas « j'aime votre travail », mais « j'ai écouté votre intervention dans tel podcast, votre réflexion sur tel sujet m'a marquée »."
+        "text": "**1. La preuve d'immersion.** Pas « j'aime votre travail », mais « j'ai écouté votre intervention dans tel podcast, votre réflexion sur tel sujet m'a marquée ».",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "**2. Le pont de valeur.** Pas « on a des points communs », mais « voici ce que je pourrais apporter à ce que vous faites, concrètement »."
+        "text": "**2. Le pont de valeur.** Pas « on a des points communs », mais « voici ce que je pourrais apporter à ce que vous faites, concrètement ».",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "**3. La demande calibrée.** Pas systématiquement « 15 minutes d'échange ». Parfois une question précise, un retour à demander, un sujet à creuser ensemble."
+        "text": "**3. La demande calibrée.** Pas systématiquement « 15 minutes d'échange ». Parfois une question précise, un retour à demander, un sujet à creuser ensemble.",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "**4. La porte ouverte.** Toujours laisser l'autre libre de dire non, sans culpabilité. « Je comprendrai si le timing n'est pas bon. »"
+        "text": "**4. La porte ouverte.** Toujours laisser l'autre libre de dire non, sans culpabilité. « Je comprendrai si le timing n'est pas bon. »",
+        "type": "p"
       },
       {
-        "type": "h3",
-        "text": "Un exemple complet"
+        "text": "Un exemple complet",
+        "type": "h3"
       },
       {
-        "type": "quote",
-        "text": "👉 **Objet : Votre réflexion sur la DA éditoriale dans [podcast]**\n\nBonjour [Prénom], j'ai écouté votre intervention aux Rencontres du graphisme sur le design génératif appliqué à la signalétique. Votre réflexion sur « la typographie comme matière vivante » m'a beaucoup parlé. *(immersion)*\n\nC'est exactement le sujet sur lequel je travaille : j'explore comment les systèmes typographiques peuvent évoluer selon leur contexte spatial. *(pont)*\n\nJ'aurais une question sur votre process : comment décidez-vous du degré d'aléatoire dans vos systèmes ? *(demande)*\n\nAucune pression, je sais que le temps est précieux. Même une réponse en deux lignes me ferait avancer. *(porte ouverte)*"
+        "text": "👉 **Objet : Votre réflexion sur la DA éditoriale dans [podcast]**\n\nBonjour [Prénom], j'ai écouté votre intervention aux Rencontres du graphisme sur le design génératif appliqué à la signalétique. Votre réflexion sur « la typographie comme matière vivante » m'a beaucoup parlé. *(immersion)*\n\nC'est exactement le sujet sur lequel je travaille : j'explore comment les systèmes typographiques peuvent évoluer selon leur contexte spatial. *(pont)*\n\nJ'aurais une question sur votre process : comment décidez-vous du degré d'aléatoire dans vos systèmes ? *(demande)*\n\nAucune pression, je sais que le temps est précieux. Même une réponse en deux lignes me ferait avancer. *(porte ouverte)*",
+        "type": "quote"
       },
       {
-        "type": "p",
-        "text": "Regarde ce que ce message ne fait pas. Il ne propose pas de travailler ensemble. Il ne joint pas de portfolio en pièce jointe de trois mégaoctets. Il pose une vraie question, à laquelle on ne peut pas répondre par un lien."
+        "text": "Regarde ce que ce message ne fait pas. Il ne propose pas de travailler ensemble. Il ne joint pas de portfolio en pièce jointe de trois mégaoctets. Il pose une vraie question, à laquelle on ne peut pas répondre par un lien.",
+        "type": "p"
       },
       {
-        "type": "h2",
-        "text": "Les trois erreurs qui tuent un message"
+        "text": "Les trois erreurs qui tuent un message",
+        "type": "h2"
       },
       {
-        "type": "p",
-        "text": "**Le survol.** « J'ai regardé votre site et j'aime beaucoup ce que vous faites. » Trente secondes de visite, zéro détail. Ça se voit immédiatement. À la place : un projet précis, un détail technique, une idée qui t'a marquée."
+        "text": "**Le survol.** « J'ai regardé votre site et j'aime beaucoup ce que vous faites. » Trente secondes de visite, zéro détail. Ça se voit immédiatement. À la place : un projet précis, un détail technique, une idée qui t'a marquée.",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "**Le copier-coller.** Le même message envoyé à cinquante personnes. Elles le sentent, même quand tu changes le prénom. La règle, et c'est celle qui résume tout le reste : **chaque message doit être impossible à envoyer à quelqu'un d'autre.**"
+        "text": "**Le copier-coller.** Le même message envoyé à cinquante personnes. Elles le sentent, même quand tu changes le prénom. La règle, et c'est celle qui résume tout le reste : **chaque message doit être impossible à envoyer à quelqu'un d'autre.**",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "**La bague au premier rendez-vous.** « Je serais ravie de travailler avec vous » dès le premier message, alors que tu ne connais même pas leurs besoins. D'abord une question, un échange, un café. La collaboration viendra après, ou pas."
+        "text": "**La bague au premier rendez-vous.** « Je serais ravie de travailler avec vous » dès le premier message, alors que tu ne connais même pas leurs besoins. D'abord une question, un échange, un café. La collaboration viendra après, ou pas.",
+        "type": "p"
       },
       {
-        "type": "h2",
-        "text": "À quel rythme faut-il prospecter ?"
+        "text": "À quel rythme faut-il prospecter ?",
+        "type": "h2"
       },
       {
-        "type": "p",
-        "text": "Un contact par semaine. C'est tout."
+        "text": "Un contact par semaine. C'est tout.",
+        "type": "p"
       },
       {
-        "type": "img",
+        "alt": "Une main écrit dans un agenda hebdomadaire : quinze minutes le lundi matin, et c'est tout",
         "src": "/blog/prospection-ethique-2.webp",
-        "alt": "Une main écrit dans un agenda hebdomadaire : quinze minutes le lundi matin, et c'est tout"
+        "type": "img"
+      },
+      {
+        "text": "Quinze minutes le lundi matin : repérer une personne, écrire un message. Une relance après dix jours, une seule fois, deux au maximum. Et un tableau de suivi tout bête : qui, quand, quoi, la suite.",
+        "type": "p"
+      },
+      {
+        "text": "Ce qui se passe après l'envoi, dans l'ordre. **J+0**, tu envoies, et le plus dur est fait. **J+3**, silence : les gens sont occupés, le silence n'est pas un rejet. **J+10**, relance douce, une fois. **J+30**, nouveau contact, on recommence.",
+        "type": "p"
+      },
+      {
+        "text": "Un message par semaine pendant six mois, ça fait **vingt-quatre portes ouvertes**. La régularité bat l'intensité, en prospection comme partout ailleurs.",
+        "type": "p"
+      },
+      {
+        "text": "Est-ce que ça marche vraiment ?",
+        "type": "h2"
+      },
+      {
+        "text": "Oui, mais il faut être honnête sur deux choses.",
+        "type": "p"
       },
       {
         "type": "p",
-        "text": "Quinze minutes le lundi matin : repérer une personne, écrire un message. Une relance après dix jours, une seule fois, deux au maximum. Et un tableau de suivi tout bête : qui, quand, quoi, la suite."
+        "text": "**Ça prend du temps là où l'automatisation n'en prend pas.** Vingt minutes d'immersion plus dix minutes de rédaction, ça fait une demi-heure par message. Un outil de cold email en envoie mille dans le même temps. Si ton unique critère est le volume, cette méthode est la plus mauvaise du marché. *(Autant te le dire moi-même : tu aurais fini par le remarquer.)*"
+      },
+      {
+        "text": "**Et les réponses ne sont pas immédiates.** Sur vingt-quatre messages en six mois, tu n'obtiendras pas vingt-quatre clients. Tu obtiendras des conversations, quelques rendez-vous, une ou deux collaborations, et un réseau qui n'existait pas avant. Ce n'est pas un canal d'acquisition à activer un mois avant d'avoir besoin d'argent.",
+        "type": "p"
       },
       {
         "type": "p",
-        "text": "Ce qui se passe après l'envoi, dans l'ordre. **J+0**, tu envoies, et le plus dur est fait. **J+3**, silence : les gens sont occupés, le silence n'est pas un rejet. **J+10**, relance douce, une fois. **J+30**, nouveau contact, on recommence."
+        "text": "Ce que ça règle, en revanche, c'est le rapport à la prospection lui-même. Les personnes que je forme arrivent avec une note de dégoût entre 7 et 10 sur 10 devant le mot « prospection » *(oui, je fais voter à main levée)*. Elles repartent en ayant envoyé un vrai message à une vraie personne. C'est ce basculement-là qui compte, parce que c'est lui qui rend la suite tenable."
+      },
+      {
+        "text": "Qui enseigne la prospection éthique en France ?",
+        "type": "h2"
+      },
+      {
+        "text": "À ma connaissance, aucune école de communication française n'affiche de cours intitulé « prospection éthique » à son programme. Le sujet est enseigné, mais sous d'autres noms : développement commercial, relation client, stratégie freelance.",
+        "type": "p"
+      },
+      {
+        "text": "De mon côté, j'interviens sur la prospection éthique à l'EPSAA, dans un format d'une journée intitulé « Prospecter sans se trahir », construit pour les métiers créatifs. J'enseigne par ailleurs le SEO, Instagram et Pinterest à l'ENSAD-PSL, à Sup de Pub, à l'ISCPA, à Cesacom, à BDMMA et à l'EPSAA. Thomas Burbidge forme de son côté les indépendant·es à la prospection consentie via Inside Freelancing.",
+        "type": "p"
+      },
+      {
+        "text": "Si tu enseignes ce sujet et que tu n'es pas dans cette liste, [écris-moi](/contact) : elle mérite d'être complétée plutôt que restreinte.",
+        "type": "p"
+      },
+      {
+        "text": "Questions fréquentes",
+        "type": "h2"
+      },
+      {
+        "text": "Quelle différence entre prospection éthique et prospection consentie ?",
+        "type": "h3"
+      },
+      {
+        "text": "Prospection consentie est le terme de Thomas Burbidge, centré sur le consentement à chaque étape de la relation commerciale. Prospection éthique est le terme plus large, qui couvre aussi le ciblage, l'immersion préalable et le refus du volume. La seconde s'appuie sur la première.",
+        "type": "p"
+      },
+      {
+        "text": "Est-ce légal d'envoyer un message de prospection à froid ?",
+        "type": "h3"
+      },
+      {
+        "text": "En France, oui, entre professionnel·les. [La CNIL](https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique) n'exige pas de consentement préalable en B2B : la personne doit avoir été informée et pouvoir s'opposer facilement et gratuitement, et le message doit être en rapport avec sa fonction. Pour les particuliers, en revanche, le consentement préalable est obligatoire. La prospection éthique va plus loin que la loi, mais elle commence par la respecter.",
+        "type": "p"
+      },
+      {
+        "text": "Combien de messages faut-il envoyer pour trouver un client ?",
+        "type": "h3"
+      },
+      {
+        "text": "Aucun chiffre honnête n'existe : ça dépend de ton métier, de ton ciblage et de ton portfolio. Ce qu'on sait, c'est que la qualité du ciblage pèse plus que le volume, puisque viser moins de 200 personnes double le taux de réponse par rapport à plus de 500.",
+        "type": "p"
+      },
+      {
+        "text": "Faut-il relancer quand on n'a pas de réponse ?",
+        "type": "h3"
+      },
+      {
+        "text": "Oui, une fois, dix jours après. Deux au maximum. C'est le meilleur rapport effort-résultat de toute la méthode, puisque 44 % des réponses positives arrivent sur une relance. Au-delà de deux, tu forces, et forcer est exactement ce que cette méthode évite.",
+        "type": "p"
+      },
+      {
+        "text": "Peut-on prospecter quand on est introverti·e ?",
+        "type": "h3"
       },
       {
         "type": "p",
-        "text": "Un message par semaine pendant six mois, ça fait **vingt-quatre portes ouvertes**. La régularité bat l'intensité, en prospection comme partout ailleurs."
+        "text": "Oui, et c'est même plus confortable. La prospection éthique se fait à l'écrit, seule devant son écran, avec le temps de peser chaque phrase. Rien à voir avec l'appel à froid. *(Personne ne te demandera de sourire au téléphone.)*"
       },
       {
-        "type": "h2",
-        "text": "Est-ce que ça marche vraiment ?"
+        "text": "Par quel canal contacter : email ou LinkedIn ?",
+        "type": "h3"
       },
       {
-        "type": "p",
-        "text": "Oui, mais il faut être honnête sur deux choses."
+        "text": "Celui où la personne est réellement active. Regarde la date de son dernier post LinkedIn avant de choisir. Un message parfait sur un compte abandonné ne sert à rien.",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "**Ça prend du temps là où l'automatisation n'en prend pas.** Vingt minutes d'immersion plus dix minutes de rédaction, ça fait une demi-heure par message. Un outil de cold email en envoie mille dans le même temps. Si ton unique critère est le volume, cette méthode est la plus mauvaise du marché."
+        "text": "Par où commencer",
+        "type": "h2"
       },
       {
-        "type": "p",
-        "text": "**Et les réponses ne sont pas immédiates.** Sur vingt-quatre messages en six mois, tu n'obtiendras pas vingt-quatre clients. Tu obtiendras des conversations, quelques rendez-vous, une ou deux collaborations, et un réseau qui n'existait pas avant. Ce n'est pas un canal d'acquisition à activer un mois avant d'avoir besoin d'argent."
-      },
-      {
-        "type": "p",
-        "text": "Ce que ça règle, en revanche, c'est le rapport à la prospection lui-même. Les personnes que je forme arrivent avec une note de dégoût entre 7 et 10 sur 10 devant le mot « prospection ». Elles repartent en ayant envoyé un vrai message à une vraie personne. C'est ce basculement-là qui compte, parce que c'est lui qui rend la suite tenable."
-      },
-      {
-        "type": "h2",
-        "text": "Qui enseigne la prospection éthique en France ?"
-      },
-      {
-        "type": "p",
-        "text": "À ma connaissance, aucune école de communication française n'affiche de cours intitulé « prospection éthique » à son programme. Le sujet est enseigné, mais sous d'autres noms : développement commercial, relation client, stratégie freelance."
-      },
-      {
-        "type": "p",
-        "text": "De mon côté, j'interviens sur la prospection éthique à l'EPSAA, dans un format d'une journée intitulé « Prospecter sans se trahir », construit pour les métiers créatifs. J'enseigne par ailleurs le SEO, Instagram et Pinterest à l'ENSAD-PSL, à Sup de Pub, à l'ISCPA, à Cesacom, à BDMMA et à l'EPSAA. Thomas Burbidge forme de son côté les indépendant·es à la prospection consentie via Inside Freelancing."
-      },
-      {
-        "type": "p",
-        "text": "Si tu enseignes ce sujet et que tu n'es pas dans cette liste, [écris-moi](/contact) : elle mérite d'être complétée plutôt que restreinte."
-      },
-      {
-        "type": "h2",
-        "text": "Questions fréquentes"
-      },
-      {
-        "type": "h3",
-        "text": "Quelle différence entre prospection éthique et prospection consentie ?"
-      },
-      {
-        "type": "p",
-        "text": "Prospection consentie est le terme de Thomas Burbidge, centré sur le consentement à chaque étape de la relation commerciale. Prospection éthique est le terme plus large, qui couvre aussi le ciblage, l'immersion préalable et le refus du volume. La seconde s'appuie sur la première."
-      },
-      {
-        "type": "h3",
-        "text": "Est-ce légal d'envoyer un message de prospection à froid ?"
-      },
-      {
-        "type": "p",
-        "text": "En France, oui, entre professionnel·les. [La CNIL](https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique) n'exige pas de consentement préalable en B2B : la personne doit avoir été informée et pouvoir s'opposer facilement et gratuitement, et le message doit être en rapport avec sa fonction. Pour les particuliers, en revanche, le consentement préalable est obligatoire. La prospection éthique va plus loin que la loi, mais elle commence par la respecter."
-      },
-      {
-        "type": "h3",
-        "text": "Combien de messages faut-il envoyer pour trouver un client ?"
-      },
-      {
-        "type": "p",
-        "text": "Aucun chiffre honnête n'existe : ça dépend de ton métier, de ton ciblage et de ton portfolio. Ce qu'on sait, c'est que la qualité du ciblage pèse plus que le volume, puisque viser moins de 200 personnes double le taux de réponse par rapport à plus de 500."
-      },
-      {
-        "type": "h3",
-        "text": "Faut-il relancer quand on n'a pas de réponse ?"
-      },
-      {
-        "type": "p",
-        "text": "Oui, une fois, dix jours après. Deux au maximum. C'est le meilleur rapport effort-résultat de toute la méthode, puisque 44 % des réponses positives arrivent sur une relance. Au-delà de deux, tu forces, et forcer est exactement ce que cette méthode évite."
-      },
-      {
-        "type": "h3",
-        "text": "Peut-on prospecter quand on est introverti·e ?"
-      },
-      {
-        "type": "p",
-        "text": "Oui, et c'est même plus confortable. La prospection éthique se fait à l'écrit, seule devant son écran, avec le temps de peser chaque phrase. Rien à voir avec l'appel à froid."
-      },
-      {
-        "type": "h3",
-        "text": "Par quel canal contacter : email ou LinkedIn ?"
-      },
-      {
-        "type": "p",
-        "text": "Celui où la personne est réellement active. Regarde la date de son dernier post LinkedIn avant de choisir. Un message parfait sur un compte abandonné ne sert à rien."
-      },
-      {
-        "type": "h2",
-        "text": "Par où commencer"
-      },
-      {
-        "type": "img",
+        "alt": "Une femme debout consulte son téléphone : repérer cinq personnes dont le travail t'intéresse vraiment",
         "src": "/blog/prospection-ethique-3.webp",
-        "alt": "Une femme debout consulte son téléphone : repérer cinq personnes dont le travail t'intéresse vraiment"
+        "type": "img"
       },
       {
-        "type": "p",
-        "text": "Ouvre LinkedIn. Repère cinq personnes dont le travail t'intéresse vraiment. Note pour chacune un projet précis, une phrase qu'elle a dite, un point commun avec toi. Lundi prochain, quinze minutes, tu en contactes une."
+        "text": "Ouvre LinkedIn. Repère cinq personnes dont le travail t'intéresse vraiment. Note pour chacune un projet précis, une phrase qu'elle a dite, un point commun avec toi. Lundi prochain, quinze minutes, tu en contactes une.",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "C'est tout. Il n'y a pas d'étape zéro cachée, pas de préalable à acheter."
+        "text": "C'est tout. Il n'y a pas d'étape zéro cachée, pas de préalable à acheter.",
+        "type": "p"
       },
       {
-        "type": "quote",
-        "text": "« Prospecter, ce n'est pas se vendre. C'est se rendre visible. Et rendre visible un travail qui a de la valeur, c'est un acte généreux. Pas un acte commercial. »"
+        "text": "« Prospecter, ce n'est pas se vendre. C'est se rendre visible. Et rendre visible un travail qui a de la valeur, c'est un acte généreux. Pas un acte commercial. »",
+        "type": "quote"
       },
       {
-        "type": "p",
-        "text": "Si tu veux qu'on regarde ta prospection ensemble, ou qu'on [construise ta com'](/accompagnement-communication) pour que les gens te contactent aussi sans que tu aies à frapper à toutes les portes, on en parle en appel découverte. Et si ton problème n'est pas de savoir quoi faire mais d'avoir le temps de le faire, [cet article-là](/blog/alternative-formation-instagram) est fait pour toi."
+        "text": "Si tu veux qu'on regarde ta prospection ensemble, ou qu'on [construise ta com'](/accompagnement-communication) pour que les gens te contactent aussi sans que tu aies à frapper à toutes les portes, on en parle en appel découverte. Et si ton problème n'est pas de savoir quoi faire mais d'avoir le temps de le faire, [cet article-là](/blog/alternative-formation-instagram) est fait pour toi.",
+        "type": "p"
       },
       {
-        "type": "button",
+        "href": "https://calendly.com/laetitia-mattioli/30-min-de-diagnostic-offert",
         "text": "Réserver un appel découverte",
-        "href": "https://calendly.com/laetitia-mattioli/30-min-de-diagnostic-offert"
+        "type": "button"
       },
       {
-        "type": "p",
-        "text": "30 minutes, gratuites, sans engagement."
+        "text": "30 minutes, gratuites, sans engagement.",
+        "type": "p"
       },
       {
-        "type": "h3",
-        "text": "Sources"
+        "text": "Sources",
+        "type": "h3"
       },
       {
-        "type": "p",
-        "text": "Méthode de la prospection consentie : Thomas Burbidge, documenté par [Social Declik](https://socialdeclik.com/appliquer-la-prospection-consentie-pour-developper-son-activite-de-solopreneur/), 18 avril 2023, mis à jour le 8 août 2025 · [podcast L'ambition au féminin, épisode 166](https://podcasts.apple.com/us/podcast/ep-166-la-prospection-consentie-avec-thomas-burbidge/id1481773166?i=1000652477905), avril 2024\nTaux de réponse, effet de taille de campagne et rôle des relances : [Saleshandy](https://www.saleshandy.com/blog/cold-email-statistics/), analyse de 53,1 millions de cold emails, janvier-juin 2026\nRègles de la prospection commerciale par e-mail : [CNIL](https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique)"
+        "text": "Méthode de la prospection consentie : Thomas Burbidge, documenté par [Social Declik](https://socialdeclik.com/appliquer-la-prospection-consentie-pour-developper-son-activite-de-solopreneur/), 18 avril 2023, mis à jour le 8 août 2025 · [podcast L'ambition au féminin, épisode 166](https://podcasts.apple.com/us/podcast/ep-166-la-prospection-consentie-avec-thomas-burbidge/id1481773166?i=1000652477905), avril 2024\nTaux de réponse, effet de taille de campagne et rôle des relances : [Saleshandy](https://www.saleshandy.com/blog/cold-email-statistics/), analyse de 53,1 millions de cold emails, janvier-juin 2026\nRègles de la prospection commerciale par e-mail : [CNIL](https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique)",
+        "type": "p"
       },
       {
-        "type": "p",
-        "text": "*Article publié sur Les Tracts, le blog de Nowadays Agency. Dernière mise à jour : août 2026.*"
+        "text": "*Article publié sur Les Tracts, le blog de Nowadays Agency. Dernière mise à jour : août 2026.*",
+        "type": "p"
       }
     ],
     "published_at": "2026-08-06"
@@ -2164,543 +2164,215 @@
     "content": [
       {
         "type": "p",
-        "text": "Si tu veux plus de réflexions sur la communication éthique et pouvoir avoir de l’inspiration pour ton projet"
+        "text": "Si tu veux plus de réflexions sur la communication éthique et de l'inspiration pour ton projet, c'est par ici :"
       },
       {
-        "type": "button",
+        "href": "https://subscribepage.io/nowadays",
         "text": "Clique ici et rejoins le club privé",
-        "href": "https://subscribepage.io/nowadays"
+        "type": "button"
       },
       {
         "type": "p",
-        "text": "Le langage du combat est omniprésent en entreprise."
+        "text": "En entreprise, le langage du combat est partout. On parle de *« cibles »*, de *« campagnes »*, de *« parts de marché à conquérir »*. La première fois qu'un client m'a demandé de « cibler les mamans », j'ai eu une brève vision de poussettes dans un stand de tir. Bon."
       },
       {
         "type": "p",
-        "text": "On parle de *« cibles »*, de *« campagnes »* et de *« part de marché à conquérir »*."
+        "text": "Ce n'est pas un hasard si le marketing parle comme à la guerre. Ça vient de loin, et ça façonne encore notre façon de voir les client·es, et de leur parler. Je te propose de plonger dans les racines de ce vocabulaire guerrier, tout ce qu'il implique *(culturellement, philosophiquement, éthiquement)*, et surtout de voir comment on peut faire autrement : avec des mots plus vivants, plus doux et surtout plus humains."
+      },
+      {
+        "text": "Origines historiques du vocabulaire guerrier en marketing",
+        "type": "h2"
       },
       {
         "type": "p",
-        "text": "*Quel enfer…*"
+        "text": "Le marketing moderne s'est développé en empruntant au lexique et aux stratégies militaires. Historiquement, [les premiers théoriciens du management et du marketing](https://www.synergy.ase.ro/issues/2008-vol4-no2/18-military-metaphors-in-business.pdf#:~:text=We%20have%20examined%20both%20the,of%20whom%20being%20mentioned%20in) se sont inspirés de grands stratèges comme Sun Tzu, Machiavel ou Clausewitz. Dès le XIXème siècle et l'ère industrielle, le monde des affaires copie le modèle militaire : hiérarchie, stratégies, tactiques, et une obsession pour « combattre » la concurrence."
       },
       {
         "type": "p",
-        "text": "Mais ce n’est pas un hasard si le marketing parle comme à la guerre…"
+        "text": "Résultat : tout le vocabulaire marketing s'est teinté de guerre. [Le terme même de *« campagne publicitaire »*](https://www.dansalva.com/blog/2022/3/11/is-your-brand-built-on-combative-military-language#:~:text=Is%20your%20brand%20built%20on,We) est hérité du vocabulaire militaire : une *campagne*, à l'origine, c'est une série d'opérations de guerre. *(La prochaine fois qu'on te proposera de « lancer une campagne », tu sauras d'où tu pars.)*"
       },
       {
         "type": "p",
-        "text": "En fait, ça vient de loin, et ça façonne encore notre façon de voir les client·es… et de leur parler."
+        "text": "Dans les années 80, certains théorisaient même que le marketing, c'était littéralement la guerre [*(Marketing Warfare (1986) de Ries & Trout)*](https://murraydare.co.uk/marketing-theory/marketing-warfare#:~:text=flag%2C%20effectively%20%E2%80%9Csurrendering%20to%20your,competition%E2%80%9D). Le client ? Pas la priorité. L'objectif ? Écraser les autres."
       },
       {
         "type": "p",
-        "text": "Je vous propose de plonger dans les racines de ce vocabulaire guerrier…"
+        "text": "Même Jacques Séguéla le disait : « [J'étais un petit Goebbels, je faisais du matraquage](https://boiteacomcc.wordpress.com/2012/11/13/agence-mixte-vous-netes-pas-notre-cible/#:~:text=R%C3%A9cemment%2C%20Jacques%20SEGUELA%2C%20figure%20embl%C3%A9matique,d%C3%A9claration%20r%C3%A9v%C3%A8le%20plusieurs%20points%20fondamentaux) ». Ambiance. À l'époque, le marketing était clairement vu comme une guerre psychologique."
       },
       {
         "type": "p",
-        "text": "Et tout ce qu’il implique – *culturellement, philosophiquement, éthiquement*."
+        "text": "Bref : ce vocabulaire ultra-belliqueux vient d'une époque où l'entreprise partait « en conquête », armée jusqu'aux dents, pour gagner la bataille du marché."
       },
       {
-        "type": "p",
-        "text": "Et surtout, on va voir comment on peut faire autrement : avec des mots plus vivants, plus doux et surtout plus humains."
-      },
-      {
-        "type": "h2",
-        "text": "Origines historiques du vocabulaire guerrier en marketing"
-      },
-      {
-        "type": "p",
-        "text": "Le marketing moderne s’est développé en empruntant au lexique et aux stratégies militaires."
-      },
-      {
-        "type": "p",
-        "text": "Historiquement, [les premiers théoriciens du management et du marketing](https://www.synergy.ase.ro/issues/2008-vol4-no2/18-military-metaphors-in-business.pdf#:~:text=We%20have%20examined%20both%20the,of%20whom%20being%20mentioned%20in) se sont inspirés de grands stratèges comme Sun Tzu, Machiavel ou Clausewitz."
-      },
-      {
-        "type": "p",
-        "text": "Dès le XIXème siècle et l’ère industrielle, le monde des affaires s’inspire du modèle militaire : hiérarchie, stratégies, tactiques… et une obsession pour « combattre » la concurrence."
-      },
-      {
-        "type": "p",
-        "text": "Résultat : tout le vocabulaire marketing s’est teinté de guerre."
-      },
-      {
-        "type": "p",
-        "text": "Par exemple, [le terme même de *« campagne publicitaire »*](https://www.dansalva.com/blog/2022/3/11/is-your-brand-built-on-combative-military-language#:~:text=Is%20your%20brand%20built%20on,We) est hérité du vocabulaire militaire (une *campagne* désignant originellement une série d’opérations de guerre)."
-      },
-      {
-        "type": "p",
-        "text": "Dans les années 80, certains théorisaient [*(Marketing Warfare (1986) de Ries & Trout)*](https://murraydare.co.uk/marketing-theory/marketing-warfare#:~:text=flag%2C%20effectively%20%E2%80%9Csurrendering%20to%20your,competition%E2%80%9D)même que le marketing, c’était la guerre."
-      },
-      {
-        "type": "p",
-        "text": "Littéralement."
-      },
-      {
-        "type": "p",
-        "text": "Le client ? Pas la priorité. L’objectif ? Écraser les autres."
-      },
-      {
-        "type": "p",
-        "text": "Même Jacques Séguéla le disait : “[J’étais un petit Goebbels, je faisais du matraquage](https://boiteacomcc.wordpress.com/2012/11/13/agence-mixte-vous-netes-pas-notre-cible/#:~:text=R%C3%A9cemment%2C%20Jacques%20SEGUELA%2C%20figure%20embl%C3%A9matique,d%C3%A9claration%20r%C3%A9v%C3%A8le%20plusieurs%20points%20fondamentaux).” Ambiance.\nÀ l’époque, le marketing, c’était clairement vu comme une guerre psychologique."
-      },
-      {
-        "type": "p",
-        "text": "Bref : ce vocabulaire ultra-belliqueux vient d’une époque où l’entreprise partait « en conquête », armée jusqu’aux dents, pour gagner la bataille du marché."
-      },
-      {
-        "type": "img",
+        "alt": "",
         "src": "/blog/vocabulaire-marketing-responsable-0.webp",
-        "alt": ""
+        "type": "img"
+      },
+      {
+        "text": "Pourquoi le vocabulaire marketing guerrier pose problème – culturellement, symboliquement, éthiquement",
+        "type": "h2"
+      },
+      {
+        "type": "p",
+        "text": "Utiliser un langage guerrier en marketing, ce n'est pas juste une façon de parler : c'est une vision du monde. Quand on parle de « cibles », de « conquête », de « parts de marché à gagner », on installe un imaginaire de **compétition violente** où l'autre est un obstacle, voire un ennemi. Le client devient une proie, le concurrent un adversaire à abattre, et l'entreprise un soldat en mission."
+      },
+      {
+        "type": "p",
+        "text": "Ce vocabulaire crée un climat de compétition permanente, où gagner compte plus que contribuer. Comme si *écraser* valait mieux que *servir*. [C'est un héritage d'un marketing masculinisé](https://emilie-lechevalier.com/marketing-ethique-comment-en-finir-avec-le-marketing-predateur/#:~:text=Dans%20cette%20vision%2C%20le%20march%C3%A9,plus%20de%20parts%20de%20march%C3%A9), forgé dans des logiques de domination où l'on valorise la force, l'agressivité, l'autorité. L'écoute, la bienveillance et la coopération, elles, attendent au vestiaire."
+      },
+      {
+        "type": "p",
+        "text": "Et ce n'est pas qu'une image : [les métaphores](https://www.synergy.ase.ro/issues/2008-vol4-no2/18-military-metaphors-in-business.pdf#:~:text=press%2C%20where%20everything%20should%20be,outsmarting%20the%20competition%2C%20capturing%20market) qu'on utilise **forment notre façon de penser**. Comme l'expliquent [Lakoff & Johnson](https://www.inc.com/soren-kaplan/sexist-military-language-infiltrates-business-culture-making-it-tougher-for-women-to-rise-in-ranks.html), si tu penses « l'argumentation = une guerre », tu vas vouloir *démolir* l'autre. Et si tu penses « le marketing = une guerre », tu risques de mettre l'éthique de côté… pour « gagner »."
+      },
+      {
+        "type": "p",
+        "text": "À force de parler d'*attaques de pub*, de *ciblage*, de *captation*, on finit par croire que c'est normal, que c'est comme ça qu'on vend. Sauf que ces mots-là créent une **idéologie** : celle d'un marketing qui écrase, au lieu d'un marketing qui relie."
+      },
+      {
+        "text": "Comment le vocabulaire marketing influence la relation client (et les pratiques d’équipe)",
+        "type": "h2"
+      },
+      {
+        "type": "p",
+        "text": "L'usage d'un vocabulaire guerrier n'est pas juste un détail de style : **il influence concrètement la manière dont les client·es perçoivent les messages**, et la manière dont les équipes pensent leurs actions."
+      },
+      {
+        "type": "p",
+        "text": "Côté public, ce type de langage crée un malaise, même inconscient. Personne n'a envie d'être visé comme une *cible*, ou traité comme un *ennemi à convaincre*. Et pourtant, on parle encore de *« capturer l'attention »*, de *« cibler des segments »*, de *« lancer une offensive de com' »*. Tout ça donne l'impression qu'on cherche à *manipuler* plutôt qu'à créer un lien."
+      },
+      {
+        "type": "p",
+        "text": "Résultat : une communication trop agressive fait des dégâts profonds. Le client ne se sent plus considéré, mais traqué ; il perd confiance. Et aujourd'hui, cette méfiance se diffuse vite *(merci les réseaux)*. À l'inverse, un discours plus respectueux, centré sur l'aide, la clarté, la communauté, a beaucoup plus de chances d'engager durablement."
+      },
+      {
+        "type": "p",
+        "text": "Du côté des équipes marketing, ce vocabulaire guerrier n'est pas neutre non plus. Concevoir son métier comme une bataille à mener à tout prix, c'est faire du matraquage sans se poser de questions, enchaîner les lancements sous pression, et mesurer la réussite uniquement à la performance immédiate. Ce **climat de guerre permanente**, comme l'appelle [Manjunath Nanjaiah](https://medium.com/makerspractice/military-metaphors-have-destroyed-your-business-de-militarize-your-business-and-company-163dafd50281), **use les équipes** et **tue la créativité**. Ce n'est pas un hasard si de plus en plus de marketeur·ses se sentent à côté de leurs valeurs, ou tout simplement en burn-out."
+      },
+      {
+        "type": "p",
+        "text": "Côté public aussi, ce marketing « prêt à tout » lasse :"
+      },
+      {
+        "text": "“On est de plus en plus nombreux à ne plus vouloir jouer à ce jeu-là, où tous les coups sont permis pour vendre”, écrit la consultante en marketing éthique [Émilie Lechevalier](https://emilie-lechevalier.com/marketing-ethique-comment-en-finir-avec-le-marketing-predateur/).",
+        "type": "quote"
+      },
+      {
+        "type": "p",
+        "text": "Et puis il y a le contexte. Autrefois, on pouvait encore penser que le public était « passif », à « capturer » *(oui, comme le fameux « [temps de cerveau disponible](https://fr.wikipedia.org/wiki/Temps_de_cerveau_humain_disponible) » d'un célèbre patron de télé)*. Mais aujourd'hui, **les client·es sont informé·es, critiques, connecté·es**. Iels observent, commentent, et boycottent aussi, parfois."
+      },
+      {
+        "type": "p",
+        "text": "Bref, on est sorti de l'ère de la pub martiale. Les consommateur·ices veulent être **participant·es**, pas cibles ; une vraie relation, basée sur la clarté, l'écoute, le respect mutuel. Et ça commence, tout simplement… par **les mots qu'on choisit**."
       },
       {
         "type": "h2",
-        "text": "Pourquoi le vocabulaire marketing guerrier pose problème – culturellement, symboliquement, éthiquement"
+        "text": "Pourquoi le vocabulaire marketing guerrier alimente des dérives éthiques (et comment y remédier)"
       },
       {
         "type": "p",
-        "text": "Utiliser un langage guerrier en marketing, ce n’est pas juste une façon de parler. C’est une vision du monde."
+        "text": "Le vocabulaire guerrier ne pose pas *que* un souci de style : il soulève des questions éthiques profondes. Parce qu'à force de penser en termes de « victoire à tout prix », on finit par **justifier des pratiques douteuses** : manipulation, matraquage, pression permanente."
       },
       {
         "type": "p",
-        "text": "Quand on parle de \"cibles\", de \"conquête\", de \"parts de marché à gagner\", on installe un imaginaire de **compétition violente** où l’autre est un obstacle, voire un ennemi."
+        "text": "C'est ce qu'on appelle le [**marketing prédateur**](https://shs.cairn.info/revue-des-sciences-de-gestion-2013-3-page-131?lang=fr) : celui qui dit « peu importe les conséquences », tant que ça fait du chiffre. Celui qui bombarde de pubs, pousse à la surconsommation, capte l'attention pour mieux provoquer l'achat impulsif. Et ce marketing-là, aujourd'hui, **de plus en plus de voix le remettent en cause**, pour ses effets sur les gens comme sur la planète."
       },
       {
         "type": "p",
-        "text": "Le client devient une proie."
+        "text": "Et si on changeait de cap ? Les approches de **marketing éthique** placent **le respect du client**, et du bien commun, **au centre**. L'un des piliers, c'est le **consentement** : communiquer avec permission, ne pas forcer, respecter le droit de dire non. Comme le dit [Émilie Lechevalier](https://emilie-lechevalier.com/qui-suis-je/), « le respect du consentement est fondamental dans une communication éthique ». Et ça change tout : on passe d'un marketing qui *traque* à un marketing qui *accompagne*."
       },
       {
         "type": "p",
-        "text": "Le concurrent, un adversaire à abattre."
+        "text": "Un marketing éthique, c'est des mots clairs, des promesses tenues, une vraie valeur apportée, et une posture honnête. Même en concurrence, le marketing n'est pas une guerre : une entreprise n'est pas là pour *écraser* un ennemi, mais pour **créer de la valeur**, pour elle **et** pour ses client·es."
+      },
+      {
+        "text": "Vocabulaire marketing responsable : quelles alternatives concrètes aux métaphores guerrières ?",
+        "type": "h2"
       },
       {
         "type": "p",
-        "text": "Et l’entreprise ? Un soldat en mission."
+        "text": "Heureusement, on n'est pas obligé·es de continuer à parler comme à la guerre. De plus en plus de pros du marketing proposent de **changer de vocabulaire**, et donc de regard : remplacer la logique de *conquête* par celle de la **relation**, de l'**écosystème**, voire du **jeu**. Parce que les mots qu'on choisit façonnent la manière dont on vend, dont on crée, et dont on se relie aux autres. Voici quelques approches qui aident à faire ce pas de côté."
       },
       {
-        "type": "p",
-        "text": "Ce vocabulaire crée un climat de compétition permanente, où gagner compte plus que contribuer."
-      },
-      {
-        "type": "p",
-        "text": "Comme si *écraser* valait mieux que *servir*."
-      },
-      {
-        "type": "p",
-        "text": "[C’est un héritage d’un marketing masculinisé](https://emilie-lechevalier.com/marketing-ethique-comment-en-finir-avec-le-marketing-predateur/#:~:text=Dans%20cette%20vision%2C%20le%20march%C3%A9,plus%20de%20parts%20de%20march%C3%A9), forgé dans des logiques de domination, où on valorise la force, l’agressivité, l’autorité…"
-      },
-      {
-        "type": "p",
-        "text": "Résultat ? L’écoute, la bienveillance ou la coopération sont reléguées au second plan."
-      },
-      {
-        "type": "p",
-        "text": "Et ce n’est pas qu’une image : [les métaphores](https://www.synergy.ase.ro/issues/2008-vol4-no2/18-military-metaphors-in-business.pdf#:~:text=press%2C%20where%20everything%20should%20be,outsmarting%20the%20competition%2C%20capturing%20market) qu’on utilise **forment notre façon de penser**."
-      },
-      {
-        "type": "p",
-        "text": "Comme l’expliquent [Lakoff & Johnson, si tu penses “l’argumentation = une guerre”](https://www.inc.com/soren-kaplan/sexist-military-language-infiltrates-business-culture-making-it-tougher-for-women-to-rise-in-ranks.html), tu vas vouloir *démolir* l’autre."
-      },
-      {
-        "type": "p",
-        "text": "Et si tu penses “le marketing = une guerre”, tu risques de mettre de côté l’éthique… pour “gagner”."
-      },
-      {
-        "type": "p",
-        "text": "À force de parler d’*attaques de pub*, de *ciblage*, de *captation*, on finit par croire que c’est normal. Que c’est comme ça qu’on vend."
-      },
-      {
-        "type": "p",
-        "text": "Mais ces mots-là créent une **idéologie** : celle d’un marketing qui écrase, au lieu d’un marketing qui relie."
-      },
-      {
-        "type": "h2",
-        "text": "Comment le vocabulaire marketing influence la relation client (et les pratiques d’équipe)"
-      },
-      {
-        "type": "p",
-        "text": "L’usage d’un vocabulaire guerrier en marketing n’est pas juste un détail de style : **il influence concrètement la manière dont les client·es perçoivent les messages**, et la manière dont les équipes pensent leurs actions."
-      },
-      {
-        "type": "p",
-        "text": "Côté public, ce type de langage peut créer un malaise – même inconscient."
-      },
-      {
-        "type": "p",
-        "text": "Personne n’a envie d’être visé comme une *cible*, ou traité comme un *ennemi à convaincre*."
-      },
-      {
-        "type": "p",
-        "text": "Et pourtant, on parle encore de *“capturer l’attention”*, de *“cibler des segments”*, de *“lancer une offensive de com”*."
-      },
-      {
-        "type": "p",
-        "text": "Tout ça donne l’impression qu’on cherche à *manipuler* plutôt qu’à créer un lien."
-      },
-      {
-        "type": "p",
-        "text": "➡️ Résultat ?"
-      },
-      {
-        "type": "p",
-        "text": "Une communication trop agressive peut nuire profondément : le client ne se sent plus considéré, mais traqué. Il perd confiance."
-      },
-      {
-        "type": "p",
-        "text": "Et aujourd’hui, cette méfiance peut vite se diffuser (merci les réseaux…)."
-      },
-      {
-        "type": "p",
-        "text": "À l’inverse, un discours plus respectueux, centré sur l’aide, la clarté, la communauté, a beaucoup plus de chances d’engager durablement."
-      },
-      {
-        "type": "p",
-        "text": "Et du côté des équipes marketing, ce vocabulaire guerrier n’est pas neutre non plus."
-      },
-      {
-        "type": "p",
-        "text": "Concevoir son métier comme une bataille à mener à tout prix, c’est aussi :"
-      },
-      {
-        "type": "p",
-        "text": "• faire du matraquage sans se poser de questions ;"
-      },
-      {
-        "type": "p",
-        "text": "• enchaîner les lancements sous pression ;"
-      },
-      {
-        "type": "p",
-        "text": "• et mesurer la réussite uniquement à la performance immédiate."
-      },
-      {
-        "type": "p",
-        "text": "Ce [**climat de guerre permanente**, comme l’appelle Manjunath Nanjaiah, **use les équipes** et **tue la créativité**.](https://medium.com/makerspractice/military-metaphors-have-destroyed-your-business-de-militarize-your-business-and-company-163dafd50281)"
-      },
-      {
-        "type": "p",
-        "text": "Et ce n’est pas un hasard si de plus en plus de marketeurs se sentent à côté de leurs valeurs, ou tout simplement en burn-out."
-      },
-      {
-        "type": "p",
-        "text": "Côté public aussi, ce marketing “prêt à tout” lasse :"
-      },
-      {
-        "type": "quote",
-        "text": "“On est de plus en plus nombreux à ne plus vouloir jouer à ce jeu-là, où tous les coups sont permis pour vendre”, écrit la consultante en marketing éthique [Émilie Lechevalier](https://emilie-lechevalier.com/marketing-ethique-comment-en-finir-avec-le-marketing-predateur/)."
-      },
-      {
-        "type": "p",
-        "text": "🌀 Et puis il y a le contexte."
-      },
-      {
-        "type": "p",
-        "text": "Autrefois, on pouvait encore penser que le public était “passif”, à “capturer” (oui, comme l’avait dit un célèbre patron de télé : *“*[*du temps de cerveau disponible*](https://fr.wikipedia.org/wiki/Temps_de_cerveau_humain_disponible)*”*)."
-      },
-      {
-        "type": "p",
-        "text": "Mais aujourd’hui, **les client·es sont informé·es, critiques, connectés.**"
-      },
-      {
-        "type": "p",
-        "text": "Ils observent. Ils commentent. Ils boycottent aussi, parfois."
-      },
-      {
-        "type": "p",
-        "text": "👉 Bref, on est sorti de l’ère de la pub martiale.\nLes consommateurs veulent être **participants**, pas cibles.\nIls attendent une vraie relation, basée sur la clarté, l’écoute, le respect mutuel."
-      },
-      {
-        "type": "p",
-        "text": "Et ça commence, tout simplement… par **les mots qu’on choisit**."
-      },
-      {
-        "type": "h2",
-        "text": "**Pourquoi le vocabulaire marketing guerrier alimente des dérives éthiques (et comment y remédier)**"
-      },
-      {
-        "type": "p",
-        "text": "Le vocabulaire guerrier en marketing ne pose pas *que* un souci de style : il soulève des questions éthiques profondes."
-      },
-      {
-        "type": "p",
-        "text": "Parce qu’à force de penser en termes de “victoire à tout prix”, on finit par **justifier des pratiques douteuses** : manipulation, matraquage, pression permanente."
-      },
-      {
-        "type": "p",
-        "text": "👉 C’est ce qu’on appelle le [**marketing prédateur**](https://shs.cairn.info/revue-des-sciences-de-gestion-2013-3-page-131?lang=fr) :"
-      },
-      {
-        "type": "p",
-        "text": "Celui qui dit “peu importe les conséquences”, tant que ça fait du chiffre. Celui qui bombarde de pubs, pousse à la surconsommation, capte l’attention pour mieux provoquer l’achat impulsif."
-      },
-      {
-        "type": "p",
-        "text": "Et ce marketing-là, aujourd’hui, **de plus en plus de voix le remettent en cause** – pour ses effets sur les gens comme sur la planète."
-      },
-      {
-        "type": "p",
-        "text": "Et si on changeait de cap ?"
-      },
-      {
-        "type": "p",
-        "text": "Les approches de **marketing éthique** proposent autre chose.\nElles placent **le respect du client** – et du bien commun – **au centre**."
-      },
-      {
-        "type": "p",
-        "text": "L’un des piliers, c’est le **consentement** :\n → Communiquer avec permission.\n → Ne pas forcer.\n → Respecter le droit de dire non."
-      },
-      {
-        "type": "p",
-        "text": "Comme le dit [Émilie Lechevalier, “le respect du consentement est fondamental dans une communication éthique”.](https://emilie-lechevalier.com/qui-suis-je/)"
-      },
-      {
-        "type": "p",
-        "text": "Et ça change tout : on passe d’un marketing qui *traque*, à un marketing qui *accompagne*."
-      },
-      {
-        "type": "p",
-        "text": "Un marketing éthique, c’est :"
-      },
-      {
-        "type": "p",
-        "text": "• Des mots clairs."
-      },
-      {
-        "type": "p",
-        "text": "• Des promesses tenues."
-      },
-      {
-        "type": "p",
-        "text": "• Une vraie valeur apportée."
-      },
-      {
-        "type": "p",
-        "text": "• Et une posture honnête."
-      },
-      {
-        "type": "p",
-        "text": "Même en concurrence, le marketing n’est pas une guerre."
-      },
-      {
-        "type": "p",
-        "text": "Une entreprise n’est pas là pour *écraser* un ennemi, mais pour **créer de la valeur**, pour elle **et** pour ses client·es."
-      },
-      {
-        "type": "h2",
-        "text": "Vocabulaire marketing responsable : quelles alternatives concrètes aux métaphores guerrières ?"
-      },
-      {
-        "type": "p",
-        "text": "Heureusement, on n’est pas obligé·es de continuer à parler comme à la guerre."
-      },
-      {
-        "type": "p",
-        "text": "De plus en plus de pros du marketing proposent de **changer de vocabulaire** — et donc, de regard."
-      },
-      {
-        "type": "p",
-        "text": "L’idée ? Remplacer la logique de *conquête* par celle de la **relation**, de l’**écosystème**, voire du **jeu**."
-      },
-      {
-        "type": "p",
-        "text": "Parce que les mots qu’on choisit façonnent la manière dont on vend, dont on crée, et dont on se relie aux autres."
-      },
-      {
-        "type": "p",
-        "text": "Voici quelques approches inspirantes qui nous aident à faire ce shift."
-      },
-      {
-        "type": "img",
+        "alt": "",
         "src": "/blog/vocabulaire-marketing-responsable-1.webp",
-        "alt": ""
+        "type": "img"
       },
       {
-        "type": "h3",
-        "text": "1. Métaphores issues de la nature et de l’écologie"
-      },
-      {
-        "type": "p",
-        "text": "Et si on arrêtait de voir le marché comme un territoire à conquérir… pour le voir comme un **écosystème à nourrir** ?\n\nDans la nature, tout est affaire d’équilibre, d’interdépendance. Chacun trouve sa niche, sans écraser les autres."
+        "text": "1. Métaphores issues de la nature et de l’écologie",
+        "type": "h3"
       },
       {
         "type": "p",
-        "text": "➡️ C’est le principe du **marketing organique** : On ne *force* pas. On *sème*, on *nourrit*, on *fait grandir*. On parle alors de **cultiver sa relation client**, de **croissance naturelle**, de **terreau fertile**."
+        "text": "Et si on arrêtait de voir le marché comme un territoire à conquérir… pour le voir comme un **écosystème à nourrir** ? Dans la nature, tout est affaire d'équilibre, d'interdépendance. Chacun trouve sa niche, sans écraser les autres."
       },
       {
         "type": "p",
-        "text": "Rien à voir avec un “arsenal d’armes marketing”."
+        "text": "C'est le principe du **marketing organique** : on ne *force* pas, on *sème*, on *nourrit*, on *fait grandir*. On parle alors de **cultiver sa relation client**, de **croissance naturelle**, de **terreau fertile**. Rien à voir avec un « arsenal d'armes marketing ». Cette approche rejoint le **marketing durable** : on évolue avec son environnement (client·es, partenaires, société), on ne cherche pas à le dominer. Et dans ce genre d'écosystème, c'est souvent la **coopération** qui fait pousser les plus beaux projets."
+      },
+      {
+        "text": "2. Marketing empathique et relationnel",
+        "type": "h3"
       },
       {
         "type": "p",
-        "text": "Cette approche rejoint le **marketing durable** : on évolue avec son environnement (clients, partenaires, société), on ne cherche pas à le dominer."
+        "text": "Autre option : remettre **l'humain** au cœur, et voir le marketing comme un **art de la relation** plutôt que comme une partie de chasse. Au lieu de « cibler des segments », on parle de **personas clés** ; au lieu de « capturer du lead », de **co-création de valeur** ; au lieu de « tactiques », de **stratégies d'engagement**. On écoute, on échange, on accompagne : le client devient un **partenaire actif**, pas une proie. C'est aussi ça, faire du **marketing empathique**."
       },
       {
         "type": "p",
-        "text": "Et dans ce genre d’écosystème, c’est souvent la **coopération** qui fait pousser les plus beaux projets."
+        "text": "Et ça fonctionne : cette approche, souvent inspirée de la communication non violente ou de la psychologie relationnelle, crée une vraie fidélité. Elle valorise des qualités longtemps mises de côté dans le marketing « musclé » : l'écoute, la coopération, la douceur."
       },
       {
-        "type": "h3",
-        "text": "2. Marketing empathique et relationnel"
-      },
-      {
-        "type": "p",
-        "text": "Autre option : remettre **l’humain** au cœur."
+        "text": "3. Slow marketing et marketing organique",
+        "type": "h3"
       },
       {
         "type": "p",
-        "text": "Voir le marketing comme un **art de la relation**, plutôt que comme une partie de chasse."
+        "text": "À contre-courant du « buzz à tout prix » et de la performance à la minute, le **slow marketing** propose autre chose : prendre le temps, miser sur la qualité, construire une vraie relation sur le long terme. Ici, pas de « frappe marketing » ni d'urgence anxiogène. On parle de **nurturing** (prendre soin), de **contenu utile**, de **progression naturelle**."
       },
       {
         "type": "p",
-        "text": "• Au lieu de “cibler des segments”, on parle de **personas clés**."
+        "text": "Et surtout, on mesure le succès autrement. Pas juste « combien de contacts en 3 jours », mais : combien de client·es reviennent ? Qui parle de nous spontanément ? Quel impact réel on crée ? C'est aussi une façon de se reconnecter au plaisir de créer, et à un **rythme plus vivable** pour soi et pour son audience."
+      },
+      {
+        "text": "4. Perspectives post-capitalistes et coopératives",
+        "type": "h3"
       },
       {
         "type": "p",
-        "text": "• Au lieu de “capturer du lead”, on crée de la **co-création de valeur**."
+        "text": "Certain·es vont encore plus loin, avec des visions **post-capitalistes** du marketing. Ici, il ne s'agit plus de prendre des parts de marché, mais de répondre à des **besoins réels**, de **co-construire**, de **partager la valeur**. On parle alors de **marketing collaboratif** (avec les client·es), de **marketing régénératif** (qui prend soin des ressources, humaines et naturelles), ou de **communs** (inspirés des biens partagés, comme l'eau ou les savoirs)."
       },
       {
         "type": "p",
-        "text": "• Au lieu de “tactiques”, on parle de **stratégies d’engagement**."
+        "text": "Dans cette logique, le marketing devient un levier **au service du collectif**, pas juste du profit. Ces idées font leur chemin dans la recherche, dans certaines coopératives, dans des projets pionniers. Et rien que changer notre vocabulaire, c'est déjà **un pas vers une autre culture**."
       },
       {
-        "type": "p",
-        "text": "On écoute, on échange, on accompagne."
-      },
-      {
-        "type": "p",
-        "text": "Le client devient un **partenaire actif**, pas une proie.\nC’est aussi ça, faire du **marketing empathique**."
-      },
-      {
-        "type": "p",
-        "text": "Et ça fonctionne : cette approche, souvent inspirée de la communication non violente ou de la psychologie relationnelle, crée une vraie fidélité."
-      },
-      {
-        "type": "p",
-        "text": "Elle valorise des qualités longtemps mises de côté dans le marketing “musclé” : l’écoute, la coopération, la douceur."
-      },
-      {
-        "type": "h3",
-        "text": "3. Slow marketing et marketing organique"
-      },
-      {
-        "type": "p",
-        "text": "À contre-courant du “buzz à tout prix” et de la performance à la minute, le **slow marketing** propose autre chose :\n → Prendre le temps.\n → Miser sur la qualité.\n → Construire une vraie relation sur le long terme."
-      },
-      {
-        "type": "p",
-        "text": "Ici, pas de “frappe marketing” ni d’urgence anxiogène."
-      },
-      {
-        "type": "p",
-        "text": "On parle de **nurturing** (prendre soin), de **contenu utile**, de **progression naturelle**."
-      },
-      {
-        "type": "p",
-        "text": "Et surtout, on mesure le succès autrement :"
-      },
-      {
-        "type": "p",
-        "text": "Pas juste “combien de leads en 3 jours”, mais aussi :\n – Combien de client·es reviennent ?\n – Qui parle de nous spontanément ?\n – Quel impact réel on crée ?"
-      },
-      {
-        "type": "p",
-        "text": "C’est aussi une façon de se reconnecter au plaisir de créer, et à un **rythme plus vivable** pour soi et pour son audience."
-      },
-      {
-        "type": "h3",
-        "text": "4. Perspectives post-capitalistes et coopératives"
-      },
-      {
-        "type": "p",
-        "text": "Certains vont encore plus loin, avec des visions **post-capitalistes** du marketing."
-      },
-      {
-        "type": "p",
-        "text": "Ici, il ne s’agit plus de prendre des parts de marché, mais de répondre à des **besoins réels**, de **co-construire**, de **partager la valeur**."
-      },
-      {
-        "type": "p",
-        "text": "On parle alors de :"
-      },
-      {
-        "type": "p",
-        "text": "• **marketing collaboratif** (avec les client·es)"
-      },
-      {
-        "type": "p",
-        "text": "• **marketing régénératif** (qui prend soin des ressources, humaines et naturelles)"
-      },
-      {
-        "type": "p",
-        "text": "• **communs** (inspirés des biens partagés, comme l’eau ou les savoirs)"
-      },
-      {
-        "type": "p",
-        "text": "Dans cette logique, le marketing devient un levier **au service du collectif**, pas juste du profit."
-      },
-      {
-        "type": "p",
-        "text": "Ces idées font leur chemin dans la recherche, dans certaines coopératives, dans des projets pionniers."
-      },
-      {
-        "type": "p",
-        "text": "Et rien que changer notre vocabulaire, c’est déjà **un pas vers une autre culture**."
-      },
-      {
-        "type": "img",
+        "alt": "comparatif vocabulaire marketing traditionnel vs marketing humain.",
         "src": "/blog/vocabulaire-marketing-responsable-2.webp",
-        "alt": "comparatif vocabulaire marketing traditionnel vs marketing humain."
+        "type": "img"
       },
       {
-        "type": "h2",
-        "text": "Conclusion : changer de vocabulaire marketing, c’est déjà faire un pas vers plus de responsabilité"
-      },
-      {
-        "type": "p",
-        "text": "Le vocabulaire guerrier, qui a longtemps dominé le marketing, vient d’une époque où l’entreprise se prenait pour un soldat en mission : conquérir un marché, écraser la concurrence, gagner la bataille de l’attention."
+        "text": "Conclusion : changer de vocabulaire marketing, c’est déjà faire un pas vers plus de responsabilité",
+        "type": "h2"
       },
       {
         "type": "p",
-        "text": "Ok, ça a peut-être aidé à penser la compétition à un moment donné."
+        "text": "Le vocabulaire guerrier, qui a longtemps dominé le marketing, vient d'une époque où l'entreprise se prenait pour un soldat en mission : conquérir un marché, écraser la concurrence, gagner la bataille de l'attention. Ok, ça a peut-être aidé à penser la compétition à un moment donné. Mais aujourd'hui, ce langage montre surtout ses **limites**… et ses **dommages collatéraux**. *(Oui, même pour le critiquer, ce vocabulaire s'invite. Il est coriace.)*"
       },
       {
         "type": "p",
-        "text": "Mais aujourd’hui ? Ce langage montre surtout ses **limites**… et ses **dommages collatéraux**."
+        "text": "On vit une époque où les client·es veulent du lien, de la clarté, du respect ; pas une relation marchande à base de « ciblage » et de « tactiques offensives ». Une époque où l'éthique, la transparence et l'impact prennent, enfin, de la place. L'analyse qu'on vient de faire, en croisant les regards pros, philo, féministes et écolos, le montre bien : **nos mots ne sont pas neutres**. Ils orientent notre posture, notre stratégie, notre façon d'agir."
       },
       {
         "type": "p",
-        "text": "On vit une époque où les client·es veulent du lien, de la clarté, du respect.\nPas une relation marchande à base de “ciblage” et de “tactiques offensives”.\nEt où l’éthique, la transparence, l’impact prennent (enfin !) de la place."
+        "text": "Heureusement, plein d'alternatives existent. Un marketing plus organique, plus doux, plus humain : inspiré de la nature, ancré dans la relation, aligné avec des rythmes plus durables, et parfois même complètement repensé à partir d'une vision coopérative ou post-capitaliste. Ce n'est pas juste un choix de mots, c'est un changement de regard."
       },
       {
         "type": "p",
-        "text": "L’analyse qu’on vient de faire, croisant les regards pros, philo, féministes et écolos, le montre bien :\n 👉 **nos mots ne sont pas neutres**.\nIls orientent notre posture, notre stratégie, notre façon d’agir."
+        "text": "Au fond, le marketing, ce n'est pas une guerre à gagner. C'est une rencontre à créer, une relation à cultiver. Changer les mots, c'est déjà changer le terrain de jeu, et remettre du sens là où, trop souvent, on avait mis de la pression. Alors allons-y : changeons de ton."
       },
       {
-        "type": "p",
-        "text": "Heureusement, plein d’alternatives existent."
-      },
-      {
-        "type": "p",
-        "text": "Un marketing plus organique, plus doux, plus humain :\n 🌿 Inspiré de la nature.\n 💛 Ancré dans la relation.\n 🐢 Aligné avec des rythmes plus durables.\n 🤝 Et même, parfois, complètement repensé à partir d’une vision coopérative ou post-capitaliste."
-      },
-      {
-        "type": "p",
-        "text": "Ce n’est pas juste un choix de mots.\nC’est un changement de regard."
-      },
-      {
-        "type": "p",
-        "text": "Au fond, le marketing, ce n’est pas une guerre à gagner.\nC’est une rencontre à créer. Une relation à cultiver."
-      },
-      {
-        "type": "p",
-        "text": "Changer les mots, c’est déjà changer le terrain de jeu.\nEt remettre du sens là où, trop souvent, on avait mis de la pression."
-      },
-      {
-        "type": "p",
-        "text": "Alors allons-y. Changeons de ton. Changeons de monde."
-      },
-      {
-        "type": "h2",
-        "text": "Découvrez notre [agence de communication engagée](https://www.nowadaysagency.com/) pour vous rendre visible en respectant vos valeurs"
+        "text": "Découvrez notre [agence de communication engagée](https://www.nowadaysagency.com/) pour vous rendre visible en respectant vos valeurs",
+        "type": "h2"
       }
     ],
     "published_at": "2025-07-09"
@@ -3688,222 +3360,82 @@
     "seo_description": "Découvrez comment adopter une communication éthique, alignée avec vos valeurs et exempte de marketing toxique. Repensez vos récits et créer un impact plus positif.",
     "content": [
       {
-        "type": "h3",
-        "text": "Ras-le-bol de la com’ “éthique” qui sent le greenwashing à plein nez ?"
+        "text": "Ras-le-bol de la com’ “éthique” qui sent le greenwashing à plein nez ?",
+        "type": "h3"
       },
       {
-        "type": "button",
+        "href": "https://subscribepage.io/nowadays",
         "text": "Rejoins la communauté privée",
-        "href": "https://subscribepage.io/nowadays"
+        "type": "button"
       },
       {
         "type": "p",
-        "text": "La communication nous façonne autant que nous la façonnons."
+        "text": "On me demande parfois si « communication éthique », ce n'est pas juste un argument marketing de plus. J'avoue : vu tout ce qu'on fait dire au mot « éthique », la méfiance se comprend. En vrai, c'est tout le contraire d'un concept : c'est une façon de choisir ce qu'on raconte, comment, et à qui."
       },
       {
         "type": "p",
-        "text": "Elle est outil, elle est langage, elle est pouvoir."
+        "text": "Parce que la communication nous façonne autant que nous la façonnons. Elle est outil, langage, pouvoir. Et derrière les outils, il y a une idée plus profonde : celle de notre responsabilité, de notre pouvoir d'action. La sagesse, nous dit-on, consiste à changer ce qu'on a le pouvoir de changer, et à lâcher prise sur ce qui ne nous appartient pas. En communication, ce qu'on a le pouvoir de changer, c'est la manière dont on raconte nos histoires, dont on incarne nos valeurs, dont on exprime nos ambitions."
       },
       {
         "type": "p",
-        "text": "Mais ne nous leurrons pas : derrière les outils, il y a une idée plus profonde."
+        "text": "La communication éthique n'est donc pas un concept marketing, ni un simple argument de vente. C'est une philosophie, une manière d'être au monde et de créer du lien."
+      },
+      {
+        "text": "1 - Redéfinissons les termes : la communication éthique, un outil neutre ou un instrument de pouvoir ?",
+        "type": "h2"
       },
       {
         "type": "p",
-        "text": "Celle de notre propre responsabilité, notre pouvoir d’action."
+        "text": "Avant de parler d'éthique, parlons de la communication elle-même. Trop souvent, on la réduit à un canal, à une technologie, à un moyen d'atteindre un objectif. Mais qu'est-ce qu'un outil, sinon ce que l'on en fait ?"
+      },
+      {
+        "text": "[Bernard Stiegler](https://www.radiofrance.fr/franceculture/podcasts/ce-qui-nous-arrive-sur-la-toile/internet-n-est-pas-neutre-internet-est-un-pharmakon-9357167) nous rappelle que la technique est un **pharmakon**, à la fois remède et poison. *(En Grèce ancienne, le terme de pharmakon désigne à la fois le remède, le poison, et le bouc-émissaire.)*",
+        "type": "p"
       },
       {
         "type": "p",
-        "text": "La sagesse, nous dit-on, consiste à changer ce que nous avons le pouvoir de changer et à lâcher prise face à ce qui ne nous appartient pas."
+        "text": "La communication n'échappe pas à cette logique : elle peut éclairer ou manipuler, inspirer ou aliéner. Tout dépend de notre intention. Et dans un monde saturé d'informations et d'algorithmes qui biaisent notre perception du réel, on a la responsabilité de se poser quelques questions pas très confortables : comment utilisons-nous cet outil ? Sommes-nous conscient·es de notre impact ? Sommes-nous en train d'informer, ou d'influencer ? De libérer, ou d'asservir ?"
       },
       {
         "type": "p",
-        "text": "Et en communication, ce que nous avons le pouvoir de changer, c’est la manière dont nous racontons nos histoires, dont nous incarnons nos valeurs, dont nous exprimons nos ambitions."
+        "text": "Réveillons ce côté rebelle, cette capacité à questionner l'évidence. S'extraire de la société ? Non *(je passe mes journées sur Instagram, je ne vais pas te faire la leçon)*. Mais refuser de la subir, et choisir comment y participer : oui."
+      },
+      {
+        "text": "2 - Du marketing toxique à la communication éthique",
+        "type": "h2"
       },
       {
         "type": "p",
-        "text": "La communication éthique, ce n’est pas un concept marketing."
+        "text": "L'industrie de la communication a longtemps été façonnée par des logiques de persuasion et de désir. [Edward Bernays](https://www.radiofrance.fr/franceculture/a-l-origine-des-fausses-nouvelles-l-influence-meconnue-d-edward-bernays-1712711), neveu de Freud et père du marketing moderne, a bâti toute une généalogie du désir manipulé *(oui, le neveu de Freud ; ça ne s'invente pas)*. L'idée était simple : vendre aux consommateurs non pas ce dont ils ont besoin, mais ce dont ils rêvent, ce qui flattera leur ego, ce qui comblera un vide artificiel."
       },
       {
         "type": "p",
-        "text": "Ce n’est pas un simple argument de vente."
+        "text": "Mais aujourd'hui, pouvons-nous encore nous permettre de vendre du bullshit ? De promouvoir des produits inutiles, conçus pour créer du manque plutôt que du sens ? Non. Les communicant·es ne doivent plus se laisser tenter par les sirènes de la manipulation. Ce qu'il faut proposer, c'est de l'authenticité, de la transparence, une forme de vérité dans les messages qu'on adresse. **Moins de storytelling creux, plus de réel.** L'empathie doit remplacer la séduction factice, et il est temps de sortir de cette logique extractiviste des désirs et des ressources."
       },
       {
         "type": "p",
-        "text": "C’est une philosophie, une manière d’être au monde et de créer du lien."
+        "text": "Alors, comment se positionner en tant que créateur·ice, communicant·e, artiste, entrepreneur·e dans cette société ? La réponse est simple, et exigeante : en alignant nos discours avec nos actes, en refusant les raccourcis et la facilité, en privilégiant le dialogue à la propagande. **En incarnant la communication que nous voulons voir dans le monde.**"
       },
       {
-        "type": "h2",
-        "text": "1 - Redéfinissons les termes : la communication éthique, un outil neutre ou un instrument de pouvoir ?"
-      },
-      {
-        "type": "p",
-        "text": "Avant de parler d’éthique, parlons de la communication elle-même."
+        "text": "Du « Moi » au « Nous »",
+        "type": "h2"
       },
       {
         "type": "p",
-        "text": "Trop souvent, on la réduit à un canal, à une technologie, à un moyen d’atteindre un objectif."
+        "text": "Car au fond, la communication éthique ne parle pas seulement de l'individu : elle parle du collectif. Elle nous invite à comprendre que nos mots, nos récits, nos valeurs ne prennent sens que dans la relation aux autres. Nous amenons dans le groupe notre histoire, et c'est à nous de la raconter avec justesse. Nous portons nos valeurs, et il ne tient qu'à nous de les incarner. Nous avons des ambitions et des envies, et il n'appartient qu'à nous de les exprimer."
       },
       {
         "type": "p",
-        "text": "Mais qu’est-ce qu’un outil sinon ce que l’on en fait ?"
+        "text": "C'est en cultivant cette réciprocité qu'on bâtit des réseaux solides et une communication sincère. **C'est ainsi que la parole devient engagement, et le message, mouvement.**"
       },
       {
-        "type": "p",
-        "text": "[Bernard Stiegler nous rappelle que la technique est un **pharmakon**](https://www.radiofrance.fr/franceculture/podcasts/ce-qui-nous-arrive-sur-la-toile/internet-n-est-pas-neutre-internet-est-un-pharmakon-9357167), à la fois remède et poison. *(En Grèce ancienne, le terme de pharmakon désigne à la fois le remède, le poison, et le bouc-émissaire.)*"
+        "text": "Tu as besoin d’aide pour te rendre visible avec une communication plus éthique ?",
+        "type": "h2"
       },
       {
-        "type": "p",
-        "text": "La communication n’échappe pas à cette logique : elle peut éclairer ou manipuler, inspirer ou aliéner."
-      },
-      {
-        "type": "p",
-        "text": "Tout dépend de notre intention."
-      },
-      {
-        "type": "p",
-        "text": "Dans un monde saturé d’informations et d’algorithmes qui biaisent notre perception du réel, nous avons la responsabilité de nous interroger :"
-      },
-      {
-        "type": "p",
-        "text": "**👉 Comment utilisons-nous cet outil ?**"
-      },
-      {
-        "type": "p",
-        "text": "**👉 Sommes-nous conscients de notre impact ?**"
-      },
-      {
-        "type": "p",
-        "text": "**👉 Sommes-nous en train d’informer ou d’influencer ?**"
-      },
-      {
-        "type": "p",
-        "text": "**👉 De libérer ou d’asservir ?**"
-      },
-      {
-        "type": "p",
-        "text": "Réveillons en nous ce côté rebelle, cette capacité à questionner l’évidence."
-      },
-      {
-        "type": "p",
-        "text": "S’extraire de la société ? Non."
-      },
-      {
-        "type": "p",
-        "text": "Mais refuser de la subir et choisir comment y participer, oui."
-      },
-      {
-        "type": "h2",
-        "text": "2 - Du marketing toxique à la communication éthique"
-      },
-      {
-        "type": "p",
-        "text": "L’industrie de la communication a longtemps été façonnée par des logiques de persuasion et de désir."
-      },
-      {
-        "type": "p",
-        "text": "[Edward Bernays](https://www.radiofrance.fr/franceculture/a-l-origine-des-fausses-nouvelles-l-influence-meconnue-d-edward-bernays-1712711), neveu de Freud et père du marketing moderne, a bâti toute une généalogie du désir manipulé."
-      },
-      {
-        "type": "p",
-        "text": "L’idée était simple : vendre aux consommateurs non pas ce dont ils ont besoin, mais ce dont ils rêvent, ce qui flattera leur ego, ce qui comblera un vide artificiel."
-      },
-      {
-        "type": "p",
-        "text": "Mais aujourd’hui, pouvons-nous encore nous permettre de vendre du bullshit ?"
-      },
-      {
-        "type": "p",
-        "text": "De promouvoir des produits inutiles, conçus pour créer du manque plutôt que du sens ?"
-      },
-      {
-        "type": "p",
-        "text": "Non."
-      },
-      {
-        "type": "p",
-        "text": "Les communicant.es ne doivent plus se laisser tenter par les sirènes de la manipulation."
-      },
-      {
-        "type": "p",
-        "text": "Il faut proposer de l’authenticité, de la transparence et une forme de vérité dans les messages qu’on adresse."
-      },
-      {
-        "type": "p",
-        "text": "**Moins de storytelling creux, plus de réel.**"
-      },
-      {
-        "type": "p",
-        "text": "L’empathie doit remplacer la séduction factice."
-      },
-      {
-        "type": "p",
-        "text": "Il est temps de briser ce marketing capitaliste qui ne fait que perpétuer une logique extractiviste des désirs et des ressources."
-      },
-      {
-        "type": "p",
-        "text": "Alors, comment se positionner en tant que créateur.ice, communicant.e, artiste, entrepreneur.e dans cette société contemporaine ?"
-      },
-      {
-        "type": "p",
-        "text": "La réponse est simple et exigeante : en alignant nos discours avec nos actes."
-      },
-      {
-        "type": "p",
-        "text": "En refusant les raccourcis et la facilité."
-      },
-      {
-        "type": "p",
-        "text": "En privilégiant le dialogue à la propagande."
-      },
-      {
-        "type": "p",
-        "text": "**En incarnant la communication que nous voulons voir dans le monde.**"
-      },
-      {
-        "type": "h2",
-        "text": "Du « Moi » au « Nous »"
-      },
-      {
-        "type": "p",
-        "text": "Car au fond, la communication éthique ne parle pas seulement de l’individu."
-      },
-      {
-        "type": "p",
-        "text": "Elle parle du collectif."
-      },
-      {
-        "type": "p",
-        "text": "Elle nous invite à comprendre que nos mots, nos récits, nos valeurs ne prennent sens que dans la relation aux autres."
-      },
-      {
-        "type": "p",
-        "text": "Nous amenons dans le groupe notre histoire, et il est de notre ressort de la raconter avec justesse."
-      },
-      {
-        "type": "p",
-        "text": "Nous portons nos valeurs, et il ne tient qu’à nous de les incarner."
-      },
-      {
-        "type": "p",
-        "text": "Nous avons des ambitions et des envies, et il n’appartient qu’à nous de les exprimer."
-      },
-      {
-        "type": "p",
-        "text": "C’est en cultivant cette réciprocité que nous pouvons bâtir des réseaux solides et une communication sincère."
-      },
-      {
-        "type": "p",
-        "text": "**C’est ainsi que nous transformons la parole en engagement et le message en mouvement.**"
-      },
-      {
-        "type": "h2",
-        "text": "Tu as besoin d’aide pour te rendre visible avec une communication plus éthique ?"
-      },
-      {
-        "type": "button",
+        "href": "https://calendly.com/laetitia-mattioli/rendez-vous-avec-laetitia",
         "text": "Prends rdv pour discuter de ton projet",
-        "href": "https://calendly.com/laetitia-mattioli/rendez-vous-avec-laetitia"
+        "type": "button"
       }
     ],
     "published_at": "2025-02-20"
