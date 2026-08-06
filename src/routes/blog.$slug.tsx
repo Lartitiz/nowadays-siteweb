@@ -215,6 +215,62 @@ function renderBlock(b: ArticleBlock, i: number) {
       </blockquote>
     );
   }
+  if (b.type === "table") {
+    // Un tableau de 4 colonnes est illisible sur un téléphone. Plutôt que de
+    // dupliquer le contenu (une version mobile + une version bureau, que les
+    // lecteurs d'écran liraient deux fois), on garde UN SEUL tableau : sur
+    // mobile chaque ligne devient une carte, et chaque cellule affiche son
+    // en-tête de colonne via `data-label`. À partir de `md`, on rebascule sur
+    // un vrai tableau.
+    return (
+      <figure key={i} className="my-12 md:-mx-12">
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse text-left">
+            {b.caption && (
+              <caption className="mb-5 text-left text-xs uppercase tracking-[0.18em] text-framboise">
+                {b.caption}
+              </caption>
+            )}
+            <thead className="hidden md:table-header-group">
+              <tr className="bg-rose-pale">
+                {b.headers.map((h, j) => (
+                  <th
+                    key={j}
+                    scope="col"
+                    className="px-4 py-3 align-bottom font-titre text-base font-normal text-encre"
+                  >
+                    {h}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="block md:table-row-group">
+              {b.rows.map((row, r) => (
+                <tr
+                  key={r}
+                  className="mb-4 block rounded-carte bg-rose-pale px-5 py-5 last:mb-0 md:mb-0 md:table-row md:rounded-none md:bg-transparent md:px-0 md:py-0 md:[&>*]:border-b md:[&>*]:border-rose-pale"
+                >
+                  {row.map((cell, c) => (
+                    <td
+                      key={c}
+                      data-label={b.headers[c] ?? ""}
+                      className={
+                        c === 0
+                          ? "block font-titre text-lg leading-tight text-encre md:table-cell md:px-4 md:py-4 md:align-top md:text-base"
+                          : "mt-4 block text-sm leading-relaxed text-encre before:mb-1 before:block before:text-[11px] before:uppercase before:tracking-[0.18em] before:text-framboise before:content-[attr(data-label)] md:mt-0 md:table-cell md:px-4 md:py-4 md:align-top md:before:hidden"
+                      }
+                    >
+                      <RichText text={cell} />
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </figure>
+    );
+  }
   if (b.type === "button") {
     return (
       <div key={i} className="my-10 flex justify-center">
