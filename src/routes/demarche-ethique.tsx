@@ -47,6 +47,15 @@ function Hero() {
   return (
     <section className="relative bg-white">
       <VichyBand />
+      <div
+        className="flower absolute left-[10%] top-[38%] hidden text-framboise md:block"
+        aria-hidden="true"
+      />
+      <div
+        className="flower absolute right-[16%] top-[22%] hidden text-jaune md:block"
+        style={{ width: 22, height: 22 }}
+        aria-hidden="true"
+      />
       <div className="mx-auto max-w-3xl px-6 pb-24 pt-16 text-center md:pb-32 md:pt-24">
         <Pill>Ma démarche plus éthique</Pill>
         <h1 className="mx-auto mt-6 font-titre text-4xl leading-[1.05] text-encre md:text-6xl">
@@ -100,17 +109,19 @@ function Convictions() {
     {
       title: "Dire vrai, sans manipuler",
       text: "Je refuse les mécaniques qui poussent à l'achat par la peur, la honte ou la confusion. Une communication juste montre ses limites, explique, remet dans le contexte. On promet ce qu'on livre, jamais ce que ça produira.",
-      rotation: "md:-rotate-1",
+      // La seule pancarte qui se redresse au survol (règle du doc de travail).
+      classe:
+        "rounded-[14px_26px_12px_22px] md:-rotate-1 motion-safe:transition-transform motion-safe:duration-300 md:hover:rotate-0",
     },
     {
       title: "Émanciper, pas rendre dépendante",
       text: "La bonne communication libère : elle transmet des savoirs, elle rend les équipes autonomes, elle éclaire les coulisses d'un métier. Mon objectif, c'est que vous puissiez vous passer de moi. (Oui, y compris commercialement.)",
-      rotation: "md:rotate-1",
+      classe: "rounded-[24px_12px_20px_14px] md:mt-10 md:rotate-1",
     },
     {
       title: "Rendre visible ce qui mérite de l'être",
       text: "La visibilité, c'est déjà une forme de liberté. Une créatrice qui vit de son métier, c'est une personne de moins qui subit un travail qu'elle n'a pas choisi. Une association qu'on entend, c'est une cause qui avance.",
-      rotation: "md:-rotate-1",
+      classe: "rounded-[12px_18px_26px_10px] md:mt-4 md:-rotate-2",
     },
   ];
   return (
@@ -119,12 +130,9 @@ function Convictions() {
         <h2 className="text-center">
           Trois <em>convictions</em>, et tout le reste en découle
         </h2>
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
+        <div className="mt-16 grid items-start gap-8 md:grid-cols-3">
           {pancartes.map((p) => (
-            <article
-              key={p.title}
-              className={`rounded-[14px_26px_12px_22px] bg-white p-8 transition-transform duration-300 hover:rotate-0 ${p.rotation}`}
-            >
+            <article key={p.title} className={`bg-white p-8 ${p.classe}`}>
               <h3 className="font-titre text-2xl text-bordeaux">{p.title}</h3>
               <p className="mt-4 text-sm leading-relaxed text-encre">{p.text}</p>
             </article>
@@ -149,16 +157,19 @@ function Filtre() {
         </p>
 
         <div className="mt-14 flex flex-col items-center">
-          <p className="rounded-full border-2 border-encre/15 px-6 py-2 text-sm font-medium text-encre">
+          <p className="rounded-full border-2 border-encre/30 px-6 py-2 text-sm font-medium text-encre">
             Votre projet
           </p>
-          <span className="my-2 text-2xl text-encre/40" aria-hidden="true">
+          <span className="my-2 text-2xl text-encre/60" aria-hidden="true">
             ↓
           </span>
         </div>
 
-        <div className="space-y-6">
-          <article className="rounded-carte border-l-8 border-framboise bg-rose-pale p-7">
+        {/* Le filtre à trois sorties : la voie « transition » est la plus
+            large parce que c'est la plus fréquente — la taille fait partie
+            du message. Le refus est en gris chaud, jamais en rouge. */}
+        <div className="flex flex-col items-center gap-6">
+          <article className="w-full rounded-[12px_22px_10px_18px] bg-rose-doux p-7 md:w-[86%]">
             <h3 className="font-titre text-2xl text-bordeaux">On y va</h3>
             <ul className="mt-4 space-y-2 text-sm leading-relaxed text-encre">
               <li>
@@ -177,20 +188,20 @@ function Filtre() {
                 mobilité douce.
               </li>
             </ul>
-            <p className="mt-4 text-sm italic leading-relaxed text-encre/80">
+            <p className="mt-4 text-sm italic leading-relaxed text-encre">
               Ma seule condition : des engagements réels, même imparfaits. Je ne demande pas la
               perfection. Je demande la sincérité et des jalons.
             </p>
           </article>
 
-          <article className="rounded-carte border-l-8 border-jaune bg-rose-pale p-8 md:p-10">
-            <div className="flex flex-wrap items-baseline gap-3">
-              <h3 className="font-titre text-2xl text-bordeaux">On y va, au rythme des preuves</h3>
-              <span className="rounded-full bg-jaune px-3 py-1 text-xs font-medium text-bordeaux">
-                la voie la plus fréquente
-              </span>
+          <article className="w-full rounded-[20px_12px_24px_10px] bg-jaune p-8 md:p-12">
+            <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+              <h3 className="font-titre text-3xl text-bordeaux">
+                On y va, au rythme des preuves
+              </h3>
+              <span className="text-sm italic text-bordeaux">— la voie la plus fréquente</span>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-encre">
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-encre">
               Vous n'êtes pas encore là où vous voudriez être ? Bienvenue, c'est la majorité des
               projets. On pose des jalons honnêtes, on nomme ce qui est déjà vrai aujourd'hui, et
               on communique au rythme des preuves. Ce qui n'est pas encore fait, on ne le raconte
@@ -198,8 +209,8 @@ function Filtre() {
             </p>
           </article>
 
-          <article className="rounded-carte border-l-8 border-encre/20 bg-rose-pale/60 p-7">
-            <h3 className="font-titre text-2xl text-encre/70">Je décline</h3>
+          <article className="w-full rounded-[10px_18px_12px_20px] bg-encre/5 p-7 md:w-[72%]">
+            <h3 className="font-titre text-xl text-encre/80">Je décline</h3>
             <ul className="mt-4 space-y-2 text-sm leading-relaxed text-encre/80">
               <li>
                 Les grandes structures qui veulent redorer une image sans changer leurs pratiques.
@@ -215,7 +226,7 @@ function Filtre() {
               </li>
               <li>Les campagnes construites sur la culpabilisation ou l'angoisse.</li>
             </ul>
-            <p className="mt-4 text-sm italic leading-relaxed text-encre/70">
+            <p className="mt-4 text-sm italic leading-relaxed text-encre/80">
               Les seules grosses structures avec lesquelles je travaille sont des associations ou
               des coopératives, parce que la mission est dans leurs statuts, pas dans leur plan de
               com'.
@@ -274,19 +285,17 @@ function Ficelles() {
         </p>
         <div className="mt-14 rounded-carte bg-white p-6 md:p-10">
           <div className="hidden gap-10 pb-4 md:grid md:grid-cols-2">
-            <p className="text-xs uppercase tracking-[0.2em] text-encre/40">
-              Ce que je ne fais pas
-            </p>
-            <p className="text-xs uppercase tracking-[0.2em] text-bordeaux">
-              Ce que je fais à la place
-            </p>
+            <p className="font-titre text-lg italic text-encre/65">ce que je ne fais pas</p>
+            <p className="font-titre text-lg italic text-bordeaux">ce que je fais à la place</p>
           </div>
           {paires.map((p) => (
             <div
               key={p.non}
               className="grid gap-2 border-t border-encre/10 py-5 md:grid-cols-2 md:gap-10"
             >
-              <p className="text-sm leading-relaxed text-encre/45">{p.non}</p>
+              <p className="text-sm leading-relaxed text-encre/65 line-through decoration-framboise/60 decoration-1 md:no-underline">
+                {p.non}
+              </p>
               <p className="text-sm font-medium leading-relaxed text-bordeaux">{p.oui}</p>
             </div>
           ))}
@@ -441,27 +450,25 @@ function PositionIa() {
         <h3 className="mt-16 text-center font-titre text-2xl text-encre">
           Quand on travaille seule, sans IA, il n'y a que deux portes
         </h3>
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          <article className="rounded-carte bg-rose-pale/70 p-6">
-            <p className="text-xs uppercase tracking-[0.18em] text-encre/40">Porte 1</p>
-            <p className="mt-2 font-medium text-encre/60">Je facture plus</p>
-            <p className="mt-2 text-sm leading-relaxed text-encre/60">
+        <div className="mt-8 grid items-center gap-4 md:grid-cols-[1fr_1fr_1.25fr]">
+          <article className="rounded-[10px_18px_12px_16px] bg-encre/5 p-6">
+            <p className="font-titre text-lg italic text-encre/70">porte 1</p>
+            <p className="mt-1 font-medium text-encre/80">Je facture plus</p>
+            <p className="mt-2 text-sm leading-relaxed text-encre/70">
               Le même accompagnement, à un prix que mes clientes ne peuvent pas payer.
             </p>
           </article>
-          <article className="rounded-carte bg-rose-pale/70 p-6">
-            <p className="text-xs uppercase tracking-[0.18em] text-encre/40">Porte 2</p>
-            <p className="mt-2 font-medium text-encre/60">Je livre moins</p>
-            <p className="mt-2 text-sm leading-relaxed text-encre/60">
+          <article className="rounded-[16px_10px_18px_12px] bg-encre/5 p-6">
+            <p className="font-titre text-lg italic text-encre/70">porte 2</p>
+            <p className="mt-1 font-medium text-encre/80">Je livre moins</p>
+            <p className="mt-2 text-sm leading-relaxed text-encre/70">
               Le prix tient, mais sans la recherche en amont, sans l'outil, avec moins
               d'allers-retours.
             </p>
           </article>
-          <article className="rounded-carte bg-bordeaux p-6">
-            <p className="text-xs uppercase tracking-[0.18em] text-rose-doux">
-              Porte 3 · avec l'IA
-            </p>
-            <p className="mt-2 font-medium text-white">Je tiens les deux</p>
+          <article className="rounded-[14px_24px_12px_20px] bg-bordeaux p-7">
+            <p className="font-titre text-lg italic text-rose-doux">porte 3 · avec l'IA</p>
+            <p className="mt-1 font-medium text-white">Je tiens les deux</p>
             <p className="mt-2 text-sm leading-relaxed text-rose-doux">
               Elle prend les heures invisibles ; le prix reste accessible et tout reste dedans.
             </p>
@@ -505,7 +512,7 @@ function PositionIa() {
               2 100 € <span className="text-sm text-rose-doux">(350 €/mois × 6)</span>
             </span>
           </div>
-          <p className="mt-4 text-xs leading-relaxed text-encre/60">
+          <p className="mt-4 text-xs leading-relaxed text-encre/70">
             Fourchettes basses et hautes des baromètres publics 2025-2026, arrondies :{" "}
             <a
               className="underline underline-offset-2"
@@ -543,46 +550,73 @@ function PositionIa() {
         <h3 className="mt-16 text-center font-titre text-2xl text-encre">
           Sur un contenu, qui fait quoi
         </h3>
-        <div className="mt-8 flex flex-col gap-2 md:flex-row md:items-stretch">
-          {chaine.map((c) => (
-            <div
-              key={c.etape}
-              className={`flex-1 rounded-carte p-4 ${
-                c.ton === "jaune"
-                  ? "bg-jaune"
-                  : c.ton === "bordeaux"
-                    ? "bg-bordeaux"
-                    : "bg-rose-doux"
-              }`}
-            >
-              <p
-                className={`text-sm font-medium leading-snug ${
-                  c.ton === "bordeaux" ? "text-white" : "text-bordeaux"
+        <div className="mt-8 flex flex-col items-center gap-1 md:flex-row md:items-stretch md:gap-0">
+          {chaine.map((c, i) => (
+            <div key={c.etape} className="contents">
+              {i > 0 && (
+                <span
+                  className="flex items-center justify-center px-1 text-lg text-encre/60"
+                  aria-hidden="true"
+                >
+                  <span className="md:hidden">↓</span>
+                  <span className="hidden md:inline">→</span>
+                </span>
+              )}
+              <div
+                className={`w-full flex-1 rounded-carte p-4 md:w-auto ${
+                  c.ton === "jaune"
+                    ? "bg-jaune"
+                    : c.ton === "bordeaux"
+                      ? "bg-bordeaux"
+                      : "bg-rose-doux"
                 }`}
               >
-                {c.etape}
-              </p>
-              <p
-                className={`mt-1.5 text-xs ${
-                  c.ton === "bordeaux" ? "text-rose-doux" : "text-bordeaux/70"
-                }`}
-              >
-                {c.qui}
-              </p>
+                <p
+                  className={`text-sm font-medium leading-snug ${
+                    c.ton === "bordeaux" ? "text-white" : "text-bordeaux"
+                  }`}
+                >
+                  {c.etape}
+                </p>
+                <p
+                  className={`mt-1.5 text-xs ${
+                    c.ton === "bordeaux" ? "text-rose-doux" : "text-bordeaux"
+                  }`}
+                >
+                  {c.qui}
+                </p>
+              </div>
             </div>
           ))}
         </div>
-        <p className="mt-4 text-center text-xs text-encre/50">
+        <p className="mt-4 text-center text-sm text-encre/70">
           jaune = l'IA m'aide · bordeaux = humain uniquement · rose = entre vos mains
         </p>
 
-        <div className="mx-auto mt-14 max-w-2xl space-y-4 text-base leading-relaxed text-encre">
-          <p>
-            Mes lignes rouges, écrites pour être vérifiables : je dis quand l'IA a servi, sans
-            qu'on ait à me le demander. Je ne lui délègue jamais la stratégie ni les arbitrages de
-            fond. Je ne publie aucun texte que je n'ai pas réécrit. Et je ne fais jamais parler une
-            cliente à sa place : aucune citation, aucun ressenti, aucun chiffre sans son accord.
-          </p>
+        <div className="mx-auto mt-14 max-w-2xl">
+          <h3 className="font-titre text-2xl text-encre">
+            Mes lignes rouges, écrites pour être vérifiables
+          </h3>
+          <ul className="mt-6 space-y-4 text-base leading-relaxed text-encre">
+            <li>
+              <strong className="font-medium text-bordeaux">Je le dis.</strong> Quand l'IA a
+              servi, vous le savez sans avoir à me le demander.
+            </li>
+            <li>
+              <strong className="font-medium text-bordeaux">Le fond ne se délègue pas.</strong>{" "}
+              Ni la stratégie, ni les arbitrages, ni ce qu'on décide de taire.
+            </li>
+            <li>
+              <strong className="font-medium text-bordeaux">Rien ne sort tel quel.</strong> Je ne
+              publie aucun texte que je n'ai pas réécrit.
+            </li>
+            <li>
+              <strong className="font-medium text-bordeaux">Jamais à votre place.</strong> Aucune
+              citation, aucun ressenti, aucun chiffre sans votre accord.
+            </li>
+          </ul>
+        </div>
+        <div className="mx-auto mt-8 max-w-2xl space-y-4 text-base leading-relaxed text-encre">
           <p>
             Ça vaut aussi pour{" "}
             <a
@@ -635,11 +669,29 @@ function PositionIa() {
 }
 
 function Compteurs() {
+  // L'unité change avec l'indicateur : les trois premiers sont des parts,
+  // la transmission se compte en heures. Les cases restent vides exprès.
   const indicateurs = [
-    "La part de projets acceptés et de demandes refusées, avec les motifs de refus rendus anonymes.",
-    "La part des contenus livrés réellement accessibles : texte alternatif, sous-titres, langage clair.",
-    "La part de contenus faits pour durer (articles, e-mails, pages piliers) par rapport aux contenus jetables.",
-    "Les moments de transmission dans chaque mission : ateliers, canevas remis, relectures commentées, et leurs heures.",
+    {
+      unite: "— %",
+      texte:
+        "de projets acceptés et de demandes refusées, avec les motifs de refus rendus anonymes.",
+    },
+    {
+      unite: "— %",
+      texte:
+        "de contenus livrés réellement accessibles : texte alternatif, sous-titres, langage clair.",
+    },
+    {
+      unite: "— %",
+      texte:
+        "de contenus faits pour durer (articles, e-mails, pages piliers) plutôt que jetables.",
+    },
+    {
+      unite: "— h",
+      texte:
+        "de transmission par mission : ateliers, canevas remis, relectures commentées.",
+    },
   ];
   return (
     <section className="bg-rose-pale">
@@ -651,17 +703,20 @@ function Compteurs() {
           Je préfère les courbes aux slogans, mais je n'ai pas encore d'année pleine derrière moi.
           Voici les quatre choses que je compte depuis août 2026, sur tous les projets.
         </p>
-        <div className="mt-14 grid gap-6 sm:grid-cols-2">
-          {indicateurs.map((texte) => (
-            <article key={texte} className="rounded-carte bg-white p-7 text-center">
-              <p className="font-titre text-5xl text-encre/20" aria-hidden="true">
-                — %
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-encre">{texte}</p>
-            </article>
+        <div className="mx-auto mt-14 grid max-w-3xl gap-x-10 gap-y-10 sm:grid-cols-2">
+          {indicateurs.map((ind, i) => (
+            <div key={ind.texte} className={`flex items-start gap-4 ${i % 2 ? "sm:mt-8" : ""}`}>
+              <span
+                className="shrink-0 rounded-full bg-jaune px-5 py-2 font-titre text-3xl text-bordeaux"
+                aria-label="chiffre à venir"
+              >
+                {ind.unite}
+              </span>
+              <p className="pt-1 text-sm leading-relaxed text-encre">{ind.texte}</p>
+            </div>
           ))}
         </div>
-        <p className="mx-auto mt-8 max-w-2xl text-center text-sm leading-relaxed text-encre">
+        <p className="mx-auto mt-12 max-w-2xl text-center text-sm leading-relaxed text-encre">
           Les cases sont vides exprès : je ne mets pas de faux chiffres en attendant les vrais.
           Premier relevé publié après une année pleine de comptage. Quatre chiffres, ça ne fait pas
           un rapport RSE, mais c'est un début, et c'est vérifiable.
@@ -678,8 +733,8 @@ function FeuilleDeRoute() {
         <h2 className="text-center">
           La suite, sans promesse <em>intenable</em>
         </h2>
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          <article className="rounded-carte bg-rose-pale p-7">
+        <div className="mt-14 grid items-start gap-6 md:grid-cols-[1.15fr_1fr_0.9fr]">
+          <article className="rounded-carte bg-rose-pale p-8">
             <h3 className="font-titre text-2xl text-bordeaux">D'ici la fin 2026</h3>
             <ul className="mt-4 space-y-3 text-sm leading-relaxed text-encre">
               <li>Publier cette page, et la tenir à jour.</li>
@@ -693,14 +748,14 @@ function FeuilleDeRoute() {
             <h3 className="font-titre text-xl text-bordeaux/90">
               Après une année pleine de comptage
             </h3>
-            <p className="mt-4 text-sm leading-relaxed text-encre/90">
+            <p className="mt-4 text-sm leading-relaxed text-encre">
               Publier le premier relevé des quatre indicateurs, tels quels, même s'ils ne me
               flattent pas.
             </p>
           </article>
-          <article className="rounded-carte border-2 border-dashed border-encre/20 p-7">
-            <h3 className="font-titre text-lg text-encre/60">Ce que je ne date pas encore</h3>
-            <ul className="mt-4 space-y-2 text-sm leading-relaxed text-encre/60">
+          <article className="rounded-carte border-2 border-dashed border-encre/30 p-6 md:mt-6">
+            <h3 className="font-titre text-lg text-encre/70">Ce que je ne date pas encore</h3>
+            <ul className="mt-4 space-y-2 text-sm leading-relaxed text-encre/70">
               <li>Mes checklists mises au propre et partagées.</li>
               <li>Deux cas clients détaillés, avec ce que je referais autrement.</li>
               <li>Un ordre de grandeur de l'empreinte numérique de l'agence.</li>
@@ -751,7 +806,7 @@ function Faq() {
               <summary className="flex cursor-pointer list-none items-baseline justify-between gap-4 font-titre text-xl text-bordeaux [&::-webkit-details-marker]:hidden">
                 {item.q}
                 <span
-                  className="shrink-0 text-encre/40 transition-transform group-open:rotate-45"
+                  className="shrink-0 text-encre/60 motion-safe:transition-transform group-open:rotate-45"
                   aria-hidden="true"
                 >
                   +
@@ -764,7 +819,7 @@ function Faq() {
             <summary className="flex cursor-pointer list-none items-baseline justify-between gap-4 font-titre text-xl text-bordeaux [&::-webkit-details-marker]:hidden">
               Est-ce que ça coûte plus cher ?
               <span
-                className="shrink-0 text-encre/40 transition-transform group-open:rotate-45"
+                className="shrink-0 text-encre/60 motion-safe:transition-transform group-open:rotate-45"
                 aria-hidden="true"
               >
                 +
