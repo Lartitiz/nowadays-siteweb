@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ManifesteSections } from "@/components/site/ManifesteSections";
 import { DaLayout } from "@/components/da/DaLayout";
 import { CALENDLY_URL } from "@/lib/links";
 import { absoluteUrl } from "@/lib/site";
@@ -6,11 +7,11 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/demarche-ethique")({
   head: () => ({
     meta: [
-      { title: "Notre démarche éthique | Faire mieux, pas plus | Nowadays" },
+      { title: "Notre démarche éthique et notre manifeste | Nowadays" },
       {
         name: "description",
         content:
-          "Notre démarche éthique en toute transparence : dire vrai sans manipuler, émanciper, refuser le marketing anxiogène. Nos méthodes et nos limites.",
+          "Notre démarche éthique et notre manifeste : dire vrai sans manipuler, émanciper, refuser le marketing anxiogène, redéfinir l'influence. Méthodes et limites.",
       },
       { property: "og:title", content: "Notre démarche éthique | Faire mieux, pas plus" },
       {
@@ -264,6 +265,8 @@ function Page() {
       <Pedagogie />
       <Limites />
       <Methodes />
+      {/* Le manifeste, rapatrié depuis l'ancienne page /manifeste (fusionnée). */}
+      <ManifesteSections />
       <FinalCta />
     </DaLayout>
   );

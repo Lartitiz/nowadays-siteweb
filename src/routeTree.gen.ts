@@ -14,7 +14,6 @@ import { Route as TemplateBrandingRouteImport } from './routes/template-branding
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PlanCommunicationRouteImport } from './routes/plan-communication'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
-import { Route as ManifesteRouteImport } from './routes/manifeste'
 import { Route as GuideStorytellingRouteImport } from './routes/guide-storytelling'
 import { Route as FormationGratuiteInstagramRouteImport } from './routes/formation-gratuite-instagram'
 import { Route as EtudesDeCasProRouteImport } from './routes/etudes-de-cas-pro'
@@ -24,6 +23,7 @@ import { Route as CoulissesRouteImport } from './routes/coulisses'
 import { Route as CooperativeAssoRouteImport } from './routes/cooperative-asso'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AccompagnementCommunicationRouteImport } from './routes/accompagnement-communication'
+import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as EtudesStillNordicRouteImport } from './routes/etudes.still-nordic'
@@ -73,11 +73,6 @@ const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
   path: '/mentions-legales',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ManifesteRoute = ManifesteRouteImport.update({
-  id: '/manifeste',
-  path: '/manifeste',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const GuideStorytellingRoute = GuideStorytellingRouteImport.update({
   id: '/guide-storytelling',
   path: '/guide-storytelling',
@@ -125,6 +120,11 @@ const AccompagnementCommunicationRoute =
     path: '/accompagnement-communication',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AProposRoute = AProposRouteImport.update({
+  id: '/a-propos',
+  path: '/a-propos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -240,6 +240,7 @@ const ApiRecapHebdoRoute = ApiRecapHebdoRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
@@ -249,7 +250,6 @@ export interface FileRoutesByFullPath {
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
-  '/manifeste': typeof ManifesteRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/plan-communication': typeof PlanCommunicationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -279,6 +279,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
@@ -288,7 +289,6 @@ export interface FileRoutesByTo {
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
-  '/manifeste': typeof ManifesteRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/plan-communication': typeof PlanCommunicationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -319,6 +319,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
   '/accompagnement-communication': typeof AccompagnementCommunicationRoute
   '/contact': typeof ContactRoute
   '/cooperative-asso': typeof CooperativeAssoRoute
@@ -328,7 +329,6 @@ export interface FileRoutesById {
   '/etudes-de-cas-pro': typeof EtudesDeCasProRoute
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
-  '/manifeste': typeof ManifesteRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/plan-communication': typeof PlanCommunicationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -360,6 +360,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/a-propos'
     | '/accompagnement-communication'
     | '/contact'
     | '/cooperative-asso'
@@ -369,7 +370,6 @@ export interface FileRouteTypes {
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
-    | '/manifeste'
     | '/mentions-legales'
     | '/plan-communication'
     | '/sitemap.xml'
@@ -399,6 +399,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/a-propos'
     | '/accompagnement-communication'
     | '/contact'
     | '/cooperative-asso'
@@ -408,7 +409,6 @@ export interface FileRouteTypes {
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
-    | '/manifeste'
     | '/mentions-legales'
     | '/plan-communication'
     | '/sitemap.xml'
@@ -438,6 +438,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/a-propos'
     | '/accompagnement-communication'
     | '/contact'
     | '/cooperative-asso'
@@ -447,7 +448,6 @@ export interface FileRouteTypes {
     | '/etudes-de-cas-pro'
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
-    | '/manifeste'
     | '/mentions-legales'
     | '/plan-communication'
     | '/sitemap.xml'
@@ -478,6 +478,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AProposRoute: typeof AProposRoute
   AccompagnementCommunicationRoute: typeof AccompagnementCommunicationRoute
   ContactRoute: typeof ContactRoute
   CooperativeAssoRoute: typeof CooperativeAssoRoute
@@ -487,7 +488,6 @@ export interface RootRouteChildren {
   EtudesDeCasProRoute: typeof EtudesDeCasProRoute
   FormationGratuiteInstagramRoute: typeof FormationGratuiteInstagramRoute
   GuideStorytellingRoute: typeof GuideStorytellingRoute
-  ManifesteRoute: typeof ManifesteRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   PlanCommunicationRoute: typeof PlanCommunicationRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -553,13 +553,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MentionsLegalesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/manifeste': {
-      id: '/manifeste'
-      path: '/manifeste'
-      fullPath: '/manifeste'
-      preLoaderRoute: typeof ManifesteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/guide-storytelling': {
       id: '/guide-storytelling'
       path: '/guide-storytelling'
@@ -621,6 +614,13 @@ declare module '@tanstack/react-router' {
       path: '/accompagnement-communication'
       fullPath: '/accompagnement-communication'
       preLoaderRoute: typeof AccompagnementCommunicationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/a-propos': {
+      id: '/a-propos'
+      path: '/a-propos'
+      fullPath: '/a-propos'
+      preLoaderRoute: typeof AProposRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -782,6 +782,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AProposRoute: AProposRoute,
   AccompagnementCommunicationRoute: AccompagnementCommunicationRoute,
   ContactRoute: ContactRoute,
   CooperativeAssoRoute: CooperativeAssoRoute,
@@ -791,7 +792,6 @@ const rootRouteChildren: RootRouteChildren = {
   EtudesDeCasProRoute: EtudesDeCasProRoute,
   FormationGratuiteInstagramRoute: FormationGratuiteInstagramRoute,
   GuideStorytellingRoute: GuideStorytellingRoute,
-  ManifesteRoute: ManifesteRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   PlanCommunicationRoute: PlanCommunicationRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
@@ -822,3 +822,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

@@ -1,56 +1,31 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { DaLayout } from "@/components/da/DaLayout";
 import { Pill } from "@/components/da/Pill";
 import { StickerNote } from "@/components/da/StickerNote";
-import { CALENDLY_URL } from "@/lib/links";
-import { absoluteUrl } from "@/lib/site";
 
-export const Route = createFileRoute("/manifeste")({
-  head: () => ({
-    meta: [
-      { title: "Notre manifeste | L'influence éthique | Nowadays Agency" },
-      {
-        name: "description",
-        content:
-          "Notre manifeste pour une influence éthique : la communication comme écosystème, l'influenceur devenu ambassadeur, de nouveaux indicateurs de succès.",
-      },
-      {
-        property: "og:title",
-        content: "Notre manifeste | L'influence comme levier de transformation",
-      },
-      {
-        property: "og:description",
-        content:
-          "Développer l'influence sans trahir l'éthique. Notre vision d'une communication qui fait du lien, redéfinit l'influenceur et repense les indicateurs de réussite.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: absoluteUrl("/manifeste") },
-    ],
-    links: [{ rel: "canonical", href: absoluteUrl("/manifeste") }],
-  }),
-  component: Page,
-});
+// Le manifeste « L'influence comme levier de transformation », rapatrié depuis
+// l'ancienne page /manifeste.
+//
+// Pourquoi la fusion : deux pages minces (914 et 597 mots) sur le même terrain
+// sémantique, qui ne se citaient que l'une l'autre. /manifeste n'avait AUCUN
+// lien entrant — le « Le Manifeste » du pied de page pointe vers une ancre de
+// l'accueil, pas vers elle. Réunies, elles font une page qui a du poids, et
+// une seule adresse vers laquelle pointer.
+//
+// 🔑 Les phrases sont reprises telles quelles. Seuls changements : le <h1> de
+// l'ancienne page devient un <h2> (une page = un seul h1), et le sticker ne
+// renvoie plus vers /demarche-ethique, qui est désormais la page elle-même.
+//
+// ⚠️ Les deux textes n'ont pas la même voix : la démarche est écrite à la
+// première personne (« je »), le manifeste au nom de l'agence (« on / nous »).
+// C'est assumé pour l'instant — harmoniser, c'est réécrire Laetitia.
 
-function CtaButton({
-  children = "Prenez rdv pour discuter de votre projet",
-}: {
-  children?: string;
-}) {
-  return (
-    <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-      {children}
-    </a>
-  );
-}
-
-function Hero() {
+function ManifesteIntro() {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
         <p className="text-xs uppercase tracking-[0.24em] text-framboise">· Notre manifeste ·</p>
-        <h1 className="mx-auto mt-6 font-titre text-4xl leading-[1.05] text-encre md:text-6xl">
+        <h2 className="mx-auto mt-6 font-titre text-4xl leading-[1.05] text-encre md:text-6xl">
           L'influence comme levier de <em>transformation</em>
-        </h1>
+        </h2>
         <div className="mx-auto mt-8 max-w-2xl space-y-5 text-base leading-relaxed text-encre">
           <p>
             Ici, on accompagne celles et ceux qui veulent faire bouger les lignes. Créatrices
@@ -70,6 +45,7 @@ function Hero() {
     </section>
   );
 }
+
 
 function Vision() {
   const questions = [
@@ -108,7 +84,7 @@ function Vision() {
         <p className="mt-8 text-base leading-relaxed text-jaune">
           Parce qu'une marque forte, c'est avant tout une marque bien entourée.
         </p>
-        <StickerNote lien={<Link to="/demarche-ethique">Notre démarche</Link>}>
+        <StickerNote>
           « 100 % éthique », ça n'existe pas.
           <br />
           Plus éthique chaque année, oui.
@@ -117,6 +93,7 @@ function Vision() {
     </section>
   );
 }
+
 
 function Creatrices() {
   return (
@@ -146,6 +123,7 @@ function Creatrices() {
     </section>
   );
 }
+
 
 function Redefinir() {
   return (
@@ -194,6 +172,7 @@ function Redefinir() {
   );
 }
 
+
 function Ambassadeur() {
   return (
     <section className="bg-white">
@@ -223,6 +202,7 @@ function Ambassadeur() {
     </section>
   );
 }
+
 
 function Kpi() {
   return (
@@ -254,6 +234,7 @@ function Kpi() {
   );
 }
 
+
 function EnBref() {
   const points = [
     "La création ; de contenu, de liens, d'émotions.",
@@ -283,21 +264,6 @@ function EnBref() {
   );
 }
 
-function FinalCta() {
-  return (
-    <section className="bg-jaune">
-      <div className="mx-auto max-w-3xl px-6 py-24 text-center">
-        <h2>Envie de vous rendre visible sans trahir votre éthique ?</h2>
-        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-encre">
-          On en discute autour d'un appel découverte. Sans engagement, et honnêtement.
-        </p>
-        <div className="mt-10 flex justify-center">
-          <CtaButton />
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function PourquoiNowadays() {
   return (
@@ -323,10 +289,11 @@ function PourquoiNowadays() {
   );
 }
 
-function Page() {
+
+export function ManifesteSections() {
   return (
-    <DaLayout>
-      <Hero />
+    <>
+      <ManifesteIntro />
       <Vision />
       <Creatrices />
       <Redefinir />
@@ -334,7 +301,6 @@ function Page() {
       <Kpi />
       <PourquoiNowadays />
       <EnBref />
-      <FinalCta />
-    </DaLayout>
+    </>
   );
 }
