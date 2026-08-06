@@ -14,26 +14,32 @@ import { StickerNote } from "@/components/da/StickerNote";
 // l'ancienne page devient un <h2> (une page = un seul h1), et le sticker ne
 // renvoie plus vers /demarche-ethique, qui est désormais la page elle-même.
 //
-// ⚠️ Les deux textes n'ont pas la même voix : la démarche est écrite à la
-// première personne (« je »), le manifeste au nom de l'agence (« on / nous »).
-// C'est assumé pour l'instant — harmoniser, c'est réécrire Laetitia.
+// La voix a été harmonisée à la première personne (06/08), pour coller à la
+// démarche éthique qui l'accueille. On n'a changé QUE la personne : le
+// vocabulaire, le rythme et la ponctuation sont ceux d'origine.
+//
+// 🔑 Restent volontairement impersonnels les « on » qui désignent les gens en
+// général, pas l'agence : « qu'on vous perçoive », « qu'on parle à leur
+// place », « L'influence, on l'a trop longtemps réduite », « on le retrouve
+// parmi ses collaborateurs ». Ainsi que « les enjeux de nos sociétés »
+// (collectif) et « Nowadays signifie de nos jours » (l'expression).
 
 function ManifesteIntro() {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
-        <p className="text-xs uppercase tracking-[0.24em] text-framboise">· Notre manifeste ·</p>
+        <p className="text-xs uppercase tracking-[0.24em] text-framboise">· Mon manifeste ·</p>
         <h2 className="mx-auto mt-6 font-titre text-4xl leading-[1.05] text-encre md:text-6xl">
           L'influence comme levier de <em>transformation</em>
         </h2>
         <div className="mx-auto mt-8 max-w-2xl space-y-5 text-base leading-relaxed text-encre">
           <p>
-            Ici, on accompagne celles et ceux qui veulent faire bouger les lignes. Créatrices
+            Ici, j'accompagne celles et ceux qui veulent faire bouger les lignes. Créatrices
             éthiques, artistes engagées, associations inspirantes… Celles qui osent imaginer un
             autre futur, plus doux, plus juste, plus vivant.
           </p>
           <p>
-            Celles qui ne veulent pas « juste vendre », mais transmettre une vision. Notre métier ?
+            Celles qui ne veulent pas « juste vendre », mais transmettre une vision. Mon métier ?
             Développer leur influence ; <em>sans trahir leur éthique.</em>
           </p>
           <p>
@@ -56,17 +62,17 @@ function Vision() {
   return (
     <section className="manifesto">
       <div className="mx-auto max-w-3xl px-6 py-24">
-        <Pill ton="jaune">Notre vision</Pill>
+        <Pill ton="jaune">Ma vision</Pill>
         <h2 className="mt-6">
           La communication est un <em>écosystème</em>.
         </h2>
         <div className="mt-8 space-y-5 text-base leading-relaxed text-white">
           <p>
-            Beaucoup d'agences misent tout sur « l'idée créative ». Nous, on commence par tisser du
+            Beaucoup d'agences misent tout sur « l'idée créative ». Moi, je commence par tisser du
             lien. Pas juste un logo ou un post Instagram : un réseau vivant de connexions,
             d'alliances, d'authenticité.
           </p>
-          <p>Avant de parler design ou storytelling, on regarde avec vous :</p>
+          <p>Avant de parler design ou storytelling, je regarde avec vous :</p>
         </div>
         <ul className="mt-8 space-y-4">
           {questions.map((q) => (
@@ -104,7 +110,7 @@ function Creatrices() {
         </h2>
         <div className="mt-8 space-y-5 text-base leading-relaxed text-encre">
           <p>
-            Chez Nowadays, on accompagne les femmes qui façonnent un art de vivre éthique. Celles
+            Chez Nowadays, j'accompagne les femmes qui façonnent un art de vivre éthique. Celles
             qui imaginent des marques sensibles, belles et engagées. Celles qui ne séparent pas
             l'esthétique du sens, ni la stratégie de l'alignement.
           </p>
@@ -115,7 +121,7 @@ function Creatrices() {
             présence.
           </p>
           <p>
-            Nous, on est là pour ça. Pour les aider à bâtir des marques qui leur ressemblent, et à
+            Je suis là pour ça. Pour les aider à bâtir des marques qui leur ressemblent, et à
             faire rayonner un lifestyle éthique qui donne envie de vivre autrement.
           </p>
         </div>
@@ -139,7 +145,7 @@ function Redefinir() {
           </p>
           <p>
             Mais l'influence, la vraie, c'est ce qui reste quand la hype est passée. C'est ce que
-            votre projet change, inspire, construit autour de lui. Nous, on veut aider nos clientes
+            votre projet change, inspire, construit autour de lui. Moi, je veux aider mes clientes
             à développer cette influence-là : durable, alignée, engagée.
           </p>
         </div>
@@ -154,13 +160,13 @@ function Redefinir() {
             </p>
           </div>
           <p className="text-base leading-relaxed text-encre">
-            Notre problème avec cette définition : le biais commercial y est central. De nombreux
+            Mon problème avec cette définition : le biais commercial y est central. De nombreux
             partenariats ont donné lieu à des dérives (dropshipping frauduleux, escroqueries, manque
             d'authenticité) qui ont décrédibilisé ce métier. Dans une démarche de transparence et
-            d'éthique, il nous faut donc repenser la définition même du terme.
+            d'éthique, il me faut donc repenser la définition même du terme.
           </p>
           <div className="rounded-carte border-2 border-framboise/30 bg-white p-6 text-sm leading-relaxed text-encre">
-            <p className="text-encre/70">Le sens qu'on lui donne chez Nowadays :</p>
+            <p className="text-encre/70">Le sens que je lui donne chez Nowadays :</p>
             <p className="mt-3">
               <strong className="font-medium">Influenceur (n.m.)</strong> : leader d'opinion qui
               collabore avec des marques pour avoir un <em>impact positif</em> sur le monde.
@@ -183,12 +189,12 @@ function Ambassadeur() {
         <div className="mt-8 space-y-5 text-base leading-relaxed text-encre">
           <p>
             Pour répondre à la crise de confiance que subit le marketing d'influence, il est de
-            notre devoir de nous interroger sur l'avenir des collaborations entre influenceurs et
+            mon devoir de m'interroger sur l'avenir des collaborations entre influenceurs et
             marques.
           </p>
           <p>
             Aujourd'hui, le terme « influenceur » est connoté négativement : il implique une
-            personne qui influence et une personne influencée. C'est pourquoi nous préférons le
+            personne qui influence et une personne influencée. C'est pourquoi je préfère le
             terme d'<em>ambassadeur</em>.
           </p>
           <p>
@@ -218,13 +224,13 @@ function Kpi() {
           </p>
           <p>
             Dans un monde où la croissance infinie est une illusion, comment continuer à se baser
-            sur le profit à tout prix comme critère de réussite ? Il est de notre devoir d'intégrer
+            sur le profit à tout prix comme critère de réussite ? Il est de mon devoir d'intégrer
             de nouveaux indicateurs, qui prennent en compte les enjeux environnementaux de nos
             sociétés.
           </p>
           <p>
             Le chiffre d'affaires reste central ; il est indispensable à la survie d'une marque.
-            Chez Nowadays, on travaille sur le meilleur compromis entre rentabilité et réduction
+            Chez Nowadays, je travaille sur le meilleur compromis entre rentabilité et réduction
             d'empreinte carbone, en repensant les KPI pour les faire évoluer vers des objectifs plus
             réalistes et respectueux de vos valeurs, et de la planète.
           </p>
@@ -245,7 +251,7 @@ function EnBref() {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-3xl px-6 py-24">
-        <h2 className="text-center">En bref, chez Nowadays, on est pour :</h2>
+        <h2 className="text-center">En bref, chez Nowadays, je suis pour :</h2>
         <ul className="mt-12 grid gap-4 sm:grid-cols-2">
           {points.map((p) => (
             <li

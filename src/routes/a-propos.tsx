@@ -164,7 +164,7 @@ function Convictions() {
             J'ai écrit tout ça noir sur blanc — les méthodes, les refus, et mes propres limites —
             dans{" "}
             <Link to="/demarche-ethique" className="text-bordeaux underline underline-offset-4">
-              notre démarche éthique et notre manifeste
+              ma démarche éthique et mon manifeste
             </Link>
             . C'est aussi là que j'explique d'où vient le nom « Nowadays ».
           </p>
