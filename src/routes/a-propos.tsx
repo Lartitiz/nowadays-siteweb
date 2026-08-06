@@ -149,7 +149,11 @@ function Histoire() {
             <p>
               Un jour, un peu au hasard, je me suis inscrite à la newsletter de{" "}
               <a
-                href="https://convergencedespossibles.org/"
+                // Leur propre domaine ne répondait pas au 06/08 (l'apex reset la
+                // connexion, le www y renvoie en 301). On pointe leur page
+                // d'association, qui fonctionne, en attendant que le site
+                // revienne — à rebasculer le jour où il est de nouveau debout.
+                href="https://www.helloasso.com/associations/convergence-des-possibles"
                 target="_blank"
                 rel="noopener"
                 className="text-bordeaux underline underline-offset-4"
