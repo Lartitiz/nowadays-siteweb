@@ -224,6 +224,17 @@ function Histoire() {
               tiers-lieu associatif. Un endroit de passage où l'on vient poser ses valises, ses
               idées, ses colères et ses envies.
             </p>
+            <p>
+              <a
+                href="https://reporterre.net/En-terre-RN-une-maison-d-eclusier-cultive-les-alternatives-et-la-solidarite"
+                target="_blank"
+                rel="noopener"
+                className="text-bordeaux underline underline-offset-4"
+              >
+                Reporterre lui a consacré un reportage
+              </a>
+              .
+            </p>
           </div>
         </div>
       </section>
