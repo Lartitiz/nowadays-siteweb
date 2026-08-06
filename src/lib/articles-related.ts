@@ -7,7 +7,7 @@
 // invisibles.
 //
 // Les articles n'ont ni étiquette ni catégorie en base : on écrit donc la
-// parenté à la main. Ils sont 14 et stables. Pour tout slug absent de la table
+// parenté à la main. Ils sont 15 et stables. Pour tout slug absent de la table
 // (article ajouté plus tard), on retombe sur une rotation : les 3 articles qui
 // suivent dans la liste, en boucle. Ce n'est pas thématique, mais ça reste
 // équilibré — jamais deux fois les mêmes.
@@ -19,11 +19,16 @@ const RELATED: Record<string, string[]> = {
     "alternative-formation-instagram",
     "creatrice-ethique-communication",
   ],
-  // Se faire accompagner : quel format choisir, et à quel prix
+  // Se faire accompagner, et aller chercher ses client·es
   "alternative-formation-instagram": [
     "agence-communication-engagee",
     "creatrice-ethique-communication",
-    "brand-content",
+    "prospection-ethique",
+  ],
+  "prospection-ethique": [
+    "alternative-formation-instagram",
+    "creatrice-ethique-communication",
+    "agence-communication-engagee",
   ],
   "communication-ethique": [
     "agence-communication-engagee",
@@ -76,7 +81,7 @@ const RELATED: Record<string, string[]> = {
   ],
   "creatrice-ethique-communication": [
     "alternative-formation-instagram",
-    "exemples-communication-mode",
+    "prospection-ethique",
     "agence-communication-engagee",
   ],
   "exemples-communication-mode": [
