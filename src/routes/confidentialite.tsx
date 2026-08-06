@@ -90,11 +90,11 @@ function Page() {
               <li>
                 <strong>Lovable</strong> et <strong>Cloudflare</strong> : hébergement du site.
               </li>
-              <li>
-                <strong>Google Fonts</strong> : les polices du site sont chargées depuis les
-                serveurs de Google, qui reçoit à ce titre votre adresse IP.
-              </li>
             </Ul>
+            <P>
+              Les polices de caractères sont servies depuis notre propre domaine : aucun tiers n'est
+              sollicité pour afficher cette page.
+            </P>
             <P>
               Calendly n'intervient que si vous cliquez pour réserver un appel : vous quittez alors
               ce site et vos données relèvent de la politique de Calendly.
