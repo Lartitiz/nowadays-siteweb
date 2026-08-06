@@ -89,7 +89,7 @@ function Hero() {
         <div className="mx-auto mt-8 max-w-2xl space-y-5 text-base leading-relaxed text-encre">
           <p>
             Je m'appelle Laetitia Mattioli. J'ai créé Nowadays parce que trop de projets qui font du
-            bien restent invisibles — pas faute de qualité, mais faute d'avoir appris à parler
+            bien restent invisibles, pas faute de qualité, mais faute d'avoir appris à parler
             d'eux sans se trahir.
           </p>
           <p>
@@ -127,7 +127,7 @@ function Histoire() {
           <div className="mt-8 space-y-5 text-base leading-relaxed text-encre">
             <p>
               J'ai créé Nowadays en 2017. Quatre ans plus tard, après trente ans à Paris, je me
-              suis installée à Joigny — et j'y suis arrivée dans une belle tempête intérieure. Une
+              suis installée à Joigny, et j'y suis arrivée dans une belle tempête intérieure. Une
               crise d'éco-anxiété : ce moment où vous mesurez l'ampleur de ce qui vient, et où vous
               ne savez plus quoi en faire.
             </p>
