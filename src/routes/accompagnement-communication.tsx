@@ -484,13 +484,13 @@ function ComparaisonAgenceSection() {
             </ul>
             <div className="mt-6 flex items-baseline justify-between border-t border-rose-pale pt-4">
               <p className="text-xs uppercase tracking-[0.2em] text-encre">Total</p>
-              <p className="font-titre text-3xl text-framboise">1 740 €</p>
+              <p className="font-titre text-3xl text-framboise">2 100 €</p>
             </div>
           </div>
         </div>
 
         <p className="mt-12 text-center font-titre text-xl italic text-framboise md:text-2xl">
-          Soit 91% d'économie. Et tu repars avec des compétences à vie.
+          Soit 87% d'économie. Et tu repars avec des compétences à vie.
         </p>
       </div>
     </section>
@@ -605,10 +605,10 @@ function InclusSection() {
           <SectionEyebrow>L'offre</SectionEyebrow>
           <h2>350&nbsp;€ par mois, pendant 6&nbsp;mois.</h2>
           <p className="mt-4 font-titre text-xl italic text-framboise md:text-2xl">
-            Total : 1&nbsp;740&nbsp;€
+            Total : 2&nbsp;100&nbsp;€
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-sm italic text-encre">
-            Soit moins de 9 € par jour. Le prix d'un matcha latte et d'un croissant à Paris. Sauf
+            Soit moins de 12 € par jour. Le prix d'un matcha latte et d'un croissant à Paris. Sauf
             que là, ça nourrit ton business pour des années.
           </p>
         </div>
