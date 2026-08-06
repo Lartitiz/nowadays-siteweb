@@ -7,11 +7,11 @@ import { absoluteUrl } from "@/lib/site";
 export const Route = createFileRoute("/demarche-ethique")({
   head: () => ({
     meta: [
-      { title: "Notre démarche éthique et notre manifeste | Nowadays" },
+      { title: "Ma démarche éthique et mon manifeste | Nowadays" },
       {
         name: "description",
         content:
-          "Notre démarche éthique et notre manifeste : dire vrai sans manipuler, émanciper, refuser le marketing anxiogène, redéfinir l'influence. Méthodes et limites.",
+          "Ma démarche éthique et mon manifeste : dire vrai sans manipuler, émanciper, refuser le marketing anxiogène, redéfinir l'influence. Méthodes et limites.",
       },
       { property: "og:title", content: "Notre démarche éthique | Faire mieux, pas plus" },
       {
@@ -40,7 +40,7 @@ function Hero() {
     <section className="bg-white">
       <div className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
         <p className="text-xs uppercase tracking-[0.24em] text-framboise">
-          · Notre démarche éthique ·
+          · Ma démarche éthique ·
         </p>
         <h1 className="mx-auto mt-6 font-titre text-4xl leading-[1.05] text-encre md:text-6xl">
           Faire mieux, pas plus
