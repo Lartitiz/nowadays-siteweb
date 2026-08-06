@@ -1,36 +1,21 @@
-# Mettre les titres en gras — plan
+# Appliquer les migrations d'articles
 
-## Contexte
-L'utilisateur souhaite renforcer les titres (H1, H2, H3) de la page d'accueil et des pages intérieures, initialement exprimé comme « mettre en grain », puis clarifié en « mettre en gras ».
+## État vérifié
 
-## Contrainte actuelle
-Le design system en vigueur impose :
-- Titres en serif `font-weight: 400` (jamais bold) — voir `src/styles/design-system.css` lignes 70-99.
-- Mémorisé : « Titres : Libre Baskerville 400 (jamais bold), en --ink. »
+- `supabase/migrations/20260805090000_article_alternative_formation_instagram.sql` : **présent**. Il insère l'article « Existe-t-il une alternative aux formations Instagram en ligne ? » (slug `alternative-formation-instagram`) avec un `ON CONFLICT (slug) DO UPDATE`, donc rejouable sans risque.
+- Ses 5 images sont bien dans `public/blog/` (cover + 4 visuels).
+- `supabase/migrations/20260806090000_article_prospection_ethique.sql` : **absent du projet**. La synchro depuis main ne l'a pas encore amené.
+- L'article `alternative-formation-instagram` n'existe pas encore en base (le dernier article publié date du 29/09/2025).
 
-Passer les titres en gras rompt donc une règle de marque. Il faut proposer des options cohérentes.
+## Ce que je vais faire
 
-## Options proposées
+1. Exécuter le contenu du fichier de migration présent, tel quel, via l'outil de migration — un simple INSERT/UPDATE dans `public.articles`.
+2. Vérifier par une lecture que la ligne est bien créée (slug, titre, date, nombre de blocs de contenu, champs SEO).
+3. Ne toucher à rien d'autre : aucune modification de schéma, aucune modification des policies RLS ni des GRANT de `articles`, aucun fichier de code changé.
 
-### Option A — Gras léger sur les titres (rupture marque)
-- Passer `h1, h2, h3` à `font-weight: 500` ou `600` (selon ce que la webfont supporte).
-- Impact : les titres gagnent en présence, mais le style devient plus classique/événementiel, moins éditorial.
+## Pour la seconde migration
 
-### Option B — Renforcer sans gras (respect marque)
-- Conserver `font-weight: 400`.
-- Ajouter un contraste plus marqué : `color: var(--ink)` sur les titres au lieu de `var(--bordeaux)` ou inverser selon les sections.
-- Resserrer légèrement le `letter-spacing` (`-0.04em`) pour plus de densité.
-- Éventuellement ajouter une très légère ombre portée texte (`text-shadow`) pour donner du relief sans gras.
+`20260806090000_article_prospection_ethique.sql` n'est pas disponible : je ne peux pas l'appliquer. Deux options à ton choix une fois la première passée :
 
-### Option C — Gras ciblé uniquement sur les H3 et sous-sections
-- Garder H1/H2 en 400 (marque éditoriale).
-- Passer seulement les `h3` à 500/600 pour différencier les niveaux.
-- Moins de rupture visuelle globale.
-
-## Portée suggérée
-- `src/styles/design-system.css` : règles globales `h1, h2, h3`.
-- Pages concernées : toutes les sections `Home*` et les pages routes (`accompagnement-communication`, `cooperative-asso`, etc.).
-- Aucune base de données ou fonction serveur impactée.
-
-## Recommandation
-Avant de modifier, choisir l'option A, B ou C. Si l'objectif est « on ne voit pas assez les titres », l'option B préserve l'identité éditoriale tout en renforçant la hiérarchie.
+- attendre la synchro et me redemander ;
+- ou me coller/joindre le SQL, je l'applique tel quel.
