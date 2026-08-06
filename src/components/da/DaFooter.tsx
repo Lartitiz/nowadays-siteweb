@@ -51,6 +51,9 @@ export function DaFooter() {
                 </Link>
               </li>
               <li>
+                <Link to="/demarche-ethique">Notre démarche éthique</Link>
+              </li>
+              <li>
                 <Link to="/" hash="megaphone">
                   Le Mégaphone
                 </Link>
