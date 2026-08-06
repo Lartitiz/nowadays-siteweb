@@ -31,6 +31,9 @@ export function DaFooter() {
                 <Link to="/cooperative-asso">Votre agency de com'</Link>
               </li>
               <li>
+                <Link to="/a-propos">À propos</Link>
+              </li>
+              <li>
                 <Link to="/contact">Contact</Link>
               </li>
             </ul>

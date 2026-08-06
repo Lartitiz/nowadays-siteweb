@@ -54,6 +54,9 @@ const EDITORIAL_REDIRECTS: Record<string, string> = {
   // « ta binôme de com ».
   "/accompagnement-instagram": "/accompagnement-communication",
   "/accompagnement-strategie-digitale": "/accompagnement-communication",
+  // Le manifeste a été fusionné dans la démarche éthique (deux pages minces
+  // sur le même terrain sémantique, qui ne se citaient que l'une l'autre).
+  "/manifeste": "/demarche-ethique",
   // Anciens contenus devenus des ressources gratuites.
   "/formation-branding": "/template-branding",
   "/storytelling-etape-par-etape": "/guide-storytelling",
