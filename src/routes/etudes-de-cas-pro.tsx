@@ -315,9 +315,9 @@ function EtudesGrid() {
             );
             if (p.internal) {
               return (
-                <Link key={p.name} to={`/etudes/${p.internal}`} className="group flex flex-col">
+                <a key={p.name} href={`/etudes/${p.internal}`} className="group flex flex-col">
                   {inner}
-                </Link>
+                </a>
               );
             }
             if (p.external) {
