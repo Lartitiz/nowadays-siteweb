@@ -648,11 +648,10 @@ function InclusSection() {
         </div>
 
         <div className="mx-auto mt-12 max-w-3xl rounded-carte border-2 border-framboise bg-white p-8 text-center">
-          <p className="text-xs uppercase tracking-[0.22em] text-encre">
-            Et si tu n'as pas de résultats
-          </p>
+          <p className="text-xs uppercase tracking-[0.22em] text-encre">La garantie</p>
           <p className="mt-2 font-titre text-xl italic text-framboise md:text-2xl">
-            Je te rembourse entièrement.
+            Si tu as appliqué tous mes conseils et que tu n'as pas de résultats, je te rembourse
+            entièrement.
           </p>
         </div>
 
