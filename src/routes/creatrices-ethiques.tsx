@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { DaLayout } from "@/components/da/DaLayout";
 import { CtaFinal } from "@/components/da/CtaFinal";
 import { VichyBand } from "@/components/da/VichyBand";
@@ -364,9 +364,9 @@ function EtudesGrid() {
             );
             if (p.slug) {
               return (
-                <Link key={p.name} to={`/etudes/${p.slug}`} className="group flex flex-col">
+                <a key={p.name} href={`/etudes/${p.slug}`} className="group flex flex-col">
                   {inner}
-                </Link>
+                </a>
               );
             }
             if (p.externalUrl) {

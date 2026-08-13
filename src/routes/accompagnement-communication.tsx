@@ -567,9 +567,9 @@ function PrixSection() {
         <p className="mt-8 text-base text-encre">
           Le prix de 3 restos par mois. Sauf que dans 6 mois, t'as un business qui tourne.
         </p>
-        <p className="mt-10 text-sm text-encre">Et si tu n'as pas de résultats :</p>
-        <p className="mt-2 font-titre text-2xl italic text-framboise md:text-3xl">
-          Je te rembourse entièrement.
+        <p className="mt-10 font-titre text-2xl italic text-framboise md:text-3xl">
+          Si tu as appliqué tous mes conseils et que tu n'as pas de résultats, je te rembourse
+          entièrement.
         </p>
         <p className="mt-10 text-xs uppercase tracking-[0.22em] text-framboise">
           🔽 Pour intégrer le programme 🔽
