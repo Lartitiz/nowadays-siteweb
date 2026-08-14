@@ -110,6 +110,13 @@ const data: CaseStudyData = {
       ],
     },
   ],
+  testimonial: {
+    quote:
+      "Laetitia et son équipe ont une grande capacité d'écoute qui leur permet de concevoir des stratégies de marque et de communication pertinentes et très efficientes.",
+    name: "Emmanuelle Riboud",
+    role: "Cheffe écoresponsable, fondatrice de Ressources",
+    avatar: { src: "/images/home/temoin-emmanuelle.jpg", alt: "Emmanuelle Riboud" },
+  },
 };
 
 function Page() {
