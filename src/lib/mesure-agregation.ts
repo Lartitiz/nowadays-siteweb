@@ -30,6 +30,8 @@ export interface Statistiques {
   visiteusesAvant: number | null;
   appels: number;
   appelsAvant: number | null;
+  appelsConfirmes: number;
+  appelsConfirmesAvant: number | null;
   messages: number;
   aimants: number;
   tauxPourCent: number;
@@ -80,8 +82,10 @@ export function agreger(
 
   const visiteuses = visiteusesUniques(courante);
   const appels = compte(courante, "appel");
+  const appelsConfirmes = compte(courante, "appel_confirme");
   const visiteusesAvant = aDuPasse ? visiteusesUniques(precedente) : null;
   const appelsAvant = aDuPasse ? compte(precedente, "appel") : null;
+  const appelsConfirmesAvant = aDuPasse ? compte(precedente, "appel_confirme") : null;
 
   // Compte les lignes d'un type donné, regroupées par une clé.
   const parCle = (
@@ -153,6 +157,8 @@ export function agreger(
     visiteusesAvant,
     appels,
     appelsAvant,
+    appelsConfirmes,
+    appelsConfirmesAvant,
     messages,
     aimants: compte(courante, "aimant"),
     tauxPourCent: taux(appels, visiteuses),

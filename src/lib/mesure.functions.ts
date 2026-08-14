@@ -40,6 +40,20 @@ export const enregistrerClicAppel = createServerFn({ method: "POST" })
     return { ok: true };
   });
 
+export const enregistrerAppelConfirme = createServerFn({ method: "POST" })
+  .inputValidator(
+    z.object({
+      path: z.string().min(1).max(200),
+      referent: z.string().max(500).nullable().optional(),
+      utmSource: z.string().max(60).nullable().optional(),
+    }),
+  )
+  .handler(async ({ data }) => {
+    const { enregistrerAppelConfirmeServeur } = await import("@/lib/mesure.server");
+    await enregistrerAppelConfirmeServeur(data.path, data.referent ?? null, data.utmSource ?? null);
+    return { ok: true };
+  });
+
 export const connexionCoulisses = createServerFn({ method: "POST" })
   .inputValidator(z.object({ motDePasse: z.string().max(200) }))
   .handler(async ({ data }) => {

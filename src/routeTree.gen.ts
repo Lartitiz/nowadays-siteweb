@@ -13,6 +13,7 @@ import { Route as TemplateCalendrierEditorialRouteImport } from './routes/templa
 import { Route as TemplateBrandingRouteImport } from './routes/template-branding'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PlanCommunicationRouteImport } from './routes/plan-communication'
+import { Route as MerciRdvRouteImport } from './routes/merci-rdv'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as GuideStorytellingRouteImport } from './routes/guide-storytelling'
 import { Route as FormationGratuiteInstagramRouteImport } from './routes/formation-gratuite-instagram'
@@ -66,6 +67,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const PlanCommunicationRoute = PlanCommunicationRouteImport.update({
   id: '/plan-communication',
   path: '/plan-communication',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MerciRdvRoute = MerciRdvRouteImport.update({
+  id: '/merci-rdv',
+  path: '/merci-rdv',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
@@ -251,6 +257,7 @@ export interface FileRoutesByFullPath {
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
   '/mentions-legales': typeof MentionsLegalesRoute
+  '/merci-rdv': typeof MerciRdvRoute
   '/plan-communication': typeof PlanCommunicationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/template-branding': typeof TemplateBrandingRoute
@@ -290,6 +297,7 @@ export interface FileRoutesByTo {
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
   '/mentions-legales': typeof MentionsLegalesRoute
+  '/merci-rdv': typeof MerciRdvRoute
   '/plan-communication': typeof PlanCommunicationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/template-branding': typeof TemplateBrandingRoute
@@ -330,6 +338,7 @@ export interface FileRoutesById {
   '/formation-gratuite-instagram': typeof FormationGratuiteInstagramRoute
   '/guide-storytelling': typeof GuideStorytellingRoute
   '/mentions-legales': typeof MentionsLegalesRoute
+  '/merci-rdv': typeof MerciRdvRoute
   '/plan-communication': typeof PlanCommunicationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/template-branding': typeof TemplateBrandingRoute
@@ -371,6 +380,7 @@ export interface FileRouteTypes {
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
     | '/mentions-legales'
+    | '/merci-rdv'
     | '/plan-communication'
     | '/sitemap.xml'
     | '/template-branding'
@@ -410,6 +420,7 @@ export interface FileRouteTypes {
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
     | '/mentions-legales'
+    | '/merci-rdv'
     | '/plan-communication'
     | '/sitemap.xml'
     | '/template-branding'
@@ -449,6 +460,7 @@ export interface FileRouteTypes {
     | '/formation-gratuite-instagram'
     | '/guide-storytelling'
     | '/mentions-legales'
+    | '/merci-rdv'
     | '/plan-communication'
     | '/sitemap.xml'
     | '/template-branding'
@@ -489,6 +501,7 @@ export interface RootRouteChildren {
   FormationGratuiteInstagramRoute: typeof FormationGratuiteInstagramRoute
   GuideStorytellingRoute: typeof GuideStorytellingRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
+  MerciRdvRoute: typeof MerciRdvRoute
   PlanCommunicationRoute: typeof PlanCommunicationRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TemplateBrandingRoute: typeof TemplateBrandingRoute
@@ -544,6 +557,13 @@ declare module '@tanstack/react-router' {
       path: '/plan-communication'
       fullPath: '/plan-communication'
       preLoaderRoute: typeof PlanCommunicationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/merci-rdv': {
+      id: '/merci-rdv'
+      path: '/merci-rdv'
+      fullPath: '/merci-rdv'
+      preLoaderRoute: typeof MerciRdvRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mentions-legales': {
@@ -793,6 +813,7 @@ const rootRouteChildren: RootRouteChildren = {
   FormationGratuiteInstagramRoute: FormationGratuiteInstagramRoute,
   GuideStorytellingRoute: GuideStorytellingRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
+  MerciRdvRoute: MerciRdvRoute,
   PlanCommunicationRoute: PlanCommunicationRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TemplateBrandingRoute: TemplateBrandingRoute,
