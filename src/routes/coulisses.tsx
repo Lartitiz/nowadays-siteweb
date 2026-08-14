@@ -424,17 +424,22 @@ function Courbe({
 function Tableau({ stats }: { stats: Statistiques }) {
   return (
     <div className="mt-10 space-y-4">
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
         <Chiffre
           titre="Visiteuses"
           valeur={stats.visiteuses}
           dessous={evolution(stats.visiteuses, stats.visiteusesAvant)}
         />
         <Chiffre
-          vedette
           titre="Ont cliqué pour réserver un appel"
           valeur={stats.appels}
           dessous={evolution(stats.appels, stats.appelsAvant)}
+        />
+        <Chiffre
+          vedette
+          titre="Ont vraiment confirmé un appel"
+          valeur={stats.appelsConfirmes}
+          dessous={evolution(stats.appelsConfirmes, stats.appelsConfirmesAvant)}
         />
         <Chiffre titre="Messages reçus" valeur={stats.messages} dessous="formulaire de contact" />
         <Chiffre titre="Inscriptions" valeur={stats.aimants} dessous="aimants et Mégaphone" />

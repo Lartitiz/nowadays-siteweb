@@ -109,7 +109,7 @@ function appareil(navigateur: string): "mobile" | "ordinateur" {
 }
 
 async function enregistrer(
-  kind: "vue" | "appel" | "aimant",
+  kind: "vue" | "appel" | "aimant" | "appel_confirme",
   path: string,
   source: string,
   label: string | null,
@@ -154,6 +154,20 @@ export async function enregistrerAppelServeur(
   utmSource: string | null,
 ) {
   await enregistrer("appel", path, provenance(referent, utmSource), null);
+}
+
+/*
+ * Appelé depuis /merci-rdv, la page vers laquelle Calendly redirige après une
+ * réservation réellement confirmée (réglage côté Calendly, pas côté site).
+ * Distinct de `enregistrerAppelServeur` : un clic sur le bouton ne dit pas si
+ * la visiteuse a réellement choisi un créneau.
+ */
+export async function enregistrerAppelConfirmeServeur(
+  path: string,
+  referent: string | null,
+  utmSource: string | null,
+) {
+  await enregistrer("appel_confirme", path, provenance(referent, utmSource), null);
 }
 
 /*
@@ -286,15 +300,21 @@ export async function composerRecapHebdo(): Promise<{
     lecture = "Aucune visite cette semaine. À creuser du côté de l'acquisition.";
   } else if (s.appels === 0) {
     lecture = `${s.visiteuses} visiteuses, aucune demande d'appel. Le trafic vient surtout de ${grosseSource?.nom ?? "sources variées"}.`;
+  } else if (s.appelsConfirmes > 0) {
+    lecture = `${s.appelsConfirmes} appel${s.appelsConfirmes > 1 ? "s" : ""} vraiment confirmé${s.appelsConfirmes > 1 ? "s" : ""} sur ${s.appels} clic${s.appels > 1 ? "s" : ""}, surtout depuis ${meilleure?.nom ?? grosseSource?.nom ?? "sources variées"}.`;
   } else if (meilleure) {
-    lecture = `${s.appels} demande${s.appels > 1 ? "s" : ""} d'appel, surtout depuis ${meilleure.nom}.`;
+    lecture = `${s.appels} demande${s.appels > 1 ? "s" : ""} d'appel, surtout depuis ${meilleure.nom} — mais aucune n'a encore débouché sur un créneau vraiment confirmé.`;
   } else {
     lecture = `${s.appels} demande${s.appels > 1 ? "s" : ""} d'appel cette semaine.`;
   }
 
   const lignes: Array<[string, string]> = [
     ["Visiteuses", `${s.visiteuses}${fleche(s.visiteuses, s.visiteusesAvant)}`],
-    ["Ont demandé un appel", `${s.appels}${fleche(s.appels, s.appelsAvant)}`],
+    ["Ont cliqué pour réserver un appel", `${s.appels}${fleche(s.appels, s.appelsAvant)}`],
+    [
+      "Ont vraiment confirmé un appel",
+      `${s.appelsConfirmes}${fleche(s.appelsConfirmes, s.appelsConfirmesAvant)}`,
+    ],
     ["Messages reçus", String(s.messages)],
     ["Inscriptions", String(s.aimants)],
     ["Sur 100 visiteuses", `${s.tauxPourCent.toLocaleString("fr-FR")} demandent un appel`],
