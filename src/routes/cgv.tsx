@@ -279,7 +279,17 @@ function Page() {
               médiateur de la consommation désigné par Nowadays Agency :
             </P>
             <P>
-              <Todo>nom, adresse et site du médiateur</Todo>
+              CM2C — Centre de la Médiation de la Consommation de Conciliateurs de Justice, 49 rue
+              de Ponthieu, 75008 Paris ;{" "}
+              <a
+                href="https://www.cm2c.net"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-framboise"
+              >
+                cm2c.net
+              </a>
+              .
             </P>
             <P className="text-encre/70">
               Cette même information figure dans les{" "}
@@ -386,15 +396,4 @@ function Section({
 
 function P({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return <p className={`text-sm text-encre leading-relaxed ${className}`}>{children}</p>;
-}
-
-function Todo({ children }: { children: React.ReactNode }) {
-  return (
-    <span
-      className="border-b border-dashed border-bordeaux text-bordeaux"
-      title="Donnée à confirmer"
-    >
-      [À compléter ; {children}]
-    </span>
-  );
 }

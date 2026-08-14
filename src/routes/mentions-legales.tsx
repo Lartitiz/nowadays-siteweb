@@ -171,7 +171,17 @@ function Page() {
               client consommateur peut être soumis gratuitement à un médiateur de la consommation.
             </P>
             <P>
-              Médiateur désigné : <Todo>nom, adresse et site du médiateur</Todo>
+              Médiateur désigné : CM2C — Centre de la Médiation de la Consommation de Conciliateurs
+              de Justice, 49 rue de Ponthieu, 75008 Paris ;{" "}
+              <a
+                href="https://www.cm2c.net"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-framboise"
+              >
+                cm2c.net
+              </a>
+              .
             </P>
           </Section>
 
@@ -331,15 +341,4 @@ function Dt({ children }: { children: React.ReactNode }) {
 
 function Dd({ children }: { children: React.ReactNode }) {
   return <dd className="text-sm text-encre leading-relaxed">{children}</dd>;
-}
-
-function Todo({ children }: { children: React.ReactNode }) {
-  return (
-    <span
-      className="border-b border-dashed border-bordeaux text-bordeaux"
-      title="Donnée à confirmer"
-    >
-      [À compléter ; {children}]
-    </span>
-  );
 }
