@@ -78,6 +78,13 @@ const data: CaseStudyData = {
       { value: "50K", label: "Audience cumulée via les influenceurs" },
     ],
   },
+  testimonial: {
+    quote:
+      "J'ai découvert leurs qualités de rigueur, de suivi, de propositions créatives et pertinentes. Mais surtout un excellent état d'esprit, très positif. Est-ce que je les recommanderais ? Sans aucun doute.",
+    name: "Laurent Hequily",
+    role: "Fondateur d'Okahina Wave",
+    avatar: { src: "/images/home/temoin-laurent.jpg", alt: "Laurent Hequily" },
+  },
 };
 
 function Page() {

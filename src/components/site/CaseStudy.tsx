@@ -27,6 +27,9 @@ export type Influencer = {
 
 export type Stat = { value: string; label: string };
 
+/** Citation client réelle et nommée — jamais un texte inventé. */
+export type Testimonial = { quote: string; name: string; role: string; avatar?: Img };
+
 export type CaseStudyData = {
   brand: string;
   logo?: Img;
@@ -43,6 +46,7 @@ export type CaseStudyData = {
   solutions: Solution[];
   influencers?: { intro?: string; items: Influencer[] };
   results?: { intro?: string; items: Stat[] };
+  testimonial?: Testimonial;
 };
 
 /** Type kept for backward compat with old route files (unused by new layout). */
@@ -300,6 +304,32 @@ export function CaseStudy({ data }: { data: CaseStudyData }) {
                 </div>
               ))}
             </dl>
+          </div>
+        </section>
+      )}
+
+      {/* Témoignage */}
+      {data.testimonial && (
+        <section className="bg-white">
+          <div className="mx-auto max-w-3xl px-6 py-20 md:py-28 text-center">
+            {data.testimonial.avatar && (
+              <img
+                src={data.testimonial.avatar.src}
+                alt={data.testimonial.avatar.alt}
+                loading="lazy"
+                {...imageSize(data.testimonial.avatar.src)}
+                className="mx-auto mb-8 h-20 w-20 rounded-full object-cover"
+              />
+            )}
+            <blockquote className="font-titre text-2xl leading-[1.3] text-encre md:text-3xl">
+              « {data.testimonial.quote} »
+            </blockquote>
+            <p className="mt-6 text-sm uppercase tracking-[0.18em] text-framboise">
+              {data.testimonial.name}
+              <span className="mt-1 block text-xs normal-case tracking-normal text-gris-chaud">
+                {data.testimonial.role}
+              </span>
+            </p>
           </div>
         </section>
       )}
