@@ -127,6 +127,13 @@ function Page() {
               un navigateur à jour. Nowadays Agency ne saurait être tenue responsable des dommages
               matériels liés à l'utilisation du site.
             </P>
+            <P>
+              L'achat d'une prestation ou d'un abonnement est régi par les{" "}
+              <Link to="/cgv" className="underline underline-offset-4 hover:text-framboise">
+                conditions générales de vente
+              </Link>
+              , qui détaillent notamment le droit de rétractation de 14 jours.
+            </P>
           </Section>
 
           <Section id="pi" title="05 · Propriété intellectuelle">

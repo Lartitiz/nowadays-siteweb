@@ -26,6 +26,7 @@ const STATIC_ENTRIES: SitemapEntry[] = [
   { path: "/template-branding", changefreq: "monthly", priority: "0.7" },
   { path: "/mentions-legales", changefreq: "yearly", priority: "0.2" },
   { path: "/confidentialite", changefreq: "yearly", priority: "0.2" },
+  { path: "/cgv", changefreq: "yearly", priority: "0.2" },
 ];
 
 const CASE_STUDY_SLUGS = [
@@ -62,9 +63,7 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const { supabaseAdmin } = await import(
-          "@/integrations/supabase/client.server"
-        );
+        const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
         const entries: SitemapEntry[] = [...STATIC_ENTRIES];
 

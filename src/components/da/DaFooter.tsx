@@ -97,6 +97,10 @@ export function DaFooter() {
               className="underline underline-offset-4 hover:text-framboise"
             >
               Politique de confidentialité
+            </Link>{" "}
+            ·{" "}
+            <Link to="/cgv" className="underline underline-offset-4 hover:text-framboise">
+              CGV
             </Link>
           </span>
           <span>Joigny · Paris · Partout où les projets engagés ont besoin d'une voix.</span>
