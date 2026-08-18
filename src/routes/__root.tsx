@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
+import policesCss from "../styles/polices.css?url";
 import appCss from "../styles.css?url";
 import designSystemCss from "../styles/design-system.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -125,14 +126,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: DEFAULT_OG_IMAGE },
     ],
     links: [
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      // Polices du design system. Chargées pour tout le site : elles ne
-      // changent rien tant qu'une page ne les demande pas, et les pages sont
-      // converties lot par lot.
+      // Polices du design system, servies depuis notre domaine. Elles venaient
+      // de fonts.googleapis.com, qui recevait donc l'adresse IP de chaque
+      // visiteuse sans consentement. Fichiers identiques, rendu inchangé.
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap",
+        href: policesCss,
+      },
+      // Les deux fichiers présents sur TOUTES les pages : le corps de texte et
+      // les titres. Sans ce préchargement, ils ne sont demandés qu'une fois la
+      // feuille analysée, et le texte s'affiche un instant en police de repli.
+      // `crossOrigin` est exigé même sur notre propre domaine : une police est
+      // toujours chargée en mode CORS, et sans lui le préchargement est perdu.
+      {
+        rel: "preload",
+        as: "font",
+        type: "font/woff2",
+        href: "/fonts/hanken-grotesk-normal-latin.woff2",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preload",
+        as: "font",
+        type: "font/woff2",
+        href: "/fonts/instrument-serif-normal-latin.woff2",
+        crossOrigin: "anonymous",
       },
       {
         rel: "stylesheet",
