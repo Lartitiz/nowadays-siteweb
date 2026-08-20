@@ -89,6 +89,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      // Vérification de propriété Google Search Console (compte laetitia@nowadaysagency.com).
+      { name: "google-site-verification", content: "Y8J3OIMf50JQivkiGDJIxV9tWPeWhHU2y6Ev6ZHBoTQ" },
       { title: "Nowadays | Agence de communication engagée et responsable" },
       {
         name: "description",
