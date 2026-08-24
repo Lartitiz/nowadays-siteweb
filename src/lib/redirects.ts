@@ -60,6 +60,8 @@ const EDITORIAL_REDIRECTS: Record<string, string> = {
   // Anciens contenus devenus des ressources gratuites.
   "/formation-branding": "/template-branding",
   "/storytelling-etape-par-etape": "/guide-storytelling",
+  // Ancienne page /communication → l'offre d'accompagnement.
+  "/communication": "/accompagnement-communication",
 };
 
 const REDIRECTS: Record<string, string> = {
