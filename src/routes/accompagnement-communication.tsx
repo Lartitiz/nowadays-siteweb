@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, X } from "lucide-react";
 import { DaLayout } from "@/components/da/DaLayout";
 import { Pill } from "@/components/da/Pill";
+import { PageHero } from "@/components/da/PageHero";
 import { VichyBand } from "@/components/da/VichyBand";
 import { StickyCallCta } from "@/components/site/StickyCallCta";
 import {
@@ -66,45 +67,28 @@ function SectionEyebrow({ children }: { children: React.ReactNode }) {
 
 function HeroAccompagnement() {
   return (
-    <section className="relative overflow-hidden bg-white">
-      <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
-        <h1 className="mx-auto font-titre text-4xl leading-[1.08] text-encre md:text-5xl">
-          Tu fais un travail <em>magnifique</em>.
-          <br />
-          Mais personne ne le voit.
-        </h1>
-
-        <p className="mx-auto mt-8 max-w-2xl font-titre text-2xl text-encre md:text-3xl">
-          Deviens <em>visible</em> sans vendre ton âme.
-        </p>
-
-        <p className="mt-8 text-base text-encre">Ta com' te prend la tête ? On la fait ensemble.</p>
-
-        <p className="mx-auto mt-5 max-w-xl text-sm italic leading-relaxed text-encre/70">
-          350&nbsp;€/mois pendant 6 mois. Soit moins de 12&nbsp;€ par jour. Le prix d'un matcha
-          latte et d'un croissant si tu es à Paris. 😅 (Sauf que là, ça nourrit ton business pour
-          des années.)
-        </p>
-
-        <div className="mt-10 flex justify-center">
-          <CtaButton>Prends RDV pour discuter de ton projet</CtaButton>
-        </div>
-
-        <p className="mt-6 text-xs uppercase tracking-[0.18em] text-encre">
-          ✨ Appel gratuit · 30 minutes · Sans engagement
-        </p>
-
-        <div className="mx-auto mt-14 max-w-sm overflow-hidden rounded-carte bg-rose-pale">
-          <img
-            src="/images/home/laetitia-fauteuil.jpg"
-            {...imageSize("/images/home/laetitia-fauteuil.jpg")}
-            alt="Portrait de Laetitia, fondatrice de Nowadays"
-            className="aspect-[4/5] w-full object-cover"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </section>
+    <PageHero
+      vichy="jaune"
+      pill="Ta binôme de com' · 6 mois"
+      pillTon="bordeaux"
+      titre={
+        <>
+          Tu fais un travail <em>magnifique</em>. Mais personne ne le{" "}
+          <span className="surligne">voit</span>.
+        </>
+      }
+      chapo={
+        <>
+          Ta com' te prend la tête ? On la fait ensemble : on construit ta stratégie, on crée tes
+          contenus, on met tout en place. Tu n'es plus seule face à ta com'.
+        </>
+      }
+      mention="350 € par mois pendant 6 mois. Un paiement étalé, pas un abonnement."
+      photo={{
+        src: "/images/home/laetitia-fauteuil.jpg",
+        alt: "Portrait de Laetitia, fondatrice de Nowadays",
+      }}
+    />
   );
 }
 
