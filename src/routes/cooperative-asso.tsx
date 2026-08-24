@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { DaLayout } from "@/components/da/DaLayout";
 import { CtaFinal } from "@/components/da/CtaFinal";
+import { PageHero } from "@/components/da/PageHero";
 import { VichyBand } from "@/components/da/VichyBand";
 import l214Logo from "@/assets/coop-logos/l214.png.asset.json";
 import cooperativeOasisLogo from "@/assets/coop-logos/cooperative-oasis.png.asset.json";
@@ -80,23 +81,28 @@ function Cta({
 
 function Hero() {
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
-        <h1 className="font-titre text-4xl leading-[1.05] text-encre md:text-6xl lg:text-7xl">
-          Déléguez <em>votre com'</em> et concentrez-vous sur l'essentiel.
-        </h1>
-        <p className="mx-auto mt-8 max-w-2xl text-base text-encre md:text-lg">
+    <PageHero
+      vichy="prune"
+      pill="Ton agency de com' · mission"
+      pillTon="jaune"
+      titre={
+        <>
+          Déléguez <em>votre com'</em> et concentrez-vous sur{" "}
+          <span className="surligne">l'essentiel</span>.
+        </>
+      }
+      chapo={
+        <>
           Une communication pro, réactive et stylée pour les structures qui ont mieux à faire que de
-          galérer sur Instagram.
-        </p>
-        <div className="mt-10">
-          <Cta>Réservez votre appel découverte</Cta>
-        </div>
-        <p className="mt-6 text-xs uppercase tracking-[0.16em] text-encre">
-          ✨ Appel gratuit • 30 minutes • Sans engagement
-        </p>
-      </div>
-    </section>
+          galérer sur Instagram. On prend en charge votre stratégie, vos contenus, vos canaux.
+        </>
+      }
+      mention="À partir de 1 500 € : budget global de mission, échelonnable."
+      photo={{
+        src: "/images/home/laetitia-bureau.jpg",
+        alt: "Laetitia Mattioli, fondatrice de Nowadays Agency, au travail",
+      }}
+    />
   );
 }
 

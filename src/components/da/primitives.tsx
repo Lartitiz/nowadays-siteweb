@@ -43,3 +43,21 @@ export function Confettis() {
     </>
   );
 }
+
+// Confettis des heros de pages intérieures : la carte et la photo occupent
+// toute la largeur utile, donc les quatre positions du hero d'accueil seraient
+// masquées. Ceux-ci se posent dans les marges, et leurs couleurs changent avec
+// la couleur du vichy (un confetti jaune sur vichy jaune ne se voit pas).
+export function ConfettisBord({ couleurs }: { couleurs: readonly [string, string, string] }) {
+  const positions = ["cb1", "cb2", "cb3"] as const;
+
+  return (
+    <>
+      {positions.map((position, i) => (
+        <svg key={position} className={`conf ${position}`} viewBox="0 0 100 100" aria-hidden="true">
+          <Asterisque couleur={couleurs[i]} />
+        </svg>
+      ))}
+    </>
+  );
+}
