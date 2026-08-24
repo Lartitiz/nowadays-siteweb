@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { useSubscribe } from "@/lib/useSubscribe";
+import { PageHero } from "@/components/da/PageHero";
 import { DaLayout } from "@/components/da/DaLayout";
 import { absoluteUrl } from "@/lib/site";
 
@@ -152,36 +153,28 @@ function CaptureForm({ id }: { id: string }) {
 
 function Hero() {
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-7xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
-        <div className="grid grid-cols-1 gap-14 md:grid-cols-12 md:items-center md:gap-12">
-          <div className="md:col-span-7">
-            <p className="text-xs uppercase tracking-[0.24em] text-framboise">
-              · Ressource gratuite ·
-            </p>
-            <h1 className="mt-6 font-titre text-4xl leading-[1.05] text-encre md:text-6xl">
-              Ton template pour ton <em>Branding</em> en cadeau 🎁
-            </h1>
-            <p className="mt-8 max-w-xl text-base leading-relaxed text-encre">
-              Un modèle à modifier, structuré et pratique, pour clarifier ta stratégie de marque en
-              8 étapes. Pensé pour les entrepreneures et créatrices engagées, débutantes ou
-              expérimentées.
-            </p>
-          </div>
-
-          <div className="md:col-span-5">
-            <div className="rounded-carte bg-white p-8">
-              <p className="font-titre text-xl text-encre leading-snug">
-                Reçois ta ressource gratuite par email
-              </p>
-              <div className="mt-6">
-                <CaptureForm id="hero" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <PageHero
+      vichy="clair"
+      pill="Ressource gratuite"
+      titre={
+        <>
+          Ton template pour ton <em>Branding</em> en cadeau 🎁
+        </>
+      }
+      chapo={
+        <>
+          Un modèle à modifier, structuré et pratique, pour clarifier ta stratégie de marque en 8
+          étapes. Pensé pour les entrepreneures et créatrices engagées, débutantes ou expérimentées.
+        </>
+      }
+      cta=""
+      aside={
+        <>
+          <p className="page-hero-aside-titre">Reçois ta ressource gratuite par email</p>
+          <CaptureForm id="hero" />
+        </>
+      }
+    />
   );
 }
 

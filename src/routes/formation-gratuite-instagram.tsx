@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { useSubscribe } from "@/lib/useSubscribe";
+import { PageHero } from "@/components/da/PageHero";
 import { DaLayout } from "@/components/da/DaLayout";
 import cover from "@/assets/formation-ig/cover.png.asset.json";
 import mockupOptim from "@/assets/formation-ig/mockup-optimisation.png.asset.json";
@@ -50,50 +51,28 @@ function Page() {
 
 function Hero() {
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-7xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
-        <div className="grid grid-cols-1 gap-14 md:grid-cols-12 md:items-center md:gap-12">
-          {/* Texte */}
-          <div className="md:col-span-7">
-            <p className="text-xs uppercase tracking-[0.24em] text-framboise">
-              · Formation gratuite ·
-            </p>
-            <h1 className="mt-6 font-titre text-5xl md:text-7xl leading-[1.02] text-encre">
-              Formation Instagram <em className="text-framboise">gratuite</em>
-            </h1>
-            <p className="mt-8 max-w-xl text-base text-encre leading-relaxed">
-              Établis toute ta stratégie Instagram grâce à notre guide PDF ; pensé pour les
-              créatrices, artisanes et marques qui veulent communiquer avec sens.
-            </p>
-
-            <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center">
-              <a
-                href="#recevoir"
-                className="inline-flex items-center justify-center rounded-sm bg-ink px-7 py-4 text-sm uppercase tracking-[0.16em] text-white transition-colors hover:bg-bordeaux"
-              >
-                Recevoir le guide
-              </a>
-              <p className="text-xs uppercase tracking-[0.2em] text-encre/70">
-                Guide PDF · 5 modules · ~90 min
-              </p>
-            </div>
-          </div>
-
-          {/* Visuel */}
-          <div className="md:col-span-5">
-            <div className="relative">
-              <img
-                src={cover.url}
-                alt="Aperçu du guide Instagram gratuit Nowadays : planches d'écrans, conseils stratégie et exemples de contenus."
-                {...imageSize(cover.url)}
-                className="h-auto w-full rounded-sm shadow-[0_30px_60px_-30px_rgba(26,5,13,0.35)]"
-                style={{ transform: "rotate(-1.5deg)" }}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <PageHero
+      vichy="clair"
+      pill="Formation gratuite"
+      titre={
+        <>
+          Formation Instagram <em>gratuite</em>
+        </>
+      }
+      chapo={
+        <>
+          Établis toute ta stratégie Instagram grâce à notre guide PDF ; pensé pour les créatrices,
+          artisanes et marques qui veulent communiquer avec sens.
+        </>
+      }
+      couverture={{
+        src: cover.url,
+        alt: "Aperçu du guide Instagram gratuit Nowadays : planches d'écrans, conseils stratégie et exemples de contenus.",
+      }}
+      cta="Recevoir le guide"
+      ctaHref="#recevoir"
+      note="Guide PDF · 5 modules · environ 90 minutes."
+    />
   );
 }
 
