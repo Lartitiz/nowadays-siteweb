@@ -3,6 +3,7 @@ import "./lib/error-capture";
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
 import { getRedirect } from "./lib/redirects";
+import { buildSitemapXml } from "./lib/sitemap";
 import { SITE_ORIGIN } from "./lib/site";
 
 type ServerEntry = {
@@ -66,6 +67,22 @@ export default {
       return new Response(null, {
         status: 301,
         headers: { Location: `${redirectTo}${url.search}` },
+      });
+    }
+
+    // Servi directement ici, avant le SSR : TanStack Start écrase le
+    // Content-Type de la route /sitemap.xml en "text/html" quand l'Accept de
+    // la requête ne mentionne pas explicitement application/xml — le cas de
+    // Googlebot et de la plupart des lecteurs de sitemap, qui envoient
+    // Accept: */*. Résultat vécu : Search Console refusait de lire un
+    // sitemap pourtant valide ("Impossible de récupérer le sitemap").
+    if (url.pathname === "/sitemap.xml") {
+      const xml = await buildSitemapXml();
+      return new Response(xml, {
+        headers: {
+          "Content-Type": "application/xml; charset=utf-8",
+          "Cache-Control": "public, max-age=3600",
+        },
       });
     }
 
