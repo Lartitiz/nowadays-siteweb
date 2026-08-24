@@ -1878,6 +1878,37 @@ html:has(.nowadays-da) {
   object-position: center 22%;
 }
 
+/* Pages sans visuel (les index de résultats) : la carte reprend la composition
+   centrée de la page d'accueil, en plus sobre. */
+.nowadays-da .page-hero-grid.solo {
+  grid-template-columns: 1fr;
+  min-height: 0;
+}
+
+.nowadays-da .page-hero-grid.solo .page-hero-card {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nowadays-da .page-hero-grid.solo .page-hero-copy,
+.nowadays-da .page-hero-grid.solo h1 {
+  margin-inline: auto;
+}
+
+.nowadays-da .page-hero-grid.solo .actions {
+  justify-content: center;
+}
+
+/* Colonne de droite quand ce n'est pas une photo mais un encart (formulaire). */
+.nowadays-da .page-hero-aside {
+  background: var(--blanc);
+  border-radius: 38px 20px 34px 18px;
+  box-shadow: 0 26px 64px rgba(145, 1, 75, 0.13);
+  padding: 38px 34px;
+  align-self: center;
+}
+
 /* Les confettis se posent dans les marges, seules zones de vichy visibles. */
 .nowadays-da .conf.cb1 {
   top: 12%;
@@ -1917,5 +1948,9 @@ html:has(.nowadays-da) {
   }
   .nowadays-da .page-hero-photo img {
     height: 300px;
+  }
+  .nowadays-da .page-hero-aside {
+    padding: 28px 24px;
+    border-radius: 28px 16px 26px 14px;
   }
 }
