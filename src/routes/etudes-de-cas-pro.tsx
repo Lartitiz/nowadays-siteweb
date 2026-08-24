@@ -273,6 +273,9 @@ const PROJECTS: Project[] = [
 
 function Hero() {
   return (
+    // Ce H1 était identique à celui de /creatrices-ethiques, et l'intro
+    // quasi jumelle : deux pages qui disent la même chose à Google se
+    // font concurrence. Chacune nomme désormais son public.
     <PageHero
       vichy="prune"
       pill="Associations, ONG & marques engagées"
