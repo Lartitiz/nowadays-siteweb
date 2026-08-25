@@ -1900,6 +1900,18 @@ html:has(.nowadays-da) {
   justify-content: center;
 }
 
+/* Couverture d'une ressource : on la montre entière, jamais rognée. */
+.nowadays-da .page-hero-cover {
+  align-self: center;
+}
+
+.nowadays-da .page-hero-cover img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 26px 64px rgba(145, 1, 75, 0.13);
+}
+
 /* Colonne de droite quand ce n'est pas une photo mais un encart (formulaire). */
 .nowadays-da .page-hero-aside {
   background: var(--blanc);
@@ -1953,4 +1965,14 @@ html:has(.nowadays-da) {
     padding: 28px 24px;
     border-radius: 28px 16px 26px 14px;
   }
+}
+
+/* Titre de l'encart de capture, quand la colonne de droite porte un
+   formulaire plutôt qu'un visuel. */
+.nowadays-da .page-hero-aside-titre {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: var(--bordeaux);
+  margin: 0 0 20px;
 }

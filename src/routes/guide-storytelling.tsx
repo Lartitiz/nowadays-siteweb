@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { useSubscribe } from "@/lib/useSubscribe";
+import { PageHero } from "@/components/da/PageHero";
 import { DaLayout } from "@/components/da/DaLayout";
 import cover from "@/assets/guide-storytelling/cover.png";
 import canvas from "@/assets/guide-storytelling/mockup-canvas.png";
@@ -55,46 +56,29 @@ function Page() {
 
 function Hero() {
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-7xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
-        <div className="grid grid-cols-1 gap-14 md:grid-cols-12 md:items-center md:gap-12">
-          <div className="md:col-span-7">
-            <p className="text-xs uppercase tracking-[0.24em] text-framboise">· Guide gratuit ·</p>
-            <h1 className="mt-6 font-titre text-5xl md:text-7xl leading-[1.02] text-encre">
-              Le guide storytelling <em className="text-framboise">gratuit</em>
-            </h1>
-            <p className="mt-8 max-w-xl text-base text-encre leading-relaxed">
-              Écris l'histoire de ta marque en 5 étapes ; la méthode PDF qu'on utilise avec nos
-              clientes pour transformer un message flou en récit qui résonne.
-            </p>
-
-            <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center">
-              <a
-                href="#recevoir"
-                className="inline-flex items-center justify-center rounded-sm bg-ink px-7 py-4 text-sm uppercase tracking-[0.16em] text-white transition-colors hover:bg-bordeaux"
-              >
-                Recevoir le guide
-              </a>
-              <p className="text-xs uppercase tracking-[0.2em] text-encre/70">
-                Guide PDF · 5 étapes · canevas inclus
-              </p>
-            </div>
-          </div>
-
-          <div className="md:col-span-5">
-            <div className="relative">
-              <img
-                src={cover}
-                alt="Aperçu du guide Storytelling gratuit Nowadays : couverture éditoriale et méthode en 5 étapes."
-                {...GUIDE_VISUAL}
-                className="h-auto w-full rounded-sm shadow-[0_30px_60px_-30px_rgba(26,5,13,0.35)]"
-                style={{ transform: "rotate(-1.5deg)" }}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <PageHero
+      vichy="clair"
+      pill="Guide gratuit"
+      titre={
+        <>
+          Le guide storytelling <em>gratuit</em>
+        </>
+      }
+      chapo={
+        <>
+          Écris l'histoire de ta marque en 5 étapes ; la méthode PDF qu'on utilise avec nos clientes
+          pour transformer un message flou en récit qui résonne.
+        </>
+      }
+      couverture={{
+        src: cover,
+        alt: "Aperçu du guide Storytelling gratuit Nowadays : couverture éditoriale et méthode en 5 étapes.",
+        ...GUIDE_VISUAL,
+      }}
+      cta="Recevoir le guide"
+      ctaHref="#recevoir"
+      note="Guide PDF · 5 étapes · canevas inclus."
+    />
   );
 }
 

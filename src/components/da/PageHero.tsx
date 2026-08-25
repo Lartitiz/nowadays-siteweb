@@ -27,6 +27,17 @@ import { imageSize } from "@/lib/image-sizes";
 
 type Vichy = "jaune" | "prune" | "clair";
 
+/**
+ * Les couvertures de ressources passent par l'import Vite : leur URL est hachée
+ * au build, donc absente de la table des tailles. On accepte alors les
+ * dimensions à la main, pour ne pas perdre la réservation de place (le CLS).
+ */
+type Visuel = { src: string; alt: string; width?: number; height?: number };
+
+function dimensions({ src, width, height }: Visuel) {
+  return width && height ? { width, height } : imageSize(src);
+}
+
 // Les confettis ne doivent jamais reprendre la couleur du vichy qu'ils
 // ponctuent, sinon ils s'y effacent.
 const CONFETTIS: Record<Vichy, readonly [string, string, string]> = {
@@ -43,6 +54,7 @@ export function PageHero({
   chapo,
   mention,
   photo,
+  couverture,
   aside,
   cta = "Réserver un appel découverte",
   ctaHref = CALENDLY_URL,
@@ -57,9 +69,11 @@ export function PageHero({
   chapo: ReactNode;
   /** Le prix et sa modalité, ou toute mention sous le chapô. */
   mention?: ReactNode;
-  /** Colonne de droite : une photo… */
-  photo?: { src: string; alt: string };
-  /** …ou un encart (formulaire de capture, par exemple). Ignoré si `photo`. */
+  /** Colonne de droite : une photo, recadrée pour remplir son cadre… */
+  photo?: Visuel;
+  /** …ou une couverture de ressource, montrée entière, jamais rognée… */
+  couverture?: Visuel;
+  /** …ou un encart (formulaire de capture, par exemple). */
   aside?: ReactNode;
   cta?: string;
   /** Une ancre interne (« #recevoir ») reste dans l'onglet courant. */
@@ -67,9 +81,10 @@ export function PageHero({
   note?: string;
 }) {
   const externe = ctaHref.startsWith("http");
-  const colonne = photo ? (
-    <div className="page-hero-photo">
-      <img src={photo.src} {...imageSize(photo.src)} alt={photo.alt} />
+  const visuel = photo ?? couverture;
+  const colonne = visuel ? (
+    <div className={photo ? "page-hero-photo" : "page-hero-cover"}>
+      <img src={visuel.src} {...dimensions(visuel)} alt={visuel.alt} />
     </div>
   ) : aside ? (
     <div className="page-hero-aside">{aside}</div>
