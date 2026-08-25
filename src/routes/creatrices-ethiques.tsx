@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { PageHero } from "@/components/da/PageHero";
 import { DaLayout } from "@/components/da/DaLayout";
 import { CtaFinal } from "@/components/da/CtaFinal";
 import { VichyBand } from "@/components/da/VichyBand";
@@ -313,23 +314,25 @@ const PROJECTS: Project[] = [
 
 function Hero() {
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
-        <p className="text-xs uppercase tracking-[0.22em] text-encre">
-          Créateur·ices lifestyle éthiques
-        </p>
-        {/* Ce H1 était identique à celui de /etudes-de-cas-pro, et l'intro
-            quasi jumelle : deux pages qui disent la même chose à Google se
-            font concurrence. Chacune nomme désormais son public. */}
-        <h1 className="mt-6 font-titre text-4xl leading-[1.05] text-encre md:text-6xl lg:text-7xl">
-          Créatrices et artisanes nous ont fait <em className="text-framboise">confiance</em>
-        </h1>
-        <p className="mx-auto mt-8 max-w-2xl text-base text-encre md:text-lg">
+    // Ce H1 était identique à celui de /etudes-de-cas-pro, et l'intro
+    // quasi jumelle : deux pages qui disent la même chose à Google se
+    // font concurrence. Chacune nomme désormais son public.
+    <PageHero
+      vichy="jaune"
+      pill="Créateur·ices lifestyle éthiques"
+      pillTon="bordeaux"
+      titre={
+        <>
+          Créatrices et artisanes nous ont fait <em>confiance</em>
+        </>
+      }
+      chapo={
+        <>
           Mode, design, beauté, bien-être, culture : voici ce qu'on a construit avec elles, et ce
           que ça a donné.
-        </p>
-      </div>
-    </section>
+        </>
+      }
+    />
   );
 }
 

@@ -6,18 +6,19 @@ import { Pill } from "./Pill";
 import { imageSize } from "@/lib/image-sizes";
 
 /**
- * En-tête des pages intérieures (offres et ressources).
+ * En-tête des pages intérieures (offres, résultats, ressources).
  *
  * Même grammaire que le hero de la page d'accueil — vichy en ouverture,
  * astérisques-confettis, carte blanche à coins asymétriques, un seul bouton —
- * mais une composition différente : la carte prend deux tiers, une photo prend
- * le tiers restant. La page d'accueil garde sa carte centrée, qui reste sa
- * signature.
+ * mais une composition différente : la carte prend deux tiers, une photo (ou un
+ * encart) prend le tiers restant. La page d'accueil garde sa carte centrée, qui
+ * reste sa signature ; les pages sans visuel (les index de résultats) reprennent
+ * cette carte centrée, en plus sobre.
  *
  * Ce qui change d'une famille de page à l'autre, c'est la couleur du vichy :
  *  - « jaune » pour « Faire ensemble » (binôme, créatrices) ;
  *  - « prune » pour « Déléguer » (coopératives, assos, PME) ;
- *  - « clair » pour les ressources gratuites et les pages courtes.
+ *  - « clair » pour les ressources gratuites.
  *
  * Sur le vichy jaune, la pilule jaune disparaîtrait : on passe la pilule en
  * bordeaux. Le surligneur jaune, lui, reste lisible — il est posé sur la carte
@@ -42,7 +43,9 @@ export function PageHero({
   chapo,
   mention,
   photo,
+  aside,
   cta = "Réserver un appel découverte",
+  ctaHref = CALENDLY_URL,
   note = "30 minutes, gratuites, sans engagement.",
 }: {
   vichy: Vichy;
@@ -54,15 +57,29 @@ export function PageHero({
   chapo: ReactNode;
   /** Le prix et sa modalité, ou toute mention sous le chapô. */
   mention?: ReactNode;
-  photo: { src: string; alt: string };
+  /** Colonne de droite : une photo… */
+  photo?: { src: string; alt: string };
+  /** …ou un encart (formulaire de capture, par exemple). Ignoré si `photo`. */
+  aside?: ReactNode;
   cta?: string;
+  /** Une ancre interne (« #recevoir ») reste dans l'onglet courant. */
+  ctaHref?: string;
   note?: string;
 }) {
+  const externe = ctaHref.startsWith("http");
+  const colonne = photo ? (
+    <div className="page-hero-photo">
+      <img src={photo.src} {...imageSize(photo.src)} alt={photo.alt} />
+    </div>
+  ) : aside ? (
+    <div className="page-hero-aside">{aside}</div>
+  ) : null;
+
   return (
     <section className={`page-hero vichy-${vichy}`}>
       <ConfettisBord couleurs={CONFETTIS[vichy]} />
       <div className="wrap">
-        <div className="page-hero-grid">
+        <div className={`page-hero-grid${colonne ? "" : " solo"}`}>
           <div className="page-hero-card">
             {pill ? (
               <div>
@@ -72,16 +89,23 @@ export function PageHero({
             <h1>{titre}</h1>
             <p className="page-hero-copy">{chapo}</p>
             {mention ? <p className="page-hero-mini">{mention}</p> : null}
-            <div className="actions">
-              <a className="btn btn-primary" href={CALENDLY_URL} target="_blank" rel="noopener">
-                {cta}
-              </a>
-            </div>
-            <p className="page-hero-mini">{note}</p>
+            {cta ? (
+              <>
+                <div className="actions">
+                  <a
+                    className="btn btn-primary"
+                    href={ctaHref}
+                    target={externe ? "_blank" : undefined}
+                    rel={externe ? "noopener" : undefined}
+                  >
+                    {cta}
+                  </a>
+                </div>
+                {note ? <p className="page-hero-mini">{note}</p> : null}
+              </>
+            ) : null}
           </div>
-          <div className="page-hero-photo">
-            <img src={photo.src} {...imageSize(photo.src)} alt={photo.alt} />
-          </div>
+          {colonne}
         </div>
       </div>
     </section>
