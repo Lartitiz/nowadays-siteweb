@@ -433,7 +433,7 @@ function ComparaisonAgenceSection() {
               {rows.map((r) => (
                 <li key={r.label} className="flex items-start justify-between gap-4 py-4">
                   <div>
-                    <p className="font-titre text-lg text-encre">{r.label}</p>
+                    <p className="font-courant text-base font-bold text-encre">{r.label}</p>
                     <p className="text-xs text-encre/70">{r.desc}</p>
                   </div>
                   <p className="whitespace-nowrap text-sm text-encre">{r.agence}</p>
@@ -459,7 +459,7 @@ function ComparaisonAgenceSection() {
               {rows.map((r) => (
                 <li key={r.label} className="flex items-start justify-between gap-4 py-4">
                   <div>
-                    <p className="font-titre text-lg text-encre">{r.label}</p>
+                    <p className="font-courant text-base font-bold text-encre">{r.label}</p>
                     <p className="text-xs text-encre/70">{r.desc}</p>
                   </div>
                   <p className="whitespace-nowrap text-sm text-framboise">{r.binome}</p>
@@ -790,7 +790,7 @@ function PourToiSection() {
                     <Check className="h-4 w-4" />
                   </span>
                   <div>
-                    <p className="font-titre text-lg text-encre">{p.title}</p>
+                    <p className="font-courant text-base font-bold text-encre">{p.title}</p>
                     <p className="mt-1 text-sm text-encre">{p.text}</p>
                   </div>
                 </li>
@@ -806,7 +806,7 @@ function PourToiSection() {
                     <X className="h-4 w-4" />
                   </span>
                   <div>
-                    <p className="font-titre text-lg text-encre">{p.title}</p>
+                    <p className="font-courant text-base font-bold text-encre">{p.title}</p>
                     <p className="mt-1 text-sm text-encre">{p.text}</p>
                   </div>
                 </li>
