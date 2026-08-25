@@ -99,12 +99,12 @@ html:has(.nowadays-da) {
   margin-bottom: 0;
 }
 
-/* Échelle typographique du design system, pour les pages intérieures :
-   H1 56/36 px, H2 40/28 px, H3 28/22 px. La page d'accueil garde ses très
-   grands titres, qui sont sa signature : voir le bloc .page-accueil plus bas. */
+/* Échelle typographique du design system. Les H1 sont unifiés sur toutes les
+   pages (même échelle que la page d'accueil, qui reste la référence).
+   H2 40/28 px, H3 28/22 px pour les pages intérieures. */
 .nowadays-da h1 {
-  font-size: clamp(2.25rem, 4vw, 3.5rem);
-  letter-spacing: -0.03em;
+  font-size: clamp(3rem, 6vw, 5.6rem);
+  letter-spacing: -0.035em;
 }
 
 .nowadays-da h2 {
