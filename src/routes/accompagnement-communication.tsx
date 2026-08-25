@@ -83,7 +83,7 @@ function HeroAccompagnement() {
           contenus, on met tout en place. Tu n'es plus seule face à ta com'.
         </>
       }
-      mention="350 € par mois pendant 6 mois. Un paiement étalé, pas un abonnement."
+      mention="350 € par mois pendant 6 mois. Moins qu'un community manager et tu as TOUTE ta com' (branding, social media, email, pub...)"
       photo={{
         src: "/images/home/laetitia-fauteuil.jpg",
         alt: "Portrait de Laetitia, fondatrice de Nowadays",
