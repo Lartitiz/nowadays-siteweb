@@ -236,7 +236,7 @@ function TransformationGrid() {
               <span className="text-4xl leading-none" aria-hidden="true">
                 {it.emoji}
               </span>
-              <h3 className="mt-5">{it.title}</h3>
+              <h3 className="mt-5 titre-sans">{it.title}</h3>
               <p className="mt-3 text-sm text-encre">{it.text}</p>
             </article>
           ))}
