@@ -53,9 +53,28 @@ Règles dures :
 - **Le sticker** : petit encart jaune pivoté de 2-3°, ombré, pour UN message d'aparté par page maximum (ex. « "100 % éthique", ça n'existe pas »).
 - **Le surligneur** : un mot-clé surligné jaune (gradient sous la ligne de base), un par section maximum.
 - **Bordures pointillées** : l'effet papier découpé, réservé aux cartes d'auto-qualification (« c'est pour vous si / pas pour vous si »). Rare, sinon ça devient un tic.
-- **Le vichy** : motif signature (répétition de bandes framboise translucides croisées). Il ouvre la page (hero) et la referme (fine bande avant le CTA final). Pas ailleurs.
+- **Le vichy** : motif signature (répétition de bandes translucides croisées). Il ouvre la page (hero) et la referme (fine bande avant le CTA final). Pas ailleurs. Sur la page d'accueil, toujours framboise ; sur les pages intérieures, décliné par famille d'offre (voir PageHero ci-dessous).
 - **Astérisques-confettis** : le motif ponctue, il ne tapisse jamais. 2 à 4 par zone, masqués en mobile si ça serre.
 - **Photos** : rectangles arrondis, jamais de rond. Aplat organique décalé derrière si besoin de chaleur. Uniquement les photos du shooting en cours.
+
+## PageHero : le header des pages intérieures
+
+Composant `src/components/da/PageHero.tsx`. Même grammaire que le hero de la page d'accueil (vichy en ouverture, 2 à 4 astérisques-confettis, carte blanche à coins asymétriques `20px 38px 18px 34px`, titre serif jamais gras, un seul bouton, un seul surligneur), mais la carte prend deux tiers de la largeur ; le tiers restant montre une photo (recadrée), la couverture d'une ressource (montrée entière, jamais rognée), ou un encart (formulaire de capture). Sans colonne de droite, la carte passe en variante **solo**, centrée comme sur la page d'accueil.
+
+**Nuancier de vichy** (même motif, `background-size: 18px 18px`) :
+
+| Nom | Base | Bandes | Affectation |
+|---|---|---|---|
+| Framboise `.vichy` | `#FFD6E8` | `rgba(251,61,128,.42)` | Page d'accueil, réservé |
+| Jaune blé `.vichy-jaune` | `#FFF6D1` | `rgba(255,203,0,.40)` | « Faire ensemble » |
+| Prune `.vichy-prune` | `#FFD6E8` | `rgba(145,1,75,.46)` | « Déléguer » |
+| Rose clair `.vichy-clair` | `#FFFFFF` | `rgba(251,61,128,.20)` | Ressources gratuites |
+| Orange | — | — | Écarté : la charte interdit l'orange en fond |
+
+Règles associées :
+- Sur le vichy jaune, la pilule passe en bordeaux (une pilule jaune y disparaîtrait).
+- Le surligneur jaune reste utilisable partout : il se pose sur la carte blanche, jamais sur le vichy.
+- Les confettis ne reprennent jamais la couleur du vichy qu'ils ponctuent.
 
 ## Mouvements et playful (le dosage)
 
