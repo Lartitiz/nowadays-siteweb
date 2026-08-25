@@ -140,6 +140,15 @@ html:has(.nowadays-da) {
   color: var(--encre);
 }
 
+/* Titre de carte en sans-serif, plus lisible en petit format */
+.nowadays-da h3.titre-sans {
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--encre);
+}
+
 .nowadays-da h4 {
   font-family: "Instrument Serif", Georgia, serif;
   font-weight: 400;
