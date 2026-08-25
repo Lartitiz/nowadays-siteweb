@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CtaInline } from "@/components/da/CtaInline";
 import { DaLayout } from "@/components/da/DaLayout";
+import { PageHero } from "@/components/da/PageHero";
 import { Pill } from "@/components/da/Pill";
 import { StickerNote } from "@/components/da/StickerNote";
 import { VichyBand } from "@/components/da/VichyBand";
@@ -45,35 +46,28 @@ export const Route = createFileRoute("/demarche-ethique")({
 
 function Hero() {
   return (
-    <section className="relative bg-white">
-      <VichyBand />
-      <div
-        className="flower absolute left-[10%] top-[38%] hidden text-framboise md:block"
-        aria-hidden="true"
+    <div className="relative">
+      <PageHero
+        vichy="clair"
+        pill="Ma démarche plus éthique"
+        titre={
+          <>
+            Faire mieux, <span className="surligne">pas</span> plus.
+          </>
+        }
+        chapo={
+          <>
+            Je ne me dirai jamais « agence 100 % éthique » : ça n'existe pas. Ce que je peux faire,
+            c'est vous montrer ce que je mets en place, ce que je refuse, et ce que je ne sais pas
+            encore faire. Cette page, c'est ça. Elle sera plus juste l'an prochain qu'aujourd'hui.
+          </>
+        }
+        cta=""
       />
-      <div
-        className="flower absolute right-[16%] top-[22%] hidden text-jaune md:block"
-        style={{ width: 22, height: 22 }}
-        aria-hidden="true"
-      />
-      <div className="mx-auto max-w-3xl px-6 pb-24 pt-16 text-center md:pb-32 md:pt-24">
-        <Pill>Ma démarche plus éthique</Pill>
-        <h1 className="mx-auto mt-6 font-titre text-4xl leading-[1.05] text-encre md:text-6xl">
-          Faire mieux, <span className="surligne">pas</span> plus.
-        </h1>
-        <div className="mx-auto mt-8 max-w-2xl space-y-5 text-base leading-relaxed text-encre">
-          <p>
-            Je ne me dirai jamais « agence 100 % éthique » : ça n'existe pas. Ce que je peux
-            faire, c'est vous montrer ce que je mets en place, ce que je refuse, et ce que je ne
-            sais pas encore faire. Cette page, c'est ça. Elle sera plus juste l'an prochain
-            qu'aujourd'hui.
-          </p>
-        </div>
-      </div>
       <StickerNote>
         Une page qui ne parle que de ce qui va bien, ça s'appelle une plaquette.
       </StickerNote>
-    </section>
+    </div>
   );
 }
 
@@ -89,9 +83,9 @@ function Pourquoi() {
             accepte et ce qu'elle refuse. Et moi, j'ai besoin de l'écrire pour m'y tenir.
           </p>
           <p>
-            Il ne s'agit pas de me décerner un label maison, encore moins de me peindre en vert.
-            Il s'agit de rendre vérifiable ce que j'affirme. Une démarche qui n'écrit rien ne
-            s'engage à rien.
+            Il ne s'agit pas de me décerner un label maison, encore moins de me peindre en vert. Il
+            s'agit de rendre vérifiable ce que j'affirme. Une démarche qui n'écrit rien ne s'engage
+            à rien.
           </p>
           <p>
             Il y a une deuxième raison, plus égoïste : j'aimerais que ça donne des idées. On peut
@@ -196,16 +190,14 @@ function Filtre() {
 
           <article className="w-full rounded-[20px_12px_24px_10px] bg-jaune p-8 md:p-12">
             <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-              <h3 className="font-titre text-3xl text-bordeaux">
-                On y va, au rythme des preuves
-              </h3>
+              <h3 className="font-titre text-3xl text-bordeaux">On y va, au rythme des preuves</h3>
               <span className="text-sm italic text-bordeaux">— la voie la plus fréquente</span>
             </div>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-encre">
               Vous n'êtes pas encore là où vous voudriez être ? Bienvenue, c'est la majorité des
-              projets. On pose des jalons honnêtes, on nomme ce qui est déjà vrai aujourd'hui, et
-              on communique au rythme des preuves. Ce qui n'est pas encore fait, on ne le raconte
-              pas au présent.
+              projets. On pose des jalons honnêtes, on nomme ce qui est déjà vrai aujourd'hui, et on
+              communique au rythme des preuves. Ce qui n'est pas encore fait, on ne le raconte pas
+              au présent.
             </p>
           </article>
 
@@ -329,9 +321,9 @@ function FaconDeFaire() {
           <article className="rounded-[20px_12px_22px_10px] bg-rose-pale p-8">
             <h3>L'accessibilité dès la conception, pas en rattrapage</h3>
             <p className="mt-3 text-sm leading-relaxed text-encre">
-              Texte alternatif sur les images, sous-titres sur les vidéos, langage clair,
-              contrastes vérifiés, checklist anti-stéréotypes sur les représentations. Ce sont des
-              réflexes de départ, pas une case cochée à la fin.{" "}
+              Texte alternatif sur les images, sous-titres sur les vidéos, langage clair, contrastes
+              vérifiés, checklist anti-stéréotypes sur les représentations. Ce sont des réflexes de
+              départ, pas une case cochée à la fin.{" "}
               <em>(Et non, ça ne coûte pas plus cher quand c'est prévu au départ.)</em>
             </p>
           </article>
@@ -339,9 +331,9 @@ function FaconDeFaire() {
             <article className="rounded-[14px_20px_14px_24px] bg-rose-pale p-8">
               <h3>Des conditions de travail qui tiennent</h3>
               <p className="mt-3 text-sm leading-relaxed text-encre">
-                Pas d'urgence toxique, pas de réunion en dehors des horaires convenus, du temps
-                pour le soin et pour la vie de famille. Ça vaut pour moi comme pour les personnes
-                avec qui je collabore.
+                Pas d'urgence toxique, pas de réunion en dehors des horaires convenus, du temps pour
+                le soin et pour la vie de famille. Ça vaut pour moi comme pour les personnes avec
+                qui je collabore.
               </p>
             </article>
             <div className="mt-6 -rotate-1 rounded-[10px_22px_8px_18px] bg-rose-doux p-6 md:-mr-4">
@@ -438,11 +430,11 @@ function PositionIa() {
           <div className="mx-auto mt-8 max-w-2xl space-y-5 text-left text-base leading-relaxed text-encre">
             <p>
               Mes clientes sont des créatrices et des artisanes, c'est-à-dire exactement les
-              personnes à qui le sujet coûte quelque chose. Ne rien dire, ce serait esquiver.
-              Alors voilà, sans emballage : l'IA me permet de tenir des prix accessibles, et
-              d'aller plus vite pour des projets qui n'ont pas le temps. Je sais que ce n'est pas
-              propre sur tous les plans. Je le fais quand même, et j'assume ce que ça coûte
-              ailleurs. C'est un pari, pas une certitude — et un pari, ça se discute.
+              personnes à qui le sujet coûte quelque chose. Ne rien dire, ce serait esquiver. Alors
+              voilà, sans emballage : l'IA me permet de tenir des prix accessibles, et d'aller plus
+              vite pour des projets qui n'ont pas le temps. Je sais que ce n'est pas propre sur tous
+              les plans. Je le fais quand même, et j'assume ce que ça coûte ailleurs. C'est un pari,
+              pas une certitude — et un pari, ça se discute.
             </p>
           </div>
         </div>
@@ -542,8 +534,8 @@ function PositionIa() {
             </a>
             . Et une différence à dire honnêtement : au détail, chaque prestataire fait{" "}
             <em>pour</em> vous ; en binôme, on fait <em>ensemble</em>. C'est ça, plus les heures
-            invisibles que prend l'IA, qui rend ce prix possible. Le temps gagné ne part pas dans
-            ma marge : à prix égal, je livre plus.
+            invisibles que prend l'IA, qui rend ce prix possible. Le temps gagné ne part pas dans ma
+            marge : à prix égal, je livre plus.
           </p>
         </div>
 
@@ -599,12 +591,12 @@ function PositionIa() {
           </h3>
           <ul className="mt-6 space-y-4 text-base leading-relaxed text-encre">
             <li>
-              <strong className="font-medium text-bordeaux">Je le dis.</strong> Quand l'IA a
-              servi, vous le savez sans avoir à me le demander.
+              <strong className="font-medium text-bordeaux">Je le dis.</strong> Quand l'IA a servi,
+              vous le savez sans avoir à me le demander.
             </li>
             <li>
-              <strong className="font-medium text-bordeaux">Le fond ne se délègue pas.</strong>{" "}
-              Ni la stratégie, ni les arbitrages, ni ce qu'on décide de taire.
+              <strong className="font-medium text-bordeaux">Le fond ne se délègue pas.</strong> Ni
+              la stratégie, ni les arbitrages, ni ce qu'on décide de taire.
             </li>
             <li>
               <strong className="font-medium text-bordeaux">Rien ne sort tel quel.</strong> Je ne
@@ -684,13 +676,11 @@ function Compteurs() {
     },
     {
       unite: "— %",
-      texte:
-        "de contenus faits pour durer (articles, e-mails, pages piliers) plutôt que jetables.",
+      texte: "de contenus faits pour durer (articles, e-mails, pages piliers) plutôt que jetables.",
     },
     {
       unite: "— h",
-      texte:
-        "de transmission par mission : ateliers, canevas remis, relectures commentées.",
+      texte: "de transmission par mission : ateliers, canevas remis, relectures commentées.",
     },
   ];
   return (
@@ -826,8 +816,8 @@ function Faq() {
               </span>
             </summary>
             <p className="mt-4 text-sm leading-relaxed text-encre">
-              Non. Les tarifs sont les mêmes pour tout le monde, et ils sont détaillés sur les
-              pages d'offres :{" "}
+              Non. Les tarifs sont les mêmes pour tout le monde, et ils sont détaillés sur les pages
+              d'offres :{" "}
               <Link
                 to="/accompagnement-communication"
                 className="text-bordeaux underline underline-offset-4"
@@ -922,9 +912,9 @@ function FinalCta() {
             Je ne cherche pas la perfection. Je cherche la <em>cohérence</em>.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-encre">
-            Faire de la communication un outil d'émancipation : qui dit vrai, qui transmet, qui
-            rend visible, qui fait du bien. Si vous vous reconnaissez là-dedans, on avance
-            ensemble, à votre rythme, au rythme de vos preuves.
+            Faire de la communication un outil d'émancipation : qui dit vrai, qui transmet, qui rend
+            visible, qui fait du bien. Si vous vous reconnaissez là-dedans, on avance ensemble, à
+            votre rythme, au rythme de vos preuves.
           </p>
           <div className="mt-10 flex justify-center">
             <a

@@ -3,6 +3,7 @@ import { useState, type FormEvent } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { Calendar, Mail, Instagram, Linkedin, ArrowRight } from "lucide-react";
 import { DaLayout } from "@/components/da/DaLayout";
+import { PageHero } from "@/components/da/PageHero";
 import { submitContact } from "@/lib/contact.functions";
 import { absoluteUrl } from "@/lib/site";
 
@@ -74,17 +75,19 @@ function ContactPage() {
   return (
     <DaLayout>
       {/* Hero */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-4xl px-6 pt-16 md:pt-24 pb-12 md:pb-16 text-center">
-          <p className="text-xs uppercase tracking-[0.22em] text-framboise">On vous écoute</p>
-          <h1 className="mt-6 font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
-            Discutons de <em className="not-italic italic text-framboise">votre projet</em>.
-          </h1>
-          <p className="mx-auto mt-6 max-w-xl text-base text-encre leading-relaxed whitespace-pre-line">
-            Réponse sous 24 h ouvrées.{"\n"}(normalement si tout se passe bien on reste humaine :)
-          </p>
-        </div>
-      </section>
+      <PageHero
+        vichy="clair"
+        pill="On vous écoute"
+        titre={
+          <>
+            Discutons de <em>votre projet</em>.
+          </>
+        }
+        chapo={
+          <>Réponse sous 24 h ouvrées (normalement si tout se passe bien, on reste humaine).</>
+        }
+        cta=""
+      />
 
       {/* Form + sidecar */}
       <section className="bg-white">

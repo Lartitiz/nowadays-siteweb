@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { DaLayout } from "@/components/da/DaLayout";
 import { CtaFinal } from "@/components/da/CtaFinal";
+import { PageHero } from "@/components/da/PageHero";
 import { VichyBand } from "@/components/da/VichyBand";
 import { absoluteUrl } from "@/lib/site";
 
@@ -80,25 +81,24 @@ const REPERES = [
 
 function Hero() {
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
-        <p className="text-xs uppercase tracking-[0.24em] text-framboise">· À propos ·</p>
-        <h1 className="mx-auto mt-6 font-titre text-4xl leading-[1.05] text-encre md:text-6xl">
+    <PageHero
+      vichy="clair"
+      pill="À propos"
+      titre={
+        <>
           Derrière Nowadays, il y a <em>Laetitia</em>
-        </h1>
-        <div className="mx-auto mt-8 max-w-2xl space-y-5 text-base leading-relaxed text-encre">
-          <p>
-            Je m'appelle Laetitia Mattioli. J'ai créé Nowadays parce que trop de projets qui font du
-            bien restent invisibles, pas faute de qualité, mais faute d'avoir appris à parler
-            d'eux sans se trahir.
-          </p>
-          <p>
-            Pour moi, la communication n'est pas un outil de manipulation. C'est un outil
-            d'émancipation.
-          </p>
-        </div>
-      </div>
-    </section>
+        </>
+      }
+      chapo={
+        <>
+          Je m'appelle Laetitia Mattioli. J'ai créé Nowadays parce que trop de projets qui font du
+          bien restent invisibles, pas faute de qualité, mais faute d'avoir appris à parler d'eux
+          sans se trahir : pour moi, la communication n'est pas un outil de manipulation, c'est un
+          outil d'émancipation.
+        </>
+      }
+      cta=""
+    />
   );
 }
 
@@ -126,15 +126,15 @@ function Histoire() {
           </h2>
           <div className="mt-8 space-y-5 text-base leading-relaxed text-encre">
             <p>
-              J'ai créé Nowadays en 2017. Quatre ans plus tard, après trente ans à Paris, je me
-              suis installée à Joigny, et j'y suis arrivée dans une belle tempête intérieure. Une
-              crise d'éco-anxiété : ce moment où vous mesurez l'ampleur de ce qui vient, et où vous
-              ne savez plus quoi en faire.
+              J'ai créé Nowadays en 2017. Quatre ans plus tard, après trente ans à Paris, je me suis
+              installée à Joigny, et j'y suis arrivée dans une belle tempête intérieure. Une crise
+              d'éco-anxiété : ce moment où vous mesurez l'ampleur de ce qui vient, et où vous ne
+              savez plus quoi en faire.
             </p>
             <p>
-              Dans les podcasts que j'écoutais alors, une phrase revenait tout le temps. Pour
-              sortir de l'éco-anxiété, il faut s'ancrer localement. Agir là où on est, à l'échelle
-              où on peut.
+              Dans les podcasts que j'écoutais alors, une phrase revenait tout le temps. Pour sortir
+              de l'éco-anxiété, il faut s'ancrer localement. Agir là où on est, à l'échelle où on
+              peut.
             </p>
           </div>
         </div>
@@ -182,9 +182,7 @@ function Histoire() {
             Ce qu'un e-mail peut <em>faire</em>
           </h2>
           <div className="mt-8 space-y-5 text-base leading-relaxed text-encre">
-            <p>
-              Je fais ce métier depuis dix ans. Ce jour-là, je l'ai reçu de l'autre côté.
-            </p>
+            <p>Je fais ce métier depuis dix ans. Ce jour-là, je l'ai reçu de l'autre côté.</p>
             <p>
               Une newsletter bricolée par des bénévoles, sans budget, m'a fait plus de bien que
               n'importe quelle campagne. Pas parce qu'elle était belle. Parce qu'elle disait :{" "}
