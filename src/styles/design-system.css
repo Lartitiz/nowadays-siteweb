@@ -2888,3 +2888,59 @@ html:has(.nowadays-da) {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---- trois étapes (page « Ton agency de com' ») ---- */
+.bn-etapes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+  margin-top: 44px;
+}
+
+@media (max-width: 900px) {
+  .bn-etapes {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bn-et .bn-et-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px 20px 12px 18px;
+  background: var(--jaune);
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: 1.875rem;
+  color: var(--bordeaux);
+  margin-bottom: 14px;
+}
+
+.bn-et b {
+  display: block;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--framboise);
+  margin-bottom: 8px;
+}
+
+.bn-et p {
+  margin: 0;
+  font-size: 1.03rem;
+  color: var(--gris-chaud);
+}
+
+/* ---- bio (page « Ton agency de com' ») ---- */
+.bn-bio {
+  margin-top: 38px;
+  font-size: 1.05rem;
+  max-width: 52em;
+  border-top: 1px solid rgba(255, 167, 198, 0.55);
+  padding-top: 24px;
+}
+
+.bn-bio b {
+  color: var(--bordeaux);
+}
