@@ -1985,3 +1985,906 @@ html:has(.nowadays-da) {
   color: var(--bordeaux);
   margin: 0 0 20px;
 }
+
+/* ==========================================================================
+   Page « /accompagnement-communication » (Ta binôme de com') — classes
+   propres à cette page, préfixées `bn-` pour ne jamais entrer en collision
+   avec un autre gabarit. Rien ici n'est réutilisé ailleurs : les blocs qui
+   correspondaient à un composant existant (pilule, bouton, vichy, carte
+   pointillée, accordéon FAQ) restent sur ce composant partagé.
+   ========================================================================== */
+
+/* Ancre pour les confettis décoratifs posés en position absolue. */
+.bn-relative {
+  position: relative;
+}
+
+/* ---- carte verbatim (témoignages ponctuels, avec une légère inclinaison) ---- */
+.bn-temoin {
+  background: var(--blanc);
+  border: 1px solid var(--rose-doux);
+  border-radius: 18px 30px 16px 26px;
+  padding: 30px 34px;
+  max-width: 640px;
+  box-shadow: 0 8px 22px rgba(145, 1, 75, 0.07);
+  margin-top: 44px;
+}
+
+.bn-temoin blockquote,
+.bn-temoin .bn-constat {
+  margin: 0;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: 1.6875rem;
+  line-height: 1.3;
+  color: var(--bordeaux);
+}
+
+.bn-temoin .bn-qui {
+  margin: 16px 0 0;
+  font-size: 0.9rem;
+}
+
+.bn-temoin .bn-qui b {
+  font-weight: 700;
+  color: var(--encre);
+}
+
+.bn-temoin .bn-qui span {
+  color: var(--gris-chaud);
+}
+
+.bn-temoin--t1 {
+  transform: rotate(-1.2deg);
+}
+
+.bn-temoin--t2 {
+  transform: rotate(1deg);
+}
+
+.bn-temoin--t3 {
+  transform: rotate(-1deg);
+}
+
+/* ---- la convergence ---- */
+.bn-conv {
+  display: grid;
+  grid-template-columns: 44fr 12fr 44fr;
+  margin-top: 46px;
+  align-items: center;
+}
+
+.bn-gauche3 {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.bn-deja {
+  background: var(--blanc);
+  border: 1px solid var(--rose-doux);
+  border-radius: 16px 26px 14px 22px;
+  padding: 20px 24px 0;
+  overflow: hidden;
+}
+
+.bn-deja b {
+  display: block;
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--bordeaux);
+}
+
+.bn-deja span {
+  font-size: 0.87rem;
+  color: var(--gris-chaud);
+}
+
+.bn-deja .bn-seule {
+  display: block;
+  margin: 16px -24px 0;
+  background: var(--rose-doux);
+  color: var(--bordeaux);
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 11px 24px;
+}
+
+.bn-milieu {
+  position: relative;
+  height: 100%;
+  min-height: 340px;
+}
+
+.bn-milieu svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bn-binome {
+  background: var(--blanc);
+  border: 2px solid var(--framboise);
+  border-radius: 22px 38px 18px 32px;
+  padding: 34px 36px;
+  box-shadow: 0 12px 34px rgba(251, 61, 128, 0.13);
+}
+
+.bn-bpil {
+  display: inline-block;
+  background: var(--framboise);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 7px 15px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.bn-binome-titre {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: 2.0625rem;
+  color: var(--bordeaux);
+  margin: 0 0 12px;
+  line-height: 1.15;
+}
+
+.bn-binome ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bn-binome li {
+  padding: 10px 0;
+  font-size: 0.92rem;
+  border-bottom: 1px solid rgba(255, 167, 198, 0.5);
+}
+
+.bn-binome li:last-child {
+  border-bottom: 0;
+}
+
+.bn-binome li b {
+  color: var(--bordeaux);
+}
+
+.bn-chute {
+  margin: 40px 0 0;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.5625rem;
+  line-height: 1.35;
+  color: var(--bordeaux);
+}
+
+.bn-chute.bn-chute--grand {
+  font-style: normal;
+  font-size: 2.125rem;
+  text-align: center;
+  margin-top: 56px;
+}
+
+.bn-chute.bn-chute--grand em {
+  font-style: italic;
+}
+
+/* ---- ce dont tu as besoin (post-it) ---- */
+.bn-duo2 {
+  display: grid;
+  grid-template-columns: 42fr 58fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.bn-postits {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  padding: 10px 0;
+}
+
+.bn-postits .post-it {
+  max-width: 520px;
+  font-size: 1.4rem;
+}
+
+.bn-postit-1 {
+  transform: rotate(-2.6deg);
+  align-self: flex-start;
+}
+
+.bn-postit-2 {
+  transform: rotate(1.8deg);
+  align-self: flex-end;
+}
+
+.bn-postit-3 {
+  transform: rotate(-1.4deg);
+  align-self: flex-start;
+}
+
+.bn-postit-4 {
+  background: var(--rose-pale);
+  border: 1px solid var(--rose);
+  transform: rotate(2.2deg);
+  align-self: flex-end;
+}
+
+/* ---- la phrase sur vichy ---- */
+.bn-vichy-phrase {
+  position: relative;
+  padding: 96px 32px;
+}
+
+.bn-carte {
+  position: relative;
+  background: var(--blanc);
+  border-radius: 24px;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 64px 72px;
+  text-align: center;
+  box-shadow: 0 18px 50px rgba(145, 1, 75, 0.14);
+}
+
+.bn-carte .bn-avant {
+  font-size: 1.1rem;
+  color: var(--gris-chaud);
+  margin: 0 0 16px;
+}
+
+.bn-carte .bn-phrase {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: 2.625rem;
+  line-height: 1.18;
+  color: var(--bordeaux);
+  margin: 0;
+}
+
+.bn-carte .bn-phrase em {
+  font-style: italic;
+  color: var(--framboise);
+}
+
+/* ---- avec quoi tu repars ---- */
+.bn-entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.bn-sticker {
+  flex: 0 0 auto;
+  background: var(--jaune);
+  color: var(--bordeaux);
+  font-weight: 800;
+  font-size: 1.22rem;
+  line-height: 1.2;
+  padding: 22px 26px;
+  border-radius: 14px 22px 12px 18px;
+  transform: rotate(2.4deg);
+  box-shadow: 0 8px 20px rgba(145, 1, 75, 0.1);
+  text-align: center;
+}
+
+.bn-repars {
+  margin-top: 40px;
+  max-width: 46em;
+}
+
+.bn-rrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 22px;
+  font-size: 1.05rem;
+}
+
+.bn-rrow:nth-child(odd) {
+  background: var(--rose-pale);
+  border-radius: 12px 20px 10px 16px;
+}
+
+.bn-rrow .bn-ck {
+  flex: 0 0 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--framboise);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bn-rrow b {
+  font-weight: 700;
+  color: var(--bordeaux);
+}
+
+.bn-rrow.bn-rrow--toi {
+  margin-top: 18px;
+  background: var(--bordeaux);
+  border-radius: 12px 20px 10px 16px;
+}
+
+.bn-rrow.bn-rrow--toi b {
+  color: #fff;
+}
+
+.bn-rrow.bn-rrow--toi .bn-ck {
+  background: var(--jaune);
+  color: var(--bordeaux);
+}
+
+/* ---- les six mois ---- */
+.bn-chart {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 18px;
+  align-items: end;
+  margin: 46px 0 0;
+  height: 300px;
+}
+
+.bn-mois {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.bn-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 5px;
+  height: 100%;
+}
+
+.bn-seg {
+  border-radius: 12px 16px 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.25;
+  padding: 8px 10px;
+}
+
+.bn-seg--moi {
+  background: var(--framboise);
+  color: #fff;
+}
+
+.bn-seg--toi {
+  background: var(--jaune);
+  color: var(--bordeaux);
+}
+
+.bn-mlab {
+  text-align: center;
+  margin-top: 12px;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: 1.625rem;
+  color: var(--bordeaux);
+}
+
+.bn-phases {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 26px;
+}
+
+.bn-ph b {
+  display: inline-block;
+  background: var(--framboise);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  padding: 7px 16px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.bn-ph.bn-ph--bordeaux b {
+  background: var(--bordeaux);
+}
+
+.bn-ph span {
+  font-size: 0.87rem;
+  color: var(--gris-chaud);
+  display: block;
+}
+
+.bn-legend {
+  display: flex;
+  gap: 26px;
+  margin-top: 24px;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.bn-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bn-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 6px 8px 5px 7px;
+  display: inline-block;
+}
+
+.bn-caveat {
+  font-size: 0.87rem;
+  color: var(--gris-chaud);
+  margin-top: 18px;
+}
+
+/* ---- le manifeste ---- */
+.bn-manif {
+  background: var(--bordeaux);
+  color: #fff;
+}
+
+.bn-manif h2 {
+  color: #fff;
+  max-width: 15em;
+}
+
+.bn-manif .bn-manif-corps {
+  display: grid;
+  grid-template-columns: 58fr 42fr;
+  gap: 56px;
+  margin-top: 36px;
+  align-items: start;
+}
+
+.bn-manif p {
+  font-size: 1.05rem;
+  color: #ffe7f1;
+}
+
+.bn-manif .bn-manif-trois {
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bn-manif .bn-manif-trois li {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 1.3;
+  color: var(--jaune);
+  padding: 8px 0;
+}
+
+.bn-manif .bn-manif-fin {
+  margin-top: 30px;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.625rem;
+  color: #fff;
+}
+
+.bn-manif-mega {
+  display: block;
+  margin: 0 auto;
+  width: 78%;
+  max-width: 340px;
+}
+
+/* ---- enchantée ---- */
+.bn-idcards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 44px;
+}
+
+.bn-idcards .bn-c {
+  background: var(--blanc);
+  border-radius: 18px 30px 16px 26px;
+  padding: 30px 32px;
+  box-shadow: 0 8px 22px rgba(145, 1, 75, 0.06);
+}
+
+.bn-idcards .bn-num {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: 2.75rem;
+  color: var(--framboise);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.bn-idcards .bn-c p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.bn-idcards .bn-c b {
+  color: var(--bordeaux);
+}
+
+/* ---- le comparatif ---- */
+.bn-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 44px;
+  align-items: start;
+}
+
+.bn-pan {
+  border-radius: 20px 34px 18px 30px;
+  overflow: hidden;
+}
+
+.bn-pan--a {
+  background: var(--rose-pale);
+}
+
+.bn-pan--b {
+  background: var(--blanc);
+  border: 2px solid var(--framboise);
+  box-shadow: 0 14px 34px rgba(251, 61, 128, 0.13);
+}
+
+.bn-pan .bn-tete {
+  padding: 22px 30px 20px;
+  min-height: 104px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bn-pan--a .bn-tete {
+  background: var(--rose-doux);
+}
+
+.bn-pan--b .bn-tete {
+  background: var(--bordeaux);
+}
+
+.bn-pan .bn-tete .bn-t {
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--bordeaux);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.bn-pan--b .bn-tete .bn-t {
+  color: #fff;
+}
+
+.bn-pan .bn-tete .bn-st {
+  font-size: 0.85rem;
+  color: var(--bordeaux);
+  margin-top: 3px;
+}
+
+.bn-pan--b .bn-tete .bn-st {
+  color: var(--rose-doux);
+}
+
+.bn-pan .bn-corps {
+  padding: 10px 30px 26px;
+}
+
+.bn-li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  min-height: 64px;
+  border-bottom: 1px solid rgba(255, 167, 198, 0.5);
+}
+
+.bn-li .bn-nom {
+  font-size: 0.92rem;
+}
+
+.bn-li .bn-val {
+  font-weight: 700;
+  font-size: 1.28rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+.bn-li .bn-inc {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--framboise);
+  white-space: nowrap;
+}
+
+.bn-li .bn-neg {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--gris-chaud);
+}
+
+.bn-li.bn-li--qual {
+  min-height: 70px;
+}
+
+.bn-li:last-of-type {
+  border-bottom: 2px solid rgba(255, 167, 198, 0.75);
+}
+
+.bn-tot {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding-top: 24px;
+}
+
+.bn-tot .bn-lab {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--gris-chaud);
+}
+
+.bn-tot .bn-gros {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: 2.75rem;
+  color: var(--bordeaux);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.bn-jauge {
+  height: 12px;
+  border-radius: 6px;
+  background: rgba(255, 167, 198, 0.35);
+  margin-top: 14px;
+  overflow: hidden;
+}
+
+.bn-jauge i {
+  display: block;
+  height: 100%;
+  border-radius: 6px;
+  background: var(--rose);
+}
+
+.bn-pan--b .bn-jauge i {
+  background: var(--framboise);
+}
+
+.bn-methode {
+  font-size: 0.8rem;
+  color: var(--gris-chaud);
+  margin-top: 20px;
+}
+
+/* ---- le prix ---- */
+.bn-prixbloc {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.bn-prixbloc .bn-gros {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: 4rem;
+  color: var(--bordeaux);
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+}
+
+.bn-prixbloc .bn-sous {
+  font-size: 1.05rem;
+  color: var(--gris-chaud);
+  margin-top: 6px;
+}
+
+.bn-garantie {
+  margin: 44px auto 0;
+  max-width: 44em;
+  background: var(--blanc);
+  border: 1px solid var(--rose-doux);
+  border-radius: 20px 34px 18px 30px;
+  padding: 30px 34px;
+  text-align: center;
+}
+
+.bn-garantie .bn-lab {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--framboise);
+  margin-bottom: 10px;
+}
+
+.bn-garantie p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.bn-cta {
+  text-align: center;
+  margin-top: 44px;
+}
+
+.bn-cta .bn-amorce {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.5625rem;
+  color: var(--bordeaux);
+  margin-bottom: 18px;
+}
+
+/* ---- douze projets ---- */
+.bn-cas1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 44px;
+}
+
+.bn-cas1 .bn-c {
+  border-radius: 18px 30px 16px 26px;
+  overflow: hidden;
+  background: var(--rose-pale);
+}
+
+.bn-cas1 .bn-c .bn-im {
+  aspect-ratio: 4 / 3;
+  background: var(--rose-doux);
+}
+
+.bn-cas1 .bn-c .bn-im img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bn-cas1 .bn-c .bn-tx {
+  padding: 22px 24px 26px;
+}
+
+.bn-cas1 .bn-c .bn-n {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--bordeaux);
+}
+
+.bn-cas1 .bn-c .bn-q {
+  font-size: 0.87rem;
+  color: var(--gris-chaud);
+  margin-top: 4px;
+}
+
+.bn-cas1 .bn-c .bn-a {
+  font-size: 0.9rem;
+  margin-top: 12px;
+}
+
+.bn-cas2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px 30px;
+  margin-top: 34px;
+}
+
+.bn-cas2 .bn-c {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 167, 198, 0.5);
+}
+
+.bn-cas2 .bn-c .bn-im {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  border-radius: 10px 16px 9px 14px;
+  overflow: hidden;
+  background: var(--rose-doux);
+}
+
+.bn-cas2 .bn-c .bn-im img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bn-cas2 .bn-c .bn-n {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--bordeaux);
+  line-height: 1.2;
+}
+
+.bn-cas2 .bn-c .bn-q {
+  font-size: 0.82rem;
+  color: var(--gris-chaud);
+}
+
+.bn-caslien {
+  margin-top: 32px;
+  font-size: 0.95rem;
+}
+
+.bn-caslien a {
+  color: var(--framboise);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .bn-conv,
+  .bn-duo2,
+  .bn-duo,
+  .bn-manif .bn-manif-corps {
+    grid-template-columns: 1fr;
+  }
+  .bn-milieu {
+    display: none;
+  }
+  .bn-phases {
+    grid-template-columns: 1fr;
+  }
+  .bn-cas1,
+  .bn-cas2 {
+    grid-template-columns: 1fr;
+  }
+  .bn-chart {
+    gap: 7px;
+    height: 240px;
+  }
+  .bn-seg {
+    font-size: 0.68rem;
+    padding: 6px 4px;
+  }
+  .bn-entete {
+    flex-direction: column;
+  }
+  .bn-postits .post-it {
+    max-width: none;
+    align-self: stretch !important;
+  }
+  .bn-carte {
+    padding: 38px 28px;
+  }
+  .bn-carte .bn-phrase {
+    font-size: 1.65rem;
+  }
+  .bn-chute.bn-chute--grand {
+    font-size: 1.5rem;
+  }
+  .bn-idcards {
+    grid-template-columns: 1fr;
+  }
+}
