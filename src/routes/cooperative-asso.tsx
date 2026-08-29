@@ -431,11 +431,11 @@ const ETUDES_LARGES = [
     a: <><b>700 visiteurs en une semaine</b>, 5 articles de presse.</>,
   },
   {
-    image: imgCoopOasis.url,
-    alt: "Coopérative Oasis",
-    nom: "Coopérative Oasis",
-    q: "Identité, storytelling et community management pour leur festival",
-    a: <><b>700 personnes réunies</b>, +10 000 abonné·es en un an.</>,
+    image: imgOkahina.url,
+    alt: "Okahina Wave",
+    nom: "Okahina Wave",
+    q: "Twitter, LinkedIn, blog et influence surf",
+    a: <><b>1 500 personnes atteintes par semaine</b>, 50 000 fans via 10 influenceurs.</>,
   },
 ];
 
@@ -445,7 +445,7 @@ const ETUDES_COMPACTES = [
   { image: imgEmmaus.url, alt: "Emmaüs Défi", nom: "Emmaüs Défi", q: "Atelier de personal branding des équipes" },
   { image: imgAtelierLunettes.url, alt: "L'Atelier des Lunettes", nom: "L'Atelier des Lunettes", q: "Réseaux renforcés, site refondu, manifeste" },
   { image: imgClipIt.url, alt: "Clip It", nom: "Clip It", q: "Jeu créatif upcyclé : SEO et Instagram" },
-  { image: imgOkahina.url, alt: "Okahina Wave", nom: "Okahina Wave", q: "Twitter, LinkedIn, blog et influence surf" },
+  { image: imgCoopOasis.url, alt: "Coopérative Oasis", nom: "Coopérative Oasis", q: "Identité, storytelling et community management pour leur festival" },
   { image: imgStudyCo.url, alt: "Study & Co", nom: "Study & Co", q: "Onboarding digitalisé : +20 % de conversion" },
   { image: imgWeSlow.url, alt: "We Slow", nom: "We Slow", q: "Slow tourisme : visibilité et contenus" },
   { image: imgLaProchaineAire.url, alt: "La Prochaine Aire", nom: "La Prochaine Aire", q: "Tiers-lieu dans l'Yonne, co-fondé par Nowadays" },
