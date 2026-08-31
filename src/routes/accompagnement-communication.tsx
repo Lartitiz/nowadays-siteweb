@@ -165,7 +165,7 @@ function ClientsBand() {
 
 function DouleurSection() {
   return (
-    <Section>
+    <Section className="bn-centre">
       <h2 style={{ maxWidth: "16em" }}>
         Ce que tu proposes est beau et responsable. Il est temps qu'on le voie.
       </h2>
@@ -184,10 +184,7 @@ function ConvergenceSection() {
   return (
     <Section fond="rose" className="bn-relative">
       <Confetti couleur="#FFA7C6" style={{ left: "4%", bottom: "8%", width: 42, height: 42 }} />
-      <Pill ton="framboise">Tu as peut-être déjà essayé</Pill>
-      <h2 style={{ marginTop: 18 }}>
-        Coach, formation, plan : à chaque fois, tu étais seule au moment d'appliquer.
-      </h2>
+      <h2>Coach, formation, plan : à chaque fois, tu étais seule au moment d'appliquer.</h2>
 
       <div className="bn-conv">
         <div className="bn-gauche3">
@@ -373,7 +370,7 @@ function ReparsSection() {
 
 function SixMoisSection() {
   return (
-    <Section fond="rose">
+    <Section fond="rose" className="bn-centre">
       <Pill ton="framboise">Comment on s'y prend</Pill>
       <h2 style={{ marginTop: 18 }}>
         On pose le gros au début.
