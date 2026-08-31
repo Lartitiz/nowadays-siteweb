@@ -32,11 +32,20 @@ type Vichy = "jaune" | "prune" | "clair";
  * au build, donc absente de la table des tailles. On accepte alors les
  * dimensions à la main, pour ne pas perdre la réservation de place (le CLS).
  */
-type Visuel = { src: string; alt: string; width?: number; height?: number };
+type Visuel = {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  /** object-position en desktop, et dans la carte en mobile. */
+  position?: string;
+  positionMobile?: string;
+};
 
 function dimensions({ src, width, height }: Visuel) {
   return width && height ? { width, height } : imageSize(src);
 }
+
 
 // Les confettis ne doivent jamais reprendre la couleur du vichy qu'ils
 // ponctuent, sinon ils s'y effacent.
