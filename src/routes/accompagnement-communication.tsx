@@ -101,8 +101,11 @@ function HeroAccompagnement() {
   return (
     <PageHero
       vichy="jaune"
-      pill="Ta binôme de com' · 6 mois"
-      pillTon="bordeaux"
+      logo={{
+        src: "/images/offres/logo-ta-binome-de-com.png",
+        alt: "Ta binôme de com'",
+        width: 250,
+      }}
       titre={
         <>
           Tu fais un travail <em>magnifique</em>. Mais personne ne le{" "}
@@ -119,8 +122,11 @@ function HeroAccompagnement() {
       photo={{
         src: "/images/home/laetitia-fauteuil.jpg",
         alt: "Portrait de Laetitia, fondatrice de Nowadays",
+        position: "60% 40%",
+        positionMobile: "62% 38%",
       }}
     />
+
   );
 }
 
