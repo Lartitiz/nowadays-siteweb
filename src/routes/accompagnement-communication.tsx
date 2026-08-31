@@ -370,13 +370,15 @@ function ReparsSection() {
 
 function SixMoisSection() {
   return (
-    <Section fond="rose" className="bn-centre">
-      <Pill ton="framboise">Comment on s'y prend</Pill>
-      <h2 style={{ marginTop: 18 }}>
-        On pose le gros au début.
-        <br />
-        Ensuite, on fait ensemble.
-      </h2>
+    <Section fond="rose">
+      <div style={{ textAlign: "center" }}>
+        <Pill ton="framboise">Comment on s'y prend</Pill>
+        <h2 style={{ marginTop: 18 }}>
+          On pose le gros au début.
+          <br />
+          Ensuite, on fait ensemble.
+        </h2>
+      </div>
 
       <div className="bn-chart">
         <div className="bn-mois">
