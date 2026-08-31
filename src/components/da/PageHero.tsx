@@ -59,6 +59,7 @@ export function PageHero({
   vichy,
   pill,
   pillTon = "framboise",
+  logo,
   titre,
   chapo,
   mention,
@@ -73,6 +74,11 @@ export function PageHero({
   /** Pilule d'offre, ex. « Ta binôme de com' · 6 mois ». */
   pill?: string;
   pillTon?: "framboise" | "jaune" | "bordeaux";
+  /**
+   * Logo d'offre posé en haut de la carte. Quand il est fourni, il remplace la
+   * pilule et les confettis : un seul signe fort en ouverture.
+   */
+  logo?: { src: string; alt: string; width: number };
   /** Titre H1, avec ses <em> et son surligneur. */
   titre: ReactNode;
   chapo: ReactNode;
@@ -93,26 +99,40 @@ export function PageHero({
   const visuel = photo ?? couverture;
   const colonne = visuel ? (
     <div className={photo ? "page-hero-photo" : "page-hero-cover"}>
-      <img src={visuel.src} {...dimensions(visuel)} alt={visuel.alt} />
+      <img
+        src={visuel.src}
+        {...dimensions(visuel)}
+        alt={visuel.alt}
+        style={visuel.position ? { objectPosition: visuel.position } : undefined}
+      />
     </div>
   ) : aside ? (
     <div className="page-hero-aside">{aside}</div>
   ) : null;
 
   return (
-    <section className={`page-hero vichy-${vichy}`}>
-      <ConfettisBord couleurs={CONFETTIS[vichy]} />
+    <section className={`page-hero vichy-${vichy}${logo ? " page-hero--logo" : ""}`}>
+      {logo ? null : <ConfettisBord couleurs={CONFETTIS[vichy]} />}
       <div className="wrap">
         <div className={`page-hero-grid${colonne ? "" : " solo"}`}>
           <div className="page-hero-card">
-            {pill ? (
+            {logo ? (
+              <img
+                className="page-hero-logo"
+                src={logo.src}
+                alt={logo.alt}
+                style={{ width: logo.width }}
+              />
+            ) : pill ? (
               <div>
                 <Pill ton={pillTon}>{pill}</Pill>
               </div>
             ) : null}
             <h1>{titre}</h1>
             <p className="page-hero-copy">{chapo}</p>
-            {mention ? <p className="page-hero-mini">{mention}</p> : null}
+            {mention ? (
+              <p className={logo ? "page-hero-prix" : "page-hero-mini"}>{mention}</p>
+            ) : null}
             {cta ? (
               <>
                 <div className="actions">
@@ -128,10 +148,21 @@ export function PageHero({
                 {note ? <p className="page-hero-mini">{note}</p> : null}
               </>
             ) : null}
+            {logo && photo ? (
+              <img
+                className="page-hero-photo-mobile"
+                src={photo.src}
+                alt={photo.alt}
+                style={
+                  photo.positionMobile ? { objectPosition: photo.positionMobile } : undefined
+                }
+              />
+            ) : null}
           </div>
           {colonne}
         </div>
       </div>
     </section>
   );
+
 }
