@@ -83,8 +83,11 @@ function Hero() {
   return (
     <PageHero
       vichy="prune"
-      pill="Ton agency de com' · mission"
-      pillTon="jaune"
+      logo={{
+        src: "/images/offres/logo-ton-agency-de-com.png",
+        alt: "Ton agency de com'",
+        width: 270,
+      }}
       titre={
         <>
           Déléguez <em>votre com'</em> et concentrez-vous sur{" "}
@@ -101,8 +104,11 @@ function Hero() {
       photo={{
         src: "/images/home/laetitia-bureau.jpg",
         alt: "Laetitia Mattioli, fondatrice de Nowadays Agency, au travail",
+        position: "50% 45%",
+        positionMobile: "50% 42%",
       }}
     />
+
   );
 }
 
