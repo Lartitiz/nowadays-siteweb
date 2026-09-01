@@ -259,7 +259,7 @@ function BesoinsSection() {
         </div>
         <div className="bn-postits bn-relative">
           <PostIt titre="LE SITE" couleur="rose-doux" className="bn-postit-1">
-            « J'ai besoin d'un site. »
+            « J'ai besoin d'un site qui donne envie. »
           </PostIt>
           <PostIt titre="LES RÉSEAUX" couleur="jaune" className="bn-postit-2">
             « J'ai besoin que mes réseaux tournent. »
