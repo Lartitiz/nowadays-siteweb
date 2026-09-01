@@ -1493,16 +1493,6 @@ html:has(.nowadays-da) {
   max-width: 920px;
 }
 
-.nowadays-da .final-cta .flower {
-  position: absolute;
-  color: var(--framboise);
-  width: 110px;
-  height: 110px;
-  right: 7%;
-  top: 34px;
-  transform: rotate(14deg);
-}
-
 /* ---------- pied de page ---------- */
 
 .nowadays-da .site-footer {
@@ -1719,14 +1709,6 @@ html:has(.nowadays-da) {
   }
   .nowadays-da .footer-bottom {
     display: block;
-  }
-  /* La fleur est tournée de 14° : sa boîte visible fait ~1,21 fois sa largeur,
-     soit 85 px pour 70. À `right: 2%` elle touchait le bord et se faisait
-     couper net par l'`overflow: hidden` de la section. On la rentre. */
-  .nowadays-da .final-cta .flower {
-    width: 70px;
-    height: 70px;
-    right: 7%;
   }
 }
 
