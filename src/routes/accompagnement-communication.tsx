@@ -167,7 +167,8 @@ function DouleurSection() {
   return (
     <Section className="bn-centre">
       <h2 style={{ maxWidth: "16em" }}>
-        Ce que tu proposes est beau et responsable. Il est temps qu'on le voie.
+        Ce que tu proposes est beau et responsable. 
+        Il est temps qu'on le voie.
       </h2>
       <p className="lead">Sauf que pour l'instant, tu es seule face à ta com'. Et ça se sent.</p>
       <Temoin variante="t1" qui="Violaine" role="Cap sur Ikigaï">
