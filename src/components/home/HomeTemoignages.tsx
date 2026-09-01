@@ -28,8 +28,7 @@ export function HomeTemoignages() {
   return (
     <section className="testimonials rose">
       <div className="wrap">
-        <Pill>Elles l'ont fait</Pill>
-        <h2>Elles en parlent mieux que moi</h2>
+        <h2 className="text-center">Elles en parlent mieux que moi</h2>
 
         <div className="test-grid">
           {TEMOIGNAGES.map((temoignage) => (
