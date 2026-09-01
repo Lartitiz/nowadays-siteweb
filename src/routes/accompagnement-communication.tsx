@@ -115,7 +115,7 @@ function HeroAccompagnement() {
       chapo={
         <>
           Ta com' te prend la tête ? On la fait ensemble : on construit ta stratégie, on crée tes
-          contenus, on met tout en place. Tu n'es plus seule face à ta com'.
+          contenus, on met tout en place. Tu n'es plus seul·e face à ta com'.
         </>
       }
       mention="350 € par mois, pendant six mois."
@@ -143,7 +143,7 @@ function ClientsBand() {
     <section className="bg-rose-pale">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <p className="text-center text-xs font-bold uppercase tracking-[0.08em] text-gris-chaud">
-          Elles m'ont fait confiance
+          Ils·elles m'ont fait confiance
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
           {clients.map((c) => (
@@ -170,7 +170,7 @@ function DouleurSection() {
         Ce que tu proposes est beau et responsable. 
         Il est temps qu'on le voie.
       </h2>
-      <p className="lead">Sauf que pour l'instant, tu es seule face à ta com'. Et ça se sent.</p>
+      <p className="lead">Sauf que pour l'instant, tu es seul·e face à ta com'. Et ça se sent.</p>
       <Temoin variante="t1" qui="Violaine" role="Cap sur Ikigaï">
         <blockquote>
           « Je me suis rendu compte que j'avais même plus de page contact, tellement je réfléchissais
@@ -185,24 +185,24 @@ function ConvergenceSection() {
   return (
     <Section fond="rose" className="bn-relative">
       <Confetti couleur="#FFA7C6" style={{ left: "4%", bottom: "8%", width: 42, height: 42 }} />
-      <h2>Coach, formation, plan : à chaque fois, tu étais seule au moment d'appliquer.</h2>
+      <h2>Coach, formation, plan : à chaque fois, tu étais seul·e au moment d'appliquer.</h2>
 
       <div className="bn-conv">
         <div className="bn-gauche3">
           <div className="bn-deja">
             <b>Un·e coach qui te donne des mantras</b>
-            <span>Tu ressors motivée. Et lundi matin, il faut quand même écrire le post.</span>
-            <span className="bn-seule">…et tu te retrouves seule.</span>
+            <span>Tu ressors motivé·e. Et lundi matin, il faut quand même écrire le post.</span>
+            <span className="bn-seule">…et tu te retrouves seul·e.</span>
           </div>
           <div className="bn-deja">
             <b>Une formation de 47 vidéos</b>
             <span>Que tu regardes à 23 h, en te disant que tu appliqueras plus tard.</span>
-            <span className="bn-seule">…et tu te retrouves seule.</span>
+            <span className="bn-seule">…et tu te retrouves seul·e.</span>
           </div>
           <div className="bn-deja">
             <b>Un plan dans un Google Doc</b>
             <span>Très bien fait, d'ailleurs. Jamais rouvert depuis mars.</span>
-            <span className="bn-seule">…et tu te retrouves seule.</span>
+            <span className="bn-seule">…et tu te retrouves seul·e.</span>
           </div>
         </div>
         <div className="bn-milieu">
@@ -238,7 +238,7 @@ function ConvergenceSection() {
         <div>
           <div className="bn-binome">
             <span className="bn-bpil">Ta binôme de com'</span>
-            <p className="bn-binome-titre">Ici, tu n'appliques jamais seule.</p>
+            <p className="bn-binome-titre">Ici, tu n'appliques jamais seul·e.</p>
             <ul>
               <li>
                 <b>Du concret :</b> tu repars de chaque visio avec des choses faites, pas des
@@ -338,7 +338,7 @@ function ReparsSection() {
           <h2>
             Dans six mois, ta com' tourne.
             <br />
-            Et tu n'es plus seule.
+            Et tu n'es plus seul·e.
           </h2>
           <p className="lead">Voilà ce qui existe à la fin, concrètement.</p>
         </div>
@@ -363,7 +363,7 @@ function ReparsSection() {
         </div>
       </div>
       <p className="bn-chute">
-        Et surtout : tu n'auras rien fait de tout ça <span className="surligne">seule</span>.
+        Et surtout : tu n'auras rien fait de tout ça <span className="surligne">seul·e</span>.
       </p>
     </Section>
   );
@@ -469,7 +469,7 @@ function SixMoisSection() {
         </span>
         <span>
           <span className="bn-dot" style={{ background: "var(--jaune)" }} />
-          ce que tu fais, jamais seule
+          ce que tu fais, jamais seul·e
         </span>
       </div>
       <p className="bn-caveat">
@@ -491,19 +491,19 @@ function ManifesteSection() {
       <div className="wrap">
         <Pill ton="jaune">Pourquoi j'ai créé cet accompagnement</Pill>
         <h2 style={{ marginTop: 18 }}>
-          Pour les femmes qui créent des projets magnifiques, mais qui restent invisibles.
+          Pour celles et ceux qui créent des projets magnifiques, mais qui restent invisibles.
         </h2>
         <div className="bn-manif-corps">
           <div>
             <p>Invisibles, pas parce que le travail n'est pas bon. Parce qu'on leur a appris que :</p>
             <ul className="bn-manif-trois">
-              <li>parler de soi, c'est être prétentieuse ;</li>
+              <li>parler de soi, c'est être prétentieux·se ;</li>
               <li>vendre, c'est manipuler ;</li>
               <li>le marketing, c'est l'ennemi de l'authenticité.</li>
             </ul>
             <p style={{ marginTop: 22 }}>C'est ça que je veux changer. Dans le beau et dans la joie.</p>
             <p className="bn-manif-fin">
-              Une créatrice qui vit de son métier, c'est une personne de moins qui subit un travail
+              Un·e créateur·rice qui vit de son métier, c'est une personne de moins qui subit un travail
               qu'elle n'a pas choisi.
             </p>
           </div>
@@ -722,8 +722,8 @@ function PrixSection() {
         className="mx-auto"
       >
         <p className="bn-constat">
-          Dès le deuxième mois, Péline avait récupéré ce qu'elle avait investi, avec les clientes
-          signées entre-temps.
+          Dès le deuxième mois, Péline avait récupéré ce qu'elle avait investi, avec les client·es
+          signé·es entre-temps.
         </p>
       </Temoin>
 
@@ -809,9 +809,9 @@ function ProjetsSection() {
   return (
     <Section>
       <Pill>Douze projets</Pill>
-      <h2 style={{ marginTop: 18 }}>Elles sont passées par là avant toi.</h2>
+      <h2 style={{ marginTop: 18 }}>Ils·elles sont passé·es par là avant toi.</h2>
       <p className="lead">
-        Des créatrices, des artisanes, des accompagnantes. Voilà ce qu'on a construit ensemble.
+        Des créateur·rices, des artisan·es, des accompagnant·es. Voilà ce qu'on a construit ensemble.
       </p>
 
       <div className="bn-cas1">
@@ -854,11 +854,11 @@ function ProjetsSection() {
 function AutoQualifSection() {
   return (
     <Section fond="rose">
-      <h2>Avant qu'on se parle, soyons honnêtes toutes les deux.</h2>
+      <h2>Avant qu'on se parle, soyons honnêtes tou·tes les deux.</h2>
       <div className="audience-grid">
         <CardPointillee titre="C'est pour toi si…" ton="rose">
           <ul>
-            <li>Tu es solopreneuse dans l'univers lifestyle éthique.</li>
+            <li>Tu es solopreneur·euse dans l'univers lifestyle éthique.</li>
             <li>Ton travail est bon, et ça ne se sait pas encore.</li>
             <li>Tu veux des choses faites, pas des choses à faire.</li>
             <li>Tu peux dégager deux heures par semaine.</li>
@@ -894,11 +894,11 @@ function FaqSection() {
     },
     {
       q: "Pourquoi 350 € par mois, et pas un prix en une fois ?",
-      a: "Parce que c'est plus tenable pour une trésorerie de solopreneuse. À savoir quand même : le gros du travail est concentré sur les deux premiers mois, là où je construis tout. Les mensualités suivantes paient l'application, le suivi et la disponibilité.",
+      a: "Parce que c'est plus tenable pour une trésorerie de solopreneur·euse. À savoir quand même : le gros du travail est concentré sur les deux premiers mois, là où je construis tout. Les mensualités suivantes paient l'application, le suivi et la disponibilité.",
     },
     {
       q: "Je peux arrêter quand je veux ?",
-      a: "Oui. L'accompagnement est pensé sur six mois parce que c'est le temps qu'il faut pour que ta com' tourne vraiment, mais tu n'es enfermée nulle part : tu me préviens et on arrête les mensualités suivantes. Les mois déjà faits restent dus, forcément. Et si ta situation change en cours de route, dis-le-moi tôt : on trouvera une solution ensemble.",
+      a: "Oui. L'accompagnement est pensé sur six mois parce que c'est le temps qu'il faut pour que ta com' tourne vraiment, mais tu n'es enfermé·e nulle part : tu me préviens et on arrête les mensualités suivantes. Les mois déjà faits restent dus, forcément. Et si ta situation change en cours de route, dis-le-moi tôt : on trouvera une solution ensemble.",
     },
     {
       q: "Et la garantie, ça marche comment ?",
@@ -914,7 +914,7 @@ function FaqSection() {
     },
     {
       q: "À qui s'adresse cet accompagnement, exactement ?",
-      a: "Aux solopreneuses de l'univers lifestyle éthique : mode, beauté, artisanat, bien-être, déco, food, sport, culture, accompagnement. Que tu vendes des produits ou des services, le besoin est le même : être visible sans trahir tes valeurs.",
+      a: "Aux solopreneur·euses de l'univers lifestyle éthique : mode, beauté, artisanat, bien-être, déco, food, sport, culture, accompagnement. Que tu vendes des produits ou des services, le besoin est le même : être visible sans trahir tes valeurs.",
     },
     {
       q: "Combien de temps ça me prend chaque semaine ?",
@@ -954,7 +954,7 @@ function CtaFinalAccompagnement() {
   return (
     <section className="final-cta centre">
       <div className="wrap">
-        <h2>Prête à devenir visible ?</h2>
+        <h2>Prêt·e à devenir visible ?</h2>
         <p>
           On en parle 30 minutes, sans engagement. Tu repars avec une vision claire, que tu
           démarres avec moi ou pas.
