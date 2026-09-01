@@ -283,7 +283,8 @@ function PhraseVichySection() {
       <div className="bn-carte">
         <p className="bn-avant">En vrai, tu n'as pas besoin de quatre prestataires.</p>
         <p className="bn-phrase">
-          Tu as besoin que ta com' tourne, <span className="surligne">dans son ensemble</span>.
+          Tu as besoin que ta com' tourne, 
+          <span className="surligne">dans son ensemble.</span>
           <br />
           <em>Et de quelqu'un qui la fait avec toi.</em>
         </p>
