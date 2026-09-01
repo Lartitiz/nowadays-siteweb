@@ -2661,6 +2661,40 @@ html:has(.nowadays-da) {
 }
 
 /* ---- enchantée ---- */
+.bn-enchantee {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 52px;
+  align-items: start;
+}
+
+.bn-enchantee-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 26px 64px 22px 46px;
+  box-shadow: 0 16px 38px rgba(145, 1, 75, 0.14);
+  transform: rotate(-1.5deg);
+}
+
+.bn-enchantee .bn-idcards {
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+@media (max-width: 900px) {
+  .bn-enchantee {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .bn-enchantee-photo {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
 .bn-idcards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
