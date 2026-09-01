@@ -262,7 +262,7 @@ function BesoinsSection() {
             « J'ai besoin d'un site qui donne envie. »
           </PostIt>
           <PostIt titre="LES RÉSEAUX" couleur="jaune" className="bn-postit-2">
-            « J'ai besoin que mes réseaux tournent. »
+            « Il faut que mes réseaux tournent. »
           </PostIt>
           <PostIt titre="LA NEWSLETTER" couleur="rose" className="bn-postit-3">
             « Il me faudrait une newsletter, non ? »
