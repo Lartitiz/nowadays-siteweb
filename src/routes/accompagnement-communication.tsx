@@ -921,7 +921,7 @@ function FaqSection() {
             value={`item-${i}`}
             className="rounded-carte border border-rose-doux bg-white px-6"
           >
-            <AccordionTrigger className="py-6 text-left font-titre text-lg text-encre hover:no-underline md:text-xl">
+            <AccordionTrigger className="py-6 text-left font-courant text-lg font-semibold text-encre hover:no-underline md:text-xl">
               {f.q}
             </AccordionTrigger>
             <AccordionContent className="pb-6 text-sm text-encre">{f.a}</AccordionContent>
