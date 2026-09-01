@@ -29,7 +29,7 @@ export function HomeTemoignages() {
     <section className="testimonials rose">
       <div className="wrap">
         <Pill>Elles l'ont fait</Pill>
-        <h2>Des paroles réellement prononcées.</h2>
+        <h2>Elles en parlent mieux que moi</h2>
 
         <div className="test-grid">
           {TEMOIGNAGES.map((temoignage) => (
