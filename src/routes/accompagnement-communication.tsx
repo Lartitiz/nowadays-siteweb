@@ -19,6 +19,7 @@ import logoBoomBoomDance from "@/assets/clients-accompagnement/boom-boom-dance.p
 import logoHopla from "@/assets/clients-accompagnement/hopla.png.asset.json";
 import logoNapperon from "@/assets/clients-accompagnement/napperon.png.asset.json";
 import { CALENDLY_URL } from "@/lib/links";
+import photoLaetitia from "@/assets/laetitia-binome.jpeg.asset.json";
 import { absoluteUrl } from "@/lib/site";
 import { imageSize } from "@/lib/image-sizes";
 
@@ -650,7 +651,7 @@ function ComparatifSection() {
       <p className="bn-methode">
         Tarifs médians France 2026, bas de fourchette (source : La Fabrique du Net).
       </p>
-      <p className="bn-chute">
+      <p className="bn-chute" style={{ textAlign: "center" }}>
         Huit fois moins cher, parce qu'on le fait <span className="surligne">ensemble</span>.
       </p>
 
