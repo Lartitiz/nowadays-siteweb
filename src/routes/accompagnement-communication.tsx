@@ -19,6 +19,7 @@ import logoBoomBoomDance from "@/assets/clients-accompagnement/boom-boom-dance.p
 import logoHopla from "@/assets/clients-accompagnement/hopla.png.asset.json";
 import logoNapperon from "@/assets/clients-accompagnement/napperon.png.asset.json";
 import { CALENDLY_URL } from "@/lib/links";
+import photoLaetitia from "@/assets/laetitia-binome.jpeg.asset.json";
 import { absoluteUrl } from "@/lib/site";
 import { imageSize } from "@/lib/image-sizes";
 
@@ -523,29 +524,42 @@ function ManifesteSection() {
 function EnchanteeSection() {
   return (
     <Section fond="rose">
-      <h2>Enchantée, moi c'est Laetitia Mattioli.</h2>
-      <p className="lead">Ta binôme, c'est moi. Celle qui sera dans la visio avec toi.</p>
-      <div className="bn-idcards">
-        <div className="bn-c">
-          <div className="bn-num">01</div>
-          <p>
-            <b>10 ans</b> de marketing digital, <b>+150 projets accompagnés</b>, de 0 à 10 000
-            abonné·es.
-          </p>
+      <div className="bn-enchantee">
+        <div className="bn-enchantee-photo">
+          <img
+            src={photoLaetitia.url}
+            width={1276}
+            height={1920}
+            alt="Laetitia Mattioli à son bureau, souriante derrière son ordinateur"
+            loading="lazy"
+          />
         </div>
-        <div className="bn-c">
-          <div className="bn-num">02</div>
-          <p>
-            Des conférences à l'<b>École des arts décoratifs de Paris</b>, des formations au{" "}
-            <b>Bureau de la mode et du design</b>, des interventions à l'<b>ENS</b> et aux{" "}
-            <b>Mines</b>.
-          </p>
-        </div>
-        <div className="bn-c">
-          <div className="bn-num">03</div>
-          <p>
-            Fondatrice de <b>Nowadays</b>, agence de communication engagée et responsable.
-          </p>
+        <div>
+          <h2>Enchantée, moi c'est Laetitia Mattioli.</h2>
+          <p className="lead">Ta binôme, c'est moi. Celle qui sera dans la visio avec toi.</p>
+          <div className="bn-idcards">
+            <div className="bn-c">
+              <div className="bn-num">01</div>
+              <p>
+                <b>10 ans</b> de marketing digital, <b>+150 projets accompagnés</b>, de 0 à 10 000
+                abonné·es.
+              </p>
+            </div>
+            <div className="bn-c">
+              <div className="bn-num">02</div>
+              <p>
+                Des conférences à l'<b>École des arts décoratifs de Paris</b>, des formations au{" "}
+                <b>Bureau de la mode et du design</b>, des interventions à l'<b>ENS</b> et aux{" "}
+                <b>Mines</b>.
+              </p>
+            </div>
+            <div className="bn-c">
+              <div className="bn-num">03</div>
+              <p>
+                Fondatrice de <b>Nowadays</b>, agence de communication engagée et responsable.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </Section>
@@ -650,7 +664,7 @@ function ComparatifSection() {
       <p className="bn-methode">
         Tarifs médians France 2026, bas de fourchette (source : La Fabrique du Net).
       </p>
-      <p className="bn-chute">
+      <p className="bn-chute" style={{ textAlign: "center" }}>
         Huit fois moins cher, parce qu'on le fait <span className="surligne">ensemble</span>.
       </p>
 
