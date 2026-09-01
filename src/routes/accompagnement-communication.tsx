@@ -906,7 +906,7 @@ function FaqSection() {
     },
     {
       q: "J'ai déjà suivi des formations en com' et ça n'a rien donné. En quoi c'est différent ?",
-      a: "On ne reste pas dans la théorie. Tu ne regardes pas des vidéos seule à 23 h : tu as quelqu'un en face de toi qui travaille sur ton projet, avec tes contraintes et tes valeurs. Et tu repars chaque mois avec des choses faites, pas des choses à faire.",
+      a: "On ne reste pas dans la théorie. Tu ne regardes pas des vidéos seul·e à 23 h : tu as quelqu'un en face de toi qui travaille sur ton projet, avec tes contraintes et tes valeurs. Et tu repars chaque mois avec des choses faites, pas des choses à faire.",
     },
     {
       q: "Et si je préfère que quelqu'un fasse tout à ma place ?",
