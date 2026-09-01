@@ -185,7 +185,7 @@ function ConvergenceSection() {
   return (
     <Section fond="rose" className="bn-relative">
       <Confetti couleur="#FFA7C6" style={{ left: "4%", bottom: "8%", width: 42, height: 42 }} />
-      <h2>Coach, formation, plan : à chaque fois, tu étais seul·e au moment d'appliquer.</h2>
+      <h2>Souvent, tu es seule au moment d'appliquer.</h2>
 
       <div className="bn-conv">
         <div className="bn-gauche3">
