@@ -268,7 +268,7 @@ function BesoinsSection() {
             « Il me faudrait une newsletter, non ? »
           </PostIt>
           <PostIt titre="LA PRESSE" couleur="rose-doux" className="bn-postit-4">
-            « Et il faudrait que je contacte la presse, aussi. »
+            « Et la presse, ça serait bien aussi. »
           </PostIt>
         </div>
       </div>
