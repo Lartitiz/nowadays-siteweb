@@ -14,7 +14,6 @@ import designSystemCss from "../styles/design-system.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SITE_ORIGIN, absoluteUrl } from "@/lib/site";
 import { DaLayout } from "@/components/da/DaLayout";
-import { Confettis } from "@/components/da/primitives";
 import { Mesure } from "@/components/Mesure";
 
 // La 404 était en anglais et hors charte. Seule page où le brief autorise
@@ -23,7 +22,6 @@ function NotFoundComponent() {
   return (
     <DaLayout>
       <section className="hero vichy">
-        <Confettis />
         <div className="wrap">
           <div className="hero-card">
             <h1>

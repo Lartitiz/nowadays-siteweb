@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 
 import { CALENDLY_URL } from "./constants";
-import { ConfettisBord } from "./primitives";
 import { Pill } from "./Pill";
 import { imageSize } from "@/lib/image-sizes";
 
@@ -47,13 +46,6 @@ function dimensions({ src, width, height }: Visuel) {
 }
 
 
-// Les confettis ne doivent jamais reprendre la couleur du vichy qu'ils
-// ponctuent, sinon ils s'y effacent.
-const CONFETTIS: Record<Vichy, readonly [string, string, string]> = {
-  jaune: ["#FB3D80", "#91014B", "#FFA7C6"],
-  prune: ["#FFE561", "#FF7A33", "#FFA7C6"],
-  clair: ["#FFE561", "#FB3D80", "#FF7A33"],
-};
 
 export function PageHero({
   vichy,
@@ -112,7 +104,6 @@ export function PageHero({
 
   return (
     <section className={`page-hero vichy-${vichy}${logo ? " page-hero--logo" : ""}`}>
-      {logo ? null : <ConfettisBord couleurs={CONFETTIS[vichy]} />}
       <div className="wrap">
         <div className={`page-hero-grid${colonne ? "" : " solo"}`}>
           <div className="page-hero-card">

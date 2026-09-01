@@ -57,20 +57,6 @@ function CtaButton({ children = "Réserver un appel découverte" }: { children?:
   );
 }
 
-// Astérisque-confetti, décoratif : même dessin que le composant partagé
-// `Confettis`/`ConfettisBord`, mais avec une couleur et une position propres à
-// chaque section de cette page (la maquette les place au cas par cas).
-function Confetti({ couleur, style }: { couleur: string; style: CSSProperties }) {
-  return (
-    <svg className="conf" style={style} viewBox="0 0 100 100" aria-hidden="true">
-      <g fill={couleur}>
-        <rect x="8" y="41" width="84" height="18" rx="9" />
-        <rect x="8" y="41" width="84" height="18" rx="9" transform="rotate(60 50 50)" />
-        <rect x="8" y="41" width="84" height="18" rx="9" transform="rotate(120 50 50)" />
-      </g>
-    </svg>
-  );
-}
 
 function Temoin({
   variante,
@@ -184,8 +170,7 @@ function DouleurSection() {
 function ConvergenceSection() {
   return (
     <Section fond="rose" className="bn-relative">
-      <Confetti couleur="#FFA7C6" style={{ left: "4%", bottom: "8%", width: 42, height: 42 }} />
-      <h2>Souvent, tu es seule au moment d'appliquer.</h2>
+      <h2 style={{ textAlign: "center", marginInline: "auto" }}>Souvent, tu es seule au moment d'appliquer.</h2>
 
       <div className="bn-conv">
         <div className="bn-gauche3">
@@ -273,8 +258,6 @@ function BesoinsSection() {
           <p className="lead">Tu l'as sûrement déjà listé. Un mardi soir, probablement.</p>
         </div>
         <div className="bn-postits bn-relative">
-          <Confetti couleur="#FFE561" style={{ right: -6, top: -34, width: 56, height: 56 }} />
-          <Confetti couleur="#FF7A33" style={{ left: -18, bottom: -26, width: 40, height: 40 }} />
           <PostIt titre="LE SITE" couleur="rose-doux" className="bn-postit-1">
             « J'ai besoin d'un site. »
           </PostIt>
@@ -296,8 +279,6 @@ function BesoinsSection() {
 function PhraseVichySection() {
   return (
     <div className="vichy bn-vichy-phrase">
-      <Confetti couleur="#FFE561" style={{ left: "7%", top: 44, width: 64, height: 64 }} />
-      <Confetti couleur="#FF7A33" style={{ right: "6%", bottom: 40, width: 48, height: 48 }} />
       <div className="bn-carte">
         <p className="bn-avant">En vrai, tu n'as pas besoin de quatre prestataires.</p>
         <p className="bn-phrase">
