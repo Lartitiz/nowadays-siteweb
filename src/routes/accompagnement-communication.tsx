@@ -184,8 +184,7 @@ function DouleurSection() {
 function ConvergenceSection() {
   return (
     <Section fond="rose" className="bn-relative">
-      <Confetti couleur="#FFA7C6" style={{ left: "4%", bottom: "8%", width: 42, height: 42 }} />
-      <h2>Souvent, tu es seule au moment d'appliquer.</h2>
+      <h2 style={{ textAlign: "center", marginInline: "auto" }}>Souvent, tu es seule au moment d'appliquer.</h2>
 
       <div className="bn-conv">
         <div className="bn-gauche3">

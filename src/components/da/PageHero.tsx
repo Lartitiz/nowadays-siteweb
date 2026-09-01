@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 
 import { CALENDLY_URL } from "./constants";
-import { ConfettisBord } from "./primitives";
 import { Pill } from "./Pill";
 import { imageSize } from "@/lib/image-sizes";
 

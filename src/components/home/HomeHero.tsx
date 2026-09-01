@@ -1,10 +1,8 @@
 import { CALENDLY_URL } from "@/components/da/constants";
-import { Confettis } from "@/components/da/primitives";
 
 export function HomeHero() {
   return (
     <section className="hero vichy">
-      <Confettis />
       <div className="wrap">
         <div className="hero-card">
           <p className="hero-sub">
