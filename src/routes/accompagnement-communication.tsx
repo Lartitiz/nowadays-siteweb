@@ -428,22 +428,6 @@ function SixMoisSection() {
         </div>
       </div>
 
-      <div className="bn-phases">
-        <div className="bn-ph">
-          <b>ON POSE</b>
-          <span>
-            Deux heures où tu me racontes tout, puis je construis : l'état des lieux de ta com', ta
-            marque, ton plan, tes vingt premiers posts.
-          </span>
-        </div>
-        <div className="bn-ph bn-ph--bordeaux">
-          <b>ON APPLIQUE, ENSEMBLE</b>
-          <span>
-            Une visio de 2 h par mois, WhatsApp entre les sessions : toi tu publies, moi je
-            construis.
-          </span>
-        </div>
-      </div>
 
       <div className="bn-legend">
         <span>
