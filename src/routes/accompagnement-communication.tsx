@@ -255,7 +255,8 @@ function BesoinsSection() {
       <div className="bn-duo2">
         <div>
           <h2>Ce dont tu as besoin, en vrai.</h2>
-          <p className="lead">Tu l'as sûrement déjà listé. Un mardi soir, probablement.</p>
+          <p className="lead">Tu l'as sûrement déjà listé. 
+            Un mardi soir, probablement.</p>
         </div>
         <div className="bn-postits bn-relative">
           <PostIt titre="LE SITE" couleur="rose-doux" className="bn-postit-1">
