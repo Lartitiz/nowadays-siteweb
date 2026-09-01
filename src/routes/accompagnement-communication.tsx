@@ -458,11 +458,12 @@ function ManifesteSection() {
       <div className="wrap">
         <Pill ton="jaune">Pourquoi j'ai créé cet accompagnement</Pill>
         <h2 style={{ marginTop: 18 }}>
-          Pour celles et ceux qui créent des projets magnifiques, mais qui restent invisibles.
+          Pour les personnes qui créent des projets magnifiques, mais qui restent invisibles.
         </h2>
         <div className="bn-manif-corps">
           <div>
-            <p>Invisibles, pas parce que le travail n'est pas bon. Parce qu'on leur a appris que :</p>
+            <p>Invisibles, pas parce que le travail n'est pas bon.&nbsp;
+            Parce qu'on leur a appris que :</p>
             <ul className="bn-manif-trois">
               <li>parler de soi, c'est être prétentieux·se ;</li>
               <li>vendre, c'est manipuler ;</li>
