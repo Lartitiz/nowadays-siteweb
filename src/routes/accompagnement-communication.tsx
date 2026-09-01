@@ -319,7 +319,7 @@ function ReparsSection() {
       <div className="bn-entete">
         <div>
           <h2>
-            Dans six mois, ta com' tourne.
+            Dans six mois, ta communication tourne.
             <br />
             Et tu n'es plus seul·e.
           </h2>
