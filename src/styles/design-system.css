@@ -265,31 +265,6 @@ html:has(.nowadays-da) {
 
 /* ---------- primitives décoratives ---------- */
 
-.nowadays-da .flower {
-  width: 34px;
-  height: 34px;
-  background: currentColor;
-  clip-path: polygon(
-    42% 0,
-    57% 0,
-    63% 31%,
-    86% 12%,
-    100% 25%,
-    76% 49%,
-    100% 61%,
-    88% 76%,
-    62% 63%,
-    58% 100%,
-    42% 100%,
-    37% 66%,
-    12% 88%,
-    0 73%,
-    25% 50%,
-    0 37%,
-    12% 23%,
-    38% 35%
-  );
-}
 
 .nowadays-da .vichy {
   background-color: var(--rose-doux);

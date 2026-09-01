@@ -8,7 +8,6 @@ import { CALENDLY_URL } from "./constants";
 export function CtaFinal() {
   return (
     <section id="contact" className="final-cta centre">
-      <div className="flower" aria-hidden="true" />
       <div className="wrap">
         <h2>
           Prêt·es à <em>avancer</em> ?
