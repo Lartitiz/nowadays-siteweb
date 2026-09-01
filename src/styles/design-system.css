@@ -265,31 +265,6 @@ html:has(.nowadays-da) {
 
 /* ---------- primitives décoratives ---------- */
 
-.nowadays-da .flower {
-  width: 34px;
-  height: 34px;
-  background: currentColor;
-  clip-path: polygon(
-    42% 0,
-    57% 0,
-    63% 31%,
-    86% 12%,
-    100% 25%,
-    76% 49%,
-    100% 61%,
-    88% 76%,
-    62% 63%,
-    58% 100%,
-    42% 100%,
-    37% 66%,
-    12% 88%,
-    0 73%,
-    25% 50%,
-    0 37%,
-    12% 23%,
-    38% 35%
-  );
-}
 
 .nowadays-da .vichy {
   background-color: var(--rose-doux);
@@ -1518,16 +1493,6 @@ html:has(.nowadays-da) {
   max-width: 920px;
 }
 
-.nowadays-da .final-cta .flower {
-  position: absolute;
-  color: var(--framboise);
-  width: 110px;
-  height: 110px;
-  right: 7%;
-  top: 34px;
-  transform: rotate(14deg);
-}
-
 /* ---------- pied de page ---------- */
 
 .nowadays-da .site-footer {
@@ -1744,14 +1709,6 @@ html:has(.nowadays-da) {
   }
   .nowadays-da .footer-bottom {
     display: block;
-  }
-  /* La fleur est tournée de 14° : sa boîte visible fait ~1,21 fois sa largeur,
-     soit 85 px pour 70. À `right: 2%` elle touchait le bord et se faisait
-     couper net par l'`overflow: hidden` de la section. On la rentre. */
-  .nowadays-da .final-cta .flower {
-    width: 70px;
-    height: 70px;
-    right: 7%;
   }
 }
 
