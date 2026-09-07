@@ -62,6 +62,9 @@ const EDITORIAL_REDIRECTS: Record<string, string> = {
   "/storytelling-etape-par-etape": "/guide-storytelling",
   // Ancienne page /communication → l'offre d'accompagnement.
   "/communication": "/accompagnement-communication",
+  // URL paramètre technique laissée par un ancien sitemap / lien ; Google
+  // l'a explorée littéralement. On la renvoie vers l'index du blog.
+  "/blog/$slug": "/blog",
 };
 
 const REDIRECTS: Record<string, string> = {
