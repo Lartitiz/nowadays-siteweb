@@ -18,7 +18,7 @@ export const Route = createFileRoute("/mentions-legales")({
           "Informations légales de Nowadays Agency : éditrice, hébergement, propriété intellectuelle et données personnelles.",
       },
       { property: "og:url", content: absoluteUrl("/mentions-legales") },
-      { name: "robots", content: "index, follow" },
+      { name: "robots", content: "noindex, follow" },
     ],
     links: [{ rel: "canonical", href: absoluteUrl("/mentions-legales") }],
   }),
