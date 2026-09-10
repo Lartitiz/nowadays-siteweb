@@ -449,7 +449,7 @@ function ManifesteSection() {
       <div className="wrap">
         <Pill ton="jaune">Pourquoi j'ai créé cet accompagnement</Pill>
         <h2 style={{ marginTop: 18 }}>
-          Pour les personnes qui créent des projets magnifiques, mais qui restent invisibles.
+          J'ai créé cet accompagnement pour les personnes qui créent des projets magnifiques, mais qui restent invisibles.
         </h2>
         <div className="bn-manif-corps">
           <div>
