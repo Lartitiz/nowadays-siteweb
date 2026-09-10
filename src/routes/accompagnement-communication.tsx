@@ -101,8 +101,8 @@ function HeroAccompagnement() {
       }
       chapo={
         <>
-          Ta com' te prend la tête ? On la fait ensemble : on construit ta stratégie, on crée tes
-          contenus, on met tout en place. Tu n'es plus seul·e face à ta com'.
+          Ta communication te prend la tête ? On la fait ensemble : on construit ta stratégie, on crée tes
+          contenus, on met tout en place. Tu n'es plus seul·e.
         </>
       }
       mention="350 € par mois, pendant six mois."
