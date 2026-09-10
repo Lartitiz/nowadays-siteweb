@@ -559,8 +559,8 @@ function EnchanteeSection() {
 function ComparatifSection() {
   return (
     <Section>
-      <h2>Tu veux déléguer. Regardons ce que ça coûte vraiment.</h2>
-      <p className="lead">Les mêmes cinq chantiers, dans les deux cas.</p>
+      <h2 className="text-center">Tu veux déléguer. Regardons ce que ça coûte vraiment.</h2>
+      <p className="lead text-center">Les mêmes cinq chantiers, dans les deux cas.</p>
 
       <div className="bn-duo">
         <div className="bn-pan bn-pan--a">
