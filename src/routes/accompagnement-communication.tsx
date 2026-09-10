@@ -224,19 +224,9 @@ function ConvergenceSection() {
         <div>
           <div className="bn-binome">
             <span className="bn-bpil">Ta binôme de com'</span>
-            <p className="bn-binome-titre">Ici, tu n'appliques jamais seul·e.</p>
-            <ul>
-              <li>
-                <b>Du concret :</b> tu repars de chaque visio avec des choses faites, pas des
-                mantras.
-              </li>
-              <li>
-                <b>En direct :</b> ce qu'on apprend, on le fait ensemble, sur ton projet.
-              </li>
-              <li>
-                <b>Appliqué :</b> ce qu'on crée un mardi est en ligne le jeudi.
-              </li>
-            </ul>
+            <p className="bn-binome-titre">
+              Je deviens tabynome de Com. Ici, tu n'es jamais seul. On met tout en place ensemble.
+            </p>
           </div>
         </div>
       </div>
