@@ -780,8 +780,7 @@ const PROJETS_COMPACTS = [
 function ProjetsSection() {
   return (
     <Section>
-      <Pill>Douze projets</Pill>
-      <h2 style={{ marginTop: 18 }}>Ils·elles sont passé·es par là avant toi.</h2>
+      <h2>Ils·elles sont passé·es par là avant toi.</h2>
       <p className="lead">
         Des créateur·rices, des artisan·es, des accompagnant·es. Voilà ce qu'on a construit ensemble.
       </p>
