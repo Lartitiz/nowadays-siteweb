@@ -453,7 +453,7 @@ function ManifesteSection() {
         </h2>
         <div className="bn-manif-corps">
           <div>
-            <p>Invisibles, pas parce que le travail n'est pas bon.&nbsp;
+            <p>Invisibles, pas parce que le travail n'est pas bon.&nbsp;&nbsp;<br />
             Parce qu'on leur a appris que :</p>
             <ul className="bn-manif-trois">
               <li>parler de soi, c'est être prétentieux·se ;</li>
