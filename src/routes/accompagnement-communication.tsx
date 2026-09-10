@@ -462,7 +462,7 @@ function ManifesteSection() {
             </ul>
             <p style={{ marginTop: 22 }}>C'est ça que je veux changer. Dans le beau et dans la joie.</p>
             <p className="bn-manif-fin">
-              Un·e créateur·rice qui vit de son métier, c'est une personne de moins qui subit un travail
+              Un·e créateur·.ice qui vit de son métier, c'est une personne de moins qui subit un travail
               qu'elle n'a pas choisi.
             </p>
           </div>
