@@ -234,7 +234,7 @@ function ConvergenceSection() {
       <p className="bn-chute bn-chute--grand">
         Le problème, ça n'a jamais été toi.
         <br />
-        <em>C'était la solitude.</em>
+       <em>C'est que tu es seul.e face à ta communication</em>
       </p>
     </Section>
   );
