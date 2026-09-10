@@ -780,8 +780,8 @@ const PROJETS_COMPACTS = [
 function ProjetsSection() {
   return (
     <Section>
-      <h2>Ils·elles sont passé·es par là avant toi.</h2>
-      <p className="lead">
+      <h2 className="text-center">Ils·elles sont passé·es par là avant toi.</h2>
+      <p className="lead text-center">
         Des créateur·rices, des artisan·es, des accompagnant·es. Voilà ce qu'on a construit ensemble.
       </p>
 
