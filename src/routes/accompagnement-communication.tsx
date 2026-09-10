@@ -844,7 +844,10 @@ function AutoQualifSection() {
             </li>
             <li>Tu cherches des hacks de croissance.</li>
             <li>
-              Tu veux que quelqu'un fasse tout, sans toi. Ça existe : Ton Agency de Com'.
+              Tu veux que quelqu'un fasse tout, sans toi. Ça existe :{" "}
+              <Link to="/cooperative-asso" className="underline hover:text-bordeaux">
+                Ton Agency de Com'
+              </Link>.
             </li>
           </ul>
         </CardPointillee>
