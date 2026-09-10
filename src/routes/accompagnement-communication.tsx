@@ -225,7 +225,7 @@ function ConvergenceSection() {
           <div className="bn-binome">
             <span className="bn-bpil">Ta binôme de com'</span>
             <p className="bn-binome-titre">
-              Je deviens ta binôme de communication. Ici, tu n'es jamais seul. On met tout en place ensemble.
+              Je deviens ta binôme de communication. Ici, tu n'es jamais seul.e. On met tout en place ensemble.
             </p>
           </div>
         </div>
