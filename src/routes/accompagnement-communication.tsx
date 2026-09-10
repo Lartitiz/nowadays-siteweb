@@ -825,7 +825,7 @@ function ProjetsSection() {
 function AutoQualifSection() {
   return (
     <Section fond="rose">
-      <h2>Avant qu'on se parle, soyons honnêtes tou·tes les deux.</h2>
+      <h2 className="text-center">Avant qu'on se parle, soyons honnêtes tou·tes les deux.</h2>
       <div className="audience-grid">
         <CardPointillee titre="C'est pour toi si…" ton="rose">
           <ul>
