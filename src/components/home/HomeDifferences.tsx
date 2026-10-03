@@ -18,8 +18,10 @@ export function HomeDifferences() {
   return (
     <section className="section rose">
       <div className="wrap">
-        <Pill>Ce qui nous rend différentes</Pill>
-        <h2>Pas votre agence de communication classique.</h2>
+        <div className="text-center">
+          <Pill>Ce qui nous rend différentes</Pill>
+        </div>
+        <h2 className="text-center">Pas votre agence de communication classique.</h2>
 
         <div className="diff-grid">
           <article className="diff-main">
