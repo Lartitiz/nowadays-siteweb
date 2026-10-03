@@ -24,7 +24,7 @@ export function HomeEtapes() {
     <section className="section steps">
       <div className="wrap">
         <Pill>Comment ça marche</Pill>
-        <h2>3 étapes. Zéro prise de tête.</h2>
+        <h2>3 étapes pour zéro prise de tête.</h2>
         <div className="step-grid">
           {ETAPES.map((etape) => (
             <article className="step" key={etape.numero}>
