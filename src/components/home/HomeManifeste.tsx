@@ -11,11 +11,10 @@ export function HomeManifeste() {
           <Pill ton="jaune">Notre manifeste</Pill>
           <h2>Une communication engagée comme outil d'émancipation.</h2>
           <p className="lead">
-            La visibilité, c'est déjà une forme de liberté. Une créatrice qui vit de son métier,
-            c'est une personne de moins qui subit un travail qu'elle n'a pas choisi. Une association
-            qu'on entend, c'est une cause qui avance. Rendre visible, ce n'est pas décorer : c'est
-            donner à un projet les moyens d'exister. Et on choisit de le faire dans le beau et dans
-            la joie.
+            La visibilité, c'est déjà une forme de liberté. Quand une créatrice peut vivre de son métier,
+            c'est une personne de moins qui subit un travail imposé. Quand une association se fait entendre,
+            une cause progresse. Rendre visible, ce n'est pas embellir, c'est donner à un projet la chance
+            d'exister. Et nous choisissons de le faire avec beauté et joie.
           </p>
           <p className="signature-line">
             <em>Parce que le beau n'est pas futile : c'est un levier de changement.</em>
