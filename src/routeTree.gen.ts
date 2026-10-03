@@ -9,115 +9,53 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TemplateCalendrierEditorialRouteImport } from './routes/template-calendrier-editorial'
-import { Route as TemplateBrandingRouteImport } from './routes/template-branding'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as PlanCommunicationRouteImport } from './routes/plan-communication'
-import { Route as MerciRdvRouteImport } from './routes/merci-rdv'
-import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
-import { Route as GuideStorytellingRouteImport } from './routes/guide-storytelling'
-import { Route as FormationGratuiteInstagramRouteImport } from './routes/formation-gratuite-instagram'
-import { Route as EtudesDeCasProRouteImport } from './routes/etudes-de-cas-pro'
-import { Route as DemarcheEthiqueRouteImport } from './routes/demarche-ethique'
-import { Route as CreatricesEthiquesRouteImport } from './routes/creatrices-ethiques'
-import { Route as CoulissesRouteImport } from './routes/coulisses'
-import { Route as CooperativeAssoRouteImport } from './routes/cooperative-asso'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as AccompagnementCommunicationRouteImport } from './routes/accompagnement-communication'
-import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as BlogIndexRouteImport } from './routes/blog.index'
-import { Route as EtudesStillNordicRouteImport } from './routes/etudes.still-nordic'
-import { Route as EtudesSeaShepherdRouteImport } from './routes/etudes.sea-shepherd'
-import { Route as EtudesRessourcesRouteImport } from './routes/etudes.ressources'
-import { Route as EtudesReligionClothingRouteImport } from './routes/etudes.religion-clothing'
-import { Route as EtudesOmbelineMaresRouteImport } from './routes/etudes.ombeline-mares'
-import { Route as EtudesOkahinaWaveRouteImport } from './routes/etudes.okahina-wave'
-import { Route as EtudesMyPilatesWorldRouteImport } from './routes/etudes.my-pilates-world'
-import { Route as EtudesL214RouteImport } from './routes/etudes.l214'
-import { Route as EtudesJeanBelgueuleRouteImport } from './routes/etudes.jean-belgueule'
-import { Route as EtudesFlanelleRouteImport } from './routes/etudes.flanelle'
-import { Route as EtudesFatMooseRouteImport } from './routes/etudes.fat-moose'
-import { Route as EtudesEnsadRouteImport } from './routes/etudes.ensad'
-import { Route as EtudesEmmausDefiRouteImport } from './routes/etudes.emmaus-defi'
-import { Route as EtudesElveziaRouteImport } from './routes/etudes.elvezia'
-import { Route as EtudesCooperativeOasisRouteImport } from './routes/etudes.cooperative-oasis'
-import { Route as EtudesClipItRouteImport } from './routes/etudes.clip-it'
-import { Route as EtudesBlackStallionTradingRouteImport } from './routes/etudes.black-stallion-trading'
-import { Route as EtudesAtelierDesLunettesRouteImport } from './routes/etudes.atelier-des-lunettes'
-import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as AProposRouteImport } from './routes/a-propos'
+import { Route as AccompagnementCommunicationRouteImport } from './routes/accompagnement-communication'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CooperativeAssoRouteImport } from './routes/cooperative-asso'
+import { Route as CoulissesRouteImport } from './routes/coulisses'
+import { Route as CreatricesEthiquesRouteImport } from './routes/creatrices-ethiques'
+import { Route as DemarcheEthiqueRouteImport } from './routes/demarche-ethique'
+import { Route as EtudesDeCasProRouteImport } from './routes/etudes-de-cas-pro'
+import { Route as FormationGratuiteInstagramRouteImport } from './routes/formation-gratuite-instagram'
+import { Route as GuideStorytellingRouteImport } from './routes/guide-storytelling'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
+import { Route as MerciRdvRouteImport } from './routes/merci-rdv'
+import { Route as PlanCommunicationRouteImport } from './routes/plan-communication'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TemplateBrandingRouteImport } from './routes/template-branding'
+import { Route as TemplateCalendrierEditorialRouteImport } from './routes/template-calendrier-editorial'
 import { Route as ApiRecapHebdoRouteImport } from './routes/api.recap-hebdo'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as EtudesAtelierDesLunettesRouteImport } from './routes/etudes.atelier-des-lunettes'
+import { Route as EtudesBlackStallionTradingRouteImport } from './routes/etudes.black-stallion-trading'
+import { Route as EtudesClipItRouteImport } from './routes/etudes.clip-it'
+import { Route as EtudesCooperativeOasisRouteImport } from './routes/etudes.cooperative-oasis'
+import { Route as EtudesElveziaRouteImport } from './routes/etudes.elvezia'
+import { Route as EtudesEmmausDefiRouteImport } from './routes/etudes.emmaus-defi'
+import { Route as EtudesEnsadRouteImport } from './routes/etudes.ensad'
+import { Route as EtudesFatMooseRouteImport } from './routes/etudes.fat-moose'
+import { Route as EtudesFlanelleRouteImport } from './routes/etudes.flanelle'
+import { Route as EtudesJeanBelgueuleRouteImport } from './routes/etudes.jean-belgueule'
+import { Route as EtudesL214RouteImport } from './routes/etudes.l214'
+import { Route as EtudesMyPilatesWorldRouteImport } from './routes/etudes.my-pilates-world'
+import { Route as EtudesOkahinaWaveRouteImport } from './routes/etudes.okahina-wave'
+import { Route as EtudesOmbelineMaresRouteImport } from './routes/etudes.ombeline-mares'
+import { Route as EtudesReligionClothingRouteImport } from './routes/etudes.religion-clothing'
+import { Route as EtudesRessourcesRouteImport } from './routes/etudes.ressources'
+import { Route as EtudesSeaShepherdRouteImport } from './routes/etudes.sea-shepherd'
+import { Route as EtudesStillNordicRouteImport } from './routes/etudes.still-nordic'
 
-const TemplateCalendrierEditorialRoute =
-  TemplateCalendrierEditorialRouteImport.update({
-    id: '/template-calendrier-editorial',
-    path: '/template-calendrier-editorial',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const TemplateBrandingRoute = TemplateBrandingRouteImport.update({
-  id: '/template-branding',
-  path: '/template-branding',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlanCommunicationRoute = PlanCommunicationRouteImport.update({
-  id: '/plan-communication',
-  path: '/plan-communication',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MerciRdvRoute = MerciRdvRouteImport.update({
-  id: '/merci-rdv',
-  path: '/merci-rdv',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
-  id: '/mentions-legales',
-  path: '/mentions-legales',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GuideStorytellingRoute = GuideStorytellingRouteImport.update({
-  id: '/guide-storytelling',
-  path: '/guide-storytelling',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FormationGratuiteInstagramRoute =
-  FormationGratuiteInstagramRouteImport.update({
-    id: '/formation-gratuite-instagram',
-    path: '/formation-gratuite-instagram',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const EtudesDeCasProRoute = EtudesDeCasProRouteImport.update({
-  id: '/etudes-de-cas-pro',
-  path: '/etudes-de-cas-pro',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DemarcheEthiqueRoute = DemarcheEthiqueRouteImport.update({
-  id: '/demarche-ethique',
-  path: '/demarche-ethique',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CreatricesEthiquesRoute = CreatricesEthiquesRouteImport.update({
-  id: '/creatrices-ethiques',
-  path: '/creatrices-ethiques',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CoulissesRoute = CoulissesRouteImport.update({
-  id: '/coulisses',
-  path: '/coulisses',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CooperativeAssoRoute = CooperativeAssoRouteImport.update({
-  id: '/cooperative-asso',
-  path: '/cooperative-asso',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const AProposRoute = AProposRouteImport.update({
+  id: '/a-propos',
+  path: '/a-propos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AccompagnementCommunicationRoute =
@@ -126,14 +64,81 @@ const AccompagnementCommunicationRoute =
     path: '/accompagnement-communication',
     getParentRoute: () => rootRouteImport,
   } as any)
-const AProposRoute = AProposRouteImport.update({
-  id: '/a-propos',
-  path: '/a-propos',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const CooperativeAssoRoute = CooperativeAssoRouteImport.update({
+  id: '/cooperative-asso',
+  path: '/cooperative-asso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoulissesRoute = CoulissesRouteImport.update({
+  id: '/coulisses',
+  path: '/coulisses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreatricesEthiquesRoute = CreatricesEthiquesRouteImport.update({
+  id: '/creatrices-ethiques',
+  path: '/creatrices-ethiques',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DemarcheEthiqueRoute = DemarcheEthiqueRouteImport.update({
+  id: '/demarche-ethique',
+  path: '/demarche-ethique',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesDeCasProRoute = EtudesDeCasProRouteImport.update({
+  id: '/etudes-de-cas-pro',
+  path: '/etudes-de-cas-pro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormationGratuiteInstagramRoute =
+  FormationGratuiteInstagramRouteImport.update({
+    id: '/formation-gratuite-instagram',
+    path: '/formation-gratuite-instagram',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuideStorytellingRoute = GuideStorytellingRouteImport.update({
+  id: '/guide-storytelling',
+  path: '/guide-storytelling',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MerciRdvRoute = MerciRdvRouteImport.update({
+  id: '/merci-rdv',
+  path: '/merci-rdv',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlanCommunicationRoute = PlanCommunicationRouteImport.update({
+  id: '/plan-communication',
+  path: '/plan-communication',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TemplateBrandingRoute = TemplateBrandingRouteImport.update({
+  id: '/template-branding',
+  path: '/template-branding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TemplateCalendrierEditorialRoute =
+  TemplateCalendrierEditorialRouteImport.update({
+    id: '/template-calendrier-editorial',
+    path: '/template-calendrier-editorial',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiRecapHebdoRoute = ApiRecapHebdoRouteImport.update({
+  id: '/api/recap-hebdo',
+  path: '/api/recap-hebdo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -141,74 +146,26 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EtudesStillNordicRoute = EtudesStillNordicRouteImport.update({
-  id: '/etudes/still-nordic',
-  path: '/etudes/still-nordic',
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EtudesSeaShepherdRoute = EtudesSeaShepherdRouteImport.update({
-  id: '/etudes/sea-shepherd',
-  path: '/etudes/sea-shepherd',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EtudesRessourcesRoute = EtudesRessourcesRouteImport.update({
-  id: '/etudes/ressources',
-  path: '/etudes/ressources',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EtudesReligionClothingRoute = EtudesReligionClothingRouteImport.update({
-  id: '/etudes/religion-clothing',
-  path: '/etudes/religion-clothing',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EtudesOmbelineMaresRoute = EtudesOmbelineMaresRouteImport.update({
-  id: '/etudes/ombeline-mares',
-  path: '/etudes/ombeline-mares',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EtudesOkahinaWaveRoute = EtudesOkahinaWaveRouteImport.update({
-  id: '/etudes/okahina-wave',
-  path: '/etudes/okahina-wave',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EtudesMyPilatesWorldRoute = EtudesMyPilatesWorldRouteImport.update({
-  id: '/etudes/my-pilates-world',
-  path: '/etudes/my-pilates-world',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EtudesL214Route = EtudesL214RouteImport.update({
-  id: '/etudes/l214',
-  path: '/etudes/l214',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EtudesJeanBelgueuleRoute = EtudesJeanBelgueuleRouteImport.update({
-  id: '/etudes/jean-belgueule',
-  path: '/etudes/jean-belgueule',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EtudesFlanelleRoute = EtudesFlanelleRouteImport.update({
-  id: '/etudes/flanelle',
-  path: '/etudes/flanelle',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EtudesFatMooseRoute = EtudesFatMooseRouteImport.update({
-  id: '/etudes/fat-moose',
-  path: '/etudes/fat-moose',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EtudesEnsadRoute = EtudesEnsadRouteImport.update({
-  id: '/etudes/ensad',
-  path: '/etudes/ensad',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EtudesEmmausDefiRoute = EtudesEmmausDefiRouteImport.update({
-  id: '/etudes/emmaus-defi',
-  path: '/etudes/emmaus-defi',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EtudesElveziaRoute = EtudesElveziaRouteImport.update({
-  id: '/etudes/elvezia',
-  path: '/etudes/elvezia',
+const EtudesAtelierDesLunettesRoute =
+  EtudesAtelierDesLunettesRouteImport.update({
+    id: '/etudes/atelier-des-lunettes',
+    path: '/etudes/atelier-des-lunettes',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const EtudesBlackStallionTradingRoute =
+  EtudesBlackStallionTradingRouteImport.update({
+    id: '/etudes/black-stallion-trading',
+    path: '/etudes/black-stallion-trading',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const EtudesClipItRoute = EtudesClipItRouteImport.update({
+  id: '/etudes/clip-it',
+  path: '/etudes/clip-it',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EtudesCooperativeOasisRoute = EtudesCooperativeOasisRouteImport.update({
@@ -216,31 +173,74 @@ const EtudesCooperativeOasisRoute = EtudesCooperativeOasisRouteImport.update({
   path: '/etudes/cooperative-oasis',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EtudesClipItRoute = EtudesClipItRouteImport.update({
-  id: '/etudes/clip-it',
-  path: '/etudes/clip-it',
+const EtudesElveziaRoute = EtudesElveziaRouteImport.update({
+  id: '/etudes/elvezia',
+  path: '/etudes/elvezia',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EtudesBlackStallionTradingRoute =
-  EtudesBlackStallionTradingRouteImport.update({
-    id: '/etudes/black-stallion-trading',
-    path: '/etudes/black-stallion-trading',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const EtudesAtelierDesLunettesRoute =
-  EtudesAtelierDesLunettesRouteImport.update({
-    id: '/etudes/atelier-des-lunettes',
-    path: '/etudes/atelier-des-lunettes',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/blog/$slug',
-  path: '/blog/$slug',
+const EtudesEmmausDefiRoute = EtudesEmmausDefiRouteImport.update({
+  id: '/etudes/emmaus-defi',
+  path: '/etudes/emmaus-defi',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiRecapHebdoRoute = ApiRecapHebdoRouteImport.update({
-  id: '/api/recap-hebdo',
-  path: '/api/recap-hebdo',
+const EtudesEnsadRoute = EtudesEnsadRouteImport.update({
+  id: '/etudes/ensad',
+  path: '/etudes/ensad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesFatMooseRoute = EtudesFatMooseRouteImport.update({
+  id: '/etudes/fat-moose',
+  path: '/etudes/fat-moose',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesFlanelleRoute = EtudesFlanelleRouteImport.update({
+  id: '/etudes/flanelle',
+  path: '/etudes/flanelle',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesJeanBelgueuleRoute = EtudesJeanBelgueuleRouteImport.update({
+  id: '/etudes/jean-belgueule',
+  path: '/etudes/jean-belgueule',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesL214Route = EtudesL214RouteImport.update({
+  id: '/etudes/l214',
+  path: '/etudes/l214',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesMyPilatesWorldRoute = EtudesMyPilatesWorldRouteImport.update({
+  id: '/etudes/my-pilates-world',
+  path: '/etudes/my-pilates-world',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesOkahinaWaveRoute = EtudesOkahinaWaveRouteImport.update({
+  id: '/etudes/okahina-wave',
+  path: '/etudes/okahina-wave',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesOmbelineMaresRoute = EtudesOmbelineMaresRouteImport.update({
+  id: '/etudes/ombeline-mares',
+  path: '/etudes/ombeline-mares',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesReligionClothingRoute = EtudesReligionClothingRouteImport.update({
+  id: '/etudes/religion-clothing',
+  path: '/etudes/religion-clothing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesRessourcesRoute = EtudesRessourcesRouteImport.update({
+  id: '/etudes/ressources',
+  path: '/etudes/ressources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesSeaShepherdRoute = EtudesSeaShepherdRouteImport.update({
+  id: '/etudes/sea-shepherd',
+  path: '/etudes/sea-shepherd',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtudesStillNordicRoute = EtudesStillNordicRouteImport.update({
+  id: '/etudes/still-nordic',
+  path: '/etudes/still-nordic',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -531,109 +531,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/template-calendrier-editorial': {
-      id: '/template-calendrier-editorial'
-      path: '/template-calendrier-editorial'
-      fullPath: '/template-calendrier-editorial'
-      preLoaderRoute: typeof TemplateCalendrierEditorialRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/template-branding': {
-      id: '/template-branding'
-      path: '/template-branding'
-      fullPath: '/template-branding'
-      preLoaderRoute: typeof TemplateBrandingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/plan-communication': {
-      id: '/plan-communication'
-      path: '/plan-communication'
-      fullPath: '/plan-communication'
-      preLoaderRoute: typeof PlanCommunicationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/merci-rdv': {
-      id: '/merci-rdv'
-      path: '/merci-rdv'
-      fullPath: '/merci-rdv'
-      preLoaderRoute: typeof MerciRdvRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mentions-legales': {
-      id: '/mentions-legales'
-      path: '/mentions-legales'
-      fullPath: '/mentions-legales'
-      preLoaderRoute: typeof MentionsLegalesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/guide-storytelling': {
-      id: '/guide-storytelling'
-      path: '/guide-storytelling'
-      fullPath: '/guide-storytelling'
-      preLoaderRoute: typeof GuideStorytellingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formation-gratuite-instagram': {
-      id: '/formation-gratuite-instagram'
-      path: '/formation-gratuite-instagram'
-      fullPath: '/formation-gratuite-instagram'
-      preLoaderRoute: typeof FormationGratuiteInstagramRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etudes-de-cas-pro': {
-      id: '/etudes-de-cas-pro'
-      path: '/etudes-de-cas-pro'
-      fullPath: '/etudes-de-cas-pro'
-      preLoaderRoute: typeof EtudesDeCasProRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/demarche-ethique': {
-      id: '/demarche-ethique'
-      path: '/demarche-ethique'
-      fullPath: '/demarche-ethique'
-      preLoaderRoute: typeof DemarcheEthiqueRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/creatrices-ethiques': {
-      id: '/creatrices-ethiques'
-      path: '/creatrices-ethiques'
-      fullPath: '/creatrices-ethiques'
-      preLoaderRoute: typeof CreatricesEthiquesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/coulisses': {
-      id: '/coulisses'
-      path: '/coulisses'
-      fullPath: '/coulisses'
-      preLoaderRoute: typeof CoulissesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cooperative-asso': {
-      id: '/cooperative-asso'
-      path: '/cooperative-asso'
-      fullPath: '/cooperative-asso'
-      preLoaderRoute: typeof CooperativeAssoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/accompagnement-communication': {
-      id: '/accompagnement-communication'
-      path: '/accompagnement-communication'
-      fullPath: '/accompagnement-communication'
-      preLoaderRoute: typeof AccompagnementCommunicationRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/a-propos': {
@@ -643,11 +545,116 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AProposRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/accompagnement-communication': {
+      id: '/accompagnement-communication'
+      path: '/accompagnement-communication'
+      fullPath: '/accompagnement-communication'
+      preLoaderRoute: typeof AccompagnementCommunicationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cooperative-asso': {
+      id: '/cooperative-asso'
+      path: '/cooperative-asso'
+      fullPath: '/cooperative-asso'
+      preLoaderRoute: typeof CooperativeAssoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coulisses': {
+      id: '/coulisses'
+      path: '/coulisses'
+      fullPath: '/coulisses'
+      preLoaderRoute: typeof CoulissesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creatrices-ethiques': {
+      id: '/creatrices-ethiques'
+      path: '/creatrices-ethiques'
+      fullPath: '/creatrices-ethiques'
+      preLoaderRoute: typeof CreatricesEthiquesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demarche-ethique': {
+      id: '/demarche-ethique'
+      path: '/demarche-ethique'
+      fullPath: '/demarche-ethique'
+      preLoaderRoute: typeof DemarcheEthiqueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes-de-cas-pro': {
+      id: '/etudes-de-cas-pro'
+      path: '/etudes-de-cas-pro'
+      fullPath: '/etudes-de-cas-pro'
+      preLoaderRoute: typeof EtudesDeCasProRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formation-gratuite-instagram': {
+      id: '/formation-gratuite-instagram'
+      path: '/formation-gratuite-instagram'
+      fullPath: '/formation-gratuite-instagram'
+      preLoaderRoute: typeof FormationGratuiteInstagramRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guide-storytelling': {
+      id: '/guide-storytelling'
+      path: '/guide-storytelling'
+      fullPath: '/guide-storytelling'
+      preLoaderRoute: typeof GuideStorytellingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/merci-rdv': {
+      id: '/merci-rdv'
+      path: '/merci-rdv'
+      fullPath: '/merci-rdv'
+      preLoaderRoute: typeof MerciRdvRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plan-communication': {
+      id: '/plan-communication'
+      path: '/plan-communication'
+      fullPath: '/plan-communication'
+      preLoaderRoute: typeof PlanCommunicationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/template-branding': {
+      id: '/template-branding'
+      path: '/template-branding'
+      fullPath: '/template-branding'
+      preLoaderRoute: typeof TemplateBrandingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/template-calendrier-editorial': {
+      id: '/template-calendrier-editorial'
+      path: '/template-calendrier-editorial'
+      fullPath: '/template-calendrier-editorial'
+      preLoaderRoute: typeof TemplateCalendrierEditorialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/recap-hebdo': {
+      id: '/api/recap-hebdo'
+      path: '/api/recap-hebdo'
+      fullPath: '/api/recap-hebdo'
+      preLoaderRoute: typeof ApiRecapHebdoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -657,123 +664,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/etudes/still-nordic': {
-      id: '/etudes/still-nordic'
-      path: '/etudes/still-nordic'
-      fullPath: '/etudes/still-nordic'
-      preLoaderRoute: typeof EtudesStillNordicRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etudes/sea-shepherd': {
-      id: '/etudes/sea-shepherd'
-      path: '/etudes/sea-shepherd'
-      fullPath: '/etudes/sea-shepherd'
-      preLoaderRoute: typeof EtudesSeaShepherdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etudes/ressources': {
-      id: '/etudes/ressources'
-      path: '/etudes/ressources'
-      fullPath: '/etudes/ressources'
-      preLoaderRoute: typeof EtudesRessourcesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etudes/religion-clothing': {
-      id: '/etudes/religion-clothing'
-      path: '/etudes/religion-clothing'
-      fullPath: '/etudes/religion-clothing'
-      preLoaderRoute: typeof EtudesReligionClothingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etudes/ombeline-mares': {
-      id: '/etudes/ombeline-mares'
-      path: '/etudes/ombeline-mares'
-      fullPath: '/etudes/ombeline-mares'
-      preLoaderRoute: typeof EtudesOmbelineMaresRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etudes/okahina-wave': {
-      id: '/etudes/okahina-wave'
-      path: '/etudes/okahina-wave'
-      fullPath: '/etudes/okahina-wave'
-      preLoaderRoute: typeof EtudesOkahinaWaveRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etudes/my-pilates-world': {
-      id: '/etudes/my-pilates-world'
-      path: '/etudes/my-pilates-world'
-      fullPath: '/etudes/my-pilates-world'
-      preLoaderRoute: typeof EtudesMyPilatesWorldRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etudes/l214': {
-      id: '/etudes/l214'
-      path: '/etudes/l214'
-      fullPath: '/etudes/l214'
-      preLoaderRoute: typeof EtudesL214RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etudes/jean-belgueule': {
-      id: '/etudes/jean-belgueule'
-      path: '/etudes/jean-belgueule'
-      fullPath: '/etudes/jean-belgueule'
-      preLoaderRoute: typeof EtudesJeanBelgueuleRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etudes/flanelle': {
-      id: '/etudes/flanelle'
-      path: '/etudes/flanelle'
-      fullPath: '/etudes/flanelle'
-      preLoaderRoute: typeof EtudesFlanelleRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etudes/fat-moose': {
-      id: '/etudes/fat-moose'
-      path: '/etudes/fat-moose'
-      fullPath: '/etudes/fat-moose'
-      preLoaderRoute: typeof EtudesFatMooseRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etudes/ensad': {
-      id: '/etudes/ensad'
-      path: '/etudes/ensad'
-      fullPath: '/etudes/ensad'
-      preLoaderRoute: typeof EtudesEnsadRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etudes/emmaus-defi': {
-      id: '/etudes/emmaus-defi'
-      path: '/etudes/emmaus-defi'
-      fullPath: '/etudes/emmaus-defi'
-      preLoaderRoute: typeof EtudesEmmausDefiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etudes/elvezia': {
-      id: '/etudes/elvezia'
-      path: '/etudes/elvezia'
-      fullPath: '/etudes/elvezia'
-      preLoaderRoute: typeof EtudesElveziaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etudes/cooperative-oasis': {
-      id: '/etudes/cooperative-oasis'
-      path: '/etudes/cooperative-oasis'
-      fullPath: '/etudes/cooperative-oasis'
-      preLoaderRoute: typeof EtudesCooperativeOasisRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etudes/clip-it': {
-      id: '/etudes/clip-it'
-      path: '/etudes/clip-it'
-      fullPath: '/etudes/clip-it'
-      preLoaderRoute: typeof EtudesClipItRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etudes/black-stallion-trading': {
-      id: '/etudes/black-stallion-trading'
-      path: '/etudes/black-stallion-trading'
-      fullPath: '/etudes/black-stallion-trading'
-      preLoaderRoute: typeof EtudesBlackStallionTradingRouteImport
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/etudes/atelier-des-lunettes': {
@@ -783,18 +678,123 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EtudesAtelierDesLunettesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/blog/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
+    '/etudes/black-stallion-trading': {
+      id: '/etudes/black-stallion-trading'
+      path: '/etudes/black-stallion-trading'
+      fullPath: '/etudes/black-stallion-trading'
+      preLoaderRoute: typeof EtudesBlackStallionTradingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/recap-hebdo': {
-      id: '/api/recap-hebdo'
-      path: '/api/recap-hebdo'
-      fullPath: '/api/recap-hebdo'
-      preLoaderRoute: typeof ApiRecapHebdoRouteImport
+    '/etudes/clip-it': {
+      id: '/etudes/clip-it'
+      path: '/etudes/clip-it'
+      fullPath: '/etudes/clip-it'
+      preLoaderRoute: typeof EtudesClipItRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/cooperative-oasis': {
+      id: '/etudes/cooperative-oasis'
+      path: '/etudes/cooperative-oasis'
+      fullPath: '/etudes/cooperative-oasis'
+      preLoaderRoute: typeof EtudesCooperativeOasisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/elvezia': {
+      id: '/etudes/elvezia'
+      path: '/etudes/elvezia'
+      fullPath: '/etudes/elvezia'
+      preLoaderRoute: typeof EtudesElveziaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/emmaus-defi': {
+      id: '/etudes/emmaus-defi'
+      path: '/etudes/emmaus-defi'
+      fullPath: '/etudes/emmaus-defi'
+      preLoaderRoute: typeof EtudesEmmausDefiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/ensad': {
+      id: '/etudes/ensad'
+      path: '/etudes/ensad'
+      fullPath: '/etudes/ensad'
+      preLoaderRoute: typeof EtudesEnsadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/fat-moose': {
+      id: '/etudes/fat-moose'
+      path: '/etudes/fat-moose'
+      fullPath: '/etudes/fat-moose'
+      preLoaderRoute: typeof EtudesFatMooseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/flanelle': {
+      id: '/etudes/flanelle'
+      path: '/etudes/flanelle'
+      fullPath: '/etudes/flanelle'
+      preLoaderRoute: typeof EtudesFlanelleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/jean-belgueule': {
+      id: '/etudes/jean-belgueule'
+      path: '/etudes/jean-belgueule'
+      fullPath: '/etudes/jean-belgueule'
+      preLoaderRoute: typeof EtudesJeanBelgueuleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/l214': {
+      id: '/etudes/l214'
+      path: '/etudes/l214'
+      fullPath: '/etudes/l214'
+      preLoaderRoute: typeof EtudesL214RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/my-pilates-world': {
+      id: '/etudes/my-pilates-world'
+      path: '/etudes/my-pilates-world'
+      fullPath: '/etudes/my-pilates-world'
+      preLoaderRoute: typeof EtudesMyPilatesWorldRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/okahina-wave': {
+      id: '/etudes/okahina-wave'
+      path: '/etudes/okahina-wave'
+      fullPath: '/etudes/okahina-wave'
+      preLoaderRoute: typeof EtudesOkahinaWaveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/ombeline-mares': {
+      id: '/etudes/ombeline-mares'
+      path: '/etudes/ombeline-mares'
+      fullPath: '/etudes/ombeline-mares'
+      preLoaderRoute: typeof EtudesOmbelineMaresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/religion-clothing': {
+      id: '/etudes/religion-clothing'
+      path: '/etudes/religion-clothing'
+      fullPath: '/etudes/religion-clothing'
+      preLoaderRoute: typeof EtudesReligionClothingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/ressources': {
+      id: '/etudes/ressources'
+      path: '/etudes/ressources'
+      fullPath: '/etudes/ressources'
+      preLoaderRoute: typeof EtudesRessourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/sea-shepherd': {
+      id: '/etudes/sea-shepherd'
+      path: '/etudes/sea-shepherd'
+      fullPath: '/etudes/sea-shepherd'
+      preLoaderRoute: typeof EtudesSeaShepherdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etudes/still-nordic': {
+      id: '/etudes/still-nordic'
+      path: '/etudes/still-nordic'
+      fullPath: '/etudes/still-nordic'
+      preLoaderRoute: typeof EtudesStillNordicRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
