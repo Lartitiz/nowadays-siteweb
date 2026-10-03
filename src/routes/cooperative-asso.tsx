@@ -1,14 +1,23 @@
+import type { CSSProperties } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { DaLayout } from "@/components/da/DaLayout";
-import { CtaFinal } from "@/components/da/CtaFinal";
 import { PageHero } from "@/components/da/PageHero";
 import { VichyBand } from "@/components/da/VichyBand";
+import { Section } from "@/components/da/Section";
+import { Pill } from "@/components/da/Pill";
+import { PostIt } from "@/components/da/PostIt";
+import { CardPointillee } from "@/components/da/CardPointillee";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import l214Logo from "@/assets/coop-logos/l214.png.asset.json";
 import cooperativeOasisLogo from "@/assets/coop-logos/cooperative-oasis.png.asset.json";
 import ensadPslLogo from "@/assets/coop-logos/ensad-psl.jpg.asset.json";
 import emmausDefiLogo from "@/assets/coop-logos/emmaus-defi.png.asset.json";
 import seaShepherdLogo from "@/assets/coop-logos/sea-shepherd.png.asset.json";
-import laetitiaPhoto from "@/assets/coop/laetitia.jpg.asset.json";
 import imgEnsad from "@/assets/etudes-pro/ensad.jpg.asset.json";
 import imgSeaShepherd from "@/assets/etudes-pro/sea-shepherd.jpg.asset.json";
 import imgDecathlon from "@/assets/etudes-pro/decathlon-quechua.jpg.asset.json";
@@ -18,17 +27,8 @@ import imgL214 from "@/assets/etudes-pro/l214.jpg.asset.json";
 import imgCoopOasis from "@/assets/etudes-pro/cooperative-oasis.jpg.asset.json";
 import imgOkahina from "@/assets/etudes-pro/okahina-wave.jpg.asset.json";
 import imgStudyCo from "@/assets/etudes-pro/study-co.webp.asset.json";
-import imgMira from "@/assets/etudes-pro/mira.jpg.asset.json";
-import imgBlackStallion from "@/assets/etudes/black-stallion-trading.webp.asset.json";
-import imgRessources from "@/assets/etudes/ressources.png.asset.json";
 import imgWeSlow from "@/assets/etudes/we-slow.jpg.asset.json";
-import imgJeanBelgueule from "@/assets/etudes/jean-belgueule.jpg.asset.json";
-import imgEssentialOil from "@/assets/etudes/essential-oil-supplies.jpg.asset.json";
-import imgBrunoZana from "@/assets/etudes-pro/bruno-zana.jpg.asset.json";
 import imgAtelierLunettes from "@/assets/etudes-pro/atelier-des-lunettes.webp.asset.json";
-import imgMyPilates from "@/assets/etudes/my-pilates-world.jpg.asset.json";
-import imgBelle from "@/assets/etudes/belle.jpg.asset.json";
-import imgRoseDonald from "@/assets/etudes/rose-donald.jpg.asset.json";
 import imgLaProchaineAire from "@/assets/etudes-pro/la-prochaine-aire.jpg.asset.json";
 import { absoluteUrl } from "@/lib/site";
 import { imageSize } from "@/lib/image-sizes";
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/cooperative-asso")({
       {
         name: "description",
         content:
-          "Une agence de communication pour coopératives, associations et structures engagées. Budget global de mission, échelonnable, à partir de 1 500 €.",
+          "Une agence de communication pour coopératives, associations et structures engagées. Budget global de mission, échelonnable, à partir de 1 500 €.",
       },
       {
         property: "og:title",
@@ -59,26 +59,34 @@ export const Route = createFileRoute("/cooperative-asso")({
   component: Page,
 });
 
-function Cta({
-  children,
-  variant = "primary",
-}: {
-  children: React.ReactNode;
-  variant?: "primary" | "ghost";
-}) {
-  const base =
-    "inline-flex items-center justify-center rounded-full px-8 py-4 text-sm uppercase tracking-[0.16em] transition-colors";
-  const cls =
-    variant === "primary"
-      ? `${base} bg-framboise text-white hover:bg-bordeaux`
-      : `${base} border border-ink text-encre hover:bg-ink hover:text-white`;
+/* ------------------------------ helpers ------------------------------ */
+
+function CtaButton({ children = "Réserver un appel découverte" }: { children?: React.ReactNode }) {
   return (
-    <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className={cls}>
+    <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
       {children}
     </a>
   );
 }
 
+// Astérisque-confetti, décoratif : même dessin que le composant partagé
+// `Confettis`/`ConfettisBord`, mais avec une couleur et une position propres à
+// chaque section de cette page (la maquette les place au cas par cas).
+function Confetti({ couleur, style }: { couleur: string; style: CSSProperties }) {
+  return (
+    <svg className="conf" style={style} viewBox="0 0 100 100" aria-hidden="true">
+      <g fill={couleur}>
+        <rect x="8" y="41" width="84" height="18" rx="9" />
+        <rect x="8" y="41" width="84" height="18" rx="9" transform="rotate(60 50 50)" />
+        <rect x="8" y="41" width="84" height="18" rx="9" transform="rotate(120 50 50)" />
+      </g>
+    </svg>
+  );
+}
+
+/* ============================== sections ============================== */
+
+// Hero déjà en ligne : conservé tel quel, à l'identique.
 function Hero() {
   return (
     <PageHero
@@ -112,458 +120,505 @@ function Hero() {
   );
 }
 
-const CLIENT_LOGOS = [
-  { name: "L214", src: l214Logo.url },
-  { name: "Coopérative Oasis", src: cooperativeOasisLogo.url },
-  { name: "École des Arts Décoratifs ; PSL", src: ensadPslLogo.url },
-  { name: "Emmaüs Défi", src: emmausDefiLogo.url },
-  { name: "Sea Shepherd", src: seaShepherdLogo.url },
-];
-
 function ClientsBand() {
+  const clients = [
+    { name: "L214", src: l214Logo.url },
+    { name: "Emmaüs Défi", src: emmausDefiLogo.url },
+    { name: "Sea Shepherd", src: seaShepherdLogo.url },
+    { name: "École des Arts Décoratifs PSL", src: ensadPslLogo.url },
+    { name: "Coopérative Oasis", src: cooperativeOasisLogo.url },
+  ];
+
   return (
-    <section className="py-16 bg-rose-pale">
-      <div className="mx-auto max-w-6xl px-6">
-        <p className="text-center font-titre text-xl italic text-encre md:text-2xl">
-          Quelques projets qui nous ont fait confiance
+    <section className="bg-rose-pale">
+      <div className="mx-auto max-w-6xl px-6 py-16">
+        <p className="text-center text-xs font-bold uppercase tracking-[0.08em] text-gris-chaud">
+          Ils et elles nous ont fait confiance
         </p>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-8 md:gap-x-16">
-          {CLIENT_LOGOS.map((logo) => (
-            <img
-              key={logo.name}
-              src={logo.src}
-              {...imageSize(logo.src)}
-              alt={logo.name}
-              loading="lazy"
-              className="h-16 w-auto object-contain md:h-20"
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-const PROBLEM_POINTS = [
-  "L'équipe est débordée, la com' passe toujours après",
-  "Vous postez quand vous pouvez, sans vraie stratégie",
-  "Vous avez besoin de quelqu'un qui fasse, pas juste qui conseille",
-  "Et surtout : vous n'avez pas le temps de relire, corriger, valider 15 versions",
-];
-
-function ProblemSection() {
-  return (
-    <section className="py-20 md:py-28 bg-white">
-      <div className="mx-auto max-w-3xl px-6">
-        <h2 className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
-          Vous portez un projet qui a du sens. Mais <em>la com'</em>, ça coince.
-        </h2>
-        <p className="mt-8 text-base text-encre leading-relaxed">
-          Vous êtes une coopérative, une association ou une PME engagée ? Votre mission est claire,
-          votre équipe est motivée.
-        </p>
-        <p className="mt-4 text-base text-encre leading-relaxed">
-          Mais côté communication digitale, c'est une autre histoire :
-        </p>
-        <ul className="mt-6 space-y-3 text-base text-encre">
-          {PROBLEM_POINTS.map((p) => (
-            <li key={p} className="flex gap-3">
-              <span className="text-framboise">→</span>
-              <span>{p}</span>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-8 text-base text-encre leading-relaxed">
-          <strong className="font-semibold">
-            Vous avez besoin de déléguer à quelqu'un de confiance. Quelqu'un qui comprend votre
-            projet, qui va vite, et qui livre du travail propre.
-          </strong>
-        </p>
-        <p className="mt-6 text-base text-encre leading-relaxed">
-          C'est ce qu'on a fait pour L214, Emmaüs Défi, la Coopérative Oasis ou l'ENSAD —{" "}
-          <Link to="/etudes-de-cas-pro" className="text-bordeaux underline underline-offset-4">
-            les projets sont détaillés ici
-          </Link>
-          . Et si vous voulez d'abord savoir comment on travaille, on a écrit{" "}
-          <Link to="/demarche-ethique" className="text-bordeaux underline underline-offset-4">
-            notre démarche éthique
-          </Link>{" "}
-          en toute transparence, limites comprises.
-        </p>
-        <div className="mt-10">
-          <Cta>Réserver mon appel découverte (gratuit)</Cta>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function LaetitiaIntroSection() {
-  return (
-    <section className="py-20 md:py-28 bg-rose-pale">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-2 md:items-center">
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-framboise">
-            Je vous propose de prendre en main votre communication pour que vous respiriez
-          </p>
-          <h2 className="mt-6 font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
-            Parce que gérer une structure engagée, c'est déjà un job à temps plein
-          </h2>
-          <p className="mt-8 text-base text-encre leading-relaxed">
-            Je suis Laetitia, fondatrice de Nowadays Agency. Depuis 2017, j'accompagne des
-            structures engagées à devenir plus visibles sur le web, sans trahir leurs valeurs.
-          </p>
-          <p className="mt-4 text-base text-encre leading-relaxed">
-            Ce que je vous propose, c'est simple :{" "}
-            <strong className="font-semibold">je fais pour vous.</strong>
-          </p>
-          <p className="mt-4 text-base text-encre leading-relaxed">
-            Pas juste un audit qui finit dans un tiroir. Pas juste des{" "}
-            <em>« recommandations stratégiques »</em> que personne n'applique. Mais :
-          </p>
-          <ul className="mt-6 space-y-3 text-base text-encre">
-            <li className="flex gap-3">
-              <span className="text-framboise">→</span>
-              <span>Des contenus créés, rédigés, publiés</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-framboise">→</span>
-              <span>Un site et des e-mails qui convertissent, des réseaux qui vivent</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-framboise">→</span>
-              <span>Des campagnes qui font venir du monde à vos événements</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-framboise">→</span>
-              <span>Et vous : tranquilles, concentrés sur votre mission</span>
-            </li>
-          </ul>
-          <div className="mt-10">
-            <Cta>Réserver mon appel découverte (gratuit)</Cta>
-          </div>
-          <p className="mt-6 text-xs uppercase tracking-[0.16em] text-encre">
-            ✨ Appel gratuit • 30 minutes • Sans engagement
-          </p>
-        </div>
-        <img
-          src={laetitiaPhoto.url}
-          {...imageSize(laetitiaPhoto.url)}
-          alt="Laetitia Mattioli, fondatrice de Nowadays Agency"
-          loading="lazy"
-          className="aspect-[4/5] w-full rounded-3xl object-cover"
-        />
-      </div>
-    </section>
-  );
-}
-
-const PILLARS = [
-  {
-    emoji: "💛",
-    title: "Des prix accessibles",
-    body: "Je ne suis pas une grosse agence avec des bureaux sur les Champs-Élysées. Mes tarifs sont pensés pour des structures comme les vôtres : un budget global de mission, échelonnable, entre 1 500 € et 20 000 € selon l'ampleur du projet. Vous payez pour du travail concret, pas pour financer un open space.",
-  },
-  {
-    emoji: "🧡",
-    title: "Réactive, autonome, et efficace",
-    body: "Vous n'avez pas besoin de me relire 10 fois. Je comprends vite, je livre propre, je respecte les délais. Votre temps est précieux : je ne le gaspille pas.",
-  },
-  {
-    emoji: "🩷",
-    title: "Une com' qui donne envie",
-    body: "Être éthique, ce n'est pas être ennuyeux. Je crée des communications belles, désirables, qui donnent envie de s'engager. Exit les visuels tristes en vert sapin et les discours culpabilisants. Place aux récits vraiment désirables.",
-  },
-];
-
-function PourquoiTravaillerSection() {
-  return (
-    <section className="py-20 md:py-28 bg-white">
-      <div className="mx-auto max-w-6xl px-6">
-        <h2 className="max-w-3xl font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
-          Pourquoi <em>travailler avec moi</em> plutôt qu'une grosse agence ?
-        </h2>
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
-          {PILLARS.map((p) => (
-            <div key={p.title} className="rounded-2xl bg-white p-8">
-              <div className="text-4xl">{p.emoji}</div>
-              <h3 className="mt-6 font-titre text-2xl text-encre">{p.title}</h3>
-              <p className="mt-4 text-sm text-encre leading-relaxed">{p.body}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-12 text-center">
-          <a
-            href="#projets"
-            className="inline-flex items-center justify-center rounded-full border border-ink px-8 py-4 text-sm uppercase tracking-[0.16em] text-encre transition-colors hover:bg-ink hover:text-white"
-          >
-            Voir nos études de cas
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-const STEPS = [
-  {
-    n: "1️⃣",
-    title: "On se rencontre",
-    body: "Un appel découverte de 30 minutes pour comprendre votre projet, vos objectifs, vos contraintes. Gratuit, sans engagement.",
-  },
-  {
-    n: "2️⃣",
-    title: "Je vous fais une proposition sur-mesure",
-    body: "Pas de package générique. Un devis adapté à ce dont vous avez vraiment besoin, avec un planning clair.",
-  },
-  {
-    n: "3️⃣",
-    title: "On avance ensemble",
-    body: "Je prends en main la partie com', vous validez les grandes lignes, et on fait avancer votre projet. Simple.",
-  },
-];
-
-function ProcessSection() {
-  return (
-    <section className="py-20 md:py-28 bg-rose-pale">
-      <div className="mx-auto max-w-6xl px-6">
-        <h2 className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
-          Comment <em>ça se passe</em> ?
-        </h2>
-        <div className="mt-16 grid gap-10 md:grid-cols-3">
-          {STEPS.map((s) => (
-            <div key={s.title}>
-              <div className="text-3xl">{s.n}</div>
-              <h3 className="mt-6 font-titre text-2xl text-encre">{s.title}</h3>
-              <p className="mt-4 text-sm text-encre leading-relaxed">{s.body}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-const PRESTATIONS = [
-  {
-    title: "Stratégie & cadrage",
-    items: [
-      "Audit de votre communication existante",
-      "Définition de votre stratégie digitale",
-      "Plan d'action sur 3, 6 ou 12 mois",
-      "Positionnement et messages clés",
-    ],
-  },
-  {
-    title: "Réseaux sociaux & Influence",
-    items: [
-      "Création de contenus (visuels, textes, reels)",
-      "Calendrier éditorial et planification",
-      "Animation Instagram, LinkedIn, Pinterest",
-      "Campagnes sponsorisées et stratégie d'influence",
-    ],
-  },
-  {
-    title: "Site web & SEO",
-    items: [
-      "Création ou refonte de site web",
-      "Optimisation pour le référencement naturel",
-      "Pages de vente et landing pages",
-    ],
-  },
-  {
-    title: "Emailing & événements",
-    items: [
-      "Campagnes newsletters",
-      "Séquences d'emailing automatisées",
-      "Communication événementielle (lancement, festival, conférence)",
-    ],
-  },
-];
-
-function PrestationsSection() {
-  return (
-    <section className="py-20 md:py-28 bg-white">
-      <div className="mx-auto max-w-6xl px-6">
-        <h2 className="font-titre text-3xl md:text-5xl leading-[1.1] text-encre">
-          Un accompagnement sur-mesure pour une <em>communication plus éthique</em>
-        </h2>
-        <p className="mt-8 text-base text-encre">
-          Selon vos besoins et votre budget, je peux intervenir sur :
-        </p>
-        <div className="mt-12 grid gap-8 md:grid-cols-2">
-          {PRESTATIONS.map((p) => (
-            <div key={p.title} className="rounded-2xl bg-white p-8">
-              <h3 className="font-titre text-2xl text-encre">{p.title}</h3>
-              <ul className="mt-6 space-y-2 text-sm text-encre">
-                {p.items.map((i) => (
-                  <li key={i} className="flex gap-3">
-                    <span className="text-framboise">→</span>
-                    <span>{i}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-const PROJECTS = [
-  {
-    name: "École des Arts Décoratifs",
-    img: imgEnsad.url,
-    desc: "Pour attirer du monde à l'exposition de Gérard Baudoin : réseaux sociaux, emailing ciblé et micro-influence ; 700 visiteurs en une semaine, 5 articles, +100 clics vers l'événement.",
-  },
-  {
-    name: "Sea Shepherd × Racines de Demain",
-    img: imgSeaShepherd.url,
-    desc: "Campagne #PlutôtQue pour corriger la perception et mobiliser les dons : un plan en 4 actes, des images d'archives pour limiter l'impact, des actions ciblées sur Twitter et Instagram.",
-  },
-  {
-    name: "Decathlon × Quechua",
-    img: imgDecathlon.url,
-    desc: "Pour leur révolution circulaire (seconde main, réparation, location, recyclage), nous avons créé une campagne accessible pour expliquer l'initiative.",
-  },
-  {
-    name: "Emmaüs Défi",
-    img: imgEmmaus.url,
-    desc: "Un atelier de personal branding d'une demi-journée pour humaniser la marque : 3× plus de contenus personnalisés et des équipes désormais à l'aise pour raconter leur histoire.",
-  },
-  {
-    name: "Clip It",
-    img: imgClipIt.url,
-    desc: "Jeu créatif à base de bouchons upcyclés. Nous avons aidé à raconter cette aventure ludique et écologique (SEO et Instagram).",
-  },
-  {
-    name: "L214",
-    img: imgL214.url,
-    desc: "Un camion immersif et 50 micro-influenceur·ses pour dénoncer l'élevage intensif et pousser LDC à signer l'European Chicken Commitment : 500 000 vues, +10 000 signatures.",
-  },
-  {
-    name: "Coopérative Oasis",
-    img: imgCoopOasis.url,
-    desc: "Un écosystème d'écolieux qui bâtissent un autre modèle de société. Stratégie de communication pour leur festival : identité, storytelling et community management.",
-  },
-  {
-    name: "Okahina Wave",
-    img: imgOkahina.url,
-    desc: "Gestion des comptes Twitter et LinkedIn, blog et interviews d'influenceurs surf : 1 500 personnes atteintes/semaine, 2 000 visiteurs uniques, 50 000 fans via 10 influenceurs.",
-  },
-  {
-    name: "Study & Co",
-    img: imgStudyCo.url,
-    desc: "Plateforme qui digitalise l'onboarding des étudiant·es : +20 % de conversion, -260 h de demandes dans les écoles. Nous avons structuré leur marque autour de ces atouts.",
-  },
-  {
-    name: "Mira",
-    img: imgMira.url,
-    desc: "Huiles naturelles récoltées en France et à Madagascar, production française et transparence totale. Nous avons structuré leur stratégie de marque autour de leurs valeurs.",
-  },
-  {
-    name: "Black Stallion Trading",
-    img: imgBlackStallion.url,
-    desc: "Une marque-showroom qui revendique le luxe conscient. Stratégie digitale complète, de l'identité visuelle à l'influence, pour accroître sa notoriété.",
-  },
-  {
-    name: "Ressources ; Emmanuelle Riboud",
-    img: imgRessources.url,
-    desc: "Changer la cantine pour changer le monde. Repenser l'alimentation scolaire avec bon sens et amour du vivant. Bases d'une stratégie de marque et de communication.",
-  },
-  {
-    name: "We Slow",
-    img: imgWeSlow.url,
-    desc: "Accélérateur de marques de mode écoresponsables. Atelier pour structurer leur plan de communication et clarifier leur stratégie de visibilité.",
-  },
-  {
-    name: "Jean Belgueule",
-    img: imgJeanBelgueule.url,
-    desc: "Soins pour hommes, simplicité et éco-responsabilité. Présence digitale structurée et image cohérente : storytelling, identité visuelle, calendrier social media.",
-  },
-  {
-    name: "Essential Oil Supplies",
-    img: imgEssentialOil.url,
-    desc: "L'e-shop des passionné·es d'aromathérapie. Stratégie Instagram pour fédérer une communauté autour du DIY et des bienfaits des huiles essentielles.",
-  },
-  {
-    name: "Bruno Zana",
-    img: imgBrunoZana.url,
-    desc: "Opticien indépendant à Paris : lunettes de créateurs et accompagnement sur-mesure. Branding et stratégie de communication : site élégant, manifeste et contenus pédagogiques.",
-  },
-  {
-    name: "Atelier des lunettes",
-    img: imgAtelierLunettes.url,
-    desc: "Boutique de lunettes de créateurs. Refonte site, présence Insta/FB/LinkedIn, manifeste : +46 % de reach social, 1ʳᵉ page SEO et +2 000 followers.",
-  },
-  {
-    name: "My Pilates World",
-    img: imgMyPilates.url,
-    desc: "Plateforme bien-être née du désir de proposer l'expérience studio à la maison. Stratégie globale : positionnement, réseaux, email marketing et contenus.",
-  },
-  {
-    name: "Belle.",
-    img: imgBelle.url,
-    desc: "Cosmétiques bio, vegan, fabriqués en France. Branding et stratégie Instagram pour incarner une beauté éthique et désirable.",
-  },
-  {
-    name: "Rose Donald",
-    img: imgRoseDonald.url,
-    desc: "Maison capillaire dans un passage du Marais : rituels de soin sur-mesure. Stratégie de marque et présence en ligne (site, Insta, influence).",
-  },
-  {
-    name: "La prochaine aire",
-    img: imgLaProchaineAire.url,
-    desc: "Tiers-lieu associatif dans une ancienne maison éclusière. Lancement de la com' : storytelling, relations presse, Instagram. Retombées presse et posts viraux.",
-  },
-];
-
-function ProjetsGrid() {
-  return (
-    <section id="projets" className="py-20 md:py-28 bg-rose-pale">
-      <div className="mx-auto max-w-6xl px-6">
-        <p className="text-center font-titre text-xl italic text-encre md:text-2xl">
-          Celles et ceux qui font bouger les lignes avec nous
-        </p>
-        <p className="mx-auto mt-8 max-w-3xl text-center text-base text-encre leading-relaxed">
-          Qu'ils sauvent les océans ou réinventent l'artisanat local, ils nous ont fait confiance
-          pour porter leur message. Une sélection de projets créatifs et engagés (associations, ONG,
-          start-ups et entreprises responsables) que nous avons accompagnés avec passion.
-        </p>
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS.map((p) => (
-            <article key={p.name} className="flex flex-col">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+          {clients.map((c) => (
+            <div key={c.name} className="flex h-12 items-center justify-center">
               <img
-                src={p.img}
-                {...imageSize(p.img)}
-                alt={p.name}
+                src={c.src}
+                {...imageSize(c.src)}
+                alt={c.name}
+                className="max-h-12 w-auto object-contain opacity-70"
                 loading="lazy"
-                className="aspect-[16/10] w-full rounded-2xl object-cover"
               />
-              <h3 className="mt-6 font-titre text-2xl text-encre">{p.name}</h3>
-              <p className="mt-3 text-sm text-encre leading-relaxed">{p.desc}</p>
-            </article>
+            </div>
           ))}
         </div>
       </div>
     </section>
   );
 }
+
+function DouleurSection() {
+  return (
+    <Section>
+      <div className="bn-duo2">
+        <div>
+          <h2>Vous portez un projet qui a du sens. Mais la com', ça coince.</h2>
+          <p className="lead">Coopérative, association, PME engagée : on connaît la musique.</p>
+        </div>
+        <div className="bn-postits bn-relative">
+          <Confetti couleur="#FFE561" style={{ right: -6, top: -34, width: 56, height: 56 }} />
+          <Confetti couleur="#FF7A33" style={{ left: -18, bottom: -26, width: 40, height: 40 }} />
+          <PostIt titre="DANS L'ÉQUIPE" couleur="rose-doux" className="bn-postit-1">
+            Tout le monde est débordé. La com' passe toujours après.
+          </PostIt>
+          <PostIt titre="SUR LES RÉSEAUX" couleur="jaune" className="bn-postit-2">
+            Vous postez quand vous pouvez, sans vraie stratégie.
+          </PostIt>
+          <PostIt titre="CÔTÉ PRESTATAIRES" couleur="rose" className="bn-postit-3">
+            Vous avez besoin de quelqu'un qui fasse, pas juste qui conseille.
+          </PostIt>
+          <PostIt titre="ET SURTOUT" couleur="rose-doux" className="bn-postit-4">
+            Personne n'a le temps de relire quinze versions.
+          </PostIt>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+function PhraseVichySection() {
+  return (
+    <div className="vichy bn-vichy-phrase">
+      <Confetti couleur="#FFE561" style={{ left: "7%", top: 44, width: 64, height: 64 }} />
+      <Confetti couleur="#FF7A33" style={{ right: "6%", bottom: 40, width: 48, height: 48 }} />
+      <div className="bn-carte">
+        <p className="bn-avant">Vous n'avez pas besoin d'un prestataire de plus à piloter.</p>
+        <p className="bn-phrase">
+          Vous avez besoin de quelqu'un qui prend votre com' en main,{" "}
+          <span className="surligne">en entier</span>.
+          <br />
+          <em>On fait pour vous. Vous respirez.</em>
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function ComTourneSection() {
+  const lignes = [
+    <>
+      <b>Vos réseaux qui vivent</b> : posts, visuels, reels : créés, rédigés, publiés.
+    </>,
+    <>
+      <b>Votre site qui donne envie</b>, et qui convertit.
+    </>,
+    <>
+      <b>Vos newsletters qui partent</b>, vos emails automatisés.
+    </>,
+    <>
+      <b>Vos événements remplis</b> : lancement, festival, conférence.
+    </>,
+    <>
+      <b>Votre presse et vos partenariats, activés.</b>
+    </>,
+  ];
+  return (
+    <Section>
+      <h2>Votre com' tourne. Sans vous épuiser.</h2>
+      <p className="lead">Voilà ce qui existe quand on travaille ensemble.</p>
+      <div className="bn-repars">
+        {lignes.map((ligne, i) => (
+          <div className="bn-rrow" key={i}>
+            <span className="bn-ck">✓</span>
+            <span>{ligne}</span>
+          </div>
+        ))}
+        <div className="bn-rrow bn-rrow--toi">
+          <span className="bn-ck">✓</span>
+          <span>
+            <b>Et vous, concentré·es sur votre mission.</b>
+          </span>
+        </div>
+      </div>
+      <p className="bn-chute">
+        Rien ne sort sans votre accord. Mais rien n'attend après vous{" "}
+        <span className="surligne">non plus</span>.
+      </p>
+    </Section>
+  );
+}
+
+function EtapesSection() {
+  const etapes = [
+    {
+      titre: "On se parle.",
+      texte:
+        "Un appel découverte de 30 minutes : votre projet, vos objectifs, vos contraintes. Et on vous dit franchement si on peut vous aider.",
+    },
+    {
+      titre: "On vous propose un plan sur-mesure.",
+      texte:
+        "Pas de package générique : un devis adapté à vos besoins, un planning clair, un budget global défini avant de commencer.",
+    },
+    {
+      titre: "On avance.",
+      texte: "On produit, vous validez les grandes lignes, on met en ligne. À la fin, c'est fait, pas « à faire ».",
+    },
+  ];
+  return (
+    <Section fond="rose">
+      <Pill ton="framboise">Comment ça se passe</Pill>
+      <h2 style={{ marginTop: 18 }}>Trois étapes. Zéro prise de tête.</h2>
+      <div className="bn-etapes">
+        {etapes.map((e, i) => (
+          <div className="bn-et" key={e.titre}>
+            <div className="bn-et-num">{i + 1}</div>
+            <b>{e.titre}</b>
+            <p>{e.texte}</p>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function PerimetreSection() {
+  const lignes = [
+    <>
+      <b>Stratégie &amp; cadrage</b> : état des lieux, positionnement, plan d'action sur 3, 6 ou 12
+      mois.
+    </>,
+    <>
+      <b>Réseaux sociaux &amp; influence</b> : contenus, calendrier, animation Instagram, LinkedIn,
+      Pinterest, campagnes.
+    </>,
+    <>
+      <b>Site web &amp; référencement Google</b> : création ou refonte, pages qui convertissent.
+    </>,
+    <>
+      <b>Newsletters &amp; emails</b> : séquences de bienvenue, campagnes, automatisation.
+    </>,
+    <>
+      <b>Presse &amp; événementiel</b> : relations presse, partenariats, lancement, festival,
+      conférence.
+    </>,
+  ];
+  return (
+    <Section>
+      <h2>Selon vos besoins, on intervient sur :</h2>
+      <div className="bn-repars" style={{ maxWidth: "52em" }}>
+        {lignes.map((ligne, i) => (
+          <div className="bn-rrow" key={i}>
+            <span className="bn-ck">✓</span>
+            <span>{ligne}</span>
+          </div>
+        ))}
+      </div>
+      <p className="bn-methode" style={{ maxWidth: "44em" }}>
+        Chaque mission a son devis : un budget global, échelonnable, défini avant de commencer. Site
+        web et identité visuelle font l'objet de devis séparés.
+      </p>
+    </Section>
+  );
+}
+
+function ManifesteSection() {
+  return (
+    <section className="section bn-manif">
+      <div className="wrap">
+        <Pill ton="jaune">Notre conviction</Pill>
+        <h2 style={{ marginTop: 18 }}>Une communication engagée comme outil d'émancipation.</h2>
+        <div className="bn-manif-corps">
+          <div>
+            <p>
+              Une association qu'on entend, c'est une cause qui avance. Rendre visible, ce n'est pas
+              décorer : c'est donner à un projet les moyens d'exister.
+            </p>
+            <p>Et on choisit de le faire dans le beau et dans la joie.</p>
+            <p className="bn-manif-fin">
+              Parce que le beau n'est pas futile : c'est un levier de changement.
+            </p>
+          </div>
+          <div>
+            <svg
+              className="bn-manif-mega"
+              viewBox="0 0 340 260"
+              aria-hidden="true"
+              style={{ maxWidth: 400 }}
+            >
+              <rect
+                x="150"
+                y="170"
+                width="34"
+                height="70"
+                rx="14"
+                fill="#FFE561"
+                transform="rotate(18 167 205)"
+              />
+              <polygon points="40,110 210,70 210,170 40,145" fill="#FB3D80" />
+              <ellipse cx="215" cy="120" rx="26" ry="52" fill="#FF7A33" />
+              <rect
+                x="258"
+                y="52"
+                width="64"
+                height="16"
+                rx="8"
+                fill="#FFE561"
+                transform="rotate(-18 290 60)"
+              />
+              <rect x="266" y="110" width="60" height="16" rx="8" fill="#FFE561" />
+              <rect
+                x="258"
+                y="168"
+                width="56"
+                height="16"
+                rx="8"
+                fill="#FFE561"
+                transform="rotate(16 286 176)"
+              />
+            </svg>
+            <div className="bn-sticker" style={{ marginTop: 26, transform: "rotate(-2deg)" }}>
+              « 100 % éthique », ça n'existe pas.
+              <br />
+              Plus éthique chaque année, oui.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PasGrosseAgenceSection() {
+  return (
+    <Section fond="rose">
+      <h2>Pas une grosse agence. Et c'est votre avantage.</h2>
+      <div className="bn-idcards">
+        <div className="bn-c">
+          <div className="bn-num">01</div>
+          <p>
+            <b>Des prix pensés pour vous.</b> Un budget global de 1 500 à 20 000 € selon l'ampleur,
+            échelonnable. Vous payez du travail concret, pas un open space.
+          </p>
+        </div>
+        <div className="bn-c">
+          <div className="bn-num">02</div>
+          <p>
+            <b>Réactive et autonome.</b> On comprend vite, on livre propre, on respecte les délais.
+            Votre temps est précieux : on ne le gaspille pas.
+          </p>
+        </div>
+        <div className="bn-c">
+          <div className="bn-num">03</div>
+          <p>
+            <b>Une com' qui donne envie.</b> Être éthique, ce n'est pas être ennuyeux : exit les
+            visuels tristes en vert sapin, place aux récits désirables.
+          </p>
+        </div>
+      </div>
+      <p className="bn-bio">
+        Derrière l'agency : <b>Laetitia Mattioli</b>. 10 ans de marketing digital, +150 projets
+        accompagnés, des cours à l'École des arts décoratifs de Paris, des interventions à l'ENS et
+        aux Mines. Dans la presse : L'ADN, e-marketing.fr, Maddyness, Le Bonbon.
+      </p>
+    </Section>
+  );
+}
+
+const ETUDES_LARGES = [
+  {
+    image: imgL214.url,
+    alt: "L214",
+    nom: "L214",
+    q: "Camion immersif + 50 micro-influenceur·ses contre l'élevage intensif",
+    a: <><b>500 000 vues</b> et plus de 10 000 signatures à la pétition.</>,
+  },
+  {
+    image: imgEnsad.url,
+    alt: "École des Arts Décoratifs",
+    nom: "École des Arts Décoratifs",
+    q: "Réseaux sociaux, emailing ciblé et micro-influence pour une exposition",
+    a: <><b>700 visiteurs en une semaine</b>, 5 articles de presse.</>,
+  },
+  {
+    image: imgOkahina.url,
+    alt: "Okahina Wave",
+    nom: "Okahina Wave",
+    q: "Twitter, LinkedIn, blog et influence surf",
+    a: <><b>1 500 personnes atteintes par semaine</b>, 50 000 fans via 10 influenceurs.</>,
+  },
+];
+
+const ETUDES_COMPACTES = [
+  { image: imgSeaShepherd.url, alt: "Sea Shepherd", nom: "Sea Shepherd × Racines de Demain", q: "Campagne #PlutôtQue, mobilisation des dons" },
+  { image: imgDecathlon.url, alt: "Decathlon × Quechua", nom: "Decathlon × Quechua", q: "Campagne pour leur révolution circulaire" },
+  { image: imgEmmaus.url, alt: "Emmaüs Défi", nom: "Emmaüs Défi", q: "Atelier de personal branding des équipes" },
+  { image: imgAtelierLunettes.url, alt: "L'Atelier des Lunettes", nom: "L'Atelier des Lunettes", q: "Réseaux renforcés, site refondu, manifeste" },
+  { image: imgClipIt.url, alt: "Clip It", nom: "Clip It", q: "Jeu créatif upcyclé : SEO et Instagram" },
+  { image: imgCoopOasis.url, alt: "Coopérative Oasis", nom: "Coopérative Oasis", q: "Identité, storytelling et community management pour leur festival" },
+  { image: imgStudyCo.url, alt: "Study & Co", nom: "Study & Co", q: "Onboarding digitalisé : +20 % de conversion" },
+  { image: imgWeSlow.url, alt: "We Slow", nom: "We Slow", q: "Slow tourisme : visibilité et contenus" },
+  { image: imgLaProchaineAire.url, alt: "La Prochaine Aire", nom: "La Prochaine Aire", q: "Tiers-lieu dans l'Yonne, co-fondé par Nowadays" },
+];
+
+function EtudesDeCasSection() {
+  return (
+    <Section>
+      <Pill>Ce qu'on a mis en place, et ce que ça a donné</Pill>
+      <h2 style={{ marginTop: 18 }}>Celles et ceux qui font bouger les lignes avec nous.</h2>
+      <p className="lead">Associations, ONG, coopératives, écoles, entreprises engagées.</p>
+
+      <div className="bn-cas1">
+        {ETUDES_LARGES.map((e) => (
+          <div className="bn-c" key={e.nom}>
+            <div className="bn-im">
+              <img src={e.image} {...imageSize(e.image)} alt={e.alt} loading="lazy" />
+            </div>
+            <div className="bn-tx">
+              <div className="bn-n">{e.nom}</div>
+              <div className="bn-q">{e.q}</div>
+              <div className="bn-a">{e.a}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="bn-cas2">
+        {ETUDES_COMPACTES.map((e) => (
+          <div className="bn-c" key={e.nom}>
+            <div className="bn-im">
+              <img src={e.image} {...imageSize(e.image)} alt={e.alt} loading="lazy" />
+            </div>
+            <div>
+              <div className="bn-n">{e.nom}</div>
+              <div className="bn-q">{e.q}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p className="bn-caslien">
+        Envie du détail ? <Link to="/etudes-de-cas-pro">Les études de cas complètes sont là.</Link>
+      </p>
+    </Section>
+  );
+}
+
+function AutoQualifSection() {
+  return (
+    <Section fond="rose">
+      <h2>Avant qu'on se parle, soyons honnêtes.</h2>
+      <div className="audience-grid">
+        <CardPointillee titre="C'est pour vous si…" ton="rose">
+          <ul>
+            <li>Vous êtes une structure engagée : coopérative, association, ONG, PME, tiers-lieu, festival.</li>
+            <li>Votre mission engagée est dans l'ADN du projet, pas dans un slide.</li>
+            <li>Vous voulez du concret et des livrables, pas des recommandations en l'air.</li>
+            <li>Vous voulez déléguer, en gardant la validation des grandes lignes.</li>
+          </ul>
+        </CardPointillee>
+        <CardPointillee titre="Ce n'est pas le bon moment si…" ton="gris">
+          <ul>
+            <li>Chaque contenu doit passer par un comité : on avancera trop lentement pour vous être utiles.</li>
+            <li>Vous cherchez un coup d'éclat viral pour le mois prochain.</li>
+            <li>La communication doit verdir un projet qui ne l'est pas : c'est non, et c'est assumé.</li>
+            <li>Votre budget est sous 1 500 € : on vous orientera vers d'autres formats.</li>
+          </ul>
+        </CardPointillee>
+      </div>
+    </Section>
+  );
+}
+
+function FaqSection() {
+  const faqs = [
+    {
+      q: "Combien ça coûte ?",
+      a: "Chaque mission a son budget global, à partir de 1 500 € et jusqu'à 20 000 € selon l'ampleur, échelonnable, défini avant de commencer. Pas de compteur horaire, pas de surprise. Site web et identité visuelle font l'objet de devis séparés.",
+    },
+    {
+      q: "Qui fait le travail, concrètement ?",
+      a: "Laetitia, fondatrice de l'agence, avec une interlocutrice unique du début à la fin. Selon les missions, une graphiste intervient : elle est comprise dans le budget global, vous n'avez rien à gérer.",
+    },
+    {
+      q: "Combien de temps dure une mission ?",
+      a: "Ça dépend de la vôtre : une campagne se joue en quelques semaines, une mission au long cours sur plusieurs mois. Le planning est posé dans le devis, avant de commencer.",
+    },
+    {
+      q: "Comment on garde la main sur ce qui sort ?",
+      a: "Vous validez les grandes lignes : la stratégie, les messages, les moments clés. Rien ne sort sans votre accord, et vous n'avez pas quinze allers-retours à faire non plus : c'est exactement ce qu'on vous enlève.",
+    },
+    {
+      q: "On est une association : des aides existent ?",
+      a: "Oui. Nowadays est référencée auprès du Dispositif local d'accompagnement (DLA) en Bourgogne-Franche-Comté. Si votre structure en bénéficie, la mission peut s'inscrire dans ce cadre : parlez-en à votre chargé·e d'accompagnement, et à nous.",
+    },
+    {
+      q: "Et si on préfère apprendre à faire nous-mêmes ?",
+      a: "On forme aussi les équipes : réseaux sociaux, référencement, prospection éthique. Et pour les solopreneur·es, il existe un accompagnement à quatre mains : Ta Binôme de Com'.",
+    },
+    {
+      q: "Vous travaillez avec qui, exactement ?",
+      a: "Uniquement avec des projets dont la mission engagée est dans l'ADN. C'est notre critère d'entrée, et on le tient, même quand le budget est beau.",
+    },
+    {
+      q: "« Plus éthique », ça veut dire quoi ?",
+      a: "On ne se dira jamais « agence 100 % éthique » : ça n'existe pas. On est une agence de communication plus éthique : un peu plus juste chaque année, et on le dit honnêtement. Notre démarche est publiée, limites comprises.",
+    },
+  ];
+  return (
+    <Section>
+      <h2 className="text-center">Vous vous demandez peut-être…</h2>
+      <Accordion type="single" collapsible className="mt-12 space-y-3">
+        {faqs.map((f, i) => (
+          <AccordionItem
+            key={i}
+            value={`item-${i}`}
+            className="rounded-carte border border-rose-doux bg-white px-6"
+          >
+            <AccordionTrigger className="py-6 text-left font-titre text-lg text-encre hover:no-underline md:text-xl">
+              {f.q}
+            </AccordionTrigger>
+            <AccordionContent className="pb-6 text-sm text-encre">{f.a}</AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </Section>
+  );
+}
+
+function CtaFinalAgency() {
+  return (
+    <section className="final-cta centre">
+      <div className="wrap">
+        <h2>Prêt·es à avancer ?</h2>
+        <p>
+          Réservez un appel découverte de 30 minutes. On regarde ensemble ce qui manque à votre
+          com', et on vous dit franchement si on peut vous aider.
+        </p>
+        <div className="actions">
+          <CtaButton>Réserver un appel découverte</CtaButton>
+        </div>
+        <span className="cta-note">30 minutes, gratuites, sans engagement.</span>
+      </div>
+    </section>
+  );
+}
+
+/* ================================ page ================================ */
 
 function Page() {
   return (
-    <DaLayout>
+    <DaLayout className="page-agency">
       <Hero />
       <ClientsBand />
-      <ProblemSection />
-      <LaetitiaIntroSection />
-      <PourquoiTravaillerSection />
-      <ProcessSection />
-      <PrestationsSection />
-      <ProjetsGrid />
+      <DouleurSection />
+      <PhraseVichySection />
+      <ComTourneSection />
+      <EtapesSection />
+      <PerimetreSection />
+      <ManifesteSection />
+      <PasGrosseAgenceSection />
+      <EtudesDeCasSection />
+      <AutoQualifSection />
+      <FaqSection />
       <VichyBand />
-      <CtaFinal />
+      <CtaFinalAgency />
     </DaLayout>
   );
 }
