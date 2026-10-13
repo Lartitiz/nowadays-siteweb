@@ -1,4 +1,4 @@
-import { SITE_ORIGIN } from "@/lib/site";
+import { absoluteUrl } from "@/lib/site";
 
 interface SitemapEntry {
   path: string;
@@ -85,7 +85,7 @@ export async function buildSitemapXml(): Promise<string> {
   const urls = entries.map((e) =>
     [
       `  <url>`,
-      `    <loc>${escapeXml(`${SITE_ORIGIN}${e.path}`)}</loc>`,
+      `    <loc>${escapeXml(absoluteUrl(e.path))}</loc>`,
       e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
       e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
       e.priority ? `    <priority>${e.priority}</priority>` : null,

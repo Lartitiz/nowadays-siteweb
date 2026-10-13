@@ -7,6 +7,8 @@ export function absoluteUrl(path: string): string {
   // Déjà absolue (image hébergée ailleurs, CDN, Supabase…) : on ne touche pas.
   if (/^(https?:)?\/\//i.test(path)) return path;
   if (path.startsWith("data:")) return path;
-  if (!path.startsWith("/")) return `${SITE_ORIGIN}/${path}`;
-  return `${SITE_ORIGIN}${path}`;
+  // Passage par `URL` : espaces, accents ou guillemets d'un slug saisi dans
+  // le back-office sont encodés. Sans ça, Google rejette le fil d'Ariane
+  // (« URL non valide dans le champ id ») et les URLs du sitemap.
+  return new URL(path.startsWith("/") ? path : `/${path}`, SITE_ORIGIN).href;
 }
