@@ -164,11 +164,16 @@ function Page() {
 
           <Section id="cookies" title="06 · Cookies">
             <P>
-              Ce site n'utilise aucun outil de mesure d'audience ni aucun cookie publicitaire. Il
-              dépose uniquement des cookies techniques, strictement nécessaires à son
-              fonctionnement, qui ne demandent pas votre consentement. Les polices de caractères du
-              site sont chargées depuis le service Google Fonts : votre navigateur se connecte alors
-              aux serveurs de Google, qui reçoivent votre adresse IP.
+              Ce site n'utilise aucun cookie publicitaire. Pour mesurer sa fréquentation, il utilise
+              deux outils. Le premier est interne : il compte les pages vues, la provenance des
+              visites et le type d'appareil, sans cookie et sans enregistrer votre adresse IP. Le
+              second est le service de statistiques de Lovable, l'hébergeur du site : il dépose un
+              cookie « session-id », valable 30 minutes, qui regroupe les pages consultées au cours
+              d'une même visite ; ces données sont traitées par Lovable. Le site dépose aussi deux
+              cookies techniques, nécessaires à son fonctionnement et à sa sécurité : « __cf_bm »
+              (Cloudflare) et « __dpl » (Lovable). Les polices de caractères du site sont chargées
+              depuis le service Google Fonts : votre navigateur se connecte alors aux serveurs de
+              Google, qui reçoivent votre adresse IP.
             </P>
           </Section>
 
