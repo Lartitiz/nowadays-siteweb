@@ -77,7 +77,13 @@ function Page() {
                 annonce est celui que vous payez.
               </Li>
               <Li>
-                Contact : <Mail /> · 06 14 13 39 21
+                Contact : <Mail /> ·{" "}
+                <a
+                  href="tel:+33614133921"
+                  className="underline underline-offset-4 hover:text-framboise"
+                >
+                  06 14 13 39 21
+                </a>
               </Li>
             </Ul>
             <P>
@@ -501,13 +507,7 @@ function EnBref() {
 
 function Toc() {
   return (
-    // Pas de <nav> : la règle `.nowadays-da nav` du menu du haut (hauteur fixe,
-    // flex) écraserait le sommaire.
-    <div
-      role="navigation"
-      aria-label="Sommaire"
-      className="mb-16 border-t border-b border-ink/15 py-8"
-    >
+    <nav aria-label="Sommaire" className="mb-16 border-t border-b border-ink/15 py-8">
       <p className="text-xs uppercase tracking-[0.24em] text-framboise">Sommaire</p>
       <ol className="mt-6 grid grid-cols-1 gap-x-10 gap-y-3 text-sm text-ink sm:grid-cols-2">
         {SECTIONS.map(([id, label], i) => (
@@ -518,7 +518,7 @@ function Toc() {
           </li>
         ))}
       </ol>
-    </div>
+    </nav>
   );
 }
 
