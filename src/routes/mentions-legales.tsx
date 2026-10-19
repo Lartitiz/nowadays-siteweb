@@ -27,7 +27,7 @@ export const Route = createFileRoute("/mentions-legales")({
 
 /* ------------------------------------------------------------------ Data */
 
-const LAST_UPDATE = "5 août 2026";
+const LAST_UPDATE = "[DATE]";
 
 function Page() {
   return (
@@ -94,16 +94,15 @@ function Page() {
 
           <Section id="hebergeur" title="03 · Hébergement">
             <P>
-              Le site est hébergé par <strong>OVH SAS</strong>, société par actions simplifiée au
-              capital de 10 174 560 €, immatriculée au RCS de Lille Métropole sous le numéro 424 761
-              419 00045, dont le siège social est situé 2 rue Kellermann, 59100 Roubaix, France. Site :{" "}
+              Le site est hébergé par <strong>Lovable Labs Sweden AB</strong>, Regeringsgatan 25,
+              111 53 Stockholm, Suède. Téléphone : [à compléter]. Site :{" "}
               <a
-                href="https://www.ovhcloud.com"
+                href="https://lovable.dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline underline-offset-4 hover:text-framboise"
               >
-                ovhcloud.com
+                lovable.dev
               </a>
               .
             </P>
@@ -165,9 +164,11 @@ function Page() {
 
           <Section id="cookies" title="06 · Cookies">
             <P>
-              Ce site utilise des cookies strictement nécessaires à son fonctionnement, ainsi que des
-              cookies de mesure d'audience soumis à votre consentement. Vous pouvez modifier vos choix
-              à tout moment depuis le gestionnaire de préférences.
+              Ce site n'utilise aucun outil de mesure d'audience ni aucun cookie publicitaire. Il
+              dépose uniquement des cookies techniques, strictement nécessaires à son
+              fonctionnement, qui ne demandent pas votre consentement. Les polices de caractères du
+              site sont chargées depuis le service Google Fonts : votre navigateur se connecte alors
+              aux serveurs de Google, qui reçoivent votre adresse IP.
             </P>
           </Section>
 
@@ -180,31 +181,27 @@ function Page() {
 
           <Section id="mediation" title="08 · Médiation de la consommation">
             <P>
-              Conformément à l'article L.612-1 du Code de la consommation, tout client consommateur a le
-              droit de recourir gratuitement à un médiateur en cas de litige non résolu à l'amiable.
-            </P>
-            <P>
-              <Todo>
-                À compléter : désigner un médiateur (nom, adresse, URL) ou confirmer que l'activité est
-                exclusivement B2B et qu'aucun consommateur n'est concerné.
-              </Todo>
+              Les prestations proposées par Nowadays Agency s'adressent exclusivement à des
+              professionnel·les : entreprises, associations, établissements d'enseignement et
+              collectivités. Aucun contrat n'étant conclu avec des consommateurs au sens du Code de
+              la consommation, le dispositif de médiation de la consommation prévu à l'article
+              L.612-1 ne s'applique pas.
             </P>
           </Section>
 
           <Section id="droit" title="09 · Droit applicable">
             <P>
-              Les présentes mentions légales sont soumises au droit français. Tout litige relatif à
-              l'utilisation du site relève de la compétence exclusive des tribunaux de Paris, sous
-              réserve d'une attribution de compétence particulière découlant d'un texte de loi ou
-              réglementaire.
+              Les présentes mentions légales sont soumises au droit français. En cas de litige, les
+              tribunaux français sont compétents dans les conditions prévues par les règles de droit
+              commun.
             </P>
           </Section>
 
           <Section id="historique" title="10 · Historique des mises à jour">
             <P>
-              Dernière mise à jour : <strong>{LAST_UPDATE}</strong>. Cette version remplace
-              intégralement la précédente, qui mentionnait une SAS liquidée et une adresse parisienne
-              désormais close.
+              Dernière mise à jour : <strong>{LAST_UPDATE}</strong>. Cette version corrige
+              l'hébergeur, la description des cookies, la médiation de la consommation et le droit
+              applicable. Elle remplace la version du 5 août 2026.
             </P>
           </Section>
         </div>
