@@ -296,7 +296,7 @@ html:has(.nowadays-da) {
   border-bottom: 1px solid rgba(145, 1, 75, 0.08);
 }
 
-.nowadays-da nav {
+.nowadays-da .site-header nav {
   height: 82px;
   display: flex;
   align-items: center;
@@ -1631,7 +1631,7 @@ html:has(.nowadays-da) {
   .nowadays-da .section {
     padding: 76px 0;
   }
-  .nowadays-da nav {
+  .nowadays-da .site-header nav {
     height: 70px;
   }
   .nowadays-da.page-accueil h1 {
