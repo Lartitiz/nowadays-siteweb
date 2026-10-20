@@ -27,7 +27,7 @@ export const Route = createFileRoute("/cgv")({
 
 /* ------------------------------------------------------------------ Data */
 
-const LAST_UPDATE = "19 octobre 2026";
+const LAST_UPDATE = "20 octobre 2026";
 
 // Le sommaire et les numéros de section sont tirés de cette liste.
 const SECTIONS = [
@@ -193,8 +193,11 @@ function Page() {
           <Section id="prix">
             <P>
               Le prix est celui écrit dans votre proposition ou votre devis. Mes tarifs de référence
-              sont indiqués sur mon site ou communiqués sur simple demande. La TVA ne s'applique pas
-              : vous payez le montant annoncé.
+              sont indiqués sur mon site ou communiqués sur simple demande. Aujourd'hui, la TVA ne
+              s'applique pas (article 293 B du code général des impôts) : vous payez le montant
+              annoncé. Si je devais un jour y être soumise, les propositions et devis déjà signés
+              resteraient au même prix, TVA comprise, et mes propositions suivantes indiqueraient un
+              prix TTC.
             </P>
             <P>
               Pour Ta Binôme de Com', le paiement est mensuel, en ligne, et prélevé automatiquement
@@ -455,7 +458,7 @@ function Page() {
 
           <Section id="version">
             <P>
-              Version du 19 octobre 2026. Ces conditions s'appliquent aux engagements pris à partir
+              Version du 20 octobre 2026. Ces conditions s'appliquent aux engagements pris à partir
               de cette date. Si vous vous êtes engagée avant, ce sont les conditions de votre
               proposition qui s'appliquent jusqu'à la fin de votre accompagnement. Je peux faire
               évoluer ces conditions : celle qui s'applique à vous est la version en vigueur au
