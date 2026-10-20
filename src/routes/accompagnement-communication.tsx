@@ -699,14 +699,6 @@ function PrixSection() {
         </p>
       </Temoin>
 
-      <div className="bn-garantie">
-        <p className="bn-lab">La garantie</p>
-        <p>
-          Si tu appliques ce qu'on met en place ensemble et que tu ne vois rien bouger, je te
-          rembourse. Je ne peux pas faire le travail à ta place, mais ça, je peux le tenir.
-        </p>
-      </div>
-
       <div className="bn-cta">
         <p className="bn-amorce">Pour que je devienne ta binôme de com'.</p>
         <CtaButton>Réserver un appel découverte</CtaButton>
@@ -873,10 +865,6 @@ function FaqSection() {
     {
       q: "Je peux arrêter quand je veux ?",
       a: "Oui. L'accompagnement est pensé sur six mois parce que c'est le temps qu'il faut pour que ta com' tourne vraiment, mais tu n'es enfermé·e nulle part : tu me préviens et on arrête les mensualités suivantes. Les mois déjà faits restent dus, forcément. Et si ta situation change en cours de route, dis-le-moi tôt : on trouvera une solution ensemble.",
-    },
-    {
-      q: "Et la garantie, ça marche comment ?",
-      a: "Si tu appliques ce qu'on met en place ensemble et qu'au bout des six mois tu ne vois rien bouger, je te rembourse. Je ne peux pas faire le travail à ta place, mais ça, je peux le tenir.",
     },
     {
       q: "J'ai déjà suivi des formations en com' et ça n'a rien donné. En quoi c'est différent ?",

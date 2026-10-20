@@ -2863,30 +2863,6 @@ html:has(.nowadays-da) {
   margin-top: 6px;
 }
 
-.bn-garantie {
-  margin: 44px auto 0;
-  max-width: 44em;
-  background: var(--blanc);
-  border: 1px solid var(--rose-doux);
-  border-radius: 20px 34px 18px 30px;
-  padding: 30px 34px;
-  text-align: center;
-}
-
-.bn-garantie .bn-lab {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: var(--framboise);
-  margin-bottom: 10px;
-}
-
-.bn-garantie p {
-  margin: 0;
-  font-size: 1.05rem;
-  line-height: 1.5;
-}
-
 .bn-cta {
   text-align: center;
   margin-top: 44px;
