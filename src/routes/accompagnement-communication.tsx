@@ -864,7 +864,15 @@ function FaqSection() {
     },
     {
       q: "Je peux arrêter quand je veux ?",
-      a: "Oui. L'accompagnement est pensé sur six mois parce que c'est le temps qu'il faut pour que ta com' tourne vraiment, mais tu n'es enfermé·e nulle part : tu me préviens et on arrête les mensualités suivantes. Les mois déjà faits restent dus, forcément. Et si ta situation change en cours de route, dis-le-moi tôt : on trouvera une solution ensemble.",
+      a: (
+        <>
+          Oui. L'accompagnement est pensé sur six mois parce que c'est le temps qu'il faut pour que ta com' tourne vraiment, mais tu n'es enfermé·e nulle part : tu me préviens par écrit et on arrête les mensualités suivantes. Le mois commencé reste dû, forcément. Seule nuance : une fois que je t'ai remis ta stratégie (les documents prévus dans ta proposition), l'accompagnement compte au minimum trois mensualités en tout, parce que le plus gros du travail est déjà fait. Tu peux aussi faire une pause, jusqu'à deux mois en tout. Le détail est dans mes{" "}
+          <Link to="/cgv" className="underline hover:text-bordeaux">
+            conditions générales de vente
+          </Link>
+          . Et si ta situation change en cours de route, dis-le-moi tôt : on trouvera une solution ensemble.
+        </>
+      ),
     },
     {
       q: "J'ai déjà suivi des formations en com' et ça n'a rien donné. En quoi c'est différent ?",
