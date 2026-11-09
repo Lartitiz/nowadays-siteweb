@@ -73,8 +73,8 @@ function Page() {
               <Li>SIREN : 832 189 070 · SIRET : 832 189 070 00028</Li>
               <Li>Immatriculée au Registre national des entreprises (RNE)</Li>
               <Li>
-                TVA non applicable, art. 293 B du code général des impôts : le prix que je vous
-                annonce est celui que vous payez.
+                Assujettie à la TVA depuis le 6 novembre 2026. N° de TVA intracommunautaire :
+                [NUMÉRO DE TVA].
               </Li>
               <Li>
                 Contact : <Mail /> ·{" "}
@@ -193,11 +193,10 @@ function Page() {
           <Section id="prix">
             <P>
               Le prix est celui écrit dans votre proposition ou votre devis. Mes tarifs de référence
-              sont indiqués sur mon site ou communiqués sur simple demande. Aujourd'hui, la TVA ne
-              s'applique pas (article 293 B du code général des impôts) : vous payez le montant
-              annoncé. Si je devais un jour y être soumise, les propositions et devis déjà signés
-              resteraient au même prix, TVA comprise, et mes propositions suivantes indiqueraient un
-              prix TTC.
+              sont indiqués sur mon site ou communiqués sur simple demande. Mes tarifs sont indiqués
+              hors taxes, avec le prix TTC à côté : la TVA de 20 % s'ajoute. Je suis assujettie à la
+              TVA depuis le 6 novembre 2026. Les propositions et devis signés avant cette date
+              gardent le prix signé, qui devient un prix TTC.
             </P>
             <P>
               Pour Ta Binôme de Com', le paiement est mensuel, en ligne, et prélevé automatiquement
@@ -458,8 +457,8 @@ function Page() {
 
           <Section id="version">
             <P>
-              Version du 20 octobre 2026. Ces conditions s'appliquent aux engagements pris à partir
-              de cette date. Si vous vous êtes engagée avant, ce sont les conditions de votre
+              Version du [DATE DE PUBLICATION]. Ces conditions s'appliquent aux engagements pris à
+              partir de cette date. Si vous vous êtes engagée avant, ce sont les conditions de votre
               proposition qui s'appliquent jusqu'à la fin de votre accompagnement. Je peux faire
               évoluer ces conditions : celle qui s'applique à vous est la version en vigueur au
               moment où vous vous engagez.
