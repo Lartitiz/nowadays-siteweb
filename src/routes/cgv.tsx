@@ -27,7 +27,7 @@ export const Route = createFileRoute("/cgv")({
 
 /* ------------------------------------------------------------------ Data */
 
-const LAST_UPDATE = "20 octobre 2026";
+const LAST_UPDATE = "[DATE DE PUBLICATION]";
 
 // Le sommaire et les numéros de section sont tirés de cette liste.
 const SECTIONS = [
