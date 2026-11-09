@@ -42,7 +42,7 @@ export const Route = createFileRoute("/cooperative-asso")({
       {
         name: "description",
         content:
-          "Une agence de communication pour coopératives, associations et structures engagées. Budget global de mission, échelonnable, à partir de 1 500 €.",
+          "Une agence de communication pour coopératives, associations et structures engagées. Budget global de mission, échelonnable, à partir de 1 250 € HT.",
       },
       {
         property: "og:title",
@@ -100,7 +100,7 @@ function Hero() {
           galérer sur Instagram. On prend en charge votre stratégie, vos contenus, vos canaux.
         </>
       }
-      mention="À partir de 1 500 € : budget global de mission, échelonnable."
+      mention="À partir de 1 250 € HT (1 500 € TTC) : budget global de mission, échelonnable."
       photo={{
         src: "/images/home/laetitia-bureau.jpg",
         alt: "Laetitia Mattioli, fondatrice de Nowadays Agency, au travail",
@@ -262,7 +262,7 @@ const PILLARS = [
   {
     emoji: "💛",
     title: "Des prix accessibles",
-    body: "Je ne suis pas une grosse agence avec des bureaux sur les Champs-Élysées. Mes tarifs sont pensés pour des structures comme les vôtres : un budget global de mission, échelonnable, entre 1 500 € et 20 000 € selon l'ampleur du projet. Vous payez pour du travail concret, pas pour financer un open space.",
+    body: "Je ne suis pas une grosse agence avec des bureaux sur les Champs-Élysées. Mes tarifs sont pensés pour des structures comme les vôtres : un budget global de mission, échelonnable, entre 1 250 € et 20 000 € HT selon l'ampleur du projet. Vous payez pour du travail concret, pas pour financer un open space.",
   },
   {
     emoji: "🧡",

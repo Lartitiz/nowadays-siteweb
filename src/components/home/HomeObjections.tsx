@@ -16,7 +16,7 @@ const QUESTIONS = [
   {
     question: "« C'est au-dessus de notre budget. »",
     reponse:
-      "Côté structures, on ne raisonne pas en abonnement : on définit un budget global de mission, à partir de 1 500 €, échelonnable. On construit à la hauteur de ce que vous pouvez mettre, quitte à faire moins de choses mais à les faire bien.",
+      "Côté structures, on ne raisonne pas en abonnement : on définit un budget global de mission, à partir de 1 250 € HT (1 500 € TTC), échelonnable. On construit à la hauteur de ce que vous pouvez mettre, quitte à faire moins de choses mais à les faire bien.",
   },
   {
     question: "« Mon cas est particulier. »",

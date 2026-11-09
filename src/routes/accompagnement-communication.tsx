@@ -32,7 +32,7 @@ export const Route = createFileRoute("/accompagnement-communication")({
       {
         name: "description",
         content:
-          "Accompagnement communication 6 mois pour solopreneur·es engagé·es. On construit ta stratégie, on crée tes contenus, on met tout en place. Ensemble. 350 €/mois.",
+          "Accompagnement communication 6 mois pour solopreneur·es engagé·es. On construit ta stratégie, on crée tes contenus, on met tout en place. Ensemble. 325 € HT/mois (390 € TTC).",
       },
       {
         property: "og:title",
@@ -40,7 +40,7 @@ export const Route = createFileRoute("/accompagnement-communication")({
       },
       {
         property: "og:description",
-        content: "Deviens visible sans vendre ton âme. 350 €/mois pendant 6 mois.",
+        content: "Deviens visible sans vendre ton âme. 325 € HT/mois (390 € TTC) pendant 6 mois.",
       },
     ],
     links: [{ rel: "canonical", href: absoluteUrl("/accompagnement-communication") }],
@@ -105,7 +105,7 @@ function HeroAccompagnement() {
           contenus, on met tout en place. Tu n'es plus seul·e.
         </>
       }
-      mention="350 € par mois, pendant six mois."
+      mention="325 € HT par mois (390 € TTC), pendant six mois."
       photo={{
         src: "/images/home/laetitia-fauteuil.jpg",
         alt: "Portrait de Laetitia, fondatrice de Nowadays",
@@ -642,10 +642,10 @@ function ComparatifSection() {
             </div>
             <div className="bn-tot">
               <span className="bn-lab">TOTAL</span>
-              <span className="bn-gros">2 100 €</span>
+              <span className="bn-gros">1 950 € HT</span>
             </div>
             <div className="bn-jauge">
-              <i style={{ width: "12%" }} />
+              <i style={{ width: "11%" }} />
             </div>
           </div>
         </div>
@@ -655,7 +655,7 @@ function ComparatifSection() {
         Tarifs médians France 2026, bas de fourchette (source : La Fabrique du Net).
       </p>
       <p className="bn-chute" style={{ textAlign: "center" }}>
-        Huit fois moins cher, parce qu'on le fait <span className="surligne">ensemble</span>.
+        Sept fois moins cher, parce qu'on le fait <span className="surligne">ensemble</span>.
       </p>
 
       <Temoin
@@ -680,11 +680,13 @@ function PrixSection() {
       </div>
       <div className="bn-prixbloc">
         <div className="bn-gros">
-          350 € par mois,
+          325 € HT par mois,
           <br />
           pendant six mois.
         </div>
-        <div className="bn-sous">Soit 2 100 € pour les six mois.</div>
+        <div className="bn-sous">
+          Soit 390 € TTC par mois : 1 950 € HT (2 340 € TTC) pour les six mois.
+        </div>
       </div>
 
       <Temoin
@@ -859,7 +861,7 @@ function FaqSection() {
       a: "Les deux, et pas au même moment. Sur les mois 1 et 2, je construis : ta marque, ton plan, tes modèles, tes vingt premiers posts. C'est du fait pour toi. Sur les mois 3 à 6, on fait ensemble en visio : je prends la main, tu vois comment je travaille, tu participes. Et entre les sessions, je te relis, je te valide, je te débloque.",
     },
     {
-      q: "Pourquoi 350 € par mois, et pas un prix en une fois ?",
+      q: "Pourquoi 325 € HT par mois, et pas un prix en une fois ?",
       a: "Parce que c'est plus tenable pour une trésorerie de solopreneur·euse. À savoir quand même : le gros du travail est concentré sur les deux premiers mois, là où je construis tout. Les mensualités suivantes paient l'application, le suivi et la disponibilité.",
     },
     {
@@ -880,7 +882,7 @@ function FaqSection() {
     },
     {
       q: "Et si je préfère que quelqu'un fasse tout à ma place ?",
-      a: "Ça existe, et je le fais aussi : c'est Ton Agency de Com', à partir de 1 500 € en budget global de mission, échelonnable. Mais pour un projet qui démarre, c'est rarement le bon moment : tout déléguer, c'est autour de 17 400 € sur six mois, et tu n'apprends rien au passage. Dis-le-moi à l'appel, on regardera ce qui est juste pour toi.",
+      a: "Ça existe, et je le fais aussi : c'est Ton Agency de Com', à partir de 1 250 € HT (1 500 € TTC) en budget global de mission, échelonnable. Mais pour un projet qui démarre, c'est rarement le bon moment : tout déléguer, c'est autour de 17 400 € sur six mois, et tu n'apprends rien au passage. Dis-le-moi à l'appel, on regardera ce qui est juste pour toi.",
     },
     {
       q: "À qui s'adresse cet accompagnement, exactement ?",
