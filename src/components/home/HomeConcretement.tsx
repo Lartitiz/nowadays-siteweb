@@ -27,7 +27,7 @@ export function HomeConcretement() {
             <h2>Concrètement, on fait quoi ensemble ?</h2>
           </div>
           <p className="lead">
-            <em>On ne commence jamais par poster. On commence par vous écouter.</em>
+            <em>On ne commence jamais par poster, d'abord on vous écoute.</em>
           </p>
         </div>
 
@@ -38,7 +38,7 @@ export function HomeConcretement() {
                 sur la ligne suivante dans cette colonne étroite. */}
             <h3>Et si on commençait par le début&#8239;?</h3>
             <p>
-              Qu'est-ce que vous proposez ? Comment on le rend désirable ? Quels sont vos messages,
+              Que proposez-vous ? Comment le rend-on désirable ? Quels sont vos messages,
               votre positionnement, ce qui vous différencie ? De là, on construit votre plan de
               communication.
             </p>

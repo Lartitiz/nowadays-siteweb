@@ -57,7 +57,7 @@ export const Route = createFileRoute("/blog/")({
     <DaLayout>
       <section className="mx-auto max-w-3xl px-6 py-24 text-center">
         <h1 className="font-titre text-4xl text-encre">Impossible de charger les articles</h1>
-        <p className="mt-4 text-sm text-encre">{error.message}</p>
+        <p className="mt-4 text-sm text-encre">{error instanceof Error ? error.message : "Erreur inconnue"}</p>
       </section>
     </DaLayout>
   ),

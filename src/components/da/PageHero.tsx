@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 
 import { CALENDLY_URL } from "./constants";
-import { ConfettisBord } from "./primitives";
 import { Pill } from "./Pill";
 import { imageSize } from "@/lib/image-sizes";
 
@@ -32,24 +31,27 @@ type Vichy = "jaune" | "prune" | "clair";
  * au build, donc absente de la table des tailles. On accepte alors les
  * dimensions à la main, pour ne pas perdre la réservation de place (le CLS).
  */
-type Visuel = { src: string; alt: string; width?: number; height?: number };
+type Visuel = {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  /** object-position en desktop, et dans la carte en mobile. */
+  position?: string;
+  positionMobile?: string;
+};
 
 function dimensions({ src, width, height }: Visuel) {
   return width && height ? { width, height } : imageSize(src);
 }
 
-// Les confettis ne doivent jamais reprendre la couleur du vichy qu'ils
-// ponctuent, sinon ils s'y effacent.
-const CONFETTIS: Record<Vichy, readonly [string, string, string]> = {
-  jaune: ["#FB3D80", "#91014B", "#FFA7C6"],
-  prune: ["#FFE561", "#FF7A33", "#FFA7C6"],
-  clair: ["#FFE561", "#FB3D80", "#FF7A33"],
-};
+
 
 export function PageHero({
   vichy,
   pill,
   pillTon = "framboise",
+  logo,
   titre,
   chapo,
   mention,
@@ -64,6 +66,11 @@ export function PageHero({
   /** Pilule d'offre, ex. « Ta binôme de com' · 6 mois ». */
   pill?: string;
   pillTon?: "framboise" | "jaune" | "bordeaux";
+  /**
+   * Logo d'offre posé en haut de la carte. Quand il est fourni, il remplace la
+   * pilule et les confettis : un seul signe fort en ouverture.
+   */
+  logo?: { src: string; alt: string; width: number };
   /** Titre H1, avec ses <em> et son surligneur. */
   titre: ReactNode;
   chapo: ReactNode;
@@ -84,26 +91,39 @@ export function PageHero({
   const visuel = photo ?? couverture;
   const colonne = visuel ? (
     <div className={photo ? "page-hero-photo" : "page-hero-cover"}>
-      <img src={visuel.src} {...dimensions(visuel)} alt={visuel.alt} />
+      <img
+        src={visuel.src}
+        {...dimensions(visuel)}
+        alt={visuel.alt}
+        style={visuel.position ? { objectPosition: visuel.position } : undefined}
+      />
     </div>
   ) : aside ? (
     <div className="page-hero-aside">{aside}</div>
   ) : null;
 
   return (
-    <section className={`page-hero vichy-${vichy}`}>
-      <ConfettisBord couleurs={CONFETTIS[vichy]} />
+    <section className={`page-hero vichy-${vichy}${logo ? " page-hero--logo" : ""}`}>
       <div className="wrap">
         <div className={`page-hero-grid${colonne ? "" : " solo"}`}>
           <div className="page-hero-card">
-            {pill ? (
+            {logo ? (
+              <img
+                className="page-hero-logo"
+                src={logo.src}
+                alt={logo.alt}
+                style={{ width: logo.width }}
+              />
+            ) : pill ? (
               <div>
                 <Pill ton={pillTon}>{pill}</Pill>
               </div>
             ) : null}
             <h1>{titre}</h1>
             <p className="page-hero-copy">{chapo}</p>
-            {mention ? <p className="page-hero-mini">{mention}</p> : null}
+            {mention ? (
+              <p className={logo ? "page-hero-prix" : "page-hero-mini"}>{mention}</p>
+            ) : null}
             {cta ? (
               <>
                 <div className="actions">
@@ -119,10 +139,21 @@ export function PageHero({
                 {note ? <p className="page-hero-mini">{note}</p> : null}
               </>
             ) : null}
+            {logo && photo ? (
+              <img
+                className="page-hero-photo-mobile"
+                src={photo.src}
+                alt={photo.alt}
+                style={
+                  photo.positionMobile ? { objectPosition: photo.positionMobile } : undefined
+                }
+              />
+            ) : null}
           </div>
           {colonne}
         </div>
       </div>
     </section>
   );
+
 }

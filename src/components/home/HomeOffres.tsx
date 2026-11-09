@@ -29,7 +29,7 @@ export function HomeOffres() {
               <li>Livrables concrets, créés et validés ensemble</li>
             </ul>
             <div className="price">
-              350 € <small>/ mois × 6 mois</small>
+              325 € HT <small>/ mois × 6 mois, soit 390 € TTC</small>
             </div>
             <div className="price-note">Un paiement étalé, pas un abonnement.</div>
             <div className="offer-footer">
@@ -53,7 +53,9 @@ export function HomeOffres() {
               <li>Une équipe légère, adaptée au projet</li>
               <li>Un budget global défini avant de commencer</li>
             </ul>
-            <div className="price">À partir de 1 500 €</div>
+            <div className="price">
+              À partir de 1 250 € HT <small>soit 1 500 € TTC</small>
+            </div>
             <p className="small muted">
               Budget global de mission ou de campagne · paiement échelonnable.
             </p>

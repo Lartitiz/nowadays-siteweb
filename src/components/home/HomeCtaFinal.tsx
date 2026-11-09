@@ -8,7 +8,6 @@ export function HomeCtaFinal() {
       <VichyBand />
 
       <section className="final-cta">
-        <div className="flower" aria-hidden="true" />
         <div className="wrap">
           <Pill ton="bordeaux">Le point de rendez-vous</Pill>
           <h2>Prêt·es à avancer ?</h2>

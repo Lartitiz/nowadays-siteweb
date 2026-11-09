@@ -23,7 +23,11 @@ export function HomeMegaphone() {
 
         <div>
           <Pill>Le Mégaphone</Pill>
-          <h2>Des conseils en com' engagée, faits pour circuler.</h2>
+          <h2>
+            Des conseils en com' engagée, 
+            <br />
+            faits pour circuler.
+          </h2>
           <p className="lead">
             Rejoignez les +2 800 projets engagés qui reçoivent mes conseils. Du concret, sans
             injonction à poster trois fois par jour.

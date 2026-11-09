@@ -501,7 +501,10 @@ function PositionIa() {
               Chez moi, tout ensemble, en binôme
             </span>
             <span className="font-medium text-jaune">
-              2 100 € <span className="text-sm text-rose-doux">(350 €/mois × 6)</span>
+              1 950 € HT{" "}
+              <span className="text-sm text-rose-doux">
+                (325 € HT/mois × 6, soit 390 € TTC/mois)
+              </span>
             </span>
           </div>
           <p className="mt-4 text-xs leading-relaxed text-encre/70">

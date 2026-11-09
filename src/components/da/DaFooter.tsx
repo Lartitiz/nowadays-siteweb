@@ -91,7 +91,10 @@ export function DaFooter() {
         <div className="footer-bottom">
           <span>© 2026 Nowadays Agency</span>
           <span>Joigny · Paris · Partout où les projets engagés ont besoin d'une voix.</span>
-          <Link to="/mentions-legales" className="hover:text-framboise">Mentions légales</Link>
+          <span className="flex gap-5">
+            <Link to="/mentions-legales" className="hover:text-framboise">Mentions légales</Link>
+            <Link to="/cgv" className="hover:text-framboise">CGV</Link>
+          </span>
         </div>
       </div>
     </footer>
