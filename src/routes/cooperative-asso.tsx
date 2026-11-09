@@ -42,7 +42,7 @@ export const Route = createFileRoute("/cooperative-asso")({
       {
         name: "description",
         content:
-          "Une agence de communication pour coopératives, associations et structures engagées. Budget global de mission, échelonnable, à partir de 1 500 €.",
+          "Une agence de communication pour coopératives, associations et structures engagées. Budget global de mission, échelonnable, à partir de 1 250 € HT.",
       },
       {
         property: "og:title",
@@ -105,7 +105,7 @@ function Hero() {
           galérer sur Instagram. On prend en charge votre stratégie, vos contenus, vos canaux.
         </>
       }
-      mention="À partir de 1 500 € : budget global de mission, échelonnable."
+      mention="À partir de 1 250 € HT (1 500 € TTC) : budget global de mission, échelonnable."
       photo={{
         src: "/images/home/laetitia-bureau.jpg",
         alt: "Laetitia Mattioli, fondatrice de Nowadays Agency, au travail",
@@ -387,7 +387,7 @@ function PasGrosseAgenceSection() {
         <div className="bn-c">
           <div className="bn-num">01</div>
           <p>
-            <b>Des prix pensés pour vous.</b> Un budget global de 1 500 à 20 000 € selon l'ampleur,
+            <b>Des prix pensés pour vous.</b> Un budget global de 1 250 à 20 000 € HT selon l'ampleur,
             échelonnable. Vous payez du travail concret, pas un open space.
           </p>
         </div>
@@ -512,7 +512,7 @@ function AutoQualifSection() {
             <li>Chaque contenu doit passer par un comité : on avancera trop lentement pour vous être utiles.</li>
             <li>Vous cherchez un coup d'éclat viral pour le mois prochain.</li>
             <li>La communication doit verdir un projet qui ne l'est pas : c'est non, et c'est assumé.</li>
-            <li>Votre budget est sous 1 500 € : on vous orientera vers d'autres formats.</li>
+            <li>Votre budget est sous 1 250 € HT : on vous orientera vers d'autres formats.</li>
           </ul>
         </CardPointillee>
       </div>
@@ -524,7 +524,7 @@ function FaqSection() {
   const faqs = [
     {
       q: "Combien ça coûte ?",
-      a: "Chaque mission a son budget global, à partir de 1 500 € et jusqu'à 20 000 € selon l'ampleur, échelonnable, défini avant de commencer. Pas de compteur horaire, pas de surprise. Site web et identité visuelle font l'objet de devis séparés.",
+      a: "Chaque mission a son budget global, à partir de 1 250 € HT (1 500 € TTC) et jusqu'à 20 000 € HT selon l'ampleur, échelonnable, défini avant de commencer. Pas de compteur horaire, pas de surprise. Site web et identité visuelle font l'objet de devis séparés.",
     },
     {
       q: "Qui fait le travail, concrètement ?",
