@@ -115,14 +115,21 @@ function CeQuOnFait() {
       </h2>
       <p>
         On continue sur la lancée de la saison 1, et on va plus loin sur la visibilité qu'on a
-        commencé à construire. On reprend ce qui a démarré, et on ouvre ce qu'on avait laissé de
-        côté faute de temps, comme lancer ton podcast, contacter la presse ou préparer ta prochaine
-        campagne.
+        commencé à construire.
+        {'\u00a0'}
+        <br />
+        <br />
+        On reprend ce qui a démarré, et on ouvre ce qu'on avait laissé de côté faute de temps, comme
+        lancer ton podcast, contacter la presse ou préparer ta prochaine campagne.
       </p>
       <p>
-        Je reste ta binôme. Tu n'avances pas seule, et tu avances plus vite, parce qu'à chaque
-        séance on fait un vrai <span className="surligne">bond</span>, et que c'est plus facile de
-        tenir le rythme quand quelqu'un t'attend au tournant (gentiment, hein).
+        Je reste ta binôme.
+        {'\u00a0'}
+        <br />
+        <br />
+        Tu n'avances pas seule, et tu avances plus vite, parce qu'à chaque séance on fait un vrai{' '}
+        <span className="surligne">bond</span>, et que c'est plus facile de tenir le rythme quand
+        quelqu'un t'attend au tournant (gentiment, hein).
       </p>
     </Section>
   );
