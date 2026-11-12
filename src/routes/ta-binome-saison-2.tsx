@@ -493,6 +493,8 @@ function Page() {
       <EntreDeux />
       <CafeDeCom />
       <CombienDeTemps />
+      <PlusBesoinDeMoi />
+      <FeuilleDeRoute />
       <Prix />
       <PourToi />
       <Faq />
