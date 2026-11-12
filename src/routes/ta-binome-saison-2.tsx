@@ -162,18 +162,41 @@ function Trimestre() {
           marché, ce qui coince, et on décide de la suite.
         </p>
       </div>
-      <div className="s2-cartes">
+    </Section>
+  );
+}
+
+function EntreDeux() {
+  const fiches = [
+    ["Relecture & retours", "Ta page de vente ou ton article, relus avant publication."],
+    ["Déblocage express", "Le petit réglage qui coince dans ta newsletter ou ton outil."],
+    ["Aide à la décision", "Valider un choix avant de partir dans la mauvaise direction."],
+  ];
+  return (
+    <Section wrapClassName="s2-etroit">
+      <h2 className="text-center">
+        Et entre deux séances ? <em>Tu n'es jamais lâchée dans la nature.</em>
+      </h2>
+      <div className="s2-entre">
         <div className="s2-carte">
-          <h3 className="s2-h3">Entre deux séances, je travaille sur ton projet.</h3>
-          <p>
-            Je relis ta page avant que tu la publies, je règle ce petit truc dans ta newsletter qui
-            te bloque. À la fin de la séance, tu me dis ce qui t'aiderait, et je te dis ce qui tient
-            d'ici la prochaine. Un site, des visuels ou une vidéo, ça se fait à part, sur devis.
-          </p>
+          <h3 className="s2-h3">Je travaille sur ton projet</h3>
+          <ul className="s2-fiches">
+            {fiches.map(([t, d]) => (
+              <li key={t}>
+                <strong>{t}</strong>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="s2-devis">Un site, des visuels ou une vidéo, ça se fait à part, sur devis.</p>
         </div>
         <div className="s2-carte s2-c2">
           <h3 className="s2-h3">WhatsApp quand tu en as besoin</h3>
-          <p>Les jours ouvrés, avec une réponse sous 48 h.</p>
+          <div className="s2-chat" aria-label="Exemple d'échange WhatsApp">
+            <p className="s2-bulle s2-toi">Laetitia, j'hésite entre ces deux accroches pour mon lancement de jeudi…</p>
+            <p className="s2-bulle s2-moi">La deuxième, sans hésiter ! Elle va droit au but. Je t'ai peaufiné deux phrases.</p>
+          </div>
+          <span className="s2-badge">Les jours ouvrés · réponse sous 48 h</span>
         </div>
       </div>
     </Section>
@@ -422,6 +445,7 @@ function Page() {
       <EcranPhrase />
       <CeQuOnFait />
       <Trimestre />
+      <EntreDeux />
       <CafeDeCom />
       <CombienDeTemps />
       <Prix />
