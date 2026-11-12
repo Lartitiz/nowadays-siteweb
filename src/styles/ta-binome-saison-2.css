@@ -1,0 +1,494 @@
+/*
+ * Page cachée /ta-binome-saison-2.
+ *
+ * Tout est préfixé par .page-saison2 (posée sur DaLayout) : rien ici ne touche
+ * les autres pages. Ce fichier n'est chargé que par cette route.
+ * Les valeurs viennent de la maquette validée
+ * (docs/maquettes/ta-binome-saison-2-maquette.html).
+ */
+
+/* ---------- typographie de la page ---------- */
+
+.page-saison2 h1,
+.page-saison2 h2 {
+  text-wrap: balance;
+}
+
+.page-saison2 p {
+  text-wrap: pretty;
+  text-align: left;
+}
+
+.page-saison2 h2 {
+  margin-bottom: 24px;
+}
+
+.page-saison2 h1 em,
+.page-saison2 h2 em {
+  color: var(--framboise);
+  font-style: italic;
+}
+
+.page-saison2 a:focus-visible,
+.page-saison2 button:focus-visible {
+  outline: 3px solid var(--bordeaux);
+  outline-offset: 3px;
+}
+
+/* Colonne de lecture étroite, comme la maquette. */
+.page-saison2 .wrap.s2-etroit {
+  width: min(720px, calc(100% - 48px));
+}
+
+.page-saison2 .wrap.s2-large {
+  width: min(1040px, calc(100% - 48px));
+}
+
+@media (max-width: 620px) {
+  .page-saison2 .wrap.s2-etroit,
+  .page-saison2 .wrap.s2-large {
+    width: min(720px, calc(100% - 28px));
+  }
+}
+
+/* ---------- haut de page : vichy framboise au lieu du jaune ---------- */
+
+.page-saison2 .page-hero.vichy-clair {
+  background-color: var(--blanc);
+  background-image:
+    linear-gradient(90deg, rgba(251, 61, 128, 0.22) 50%, transparent 50%),
+    linear-gradient(rgba(251, 61, 128, 0.22) 50%, transparent 50%);
+  background-size: 18px 18px;
+}
+
+.page-saison2 .page-hero-card h1 {
+  font-size: 44px;
+  line-height: 1.1;
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .page-saison2 .page-hero-card h1 {
+    font-size: 64px;
+  }
+}
+
+/* ---------- écran-phrase ---------- */
+
+.page-saison2 .s2-phrase {
+  padding: 88px 0;
+  background: var(--rose-pale);
+}
+
+.page-saison2 .s2-phrase p {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.25;
+  color: var(--bordeaux);
+  text-align: center;
+  text-wrap: balance;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .page-saison2 .s2-phrase {
+    padding: 140px 0;
+  }
+  .page-saison2 .s2-phrase p {
+    font-size: 44px;
+  }
+}
+
+/* ---------- titres de bloc en sans-serif ---------- */
+
+.page-saison2 .s2-h3 {
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  line-height: 1.4;
+  letter-spacing: 0;
+  margin: 0 0 8px;
+}
+
+/* ---------- la frise du trimestre ---------- */
+
+.page-saison2 .s2-trimestre {
+  margin: 8px 0 40px;
+}
+
+.page-saison2 .s2-mois {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 20px 0 16px;
+}
+
+.page-saison2 .s2-mois > div {
+  background: var(--blanc);
+  border-radius: 14px 22px 12px 18px;
+  padding: 12px 8px 10px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-saison2 .s2-mois .s2-nom {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gris-chaud);
+  letter-spacing: 0.04em;
+}
+
+.page-saison2 .s2-mois .s2-vide {
+  flex: 1;
+  width: 100%;
+  border: 1.5px dashed var(--rose);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--gris-chaud);
+  text-align: center;
+  padding: 4px;
+}
+
+.page-saison2 .s2-seance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 44px;
+  border-radius: 12px 18px 10px 16px;
+  background: var(--framboise);
+  color: var(--blanc);
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.page-saison2 .s2-seance:nth-of-type(2) {
+  transform: rotate(-2deg);
+}
+
+.page-saison2 .s2-seance.s2-b {
+  background: var(--bordeaux);
+  transform: rotate(2deg);
+}
+
+.page-saison2 .s2-cartes {
+  display: grid;
+  gap: 16px;
+  align-items: start;
+}
+
+.page-saison2 .s2-carte {
+  background: var(--blanc);
+  padding: 24px;
+  border-radius: 12px 24px 10px 20px;
+}
+
+.page-saison2 .s2-carte.s2-c2 {
+  border-radius: 22px 12px 20px 10px;
+}
+
+.page-saison2 .s2-carte p {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .page-saison2 .s2-mois {
+    gap: 16px;
+  }
+  .page-saison2 .s2-mois > div {
+    min-height: 180px;
+    padding: 16px;
+  }
+  .page-saison2 .s2-cartes {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---------- pilule « en construction » ---------- */
+
+.page-saison2 .s2-pilule {
+  display: inline-block;
+  background: var(--rose-doux);
+  color: var(--bordeaux);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+/* ---------- la frise d'un an ---------- */
+
+.page-saison2 .s2-frise {
+  margin: 32px 0 40px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 16px;
+}
+
+.page-saison2 .s2-frise .s2-barre {
+  width: 14px;
+  border-radius: 8px;
+}
+
+.page-saison2 .s2-frise .s2-etape {
+  padding: 0 0 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.page-saison2 .s2-frise .s2-s1 {
+  background: var(--rose);
+  height: 132px;
+}
+
+.page-saison2 .s2-frise .s2-c1 {
+  background: var(--framboise);
+  height: 66px;
+}
+
+.page-saison2 .s2-frise .s2-c2 {
+  background: var(--bordeaux);
+  height: 66px;
+}
+
+.page-saison2 .s2-frise .s2-lib {
+  font-weight: 700;
+  color: var(--bordeaux);
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.page-saison2 .s2-frise .s2-duree {
+  font-size: 14px;
+  color: var(--gris-chaud);
+}
+
+.page-saison2 .s2-sortie {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--gris-chaud);
+  border: 1.5px dashed var(--rose);
+  border-radius: 999px;
+  padding: 3px 12px;
+  background: var(--blanc);
+}
+
+.page-saison2 .s2-sortie::before {
+  content: "↳ ";
+  color: var(--orange);
+  font-weight: 800;
+}
+
+.page-saison2 .s2-frise .s2-gap {
+  height: 16px;
+}
+
+.page-saison2 .s2-frise .s2-fin {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.page-saison2 .s2-frise .s2-fin span:last-child {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 28px;
+  color: var(--bordeaux);
+}
+
+.page-saison2 .s2-frise .s2-point {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bordeaux);
+  flex: none;
+}
+
+@media (min-width: 768px) {
+  .page-saison2 .s2-frise {
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 8px;
+    row-gap: 12px;
+  }
+  .page-saison2 .s2-frise .s2-barre {
+    width: 100%;
+    height: 14px;
+    grid-row: 1;
+  }
+  .page-saison2 .s2-frise .s2-etape {
+    grid-row: 2;
+  }
+  .page-saison2 .s2-frise .s2-gap {
+    display: none;
+  }
+  .page-saison2 .s2-frise .s2-fin {
+    grid-column: 3;
+    grid-row: 3;
+    justify-content: flex-end;
+  }
+}
+
+/* ---------- le sticker ---------- */
+
+.page-saison2 .s2-avec-sticker {
+  position: relative;
+  margin-top: 24px;
+}
+
+.page-saison2 .s2-sticker {
+  display: inline-block;
+  background: var(--jaune);
+  color: var(--bordeaux);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  padding: 12px 16px;
+  border-radius: 6px;
+  transform: rotate(-2.5deg);
+  box-shadow: 2px 3px 0 rgba(145, 1, 75, 0.18);
+  margin-top: 16px;
+  max-width: 300px;
+}
+
+/* ---------- le prix ---------- */
+
+.page-saison2 .s2-titre-centre {
+  text-align: center;
+}
+
+.page-saison2 .s2-prix {
+  border: 2px solid var(--framboise);
+  border-radius: 20px 38px 18px 34px;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.page-saison2 .s2-prix .s2-montant {
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1.1;
+  color: var(--bordeaux);
+}
+
+.page-saison2 .s2-prix .s2-detail {
+  color: var(--gris-chaud);
+  font-size: 15px;
+  margin: 8px 0 24px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .page-saison2 .s2-prix {
+    padding: 48px;
+  }
+  .page-saison2 .s2-prix .s2-montant {
+    font-size: 56px;
+  }
+}
+
+/* ---------- pour toi / pas le moment ---------- */
+
+.page-saison2 .audience-grid {
+  margin-top: 0;
+}
+
+.page-saison2 .carte-pointillee {
+  border-width: 1.5px;
+  border-radius: 22px;
+  padding: 28px 24px;
+}
+
+.page-saison2 .carte-pointillee h3 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.15;
+  color: var(--bordeaux);
+  margin: 0 0 12px;
+}
+
+.page-saison2 .carte-pointillee p {
+  margin: 0;
+}
+
+.page-saison2 .carte-pointillee a {
+  color: var(--bordeaux);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .page-saison2 .audience-grid .carte-pointillee:nth-child(2) {
+    transform: rotate(1deg);
+  }
+}
+
+/* ---------- dernier écran ---------- */
+
+.page-saison2 .vichy-band {
+  height: 28px;
+  background-color: var(--blanc);
+  background-image:
+    linear-gradient(90deg, rgba(251, 61, 128, 0.22) 50%, transparent 50%),
+    linear-gradient(rgba(251, 61, 128, 0.22) 50%, transparent 50%);
+  background-size: 18px 18px;
+}
+
+.page-saison2 .final-cta {
+  padding: 80px 0;
+}
+
+.page-saison2 .final-cta h2 {
+  font-size: 44px;
+  margin-bottom: 28px;
+}
+
+.page-saison2 .final-cta .actions {
+  margin-top: 0;
+}
+
+.page-saison2 .s2-note-finale {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--bordeaux);
+  max-width: 440px;
+  margin: 14px auto 0;
+  text-align: center;
+}
+
+.page-saison2 .s2-confetti {
+  position: fixed;
+  pointer-events: none;
+  width: 10px;
+  height: 22px;
+  border-radius: 5px;
+  z-index: 99;
+}
+
+@media (min-width: 768px) {
+  .page-saison2 .final-cta h2 {
+    font-size: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-saison2 * {
+    transition: none !important;
+  }
+}

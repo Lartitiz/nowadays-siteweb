@@ -25,6 +25,7 @@ import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as MerciRdvRouteImport } from './routes/merci-rdv'
 import { Route as PlanCommunicationRouteImport } from './routes/plan-communication'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TaBinomeSaison2RouteImport } from './routes/ta-binome-saison-2'
 import { Route as TemplateBrandingRouteImport } from './routes/template-branding'
 import { Route as TemplateCalendrierEditorialRouteImport } from './routes/template-calendrier-editorial'
 import { Route as ApiRecapHebdoRouteImport } from './routes/api.recap-hebdo'
@@ -129,6 +130,11 @@ const PlanCommunicationRoute = PlanCommunicationRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TaBinomeSaison2Route = TaBinomeSaison2RouteImport.update({
+  id: '/ta-binome-saison-2',
+  path: '/ta-binome-saison-2',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TemplateBrandingRoute = TemplateBrandingRouteImport.update({
@@ -267,6 +273,7 @@ export interface FileRoutesByFullPath {
   '/merci-rdv': typeof MerciRdvRoute
   '/plan-communication': typeof PlanCommunicationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/ta-binome-saison-2': typeof TaBinomeSaison2Route
   '/template-branding': typeof TemplateBrandingRoute
   '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
   '/api/recap-hebdo': typeof ApiRecapHebdoRoute
@@ -308,6 +315,7 @@ export interface FileRoutesByTo {
   '/merci-rdv': typeof MerciRdvRoute
   '/plan-communication': typeof PlanCommunicationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/ta-binome-saison-2': typeof TaBinomeSaison2Route
   '/template-branding': typeof TemplateBrandingRoute
   '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
   '/api/recap-hebdo': typeof ApiRecapHebdoRoute
@@ -350,6 +358,7 @@ export interface FileRoutesById {
   '/merci-rdv': typeof MerciRdvRoute
   '/plan-communication': typeof PlanCommunicationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/ta-binome-saison-2': typeof TaBinomeSaison2Route
   '/template-branding': typeof TemplateBrandingRoute
   '/template-calendrier-editorial': typeof TemplateCalendrierEditorialRoute
   '/api/recap-hebdo': typeof ApiRecapHebdoRoute
@@ -393,6 +402,7 @@ export interface FileRouteTypes {
     | '/merci-rdv'
     | '/plan-communication'
     | '/sitemap.xml'
+    | '/ta-binome-saison-2'
     | '/template-branding'
     | '/template-calendrier-editorial'
     | '/api/recap-hebdo'
@@ -434,6 +444,7 @@ export interface FileRouteTypes {
     | '/merci-rdv'
     | '/plan-communication'
     | '/sitemap.xml'
+    | '/ta-binome-saison-2'
     | '/template-branding'
     | '/template-calendrier-editorial'
     | '/api/recap-hebdo'
@@ -475,6 +486,7 @@ export interface FileRouteTypes {
     | '/merci-rdv'
     | '/plan-communication'
     | '/sitemap.xml'
+    | '/ta-binome-saison-2'
     | '/template-branding'
     | '/template-calendrier-editorial'
     | '/api/recap-hebdo'
@@ -517,6 +529,7 @@ export interface RootRouteChildren {
   MerciRdvRoute: typeof MerciRdvRoute
   PlanCommunicationRoute: typeof PlanCommunicationRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TaBinomeSaison2Route: typeof TaBinomeSaison2Route
   TemplateBrandingRoute: typeof TemplateBrandingRoute
   TemplateCalendrierEditorialRoute: typeof TemplateCalendrierEditorialRoute
   ApiRecapHebdoRoute: typeof ApiRecapHebdoRoute
@@ -654,6 +667,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ta-binome-saison-2': {
+      id: '/ta-binome-saison-2'
+      path: '/ta-binome-saison-2'
+      fullPath: '/ta-binome-saison-2'
+      preLoaderRoute: typeof TaBinomeSaison2RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/template-branding': {
@@ -837,6 +857,7 @@ const rootRouteChildren: RootRouteChildren = {
   MerciRdvRoute: MerciRdvRoute,
   PlanCommunicationRoute: PlanCommunicationRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TaBinomeSaison2Route: TaBinomeSaison2Route,
   TemplateBrandingRoute: TemplateBrandingRoute,
   TemplateCalendrierEditorialRoute: TemplateCalendrierEditorialRoute,
   ApiRecapHebdoRoute: ApiRecapHebdoRoute,
