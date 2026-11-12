@@ -25,7 +25,7 @@ const DESCRIPTION = "Ta com' est lancée. En saison 2, on continue à deux.";
 const WHATSAPP = "https://wa.me/33614133921?text=Je%20veux%20ma%20saison%202";
 const LIBELLE_CTA = "Je veux ma saison 2";
 const NOTE_CTA =
-  "Tu me le dis, et je t'envoie une proposition pour tes six prochains mois. Tu t'engages un cycle de trois mois à la fois.";
+  "Tu me le dis, et je t'envoie une proposition de plan.";
 
 export const Route = createFileRoute("/ta-binome-saison-2")({
   head: () => ({
