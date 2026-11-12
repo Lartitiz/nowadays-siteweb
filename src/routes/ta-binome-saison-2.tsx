@@ -284,22 +284,51 @@ function CombienDeTemps() {
         </div>
       </div>
 
-      <p>
-        Je l'ai pensée pour deux cycles, soit six mois. Avec la saison 1, ça nous fait un an de
-        travail ensemble, et au bout d'un an, l'idée, c'est que tu n'aies plus besoin de moi, sauf
-        si un nouveau projet arrive.
-      </p>
-      <div className="s2-avec-sticker">
+    </Section>
+  );
+}
+
+function PlusBesoinDeMoi() {
+  return (
+    <Section wrapClassName="s2-etroit">
+      <h2 className="text-center">
+        Mon but, c'est que tu n'aies <em>plus besoin de moi.</em>
+      </h2>
+      <blockquote className="s2-citation">
         <p>
-          Oui, je te vends une offre en t'expliquant que mon but, c'est que tu n'en aies plus
-          besoin.
+          Deux cycles de trois mois, soit six mois en saison 2. Avec la saison 1, cela fait un an de
+          travail ensemble : à ce stade, ta communication roule et tu as toutes les clés en main.
         </p>
-        <span className="s2-sticker">Je sais, côté business, on a vu plus malin.</span>
-      </div>
-      <p style={{ marginTop: 24 }}>
-        Avant de commencer, je t'envoie une proposition personnalisée pour tes six prochains mois, à
-        partir de là où tu en es.
+      </blockquote>
+      <p className="s2-dispensable">
+        Oui, je te vends une offre en t'expliquant que mon objectif est de devenir dispensable.
+        Côté business classique, on a vu plus malin… mais c'est exactement ça, une communication
+        saine.
       </p>
+    </Section>
+  );
+}
+
+function FeuilleDeRoute() {
+  const etapes = [
+    ["On fait le point", "Où en est ton activité aujourd'hui, et quelles sont tes priorités pour les mois à venir."],
+    ["Je prépare ton plan", "Je t'envoie une proposition personnalisée pour tes six prochains mois, calibrée pour toi."],
+    ["Tu valides", "Si le cap te plaît, on lance le premier cycle de trois mois."],
+  ];
+  return (
+    <Section fond="rose" wrapClassName="s2-etroit">
+      <h2 className="text-center">
+        Avant de commencer : <em>ta feuille de route sur mesure</em>
+      </h2>
+      <ol className="s2-etapes">
+        {etapes.map(([t, d], i) => (
+          <li key={t} className="s2-etape-carte">
+            <span className="s2-num">{i + 1}</span>
+            <h3 className="s2-h3">{t}</h3>
+            <p>{d}</p>
+          </li>
+        ))}
+      </ol>
     </Section>
   );
 }
