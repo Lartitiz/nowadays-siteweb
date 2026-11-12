@@ -264,8 +264,8 @@ function EntreDeux() {
 function CafeDeCom() {
   const vignettes = [
     [
-      "Tous les 3 mois",
-      "1 h en visio, un thé ou un café à la main, pour lever la tête du guidon et faire le point.",
+      "Tous les 3 mois, en groupe",
+      "1 h en visio toutes ensemble, un thé ou un café à la main, pour lever la tête du guidon et faire le point.",
     ],
     [
       "Le partage sans filtre",
@@ -295,7 +295,8 @@ function CafeDeCom() {
             Et aussi : le <em>Café de Com'</em>
           </h2>
           <p className="s2-cafe-accroche">
-            Un rendez-vous tous les 3 mois pour ne plus jamais entreprendre seule.
+            Un rendez-vous collectif entre créatrices, mes binômes d'hier et d'aujourd'hui : on se
+            rencontre, on échange, et on n'entreprend plus jamais seule.
           </p>
           <ul className="s2-cafe-liste">
             {vignettes.map(([t, d]) => (
