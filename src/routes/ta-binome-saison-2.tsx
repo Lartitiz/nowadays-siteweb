@@ -240,9 +240,9 @@ function CafeDeCom() {
 function CombienDeTemps() {
   return (
     <Section fond="rose" wrapClassName="s2-etroit">
-      <h2>Combien de temps</h2>
-      <p>
-        Ça marche par cycles de trois mois : à la fin de chacun, tu renouvelles si tu veux, ou tu
+      <h2 className="text-center">Combien de temps</h2>
+      <p className="text-center">
+        Ça marche par cycles de trois mois : à chaque étape, tu décides si on continue ou si tu
         t'arrêtes là.
       </p>
 
