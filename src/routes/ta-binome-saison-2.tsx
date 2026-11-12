@@ -129,19 +129,66 @@ function CeQuOnFait() {
         On reprend ce qui a démarré, et on ouvre ce qu'on avait laissé de côté faute de temps, comme
         lancer ton podcast, contacter la presse ou préparer ta prochaine campagne.
       </p>
-      <p className="s2-chute">Je reste ta binôme.</p>
-      <p>
-        Tu n'avances pas seule, et tu avances plus vite, parce qu'à chaque séance on fait un vrai{" "}
-        <span className="surligne">bond</span>, et que c'est plus facile de tenir le rythme quand
-        quelqu'un t'attend au tournant (gentiment, hein).
-      </p>
+      <div className="s2-binome">
+        <div>
+          <p className="s2-chute">Je reste ta binôme.</p>
+          <p>
+            Tu n'avances pas seule, et tu avances plus vite, parce qu'à chaque séance on fait un
+            vrai <span className="surligne">bond</span>, et que c'est plus facile de tenir le rythme
+            quand quelqu'un t'attend au tournant (gentiment, hein).
+          </p>
+        </div>
+        <CourbeBinome />
+      </div>
     </Section>
+  );
+}
+
+/*
+ * Deux chemins vers le même but : seule, une pente douce ; à deux, un bond à
+ * chaque séance. Le dessin redit la phrase d'à côté, il ne la remplace pas.
+ */
+function CourbeBinome() {
+  return (
+    <figure className="s2-courbe" aria-hidden="true">
+      <svg viewBox="0 0 360 240" role="presentation">
+        {/* sol */}
+        <line x1="16" y1="212" x2="344" y2="212" className="s2-courbe-sol" />
+        {/* seule : pente douce */}
+        <path d="M24 204 L336 168" className="s2-courbe-seule" />
+        <text x="336" y="190" textAnchor="end" className="s2-courbe-lib s2-courbe-lib-seule">
+          seule
+        </text>
+        {/* à deux : un bond à chaque séance */}
+        <path
+          d="M24 204 L92 196 L100 160 L168 152 L176 112 L244 104 L252 60 L336 50"
+          className="s2-courbe-deux"
+        />
+        {[
+          [96, 178],
+          [172, 132],
+          [248, 82],
+        ].map(([x, y]) => (
+          <circle key={x} cx={x} cy={y} r="7" className="s2-courbe-bond" />
+        ))}
+        <text x="336" y="36" textAnchor="end" className="s2-courbe-lib s2-courbe-lib-deux">
+          à deux
+        </text>
+        <path d="M58 104 Q 70 150 90 172" className="s2-courbe-fleche" />
+        <text x="16" y="72" className="s2-courbe-note">
+          <tspan x="16">un bond à</tspan>
+          <tspan x="16" dy="18">
+            chaque séance
+          </tspan>
+        </text>
+      </svg>
+    </figure>
   );
 }
 
 function Trimestre() {
   return (
-    <Section fond="rose" wrapClassName="s2-etroit">
+    <Section wrapClassName="s2-etroit">
       <h2 className="text-center">Sur chaque cycle de trois mois, concrètement</h2>
       <div className="s2-trimestre">
         <h3 className="s2-h3 text-center">Trois séances d'une heure en visio</h3>
@@ -177,7 +224,7 @@ function EntreDeux() {
     ["Aide à la décision", "Valider un choix avant de partir dans la mauvaise direction."],
   ];
   return (
-    <Section wrapClassName="s2-etroit">
+    <Section fond="rose" wrapClassName="s2-etroit">
       <h2 className="text-center s2-h2-deux">
         Et entre deux séances ? <em>Tu n'es jamais lâchée dans la nature.</em>
       </h2>
@@ -198,14 +245,15 @@ function EntreDeux() {
         </div>
         <div className="s2-colonne">
           <h3 className="s2-h3">WhatsApp quand tu en as besoin</h3>
-          <div className="s2-chat" aria-label="Exemple d'échange WhatsApp">
+          <div className="s2-chat" aria-label="Exemple d'échange WhatsApp avec Laetitia">
+            <div className="s2-chat-entete" aria-hidden="true">
+              <img src="/images/home/laetitia-portrait.jpg" alt="" width="36" height="36" />
+              <span>Laetitia</span>
+            </div>
             <p className="s2-bulle s2-toi">
               Laetitia, j'hésite entre ces deux accroches pour mon lancement de jeudi…
             </p>
             <p className="s2-bulle s2-moi">
-              <span className="s2-qui" aria-hidden="true">
-                Laetitia
-              </span>
               La deuxième, sans hésiter ! Elle va droit au but. Je t'ai peaufiné deux phrases.
             </p>
           </div>
@@ -232,28 +280,40 @@ function CafeDeCom() {
     ],
   ];
   return (
-    <Section fond="rose" wrapClassName="s2-etroit">
+    <Section wrapClassName="s2-large">
       <div className="s2-cafe">
-        <span className="s2-pilule">☕ EN PROJET · RÉSERVÉ AUX ANCIENNES CLIENTES</span>
-        <h2>
-          Et aussi : le <em>Café de Com'</em>
-        </h2>
-        <p className="s2-cafe-accroche">
-          Un rendez-vous tous les 3 mois pour ne plus jamais entreprendre seule.
-        </p>
-        <div className="s2-cafe-grille">
-          {vignettes.map(([t, d]) => (
-            <div key={t} className="s2-cafe-vignette">
-              <h3 className="s2-h3">{t}</h3>
-              <p>{d}</p>
-            </div>
-          ))}
+        <figure className="s2-cafe-photo">
+          {/* Photo provisoire : à remplacer par celle de Laetitia qui anime en visio. */}
+          <img
+            src="/images/home/laetitia-atelier.jpg"
+            alt="Laetitia à son bureau, devant son ordinateur"
+            width="720"
+            height="923"
+            loading="lazy"
+          />
+        </figure>
+        <div className="s2-cafe-texte">
+          <span className="s2-encours">en projet</span>
+          <h2>
+            Et aussi : le <em>Café de Com'</em>
+          </h2>
+          <p className="s2-cafe-accroche">
+            Un rendez-vous tous les 3 mois pour ne plus jamais entreprendre seule.
+          </p>
+          <ul className="s2-cafe-liste">
+            {vignettes.map(([t, d]) => (
+              <li key={t}>
+                <h3 className="s2-h3">{t}</h3>
+                <p>{d}</p>
+              </li>
+            ))}
+          </ul>
         </div>
-        <p className="s2-memo">
-          « Je l'avais déjà testé avec mes anciennes clientes : c'était magique de voir des
-          collaborations et de vraies amitiés naître entre créatrices. »<span>Laetitia</span>
-        </p>
       </div>
+      <p className="s2-memo">
+        « Je l'avais déjà testé avec mes anciennes clientes : c'était magique de voir des
+        collaborations et de vraies amitiés naître entre créatrices. »<span>Laetitia</span>
+      </p>
     </Section>
   );
 }
@@ -265,7 +325,7 @@ function CombienDeTemps() {
     { cle: "c2", lib: "Saison 2, cycle 2", duree: "3 mois", sortie: false },
   ];
   return (
-    <Section wrapClassName="s2-etroit">
+    <Section fond="rose" wrapClassName="s2-etroit">
       <h2 className="text-center">Combien de temps</h2>
       <p className="text-center">
         Ça marche par cycles de trois mois : à chaque étape, tu décides si on continue ou si tu
@@ -508,10 +568,10 @@ function Page() {
       <LaOuTuEnEs />
       <EcranPhrase />
       <CeQuOnFait />
+      <CombienDeTemps />
       <Trimestre />
       <EntreDeux />
       <CafeDeCom />
-      <CombienDeTemps />
       <PlusBesoinDeMoi />
       <FeuilleDeRoute />
       <Prix />

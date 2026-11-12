@@ -131,7 +131,7 @@
 }
 
 .page-saison2 .s2-mois > div {
-  background: var(--blanc);
+  background: var(--rose-pale);
   border-radius: 14px 22px 12px 18px;
   padding: 12px 8px 10px;
   min-height: 150px;
@@ -192,20 +192,6 @@
     min-height: 180px;
     padding: 16px;
   }
-}
-
-/* ---------- pilule « en construction » ---------- */
-
-.page-saison2 .s2-pilule {
-  display: inline-block;
-  background: var(--rose-doux);
-  color: var(--bordeaux);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  padding: 6px 14px;
-  border-radius: 999px;
-  margin-bottom: 16px;
 }
 
 /* ---------- la frise d'un an ----------
@@ -685,7 +671,7 @@
   gap: 10px;
 }
 .page-saison2 .s2-fiches li {
-  background: var(--rose-doux);
+  background: var(--blanc);
   border-radius: 10px 16px 8px 14px;
   padding: 12px 14px;
   display: flex;
@@ -702,43 +688,56 @@
   color: var(--gris-chaud);
   margin: 0;
 }
-/* L'échange se lit comme sur le téléphone de la lectrice : son message à droite,
-   la réponse de Laetitia à gauche. */
+/* L'échange se lit comme sur le téléphone de la lectrice, aux couleurs de
+   WhatsApp : la conversation avec Laetitia, son message à elle à droite en vert. */
 .page-saison2 .s2-chat {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   margin: 16px 0;
-  padding: 20px 16px;
-  background: var(--rose-doux);
-  border-radius: 18px 26px 16px 22px;
+  padding: 0 0 18px;
+  background: #efeae2;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1.5px #d6cfc4;
+}
+.page-saison2 .s2-chat-entete {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  margin-bottom: 6px;
+  background: #008069;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+}
+.page-saison2 .s2-chat-entete img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 20%;
 }
 .page-saison2 .s2-chat .s2-bulle {
-  max-width: 85%;
-  padding: 10px 14px;
-  margin: 0;
+  max-width: 82%;
+  padding: 9px 12px;
+  margin: 0 14px;
   font-size: 15px;
   line-height: 1.45;
   text-align: left;
+  color: #111b21;
+  box-shadow: 0 1px 0 rgba(11, 20, 26, 0.13);
 }
 .page-saison2 .s2-toi {
   align-self: flex-end;
-  background: var(--bordeaux);
-  color: var(--blanc);
-  border-radius: 16px 16px 4px 16px;
+  background: #d9fdd3;
+  border-radius: 10px 0 10px 10px;
 }
 .page-saison2 .s2-moi {
   align-self: flex-start;
-  background: var(--blanc);
-  color: var(--encre);
-  border-radius: 16px 16px 16px 4px;
-}
-.page-saison2 .s2-qui {
-  display: block;
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--framboise-dense);
-  margin-bottom: 2px;
+  background: #fff;
+  border-radius: 0 10px 10px 10px;
 }
 .page-saison2 .s2-badge {
   display: inline-block;
@@ -756,29 +755,65 @@
   }
 }
 
-/* ---------- café de com' : sur le fond rose, sans carte autour ---------- */
+/* ---------- café de com' : la photo à côté, la liste en face ---------- */
 .page-saison2 .s2-cafe {
-  text-align: center;
+  display: grid;
+  gap: 32px;
+  align-items: center;
+}
+.page-saison2 .s2-cafe-photo {
+  margin: 0;
+  max-width: 360px;
+  justify-self: center;
+  transform: rotate(-2deg);
+}
+.page-saison2 .s2-cafe-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 24px 40px 22px 36px;
+  box-shadow: 8px 8px 0 var(--rose-doux);
+}
+.page-saison2 .s2-cafe-texte h2 {
+  margin-bottom: 8px;
+}
+.page-saison2 .s2-encours {
+  display: inline-block;
+  background: var(--jaune);
+  color: var(--bordeaux);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  transform: rotate(-3deg);
+  margin-bottom: 12px;
 }
 .page-saison2 .s2-cafe .s2-cafe-accroche {
   font-size: 18px;
   color: var(--bordeaux);
-  margin: 8px auto 32px;
-  text-align: center;
-  max-width: 34ch;
+  margin: 0 0 24px;
 }
-.page-saison2 .s2-cafe-grille {
+.page-saison2 .s2-cafe-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
-  gap: 24px;
-  text-align: left;
+  gap: 18px;
 }
-.page-saison2 .s2-cafe-vignette p {
+.page-saison2 .s2-cafe-liste li {
+  padding-left: 20px;
+  border-left: 2px dashed var(--rose);
+}
+.page-saison2 .s2-cafe-liste h3 {
+  margin-bottom: 2px;
+}
+.page-saison2 .s2-cafe-liste p {
   margin: 0;
 }
-.page-saison2 .s2-cafe .s2-memo {
-  background: var(--blanc);
-  margin: 40px auto 0;
-  max-width: 520px;
+.page-saison2 .s2-memo {
+  background: var(--rose-pale);
+  margin: 48px auto 0;
+  max-width: 560px;
   padding: 18px 20px;
   border-radius: 4px 18px 4px 18px;
   transform: rotate(-1.5deg);
@@ -795,15 +830,76 @@
   text-align: right;
 }
 @media (min-width: 768px) {
-  .page-saison2 .s2-cafe-grille {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
+  .page-saison2 .s2-cafe {
+    grid-template-columns: 5fr 7fr;
+    gap: 56px;
   }
-  .page-saison2 .s2-cafe-vignette {
-    padding: 0 20px;
-  }
-  .page-saison2 .s2-cafe-vignette + .s2-cafe-vignette {
-    border-left: 1.5px dashed var(--rose);
+}
+
+/* ---------- je reste ta binôme : le texte et la courbe ---------- */
+.page-saison2 .s2-binome {
+  display: grid;
+  gap: 8px;
+  align-items: center;
+  margin-top: 40px;
+}
+.page-saison2 .s2-binome .s2-chute {
+  margin: 0 0 16px;
+}
+.page-saison2 .s2-courbe {
+  margin: 0;
+}
+.page-saison2 .s2-courbe svg {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 0 auto;
+}
+.page-saison2 .s2-courbe-sol {
+  stroke: var(--rose-doux);
+  stroke-width: 2;
+}
+.page-saison2 .s2-courbe-seule {
+  fill: none;
+  stroke: var(--rose);
+  stroke-width: 3;
+  stroke-dasharray: 2 8;
+  stroke-linecap: round;
+}
+.page-saison2 .s2-courbe-deux {
+  fill: none;
+  stroke: var(--framboise-dense);
+  stroke-width: 4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.page-saison2 .s2-courbe-bond {
+  fill: var(--jaune);
+  stroke: var(--bordeaux);
+  stroke-width: 2;
+}
+.page-saison2 .s2-courbe-lib {
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+}
+.page-saison2 .s2-courbe-lib-seule {
+  fill: var(--gris-chaud);
+}
+.page-saison2 .s2-courbe-lib-deux {
+  fill: var(--framboise-dense);
+}
+.page-saison2 .s2-courbe-note {
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  fill: var(--bordeaux);
+}
+@media (min-width: 768px) {
+  .page-saison2 .s2-binome {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
   }
 }
 
@@ -811,4 +907,15 @@
    pour ne pas laisser « ta » ou « Tu n'es » seuls en bout de ligne. */
 .page-saison2 .s2-h2-deux em {
   display: block;
+}
+.page-saison2 .s2-courbe-fleche {
+  fill: none;
+  stroke: var(--bordeaux);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 4;
+}
+@media (max-width: 767px) {
+  .page-saison2 .s2-cafe-photo {
+    max-width: 280px;
+  }
 }
