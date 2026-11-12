@@ -19,6 +19,11 @@
   text-align: left;
 }
 
+/* Un <p className="text-center"> doit gagner sur la règle ci-dessus. */
+.page-saison2 p.text-center {
+  text-align: center;
+}
+
 .page-saison2 h2 {
   margin-bottom: 24px;
 }
