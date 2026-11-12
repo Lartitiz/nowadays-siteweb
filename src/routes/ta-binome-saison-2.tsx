@@ -80,10 +80,15 @@ function LaOuTuEnEs() {
     <Section wrapClassName="s2-etroit">
       <h2>Là où tu en es</h2>
       <p>
-        En saison 1, on n'a pas fait que poser ta base : on est vraiment passées à l'action
-        ensemble. Ta com' tient debout, elle a ses outils, son plan, et tu sais décider seule de ce
-        qui compte. Normalement, tu es capable de prendre ton envol toute seule, mais si tu as
-        besoin, je reste là.
+        En saison 1, on n'a pas seulement posé tes bases : on est vraiment passées à l'action ensemble.
+        {'\u00a0'}
+        <br />
+        <br />
+        Aujourd'hui, ta com' tient debout, elle a ses outils, son plan, et tu sais décider seule de ce qui compte.
+        {'\u00a0'}
+        <br />
+        <br />
+        Normalement, tu es capable de prendre ton envol toute seule, mais si tu en as besoin, je reste là.
       </p>
     </Section>
   );
