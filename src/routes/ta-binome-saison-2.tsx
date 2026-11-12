@@ -283,12 +283,12 @@ function CafeDeCom() {
     <Section wrapClassName="s2-large">
       <div className="s2-cafe">
         <figure className="s2-cafe-photo">
-          {/* Photo provisoire : à remplacer par celle de Laetitia qui anime en visio. */}
+          {/* Laetitia qui anime une visio : la photo du Café de Com'. */}
           <img
-            src="/images/home/laetitia-atelier.jpg"
-            alt="Laetitia à son bureau, devant son ordinateur"
+            src="/images/saison2/laetitia-visio.jpg"
+            alt="Laetitia anime une visio de groupe devant sa grande fenêtre"
             width="720"
-            height="923"
+            height="960"
             loading="lazy"
           />
         </figure>
