@@ -497,3 +497,17 @@
     transition: none !important;
   }
 }
+
+/* ---------- entre deux séances ---------- */
+.page-saison2 .s2-entre { display: grid; gap: 16px; margin-top: 32px; align-items: stretch; }
+.page-saison2 .s2-entre .s2-carte { border: 1.5px solid var(--rose); }
+.page-saison2 .s2-fiches { list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 10px; }
+.page-saison2 .s2-fiches li { background: var(--rose-doux); border-radius: 10px 16px 8px 14px; padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; text-align: left; }
+.page-saison2 .s2-fiches strong { color: var(--bordeaux); font-family: "Hanken Grotesk", Arial, sans-serif; }
+.page-saison2 .s2-devis { font-size: 14px; color: var(--gris-chaud); border-top: 1px dashed var(--rose); padding-top: 12px; }
+.page-saison2 .s2-chat { display: flex; flex-direction: column; gap: 10px; margin: 16px 0; }
+.page-saison2 .s2-chat .s2-bulle { max-width: 85%; padding: 10px 14px; margin: 0; font-size: 15px; line-height: 1.45; text-align: left; }
+.page-saison2 .s2-toi { align-self: flex-start; background: var(--rose-doux); border-radius: 16px 16px 16px 4px; }
+.page-saison2 .s2-moi { align-self: flex-end; background: var(--bordeaux); color: var(--blanc); border-radius: 16px 16px 4px 16px; }
+.page-saison2 .s2-badge { display: inline-block; background: var(--framboise); color: var(--blanc); font-weight: 700; font-size: 13px; padding: 6px 14px; border-radius: 999px; }
+@media (min-width: 768px) { .page-saison2 .s2-entre { grid-template-columns: 1fr 1fr; } }
