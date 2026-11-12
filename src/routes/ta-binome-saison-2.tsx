@@ -24,8 +24,7 @@ const TITRE = "Ta Binôme, saison 2 · Nowadays Agency";
 const DESCRIPTION = "Ta com' est lancée. En saison 2, on continue à deux.";
 const WHATSAPP = "https://wa.me/33614133921?text=Je%20veux%20ma%20saison%202";
 const LIBELLE_CTA = "Je veux ma saison 2";
-const NOTE_CTA =
-  "Tu me le dis, et je t'envoie une proposition de plan.";
+const NOTE_CTA = "Tu me le dis, et je t'envoie une proposition de plan.";
 
 export const Route = createFileRoute("/ta-binome-saison-2")({
   head: () => ({
@@ -78,18 +77,27 @@ function Hero() {
 function LaOuTuEnEs() {
   return (
     <Section wrapClassName="s2-etroit">
-      <h2>Là où tu en es</h2>
-      <p>
-        En saison 1, on n'a pas seulement posé tes bases : on est vraiment passées à l'action ensemble.
-        {'\u00a0'}
-        <br />
-        <br />
-        Aujourd'hui, ta com' tient debout, elle a ses outils, son plan, et tu sais décider seule de ce qui compte.
-        {'\u00a0'}
-        <br />
-        <br />
-        Normalement, tu es capable de prendre ton envol toute seule, mais si tu en as besoin, je reste là.
-      </p>
+      <h2 className="text-center">Là où tu en es</h2>
+      <ol className="s2-chemin">
+        <li>
+          <p>
+            En saison 1, on n'a pas seulement posé tes bases : on est vraiment passées à l'action
+            ensemble.
+          </p>
+        </li>
+        <li>
+          <p>
+            Aujourd'hui, ta com' tient debout, elle a ses outils, son plan, et tu sais décider seule
+            de ce qui compte.
+          </p>
+        </li>
+        <li>
+          <p>
+            Normalement, tu es capable de prendre ton envol toute seule, mais si tu en as besoin, je
+            reste là.
+          </p>
+        </li>
+      </ol>
     </Section>
   );
 }
@@ -110,24 +118,20 @@ function EcranPhrase() {
 function CeQuOnFait() {
   return (
     <Section wrapClassName="s2-etroit">
-      <h2>
+      <h2 className="text-center">
         Ce qu'on fait dans la <em>saison 2</em>
       </h2>
       <p>
         On continue sur la lancée de la saison 1, et on va plus loin sur la visibilité qu'on a
         commencé à construire.
-        {'\u00a0'}
-        <br />
-        <br />
+      </p>
+      <p>
         On reprend ce qui a démarré, et on ouvre ce qu'on avait laissé de côté faute de temps, comme
         lancer ton podcast, contacter la presse ou préparer ta prochaine campagne.
       </p>
+      <p className="s2-chute">Je reste ta binôme.</p>
       <p>
-        Je reste ta binôme.
-        {'\u00a0'}
-        <br />
-        <br />
-        Tu n'avances pas seule, et tu avances plus vite, parce qu'à chaque séance on fait un vrai{' '}
+        Tu n'avances pas seule, et tu avances plus vite, parce qu'à chaque séance on fait un vrai{" "}
         <span className="surligne">bond</span>, et que c'est plus facile de tenir le rythme quand
         quelqu'un t'attend au tournant (gentiment, hein).
       </p>
@@ -174,11 +178,11 @@ function EntreDeux() {
   ];
   return (
     <Section wrapClassName="s2-etroit">
-      <h2 className="text-center">
+      <h2 className="text-center s2-h2-deux">
         Et entre deux séances ? <em>Tu n'es jamais lâchée dans la nature.</em>
       </h2>
       <div className="s2-entre">
-        <div className="s2-carte">
+        <div className="s2-colonne">
           <h3 className="s2-h3">Je travaille sur ton projet</h3>
           <ul className="s2-fiches">
             {fiches.map(([t, d]) => (
@@ -188,13 +192,22 @@ function EntreDeux() {
               </li>
             ))}
           </ul>
-          <p className="s2-devis">Un site, des visuels ou une vidéo, ça se fait à part, sur devis.</p>
+          <p className="s2-devis">
+            Un site, des visuels ou une vidéo, ça se fait à part, sur devis.
+          </p>
         </div>
-        <div className="s2-carte s2-c2">
+        <div className="s2-colonne">
           <h3 className="s2-h3">WhatsApp quand tu en as besoin</h3>
           <div className="s2-chat" aria-label="Exemple d'échange WhatsApp">
-            <p className="s2-bulle s2-toi">Laetitia, j'hésite entre ces deux accroches pour mon lancement de jeudi…</p>
-            <p className="s2-bulle s2-moi">La deuxième, sans hésiter ! Elle va droit au but. Je t'ai peaufiné deux phrases.</p>
+            <p className="s2-bulle s2-toi">
+              Laetitia, j'hésite entre ces deux accroches pour mon lancement de jeudi…
+            </p>
+            <p className="s2-bulle s2-moi">
+              <span className="s2-qui" aria-hidden="true">
+                Laetitia
+              </span>
+              La deuxième, sans hésiter ! Elle va droit au but. Je t'ai peaufiné deux phrases.
+            </p>
           </div>
           <span className="s2-badge">Les jours ouvrés · réponse sous 48 h</span>
         </div>
@@ -205,12 +218,21 @@ function EntreDeux() {
 
 function CafeDeCom() {
   const vignettes = [
-    ["Tous les 3 mois", "1 h en visio, un thé ou un café à la main, pour lever la tête du guidon et faire le point."],
-    ["Le partage sans filtre", "Ce qui a cartonné, les flops, les astuces d'or, les outils testés… On se dit tout sans langue de bois."],
-    ["Le réseau qui perdure", "Accessible que tu continues en saison 2 ou que tu aies déjà pris ton envol."],
+    [
+      "Tous les 3 mois",
+      "1 h en visio, un thé ou un café à la main, pour lever la tête du guidon et faire le point.",
+    ],
+    [
+      "Le partage sans filtre",
+      "Ce qui a cartonné, les flops, les astuces d'or, les outils testés… On se dit tout sans langue de bois.",
+    ],
+    [
+      "Le réseau qui perdure",
+      "Accessible que tu continues en saison 2 ou que tu aies déjà pris ton envol.",
+    ],
   ];
   return (
-    <Section wrapClassName="s2-etroit">
+    <Section fond="rose" wrapClassName="s2-etroit">
       <div className="s2-cafe">
         <span className="s2-pilule">☕ EN PROJET · RÉSERVÉ AUX ANCIENNES CLIENTES</span>
         <h2>
@@ -229,8 +251,7 @@ function CafeDeCom() {
         </div>
         <p className="s2-memo">
           « Je l'avais déjà testé avec mes anciennes clientes : c'était magique de voir des
-          collaborations et de vraies amitiés naître entre créatrices. »
-          <span>Laetitia</span>
+          collaborations et de vraies amitiés naître entre créatrices. »<span>Laetitia</span>
         </p>
       </div>
     </Section>
@@ -238,8 +259,13 @@ function CafeDeCom() {
 }
 
 function CombienDeTemps() {
+  const etapes = [
+    { cle: "s1", lib: "Saison 1", duree: "6 mois", sortie: true },
+    { cle: "c1", lib: "Saison 2, cycle 1", duree: "3 mois", sortie: true },
+    { cle: "c2", lib: "Saison 2, cycle 2", duree: "3 mois", sortie: false },
+  ];
   return (
-    <Section fond="rose" wrapClassName="s2-etroit">
+    <Section wrapClassName="s2-etroit">
       <h2 className="text-center">Combien de temps</h2>
       <p className="text-center">
         Ça marche par cycles de trois mois : à chaque étape, tu décides si on continue ou si tu
@@ -251,73 +277,66 @@ function CombienDeTemps() {
         role="img"
         aria-label="Saison 1 : six mois. Saison 2 : un premier cycle de trois mois, puis un second. Tu peux t'arrêter à la fin de chaque étape. Au bout : un an ensemble."
       >
-        <div className="s2-barre s2-s1" />
-        <div className="s2-etape">
-          <div>
-            <div className="s2-lib">Saison 1</div>
-            <div className="s2-duree">6 mois</div>
+        {etapes.map((e) => (
+          <div key={e.cle} className={`s2-seg s2-${e.cle}`}>
+            <span className="s2-barre" />
+            <div className="s2-seg-texte">
+              <div>
+                <div className="s2-lib">{e.lib}</div>
+                <div className="s2-duree">{e.duree}</div>
+              </div>
+              {e.sortie ? (
+                <span className="s2-sortie">tu t'arrêtes là</span>
+              ) : (
+                <span className="s2-fin">
+                  <span className="s2-point" />
+                  un an
+                </span>
+              )}
+            </div>
           </div>
-          <span className="s2-sortie">tu t'arrêtes là</span>
-        </div>
-        <div className="s2-gap" />
-        <div className="s2-gap" />
-        <div className="s2-barre s2-c1" />
-        <div className="s2-etape">
-          <div>
-            <div className="s2-lib">Saison 2, cycle 1</div>
-            <div className="s2-duree">3 mois</div>
-          </div>
-          <span className="s2-sortie">tu t'arrêtes là</span>
-        </div>
-        <div className="s2-gap" />
-        <div className="s2-gap" />
-        <div className="s2-barre s2-c2" />
-        <div className="s2-etape">
-          <div>
-            <div className="s2-lib">Saison 2, cycle 2</div>
-            <div className="s2-duree">3 mois</div>
-          </div>
-        </div>
-        <div className="s2-fin">
-          <span className="s2-point" />
-          <span>un an</span>
-        </div>
+        ))}
       </div>
-
     </Section>
   );
 }
 
 function PlusBesoinDeMoi() {
   return (
-    <Section wrapClassName="s2-etroit">
-      <h2 className="text-center">
+    <Section className="manifesto s2-manifeste" wrapClassName="s2-etroit">
+      <h2 className="text-center s2-h2-deux">
         Mon but, c'est que tu n'aies <em>plus besoin de moi.</em>
       </h2>
-      <blockquote className="s2-citation">
-        <p>
-          Deux cycles de trois mois, soit six mois en saison 2. Avec la saison 1, cela fait un an de
-          travail ensemble : à ce stade, ta communication roule et tu as toutes les clés en main.
-        </p>
-      </blockquote>
-      <p className="s2-dispensable">
-        Oui, je te vends une offre en t'expliquant que mon objectif est de devenir dispensable.
-        Côté business classique, on a vu plus malin… mais c'est exactement ça, une communication
-        saine.
+      <p className="s2-citation">
+        Deux cycles de trois mois, soit six mois en saison 2. Avec la saison 1, cela fait un an de
+        travail ensemble : à ce stade, ta communication roule et tu as toutes les clés en main.
       </p>
+      <div className="s2-sticker-zone">
+        <p className="s2-sticker">
+          Oui, je te vends une offre en t'expliquant que mon objectif est de devenir dispensable.
+          Côté business classique, on a vu plus malin… mais c'est exactement ça, une communication
+          saine.
+        </p>
+      </div>
     </Section>
   );
 }
 
 function FeuilleDeRoute() {
   const etapes = [
-    ["On fait le point", "Où en est ton activité aujourd'hui, et quelles sont tes priorités pour les mois à venir."],
-    ["Je prépare ton plan", "Je t'envoie une proposition personnalisée pour tes six prochains mois, calibrée pour toi."],
+    [
+      "On fait le point",
+      "Où en est ton activité aujourd'hui, et quelles sont tes priorités pour les mois à venir.",
+    ],
+    [
+      "Je prépare ton plan",
+      "Je t'envoie une proposition personnalisée pour tes six prochains mois, calibrée pour toi.",
+    ],
     ["Tu valides", "Si le cap te plaît, on lance le premier cycle de trois mois."],
   ];
   return (
     <Section fond="rose" wrapClassName="s2-etroit">
-      <h2 className="text-center">
+      <h2 className="text-center s2-h2-deux">
         Avant de commencer : <em>ta feuille de route sur mesure</em>
       </h2>
       <ol className="s2-etapes">
@@ -336,7 +355,7 @@ function FeuilleDeRoute() {
 function Prix() {
   return (
     <Section wrapClassName="s2-etroit">
-      <h2 className="s2-titre-centre">Le prix</h2>
+      <h2 className="text-center">Le prix</h2>
       <div className="s2-prix">
         <div className="s2-montant">225 € HT par mois</div>
         <p className="s2-detail">
@@ -406,7 +425,7 @@ const FAQS = [
 function Faq() {
   return (
     <Section wrapClassName="s2-etroit">
-      <h2>Tes questions</h2>
+      <h2 className="text-center">Tes questions</h2>
       <Accordion type="single" collapsible className="mt-12 space-y-3">
         {FAQS.map((f, i) => (
           <AccordionItem
