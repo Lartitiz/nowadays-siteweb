@@ -138,7 +138,7 @@ function CeQuOnFait() {
 function Trimestre() {
   return (
     <Section fond="rose" wrapClassName="s2-etroit">
-      <h2>Sur chaque cycle de trois mois, concrètement</h2>
+      <h2 className="text-center">Sur chaque cycle de trois mois, concrètement</h2>
       <div className="s2-trimestre">
         <h3 className="s2-h3">Trois séances d'une heure en visio</h3>
         <div className="s2-mois" aria-hidden="true">
