@@ -92,10 +92,7 @@ function LaOuTuEnEs() {
           </p>
         </li>
         <li>
-          <p>
-            Normalement, tu es capable de prendre ton envol toute seule, mais si tu en as besoin, je
-            reste là.
-          </p>
+          <p>Tu peux prendre ton envol. Et si tu en as besoin, je reste là.</p>
         </li>
       </ol>
     </Section>
@@ -239,9 +236,6 @@ function EntreDeux() {
               </li>
             ))}
           </ul>
-          <p className="s2-devis">
-            Un site, des visuels ou une vidéo, ça se fait à part, sur devis.
-          </p>
         </div>
         <div className="s2-colonne">
           <h3 className="s2-h3">WhatsApp quand tu en as besoin</h3>
@@ -259,6 +253,9 @@ function EntreDeux() {
           </div>
           <span className="s2-badge">Les jours ouvrés · réponse sous 48 h</span>
         </div>
+      </div>
+      <div className="s2-cta">
+        <CtaSaison2 />
       </div>
     </Section>
   );
@@ -368,8 +365,7 @@ function PlusBesoinDeMoi() {
         Mon but, c'est que tu n'aies <em>plus besoin de moi.</em>
       </h2>
       <p className="s2-citation">
-        Deux cycles de trois mois, soit six mois en saison 2. Avec la saison 1, cela fait un an de
-        travail ensemble : à ce stade, ta communication roule et tu as toutes les clés en main.
+        Au bout d'un an ensemble, ta communication roule et tu as toutes les clés en main.
       </p>
       <div className="s2-sticker-zone">
         <p className="s2-sticker">
@@ -377,6 +373,9 @@ function PlusBesoinDeMoi() {
           Côté business classique, on a vu plus malin… mais c'est exactement ça, une communication
           saine.
         </p>
+      </div>
+      <div className="s2-cta">
+        <CtaSaison2 />
       </div>
     </Section>
   );

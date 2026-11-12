@@ -683,11 +683,6 @@
   color: var(--bordeaux);
   font-family: "Hanken Grotesk", Arial, sans-serif;
 }
-.page-saison2 .s2-devis {
-  font-size: 15px;
-  color: var(--gris-chaud);
-  margin: 0;
-}
 /* L'échange se lit comme sur le téléphone de la lectrice, aux couleurs de
    WhatsApp : la conversation avec Laetitia, son message à elle à droite en vert. */
 .page-saison2 .s2-chat {
@@ -918,4 +913,11 @@
   .page-saison2 .s2-cafe-photo {
     max-width: 280px;
   }
+}
+
+/* ---------- boutons de relance (après « Entre deux séances » et « Mon but ») ---------- */
+
+.page-saison2 .s2-cta {
+  text-align: center;
+  margin-top: 48px;
 }
