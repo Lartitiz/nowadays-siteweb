@@ -156,7 +156,7 @@ function Trimestre() {
             <span className="s2-seance s2-b">1 h</span>
           </div>
         </div>
-        <p>
+        <p className="text-center">
           Tu les places quand tu veux dans les trois mois : deux le même mois si tu lances quelque
           chose, aucune le mois où tu as la tête ailleurs. À chaque séance, on regarde ce qui a
           marché, ce qui coince, et on décide de la suite.
