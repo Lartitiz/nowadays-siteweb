@@ -204,19 +204,35 @@ function EntreDeux() {
 }
 
 function CafeDeCom() {
+  const vignettes = [
+    ["Tous les 3 mois", "1 h en visio, un thé ou un café à la main, pour lever la tête du guidon et faire le point."],
+    ["Le partage sans filtre", "Ce qui a cartonné, les flops, les astuces d'or, les outils testés… On se dit tout sans langue de bois."],
+    ["Le réseau qui perdure", "Accessible que tu continues en saison 2 ou que tu aies déjà pris ton envol."],
+  ];
   return (
     <Section wrapClassName="s2-etroit">
-      <span className="s2-pilule">EN CONSTRUCTION</span>
-      <h2>
-        Et aussi : le <em>Café de Com'</em>
-      </h2>
-      <p>
-        Pour l'instant, c'est en construction, mais j'aimerais vraiment réunir les anciennes
-        clientes de la binôme tous les trois mois autour d'un Café de Com', que tu sois en saison 2
-        ou pas. On se rencontrerait, chacune partagerait ses astuces et ce qu'elle a testé, et on se
-        créerait un petit réseau entre personnes qui vivent la même chose. Je l'avais déjà fait avec
-        mes clientes.
-      </p>
+      <div className="s2-cafe">
+        <span className="s2-pilule">☕ EN PROJET · RÉSERVÉ AUX ANCIENNES CLIENTES</span>
+        <h2>
+          Et aussi : le <em>Café de Com'</em>
+        </h2>
+        <p className="s2-cafe-accroche">
+          Un rendez-vous tous les 3 mois pour ne plus jamais entreprendre seule.
+        </p>
+        <div className="s2-cafe-grille">
+          {vignettes.map(([t, d]) => (
+            <div key={t} className="s2-cafe-vignette">
+              <h3 className="s2-h3">{t}</h3>
+              <p>{d}</p>
+            </div>
+          ))}
+        </div>
+        <p className="s2-memo">
+          « Je l'avais déjà testé avec mes anciennes clientes : c'était magique de voir des
+          collaborations et de vraies amitiés naître entre créatrices. »
+          <span>Laetitia</span>
+        </p>
+      </div>
     </Section>
   );
 }

@@ -511,3 +511,13 @@
 .page-saison2 .s2-moi { align-self: flex-end; background: var(--bordeaux); color: var(--blanc); border-radius: 16px 16px 4px 16px; }
 .page-saison2 .s2-badge { display: inline-block; background: var(--framboise); color: var(--blanc); font-weight: 700; font-size: 13px; padding: 6px 14px; border-radius: 999px; }
 @media (min-width: 768px) { .page-saison2 .s2-entre { grid-template-columns: 1fr 1fr; } }
+
+/* ---------- café de com' ---------- */
+.page-saison2 .s2-cafe { background: var(--creme, #fff7f5); border: 1.5px solid var(--rose); border-radius: 20px 32px 18px 28px; padding: 32px 22px; text-align: center; }
+.page-saison2 .s2-cafe .s2-cafe-accroche { font-size: 18px; color: var(--bordeaux); margin: 8px auto 24px; text-align: center; max-width: 34ch; }
+.page-saison2 .s2-cafe-grille { display: grid; gap: 12px; }
+.page-saison2 .s2-cafe-vignette { background: var(--blanc); border-radius: 14px 20px 12px 18px; padding: 18px; text-align: left; }
+.page-saison2 .s2-cafe-vignette p { margin: 0; }
+.page-saison2 .s2-cafe .s2-memo { background: var(--rose-doux); margin: 28px auto 0; max-width: 520px; padding: 18px 20px; border-radius: 4px 18px 4px 18px; transform: rotate(-1.5deg); text-align: left; font-style: italic; }
+.page-saison2 .s2-memo span { display: block; margin-top: 8px; font-style: normal; font-weight: 700; color: var(--bordeaux); text-align: right; }
+@media (min-width: 768px) { .page-saison2 .s2-cafe { padding: 48px 40px; } .page-saison2 .s2-cafe-grille { grid-template-columns: repeat(3, 1fr); } }
