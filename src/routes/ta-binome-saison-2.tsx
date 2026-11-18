@@ -251,7 +251,7 @@ function EntreDeux() {
               La deuxième, sans hésiter ! Elle va droit au but. Je t'ai peaufiné deux phrases.
             </p>
           </div>
-          <span className="s2-badge">Les jours ouvrés · réponse sous 48 h</span>
+          <span className="s2-badge">Du lundi au jeudi · réponse sous 48 h</span>
         </div>
       </div>
       <div className="s2-cta">
