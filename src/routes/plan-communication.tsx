@@ -294,7 +294,7 @@ function FinalCTA() {
                   Merci ; ton plan arrive dans quelques minutes.
                 </p>
                 <p className="mt-4 text-sm text-encre/80">
-                  Pense à regarder aussi dans tes spams et l'onglet « Promotions ». Belle structuration ♡
+                  Cherche un e-mail de Nowadays : regarde aussi tes spams et les autres onglets de ta boîte. Belle structuration ♡
                 </p>
               </div>
             ) : (

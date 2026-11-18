@@ -11,17 +11,17 @@ import { imageSize } from "@/lib/image-sizes";
 export const Route = createFileRoute("/formation-gratuite-instagram")({
   head: () => ({
     meta: [
-      { title: "Formation Instagram gratuite | Guide PDF | Nowadays Agency" },
+      { title: "Formation Instagram gratuite | Guide | Nowadays Agency" },
       {
         name: "description",
         content:
-          "Reçois gratuitement le guide PDF pour bâtir une stratégie Instagram alignée : 5 modules, ~90 min, pensé pour les créatrices et marques engagées.",
+          "Reçois gratuitement le guide pour bâtir une stratégie Instagram alignée : 5 modules, ~90 min, pensé pour les créatrices et marques engagées.",
       },
-      { property: "og:title", content: "Formation Instagram gratuite ; Guide PDF" },
+      { property: "og:title", content: "Formation Instagram gratuite ; le guide" },
       {
         property: "og:description",
         content:
-          "Le guide PDF gratuit pour bâtir une stratégie Instagram alignée et durable. 5 modules, ~90 min.",
+          "Le guide gratuit pour bâtir une stratégie Instagram alignée et durable. 5 modules, ~90 min.",
       },
       { property: "og:url", content: absoluteUrl("/formation-gratuite-instagram") },
       { property: "og:type", content: "article" },
@@ -61,7 +61,7 @@ function Hero() {
       }
       chapo={
         <>
-          Établis toute ta stratégie Instagram grâce à notre guide PDF ; pensé pour les créatrices,
+          Établis toute ta stratégie Instagram grâce à notre guide ; pensé pour les créatrices,
           artisanes et marques qui veulent communiquer avec sens.
         </>
       }
@@ -71,7 +71,7 @@ function Hero() {
       }}
       cta="Recevoir le guide"
       ctaHref="#recevoir"
-      note="Guide PDF · 5 modules · environ 90 minutes."
+      note="Guide · 5 modules · environ 90 minutes."
     />
   );
 }
@@ -395,7 +395,7 @@ function FinalCTA() {
                   Merci ; ton guide arrive dans quelques minutes.
                 </p>
                 <p className="mt-4 text-sm text-encre/80">
-                  Pense à regarder aussi dans tes spams et l'onglet « Promotions ». Bonne lecture ♡
+                  Il vient de « Laetitia de Nowadays » : regarde aussi tes spams et les autres onglets de ta boîte.
                 </p>
               </div>
             ) : (
@@ -460,7 +460,7 @@ function Signature() {
     <section className="bg-white">
       <div className="mx-auto max-w-5xl px-6 py-16 text-right">
         <p className="font-titre text-2xl italic text-encre">
-          Bonne planification, <span className="text-framboise">♡ Laetitia</span>
+          Bonne lecture, <span className="text-framboise">♡ Laetitia</span>
         </p>
       </div>
     </section>
