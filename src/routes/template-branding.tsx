@@ -14,7 +14,7 @@ export const Route = createFileRoute("/template-branding")({
         content:
           "Reçois gratuitement notre template de branding : 8 étapes pour construire ta stratégie de marque, de la mission au storytelling et à l'identité visuelle.",
       },
-      { property: "og:title", content: "Template Branding gratuit ; Stratégie de marque" },
+      { property: "og:title", content: "Template Branding gratuit : stratégie de marque" },
       {
         property: "og:description",
         content:
@@ -97,9 +97,12 @@ function CaptureForm({ id }: { id: string }) {
     return (
       <div className="rounded-2xl border border-framboise/30 bg-white p-8">
         <p className="font-titre text-2xl text-encre leading-snug">
-          Merci ; ton template arrive dans quelques minutes.
+          Merci ! Ton template arrive dans quelques minutes.
         </p>
-        <p className="mt-4 text-sm text-encre/70">Pense à vérifier tes spams. Bonne stratégie ♡</p>
+        <p className="mt-4 text-sm text-encre/70">
+          Pense à regarder tes spams et les autres onglets de ta boîte (Notifications, Promotions).
+          Bonne stratégie ♡
+        </p>
       </div>
     );
   }

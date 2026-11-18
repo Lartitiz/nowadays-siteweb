@@ -5,7 +5,10 @@ import { CALENDLY_URL } from "./constants";
 //
 // Reprend mot pour mot le texte de l'ancien FinalCtaSection, qui reste en place
 // pour les pages pas encore converties.
-export function CtaFinal() {
+export function CtaFinal({
+  href = CALENDLY_URL,
+  duree = 30,
+}: { href?: string; duree?: number } = {}) {
   return (
     <section id="contact" className="final-cta centre">
       <div className="wrap">
@@ -13,15 +16,15 @@ export function CtaFinal() {
           Prêt·es à <em>avancer</em> ?
         </h2>
         <p className="lead" style={{ marginTop: 24 }}>
-          Réservez un appel découverte de 30 minutes. On fait le point sur votre projet, vos
+          Réservez un appel découverte de {duree} minutes. On fait le point sur votre projet, vos
           besoins, et je vous dis honnêtement si je peux vous aider (et comment).
         </p>
         <div className="actions">
-          <a className="btn btn-plum" href={CALENDLY_URL} target="_blank" rel="noopener">
+          <a className="btn btn-plum" href={href} target="_blank" rel="noopener">
             Réserver un appel découverte
           </a>
         </div>
-        <span className="cta-note">30 minutes, gratuites, sans engagement.</span>
+        <span className="cta-note">{duree} minutes, gratuites, sans engagement.</span>
       </div>
     </section>
   );

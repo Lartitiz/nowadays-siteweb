@@ -191,7 +191,7 @@ function Filtre() {
           <article className="w-full rounded-[20px_12px_24px_10px] bg-jaune p-8 md:p-12">
             <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
               <h3 className="font-titre text-3xl text-bordeaux">On y va, au rythme des preuves</h3>
-              <span className="text-sm italic text-bordeaux">— la voie la plus fréquente</span>
+              <span className="text-sm italic text-bordeaux">(la voie la plus fréquente)</span>
             </div>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-encre">
               Vous n'êtes pas encore là où vous voudriez être ? Bienvenue, c'est la majorité des
@@ -315,7 +315,7 @@ function FaconDeFaire() {
               Workshops, canevas, checklists, relectures commentées. Je documente ce que je fais
               pour que ce soit réutilisable sans moi. « Je fais pour vous » quand c'est utile, mais
               surtout « on fait ensemble » pour que vous soyez autonome à la fin. C'est aussi pour
-              ça que j'enseigne : à l'ENSAD-PSL, à Sup de Pub, à l'EPSAA, entre autres.
+              ça que j'enseigne : à l'ENSAD Paris, au CESACOM et à l'ISCPA.
             </p>
           </article>
           <article className="rounded-[20px_12px_22px_10px] bg-rose-pale p-8">
@@ -434,7 +434,7 @@ function PositionIa() {
               voilà, sans emballage : l'IA me permet de tenir des prix accessibles, et d'aller plus
               vite pour des projets qui n'ont pas le temps. Je sais que ce n'est pas propre sur tous
               les plans. Je le fais quand même, et j'assume ce que ça coûte ailleurs. C'est un pari,
-              pas une certitude — et un pari, ça se discute.
+              pas une certitude. Et un pari, ça se discute.
             </p>
           </div>
         </div>
@@ -643,7 +643,7 @@ function PositionIa() {
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-encre">
               Ces modèles ont appris sur du travail d'auteur·ices et d'artistes qui n'ont ni été
-              prévenu·es ni payé·es — et mon audience est directement concernée. Les premières
+              prévenu·es ni payé·es, et mon audience est directement concernée. Les premières
               condamnations commencent à faire payer les fabricants ; c'est un début, pas une
               réparation.
             </p>
@@ -654,7 +654,7 @@ function PositionIa() {
           <div className="max-w-md -rotate-1 rounded-[10px_22px_8px_18px] bg-jaune p-6">
             <p className="font-titre text-xl italic leading-snug text-bordeaux">
               « IA éthique », ça n'existe pas non plus. Un usage un peu plus responsable chaque
-              année, oui — et je dis honnêtement ce qui n'est pas résolu.
+              année, oui. Et je dis honnêtement ce qui n'est pas résolu.
             </p>
           </div>
         </div>
@@ -730,7 +730,7 @@ function FeuilleDeRoute() {
           <article className="rounded-carte bg-rose-pale p-8">
             <h3 className="font-titre text-2xl text-bordeaux">D'ici la fin 2026</h3>
             <ul className="mt-4 space-y-3 text-sm leading-relaxed text-encre">
-              <li>Publier cette page, et la tenir à jour.</li>
+              <li>✓ Page publiée en août 2026, et tenue à jour.</li>
               <li>
                 Compter les quatre indicateurs sur tous les projets : le registre existe et se
                 remplit depuis août 2026.

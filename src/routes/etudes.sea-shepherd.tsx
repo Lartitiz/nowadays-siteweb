@@ -36,7 +36,7 @@ const data: CaseStudyData = {
   logo: { src: cover.url, alt: "Sea Shepherd × Racines de Demain" },
   title: "Stratégie social media pour Sea Shepherd",
   subtitle:
-    "Soutenir l'appel au don grâce à une stratégie social media ; en collaboration avec Racines de Demain.",
+    "Soutenir l'appel au don grâce à une stratégie social media, en collaboration avec Racines de Demain.",
   context: {
     paragraphs: [
       "Malgré une perception publique de Sea Shepherd comme une organisation fortement financée, la réalité est qu'ils dépendent principalement des dons de particuliers.",

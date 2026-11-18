@@ -79,7 +79,7 @@ const data: CaseStudyData = {
   ],
   results: {
     items: [
-      { value: "+2 000", label: "Followers sur Instagram" },
+      { value: "+2 000", label: "Abonné·es sur Instagram" },
       { value: "11%", label: "Taux d'engagement" },
       { value: "3", label: "Événements (200 personnes)" },
     ],

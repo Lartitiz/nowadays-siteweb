@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { DaLayout } from "@/components/da/DaLayout";
+import { CALENDLY_AGENCY_URL } from "@/lib/links";
 import { CtaFinal } from "@/components/da/CtaFinal";
 import { PageHero } from "@/components/da/PageHero";
 import { VichyBand } from "@/components/da/VichyBand";
@@ -33,7 +34,7 @@ import imgLaProchaineAire from "@/assets/etudes-pro/la-prochaine-aire.jpg.asset.
 import { absoluteUrl } from "@/lib/site";
 import { imageSize } from "@/lib/image-sizes";
 
-const CALENDLY_URL = "https://calendly.com/laetitia-mattioli/appel-decouverte-atelier";
+const CALENDLY_URL = CALENDLY_AGENCY_URL;
 
 export const Route = createFileRoute("/cooperative-asso")({
   head: () => ({
@@ -83,6 +84,8 @@ function Hero() {
   return (
     <PageHero
       vichy="prune"
+      ctaHref={CALENDLY_URL}
+      note="45 minutes, gratuites, sans engagement."
       logo={{
         src: "/images/offres/logo-ton-agency-de-com.png",
         alt: "Ton agency de com'",
@@ -115,7 +118,7 @@ function Hero() {
 const CLIENT_LOGOS = [
   { name: "L214", src: l214Logo.url },
   { name: "Coopérative Oasis", src: cooperativeOasisLogo.url },
-  { name: "École des Arts Décoratifs ; PSL", src: ensadPslLogo.url },
+  { name: "École des Arts Décoratifs · PSL", src: ensadPslLogo.url },
   { name: "Emmaüs Défi", src: emmausDefiLogo.url },
   { name: "Sea Shepherd", src: seaShepherdLogo.url },
 ];
@@ -180,7 +183,7 @@ function ProblemSection() {
           </strong>
         </p>
         <p className="mt-6 text-base text-encre leading-relaxed">
-          C'est ce qu'on a fait pour L214, Emmaüs Défi, la Coopérative Oasis ou l'ENSAD —{" "}
+          C'est ce qu'on a fait pour L214, Emmaüs Défi, la Coopérative Oasis ou l'ENSAD :{" "}
           <Link to="/etudes-de-cas-pro" className="text-bordeaux underline underline-offset-4">
             les projets sont détaillés ici
           </Link>
@@ -243,7 +246,7 @@ function LaetitiaIntroSection() {
             <Cta>Réserver mon appel découverte (gratuit)</Cta>
           </div>
           <p className="mt-6 text-xs uppercase tracking-[0.16em] text-encre">
-            ✨ Appel gratuit • 30 minutes • Sans engagement
+            Appel gratuit • 45 minutes • Sans engagement
           </p>
         </div>
         <img
@@ -307,17 +310,17 @@ function PourquoiTravaillerSection() {
 
 const STEPS = [
   {
-    n: "1️⃣",
+    n: "1",
     title: "On se rencontre",
-    body: "Un appel découverte de 30 minutes pour comprendre votre projet, vos objectifs, vos contraintes. Gratuit, sans engagement.",
+    body: "Un appel découverte de 45 minutes pour comprendre votre projet, vos objectifs, vos contraintes. Gratuit, sans engagement.",
   },
   {
-    n: "2️⃣",
+    n: "2",
     title: "Je vous fais une proposition sur-mesure",
     body: "Pas de package générique. Un devis adapté à ce dont vous avez vraiment besoin, avec un planning clair.",
   },
   {
-    n: "3️⃣",
+    n: "3",
     title: "On avance ensemble",
     body: "Je prends en main la partie com', vous validez les grandes lignes, et on fait avancer votre projet. Simple.",
   },
@@ -333,7 +336,7 @@ function ProcessSection() {
         <div className="mt-16 grid gap-10 md:grid-cols-3">
           {STEPS.map((s) => (
             <div key={s.title}>
-              <div className="text-3xl">{s.n}</div>
+              <div className="font-titre text-5xl text-framboise">{s.n}</div>
               <h3 className="mt-6 font-titre text-2xl text-encre">{s.title}</h3>
               <p className="mt-4 text-sm text-encre leading-relaxed">{s.body}</p>
             </div>
@@ -415,7 +418,7 @@ const PROJECTS = [
   {
     name: "École des Arts Décoratifs",
     img: imgEnsad.url,
-    desc: "Pour attirer du monde à l'exposition de Gérard Baudoin : réseaux sociaux, emailing ciblé et micro-influence ; 700 visiteurs en une semaine, 5 articles, +100 clics vers l'événement.",
+    desc: "Pour attirer du monde à l'exposition de Gérard Baudoin : réseaux sociaux, emailing ciblé et micro-influence : 700 visiteurs en une semaine, 5 articles, +100 clics vers l'événement.",
   },
   {
     name: "Sea Shepherd × Racines de Demain",
@@ -468,7 +471,7 @@ const PROJECTS = [
     desc: "Une marque-showroom qui revendique le luxe conscient. Stratégie digitale complète, de l'identité visuelle à l'influence, pour accroître sa notoriété.",
   },
   {
-    name: "Ressources ; Emmanuelle Riboud",
+    name: "Ressources · Emmanuelle Riboud",
     img: imgRessources.url,
     desc: "Changer la cantine pour changer le monde. Repenser l'alimentation scolaire avec bon sens et amour du vivant. Bases d'une stratégie de marque et de communication.",
   },
@@ -495,7 +498,7 @@ const PROJECTS = [
   {
     name: "Atelier des lunettes",
     img: imgAtelierLunettes.url,
-    desc: "Boutique de lunettes de créateurs. Refonte site, présence Insta/FB/LinkedIn, manifeste : +46 % de reach social, 1ʳᵉ page SEO et +2 000 followers.",
+    desc: "Boutique de lunettes de créateurs. Refonte site, présence Insta/FB/LinkedIn, manifeste : +46 % de portée sur les réseaux, 1ʳᵉ page SEO et +2 000 abonné·es.",
   },
   {
     name: "My Pilates World",
@@ -563,7 +566,7 @@ function Page() {
       <PrestationsSection />
       <ProjetsGrid />
       <VichyBand />
-      <CtaFinal />
+      <CtaFinal href={CALENDLY_URL} duree={45} />
     </DaLayout>
   );
 }

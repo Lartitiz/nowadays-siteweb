@@ -92,24 +92,24 @@ const data: CaseStudyData = {
         avatar: infDying.url,
         handle: "@dyingseasons",
         role: "Photographe",
-        followers: "10K Followers",
+        followers: "10K abonné·es",
         link: "https://www.instagram.com/dyingseasons/",
       },
       {
         avatar: infAesth.url,
         handle: "@aesthetnik",
         role: "Content Creator",
-        followers: "18,5K Followers",
+        followers: "18,5K abonné·es",
         link: "https://www.instagram.com/aesthetnik/",
       },
     ],
   },
   results: {
     items: [
-      { value: "+2 000", label: "Followers sur Instagram" },
+      { value: "+2 000", label: "Abonné·es sur Instagram" },
       { value: "800", label: "Visiteurs uniques / mois (site)" },
       { value: "15K", label: "Likes contenus influenceurs" },
-      { value: "20K", label: "Personnes atteintes (reach)" },
+      { value: "20K", label: "Personnes atteintes" },
     ],
   },
 };

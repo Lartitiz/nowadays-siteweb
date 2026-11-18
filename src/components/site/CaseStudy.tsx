@@ -5,7 +5,7 @@ import { imageSize } from "@/lib/image-sizes";
 import { CaseStudyNav } from "./CaseStudyNav";
 import { CaseStudySchema } from "./CaseStudySchema";
 
-const CALENDLY_URL = "https://calendly.com/laetitia-mattioli/rendez-vous-avec-laetitia";
+import { CALENDLY_AGENCY_URL, CALENDLY_BINOME_URL } from "@/lib/links";
 
 export type Img = { src: string; alt: string };
 
@@ -96,7 +96,10 @@ function SolutionsMarquee({ text }: { text: string }) {
 
 export function CaseStudy({ data }: { data: CaseStudyData }) {
   const ctaLabel = data.ctaLabel ?? "Prendre rendez-vous pour discuter de votre projet";
-  const ctaHref = data.ctaHref ?? CALENDLY_URL;
+  // Les structures vont vers la visio Agency, les créatrices vers la visio Binôme.
+  const ctaHref =
+    data.ctaHref ??
+    (data.backTo === "/etudes-de-cas-pro" ? CALENDLY_AGENCY_URL : CALENDLY_BINOME_URL);
   const solutionsTitle = data.solutionsTitle ?? "Les solutions apportées";
 
   return (
