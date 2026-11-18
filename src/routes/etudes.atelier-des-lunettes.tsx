@@ -13,7 +13,7 @@ export const Route = createFileRoute("/etudes/atelier-des-lunettes")({
       {
         name: "description",
         content:
-          "Stratégie social media, site vitrine et manifeste de marque pour une boutique de lunettes de créateurs : +46 % de reach, première page SEO, +2 000 followers.",
+          "Stratégie social media, site vitrine et manifeste de marque pour une boutique de lunettes de créateurs : +46 % de portée, première page SEO, +2 000 abonné·es.",
       },
       { property: "og:title", content: "Atelier des Lunettes | Étude de cas" },
       {
@@ -72,9 +72,9 @@ const data: CaseStudyData = {
   results: {
     intro: "Une marque qui voit clair, et qui rayonne au-delà de sa boutique parisienne.",
     items: [
-      { value: "+46 %", label: "Reach sur les médias sociaux" },
+      { value: "+46 %", label: "Portée sur les réseaux sociaux" },
       { value: "1ʳᵉ", label: "Page SEO sur « lunette paris »" },
-      { value: "+2 000", label: "Followers Instagram" },
+      { value: "+2 000", label: "Abonné·es Instagram" },
       { value: "6 %", label: "Taux d'engagement" },
     ],
   },

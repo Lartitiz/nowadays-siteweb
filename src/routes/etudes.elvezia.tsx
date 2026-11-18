@@ -70,7 +70,7 @@ const data: CaseStudyData = {
       ],
     },
     {
-      title: "5 · Sales enablement",
+      title: "5 · Des outils pour mieux vendre",
       paragraphs: [
         "Kits prêts à vendre, argumentaires prix et templates pour donner à la force de vente les outils qui défendent le positionnement premium.",
       ],

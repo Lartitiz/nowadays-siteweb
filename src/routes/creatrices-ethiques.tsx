@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/da/PageHero";
 import { DaLayout } from "@/components/da/DaLayout";
+import { CALENDLY_BINOME_URL } from "@/lib/links";
 import { CtaFinal } from "@/components/da/CtaFinal";
 import { VichyBand } from "@/components/da/VichyBand";
 
@@ -87,7 +88,7 @@ const PROJECTS: Project[] = [
     slug: "fat-moose",
     image: fatMoose.url,
     description:
-      "Marque danoise outdoor au design minimaliste. Stratégie de contenu, direction artistique et campagnes d'influence pour ancrer un univers entre aventure et élégance nordique.",
+      "Marque danoise outdoor. Réseaux sociaux, blog, direction artistique et influence pour ancrer la marque entre aventure et culture street.",
   },
   {
     name: "Ressources Emmanuelle Riboud",
@@ -136,7 +137,7 @@ const PROJECTS: Project[] = [
     image: napperon.url,
     externalUrl: "https://napperon.fr/",
     description:
-      "Lingerie upcyclée qui célèbre une féminité libre et consciente. Positionnement, stratégie de communication et fondations de marque dans le cadre de la Now Academy.",
+      "Lingerie upcyclée qui célèbre une féminité libre et consciente. Positionnement, stratégie de communication et fondations de marque.",
   },
   {
     name: "We Slow",
@@ -178,61 +179,61 @@ const PROJECTS: Project[] = [
     image: boomBoomDance.url,
     externalUrl: "https://www.boomboum.fr/",
     description:
-      "Cours de danse avec bébé qui transforment le post-partum en moments de joie. Structuration complète de la communication via la Now Academy.",
+      "Cours de danse avec bébé qui transforment le post-partum en moments de joie. Structuration complète de la communication.",
   },
   {
     name: "Mazeh Paris",
     image: mazehParis.url,
     description:
-      "Atelier d'upcycling qui redonne vie aux textiles oubliés. Pose des bases de sa visibilité avec la Now Academy.",
+      "Atelier d'upcycling qui redonne vie aux textiles oubliés. On a posé les bases de sa visibilité.",
   },
   {
     name: "Atelier Tiket",
     image: atelierTiket.url,
     externalUrl: "https://www.atelier-tiket.fr/",
     description:
-      "Créatrice de mode durable qui dessine des pièces intemporelles. Accompagnée par la Now Academy pour communiquer avec authenticité.",
+      "Créatrice de mode durable qui dessine des pièces intemporelles. Accompagnée pour communiquer avec authenticité.",
   },
   {
     name: "La Slow Fashionitude",
     image: laSlowFashionitude.url,
     description:
-      "Plateforme dédiée à la slow fashion. Structuration de la communication et de la communauté via la Now Academy.",
+      "Plateforme dédiée à la slow fashion. Structuration de la communication et de la communauté.",
   },
   {
     name: "Inti Personal Shopper",
     image: intiPersonalShopper.url,
     externalUrl: "https://www.instagram.com/intipersonalshopper/",
     description:
-      "Personal shopper éco-responsable qui guide vers une garde-robe consciente. Now Academy pour structurer son offre et sa communication.",
+      "Personal shopper éco-responsable qui guide vers une garde-robe consciente. Un accompagnement pour structurer son offre et sa communication.",
   },
   {
     name: "L'école des femmes de Massoba",
     image: ecoleFemmesMassoba.url,
     externalUrl: "https://www.lecoledesfemmesdemassoba.com/",
     description:
-      "Espace d'accompagnement sur mesure pour les femmes qui veulent affirmer leur présence. Now Academy pour faire rayonner sa mission.",
+      "Espace d'accompagnement sur mesure pour les femmes qui veulent affirmer leur présence. Un accompagnement pour faire rayonner sa mission.",
   },
   {
     name: "Sophie Brillouet",
     image: sophieBrillouet.url,
     externalUrl: "https://www.instagram.com/sophie_brillouet/",
     description:
-      "Sculptrice de coquillages et artisane d'art. Now Academy pour rendre visible un univers singulier et poétique.",
+      "Sculptrice de coquillages et artisane d'art. Un accompagnement pour rendre visible un univers singulier et poétique.",
   },
   {
     name: "Oli Emoi",
     image: oliEmoi.url,
     externalUrl: "https://www.oliemoi.com/",
     description:
-      "Sacs à main en cuir de poisson, matière noble issue de la valorisation des déchets. Now Academy pour révéler ce savoir-faire rare.",
+      "Sacs à main en cuir de poisson, matière noble issue de la valorisation des déchets. Un accompagnement pour révéler ce savoir-faire rare.",
   },
   {
     name: "Comme un ruban d'étoile",
     image: commeUnRubanDetoile.url,
     externalUrl: "https://www.instagram.com/commeunrubandetoiles/",
     description:
-      "Bijoux au fil d'argent, délicats et lumineux. Now Academy pour faire briller une marque artisane.",
+      "Bijoux au fil d'argent, délicats et lumineux. Un accompagnement pour faire briller une marque artisane.",
   },
   {
     name: "Jonesie",
@@ -246,55 +247,55 @@ const PROJECTS: Project[] = [
     image: hoplaStudio.url,
     externalUrl: "https://hoplastudio.com/",
     description:
-      "Studio de design culinaire qui sublime les produits en expériences visuelles gourmandes. Now Academy pour développer sa stratégie digitale.",
+      "Studio de design culinaire qui sublime les produits en expériences visuelles gourmandes. Un accompagnement pour développer sa stratégie digitale.",
   },
   {
     name: "Terra y mar",
     image: terraYMar.url,
     externalUrl: "https://terraemar.shop/",
     description:
-      "Sportwear éthique qui allie performance, style et respect du vivant. Now Academy pour une communication alignée avec ses valeurs.",
+      "Sportwear éthique qui allie performance, style et respect du vivant. Un accompagnement pour une communication alignée avec ses valeurs.",
   },
   {
     name: "File ton cuir",
     image: fileTonCuir.url,
     externalUrl: "https://filetoncuir.com/",
     description:
-      "Laetitia, sculptrice sur cuir qui transforme la matière brute en pièces uniques. Now Academy pour raconter son savoir-faire.",
+      "Laetitia, sculptrice sur cuir qui transforme la matière brute en pièces uniques. Un accompagnement pour raconter son savoir-faire.",
   },
   {
     name: "Yza Handmade",
     image: yzaHandmade.url,
     externalUrl: "https://yza-shop.com/",
     description:
-      "Vestiaire marocain réinventé : silhouettes fluides et accessoires intemporels fabriqués localement. Now Academy pour développer sa présence digitale.",
+      "Vestiaire marocain réinventé : silhouettes fluides et accessoires intemporels fabriqués localement. Un accompagnement pour développer sa présence digitale.",
   },
   {
     name: "Ti Matelot",
     image: tiMatelot.url,
     description:
-      "Vêtements éthiques pour enfants qui allient confort, durabilité et style. Now Academy pour toucher les bonnes familles.",
+      "Vêtements éthiques pour enfants qui allient confort, durabilité et style. Un accompagnement pour toucher les bonnes familles.",
   },
   {
     name: "Awqa",
     image: awqa.url,
     externalUrl: "https://www.awqa.fr/",
     description:
-      "Broderie artisanale et maroquinerie de haute qualité, entre chic parisien et savoir-faire ancestral des Andes. Now Academy pour raconter cette histoire unique.",
+      "Broderie artisanale et maroquinerie de haute qualité, entre chic parisien et savoir-faire ancestral des Andes. Un accompagnement pour raconter cette histoire unique.",
   },
   {
     name: "Péline Coach Sportive SOPK",
     image: pelineCoachSopk.url,
     externalUrl: "https://www.pelinecoachsopk.com/",
     description:
-      "Coach sportive spécialisée dans l'accompagnement des femmes atteintes du SOPK. Now Academy pour communiquer son expertise avec justesse.",
+      "Coach sportive spécialisée dans l'accompagnement des femmes atteintes du SOPK. Un accompagnement pour communiquer son expertise avec justesse.",
   },
   {
     name: "Le Jardin Parfumé Marseille",
     image: leJardinParfume.url,
     externalUrl: "https://www.lejardinparfume.fr/",
     description:
-      "Lingerie fine et parfums de niche dans un univers sensuel et raffiné. Now Academy pour cultiver sa communauté avec élégance.",
+      "Lingerie fine et parfums de niche dans un univers sensuel et raffiné. Un accompagnement pour cultiver sa communauté avec élégance.",
   },
   {
     name: "Flanelle, l'Atelier de Styliste",
@@ -319,6 +320,7 @@ function Hero() {
     // font concurrence. Chacune nomme désormais son public.
     <PageHero
       vichy="jaune"
+      ctaHref={CALENDLY_BINOME_URL}
       pill="Créateur·ices lifestyle éthiques"
       pillTon="bordeaux"
       titre={
@@ -404,7 +406,7 @@ function Page() {
       <Hero />
       <EtudesGrid />
       <VichyBand />
-      <CtaFinal />
+      <CtaFinal href={CALENDLY_BINOME_URL} />
     </DaLayout>
   );
 }

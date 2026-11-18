@@ -43,7 +43,6 @@ const data: CaseStudyData = {
   title: "Quand un traiteur bio et durable devient un laboratoire d'idées",
   subtitle:
     "Découvrez la campagne de communication digitale (branding, site web, social media). Vous souhaitez vous développer sur le web ?",
-  ctaHref: "https://calendly.com/laetitia-mattioli/30-min-de-diagnostic-offert",
   context: {
     paragraphs: [
       "Emmanuelle Riboud avait tout d'un laboratoire d'innovation en cuisine durable, mais communiquait encore comme un traiteur de quartier. En 4 mois, nous avons repositionné Ressources Green de A à Z : stratégie de marque, personal branding, formation complète de l'équipe.",

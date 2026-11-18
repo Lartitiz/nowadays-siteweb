@@ -17,7 +17,7 @@ export const Route = createFileRoute("/formation-gratuite-instagram")({
         content:
           "Reçois gratuitement le guide pour bâtir une stratégie Instagram alignée : 5 modules, ~90 min, pensé pour les créatrices et marques engagées.",
       },
-      { property: "og:title", content: "Formation Instagram gratuite ; le guide" },
+      { property: "og:title", content: "Formation Instagram gratuite : le guide" },
       {
         property: "og:description",
         content:
@@ -61,7 +61,7 @@ function Hero() {
       }
       chapo={
         <>
-          Établis toute ta stratégie Instagram grâce à notre guide ; pensé pour les créatrices,
+          Établis toute ta stratégie Instagram grâce à notre guide, pensé pour les créatrices,
           artisanes et marques qui veulent communiquer avec sens.
         </>
       }
@@ -83,7 +83,7 @@ function SocialProof() {
     <section className="border-t border-ink/10 bg-rose-pale">
       <div className="mx-auto max-w-7xl px-6 py-6">
         <p className="text-center text-xs uppercase tracking-[0.24em] text-encre">
-          +200 créatrices &amp; projets engagés · ont déjà téléchargé le guide · ⭐ ⭐ ⭐ ⭐ ⭐
+          +200 créatrices &amp; projets engagés · ont déjà téléchargé le guide
         </p>
       </div>
     </section>
@@ -120,7 +120,7 @@ function Why() {
             « Super utile et bien organisée. Les dossiers sont bien pensés ; ça change des
             formations floues qu'on ne termine jamais. »
             <footer className="mt-4 text-xs not-italic uppercase tracking-[0.2em] text-encre/70">
-              ; Témoignage participante
+              Témoignage d'une participante
             </footer>
           </blockquote>
         </div>
@@ -150,7 +150,7 @@ const BENEFITS = [
   {
     n: "04",
     title: "Une marque qui te ressemble",
-    body: "Parce que ton univers est unique ; et que ton logo pastel mérite mieux que 12 likes.",
+    body: "Parce que ton univers est unique, et que ton logo pastel mérite mieux que 12 likes.",
   },
 ];
 
@@ -189,7 +189,7 @@ function Benefits() {
 const AUDIENCE = [
   {
     label: "Créatrice ou artisane",
-    body: "Mode, bien-être, déco, artiste ; un univers de marque à faire rayonner.",
+    body: "Mode, bien-être, déco, art : un univers de marque à faire rayonner.",
   },
   {
     label: "Débordée mais motivée",
@@ -297,7 +297,7 @@ const MODULES = [
     n: "05",
     duration: "≈ 20 min",
     title: "Planification",
-    goal: "Transformer ton énergie en routine fluide et créative ; sans pression.",
+    goal: "Transformer ton énergie en routine fluide et créative, sans pression.",
     content: [
       "Pourquoi un calendrier éditorial : clarté, régularité, alignement.",
       "Les 4 piliers de contenu (inspiration, mise en valeur, communauté, valeurs).",
@@ -392,7 +392,7 @@ function FinalCTA() {
             {sent ? (
               <div className="border border-encre/20 bg-white/60 p-8 rounded-sm">
                 <p className="font-titre text-2xl text-bordeaux leading-snug">
-                  Merci ; ton guide arrive dans quelques minutes.
+                  Merci ! Ton guide arrive dans quelques minutes.
                 </p>
                 <p className="mt-4 text-sm text-encre/80">
                   Il vient de « Laetitia de Nowadays » : regarde aussi tes spams et les autres onglets de ta boîte.

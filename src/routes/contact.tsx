@@ -21,7 +21,7 @@ export const Route = createFileRoute("/contact")({
         content:
           "Solopreneur·e, asso, coopérative ou PME engagée ? Envoyez-nous un mot, on revient sous 24 h ouvrées avec une réponse réelle, pas un script de vente.",
       },
-      { property: "og:title", content: "Contact ; Nowadays Agency" },
+      { property: "og:title", content: "Contact · Nowadays Agency" },
       {
         property: "og:description",
         content: "Réponse sous 24 h ouvrées. Pour les projets qui ont du sens.",
@@ -68,7 +68,10 @@ function ContactPage() {
       (e.target as HTMLFormElement).reset();
     } catch (err) {
       setStatus("error");
-      setErrorMsg(err instanceof Error ? err.message : "Une erreur est survenue");
+      console.error(err);
+      setErrorMsg(
+        "Le message n'est pas parti. Réessayez dans un instant, ou écrivez-moi directement à laetitia@nowadaysagency.com.",
+      );
     }
   }
 
@@ -360,11 +363,11 @@ function ContactPage() {
               },
               {
                 q: "Travaillez-vous à distance ou en présentiel ?",
-                a: "Les deux. Nous sommes basées à Saint-Aubin-sur-Yonne et accompagnons partout en France (et au-delà) en visio.",
+                a: "Les deux. Je suis basée à Joigny et j'accompagne partout en France (et au-delà) en visio.",
               },
               {
                 q: "Donnez-vous une fourchette tarifaire ?",
-                a: "Oui, dès le premier appel. Nos formats vont de l'atelier ponctuel à l'accompagnement mensuel. Aucun engagement long terme imposé.",
+                a: "Oui, dès le premier appel. Mes formats vont de l'atelier ponctuel à l'accompagnement sur plusieurs mois. Ta Binôme se fait sur six mois, en paiement étalé (pas un abonnement) ; pour les structures, un budget de mission fixé avant de commencer.",
               },
             ].map((f) => (
               <div key={f.q} className="border-b border-rose-pale pb-6">
