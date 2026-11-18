@@ -2421,7 +2421,7 @@ html:has(.nowadays-da) {
   flex: 0 0 28px;
   height: 28px;
   border-radius: 999px;
-  background: var(--framboise);
+  background: var(--framboise-dense); /* coche blanche 13,6 px : seuil 4,5 */
   color: #fff;
   font-weight: 800;
   font-size: 0.85rem;
@@ -2488,7 +2488,7 @@ html:has(.nowadays-da) {
 }
 
 .bn-seg--moi {
-  background: var(--framboise);
+  background: var(--framboise-dense); /* texte blanc 12,5 px : seuil 4,5 */
   color: #fff;
 }
 
@@ -2774,7 +2774,7 @@ html:has(.nowadays-da) {
 .bn-li .bn-inc {
   font-weight: 700;
   font-size: 0.95rem;
-  color: var(--framboise);
+  color: var(--framboise-dense); /* 15 px : seuil 4,5 */
   white-space: nowrap;
 }
 
@@ -2971,7 +2971,7 @@ html:has(.nowadays-da) {
 }
 
 .bn-caslien a {
-  color: var(--framboise);
+  color: var(--framboise-dense); /* lien 15 px */
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
