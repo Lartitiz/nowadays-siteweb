@@ -73,8 +73,8 @@ function Page() {
               <Li>SIREN : 832 189 070 · SIRET : 832 189 070 00028</Li>
               <Li>Immatriculée au Registre national des entreprises (RNE)</Li>
               <Li>
-                Assujettie à la TVA depuis le 6 novembre 2026. N° de TVA intracommunautaire :
-                FR 40832189070.
+                Assujettie à la TVA depuis le 6 novembre 2026. N° de TVA intracommunautaire : FR
+                40832189070.
               </Li>
               <Li>
                 Contact : <Mail /> ·{" "}
@@ -457,8 +457,8 @@ function Page() {
 
           <Section id="version">
             <P>
-              Version du 6 novembre 2026. Ces conditions s'appliquent aux engagements pris à
-              partir de cette date. Si vous vous êtes engagée avant, ce sont les conditions de votre
+              Version du 6 novembre 2026. Ces conditions s'appliquent aux engagements pris à partir
+              de cette date. Si vous vous êtes engagée avant, ce sont les conditions de votre
               proposition qui s'appliquent jusqu'à la fin de votre accompagnement. Je peux faire
               évoluer ces conditions : celle qui s'applique à vous est la version en vigueur au
               moment où vous vous engagez.
