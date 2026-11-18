@@ -65,6 +65,10 @@ const EDITORIAL_REDIRECTS: Record<string, string> = {
   // URL paramètre technique laissée par un ancien sitemap / lien ; Google
   // l'a explorée littéralement. On la renvoie vers l'index du blog.
   "/blog/$slug": "/blog",
+  // Lien court vers le carnet BDMMA (Google Sheets). Cible externe : le
+  // serveur la renvoie telle quelle (voir src/server.ts).
+  "/carnet-bdmma":
+    "https://docs.google.com/spreadsheets/d/1PH6lmBooFzGRE3LLEEJ7ZUXKLXZ8ehiXQvywV_jpjoI/edit?usp=sharing",
 };
 
 const REDIRECTS: Record<string, string> = {

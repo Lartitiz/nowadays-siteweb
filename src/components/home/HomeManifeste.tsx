@@ -13,8 +13,7 @@ export function HomeManifeste() {
           <p className="lead">
             La visibilité, c'est déjà une forme de liberté. Quand une créatrice peut vivre de son métier,
             c'est une personne de moins qui subit un travail imposé. Quand une association se fait entendre,
-            une cause progresse. Rendre visible, ce n'est pas embellir, c'est donner à un projet la chance
-            d'exister. Et nous choisissons de le faire avec beauté et joie.
+            une cause progresse. Rendre visible, c'est donner la chance d'exister à un projet. Et nous choisissons de le faire avec beauté et joie.
           </p>
           <p className="signature-line">
             <em>Parce que le beau n'est pas futile : c'est un levier de changement.</em>
