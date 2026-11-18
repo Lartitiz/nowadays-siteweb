@@ -143,7 +143,7 @@ function CaptureForm({ id }: { id: string }) {
         {sending ? "Envoi…" : "Recevoir mon modèle à modifier"}
       </button>
       {error && <p className="text-[11px] leading-relaxed text-framboise">{error}</p>}
-      <p className="text-[11px] leading-relaxed text-encre/50">
+      <p className="text-[11px] leading-relaxed text-encre/70">
         En soumettant, tu acceptes de recevoir le template et nos emails. Tes données restent
         confidentielles (RGPD).
       </p>
