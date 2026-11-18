@@ -27,7 +27,7 @@ export const Route = createFileRoute("/cgv")({
 
 /* ------------------------------------------------------------------ Data */
 
-const LAST_UPDATE = "[DATE DE PUBLICATION]";
+const LAST_UPDATE = "6 novembre 2026";
 
 // Le sommaire et les numéros de section sont tirés de cette liste.
 const SECTIONS = [
@@ -74,7 +74,7 @@ function Page() {
               <Li>Immatriculée au Registre national des entreprises (RNE)</Li>
               <Li>
                 Assujettie à la TVA depuis le 6 novembre 2026. N° de TVA intracommunautaire :
-                [NUMÉRO DE TVA].
+                FR 40832189070.
               </Li>
               <Li>
                 Contact : <Mail /> ·{" "}
@@ -457,7 +457,7 @@ function Page() {
 
           <Section id="version">
             <P>
-              Version du [DATE DE PUBLICATION]. Ces conditions s'appliquent aux engagements pris à
+              Version du 6 novembre 2026. Ces conditions s'appliquent aux engagements pris à
               partir de cette date. Si vous vous êtes engagée avant, ce sont les conditions de votre
               proposition qui s'appliquent jusqu'à la fin de votre accompagnement. Je peux faire
               évoluer ces conditions : celle qui s'applique à vous est la version en vigueur au
