@@ -19,13 +19,13 @@ export const Route = createFileRoute("/guide-storytelling")({
       {
         name: "description",
         content:
-          "Reçois le guide PDF gratuit pour écrire le storytelling de ta marque en 5 étapes. Canevas pratique, exemples concrets, méthode testée sur des marques éthiques.",
+          "Reçois le guide gratuit pour écrire le storytelling de ta marque en 5 étapes. Canevas pratique, exemples concrets, méthode testée sur des marques éthiques.",
       },
-      { property: "og:title", content: "Guide storytelling gratuit ; Méthode PDF en 5 étapes" },
+      { property: "og:title", content: "Guide storytelling gratuit ; Méthode en 5 étapes" },
       {
         property: "og:description",
         content:
-          "Le guide PDF gratuit pour structurer ton récit de marque en 5 étapes. Canevas pratique inclus.",
+          "Le guide gratuit pour structurer ton récit de marque en 5 étapes. Canevas pratique inclus.",
       },
       { property: "og:url", content: absoluteUrl("/guide-storytelling") },
       { property: "og:type", content: "article" },
@@ -66,7 +66,7 @@ function Hero() {
       }
       chapo={
         <>
-          Écris l'histoire de ta marque en 5 étapes ; la méthode PDF qu'on utilise avec nos clientes
+          Écris l'histoire de ta marque en 5 étapes ; la méthode qu'on utilise avec nos clientes
           pour transformer un message flou en récit qui résonne.
         </>
       }
@@ -77,7 +77,7 @@ function Hero() {
       }}
       cta="Recevoir le guide"
       ctaHref="#recevoir"
-      note="Guide PDF · 5 étapes · canevas inclus."
+      note="Guide · 5 étapes · canevas inclus."
     />
   );
 }
@@ -432,7 +432,7 @@ function FinalCTA() {
               Reçois ton guide <em className="text-framboise">maintenant</em>
             </h2>
             <p className="mt-6 text-sm text-encre/80 leading-relaxed">
-              Le PDF arrive directement dans ta boîte mail. Pas de spam, désinscription en 1 clic.
+              Le guide arrive directement dans ta boîte mail. Pas de spam, désinscription en 1 clic.
             </p>
           </div>
 
@@ -443,7 +443,7 @@ function FinalCTA() {
                   Merci ; ton guide arrive dans quelques minutes.
                 </p>
                 <p className="mt-4 text-sm text-encre/80">
-                  Pense à regarder aussi dans tes spams et l'onglet « Promotions ». Bonne écriture ♡
+                  Il vient de « Nowadays Agency » : regarde aussi tes spams et les autres onglets de ta boîte.
                 </p>
               </div>
             ) : (
