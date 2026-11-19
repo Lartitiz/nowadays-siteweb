@@ -529,7 +529,7 @@ function FaqSection() {
     },
     {
       q: "Qui fait le travail, concrètement ?",
-      a: "Laetitia, fondatrice de l'agence, avec une interlocutrice unique du début à la fin. Selon les missions, une graphiste intervient : elle est comprise dans le budget global, vous n'avez rien à gérer.",
+      a: "Laetitia, fondatrice de l'agence, avec une interlocutrice unique du début à la fin. Selon les missions, une graphiste intervient pour les visuels de vos contenus : elle est comprise dans le budget global, vous n'avez rien à gérer.",
     },
     {
       q: "Combien de temps dure une mission ?",
