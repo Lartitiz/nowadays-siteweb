@@ -27,7 +27,7 @@ export const Route = createFileRoute("/mentions-legales")({
 
 /* ------------------------------------------------------------------ Data */
 
-const LAST_UPDATE = "20 novembre 2026";
+const LAST_UPDATE = "19 novembre 2026";
 
 function Page() {
   return (
