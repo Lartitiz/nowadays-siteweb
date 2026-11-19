@@ -47,6 +47,10 @@ export default {
     // Redirections 301 des anciennes URLs Squarespace (SEO). Traitées avant
     // le SSR : pas de rendu React inutile, un vrai 301 côté serveur.
     const redirectTo = getRedirect(url.pathname);
+    // Cible externe (lien court vers un Google Sheets, etc.) : on la renvoie
+    // telle quelle, sans préfixer le domaine ni recoller la query entrante
+    // (elle a déjà la sienne, ex. `?usp=sharing`).
+    const isExternal = redirectTo !== null && /^https?:\/\//.test(redirectTo);
 
     // Le site répondait à l'identique sur www ET sur l'apex : deux sites
     // jumeaux pour Google, qui indexait encore le www hérité de Squarespace.
@@ -58,7 +62,9 @@ export default {
       return new Response(null, {
         status: 301,
         headers: {
-          Location: `${SITE_ORIGIN}${redirectTo ?? url.pathname}${url.search}`,
+          Location: isExternal
+            ? redirectTo!
+            : `${SITE_ORIGIN}${redirectTo ?? url.pathname}${url.search}`,
         },
       });
     }
@@ -66,7 +72,7 @@ export default {
     if (redirectTo) {
       return new Response(null, {
         status: 301,
-        headers: { Location: `${redirectTo}${url.search}` },
+        headers: { Location: isExternal ? redirectTo : `${redirectTo}${url.search}` },
       });
     }
 

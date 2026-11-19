@@ -11,7 +11,7 @@ const QUESTIONS = [
   {
     question: "« Je n'ai pas le temps. »",
     reponse:
-      "C'est justement le point de départ. Selon la formule choisie, soit on fait ensemble et ça vous demande deux heures par mois, soit on s'en occupe et il ne vous reste qu'à valider. Dans les deux cas, on part de votre agenda réel, pas d'un rythme théorique.",
+      "C'est justement le point de départ. Selon la formule choisie, soit on fait ensemble et ça vous demande une demi-journée par semaine (3 à 4 heures), un peu plus les premiers mois, soit on s'en occupe et il ne vous reste qu'à valider. Dans les deux cas, on part de votre agenda réel, pas d'un rythme théorique.",
   },
   {
     question: "« C'est au-dessus de notre budget. »",

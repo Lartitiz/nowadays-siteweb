@@ -27,7 +27,7 @@ export const Route = createFileRoute("/cgv")({
 
 /* ------------------------------------------------------------------ Data */
 
-const LAST_UPDATE = "20 octobre 2026";
+const LAST_UPDATE = "18 novembre 2026";
 
 // Le sommaire et les numéros de section sont tirés de cette liste.
 const SECTIONS = [
@@ -73,8 +73,8 @@ function Page() {
               <Li>SIREN : 832 189 070 · SIRET : 832 189 070 00028</Li>
               <Li>Immatriculée au Registre national des entreprises (RNE)</Li>
               <Li>
-                TVA non applicable, art. 293 B du code général des impôts : le prix que je vous
-                annonce est celui que vous payez.
+                Assujettie à la TVA depuis le 6 novembre 2026. N° de TVA intracommunautaire : FR
+                40832189070.
               </Li>
               <Li>
                 Contact : <Mail /> ·{" "}
@@ -145,7 +145,8 @@ function Page() {
               Je m'engage à mettre mon savoir-faire et le temps prévu au service de votre projet.
               C'est ce qu'on appelle une obligation de moyens : je m'engage sur ce que je fais,
               jamais sur les résultats commerciaux qui en découlent, parce qu'ils dépendent aussi de
-              vous et de votre marché.
+              vous et de votre marché. Je ne fixe pas d'objectif chiffré (nombre d'abonné·es, de
+              ventes ou autre) : vous suivez vos propres chiffres, sans cible à atteindre.
             </P>
             <P>
               Le détail de ce que je fais pour vous (livrables, nombre de sessions, calendrier) est
@@ -162,8 +163,13 @@ function Page() {
               dans le prix annoncé, et je reste votre seule interlocutrice.
             </P>
             <P>
-              Pour Ta Binôme de Com', je réponds à vos messages WhatsApp les jours ouvrés, sous 48
+              Pour Ta Binôme de Com', je réponds à vos messages WhatsApp du lundi au jeudi, sous 48
               heures.
+            </P>
+            <P>
+              Votre proposition indique mon jour sans rendez-vous ni réponse (le vendredi) et mes
+              congés de l'année. Ils ne prolongent pas la durée de l'accompagnement et ne changent
+              pas les mensualités : les séances se placent en dehors.
             </P>
             <P>Je vous donne mon avis franchement, et c'est toujours vous qui décidez.</P>
           </Section>
@@ -193,11 +199,10 @@ function Page() {
           <Section id="prix">
             <P>
               Le prix est celui écrit dans votre proposition ou votre devis. Mes tarifs de référence
-              sont indiqués sur mon site ou communiqués sur simple demande. Aujourd'hui, la TVA ne
-              s'applique pas (article 293 B du code général des impôts) : vous payez le montant
-              annoncé. Si je devais un jour y être soumise, les propositions et devis déjà signés
-              resteraient au même prix, TVA comprise, et mes propositions suivantes indiqueraient un
-              prix TTC.
+              sont indiqués sur mon site ou communiqués sur simple demande. Mes tarifs sont indiqués
+              hors taxes, avec le prix TTC à côté : la TVA de 20 % s'ajoute. Je suis assujettie à la
+              TVA depuis le 6 novembre 2026. Les propositions et devis signés avant cette date
+              gardent le prix signé, qui devient un prix TTC.
             </P>
             <P>
               Pour Ta Binôme de Com', le paiement est mensuel, en ligne, et prélevé automatiquement
@@ -271,9 +276,9 @@ function Page() {
               sans prévenir, la session est perdue.
             </P>
             <P>
-              Pour Ta Binôme de Com', il arrive que l'accompagnement s'étire, de votre côté comme du
-              mien. Une session qui n'a pas eu lieu peut donc être rattrapée après la fin prévue de
-              l'accompagnement, dans la limite de 3 mois.
+              Pour Ta Binôme de Com' (saison 1), il arrive que l'accompagnement s'étire, de votre
+              côté comme du mien. Une session qui n'a pas eu lieu peut donc être rattrapée après la
+              fin prévue de l'accompagnement, dans la limite de 3 mois.
             </P>
           </Section>
 
@@ -405,8 +410,18 @@ function Page() {
           <Section id="fin">
             <P>
               Pour Ta Binôme de Com', la dernière session peut servir de bilan, ou à avancer sur ce
-              qui compte le plus à ce moment-là : c'est vous qui choisissez. Le fil WhatsApp se
-              ferme à la date de fin.
+              qui compte le plus à ce moment-là : c'est vous qui choisissez. Je vous remets aussi
+              une boîte à prompts pour continuer seule. Après la fin, vous pouvez m'envoyer une
+              petite question de temps en temps sur WhatsApp, tant que ça reste léger. Environ trois
+              mois après la fin, je vous propose un café en visio de 30 à 45 minutes.
+            </P>
+            <P>
+              Si vous continuez avec Ta Binôme, saison 2, l'accompagnement se fait par cycles de
+              trois mois, payés chaque mois, au prix écrit dans votre proposition. Le cycle ne se
+              renouvelle jamais tout seul : à la fin de chaque cycle, je vous demande si vous
+              continuez, et sans votre oui, ça s'arrête. Le cycle commencé reste dû en entier. Une
+              séance non prise pendant le cycle ne se reporte pas sur le cycle suivant. Pour la
+              saison 2, ce sont ces règles qui s'appliquent, et non celles de la section 07.
             </P>
             <P>
               Pour Ton Agency de Com', la mission se termine quand le dernier livrable prévu au
@@ -458,7 +473,7 @@ function Page() {
 
           <Section id="version">
             <P>
-              Version du 20 octobre 2026. Ces conditions s'appliquent aux engagements pris à partir
+              Version du 18 novembre 2026. Ces conditions s'appliquent aux engagements pris à partir
               de cette date. Si vous vous êtes engagée avant, ce sont les conditions de votre
               proposition qui s'appliquent jusqu'à la fin de votre accompagnement. Je peux faire
               évoluer ces conditions : celle qui s'applique à vous est la version en vigueur au

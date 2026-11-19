@@ -76,7 +76,7 @@ export const Route = createFileRoute("/a-propos")({
 const REPERES = [
   { chiffre: "10 ans", libelle: "dans le marketing digital" },
   { chiffre: "+150", libelle: "projets éthiques accompagnés" },
-  { chiffre: "5 écoles", libelle: "où j'enseigne la communication" },
+  { chiffre: "3 écoles", libelle: "où j'enseigne la communication" },
 ];
 
 function Hero() {
@@ -273,7 +273,8 @@ function Reperes() {
           ))}
         </dl>
         <p className="mx-auto mt-12 max-w-2xl text-center text-base leading-relaxed text-encre">
-          J'enseigne à l'ENSAD Paris, au CESACOM, à l'ISCPA, à l'ENS et aux Mines. Transmettre fait
+          J'enseigne à l'ENSAD Paris, au CESACOM et à l'ISCPA, et j'ai donné une conférence et animé
+          des ateliers pour PSL (ENS, Mines). Transmettre fait
           partie du métier : une communication qui n'émancipe pas ses destinataires n'est pas une
           communication qui m'intéresse.
         </p>
@@ -297,7 +298,7 @@ function Ancrage() {
           </p>
           <p>
             Les projets accompagnés vont de la créatrice installée à son atelier jusqu'à la
-            coopérative nationale — mode responsable, artisanat, associations, ONG, culture, design.
+            coopérative nationale : mode responsable, artisanat, associations, ONG, culture, design.
           </p>
         </div>
       </div>
@@ -318,7 +319,7 @@ function Convictions() {
             Une communication juste montre ses limites, explique, contextualise.
           </p>
           <p>
-            J'ai écrit tout ça noir sur blanc — les méthodes, les refus, et mes propres limites —
+            J'ai écrit tout ça noir sur blanc (les méthodes, les refus, et mes propres limites)
             dans{" "}
             <Link to="/demarche-ethique" className="text-bordeaux underline underline-offset-4">
               ma démarche éthique et mon manifeste

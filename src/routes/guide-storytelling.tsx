@@ -19,13 +19,13 @@ export const Route = createFileRoute("/guide-storytelling")({
       {
         name: "description",
         content:
-          "Reçois le guide PDF gratuit pour écrire le storytelling de ta marque en 5 étapes. Canevas pratique, exemples concrets, méthode testée sur des marques éthiques.",
+          "Reçois le guide gratuit pour écrire le storytelling de ta marque en 5 étapes. Canevas pratique, exemples concrets, méthode testée sur des marques éthiques.",
       },
-      { property: "og:title", content: "Guide storytelling gratuit ; Méthode PDF en 5 étapes" },
+      { property: "og:title", content: "Guide storytelling gratuit : la méthode en 5 étapes" },
       {
         property: "og:description",
         content:
-          "Le guide PDF gratuit pour structurer ton récit de marque en 5 étapes. Canevas pratique inclus.",
+          "Le guide gratuit pour structurer ton récit de marque en 5 étapes. Canevas pratique inclus.",
       },
       { property: "og:url", content: absoluteUrl("/guide-storytelling") },
       { property: "og:type", content: "article" },
@@ -66,7 +66,7 @@ function Hero() {
       }
       chapo={
         <>
-          Écris l'histoire de ta marque en 5 étapes ; la méthode PDF qu'on utilise avec nos clientes
+          Écris l'histoire de ta marque en 5 étapes, avec la méthode que j'utilise avec nos clientes
           pour transformer un message flou en récit qui résonne.
         </>
       }
@@ -77,7 +77,7 @@ function Hero() {
       }}
       cta="Recevoir le guide"
       ctaHref="#recevoir"
-      note="Guide PDF · 5 étapes · canevas inclus."
+      note="Guide · 5 étapes · canevas inclus."
     />
   );
 }
@@ -89,7 +89,7 @@ function SocialProof() {
     <section className="border-t border-ink/10 bg-rose-pale">
       <div className="mx-auto max-w-7xl px-6 py-6">
         <p className="text-center text-xs uppercase tracking-[0.24em] text-encre">
-          +200 marques engagées · ont structuré leur récit · ⭐ ⭐ ⭐ ⭐ ⭐
+          +200 marques engagées · ont structuré leur récit
         </p>
       </div>
     </section>
@@ -110,7 +110,7 @@ function Why() {
           <div className="md:col-span-3 space-y-6 text-base text-encre leading-relaxed">
             <p>
               Tu sais ce que tu fais. Tu sais pourquoi tu le fais. Mais quand il faut{" "}
-              <em>le raconter</em> ; bio Instagram, page À propos, pitch en soirée ; la phrase juste
+              <em>le raconter</em> (bio Instagram, page À propos, pitch en soirée), la phrase juste
               s'évapore.
             </p>
             <p>
@@ -120,7 +120,7 @@ function Why() {
             </p>
             <p>
               Ce guide te donne une méthode concrète, testée sur les marques qu'on accompagne, pour
-              formuler un récit qui te ressemble ; et que tu pourras décliner partout.
+              formuler un récit qui te ressemble, et que tu pourras décliner partout.
             </p>
           </div>
 
@@ -128,7 +128,7 @@ function Why() {
             « Simple, clair et hyper efficace. Ce guide m'a permis de créer un storytelling qui
             résonne vraiment. »
             <footer className="mt-4 text-xs not-italic uppercase tracking-[0.2em] text-encre/70">
-              ; Témoignage lectrice
+              Témoignage d'une lectrice
             </footer>
           </blockquote>
         </div>
@@ -153,7 +153,7 @@ const BENEFITS = [
   {
     n: "03",
     title: "Un fil réutilisable partout",
-    body: "Bio, page À propos, posts, pitch client, newsletter ; la même colonne vertébrale, déclinée.",
+    body: "Bio, page À propos, posts, pitch client, newsletter : la même colonne vertébrale, déclinée.",
   },
   {
     n: "04",
@@ -172,7 +172,7 @@ function Benefits() {
               Ce que tu vas en <em className="text-framboise">tirer</em>
             </h2>
             <p className="mt-8 text-sm text-encre leading-relaxed">
-              4 acquis concrets, pour passer d'un message qu'on oublie à un récit qu'on retient ; et
+              4 acquis concrets, pour passer d'un message qu'on oublie à un récit qu'on retient, et
               qu'on partage.
             </p>
           </div>
@@ -201,7 +201,7 @@ const AUDIENCE = [
   },
   {
     label: "Freelance qui veut sortir du CV",
-    body: "Tu ne veux plus vendre tes compétences à la liste ; tu veux raconter ce qui te rend unique.",
+    body: "Tu ne veux plus vendre tes compétences à la liste : tu veux raconter ce qui te rend unique.",
   },
   {
     label: "Marque éthique en quête d'incarnation",
@@ -220,7 +220,7 @@ function Apercu() {
           </h2>
           <p className="mt-6 text-sm text-encre leading-relaxed">
             Les mots qui font mouche, la structure du récit étape par étape, des exemples concrets
-            (oui, même Harry Potter) ; tout est prêt à appliquer.
+            (oui, même Harry Potter) : tout est prêt à appliquer.
           </p>
         </div>
         <div className="mt-14 flex justify-center">
@@ -289,7 +289,7 @@ const STEPS = [
     goal: "Remonter aux racines : le déclic, la colère ou l'évidence qui a fait naître ta marque.",
     content: [
       "Les 3 questions fondatrices : pourquoi maintenant, pourquoi toi, pourquoi ça.",
-      "Distinguer le récit personnel et le récit de marque ; sans les confondre.",
+      "Distinguer le récit personnel et le récit de marque, sans les confondre.",
       "Exemples : 2 marques éthiques qui racontent leur origine sans tomber dans la confession.",
     ],
     activity:
@@ -300,7 +300,7 @@ const STEPS = [
     n: "02",
     duration: "≈ 15 min",
     title: "La mission",
-    goal: "Formuler la transformation que tu rends possible ; pas ce que tu vends.",
+    goal: "Formuler la transformation que tu rends possible, pas ce que tu vends.",
     content: [
       "La différence entre offre, mission, vision (et pourquoi on confond les trois).",
       "La formule en une phrase : « j'aide [qui] à [transformation] grâce à [comment] ».",
@@ -314,7 +314,7 @@ const STEPS = [
     n: "03",
     duration: "≈ 15 min",
     title: "Le personnage",
-    goal: "Mettre ton client·e au centre du récit ; pas ta marque. C'est lui ou elle, le héros.",
+    goal: "Mettre ton client·e au centre du récit, pas ta marque. C'est lui ou elle, le héros.",
     content: [
       "Anatomie d'un personnage-cible : désir, obstacle, peur, victoire visée.",
       "Le rôle de ta marque : guide, pas héros (le piège du « regardez comme on est bons »).",
@@ -328,7 +328,7 @@ const STEPS = [
     n: "04",
     duration: "≈ 20 min",
     title: "Le récit en 3 actes",
-    goal: "Structurer ton histoire de marque en 3 actes ; la mécanique narrative qui fonctionne depuis Aristote.",
+    goal: "Structurer ton histoire de marque en 3 actes, la mécanique narrative qui fonctionne depuis Aristote.",
     content: [
       "Acte 1 : le monde d'avant (le problème, le statu quo qui dysfonctionne).",
       "Acte 2 : la rencontre (ce qui change, ta proposition, le pivot).",
@@ -337,13 +337,13 @@ const STEPS = [
     ],
     activity: "Remplir le canevas en 3 actes avec les éléments des étapes 1 à 3.",
     deliverable:
-      "Ta narrative complète, prête à être déclinée ; la colonne vertébrale de toute ta com'.",
+      "Ta narrative complète, prête à être déclinée : la colonne vertébrale de toute ta com'.",
   },
   {
     n: "05",
     duration: "≈ 15 min",
     title: "La mise en voix",
-    goal: "Décliner le récit partout sans le diluer ; un ton de marque cohérent du pitch au post.",
+    goal: "Décliner le récit partout sans le diluer, avec un ton de marque cohérent du pitch au post.",
     content: [
       "Les 4 surfaces clés : bio (Insta / LinkedIn), page À propos, pitch oral, signature email.",
       "Les 3 marqueurs de voix : vocabulaire récurrent, rythme de phrase, ce qu'on ne dit jamais.",
@@ -425,25 +425,25 @@ function FinalCTA() {
       <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16 md:items-end">
           <div className="md:col-span-6">
-            <p className="text-xs uppercase tracking-[0.24em] text-white/80">
+            <p className="text-xs uppercase tracking-[0.24em] text-encre/80">
               · Téléchargement gratuit ·
             </p>
-            <h2 className="mt-6 font-titre text-3xl md:text-5xl leading-[1.1] text-white">
-              Reçois ton guide <em className="text-rose-mid">maintenant</em>
+            <h2 className="mt-6 font-titre text-3xl md:text-5xl leading-[1.1] text-bordeaux">
+              Reçois ton guide <em className="text-framboise">maintenant</em>
             </h2>
-            <p className="mt-6 text-sm text-white/80 leading-relaxed">
-              Le PDF arrive directement dans ta boîte mail. Pas de spam, désinscription en 1 clic.
+            <p className="mt-6 text-sm text-encre/80 leading-relaxed">
+              Le guide arrive directement dans ta boîte mail. Pas de spam, désinscription en 1 clic.
             </p>
           </div>
 
           <div className="md:col-span-6">
             {sent ? (
-              <div className="border border-rose-pale/40 p-8 rounded-sm">
-                <p className="font-titre text-2xl text-white leading-snug">
-                  Merci ; ton guide arrive dans quelques minutes.
+              <div className="border border-encre/20 bg-white/60 p-8 rounded-sm">
+                <p className="font-titre text-2xl text-bordeaux leading-snug">
+                  Merci ! Ton guide arrive dans quelques minutes.
                 </p>
-                <p className="mt-4 text-sm text-white/80">
-                  Pense à vérifier tes spams. Bonne écriture ♡
+                <p className="mt-4 text-sm text-encre/80">
+                  Il vient de « Nowadays Agency » : regarde aussi tes spams et les autres onglets de ta boîte.
                 </p>
               </div>
             ) : (
@@ -451,7 +451,7 @@ function FinalCTA() {
                 <div>
                   <label
                     htmlFor="gs-prenom"
-                    className="text-xs uppercase tracking-[0.2em] text-white/80"
+                    className="text-xs uppercase tracking-[0.2em] text-encre/80"
                   >
                     Ton prénom
                   </label>
@@ -461,13 +461,13 @@ function FinalCTA() {
                     required
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    className="mt-2 block w-full rounded-sm bg-white/10 border border-rose-pale/40 px-4 py-3 text-sm text-white placeholder:text-white/50 outline-none focus:border-rose-mid"
+                    className="mt-2 block w-full rounded-sm bg-white border border-encre/25 px-4 py-3 text-sm text-encre placeholder:text-encre/40 outline-none focus:border-framboise"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="gs-email"
-                    className="text-xs uppercase tracking-[0.2em] text-white/80"
+                    className="text-xs uppercase tracking-[0.2em] text-encre/80"
                   >
                     Ton e-mail
                   </label>
@@ -477,18 +477,18 @@ function FinalCTA() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="mt-2 block w-full rounded-sm bg-white/10 border border-rose-pale/40 px-4 py-3 text-sm text-white placeholder:text-white/50 outline-none focus:border-rose-mid"
+                    className="mt-2 block w-full rounded-sm bg-white border border-encre/25 px-4 py-3 text-sm text-encre placeholder:text-encre/40 outline-none focus:border-framboise"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={sending}
-                  className="inline-flex items-center justify-center rounded-sm bg-white px-7 py-4 text-sm uppercase tracking-[0.16em] text-encre transition-colors hover:bg-rose-mid hover:text-encre disabled:opacity-60"
+                  className="inline-flex items-center justify-center rounded-sm bg-encre px-7 py-4 text-sm uppercase tracking-[0.16em] text-white transition-colors hover:bg-bordeaux disabled:opacity-60"
                 >
                   {sending ? "Envoi…" : "Envoyer le guide"}
                 </button>
-                {error && <p className="text-[11px] text-rose-mid leading-relaxed">{error}</p>}
-                <p className="text-[11px] text-white/60 leading-relaxed">
+                {error && <p className="text-[11px] text-bordeaux leading-relaxed">{error}</p>}
+                <p className="text-[11px] text-encre/70 leading-relaxed">
                   En soumettant, tu acceptes de recevoir le guide et nos emails. Tes données restent
                   confidentielles (RGPD).
                 </p>

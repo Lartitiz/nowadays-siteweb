@@ -18,12 +18,12 @@ import logoIkigai from "@/assets/clients-accompagnement/ikigai.png.asset.json";
 import logoBoomBoomDance from "@/assets/clients-accompagnement/boom-boom-dance.png.asset.json";
 import logoHopla from "@/assets/clients-accompagnement/hopla.png.asset.json";
 import logoNapperon from "@/assets/clients-accompagnement/napperon.png.asset.json";
-import { CALENDLY_URL } from "@/lib/links";
+import { CALENDLY_BINOME_URL } from "@/lib/links";
 import photoLaetitia from "@/assets/laetitia-binome.jpeg.asset.json";
 import { absoluteUrl } from "@/lib/site";
 import { imageSize } from "@/lib/image-sizes";
 
-const CALENDLY = CALENDLY_URL;
+const CALENDLY = CALENDLY_BINOME_URL;
 
 export const Route = createFileRoute("/accompagnement-communication")({
   head: () => ({
@@ -106,6 +106,7 @@ function HeroAccompagnement() {
         </>
       }
       mention="325 € HT par mois (390 € TTC), pendant six mois."
+      ctaHref={CALENDLY}
       photo={{
         src: "/images/home/laetitia-fauteuil.jpg",
         alt: "Portrait de Laetitia, fondatrice de Nowadays",
@@ -225,7 +226,7 @@ function ConvergenceSection() {
           <div className="bn-binome">
             
             <p className="bn-binome-titre">
-              Je deviens ta binôme de communication. Ici, tu n'es jamais seul.e. On met tout en place ensemble.
+              Je deviens ta binôme de communication. Ici, tu n'es jamais seul·e. On met tout en place ensemble.
             </p>
           </div>
         </div>
@@ -234,7 +235,7 @@ function ConvergenceSection() {
       <p className="bn-chute bn-chute--grand">
         Le problème, ça n'a jamais été toi.
         <br />
-       <em>C'est que tu es seul.e face à ta communication</em>
+       <em>C'est que tu es seul·e face à ta communication</em>
       </p>
     </Section>
   );
@@ -462,7 +463,7 @@ function ManifesteSection() {
             </ul>
             <p style={{ marginTop: 22 }}>C'est ça que je veux changer. Dans le beau et dans la joie.</p>
             <p className="bn-manif-fin">
-              Un·e créateur·.ice qui vit de son métier, c'est une personne de moins qui subit un travail
+              Une créatrice ou un créateur qui vit de son métier, c'est une personne de moins qui subit un travail
               qu'elle n'a pas choisi.
             </p>
           </div>
@@ -538,9 +539,9 @@ function EnchanteeSection() {
             <div className="bn-c">
               <div className="bn-num">02</div>
               <p>
-                Des conférences à l'<b>École des arts décoratifs de Paris</b>, des formations au{" "}
-                <b>Bureau de la mode et du design</b>, des interventions à l'<b>ENS</b> et aux{" "}
-                <b>Mines</b>.
+                Des cours à l'<b>ENSAD Paris</b>, au <b>CESACOM</b> et à l'<b>ISCPA</b>, des formations
+                au <b>Bureau de la mode et du design</b>, une conférence et des ateliers pour{" "}
+                <b>PSL</b> (ENS, Mines).
               </p>
             </div>
             <div className="bn-c">
@@ -599,7 +600,7 @@ function ComparatifSection() {
             </div>
             <div className="bn-tot">
               <span className="bn-lab">TOTAL</span>
-              <span className="bn-gros">17 400 €</span>
+              <span className="bn-gros">17 400 € HT</span>
             </div>
             <div className="bn-jauge">
               <i style={{ width: "100%" }} />
@@ -642,7 +643,12 @@ function ComparatifSection() {
             </div>
             <div className="bn-tot">
               <span className="bn-lab">TOTAL</span>
-              <span className="bn-gros">1 950 € HT</span>
+              <span className="bn-gros">
+                1 950 € HT
+                <small style={{ display: "block", fontSize: "0.4em", lineHeight: 1.4 }}>
+                  soit 2 340 € TTC
+                </small>
+              </span>
             </div>
             <div className="bn-jauge">
               <i style={{ width: "11%" }} />
@@ -826,7 +832,7 @@ function AutoQualifSection() {
             <li>Tu es solopreneur·euse dans l'univers lifestyle éthique.</li>
             <li>Ton travail est bon, et ça ne se sait pas encore.</li>
             <li>Tu veux des choses faites, pas des choses à faire.</li>
-            <li>Tu peux dégager deux heures par semaine.</li>
+            <li>Tu peux dégager une demi-journée par semaine (3 à 4 heures).</li>
             <li>Tu veux savoir faire après, sans dépendre de personne.</li>
           </ul>
         </CardPointillee>
@@ -882,7 +888,7 @@ function FaqSection() {
     },
     {
       q: "Et si je préfère que quelqu'un fasse tout à ma place ?",
-      a: "Ça existe, et je le fais aussi : c'est Ton Agency de Com', à partir de 1 250 € HT (1 500 € TTC) en budget global de mission, échelonnable. Mais pour un projet qui démarre, c'est rarement le bon moment : tout déléguer, c'est autour de 17 400 € sur six mois, et tu n'apprends rien au passage. Dis-le-moi à l'appel, on regardera ce qui est juste pour toi.",
+      a: "Ça existe, et je le fais aussi : c'est Ton Agency de Com', à partir de 1 250 € HT (1 500 € TTC) en budget global de mission, échelonnable. Mais pour un projet qui démarre, c'est rarement le bon moment : tout déléguer, c'est autour de 17 400 € HT sur six mois, et tu n'apprends rien au passage. Dis-le-moi à l'appel, on regardera ce qui est juste pour toi.",
     },
     {
       q: "À qui s'adresse cet accompagnement, exactement ?",
@@ -890,7 +896,7 @@ function FaqSection() {
     },
     {
       q: "Combien de temps ça me prend chaque semaine ?",
-      a: "Deux heures. Pas plus. Le temps d'un épisode de série. Ce qu'on prépare ensemble est fait pour être publié vite, pas pour te rajouter du travail.",
+      a: "Une demi-journée par semaine, 3 à 4 heures en dehors de nos rendez-vous, un peu plus les premiers mois. C'est voulu : à la fin, tu sais faire seul·e. Ce que chacune porte, on le décide ensemble au démarrage.",
     },
     {
       q: "Dois-je avoir déjà un plan de communication avant de démarrer ?",

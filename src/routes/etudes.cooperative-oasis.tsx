@@ -39,7 +39,7 @@ const data: CaseStudyData = {
   subtitle: "Stratégie de communication pour le festival de la Coopérative Oasis.",
   context: {
     paragraphs: [
-      "La Coopérative Oasis fédère un écosystème d'écolieux qui bâtissent, concrètement, un autre modèle de société. Un projet dense, porteur de sens ; mais dont l'ampleur peut rendre le message difficile à incarner clairement.",
+      "La Coopérative Oasis fédère un écosystème d'écolieux qui bâtissent, concrètement, un autre modèle de société. Un projet dense, porteur de sens, mais dont l'ampleur peut rendre le message difficile à incarner clairement.",
       "Nous avons accompagné la Coopérative Oasis sur sa stratégie de communication autour de son festival : rendre le projet lisible, désirable et mobilisateur.",
     ],
   },

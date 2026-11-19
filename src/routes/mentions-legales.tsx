@@ -62,7 +62,10 @@ function Page() {
               </Dd>
 
               <Dt>TVA</Dt>
-              <Dd>Non applicable, article 293 B du code général des impôts.</Dd>
+              <Dd>
+                Assujettie à la TVA depuis le 6 novembre 2026. N° de TVA intracommunautaire : FR
+                40832189070.
+              </Dd>
 
               <Dt>Téléphone</Dt>
               <Dd>

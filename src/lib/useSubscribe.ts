@@ -22,7 +22,14 @@ export function useSubscribe(source: SubscribeSource) {
       await subscribe({ data: { firstName, email, source } });
       setSent(true);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Une erreur est survenue");
+      // Message fixe : celui du serveur peut être technique, et la page doit
+      // toujours proposer une porte de sortie. La newsletter vouvoie, les guides tutoient.
+      console.error(e);
+      setError(
+        source === "newsletter"
+          ? "L'inscription n'a pas marché. Réessayez dans un instant, ou écrivez-moi à laetitia@nowadaysagency.com."
+          : "L'inscription n'a pas marché. Réessaie dans un instant, ou écris-moi à laetitia@nowadaysagency.com.",
+      );
     } finally {
       setSending(false);
     }

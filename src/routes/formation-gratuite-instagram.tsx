@@ -11,17 +11,17 @@ import { imageSize } from "@/lib/image-sizes";
 export const Route = createFileRoute("/formation-gratuite-instagram")({
   head: () => ({
     meta: [
-      { title: "Formation Instagram gratuite | Guide PDF | Nowadays Agency" },
+      { title: "Formation Instagram gratuite | Guide | Nowadays Agency" },
       {
         name: "description",
         content:
-          "Reçois gratuitement le guide PDF pour bâtir une stratégie Instagram alignée : 5 modules, ~90 min, pensé pour les créatrices et marques engagées.",
+          "Reçois gratuitement le guide pour bâtir une stratégie Instagram alignée : 5 modules, ~90 min, pensé pour les créatrices et marques engagées.",
       },
-      { property: "og:title", content: "Formation Instagram gratuite ; Guide PDF" },
+      { property: "og:title", content: "Formation Instagram gratuite : le guide" },
       {
         property: "og:description",
         content:
-          "Le guide PDF gratuit pour bâtir une stratégie Instagram alignée et durable. 5 modules, ~90 min.",
+          "Le guide gratuit pour bâtir une stratégie Instagram alignée et durable. 5 modules, ~90 min.",
       },
       { property: "og:url", content: absoluteUrl("/formation-gratuite-instagram") },
       { property: "og:type", content: "article" },
@@ -61,7 +61,7 @@ function Hero() {
       }
       chapo={
         <>
-          Établis toute ta stratégie Instagram grâce à notre guide PDF ; pensé pour les créatrices,
+          Établis toute ta stratégie Instagram grâce à notre guide, pensé pour les créatrices,
           artisanes et marques qui veulent communiquer avec sens.
         </>
       }
@@ -71,7 +71,7 @@ function Hero() {
       }}
       cta="Recevoir le guide"
       ctaHref="#recevoir"
-      note="Guide PDF · 5 modules · environ 90 minutes."
+      note="Guide · 5 modules · environ 90 minutes."
     />
   );
 }
@@ -83,7 +83,7 @@ function SocialProof() {
     <section className="border-t border-ink/10 bg-rose-pale">
       <div className="mx-auto max-w-7xl px-6 py-6">
         <p className="text-center text-xs uppercase tracking-[0.24em] text-encre">
-          +200 créatrices &amp; projets engagés · ont déjà téléchargé le guide · ⭐ ⭐ ⭐ ⭐ ⭐
+          +200 créatrices &amp; projets engagés · ont déjà téléchargé le guide
         </p>
       </div>
     </section>
@@ -120,7 +120,7 @@ function Why() {
             « Super utile et bien organisée. Les dossiers sont bien pensés ; ça change des
             formations floues qu'on ne termine jamais. »
             <footer className="mt-4 text-xs not-italic uppercase tracking-[0.2em] text-encre/70">
-              ; Témoignage participante
+              Témoignage d'une participante
             </footer>
           </blockquote>
         </div>
@@ -150,7 +150,7 @@ const BENEFITS = [
   {
     n: "04",
     title: "Une marque qui te ressemble",
-    body: "Parce que ton univers est unique ; et que ton logo pastel mérite mieux que 12 likes.",
+    body: "Parce que ton univers est unique, et que ton logo pastel mérite mieux que 12 likes.",
   },
 ];
 
@@ -189,7 +189,7 @@ function Benefits() {
 const AUDIENCE = [
   {
     label: "Créatrice ou artisane",
-    body: "Mode, bien-être, déco, artiste ; un univers de marque à faire rayonner.",
+    body: "Mode, bien-être, déco, art : un univers de marque à faire rayonner.",
   },
   {
     label: "Débordée mais motivée",
@@ -297,7 +297,7 @@ const MODULES = [
     n: "05",
     duration: "≈ 20 min",
     title: "Planification",
-    goal: "Transformer ton énergie en routine fluide et créative ; sans pression.",
+    goal: "Transformer ton énergie en routine fluide et créative, sans pression.",
     content: [
       "Pourquoi un calendrier éditorial : clarté, régularité, alignement.",
       "Les 4 piliers de contenu (inspiration, mise en valeur, communauté, valeurs).",
@@ -377,25 +377,25 @@ function FinalCTA() {
       <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16 md:items-end">
           <div className="md:col-span-6">
-            <p className="text-xs uppercase tracking-[0.24em] text-white/80">
+            <p className="text-xs uppercase tracking-[0.24em] text-encre/80">
               · Téléchargement gratuit ·
             </p>
-            <h2 className="mt-6 font-titre text-3xl md:text-5xl leading-[1.1] text-white">
-              Reçois ton guide <em className="text-rose-mid">maintenant</em>
+            <h2 className="mt-6 font-titre text-3xl md:text-5xl leading-[1.1] text-bordeaux">
+              Reçois ton guide <em className="text-framboise">maintenant</em>
             </h2>
-            <p className="mt-6 text-sm text-white/80 leading-relaxed">
-              Le PDF arrive directement dans ta boîte mail. Pas de spam, désinscription en 1 clic.
+            <p className="mt-6 text-sm text-encre/80 leading-relaxed">
+              Le guide arrive directement dans ta boîte mail. Pas de spam, désinscription en 1 clic.
             </p>
           </div>
 
           <div className="md:col-span-6">
             {sent ? (
-              <div className="border border-rose-pale/40 p-8 rounded-sm">
-                <p className="font-titre text-2xl text-white leading-snug">
-                  Merci ; ton guide arrive dans quelques minutes.
+              <div className="border border-encre/20 bg-white/60 p-8 rounded-sm">
+                <p className="font-titre text-2xl text-bordeaux leading-snug">
+                  Merci ! Ton guide arrive dans quelques minutes.
                 </p>
-                <p className="mt-4 text-sm text-white/80">
-                  Pense à vérifier tes spams. Bonne planification ♡
+                <p className="mt-4 text-sm text-encre/80">
+                  Il vient de « Laetitia de Nowadays » : regarde aussi tes spams et les autres onglets de ta boîte.
                 </p>
               </div>
             ) : (
@@ -403,7 +403,7 @@ function FinalCTA() {
                 <div>
                   <label
                     htmlFor="fi-prenom"
-                    className="text-xs uppercase tracking-[0.2em] text-white/80"
+                    className="text-xs uppercase tracking-[0.2em] text-encre/80"
                   >
                     Ton prénom
                   </label>
@@ -413,13 +413,13 @@ function FinalCTA() {
                     required
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    className="mt-2 block w-full rounded-sm bg-white/10 border border-rose-pale/40 px-4 py-3 text-sm text-white placeholder:text-white/50 outline-none focus:border-rose-mid"
+                    className="mt-2 block w-full rounded-sm bg-white border border-encre/25 px-4 py-3 text-sm text-encre placeholder:text-encre/40 outline-none focus:border-framboise"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="fi-email"
-                    className="text-xs uppercase tracking-[0.2em] text-white/80"
+                    className="text-xs uppercase tracking-[0.2em] text-encre/80"
                   >
                     Ton e-mail
                   </label>
@@ -429,18 +429,18 @@ function FinalCTA() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="mt-2 block w-full rounded-sm bg-white/10 border border-rose-pale/40 px-4 py-3 text-sm text-white placeholder:text-white/50 outline-none focus:border-rose-mid"
+                    className="mt-2 block w-full rounded-sm bg-white border border-encre/25 px-4 py-3 text-sm text-encre placeholder:text-encre/40 outline-none focus:border-framboise"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={sending}
-                  className="inline-flex items-center justify-center rounded-sm bg-white px-7 py-4 text-sm uppercase tracking-[0.16em] text-encre transition-colors hover:bg-rose-mid hover:text-encre disabled:opacity-60"
+                  className="inline-flex items-center justify-center rounded-sm bg-encre px-7 py-4 text-sm uppercase tracking-[0.16em] text-white transition-colors hover:bg-bordeaux disabled:opacity-60"
                 >
                   {sending ? "Envoi…" : "Envoyer le guide"}
                 </button>
-                {error && <p className="text-[11px] text-rose-mid leading-relaxed">{error}</p>}
-                <p className="text-[11px] text-white/60 leading-relaxed">
+                {error && <p className="text-[11px] text-bordeaux leading-relaxed">{error}</p>}
+                <p className="text-[11px] text-encre/70 leading-relaxed">
                   En soumettant, tu acceptes de recevoir le guide et nos emails. Tes données restent
                   confidentielles (RGPD).
                 </p>
@@ -460,7 +460,7 @@ function Signature() {
     <section className="bg-white">
       <div className="mx-auto max-w-5xl px-6 py-16 text-right">
         <p className="font-titre text-2xl italic text-encre">
-          Bonne planification, <span className="text-framboise">♡ Laetitia</span>
+          Bonne lecture, <span className="text-framboise">♡ Laetitia</span>
         </p>
       </div>
     </section>

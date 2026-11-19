@@ -22,7 +22,7 @@ const RESULTATS = [
       "Présence renforcée sur Instagram, Facebook et LinkedIn, site web refondu, manifeste écrit.",
     chiffre: "Première page Google",
     suite:
-      "+46% de reach, +2 000 abonné·es. Dans les mois qui ont suivi : trois embauches et une nouvelle boutique.",
+      "+46 % de portée, +2 000 abonné·es. Dans les mois qui ont suivi : trois embauches et une nouvelle boutique.",
   },
   {
     nom: "Coopérative Oasis",

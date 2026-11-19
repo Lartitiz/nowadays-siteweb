@@ -49,7 +49,7 @@ const data: CaseStudyData = {
       title: "Penser une stratégie globale",
       paragraphs: [
         "Audit en profondeur de la marque, du marché et du parcours client pour cartographier les forces, les faiblesses et les points de friction.",
-        "Puis une roadmap claire ; plan d'attaque chirurgical ; pour aligner branding, contenu, acquisition et conversion.",
+        "Puis une feuille de route claire (un plan d'attaque chirurgical) pour aligner branding, contenu, acquisition et conversion.",
       ],
     },
     {

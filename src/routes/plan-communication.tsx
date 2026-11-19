@@ -275,13 +275,13 @@ function FinalCTA() {
       <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16 md:items-end">
           <div className="md:col-span-6">
-            <p className="text-xs uppercase tracking-[0.24em] text-white/80">
+            <p className="text-xs uppercase tracking-[0.24em] text-encre/80">
               · Téléchargement gratuit ·
             </p>
-            <h2 className="mt-6 font-titre text-3xl md:text-5xl leading-[1.1] text-white">
-              Télécharge ton plan <em className="text-rose-mid">maintenant</em>
+            <h2 className="mt-6 font-titre text-3xl md:text-5xl leading-[1.1] text-bordeaux">
+              Télécharge ton plan <em className="text-framboise">maintenant</em>
             </h2>
-            <p className="mt-6 text-sm text-white/80 leading-relaxed">
+            <p className="mt-6 text-sm text-encre/80 leading-relaxed">
               Le template Canva arrive directement dans ta boîte mail. Pas de spam, désinscription
               en 1 clic.
             </p>
@@ -289,12 +289,12 @@ function FinalCTA() {
 
           <div className="md:col-span-6">
             {sent ? (
-              <div className="border border-rose-pale/40 p-8 rounded-sm">
-                <p className="font-titre text-2xl text-white leading-snug">
+              <div className="border border-encre/20 bg-white/60 p-8 rounded-sm">
+                <p className="font-titre text-2xl text-bordeaux leading-snug">
                   Merci ; ton plan arrive dans quelques minutes.
                 </p>
-                <p className="mt-4 text-sm text-white/80">
-                  Pense à vérifier tes spams. Belle structuration ♡
+                <p className="mt-4 text-sm text-encre/80">
+                  Cherche un e-mail de Nowadays : regarde aussi tes spams et les autres onglets de ta boîte. Belle structuration ♡
                 </p>
               </div>
             ) : (
@@ -302,7 +302,7 @@ function FinalCTA() {
                 <div>
                   <label
                     htmlFor="pc-prenom"
-                    className="text-xs uppercase tracking-[0.2em] text-white/80"
+                    className="text-xs uppercase tracking-[0.2em] text-encre/80"
                   >
                     Ton prénom
                   </label>
@@ -312,13 +312,13 @@ function FinalCTA() {
                     required
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    className="mt-2 block w-full rounded-sm bg-white/10 border border-rose-pale/40 px-4 py-3 text-sm text-white placeholder:text-white/50 outline-none focus:border-rose-mid"
+                    className="mt-2 block w-full rounded-sm bg-white border border-encre/25 px-4 py-3 text-sm text-encre placeholder:text-encre/40 outline-none focus:border-framboise"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="pc-email"
-                    className="text-xs uppercase tracking-[0.2em] text-white/80"
+                    className="text-xs uppercase tracking-[0.2em] text-encre/80"
                   >
                     Ton e-mail
                   </label>
@@ -328,18 +328,18 @@ function FinalCTA() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="mt-2 block w-full rounded-sm bg-white/10 border border-rose-pale/40 px-4 py-3 text-sm text-white placeholder:text-white/50 outline-none focus:border-rose-mid"
+                    className="mt-2 block w-full rounded-sm bg-white border border-encre/25 px-4 py-3 text-sm text-encre placeholder:text-encre/40 outline-none focus:border-framboise"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={sending}
-                  className="inline-flex items-center justify-center rounded-sm bg-white px-7 py-4 text-sm uppercase tracking-[0.16em] text-encre transition-colors hover:bg-rose-mid hover:text-encre disabled:opacity-60"
+                  className="inline-flex items-center justify-center rounded-sm bg-encre px-7 py-4 text-sm uppercase tracking-[0.16em] text-white transition-colors hover:bg-bordeaux disabled:opacity-60"
                 >
                   {sending ? "Envoi…" : "Télécharger mon plan"}
                 </button>
-                {error && <p className="text-[11px] text-rose-mid leading-relaxed">{error}</p>}
-                <p className="text-[11px] text-white/60 leading-relaxed">
+                {error && <p className="text-[11px] text-bordeaux leading-relaxed">{error}</p>}
+                <p className="text-[11px] text-encre/70 leading-relaxed">
                   En soumettant, tu acceptes de recevoir le template et nos emails. Tes données
                   restent confidentielles (RGPD).
                 </p>

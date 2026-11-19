@@ -29,7 +29,7 @@ export function HomeOffres() {
               <li>Livrables concrets, créés et validés ensemble</li>
             </ul>
             <div className="price">
-              325 € HT <small>/ mois × 6 mois, soit 390 € TTC</small>
+              325 € HT <small>/ mois pendant six mois (390 € TTC par mois)</small>
             </div>
             <div className="price-note">Un paiement étalé, pas un abonnement.</div>
             <div className="offer-footer">
@@ -50,7 +50,7 @@ export function HomeOffres() {
             </p>
             <ul>
               <li>Mission ou campagne construite sur mesure</li>
-              <li>Une équipe légère, adaptée au projet</li>
+              <li>Moi, et un·e freelance de confiance quand le projet le demande</li>
               <li>Un budget global défini avant de commencer</li>
             </ul>
             <div className="price">

@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { DaLayout } from "@/components/da/DaLayout";
+import { CALENDLY_AGENCY_URL } from "@/lib/links";
 import { PageHero } from "@/components/da/PageHero";
 import { VichyBand } from "@/components/da/VichyBand";
 import { Section } from "@/components/da/Section";
@@ -33,7 +34,8 @@ import imgLaProchaineAire from "@/assets/etudes-pro/la-prochaine-aire.jpg.asset.
 import { absoluteUrl } from "@/lib/site";
 import { imageSize } from "@/lib/image-sizes";
 
-const CALENDLY_URL = "https://calendly.com/laetitia-mattioli/appel-decouverte-atelier";
+// Visio découverte Agency (45 min), comme les études de cas des structures.
+const CALENDLY_URL = CALENDLY_AGENCY_URL;
 
 export const Route = createFileRoute("/cooperative-asso")({
   head: () => ({
@@ -61,14 +63,6 @@ export const Route = createFileRoute("/cooperative-asso")({
 
 /* ------------------------------ helpers ------------------------------ */
 
-function CtaButton({ children = "Réserver un appel découverte" }: { children?: React.ReactNode }) {
-  return (
-    <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-      {children}
-    </a>
-  );
-}
-
 // Astérisque-confetti, décoratif : même dessin que le composant partagé
 // `Confettis`/`ConfettisBord`, mais avec une couleur et une position propres à
 // chaque section de cette page (la maquette les place au cas par cas).
@@ -91,6 +85,8 @@ function Hero() {
   return (
     <PageHero
       vichy="prune"
+      ctaHref={CALENDLY_URL}
+      note="45 minutes, gratuites, sans engagement."
       logo={{
         src: "/images/offres/logo-ton-agency-de-com.png",
         alt: "Ton agency de com'",
@@ -124,7 +120,7 @@ function ClientsBand() {
     { name: "L214", src: l214Logo.url },
     { name: "Emmaüs Défi", src: emmausDefiLogo.url },
     { name: "Sea Shepherd", src: seaShepherdLogo.url },
-    { name: "École des Arts Décoratifs PSL", src: ensadPslLogo.url },
+    { name: "École des Arts Décoratifs · PSL", src: ensadPslLogo.url },
     { name: "Coopérative Oasis", src: cooperativeOasisLogo.url },
   ];
 
@@ -248,7 +244,7 @@ function EtapesSection() {
     {
       titre: "On se parle.",
       texte:
-        "Un appel découverte de 30 minutes : votre projet, vos objectifs, vos contraintes. Et on vous dit franchement si on peut vous aider.",
+        "Un appel découverte de 45 minutes : votre projet, vos objectifs, vos contraintes. Et on vous dit franchement si on peut vous aider.",
     },
     {
       titre: "On vous propose un plan sur-mesure.",
@@ -413,8 +409,8 @@ function PasGrosseAgenceSection() {
       </div>
       <p className="bn-bio">
         Derrière l'agency : <b>Laetitia Mattioli</b>. 10 ans de marketing digital, +150 projets
-        accompagnés, des cours à l'École des arts décoratifs de Paris, des interventions à l'ENS et
-        aux Mines. Dans la presse : L'ADN, e-marketing.fr, Maddyness, Le Bonbon.
+        accompagnés, des cours à l'ENSAD Paris, au CESACOM et à l'ISCPA, une conférence et des
+        ateliers pour PSL (ENS, Mines). Dans la presse : L'ADN, e-marketing.fr, Le Bonbon.
       </p>
     </Section>
   );
@@ -583,17 +579,20 @@ function FaqSection() {
 
 function CtaFinalAgency() {
   return (
-    <section className="final-cta centre">
+    <section id="contact" className="final-cta centre">
       <div className="wrap">
         <h2>Prêt·es à avancer ?</h2>
-        <p>
-          Réservez un appel découverte de 30 minutes. On regarde ensemble ce qui manque à votre
+        <p className="lead" style={{ marginTop: 24 }}>
+          Réservez un appel découverte de 45 minutes. On regarde ensemble ce qui manque à votre
           com', et on vous dit franchement si on peut vous aider.
         </p>
         <div className="actions">
-          <CtaButton>Réserver un appel découverte</CtaButton>
+          {/* Fond jaune : bouton prune, jamais de texte blanc sur le jaune. */}
+          <a className="btn btn-plum" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+            Réserver un appel découverte
+          </a>
         </div>
-        <span className="cta-note">30 minutes, gratuites, sans engagement.</span>
+        <span className="cta-note">45 minutes, gratuites, sans engagement.</span>
       </div>
     </section>
   );

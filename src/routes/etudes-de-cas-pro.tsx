@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/da/PageHero";
 import { DaLayout } from "@/components/da/DaLayout";
+import { CALENDLY_AGENCY_URL } from "@/lib/links";
 import { CtaFinal } from "@/components/da/CtaFinal";
 import { VichyBand } from "@/components/da/VichyBand";
 
@@ -226,7 +227,7 @@ const PROJECTS: Project[] = [
     image: atelierDesLunettes.url,
     alt: "Groupe de sept jeunes adultes posant ensemble dans une pièce avec des étagères à lunettes en arrière-plan.",
     description:
-      "Boutique de lunettes de créateurs qui voulait franchir un cap. Nous avons renforcé sa présence sur Instagram, Facebook et LinkedIn, refondu son site web et rédigé un manifeste pour mettre en lumière ses valeurs. Résultat ? +46 % de reach social, première page SEO et +2 000 followers.",
+      "Boutique de lunettes de créateurs qui voulait franchir un cap. Nous avons renforcé sa présence sur Instagram, Facebook et LinkedIn, refondu son site web et rédigé un manifeste pour mettre en lumière ses valeurs. Résultat ? +46 % de portée sur les réseaux, première page SEO et +2 000 abonné·es.",
     internal: "atelier-des-lunettes",
   },
   {
@@ -258,7 +259,7 @@ const PROJECTS: Project[] = [
     image: elvezia.url,
     alt: "Chocolats Elvezia mis en scène dans une nature morte gourmande.",
     description:
-      "Elvezia vendait du chocolat. On en a fait une marque. Repositionnement stratégique, identité visuelle et sales enablement pour le partenaire premium des artisans de bouche.",
+      "Elvezia vendait du chocolat. On en a fait une marque. Repositionnement stratégique, identité visuelle et outils de vente pour le partenaire premium des artisans de bouche.",
     internal: "elvezia",
   },
   {
@@ -278,6 +279,8 @@ function Hero() {
     // font concurrence. Chacune nomme désormais son public.
     <PageHero
       vichy="prune"
+      ctaHref={CALENDLY_AGENCY_URL}
+      note="45 minutes, gratuites, sans engagement."
       pill="Associations, ONG & marques engagées"
       pillTon="jaune"
       titre={
@@ -354,7 +357,7 @@ function Page() {
       <Hero />
       <EtudesGrid />
       <VichyBand />
-      <CtaFinal />
+      <CtaFinal href={CALENDLY_AGENCY_URL} duree={45} />
     </DaLayout>
   );
 }
