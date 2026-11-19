@@ -27,7 +27,7 @@ export const Route = createFileRoute("/mentions-legales")({
 
 /* ------------------------------------------------------------------ Data */
 
-const LAST_UPDATE = "5 août 2026";
+const LAST_UPDATE = "19 novembre 2026";
 
 function Page() {
   return (
@@ -53,7 +53,7 @@ function Page() {
               <Dd>832 189 070 00028</Dd>
 
               <Dt>Code APE</Dt>
-              <Dd>70.21Z — Conseil en relations publiques et communication</Dd>
+              <Dd>70.21Z, conseil en relations publiques et communication</Dd>
 
               <Dt>Immatriculation</Dt>
               <Dd>
@@ -97,16 +97,16 @@ function Page() {
 
           <Section id="hebergeur" title="03 · Hébergement">
             <P>
-              Le site est hébergé par <strong>OVH SAS</strong>, société par actions simplifiée au
-              capital de 10 174 560 €, immatriculée au RCS de Lille Métropole sous le numéro 424 761
-              419 00045, dont le siège social est situé 2 rue Kellermann, 59100 Roubaix, France. Site :{" "}
+              Le site est hébergé par <strong>Lovable Labs Sweden AB</strong>, Regeringsgatan 25,
+              111 53 Stockholm, Suède. Lovable ne publie pas de numéro de téléphone ; contact :
+              support@lovable.dev. Site :{" "}
               <a
-                href="https://www.ovhcloud.com"
+                href="https://lovable.dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline underline-offset-4 hover:text-framboise"
               >
-                ovhcloud.com
+                lovable.dev
               </a>
               .
             </P>
@@ -114,8 +114,8 @@ function Page() {
 
           <Section id="pi" title="04 · Propriété intellectuelle">
             <P>
-              L'ensemble des contenus de ce site — textes, images, illustrations, graphismes, logos,
-              éléments d'identité visuelle, structure et code — est protégé par le droit de la
+              L'ensemble des contenus de ce site (textes, images, illustrations, graphismes, logos,
+              éléments d'identité visuelle, structure et code) est protégé par le droit de la
               propriété intellectuelle. Sauf mention contraire, ces contenus sont la propriété de
               Laetitia Mattioli ou font l'objet d'une autorisation d'usage.
             </P>
@@ -132,10 +132,11 @@ function Page() {
 
           <Section id="donnees" title="05 · Données personnelles">
             <P>
-              Les données collectées sur ce site le sont uniquement à partir des informations que vous
-              transmettez : formulaire de contact, prise de rendez-vous, inscription à la newsletter{" "}
-              <em>Le Mégaphone</em>. Elles servent à répondre à votre demande, à organiser un échange,
-              ou à vous envoyer la newsletter à laquelle vous vous êtes inscrit·e. Elles ne sont ni
+              Les données personnelles collectées sur ce site sont celles que vous transmettez :
+              formulaire de contact, prise de rendez-vous, demande d'un guide gratuit, inscription à
+              la newsletter <em>Le Mégaphone</em>. Elles servent à répondre à votre demande, à
+              organiser un échange, à vous envoyer le guide demandé ou la newsletter à laquelle vous
+              vous êtes inscrit·e. Elles ne sont ni
               vendues, ni cédées, ni transmises à des tiers à des fins commerciales.
             </P>
             <P>
@@ -161,16 +162,26 @@ function Page() {
               .
             </P>
             <P>
-              Le détail des traitements, des durées de conservation et des sous-traitants figure dans
-              la politique de confidentialité.
+              La mesure de fréquentation du site, qui ne vous demande aucune information, est décrite
+              dans la section 06 ci-dessous.
             </P>
           </Section>
 
           <Section id="cookies" title="06 · Cookies">
             <P>
-              Ce site utilise des cookies strictement nécessaires à son fonctionnement, ainsi que des
-              cookies de mesure d'audience soumis à votre consentement. Vous pouvez modifier vos choix
-              à tout moment depuis le gestionnaire de préférences.
+              Ce site ne dépose aucun cookie publicitaire ni aucun cookie de mesure d'audience. Le
+              seul cookie déposé est « __cf_bm », posé par Cloudflare, le service qui protège le site
+              contre les robots : il est nécessaire à sa sécurité et expire au bout de 30 minutes.
+            </P>
+            <P>
+              Pour mesurer la fréquentation, le site utilise deux outils, sans cookie. Le premier est
+              interne : il compte les pages vues, la provenance des visites et le type d'appareil,
+              sans enregistrer votre adresse IP. Le second est le service de statistiques de Lovable,
+              l'hébergeur du site : il relève les pages consultées et les clics au cours d'une
+              visite, avec un identifiant de visite qui n'est pas enregistré sur votre appareil ; ces
+              données sont traitées par Lovable. Les polices de caractères du site sont chargées
+              depuis le service Google Fonts : votre navigateur se connecte alors aux serveurs de
+              Google, qui reçoivent votre adresse IP.
             </P>
           </Section>
 
@@ -183,31 +194,28 @@ function Page() {
 
           <Section id="mediation" title="08 · Médiation de la consommation">
             <P>
-              Conformément à l'article L.612-1 du Code de la consommation, tout client consommateur a le
-              droit de recourir gratuitement à un médiateur en cas de litige non résolu à l'amiable.
-            </P>
-            <P>
-              <Todo>
-                À compléter : désigner un médiateur (nom, adresse, URL) ou confirmer que l'activité est
-                exclusivement B2B et qu'aucun consommateur n'est concerné.
-              </Todo>
+              Les prestations proposées par Nowadays Agency s'adressent exclusivement à des
+              professionnel·les : micro-entrepreneur·es et indépendant·es, associations, entreprises,
+              établissements et collectivités. Aucun contrat n'étant conclu avec des consommateurs au sens du Code de
+              la consommation, le dispositif de médiation de la consommation prévu à l'article
+              L.612-1 ne s'applique pas.
             </P>
           </Section>
 
           <Section id="droit" title="09 · Droit applicable">
             <P>
-              Les présentes mentions légales sont soumises au droit français. Tout litige relatif à
-              l'utilisation du site relève de la compétence exclusive des tribunaux de Paris, sous
-              réserve d'une attribution de compétence particulière découlant d'un texte de loi ou
-              réglementaire.
+              Les présentes mentions légales sont soumises au droit français. En cas de litige, les
+              tribunaux français sont compétents dans les conditions prévues par les règles de droit
+              commun.
             </P>
           </Section>
 
           <Section id="historique" title="10 · Historique des mises à jour">
             <P>
-              Dernière mise à jour : <strong>{LAST_UPDATE}</strong>. Cette version remplace
-              intégralement la précédente, qui mentionnait une SAS liquidée et une adresse parisienne
-              désormais close.
+              Dernière mise à jour : <strong>{LAST_UPDATE}</strong>. Cette version corrige
+              l'hébergeur, la description des cookies et de la mesure de fréquentation, la médiation
+              de la consommation et le droit applicable, et ajoute le numéro de TVA. Elle remplace la
+              version du 5 août 2026.
             </P>
           </Section>
         </div>
