@@ -600,7 +600,7 @@ function ComparatifSection() {
             </div>
             <div className="bn-tot">
               <span className="bn-lab">TOTAL</span>
-              <span className="bn-gros">17 400 €</span>
+              <span className="bn-gros">17 400 € HT</span>
             </div>
             <div className="bn-jauge">
               <i style={{ width: "100%" }} />
@@ -888,7 +888,7 @@ function FaqSection() {
     },
     {
       q: "Et si je préfère que quelqu'un fasse tout à ma place ?",
-      a: "Ça existe, et je le fais aussi : c'est Ton Agency de Com', à partir de 1 250 € HT (1 500 € TTC) en budget global de mission, échelonnable. Mais pour un projet qui démarre, c'est rarement le bon moment : tout déléguer, c'est autour de 17 400 € sur six mois, et tu n'apprends rien au passage. Dis-le-moi à l'appel, on regardera ce qui est juste pour toi.",
+      a: "Ça existe, et je le fais aussi : c'est Ton Agency de Com', à partir de 1 250 € HT (1 500 € TTC) en budget global de mission, échelonnable. Mais pour un projet qui démarre, c'est rarement le bon moment : tout déléguer, c'est autour de 17 400 € HT sur six mois, et tu n'apprends rien au passage. Dis-le-moi à l'appel, on regardera ce qui est juste pour toi.",
     },
     {
       q: "À qui s'adresse cet accompagnement, exactement ?",
@@ -896,7 +896,7 @@ function FaqSection() {
     },
     {
       q: "Combien de temps ça me prend chaque semaine ?",
-      a: "Une demi-journée par semaine, 3 à 4 heures en dehors de nos rendez-vous, un peu plus les premiers mois. C'est voulu : à la fin, tu sais faire seule. Ce que chacune porte, on le décide ensemble au démarrage.",
+      a: "Une demi-journée par semaine, 3 à 4 heures en dehors de nos rendez-vous, un peu plus les premiers mois. C'est voulu : à la fin, tu sais faire seul·e. Ce que chacune porte, on le décide ensemble au démarrage.",
     },
     {
       q: "Dois-je avoir déjà un plan de communication avant de démarrer ?",

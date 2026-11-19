@@ -367,7 +367,7 @@ function ContactPage() {
               },
               {
                 q: "Donnez-vous une fourchette tarifaire ?",
-                a: "Oui, dès le premier appel. Mes formats vont de l'atelier ponctuel à l'accompagnement sur plusieurs mois. Ta Binôme se fait sur six mois, en paiement étalé (pas un abonnement) ; pour les structures, un budget de mission fixé avant de commencer.",
+                a: "Oui. Ta Binôme, c'est 325 € HT par mois pendant six mois (390 € TTC), en paiement étalé, pas un abonnement. Pour les structures, Ton Agency de Com' démarre à 1 250 € HT (1 500 € TTC), en budget de mission fixé avant de commencer. On ajuste ensemble au premier appel.",
               },
             ].map((f) => (
               <div key={f.q} className="border-b border-rose-pale pb-6">

@@ -205,21 +205,21 @@ const PROJECTS: Project[] = [
     image: intiPersonalShopper.url,
     externalUrl: "https://www.instagram.com/intipersonalshopper/",
     description:
-      "Personal shopper éco-responsable qui guide vers une garde-robe consciente. Un accompagnement pour structurer son offre et sa communication.",
+      "Personal shopper éco-responsable qui guide vers une garde-robe consciente. Ensemble, on a structuré son offre et sa communication.",
   },
   {
     name: "L'école des femmes de Massoba",
     image: ecoleFemmesMassoba.url,
     externalUrl: "https://www.lecoledesfemmesdemassoba.com/",
     description:
-      "Espace d'accompagnement sur mesure pour les femmes qui veulent affirmer leur présence. Un accompagnement pour faire rayonner sa mission.",
+      "Espace d'accompagnement sur mesure pour les femmes qui veulent affirmer leur présence. Objectif : faire rayonner sa mission.",
   },
   {
     name: "Sophie Brillouet",
     image: sophieBrillouet.url,
     externalUrl: "https://www.instagram.com/sophie_brillouet/",
     description:
-      "Sculptrice de coquillages et artisane d'art. Un accompagnement pour rendre visible un univers singulier et poétique.",
+      "Sculptrice de coquillages et artisane d'art. On a rendu visible un univers singulier et poétique.",
   },
   {
     name: "Oli Emoi",
@@ -233,7 +233,7 @@ const PROJECTS: Project[] = [
     image: commeUnRubanDetoile.url,
     externalUrl: "https://www.instagram.com/commeunrubandetoiles/",
     description:
-      "Bijoux au fil d'argent, délicats et lumineux. Un accompagnement pour faire briller une marque artisane.",
+      "Bijoux au fil d'argent, délicats et lumineux. Le travail : faire briller une marque artisane.",
   },
   {
     name: "Jonesie",
@@ -254,14 +254,14 @@ const PROJECTS: Project[] = [
     image: terraYMar.url,
     externalUrl: "https://terraemar.shop/",
     description:
-      "Sportwear éthique qui allie performance, style et respect du vivant. Un accompagnement pour une communication alignée avec ses valeurs.",
+      "Sportwear éthique qui allie performance, style et respect du vivant. On a aligné sa communication sur ses valeurs.",
   },
   {
     name: "File ton cuir",
     image: fileTonCuir.url,
     externalUrl: "https://filetoncuir.com/",
     description:
-      "Laetitia, sculptrice sur cuir qui transforme la matière brute en pièces uniques. Un accompagnement pour raconter son savoir-faire.",
+      "Laetitia, sculptrice sur cuir qui transforme la matière brute en pièces uniques. On a mis des mots sur son savoir-faire.",
   },
   {
     name: "Yza Handmade",
@@ -274,7 +274,7 @@ const PROJECTS: Project[] = [
     name: "Ti Matelot",
     image: tiMatelot.url,
     description:
-      "Vêtements éthiques pour enfants qui allient confort, durabilité et style. Un accompagnement pour toucher les bonnes familles.",
+      "Vêtements éthiques pour enfants qui allient confort, durabilité et style. Le cap : toucher les bonnes familles.",
   },
   {
     name: "Awqa",
@@ -288,7 +288,7 @@ const PROJECTS: Project[] = [
     image: pelineCoachSopk.url,
     externalUrl: "https://www.pelinecoachsopk.com/",
     description:
-      "Coach sportive spécialisée dans l'accompagnement des femmes atteintes du SOPK. Un accompagnement pour communiquer son expertise avec justesse.",
+      "Coach sportive spécialisée dans l'accompagnement des femmes atteintes du SOPK. Ensemble, on a trouvé les mots justes pour parler de son expertise.",
   },
   {
     name: "Le Jardin Parfumé Marseille",
