@@ -27,16 +27,16 @@ const RESULTATS = [
   {
     nom: "Coopérative Oasis",
     logo: logoOasis.url,
-    action: "Identité, storytelling et community management pour leur festival.",
+    action: "Identité, storytelling et animation de leurs réseaux pour leur festival.",
     chiffre: "700 personnes réunies",
-    suite: "60 places vendues en entier, +10 000 abonné·es en un an.",
+    suite: "et +10 000 abonné·es en un an.",
   },
   {
     nom: "Péline, coach SOPK",
     logo: logoPeline.url,
     action: "Six mois de binôme : positionnement, offre et contenus.",
-    chiffre: "Accompagnement remboursé",
-    suite: "dès le deuxième mois, grâce aux client·es gagnées.",
+    chiffre: "Investissement récupéré",
+    suite: "dès le deuxième mois, grâce aux client·es gagné·es.",
   },
 ] as const;
 

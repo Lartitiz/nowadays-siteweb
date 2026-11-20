@@ -2,8 +2,8 @@ import { Pill } from "@/components/da/Pill";
 import laetitiaPhoto from "@/assets/laetitia-accueil.jpeg.asset.json";
 import { imageSize } from "@/lib/image-sizes";
 const FAITS = [
-  "10+ ans de marketing digital",
-  "150+ projets accompagnés",
+  "+10 ans de marketing digital",
+  "+150 projets accompagnés",
   "Enseignante en grandes écoles",
 ] as const;
 
@@ -25,7 +25,7 @@ export function HomeLaetitia() {
           <h2>Enchantée, moi c'est Laetitia.</h2>
           <p className="lead">
             J'ai créé Nowadays après avoir vu trop de marques éthiques et engagées s'épuiser à
-            vouloir « faire comme les autres » : courir après les algorithmes, sacrifier leurs
+            vouloir « faire comme les autres » : courir après les algorithmes, sacrifier leurs
             valeurs pour vendre, ou se taire par peur de passer pour trop commerciales.
           </p>
           <p>

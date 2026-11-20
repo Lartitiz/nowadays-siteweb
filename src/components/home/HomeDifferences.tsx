@@ -1,15 +1,14 @@
 import { Pill } from "@/components/da/Pill";
 const SAVOIR_FAIRE = [
-  "Branding",
+  "Image de marque",
   "Instagram",
   "Pinterest",
   "Influence",
   "Storytelling",
   "Référencement naturel",
   "Contenu éditorial",
-  "Emailing",
+  "Newsletter et e-mails",
   "Relations presse",
-  "Acquisition",
   "Site web",
   "Publicité sponsorisée",
 ] as const;
@@ -19,7 +18,7 @@ export function HomeDifferences() {
     <section className="section rose">
       <div className="wrap">
         <div className="text-center">
-          <Pill>Ce qui nous rend différentes</Pill>
+          <Pill>Ce qui me rend différente</Pill>
         </div>
         <h2 className="text-center">Pas votre agence de communication classique.</h2>
 
@@ -44,7 +43,7 @@ export function HomeDifferences() {
 
           <article className="diff-item">
             <div className="index">03</div>
-            <h3>+150 projets engagés.</h3>
+            <h3>On connaît votre terrain.</h3>
             <p>
               De la créatrice artisane à la coopérative nationale : on connaît vos enjeux et vos
               contraintes.

@@ -29,9 +29,9 @@ export function HomeConstat() {
       <div>
         <Pill>Le constat</Pill>
         <h2>
-          Fatiguée du marketing agressif et des injonctions ?
+          Fatigué·e du marketing agressif et des injonctions ?
           <br />
-          <em>Nous aussi.</em>
+          <em>Moi aussi.</em>
         </h2>
         <p className="lead">
           Vous portez un projet qui a du sens. Que vous soyez créateur·ice, freelance ou à la tête

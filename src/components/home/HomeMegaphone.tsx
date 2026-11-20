@@ -5,7 +5,7 @@ import { Megaphone } from "@/components/da/primitives";
 
 export function HomeMegaphone() {
   // Même branchement MailerLite que les autres formulaires du site
-  // (groupe « newsletter »).
+  // (groupe « newsletter »).
   const { sent, sending, error, submit } = useSubscribe("newsletter");
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {

@@ -14,8 +14,8 @@ export function HomeHero() {
             <em>sans vendre votre âme.</em>
           </h1>
           <p className="hero-copy">
-            Vous portez un projet plus doux pour le monde ? Votre com' mérite mieux que « je
-            posterai lundi » <em>(on est jeudi)</em>. On s'en occupe.
+            Vous portez un projet plus doux pour le monde ? Votre com' mérite mieux que « je
+            posterai lundi » <em>(on est jeudi)</em>. On s'y met ensemble, ou on s'en occupe pour vous.
           </p>
           <p className="hero-audience">Créatrices, assos, coopératives, entreprises engagées.</p>
           <div className="actions">

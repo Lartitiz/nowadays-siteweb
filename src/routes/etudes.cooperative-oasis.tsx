@@ -63,6 +63,12 @@ const data: CaseStudyData = {
       ],
     },
   ],
+  results: {
+    items: [
+      { value: "700", label: "Personnes réunies au festival" },
+      { value: "+10 000", label: "Abonné·es en un an" },
+    ],
+  },
 };
 
 function Page() {

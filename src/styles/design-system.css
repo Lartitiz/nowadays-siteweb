@@ -212,6 +212,12 @@ html:has(.nowadays-da) {
   max-width: 760px;
 }
 
+/* Un chapô centré a une largeur maximale : sans marge automatique, sa boîte
+   reste collée à gauche et le texte paraît décentré sous un titre centré. */
+.nowadays-da .lead.text-center {
+  margin-inline: auto;
+}
+
 .nowadays-da .small {
   font-size: 0.86rem;
 }
@@ -499,6 +505,7 @@ html:has(.nowadays-da) {
 .nowadays-da .mobile-menu .btn {
   margin-top: 12px;
   width: 100%;
+  text-align: center;
 }
 
 /* ---------- hero ---------- */
@@ -1572,6 +1579,14 @@ html:has(.nowadays-da) {
   .nowadays-da .stats-grid.two {
     grid-template-columns: 1fr 1fr;
   }
+  /* Mégaphone de la newsletter : en une colonne, le dessin laissait près de
+     400 px de vide autour de lui. */
+  .nowadays-da .newsletter-grid {
+    gap: 8px;
+  }
+  .nowadays-da .mini-mega {
+    height: 170px;
+  }
   .nowadays-da .offer-paths {
     grid-template-columns: 1fr;
   }
@@ -2481,7 +2496,7 @@ html:has(.nowadays-da) {
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 0.78rem;
+  font-size: 0.875rem;
   font-weight: 700;
   line-height: 1.25;
   padding: 8px 10px;
@@ -2837,7 +2852,7 @@ html:has(.nowadays-da) {
 }
 
 .bn-methode {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   color: var(--gris-chaud);
   margin-top: 20px;
 }
@@ -2994,13 +3009,58 @@ html:has(.nowadays-da) {
   .bn-cas2 {
     grid-template-columns: 1fr;
   }
+  /* Sur téléphone, six colonnes ne laissent pas la place d'écrire lisiblement :
+     chaque mois devient une ligne, le numéro à gauche, la barre à droite. La
+     barre des mois 3 à 6 est plus courte, pour garder « le gros au début ». */
   .bn-chart {
-    gap: 7px;
-    height: 240px;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    height: auto;
+    align-items: stretch;
+  }
+  .bn-mois {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: stretch;
+    gap: 12px;
+    height: auto;
+  }
+  .bn-stack {
+    flex-direction: row;
+    justify-content: flex-start;
+    height: auto !important;
+    flex: 0 1 100%;
+    min-height: 56px;
+  }
+  .bn-mois:nth-child(2) .bn-stack {
+    flex-basis: 92%;
+  }
+  .bn-mois:nth-child(n + 3) .bn-stack {
+    flex-basis: 74%;
+  }
+  .bn-mlab {
+    margin-top: 0;
+    width: 22px;
+    flex: none;
+    align-self: center;
   }
   .bn-seg {
-    font-size: 0.68rem;
-    padding: 6px 4px;
+    font-size: 0.875rem;
+    padding: 8px 8px;
+  }
+  .bn-prixbloc .bn-gros {
+    font-size: 2.3rem;
+  }
+  /* Les flèches de la convergence disparaissent : une flèche vers le bas et un
+     peu d'air relient les trois cartes à la carte « binôme ». */
+  .bn-conv > div:last-child::before {
+    content: "↓";
+    display: block;
+    text-align: center;
+    color: #ff7a33;
+    font-size: 2rem;
+    line-height: 1;
+    margin: 18px 0;
   }
   .bn-entete {
     flex-direction: column;

@@ -14,7 +14,7 @@ export function DaFooter() {
               <img className="logo logo-footer" width={900} height={295} src={LOGO} alt="Nowadays Agency" loading="lazy" />
             </div>
             <p>
-              Agence de communication pop &amp; engagée pour les projets qui font bouger le monde.
+              Agence de communication engagée et responsable, pour les projets qui font bouger le monde.
             </p>
             <p className="mt-4 text-xs text-ink/70">
               <a href="mailto:laetitia@nowadaysagency.com" className="hover:text-framboise">laetitia@nowadaysagency.com</a>
@@ -28,7 +28,7 @@ export function DaFooter() {
                 <Link to="/accompagnement-communication">Ta binôme de com'</Link>
               </li>
               <li>
-                <Link to="/cooperative-asso">Votre agency de com'</Link>
+                <Link to="/cooperative-asso">Ton Agency de Com'</Link>
               </li>
               <li>
                 <Link to="/a-propos">À propos</Link>

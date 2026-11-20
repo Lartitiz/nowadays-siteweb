@@ -34,7 +34,7 @@ export function HomeConcretement() {
         <div className="concrete-grid">
           <div className="foundation grid-soft card">
             <div className="big-num">01</div>
-            {/* Espace fine insécable avant le « ? » : sinon il tombe seul
+            {/* Espace fine insécable avant le « ? » : sinon il tombe seul
                 sur la ligne suivante dans cette colonne étroite. */}
             <h3>Et si on commençait par le début&#8239;?</h3>
             <p>

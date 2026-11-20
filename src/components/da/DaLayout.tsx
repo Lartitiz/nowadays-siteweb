@@ -10,14 +10,17 @@ import { DaFooter } from "./DaFooter";
 export function DaLayout({
   children,
   className = "",
+  calendlyUrl,
 }: {
   children: ReactNode;
   /** « page-accueil » pour la home, qui garde ses très grands titres. */
   className?: string;
+  /** Lien du bouton « Appel découverte » de l'en-tête, quand la page a son propre rendez-vous. */
+  calendlyUrl?: string;
 }) {
   return (
     <div className={`nowadays-da ${className}`.trim()}>
-      <DaHeader />
+      <DaHeader calendlyUrl={calendlyUrl} />
       <main id="top">{children}</main>
       <DaFooter />
     </div>
