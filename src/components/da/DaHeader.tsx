@@ -52,7 +52,7 @@ function NavDropdown() {
   );
 }
 
-export function DaHeader() {
+export function DaHeader({ calendlyUrl = CALENDLY_URL }: { calendlyUrl?: string } = {}) {
   // Le bouton « Menu » de la maquette était décoratif : ici il ouvre vraiment
   // la navigation sous 950 px.
   const [ouvert, setOuvert] = useState(false);
@@ -73,7 +73,7 @@ export function DaHeader() {
               </Link>
             ))}
             <NavDropdown />
-            <a className="btn btn-primary" href={CALENDLY_URL}>
+            <a className="btn btn-primary" href={calendlyUrl}>
               Appel découverte
             </a>
           </div>
@@ -123,7 +123,7 @@ export function DaHeader() {
               </ul>
             </li>
           </ul>
-          <a className="btn btn-primary" href={CALENDLY_URL} onClick={() => setOuvert(false)}>
+          <a className="btn btn-primary" href={calendlyUrl} onClick={() => setOuvert(false)}>
             Appel découverte
           </a>
         </div>

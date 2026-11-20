@@ -103,9 +103,9 @@ function Index() {
       <HomeHero />
       <HomePreuve />
       <HomeConstat />
+      <HomeOffres />
       <HomeManifeste />
       <HomeConcretement />
-      <HomeOffres />
       <HomeEtapes />
       <HomeResultats />
       <HomeDifferences />

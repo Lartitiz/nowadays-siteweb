@@ -15,7 +15,7 @@ export function HomeOffres() {
 
         <div className="offer-paths">
           <article className="offer left vichy card">
-            <div className="offer-type">Pour les solopreneur·es</div>
+            <div className="offer-type">Pour les solopreneur·euses</div>
             <h3>Ta binôme de com'</h3>
             <p className="offer-sub">On fait ensemble.</p>
             <p>
@@ -24,12 +24,12 @@ export function HomeOffres() {
               vos contenus, on met tout en place. Ensemble.
             </p>
             <ul>
-              <li>Stratégie, branding et plan de com' sur six mois</li>
+              <li>Votre stratégie, votre image de marque et votre plan de com' sur six mois</li>
               <li>Sessions de travail à quatre mains</li>
-              <li>Livrables concrets, créés et validés ensemble</li>
+              <li>Votre marque, votre plan, vos modèles et vos vingt premiers posts</li>
             </ul>
             <div className="price">
-              325 € HT <small>/ mois pendant six mois (390 € TTC par mois)</small>
+              325 € HT <small>/ mois pendant six mois (390 € TTC par mois), soit 1 950 € HT en tout</small>
             </div>
             <div className="price-note">Un paiement étalé, pas un abonnement.</div>
             <div className="offer-footer">
@@ -41,7 +41,7 @@ export function HomeOffres() {
 
           <article className="offer right card">
             <div className="offer-type">Pour les structures engagées</div>
-            <h3>Votre agency de com'</h3>
+            <h3>Ton Agency de Com'</h3>
             <p className="offer-sub">On s'en occupe pour vous.</p>
             <p>
               Vous n'avez ni le temps, ni l'envie de gérer votre communication. On prend en charge

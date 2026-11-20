@@ -15,7 +15,7 @@ const ETAPES = [
   {
     numero: "3",
     titre: "On avance.",
-    texte: "On produit, vous validez, on met en ligne. À la fin, c'est fait, pas « à faire ».",
+    texte: "Ensemble ou à votre place, selon la formule. À la fin, c'est fait, pas « à faire ».",
   },
 ] as const;
 

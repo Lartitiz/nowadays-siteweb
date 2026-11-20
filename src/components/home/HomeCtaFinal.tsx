@@ -7,7 +7,7 @@ export function HomeCtaFinal() {
     <>
       <VichyBand />
 
-      <section className="final-cta">
+      <section className="final-cta centre">
         <div className="wrap">
           <Pill ton="bordeaux">Le point de rendez-vous</Pill>
           <h2>Prêt·es à avancer ?</h2>
@@ -17,7 +17,7 @@ export function HomeCtaFinal() {
           </p>
           <div className="actions">
             <a className="btn btn-plum" href={CALENDLY_URL}>
-              Réserver mon appel découverte
+              Réserver un appel découverte
             </a>
           </div>
         </div>

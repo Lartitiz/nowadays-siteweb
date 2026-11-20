@@ -28,15 +28,15 @@ const CALENDLY = CALENDLY_BINOME_URL;
 export const Route = createFileRoute("/accompagnement-communication")({
   head: () => ({
     meta: [
-      { title: "Ta binôme de com | Accompagnement 6 mois | Nowadays" },
+      { title: "Ta binôme de com' | Accompagnement 6 mois | Nowadays" },
       {
         name: "description",
         content:
-          "Accompagnement communication 6 mois pour solopreneur·es engagé·es. On construit ta stratégie, on crée tes contenus, on met tout en place. Ensemble. 325 € HT/mois (390 € TTC).",
+          "Accompagnement communication 6 mois pour solopreneur·es engagé·es. On construit ta stratégie, on crée tes premiers contenus, on met tout en place. Ensemble. 325 € HT/mois (390 € TTC).",
       },
       {
         property: "og:title",
-        content: "Ta binôme de com | Accompagnement 6 mois",
+        content: "Ta binôme de com' | Accompagnement 6 mois",
       },
       {
         property: "og:description",
@@ -101,8 +101,8 @@ function HeroAccompagnement() {
       }
       chapo={
         <>
-          Ta communication te prend la tête ? On la fait ensemble : on construit ta stratégie, on crée tes
-          contenus, on met tout en place. Tu n'es plus seul·e.
+          Ta communication te prend la tête ? On la fait ensemble, en visio, toi et moi : on construit ta
+          stratégie, on crée tes premiers contenus, on met tout en place. Tu n'es plus seul·e.
         </>
       }
       mention="325 € HT par mois (390 € TTC), pendant six mois."
@@ -135,12 +135,12 @@ function ClientsBand() {
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
           {clients.map((c) => (
-            <div key={c.name} className="flex h-12 items-center justify-center">
+            <div key={c.name} className="flex h-16 items-center justify-center">
               <img
                 src={c.logo}
                 {...imageSize(c.logo)}
                 alt={c.alt}
-                className="max-h-12 w-auto object-contain opacity-70"
+                className="max-h-16 w-auto object-contain opacity-90"
                 loading="lazy"
               />
             </div>
@@ -161,8 +161,8 @@ function DouleurSection() {
       <p className="lead">Sauf que pour l'instant, tu es seul·e face à ta com'. Et ça se sent.</p>
       <Temoin variante="t1" qui="Violaine" role="Cap sur Ikigaï">
         <blockquote>
-          « Je me suis rendu compte que j'avais même plus de page contact, tellement je réfléchissais
-          toute seule à vide. »
+          « Je me suis rendu compte que j'avais même plus de page contact, tellement je réfléchissais
+          toute seule à vide. »
         </blockquote>
       </Temoin>
     </Section>
@@ -172,7 +172,7 @@ function DouleurSection() {
 function ConvergenceSection() {
   return (
     <Section fond="rose" className="bn-relative">
-      <h2 style={{ textAlign: "center", marginInline: "auto" }}>Souvent, tu es seule au moment d'appliquer.</h2>
+      <h2 style={{ textAlign: "center", marginInline: "auto" }}>Souvent, tu es seul·e au moment d'appliquer.</h2>
 
       <div className="bn-conv">
         <div className="bn-gauche3">
@@ -226,7 +226,7 @@ function ConvergenceSection() {
           <div className="bn-binome">
             
             <p className="bn-binome-titre">
-              Je deviens ta binôme de communication. Ici, tu n'es jamais seul·e. On met tout en place ensemble.
+              Je deviens ta binôme de communication. On met tout en place ensemble.
             </p>
           </div>
         </div>
@@ -235,7 +235,7 @@ function ConvergenceSection() {
       <p className="bn-chute bn-chute--grand">
         Le problème, ça n'a jamais été toi.
         <br />
-       <em>C'est que tu es seul·e face à ta communication</em>
+       <em>C'est que tu es seul·e face à ta communication.</em>
       </p>
     </Section>
   );
@@ -252,16 +252,16 @@ function BesoinsSection() {
         </div>
         <div className="bn-postits bn-relative">
           <PostIt titre="LE SITE" couleur="rose-doux" className="bn-postit-1">
-            « J'ai besoin d'un site qui donne envie. »
+            « J'ai besoin d'un site qui donne envie. »
           </PostIt>
           <PostIt titre="LES RÉSEAUX" couleur="jaune" className="bn-postit-2">
-            « Il faut que mes réseaux tournent. »
+            « Il faut que mes réseaux tournent. »
           </PostIt>
           <PostIt titre="LA NEWSLETTER" couleur="rose" className="bn-postit-3">
-            « Il me faudrait une newsletter, non ? »
+            « Il me faudrait une newsletter, non ? »
           </PostIt>
           <PostIt titre="LA PRESSE" couleur="rose-doux" className="bn-postit-4">
-            « Et la presse, ça serait bien aussi. »
+            « Et la presse, ça serait bien aussi. »
           </PostIt>
         </div>
       </div>
@@ -297,7 +297,7 @@ function ReparsSection() {
       <b>Tes réseaux qui tournent</b>, avec tes modèles prêts à remplir pour la suite.
     </>,
     <>
-      <b>Ton site en ligne</b>, qui donne envie et qui vend.
+      <b>Les pages clés de ton site</b>, réécrites et mises en ligne ensemble.
     </>,
     <>
       <b>Ta newsletter qui part</b>, et tes emails automatiques avec.
@@ -312,15 +312,13 @@ function ReparsSection() {
         <div>
           <h2>
             Dans six mois, ta communication tourne.
-            <br />
-            Et tu n'es plus seul·e.
           </h2>
           <p className="lead">Voilà ce qui existe à la fin, concrètement.</p>
         </div>
         <div className="bn-sticker">
           Fait.
           <br />
-          Pas « à faire ».
+          Pas « à faire ».
         </div>
       </div>
       <div className="bn-repars">
@@ -340,6 +338,11 @@ function ReparsSection() {
       <p className="bn-chute">
         Et surtout : tu n'auras rien fait de tout ça <span className="surligne">seul·e</span>.
       </p>
+      <div className="bn-cta">
+        <p className="bn-amorce">On regarde ensemble ce qui manque à ta com' ?</p>
+        <CtaButton>Réserver un appel découverte</CtaButton>
+        <p className="page-hero-mini">30 minutes, gratuites, sans engagement.</p>
+      </div>
     </Section>
   );
 }
@@ -428,7 +431,7 @@ function SixMoisSection() {
         </span>
         <span>
           <span className="bn-dot" style={{ background: "var(--jaune)" }} />
-          ce que tu fais, jamais seul·e
+          ce que tu fais, avec moi
         </span>
       </div>
       <p className="bn-caveat">
@@ -437,7 +440,7 @@ function SixMoisSection() {
 
       <Temoin variante="t2" qui="Nora" role="accompagne des dirigeant·es à trouver leur vision">
         <blockquote>
-          « Je sens que tu me comprends. Et maintenant je sais qu'on est à deux dessus. »
+          « Je sens que tu me comprends. Et maintenant je sais qu'on est à deux dessus. »
         </blockquote>
       </Temoin>
     </Section>
@@ -457,8 +460,8 @@ function ManifesteSection() {
             <p>Invisibles, pas parce que le travail n'est pas bon.&nbsp;&nbsp;<br />
             Parce qu'on leur a appris que :</p>
             <ul className="bn-manif-trois">
-              <li>parler de soi, c'est être prétentieux·se ;</li>
-              <li>vendre, c'est manipuler ;</li>
+              <li>parler de soi, c'est être prétentieux·se ;</li>
+              <li>vendre, c'est manipuler ;</li>
               <li>le marketing, c'est l'ennemi de l'authenticité.</li>
             </ul>
             <p style={{ marginTop: 22 }}>C'est ça que je veux changer. Dans le beau et dans la joie.</p>
@@ -532,8 +535,7 @@ function EnchanteeSection() {
             <div className="bn-c">
               <div className="bn-num">01</div>
               <p>
-                <b>10 ans</b> de marketing digital, <b>+150 projets accompagnés</b>, de 0 à 10 000
-                abonné·es.
+                <b>+10 ans</b> de marketing digital, <b>+150 projets accompagnés</b>.
               </p>
             </div>
             <div className="bn-c">
@@ -561,7 +563,7 @@ function ComparatifSection() {
   return (
     <Section>
       <h2 className="text-center">Tu veux déléguer. Regardons ce que ça coûte vraiment.</h2>
-      <p className="lead text-center">Les mêmes cinq chantiers, dans les deux cas.</p>
+      <p className="lead text-center">Les mêmes cinq chantiers. D'un côté quelqu'un les fait à ta place, de l'autre on les fait ensemble.</p>
 
       <div className="bn-duo">
         <div className="bn-pan bn-pan--a">
@@ -579,7 +581,7 @@ function ComparatifSection() {
               <span className="bn-val">5 400 €</span>
             </div>
             <div className="bn-li">
-              <span className="bn-nom">Ton site et ton référencement Google</span>
+              <span className="bn-nom">Les pages clés de ton site</span>
               <span className="bn-val">5 000 €</span>
             </div>
             <div className="bn-li">
@@ -622,7 +624,7 @@ function ComparatifSection() {
               <span className="bn-inc">✓ compris</span>
             </div>
             <div className="bn-li">
-              <span className="bn-nom">Ton site et ton référencement Google</span>
+              <span className="bn-nom">Les pages clés de ton site</span>
               <span className="bn-inc">✓ compris</span>
             </div>
             <div className="bn-li">
@@ -658,10 +660,10 @@ function ComparatifSection() {
       </div>
 
       <p className="bn-methode">
-        Tarifs médians France 2026, bas de fourchette (source : La Fabrique du Net).
+        Estimations basses par chantier, d'après les tarifs d'agences relevés par La Fabrique du Net (2026).
       </p>
       <p className="bn-chute" style={{ textAlign: "center" }}>
-        Sept fois moins cher, parce qu'on le fait <span className="surligne">ensemble</span>.
+        Près de neuf fois moins cher, parce qu'on le fait <span className="surligne">ensemble</span>.
       </p>
 
       <Temoin
@@ -670,8 +672,8 @@ function ComparatifSection() {
         role="infusions pour les femmes qui souffrent de troubles ovariens"
       >
         <blockquote>
-          « Ton accompagnement m'a vraiment aidée à clarifier les choses, surtout au niveau du
-          positionnement. »
+          « Ton accompagnement m'a vraiment aidée à clarifier les choses, surtout au niveau du
+          positionnement. »
         </blockquote>
       </Temoin>
     </Section>
@@ -692,6 +694,10 @@ function PrixSection() {
         </div>
         <div className="bn-sous">
           Soit 390 € TTC par mois : 1 950 € HT (2 340 € TTC) pour les six mois.
+        </div>
+        <div className="bn-sous">
+          Un paiement étalé, pas un abonnement. Et tu peux arrêter en cours de route, je l'explique
+          dans les questions plus bas.
         </div>
       </div>
 
@@ -729,7 +735,7 @@ const PROJETS_LARGES = [
     alt: "Boom Boom Dance",
     nom: "Boom Boom Dance",
     q: "Cours de danse avec bébé, post-partum",
-    a: "On a structuré toute sa communication, de la ligne édito aux contenus.",
+    a: "On a structuré toute sa communication, de ce qu'elle raconte à ses contenus.",
   },
   {
     image: "/projets/sophie-brillouet.webp",
@@ -818,6 +824,11 @@ function ProjetsSection() {
         Envie du détail ?{" "}
         <Link to="/creatrices-ethiques">Les études de cas complètes sont là.</Link>
       </p>
+      <div className="bn-cta">
+        <p className="bn-amorce">Et si le prochain projet, c'était le tien ?</p>
+        <CtaButton>Réserver un appel découverte</CtaButton>
+        <p className="page-hero-mini">30 minutes, gratuites, sans engagement.</p>
+      </div>
     </Section>
   );
 }
@@ -829,7 +840,10 @@ function AutoQualifSection() {
       <div className="audience-grid">
         <CardPointillee titre="C'est pour toi si…" ton="rose">
           <ul>
-            <li>Tu es solopreneur·euse dans l'univers lifestyle éthique.</li>
+            <li>
+              Tu travailles seul·e et tu vends quelque chose de beau et de responsable : mode,
+              beauté, artisanat, bien-être, déco, food.
+            </li>
             <li>Ton travail est bon, et ça ne se sait pas encore.</li>
             <li>Tu veux des choses faites, pas des choses à faire.</li>
             <li>Tu peux dégager une demi-journée par semaine (3 à 4 heures).</li>
@@ -842,7 +856,7 @@ function AutoQualifSection() {
             <li>
               Ta trésorerie tient sur un ou deux mois. On en reparle quand ce sera plus calme.
             </li>
-            <li>Tu cherches des hacks de croissance.</li>
+            <li>Tu cherches des recettes miracles.</li>
             <li>
               Tu veux que quelqu'un fasse tout, sans toi. Ça existe :{" "}
               <Link to="/cooperative-asso" className="underline hover:text-bordeaux">
@@ -860,7 +874,7 @@ function FaqSection() {
   const faqs = [
     {
       q: "Concrètement, comment ça se passe quand je m'inscris ?",
-      a: "On commence par un appel découverte de 30 minutes, gratuit et sans engagement. Si ça matche, on démarre par un atelier de lancement : deux heures où tu me racontes tout. Ensuite je bosse de mon côté : l'état des lieux de ta com', ton positionnement, ton plan des six mois, et on se retrouve pour la restitution. À partir du mois 3, on passe en mode application : une visio de 2 h par mois, et WhatsApp entre les sessions.",
+      a: "On commence par un appel découverte de 30 minutes, gratuit et sans engagement. Si ça matche, on démarre par deux heures en visio où tu me racontes tout. Ensuite je bosse de mon côté : l'état des lieux de ta com', ton positionnement, ton plan des six mois, et on se retrouve pour que je te présente tout. À partir du mois 3, on passe à la pratique : une visio de 2 h par mois où on fait ensemble, et entre deux je relis, je corrige et je te réponds sur WhatsApp, du lundi au jeudi, sous 48 h.",
     },
     {
       q: "Est-ce que tu fais vraiment pour moi, ou tu me donnes juste des conseils ?",
@@ -883,6 +897,10 @@ function FaqSection() {
       ),
     },
     {
+      q: "Et si ça ne marche pas pour moi ?",
+      a: "Tu as peut-être déjà payé une formation que tu n'as jamais finie. Je ne vais pas te promettre des résultats : personne ne peut le faire honnêtement. Ce que je peux te promettre, c'est ce que je livre, et quand je le livre. Et on commence par 30 minutes gratuites où je te dis franchement si je peux t'aider.",
+    },
+    {
       q: "J'ai déjà suivi des formations en com' et ça n'a rien donné. En quoi c'est différent ?",
       a: "On ne reste pas dans la théorie. Tu ne regardes pas des vidéos seul·e à 23 h : tu as quelqu'un en face de toi qui travaille sur ton projet, avec tes contraintes et tes valeurs. Et tu repars chaque mois avec des choses faites, pas des choses à faire.",
     },
@@ -892,7 +910,7 @@ function FaqSection() {
     },
     {
       q: "À qui s'adresse cet accompagnement, exactement ?",
-      a: "Aux solopreneur·euses de l'univers lifestyle éthique : mode, beauté, artisanat, bien-être, déco, food, sport, culture, accompagnement. Que tu vendes des produits ou des services, le besoin est le même : être visible sans trahir tes valeurs.",
+      a: "Aux personnes qui travaillent seules et vendent quelque chose de beau et de responsable : mode, beauté, artisanat, bien-être, déco, food, sport, culture, accompagnement. Que tu vendes des produits ou des services, le besoin est le même : être visible sans trahir tes valeurs.",
     },
     {
       q: "Combien de temps ça me prend chaque semaine ?",
@@ -904,7 +922,7 @@ function FaqSection() {
     },
     {
       q: "Ce qu'on crée, ça reste à moi ?",
-      a: "Oui, tout : tes modèles, ton plan, tes textes, tes maquettes. Et ton accès à L'Assistant Com' reste actif tant que tu gardes ton compte.",
+      a: "Oui, tout : tes modèles, ton plan, tes textes, tes maquettes. Et tu gardes ton accès à L'Assistant Com', mon outil d'aide à la création de contenus, tant que tu gardes ton compte.",
     },
   ];
   return (
@@ -952,7 +970,7 @@ function CtaFinalAccompagnement() {
 
 function Page() {
   return (
-    <DaLayout className="page-binome">
+    <DaLayout className="page-binome" calendlyUrl={CALENDLY}>
       <HeroAccompagnement />
       <ClientsBand />
       <DouleurSection />
