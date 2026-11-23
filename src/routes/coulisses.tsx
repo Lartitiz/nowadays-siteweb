@@ -49,7 +49,7 @@ const LIBELLES_AIMANTS: Record<string, string> = {
 const LIBELLES_PAGES: Record<string, string> = {
   "/": "L'accueil",
   "/accompagnement-communication": "Ta binôme de com'",
-  "/cooperative-asso": "Votre agency de com'",
+  "/cooperative-asso": "Ton Agency de Com'",
   "/etudes-de-cas-pro": "Études de cas — assos",
   "/creatrices-ethiques": "Études de cas — créatrices",
   "/contact": "Contact",
