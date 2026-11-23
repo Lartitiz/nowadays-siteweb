@@ -574,7 +574,7 @@ function ComparatifSection() {
           <div className="bn-corps">
             <div className="bn-li">
               <span className="bn-nom">Ton image de marque</span>
-              <span className="bn-val">3 000 €</span>
+              <span className="bn-val">2 500 €</span>
             </div>
             <div className="bn-li">
               <span className="bn-nom">Tes réseaux sociaux</span>
@@ -589,8 +589,8 @@ function ComparatifSection() {
               <span className="bn-val">1 500 €</span>
             </div>
             <div className="bn-li">
-              <span className="bn-nom">Ta presse, tes partenariats</span>
-              <span className="bn-val">2 500 €</span>
+              <span className="bn-nom">Ta presse, sur un mois</span>
+              <span className="bn-val">1 500 €</span>
             </div>
             <div className="bn-li bn-li--qual">
               <span className="bn-nom">Qui suit ton projet en entier</span>
@@ -602,7 +602,7 @@ function ComparatifSection() {
             </div>
             <div className="bn-tot">
               <span className="bn-lab">TOTAL</span>
-              <span className="bn-gros">17 400 € HT</span>
+              <span className="bn-gros">15 900 €</span>
             </div>
             <div className="bn-jauge">
               <i style={{ width: "100%" }} />
@@ -660,7 +660,7 @@ function ComparatifSection() {
       </div>
 
       <p className="bn-methode">
-        Estimations basses par chantier, d'après les tarifs d'agences relevés par La Fabrique du Net (2026).
+        Estimations basses par chantier, d'après les tarifs relevés par La Fabrique du Net (2026), hors taxes quand c'est précisé.
       </p>
       <p className="bn-chute" style={{ textAlign: "center" }}>
         Près de neuf fois moins cher, parce qu'on le fait <span className="surligne">ensemble</span>.
@@ -906,7 +906,7 @@ function FaqSection() {
     },
     {
       q: "Et si je préfère que quelqu'un fasse tout à ma place ?",
-      a: "Ça existe, et je le fais aussi : c'est Ton Agency de Com', à partir de 1 250 € HT (1 500 € TTC) en budget global de mission, échelonnable. Mais pour un projet qui démarre, c'est rarement le bon moment : tout déléguer, c'est autour de 17 400 € HT sur six mois, et tu n'apprends rien au passage. Dis-le-moi à l'appel, on regardera ce qui est juste pour toi.",
+      a: "Ça existe, et je le fais aussi : c'est Ton Agency de Com', à partir de 1 250 € HT (1 500 € TTC) en budget global de mission, échelonnable. Mais pour un projet qui démarre, c'est rarement le bon moment : tout déléguer, c'est autour de 15 900 € sur six mois, et tu n'apprends rien au passage. Dis-le-moi à l'appel, on regardera ce qui est juste pour toi.",
     },
     {
       q: "À qui s'adresse cet accompagnement, exactement ?",
