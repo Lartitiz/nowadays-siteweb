@@ -663,7 +663,7 @@ function ComparatifSection() {
         Estimations basses par chantier, d'après les tarifs relevés par La Fabrique du Net (2026), hors taxes quand c'est précisé.
       </p>
       <p className="bn-chute" style={{ textAlign: "center" }}>
-        Près de neuf fois moins cher, parce qu'on le fait <span className="surligne">ensemble</span>.
+        Plus de huit fois moins cher, parce qu'on le fait <span className="surligne">ensemble</span>.
       </p>
 
       <Temoin
