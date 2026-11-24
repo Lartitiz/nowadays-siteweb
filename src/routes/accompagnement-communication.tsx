@@ -589,8 +589,11 @@ function ComparatifSection() {
               <span className="bn-val">1 500 €</span>
             </div>
             <div className="bn-li">
-              <span className="bn-nom">Ta presse, sur un mois</span>
-              <span className="bn-val">1 500 €</span>
+              <span className="bn-nom">Ta presse</span>
+              <span className="bn-val">
+                1 500 €{" "}
+                <small style={{ fontSize: "0.6em", fontWeight: 400, letterSpacing: 0 }}>pour un mois</small>
+              </span>
             </div>
             <div className="bn-li bn-li--qual">
               <span className="bn-nom">Qui suit ton projet en entier</span>
@@ -632,7 +635,7 @@ function ComparatifSection() {
               <span className="bn-inc">✓ compris</span>
             </div>
             <div className="bn-li">
-              <span className="bn-nom">Ta presse, tes partenariats</span>
+              <span className="bn-nom">Ta presse</span>
               <span className="bn-inc">✓ compris</span>
             </div>
             <div className="bn-li bn-li--qual">
@@ -653,7 +656,7 @@ function ComparatifSection() {
               </span>
             </div>
             <div className="bn-jauge">
-              <i style={{ width: "11%" }} />
+              <i style={{ width: "12%" }} />
             </div>
           </div>
         </div>
